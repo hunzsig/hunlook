@@ -1,4 +1,5 @@
 import router from "./router.js";
+import catalog from "./catalog.js";
 
 /**
  * 这里是h-react.HistoryInitial需要预处理的数据项
@@ -12,4 +13,5 @@ import router from "./router.js";
  */
 export default {
   router: router,
+  catalog: catalog,
 }
