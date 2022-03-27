@@ -1,0 +1,160 @@
+@charset "UTF-8";
+
+.page-homepage {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+
+  .cate {
+    width: 10%;
+    min-width: 180px;
+
+    .cateItem {
+      display: inline-flex;
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
+      margin: 5px 12px 5px 0;
+      border-radius: 4px;
+    }
+  }
+
+  .essay {
+    width: 20%;
+    min-width: 270px;
+    border-right: 1px solid #cccccc;
+    display: flex;
+    flex-direction: column;
+
+    .ant-list {
+      flex: 1;
+      overflow-y: auto;
+
+      .ant-list-item {
+        padding: 10px;
+
+        .excellent {
+          color: #e04240;
+        }
+      }
+
+      .ant-list-item:hover {
+        background: #eeeeee;
+        cursor: pointer;
+      }
+
+      .ant-list-item.active {
+        background: #eeeeee;
+        cursor: default;
+      }
+
+      .ant-list-item-meta-title {
+        margin-bottom: 3px;
+      }
+
+      .ant-list-item-meta {
+        margin-bottom: 3px;
+      }
+
+      .ant-list-item-action {
+        margin-top: 0;
+      }
+    }
+
+    .space-pagination {
+      padding: 10px;
+      text-align: center;
+
+      .ant-pagination-item {
+        margin-bottom: 3px;
+      }
+    }
+
+    .searcher {
+      padding: 10px 10px 6px 10px;
+    }
+  }
+
+  .content {
+    flex: 1;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    .attr {
+      width: 100%;
+      padding: 10px;
+      border-bottom: 1px dashed #eeeeee;
+    }
+
+    .html {
+      width: 100%;
+      padding: 10px;
+      flex: 1;
+
+      a {
+        color: #e04240;
+        text-decoration: underline;
+        text-decoration-color: #e04240;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto !important;
+      }
+
+      pre {
+        padding: 10px;
+        background: #e8f5ff;
+      }
+
+      hr {
+        border-width: 0;
+        border-bottom: 1px solid #dddddd;
+      }
+
+      blockquote {
+        border-left: 8px solid #999999;
+        padding: 10px;
+        background: #f0f0f0;
+      }
+    }
+
+  }
+
+  .operation {
+    width: 80px;
+    height: 100%;
+    padding: 15px;
+    background: #d9ece1;
+
+    .ant-btn {
+      margin-bottom: 15px;
+      width: 50px;
+      height: 50px;
+    }
+
+    .avatar > .ant-btn, .avatar.ant-btn {
+      padding: 0;
+
+      img {
+        width: 80%;
+        height: 80%;
+      }
+    }
+
+    .avatar.ant-tooltip-disabled-compatible-wrapper {
+      img {
+        filter: grayscale(100%);
+      }
+    }
+  }
+
+}
