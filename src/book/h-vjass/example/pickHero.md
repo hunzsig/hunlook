@@ -2,7 +2,7 @@
 
 ### 将英雄类型写进缓存，并生成酒馆选英雄
 
-```vjass
+```vb
 local real chooseTime = 60.0
 local integer i = g_hero_count
 loop
@@ -19,7 +19,7 @@ call hhero.buildDrunkery(chooseTime)
 
 将英雄类型写进缓存，并生成大地图双击选英雄
 
-```vjass
+```vb
 local real chooseTime = 60.0
 local integer i = g_hero_count
 loop

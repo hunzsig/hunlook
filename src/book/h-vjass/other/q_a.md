@@ -4,6 +4,6 @@
 
 下列问问题方法相信可以帮助你~
 
-![Emmylua](https://github.com/hunzsig-warcraft3/h-lua-sdk/raw/gh-pages/img/question1.png)
+![Emmylua](https://gitlab.com/h-document/h-vjass/-/raw/main/images/question1.png)
 
-![Emmylua](https://github.com/hunzsig-warcraft3/h-lua-sdk/raw/gh-pages/img/question2.png)
+![Emmylua](https://gitlab.com/h-document/h-vjass/-/raw/main/images/question2.png)

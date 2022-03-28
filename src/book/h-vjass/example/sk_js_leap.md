@@ -2,7 +2,7 @@
 
 > 冲锋挥砍
 
-```vjass
+```vb
 if(skillid == [SKILL_ID])then
     call SetUnitAnimation( triggerUnit, "attack slam" )
     set loc = hevent.getTargetLoc()

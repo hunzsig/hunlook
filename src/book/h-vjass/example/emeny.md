@@ -6,7 +6,7 @@
 
 ### 设定玩家6-11作为电脑玩家敌人
 
-```vjass
+```object-j
 call henemy.setEnemyName("我是敌人") 
 call henemy.setEnemyPlayer(players[6]) 
 call henemy.setEnemyPlayer(players[7]) 
@@ -20,6 +20,6 @@ call henemy.setEnemyPlayer(players[11])
 
 > 常用于TD
 
-```vjass
+```vb
 call henemy.setIsShareView(true)
 ```

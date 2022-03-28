@@ -16,7 +16,7 @@ h-lua是一套完全开源的魔兽地图SDK，贴近独立程序开发者的使
 
 > <a target="_blank" href="https://github.com/hunzsig-warcraft3/h-lua">h-lua</a>
 
-![Quick1](https://github.com/hunzsig-warcraft3/h-lua/raw/gh-pages/img/quick1.png)
+![Quick1](https://gitlab.com/h-document/h-lua/-/raw/main/images/quick1.png)
 
 ### 克隆（下载）项目
 
@@ -30,13 +30,13 @@ git clone https://github.com/hunzsig-warcraft3/h-lua
 
 #### fork 流程
 
-![Quick2](https://github.com/hunzsig-warcraft3/h-lua/raw/gh-pages/img/quick2.png)
+![Quick2](https://gitlab.com/h-document/h-lua/-/raw/main/images/quick2.png)
 
-![Quick3](https://github.com/hunzsig-warcraft3/h-lua/raw/gh-pages/img/quick3.png)
+![Quick3](https://gitlab.com/h-document/h-lua/-/raw/main/images/quick3.png)
 
-![Quick4](https://github.com/hunzsig-warcraft3/h-lua/raw/gh-pages/img/quick4.png)
+![Quick4](https://gitlab.com/h-document/h-lua/-/raw/main/images/quick4.png)
 
-![Quick5](https://github.com/hunzsig-warcraft3/h-lua/raw/gh-pages/img/quick5.png)
+![Quick5](https://gitlab.com/h-document/h-lua/-/raw/main/images/quick5.png)
 
 ### 代码编辑器
 
@@ -46,7 +46,7 @@ git clone https://github.com/hunzsig-warcraft3/h-lua
 
 > <a target="_blank" href="https://www.jetbrains.com/idea/download/#section=windows">Ideac (Jetbrain)</a>
 
-![Emmylua](https://github.com/hunzsig-warcraft3/h-lua/raw/gh-pages/img/emmylua.png)
+![Emmylua](https://gitlab.com/h-document/h-lua/-/raw/main/images/emmylua.png)
 
 ### 打开代码编辑器，进入项目，使用终端并确保进入工作区
 

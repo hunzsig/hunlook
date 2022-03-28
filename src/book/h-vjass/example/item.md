@@ -4,7 +4,7 @@
 
 > 增加 200 视野
 
-```vjass
+```vb
 set hitembean = hItemBean.create()
 set hitembean.item_id = <INTEGER_ID>
 set hitembean.item_type = HITEM_TYPE_FOREVER
@@ -18,7 +18,7 @@ call hitembean.destroy()
 
 > 增加 10% 黄金获得率（对单位拥有者玩家而言）
 
-```vjass
+```vb
 set hitembean = hItemBean.create()
 set hitembean.item_id = <INTEGER_ID>
 set hitembean.item_type = HITEM_TYPE_FOREVER
@@ -32,7 +32,7 @@ call hitembean.destroy()
 
 > 附加雷攻击/增加20%雷攻击伤害/增加45%攻击速度
 
-```vjass
+```vb
 set hitembean = hItemBean.create()
 set hitembean.item_id = <INTEGER_ID>
 set hitembean.item_type = HITEM_TYPE_FOREVER
@@ -46,7 +46,7 @@ call hitembean.destroy()
 
 ### 瞬逝型物品注册
 
-```vjass
+```vb
 set hitembean = hItemBean.create()
 set hitembean.item_type = HITEM_TYPE_MOMENT
 set hitembean.item_id = <INTEGER_ID>
@@ -58,7 +58,7 @@ call hitem.onMoment(<INTEGER_ID>,function funcCallback)
 
 ### 物品合成
 
-```vjass
+```vb
 // A+B=C
 call hitemMix.newFormula(C,1)
 call hitemMix.addFlag(C,A,1)

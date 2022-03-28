@@ -4,7 +4,7 @@
 
 > 例子：选取存活的我方非建筑英雄
 
-```vjass
+```vb
 local hFilter filter = 0
 set filter = hFilter.create()
 call filter.isHero(true)
@@ -19,7 +19,7 @@ call filter.destroy()
 
 > 例子：选取存活的敌方建筑
 
-```vjass
+```vb
 local hFilter filter = 0
 set filter = hFilter.create()
 call filter.isEnemy(true,whichUnit)

@@ -2,7 +2,7 @@
 
 > 类似无敌斩
 
-```vjass
+```vb
 if(skillid == [SKILL_ID])then
     call SetUnitVertexColorBJ( triggerUnit, 100, 100, 100, 75.00 )
     set bean = hAttrHuntBean.create()

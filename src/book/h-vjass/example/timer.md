@@ -2,7 +2,7 @@
 
 ### 创建 1 个一次性计时器
 
-```vjass
+```vb
 private static method testAction takes nothing returns nothing
     //这是一个5秒后执行一次计时器回调函数
     local timer t = GetExpiredTimer()
@@ -14,7 +14,7 @@ endmethod
 
 ### 创建 1 个循环计时器
 
-```vjass
+```vb
 private static method testAction takes nothing returns nothing
     //这是一个每过1秒执行一次的计时器回调函数
     local timer t = GetExpiredTimer()
@@ -26,7 +26,7 @@ endmethod
 
 ### 计时器回调传参
 
-```vjass
+```vb
 private static function testAction takes nothing returns nothing
     //这是一个每过 2.33 秒执行一次的计时器回调函数
     local timer t = GetExpiredTimer()
