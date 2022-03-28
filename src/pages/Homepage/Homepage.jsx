@@ -13,6 +13,7 @@ class Homepage extends Component {
       p: search.p || 'index',
       n: search.n || undefined,
     }
+    this.summary = require(`./../../book/${History.state.book}/summary.js`).default;
   }
 
   push = () => {
@@ -22,7 +23,7 @@ class Homepage extends Component {
 
   renderSideBar = () => {
     return (
-      History.state.summary.map((val) => {
+      this.summary.map((val) => {
         if (val.hidden === true) {
           return null;
         }
@@ -50,8 +51,8 @@ class Homepage extends Component {
 
   renderTabs = () => {
     let children = undefined;
-    for (let i in History.state.summary) {
-      const v = History.state.summary[i]
+    for (let i in this.summary) {
+      const v = this.summary[i]
       if (v.key === this.state.p) {
         children = v.children;
         break;
@@ -115,8 +116,8 @@ class Homepage extends Component {
               this.state.n = undefined;
               this.setState({p: this.state.p,});
               let children = undefined;
-              for (let i in History.state.summary) {
-                const v = History.state.summary[i]
+              for (let i in this.summary) {
+                const v = this.summary[i]
                 if (v.key === this.state.p) {
                   children = v.children;
                   break;

@@ -1,5 +1,4 @@
 import router from "./router.js";
-import summary from "./summary.js";
 
 /**
  * 这里是h-react.HistoryInitial需要预处理的数据项
@@ -14,5 +13,4 @@ import summary from "./summary.js";
 export default {
   book: "singluar", // 选一本书
   router: router,
-  summary: summary,
 }
