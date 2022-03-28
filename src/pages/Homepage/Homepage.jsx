@@ -10,7 +10,7 @@ class Homepage extends Component {
     const search = Parse.urlSearch();
     this.books = {};
     this.state = {
-      p: search.p || '',
+      p: search.p || 'index',
       n: search.n || undefined,
     }
   }
