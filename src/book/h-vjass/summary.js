@@ -15,7 +15,7 @@ import {
   SmileOutline,
   KoubeiOutline,
   PictureOutline,
-  MinusOutline,
+  FlagOutline,
 } from "antd-mobile-icons";
 
 // only one layout
@@ -30,8 +30,8 @@ export default [
       {icon: <FilterOutline/>, key: 'filter', label: "Filter（单位组）"},
       {icon: <ChatAddOutline/>, key: 'pickHero', label: "常见两种选英雄"},
       {icon: <UserContactOutline/>, key: 'enemy', label: "设定敌人玩家"},
-      {icon: <MinusOutline/>, key: 'sk_js_leap', label: "一刹"},
-      {icon: <MinusOutline/>, key: 'sk_js_slash', label: "无影斩"},
+      {icon: <FlagOutline/>, key: 'sk_js_leap', label: "一刹"},
+      {icon: <FlagOutline/>, key: 'sk_js_slash', label: "无影斩"},
     ]
   },
   {

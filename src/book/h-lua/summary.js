@@ -5,23 +5,13 @@ import {
   UnorderedListOutline,
   BankcardOutline,
   FileOutline,
-  VideoOutline,
   AppOutline,
   AaOutline,
   ExclamationTriangleOutline,
   AntOutline,
-  MessageOutline,
-  EditSOutline,
-  DownlandOutline,
-  AppstoreOutline,
-  SoundOutline,
-  LoopOutline,
-  ClockCircleOutline,
   HandPayCircleOutline,
   QuestionCircleOutline,
   GiftOutline,
-  BellOutline,
-  BillOutline,
   CollectMoneyOutline,
   SetOutline,
   SmileOutline,
@@ -29,8 +19,12 @@ import {
   KoubeiOutline,
   PictureOutline,
   ExclamationShieldOutline,
-  ShrinkOutline,
+  LoopOutline,
   TransportQRcodeOutline,
+  GlobalOutline,
+  EnvironmentOutline,
+  FingerdownOutline,
+  PlayOutline,
 } from "antd-mobile-icons";
 
 // only one layout
@@ -39,29 +33,34 @@ export default [
   {icon: <UnorderedListOutline/>, key: 'struct', label: "项目结构"},
   {icon: <BankcardOutline/>, key: 'cmd', label: "命令工具"},
   {icon: <FileOutline/>, key: 'update', label: "更新日志"},
-  {icon: <VideoOutline/>, key: 'video', label: "视频演示"},
+  {
+    icon: <GlobalOutline/>, key: 'slk', label: "SLK", children: [
+      {icon: <EnvironmentOutline/>, key: 'hslk1', label: "入门"},
+      {icon: <EnvironmentOutline/>, key: 'hslk2', label: "进阶"},
+      {icon: <FileOutline/>, key: 'f6', label: "原生物编字段"},
+      {icon: <FileOutline/>, key: 'misc', label: "MISC数据"},
+      {icon: <FileOutline/>, key: 'excel', label: "Excel"},
+    ]
+  },
   {
     icon: <AppOutline/>, key: 'lib', label: "功能库", children: [
-      {icon: <AaOutline/>, key: 'assets', label: "资产"},
+      {icon: <AaOutline/>, key: 'api', label: "API"},
       {icon: <ExclamationTriangleOutline/>, key: 'bj', label: "BJ"},
       {icon: <ExclamationTriangleOutline/>, key: 'cj', label: "CJ"},
-      {icon: <AntOutline/>, key: 'colour', label: "文本颜色"},
-      {icon: <MessageOutline/>, key: 'description', label: "描述体"},
       {icon: <ExclamationTriangleOutline/>, key: 'japi', label: "JAPI"},
-      {icon: <EditSOutline/>, key: 'modify', label: "修改器"},
-      {icon: <DownlandOutline/>, key: 'process', label: "流程"},
-      {icon: <AppstoreOutline/>, key: 'object', label: "对象"},
-      {icon: <SoundOutline/>, key: 'sound', label: "声效"},
+      {icon: <KoubeiOutline/>, key: 'attr', label: "属性"},
       {icon: <LoopOutline/>, key: 'sync', label: "同步"},
-      {icon: <ClockCircleOutline/>, key: 'timer', label: "计时器"},
+      {icon: <AntOutline/>, key: 'colour', label: "文本颜色"},
     ]
   },
   {
     icon: <HandPayCircleOutline/>, key: 'example', label: "例子", children: [
-      {icon: <GiftOutline/>, key: 'setup', label: "预设值参考"},
-      {icon: <BellOutline/>, key: 'eventReaction', label: "事件反应"},
-      {icon: <BillOutline/>, key: 'tpl', label: "TPL模版"},
+      {icon: <GiftOutline/>, key: 'attr', label: "自定义Attr属性"},
+      {icon: <CollectMoneyOutline/>, key: 'leaderBoard', label: "使用排行榜"},
+      {icon: <CollectMoneyOutline/>, key: 'multiBoard', label: "使用多面板"},
       {icon: <CollectMoneyOutline/>, key: 'dialog', label: "难度选择对话框"},
+      {icon: <FingerdownOutline/>, key: 'pickHero', label: "常见两种选英雄"},
+      {icon: <PlayOutline/>, key: 'attack', label: "简单刷兵"},
     ]
   },
   {
@@ -72,10 +71,8 @@ export default [
       {icon: <KoubeiOutline/>, key: 'war3_tec', label: "魔兽作图小技巧"},
       {icon: <PictureOutline/>, key: 'war3_terrainArt', label: "魔兽地形贴图路径"},
       {icon: <ExclamationShieldOutline/>, key: 'war3_crash', label: "魔兽常见崩溃原因"},
-      {icon: <ShrinkOutline/>, key: 'war3_func', label: "魔兽函数异同特征"},
       {icon: <TransportQRcodeOutline/>, key: 'lua_engine', label: "YDLua引擎"},
       {icon: <BankcardOutline/>, key: 'ui_fdf', label: "FDF"},
-      {icon: <FileOutline/>, key: 'excel', label: "Excel"},
     ]
   },
 ]
