@@ -69,16 +69,16 @@ class Homepage extends Component {
           return (
             <Tabs.Tab
               disabled={true}
-              title={val.label}
               key={val.key}
+              title={<span>{val.icon !== undefined ? val.icon : ''}&ensp;{val.label}</span>}
             />
           );
         }
         if (typeof val.key === 'string') {
           return (
             <Tabs.Tab
-              title={val.label}
               key={val.key}
+              title={<span>{val.icon !== undefined ? val.icon : ''}&ensp;{val.label}</span>}
             />
           )
         }

@@ -17,93 +17,21 @@ import {
   SoundOutline,
   LoopOutline,
   ClockCircleOutline,
+  HandPayCircleOutline,
+  QuestionCircleOutline,
+  GiftOutline,
+  BellOutline,
+  BillOutline,
+  CollectMoneyOutline,
+  SetOutline,
+  SmileOutline,
+  LocationOutline,
+  KoubeiOutline,
+  PictureOutline,
+  ExclamationShieldOutline,
+  ShrinkOutline,
+  TransportQRcodeOutline,
 } from "antd-mobile-icons";
-
-const SUMMARY = [
-  {
-    name: "例子",
-    icon: "BuildOutlined",
-    children: [
-      {
-        name: "预设值参考",
-        icon: "UngroupOutlined",
-        path: "<HOST>/docs/example/setup",
-      },
-      {
-        name: "事件反应",
-        icon: "AlertOutlined",
-        path: "<HOST>/docs/example/eventReaction",
-      },
-      {
-        name: "TPL 模版",
-        icon: "CopyOutlined",
-        path: "<HOST>/docs/example/tpl",
-      },
-      {
-        name: "难度选择对话框",
-        icon: "UngroupOutlined",
-        path: "<HOST>/docs/example/dialog",
-      },
-    ],
-  },
-  {
-    name: "其他学习",
-    icon: "QuestionCircleOutlined",
-    children: [
-      {
-        name: "Jetbrain设置",
-        icon: "StarOutlined",
-        path: "<HOST>/docs/other/jetbrain",
-      },
-      {
-        name: "询问的技巧",
-        icon: "MessageOutlined",
-        path: "<HOST>/docs/other/q_a",
-      },
-      {
-        name: "平台上线须知",
-        icon: "CloudUploadOutlined",
-        path: "<HOST>/docs/other/dz",
-      },
-      {
-        name: "魔兽作图小技巧",
-        icon: "BgColorsOutlined",
-        path: "<HOST>/docs/other/war3_tec",
-      },
-      {
-        name: "魔兽地形贴图路径",
-        icon: "FundOutlined",
-        path: "<HOST>/docs/other/war3_terrainArt",
-      },
-      {
-        name: "魔兽常见崩溃原因",
-        icon: "BugOutlined",
-        path: "<HOST>/docs/other/war3_crash",
-      },
-      {
-        name: "魔兽函数异同特征",
-        icon: "AliyunOutlined",
-        path: "<HOST>/docs/other/war3_func",
-      },
-      {
-        name: "YDLua引擎",
-        icon: "DashboardOutlined",
-        path: "<HOST>/docs/other/lua_engine",
-      },
-      {
-        name: "UI & FDF",
-        icon: "HighlightOutlined",
-        path: "<HOST>/docs/other/ui_fdf",
-      },
-      {
-        name: "Excel",
-        icon: "FileExcelOutlined",
-        path: "<HOST>/docs/other/excel",
-      },
-    ],
-  },
-];
-
 
 // only one layout
 export default [
@@ -126,6 +54,28 @@ export default [
       {icon: <SoundOutline/>, key: 'sound', label: "声效"},
       {icon: <LoopOutline/>, key: 'sync', label: "同步"},
       {icon: <ClockCircleOutline/>, key: 'timer', label: "计时器"},
+    ]
+  },
+  {
+    icon: <HandPayCircleOutline/>, key: 'example', label: "例子", children: [
+      {icon: <GiftOutline/>, key: 'setup', label: "预设值参考"},
+      {icon: <BellOutline/>, key: 'eventReaction', label: "事件反应"},
+      {icon: <BillOutline/>, key: 'tpl', label: "TPL模版"},
+      {icon: <CollectMoneyOutline/>, key: 'dialog', label: "难度选择对话框"},
+    ]
+  },
+  {
+    icon: <QuestionCircleOutline/>, key: 'other', label: "其他学习", children: [
+      {icon: <SetOutline/>, key: 'jetbrain', label: "Jetbrain设置"},
+      {icon: <SmileOutline/>, key: 'q_a', label: "询问的技巧"},
+      {icon: <LocationOutline/>, key: 'dz', label: "平台上线须知"},
+      {icon: <KoubeiOutline/>, key: 'war3_tec', label: "魔兽作图小技巧"},
+      {icon: <PictureOutline/>, key: 'war3_terrainArt', label: "魔兽地形贴图路径"},
+      {icon: <ExclamationShieldOutline/>, key: 'war3_crash', label: "魔兽常见崩溃原因"},
+      {icon: <ShrinkOutline/>, key: 'war3_func', label: "魔兽函数异同特征"},
+      {icon: <TransportQRcodeOutline/>, key: 'lua_engine', label: "YDLua引擎"},
+      {icon: <BankcardOutline/>, key: 'ui_fdf', label: "FDF"},
+      {icon: <FileOutline/>, key: 'excel', label: "Excel"},
     ]
   },
 ]
