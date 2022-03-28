@@ -6,7 +6,7 @@
 
 ### 设定玩家6-11作为电脑玩家敌人
 
-```object-j
+```vb
 call henemy.setEnemyName("我是敌人") 
 call henemy.setEnemyPlayer(players[6]) 
 call henemy.setEnemyPlayer(players[7]) 
