@@ -27,8 +27,8 @@ class Initial extends Component {
       currentUrl: this.location.url,
       subPages: [],
       tabsActiveKey: '',
-      catalog: this.props.catalog,
-      guidance: this.props.guidance,
+      catalog: this.props.catalog || [],
+      guidance: this.props.guidance || [],
     }
 
     // setting

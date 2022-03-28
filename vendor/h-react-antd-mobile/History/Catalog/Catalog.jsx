@@ -44,7 +44,7 @@ class Catalog extends Component {
 
   render() {
 
-    if (History.state.catalog === false) {
+    if (Array.isArray(History.state.catalog) === false || History.state.catalog.length <= 0) {
       return null;
     }
     return (
