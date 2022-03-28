@@ -12,6 +12,7 @@ export default [
   {
     icon: <AaOutline/>, key: 'abc', label: "ABC", children: [
       {icon: <ContentOutline/>, key: 'tyh', label: "abc2"},
+      {icon: <ContentOutline/>, key: 'tyh2', label: "abc2"},
     ]
   },
 ]
