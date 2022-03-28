@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+* {
+  font-family: 'PingFang SC', 'Microsoft Yahei';
+}
+
+::-webkit-scrollbar {
+  width: 0 !important
+}
+
 .page-homepage {
   width: 100%;
   height: 100%;
@@ -9,7 +17,7 @@
 
   .sidebar {
     width: 25%;
-    max-width: 160px;
+    max-width: 150px;
 
     .adm-side-bar {
       width: 100%;
@@ -22,10 +30,8 @@
     display: flex;
     flex-direction: column;
 
-    .page {
-      flex: 1;
-      overflow: auto;
-      padding: 2% 3% 200px 3%;
+    .adm-tabs {
+      width: 90%;
     }
   }
 

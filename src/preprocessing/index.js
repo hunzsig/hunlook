@@ -12,6 +12,7 @@ import summary from "./summary.js";
  * setting可以设 function _promise() { return new Promise... } 或值
  */
 export default {
+  book: "singluar", // 选一本书
   router: router,
   summary: summary,
 }

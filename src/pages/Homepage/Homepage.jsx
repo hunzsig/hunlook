@@ -13,7 +13,6 @@ class Homepage extends Component {
       p: search.p || '',
       n: search.n || undefined,
     }
-    console.log(this.state.p);
   }
 
   push = () => {
@@ -93,7 +92,7 @@ class Homepage extends Component {
     k += this.state.n ? `/${this.state.n}` : ''
     if (this.books[k] === undefined) {
       try {
-        this.books[k] = require("./../../../public/book/" + k + '.md');
+        this.books[k] = require(`./../../book/${History.state.book}/${k}.md`);
       } catch (error) {
         Toast.show({
           icon: 'fail',
@@ -134,23 +133,23 @@ class Homepage extends Component {
           </SideBar>
         </div>
         <div className="books">
-          <Tabs
-            stretch={false}
-            activeLineMode="auto"
-            activeKey={this.state.n}
-            onChange={(key) => {
-              this.state.n = key;
-              this.setState({
-                n: key,
-              })
-              this.push()
-            }}
-          >
-            {this.renderTabs()}
-          </Tabs>
-          <div className="page">
-            <Book path={this.book()}/>
+          <div className="tabs">
+            <Tabs
+              stretch={false}
+              activeLineMode="auto"
+              activeKey={this.state.n}
+              onChange={(key) => {
+                this.state.n = key;
+                this.setState({
+                  n: key,
+                })
+                this.push()
+              }}
+            >
+              {this.renderTabs()}
+            </Tabs>
           </div>
+          <Book path={this.book()}/>
         </div>
       </div>
     );

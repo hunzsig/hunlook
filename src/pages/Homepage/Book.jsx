@@ -24,7 +24,7 @@ class Book extends Component {
 
   render() {
     return (
-      <div dangerouslySetInnerHTML={{__html: this.props.path}}/>
+      <div className="page" dangerouslySetInnerHTML={{__html: this.props.path}}/>
     );
   }
 }
