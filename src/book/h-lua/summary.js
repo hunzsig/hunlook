@@ -50,7 +50,7 @@ export default [
       {icon: <ExclamationTriangleOutline/>, key: 'japi', label: "JAPI"},
       {icon: <KoubeiOutline/>, key: 'attr', label: "属性"},
       {icon: <LoopOutline/>, key: 'sync', label: "同步"},
-      {icon: <AntOutline/>, key: 'colour', label: "文本颜色"},
+      {icon: <AntOutline/>, key: 'color', label: "文本颜色"},
     ]
   },
   {
