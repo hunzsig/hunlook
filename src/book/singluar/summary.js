@@ -59,6 +59,8 @@ export default [
   {
     icon: <HandPayCircleOutline/>, key: 'example', label: "例子", children: [
       {icon: <GiftOutline/>, key: 'setup', label: "预设值参考"},
+      {icon: <GiftOutline/>, key: 'attributeDamage', label: "预设伤害"},
+      {icon: <GiftOutline/>, key: 'attributeEnchant', label: "预设附魔"},
       {icon: <BellOutline/>, key: 'eventReaction', label: "事件反应"},
       {icon: <BillOutline/>, key: 'tpl', label: "TPL模版"},
       {icon: <CollectMoneyOutline/>, key: 'dialog', label: "难度选择对话框"},
