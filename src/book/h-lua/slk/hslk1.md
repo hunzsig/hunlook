@@ -124,7 +124,6 @@ hslk_unit({
 ### 自定义物编ID
 
 ```lua
-hslk_unit({
-  _id_force = "U001"
-})
+hslk_unit({_id_force = "V001"}) -- 大写转英雄
+hslk_unit({_id_force = "v001"}) -- 小写转一般
 ```

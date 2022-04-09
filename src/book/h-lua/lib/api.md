@@ -858,17 +858,6 @@ hjapi.MouseRY()
 hjapi.InWindow(rx, ry)
 hjapi.InWindowMouse()
 ```
-* [L]**lib\leaderBoard.lua**
-```
-hleaderBoard.LeaderboardResize(whichLeaderBoard)
-hleaderBoard.create(key, title, refreshFrequency, response)
-hleaderBoard.show(key)
-hleaderBoard.hide()
-hleaderBoard.setTitle(key, title)
-hleaderBoard.pos(key, n)
-hleaderBoard.top(key)
-hleaderBoard.bottom(key)
-```
 * [L]**lib\lightning.lua**
 ```
 hlightning.del(lightning, delay)
@@ -883,11 +872,6 @@ hmonitor.destroy(key)
 hmonitor.isListening(key, obj)
 hmonitor.listen(key, obj)
 hmonitor.ignore(key, obj)
-```
-* [L]**lib\multiBoard.lua**
-```
-hmultiBoard.create(key, refreshFrequency, yourData)
-hmultiBoard.setTitle(whichBoard, title)
 ```
 * [L]**lib\player.lua**
 ```
