@@ -1,4 +1,4 @@
-### 预设伤害
+### 预设伤害流
 
 > 用于插入伤害流程的设定
 >
@@ -6,13 +6,13 @@
 
 ```lua
 --- 提取一些需要的参数
-attribute.damaging("prop", function(options)
+damaging.defined("prop", function(options)
     options.defend = options.targetUnit.defend()
     options.avoid = options.targetUnit.avoid() - options.sourceUnit.aim()
 end)
 
 --- 判断无视装甲类型
-attribute.damaging("breakArmor", function(options)
+damaging.defined("breakArmor", function(options)
     local ignore = { defend = false, avoid = false, invincible = false }
     if (#options.breakArmor > 0) then
         for _, b in ipairs(options.breakArmor) do
@@ -45,7 +45,7 @@ attribute.damaging("breakArmor", function(options)
 end)
 
 --- 自身攻击暴击
-attribute.damaging("crit", function(options)
+damaging.defined("crit", function(options)
     local approve = (options.sourceUnit ~= nil and (options.damageSrc == DAMAGE_SRC.attack or options.damageSrc == DAMAGE_SRC.ability))
     if (approve) then
         local crit = options.sourceUnit.crit()
@@ -63,7 +63,7 @@ attribute.damaging("crit", function(options)
 end)
 
 --- 回避
-attribute.damaging("avoid", function(options)
+damaging.defined("avoid", function(options)
     local approve = (options.avoid > 0 and (options.damageSrc == DAMAGE_SRC.attack or options.damageSrc == DAMAGE_SRC.rebound))
     if (approve) then
         if (options.avoid > math.rand(1, 100)) then
@@ -77,7 +77,7 @@ attribute.damaging("avoid", function(options)
 end)
 
 --- 伤害加深(%)
-attribute.damaging("damageIncrease", function(options)
+damaging.defined("damageIncrease", function(options)
     local approve = (options.sourceUnit ~= nil)
     if (approve) then
         local damageIncrease = options.sourceUnit.damageIncrease()
@@ -88,7 +88,7 @@ attribute.damaging("damageIncrease", function(options)
 end)
 
 --- 受伤加深(%)
-attribute.damaging("hurtIncrease", function(options)
+damaging.defined("hurtIncrease", function(options)
     local hurtIncrease = options.targetUnit.hurtIncrease()
     if (hurtIncrease > 0) then
         options.damage = options.damage * (1 + hurtIncrease * 0.01)
@@ -96,7 +96,7 @@ attribute.damaging("hurtIncrease", function(options)
 end)
 
 --- 反伤(%)
-attribute.damaging("hurtRebound", function(options)
+damaging.defined("hurtRebound", function(options)
     -- 抵抗
     local approve = (options.sourceUnit ~= nil and options.damageSrc == DAMAGE_SRC.rebound)
     if (approve) then
@@ -166,7 +166,7 @@ attribute.damaging("hurtRebound", function(options)
 end)
 
 --- 防御
-attribute.damaging("defend", function(options)
+damaging.defined("defend", function(options)
     if (options.defend < 0) then
         options.damage = options.damage + math.abs(options.defend)
     elseif (options.defend > 0) then
@@ -181,7 +181,7 @@ attribute.damaging("defend", function(options)
 end)
 
 --- 减伤(%)
-attribute.damaging("hurtReduction", function(options)
+damaging.defined("hurtReduction", function(options)
     local hurtReduction = options.targetUnit.hurtReduction()
     if (hurtReduction > 0) then
         options.damage = options.damage * (1 - hurtReduction * 0.01)
@@ -195,7 +195,7 @@ attribute.damaging("hurtReduction", function(options)
 end)
 
 --- 攻击吸血
-attribute.damaging("hpSuckAttack", function(options)
+damaging.defined("hpSuckAttack", function(options)
     local approve = (options.sourceUnit ~= nil and options.damageSrc == DAMAGE_SRC.attack)
     if (approve) then
         local percent = options.sourceUnit.hpSuckAttack() - options.targetUnit.resistance("hpSuckAttack")
@@ -210,7 +210,7 @@ attribute.damaging("hpSuckAttack", function(options)
 end)
 
 --- 技能吸血
-attribute.damaging("hpSuckAbility", function(options)
+damaging.defined("hpSuckAbility", function(options)
     local approve = (options.sourceUnit ~= nil and options.damageSrc == DAMAGE_SRC.ability)
     if (approve) then
         local percent = options.sourceUnit.hpSuckAbility() - options.targetUnit.resistance("hpSuckAbility")
@@ -225,8 +225,8 @@ attribute.damaging("hpSuckAbility", function(options)
 end)
 
 --- 攻击吸魔;吸魔会根据伤害，扣减目标的魔法值，再据百分比增加自己的魔法值;目标魔法值不足 1 从而吸收时，则无法吸取
-attribute.damaging("mpSuckAttack", function(options)
-    local approve = (options.sourceUnit ~= nil and options.damageSrc == DAMAGE_SRC.attack and options.sourceUnit:mp() > 0 and options.targetUnit:mpCur() > 0)
+damaging.defined("mpSuckAttack", function(options)
+    local approve = (options.sourceUnit ~= nil and options.damageSrc == DAMAGE_SRC.attack and options.sourceUnit.mp() > 0 and options.targetUnit.mpCur() > 0)
     if (approve) then
         local percent = options.sourceUnit.mpSuckAttack() - options.targetUnit.resistance("mpSuckAttack")
         if (percent > 0) then
@@ -244,7 +244,7 @@ attribute.damaging("mpSuckAttack", function(options)
 end)
 
 --- 技能吸魔;吸魔会根据伤害，扣减目标的魔法值，再据百分比增加自己的魔法值;目标魔法值不足 1 从而吸收时，则无法吸取
-attribute.damaging("mpSuckAbility", function(options)
+damaging.defined("mpSuckAbility", function(options)
     local approve = (options.sourceUnit ~= nil and options.damageSrc == DAMAGE_SRC.ability and options.sourceUnit.mp() > 0 and options.targetUnit.mpCur() > 0)
     if (approve) then
         local percent = options.sourceUnit.mpSuckAbility() - options.targetUnit.resistance("mpSuckAbility")
@@ -263,7 +263,7 @@ attribute.damaging("mpSuckAbility", function(options)
 end)
 
 --- 硬直
-attribute.damaging("punishCur", function(options)
+damaging.defined("punishCur", function(options)
     local approve = (options.targetUnit.punish() > 0 and options.targetUnit.isPunishing() == false)
     if (approve) then
         options.targetUnit.punishCur("-=" .. options.damage)
@@ -271,14 +271,14 @@ attribute.damaging("punishCur", function(options)
 end)
 
 --- 伤害类型占比处理
-attribute.damaging("enchant", function(options)
+damaging.defined("enchant", function(options)
     options.damageTypeRatio = {}
     options.enchantType = {}
     local damageTypeOcc = 0
     local ratio = {}
     if (options.damageSrc == DAMAGE_SRC.attack and options.sourceUnit ~= nil) then
         -- 附加攻击形态的伤害类型
-        attribute.conf("enchant").forEach(function(ek, _)
+        enchant.types.forEach(function(ek, _)
             local ew = options.sourceUnit.enchantWeapon(ek)
             if (ew > 0) then
                 damageTypeOcc = damageTypeOcc + ew
@@ -315,7 +315,7 @@ attribute.damaging("enchant", function(options)
 end)
 
 -- 附魔类型(加成|抵抗|上身)
-attribute.damaging("enchantAppend", function(options)
+damaging.defined("enchantAppend", function(options)
     for _, et in ipairs(options.enchantType) do
         local addition = 0
         if (options.sourceUnit ~= nil) then
@@ -338,7 +338,7 @@ attribute.damaging("enchantAppend", function(options)
         options.damage = options.damage + d
     end
     if (#options.enchantType > 0) then
-        attribute.enchantAppend(options.targetUnit, options.sourceUnit, options.enchantType)
+        enchant.append(options.targetUnit, options.sourceUnit, options.enchantType)
     end
 end)
 ```

@@ -57,6 +57,14 @@
 > sl.exe run demo -r //构建上线地图并测试
 ```
 
+> 在模式后添加~符号，可以跳过资源变更，特别适用于纯代码改动时的测试
+```
+> sl.exe run demo -h~
+> sl.exe run demo -b~
+> sl.exe run demo -d~
+> sl.exe run demo -r~
+```
+
 ### 同时开启N个魔兽客户端（支持JAPI）
 
 > 默认打开2个，最多一次性打开9个(并不建议，单人4个足矣)
