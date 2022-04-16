@@ -12,5 +12,6 @@ import router from "./router.js";
  */
 export default {
   book: "singluar", // 选一本书
+  title: undefined, // title 标题，默认 <book>技术文档 · 魂书
   router: router,
 }

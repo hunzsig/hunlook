@@ -13,10 +13,8 @@
 ### 克隆（下载）项目
 
 ```
-git clone https://github.com/hunzsig-warcraft3/h-vjass
+git clone https://github.com/h-vjass/h-vjass
 ```
-
-> <a target="_blank" href="https://gitee.com/hunzsig/h-vjass">可使用码云加速：(Gitee -> h-vjass)</a>
 
 ### 使用WE新建一个你的地图
 
@@ -81,4 +79,4 @@ war3mapskin.txt -> war3mapskin.txt
 
 > 拓展地图会编写一些业务，来引导你进行学习
 
-* <a target="_blank" href="https://github.com/hunzsig-warcraft3/w3x-hyper-space-td">时空之轮TD（官方对战平台已上）</a>
+* <a target="_blank" href="https://github.com/h-vjass/hyper-space-td">时空之轮TD</a>
