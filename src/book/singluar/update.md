@@ -8,7 +8,7 @@
 * 新的datum库
 * 新的math库函数cale
 * 新的table库函数rand
-* 新的prop底层活力，支持全面浮动性数据流动赋能
+* 新的prop底层活力，支持全面解离数据流
 * 新的Buff捕获器
 * 优化run缓存命令
 * 优化Item等级与Ability等级的绑定机制

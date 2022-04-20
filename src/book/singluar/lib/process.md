@@ -19,7 +19,7 @@
 
 ```lua
 local process = Process("start")
-process.onSetup(function(this)
+process.onStart(function(this)
     -- 调试自动去除迷雾
     Game().fog(not DEBUGGING).mark(not DEBUGGING)
 end)
@@ -31,7 +31,7 @@ end)
 -- 以名定义流程 start 将会游戏启动时自动运行
 local process = Process("start")
 -- 流程主体
-process.onSetup(function(this)
+process.onStart(function(this)
     -- 调试自动去除迷雾
     Game().fog(not DEBUGGING).mark(not DEBUGGING)
     -- 使用next然后就可以跳去下一个流程了，这里跳去test流程了
@@ -53,7 +53,7 @@ end)
 
 ```lua
 local process = Process("test")
-process.onSetup(function(this)
+process.onStart(function(this)
     echo("singluar无敌")
 end)
 ```
@@ -71,13 +71,13 @@ end)
 ```lua
 local process = Process("bossComing")
 process
-    .onSetup(function(this)
+    .onStart(function(this)
         -- 创建一个BOSS
         local boss = TPL_UNIT.BOSS.create(Player(12), 0, 0, 0)
         -- 注册进stage
         this.stage("boss", boss)
     end)
-    .onDestroy(function(this)
+    .onOver(function(this)
         -- 干掉boss
         this.stage("boss").destroy()
     end)

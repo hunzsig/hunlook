@@ -77,12 +77,9 @@ cd ./h-lua
 > 拓展地图会编写一些业务，来引导你进行学习
 
 * <a target="_blank" href="https://github.com/h-lua/demo">demo库</a>
-* <a target="_blank" href="https://github.com/h-lua/demo/tree/main/%E5%9C%B0%E5%9B%BE%E9%A1%B9%E7%9B%AE/h-lua-sdk-helloworld">
-  helloWorld</a>
-* <a target="_blank" href="https://github.com/h-lua/demo/tree/main/%E5%9C%B0%E5%9B%BE%E9%A1%B9%E7%9B%AE/h-lua-sdk-crash">
-  压力测试</a>
-* <a target="_blank" href="https://github.com/h-lua/demo/tree/main/%E5%9C%B0%E5%9B%BE%E9%A1%B9%E7%9B%AE/h-lua-sdk-mysterious-land">
-  秘地探奇半成品</a>
+* <a target="_blank" href="https://github.com/h-lua/demo/helloworld">helloWorld</a>
+* <a target="_blank" href="https://github.com/h-lua/demo/crash">压力测试</a>
+* <a target="_blank" href="https://github.com/h-lua/demo/mysterious-land">秘地探奇废弃图</a>
 
 ### 完全沒试过lua作图怎么快速学习？
 
