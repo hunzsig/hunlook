@@ -25,6 +25,7 @@ import {
   MessageOutline,
   PictureOutline,
   QuestionCircleOutline,
+  ScanningFaceOutline,
   SetOutline,
   ShrinkOutline,
   SmileOutline,
@@ -55,6 +56,7 @@ export default [
       {icon: <AppstoreOutline/>, key: 'object', label: "对象"},
       {icon: <SoundOutline/>, key: 'sound', label: "声效"},
       {icon: <LoopOutline/>, key: 'sync', label: "同步"},
+      {icon: <ShrinkOutline/>, key: 'async', label: "异步"},
       {icon: <ClockCircleOutline/>, key: 'timer', label: "计时器"},
     ]
   },
@@ -76,10 +78,9 @@ export default [
       {icon: <KoubeiOutline/>, key: 'war3_tec', label: "魔兽作图小技巧"},
       {icon: <PictureOutline/>, key: 'war3_terrainArt', label: "魔兽地形贴图路径"},
       {icon: <ExclamationShieldOutline/>, key: 'war3_crash', label: "魔兽常见崩溃原因"},
-      {icon: <ShrinkOutline/>, key: 'war3_func', label: "魔兽函数异同特征"},
+      {icon: <ScanningFaceOutline/>, key: 'war3_func', label: "魔兽函数异同特征"},
       {icon: <TransportQRcodeOutline/>, key: 'lua_engine', label: "YDLua引擎"},
       {icon: <BankcardOutline/>, key: 'ui_fdf', label: "FDF"},
-      {icon: <FileOutline/>, key: 'excel', label: "Excel"},
     ]
   },
 ]

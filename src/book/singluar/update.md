@@ -12,6 +12,7 @@
 * 新的Buff捕获器
 * 优化run缓存命令
 * 优化Item等级与Ability等级的绑定机制
+* 优化流程过渡机制
 * 修复工具在特定情况出错的bug
 * 修复Player.alert bug
 * 修复FrameLabel adaptive 辨识错误的问题

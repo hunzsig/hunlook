@@ -37,7 +37,7 @@ Game().warehouseSlot("*=3")
 Game().warehouseSlot("/=2")
 ```
 
-### 对象连贯操作
+### 连贯操作
 
 * 大部分对象的方法，都会返回this，即对象本身，从而可实现连贯操作
 

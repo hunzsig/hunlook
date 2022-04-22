@@ -54,3 +54,11 @@ Dialog(
     end
 ).show(Player(1))
 ```
+
+预定义对话框，后续可根据title取回同一个对象
+
+> 如上面的对话框，没有destroy前都可以重新取回数据
+
+```lua
+Dialog("选择难度")
+```
