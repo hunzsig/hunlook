@@ -61,6 +61,7 @@ class Homepage extends Component {
     if (children === undefined) {
       return null;
     }
+    console.log(children);
     return (
       children.map((val) => {
         if (val.hidden === true) {

@@ -2,7 +2,7 @@
 
 > 由于框架自带极其有用的热加载 hotLoader
 >
-> 在 hot 的加持下，Process模块诞生并极其强力
+> 在 hot 的加持下，Process的效能变得极其有力
 >
 > 你可以使用 Process 编写某一段的游戏流程，随时回滚测试，跳跃测试
 
@@ -25,7 +25,7 @@ process.onStart(function(this)
 end)
 ```
 
-### 使用 next方法 在流程间跳跃
+### 使用 next方法，跳到下一个流程
 
 ```lua
 -- 以名定义流程 start 将会游戏启动时自动运行
@@ -49,7 +49,7 @@ end)
             └── test.lua -- test流程
 ```
 
-这个 test.lua 里面打印一句话
+这个 test.lua 里面回响一句话
 
 ```lua
 local process = Process("test")
@@ -64,7 +64,7 @@ end)
 >
 > 但例如有个流程叫bossComing，它创建了一个boss攻击玩家
 >
-> 你可以把它注册到stage里，然后写一个毁灭回调
+> 你可以把它绑定到stage里，然后在结束回调时，令它删除
 >
 > 这样这个boss就会在流程跳跃或重置时，自动消灭
 

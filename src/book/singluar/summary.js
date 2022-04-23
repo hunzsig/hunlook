@@ -11,7 +11,6 @@ import {
   ClockCircleOutline,
   CollectMoneyOutline,
   ContentOutline,
-  DownlandOutline,
   EditSOutline,
   ExclamationShieldOutline,
   ExclamationTriangleOutline,
@@ -33,6 +32,7 @@ import {
   TransportQRcodeOutline,
   UnorderedListOutline,
   VideoOutline,
+  PicturesOutline,
 } from "antd-mobile-icons";
 
 // only one layout
@@ -44,20 +44,25 @@ export default [
   {icon: <FileWrongOutline/>, key: 'print', label: "调试打印"},
   {icon: <VideoOutline/>, key: 'video', label: "视频演示"},
   {
-    icon: <AppOutline/>, key: 'lib', label: "功能库", children: [
+    icon: <AppstoreOutline/>, key: 'foundation', label: "基本库", children: [
       {icon: <AaOutline/>, key: 'assets', label: "资产"},
       {icon: <ExclamationTriangleOutline/>, key: 'bj', label: "BJ"},
       {icon: <ExclamationTriangleOutline/>, key: 'cj', label: "CJ"},
       {icon: <AntOutline/>, key: 'colour', label: "文本颜色"},
-      {icon: <MessageOutline/>, key: 'description', label: "描述体"},
       {icon: <ExclamationTriangleOutline/>, key: 'japi', label: "JAPI"},
-      {icon: <EditSOutline/>, key: 'modify', label: "修改器"},
-      {icon: <DownlandOutline/>, key: 'process', label: "流程"},
       {icon: <AppstoreOutline/>, key: 'object', label: "对象"},
-      {icon: <SoundOutline/>, key: 'sound', label: "声效"},
+      {icon: <EditSOutline/>, key: 'modify', label: "修改器"},
       {icon: <LoopOutline/>, key: 'sync', label: "同步"},
       {icon: <ShrinkOutline/>, key: 'async', label: "异步"},
+    ]
+  },
+  {
+    icon: <AppOutline/>, key: 'library', label: "功能库", children: [
+      {icon: <MessageOutline/>, key: 'description', label: "描述体"},
+      {icon: <AppstoreOutline/>, key: 'object', label: "对象"},
+      {icon: <SoundOutline/>, key: 'sound', label: "声效"},
       {icon: <ClockCircleOutline/>, key: 'timer', label: "计时器"},
+      {icon: <BillOutline/>, key: 'worth', label: "层级资源"},
     ]
   },
   {
@@ -66,7 +71,7 @@ export default [
       {icon: <GiftOutline/>, key: 'damaging', label: "预设伤害流"},
       {icon: <GiftOutline/>, key: 'enchant', label: "预设附魔"},
       {icon: <BellOutline/>, key: 'eventReaction', label: "事件反应"},
-      {icon: <BillOutline/>, key: 'tpl', label: "TPL模版"},
+      {icon: <PicturesOutline/>, key: 'tpl', label: "TPL模版"},
       {icon: <CollectMoneyOutline/>, key: 'dialog', label: "难度选择对话框"},
     ]
   },
