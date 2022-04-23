@@ -10,6 +10,7 @@
 * 新的table库函数rand
 * 新的prop底层活力，支持全面解离数据流
 * 新的Buff捕获器
+* 新的Worth计算
 * 优化run缓存命令
 * 优化Item等级与Ability等级的绑定机制
 * 优化流程过渡机制
