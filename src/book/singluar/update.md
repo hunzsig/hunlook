@@ -1,5 +1,9 @@
 ## 更新日志
 
+> 2022/05
+
+* Attribute增加cost、castChant、coolDown、coolDownSec
+
 > 2022/04
 
 * 新的附魔分离执行
