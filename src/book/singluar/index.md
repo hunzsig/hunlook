@@ -33,5 +33,5 @@ cd ./singluar
 ### 测试
 
 ```
-> sl.exe test demo
+> sl.exe run demo -h
 ```
