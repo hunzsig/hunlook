@@ -33,6 +33,7 @@ import {
   UnorderedListOutline,
   VideoOutline,
   PicturesOutline,
+  PlayOutline,
 } from "antd-mobile-icons";
 
 // only one layout
@@ -59,7 +60,7 @@ export default [
   {
     icon: <AppOutline/>, key: 'library', label: "功能库", children: [
       {icon: <MessageOutline/>, key: 'description', label: "描述体"},
-      {icon: <AppstoreOutline/>, key: 'object', label: "对象"},
+      {icon: <PlayOutline/>, key: 'process', label: "流程"},
       {icon: <SoundOutline/>, key: 'sound', label: "声效"},
       {icon: <ClockCircleOutline/>, key: 'timer', label: "计时器"},
       {icon: <BillOutline/>, key: 'worth', label: "层级资源"},
