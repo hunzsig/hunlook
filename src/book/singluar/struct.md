@@ -11,6 +11,7 @@
 │   ├── war3mapSound - 放音效音乐，只支持 mp3
 │   ├── war3mapTextures - 放模型贴图，只支持 blp
 │   └── war3mapUI - 放UI套件，参考已提供格式
+├── assetsNew - 与assets结构一致，处理新模式时使用
 ├── projects - 用来放置你的地图项目目录，如 project_demo
 │   └── project_demo
 ├── temp - 临时目录
