@@ -45,7 +45,6 @@ ATTR_CONFIGURATOR(conf)
 * [B]const\monitor.lua
 * [B]const\orderStr.lua
 * [B]const\target.lua
-* [B]const\textTag.lua
 * [L]**const\ubertip.lua**
 ```
 CONST_UBERTIP_IS_PERCENT(key)
@@ -57,7 +56,11 @@ CONST_UBERTIP_RESEARCH_ATTR(attr)
 ```
 echo(msg, whichPlayer, duration, x, y)
 ```
-* [B]engine.lua
+* [L]**engine.lua**
+```
+c2i(idChar)
+i2c(id)
+```
 * [L]**foundation\array.lua**
 ```
 Array(params)
@@ -87,16 +90,6 @@ hcolor.purpleLight(str)
 hcolor.purple(str)
 hcolor.format(str, containColor, options)
 ```
-* [L]**foundation\json.lua**
-```
-kind_of(obj)
-escape_str(s)
-skip_delim(str, pos, delim, err_if_missing)
-parse_str_val(str, pos, val)
-parse_num_val(str, pos)
-json.stringify(obj, as_key)
-json.parse(str, pos, end_delim)
-```
 * [L]**foundation\math.lua**
 ```
 math.random(n, m)
@@ -112,20 +105,21 @@ math.getDistanceBetweenUnit(u1, u2)
 math.getMaxDistanceInRect(w, h, deg)
 math.date(timestamp)
 ```
+* [L]**foundation\mbstring.lua**
+```
+mbstring.len(inputStr)
+mbstring.split(str, size)
+```
 * [L]**foundation\string.lua**
 ```
-string.char2id(idChar)
-string.id2char(id)
-string.mb_len(inputStr)
+getmetatable('').__index(str, i)
+getmetatable('').__call(str, i, j)
 string.vkey(t)
 string.addslashes(s)
 string.stripslashes(s)
-string.base64Encode(source_str)
-string.base64Decode(str64)
 string.explode(delimeter, str)
 string.implode(delimeter, table)
 string.split(str, size)
-string.mb_split(str, size)
 string.strpos(str, pattern)
 string.findAllPos(str, pattern)
 string.findCount(str, pattern)
@@ -135,8 +129,11 @@ string.trim(str)
 ```
 * [L]**foundation\table.lua**
 ```
-table.random(arr)
+table.section(n1, n2)
+table.random(arr, n)
 table.shuffle(arr)
+table.reverse(arr)
+table.repeater(params, qty)
 table.clone(org)
 copy(org1, res)
 table.merge(...)
@@ -219,42 +216,13 @@ hdialog.hotkey(key)
 hdialog.del(whichDialog)
 hdialog.create(whichPlayer, options, action)
 ```
-* [B]lib\dzapi\cache.lua
-* [L]**lib\dzapi.lua**
-```
-hdzapi.isRPGLobby()
-hdzapi.isRPGLadder()
-hdzapi.isRedVip(whichPlayer)
-hdzapi.isBlueVip(whichPlayer)
-hdzapi.isPlatformVIP(whichPlayer)
-hdzapi.mapLevel(whichPlayer)
-hdzapi.hasMallItem(whichPlayer, key)
-hdzapi.loadServer(whichPlayer, key)
-hdzapi.loadServerBool(whichPlayer, key)
-hdzapi.loadServerNumber(whichPlayer, key)
-hdzapi.loadServerInteger(whichPlayer, key)
-hdzapi.roulette(whichPlayer, method, params)
-hdzapi.saveServer(whichPlayer, key, value)
-hdzapi.clearServer(whichPlayer, key)
-hdzapi.setRoomStat(whichPlayer, key, value)
-```
-* [B]lib\dzui\cache.lua
-* [L]**lib\dzui.lua**
-```
-hdzui.wideScreen()
-hdzui.hideInterface()
-hdzui.loadToc(tocFilePath)
-hdzui.frame(fdfName, parent, id)
-hdzui.frameTag(fdfType, fdfName, parent, tag, id)
-hdzui.framePoint(frameId, relation, align, alignRelation, x, y)
-hdzui.onMouse(frameId, mouseOrder, callFunc)
-```
 * [L]**lib\effect.lua**
 ```
-heffect.del(e)
-heffect.toXY(effectModel, x, y, during)
-heffect.toUnit(effectModel, targetUnit, during)
-heffect.bindUnit(effectModel, targetUnit, attach, during)
+heffect.destroy(e)
+heffect.scale(e, x, y, z)
+heffect.speed(e, spd)
+heffect.xyz(model, x, y, z, duration)
+heffect.attach(model, targetUnit, attach, duration)
 ```
 * [L]**lib\enemy.lua**
 ```
@@ -269,17 +237,17 @@ henemy.create(options)
 * [L]**lib\event.lua**
 ```
 hevent.free(handle)
-hevent.pool(handle, conditionAction, regEvent)
+hevent.pool(conditionFunc, regEvent)
+hevent.poolRed(handle, conditionAction, regEvent)
+hevent.reaction(evt, ...)
 hevent.setLastDamage(sourceUnit, targetUnit)
 hevent.getUnitLastDamageSource(whichUnit)
 hevent.getUnitLastDamageTarget(whichUnit)
 hevent.getPlayerLastDamageTarget(whichPlayer)
-hevent.registerEvent(handle, key, callFunc)
-hevent.triggerData(triggerData)
-hevent.triggerEvent(handle, key, triggerData)
-hevent.deleteEvent(handle, key, eventId)
-hevent.onAttackDetect(whichUnit, callFunc)
-hevent.onAttackGetTarget(whichUnit, callFunc)
+hevent.data(handle, evt, init)
+hevent.unregister(handle, evt, key)
+hevent.register(handle, evt, ...)
+hevent.trigger(handle, key, triggerData)
 hevent.onBeAttackReady(whichUnit, callFunc)
 hevent.onAttack(whichUnit, callFunc)
 hevent.onBeAttack(whichUnit, callFunc)
@@ -298,18 +266,6 @@ hevent.onUnitSell(whichUnit, callFunc)
 hevent.onItemDestroy(whichItem, callFunc)
 hevent.onDamage(whichUnit, callFunc)
 hevent.onBeDamage(whichUnit, callFunc)
-hevent.onSwim(whichUnit, callFunc)
-hevent.onBeSwim(whichUnit, callFunc)
-hevent.onBroken(whichUnit, callFunc)
-hevent.onBeBroken(whichUnit, callFunc)
-hevent.onSilent(whichUnit, callFunc)
-hevent.onBeSilent(whichUnit, callFunc)
-hevent.onUnarm(whichUnit, callFunc)
-hevent.onBeUnarm(whichUnit, callFunc)
-hevent.onLightningChain(whichUnit, callFunc)
-hevent.onBeLightningChain(whichUnit, callFunc)
-hevent.onCrackFly(whichUnit, callFunc)
-hevent.onBeCrackFly(whichUnit, callFunc)
 hevent.onDead(whichUnit, callFunc)
 hevent.onKill(whichUnit, callFunc)
 hevent.onReborn(whichUnit, callFunc)
@@ -394,9 +350,7 @@ his.dead(whichUnit)
 his.alive(whichUnit)
 his.deleted(whichUnit)
 his.invincible(whichUnit)
-his.invisible(whichUnit)
 his.hero(whichUnit)
-his.courier(whichUnit)
 his.structure(whichUnit)
 his.illusion(whichUnit)
 his.ground(whichUnit)
@@ -411,10 +365,6 @@ his.ethereal(whichUnit)
 his.immune(whichUnit)
 his.race(whichUnit, whichRace)
 his.locust(whichUnit)
-his.swim(whichUnit)
-his.silent(whichUnit)
-his.unarm(whichUnit)
-his.crackFly(whichUnit)
 his.beDamaging(whichUnit)
 his.damaging(whichUnit)
 his.playerBeDamaging(whichPlayer)
@@ -424,8 +374,6 @@ his.floor(whichUnit)
 his.unit(whichUnit, otherUnit)
 his.enemy(whichUnit, otherUnit)
 his.ally(whichUnit, otherUnit)
-his.parallel(u1, u2, maxDistance, forcedOrder)
-his.intersect(u1, u2, maxDistance, face2face)
 his.enemyPlayer(whichUnit, whichPlayer)
 his.allyPlayer(whichUnit, whichPlayer)
 his.marking(whichPlayer)
@@ -441,7 +389,6 @@ his.hasItem(whichUnit, whichItemId)
 hitem.x(it)
 hitem.y(it)
 hitem.z(it)
-hitem.embed(u)
 hitem.free(whichItem)
 hitem.used(whichUnit, whichItem, triggerData)
 hitem.del(it, delay)
@@ -481,21 +428,11 @@ hitemPool.delete(poolName, whichItem)
 hitemPool.free(whichItem)
 hitemPool.forEach(poolName, action)
 ```
-* [L]**lib\japi\formatter.lua**
-```
-local toBool(value)
-local toInt(value, def)
-```
-* [L]**lib\japi\triumph.lua**
-```
-```
 * [L]**lib\japi.lua**
 ```
 hjapi.echo(msg)
 hjapi.has(method)
-hjapi.formatter(method, params)
-hjapi.triumph(method, params, result)
-hjapi.exec(method, params)
+hjapi.exec(method, ...)
 hjapi.DzAPI_CommonFunc_GetARGBColorValue(...)
 hjapi.DzAPI_CommonFunc_GetARGBColorValuePercent(...)
 hjapi.DzAPI_CommonFunc_SetARGBColorValue(...)
@@ -628,6 +565,7 @@ hjapi.DzClickFrame(frameId)
 hjapi.DzConvertWorldPosition(...)
 hjapi.DzCreateFrame(frame, parent, id)
 hjapi.DzCreateFrameByTagName(frameType, name, parent, template, id)
+hjapi.FrameTag(fdfType, fdfName, parent)
 hjapi.DzCreateSimpleFrame(frame, parent, id)
 hjapi.DzDebugString(...)
 hjapi.DzDestroyFrame(frameId)
@@ -696,6 +634,7 @@ hjapi.DzFrameSetMinMaxValue(frame, minValue, maxValue)
 hjapi.DzFrameSetModel(frame, modelFile, modelType, flag)
 hjapi.DzFrameSetParent(frame, parent)
 hjapi.DzFrameSetPoint(frame, point, relativeFrame, relativePoint, x, y)
+hjapi.FrameRelation(frame, point, relativeFrame, relativePoint, x, y)
 hjapi.DzFrameSetPriority(frame, priority)
 hjapi.DzFrameSetScale(frame, scale)
 hjapi.DzFrameSetScript(frame, eventId, funcName, sync)
@@ -865,6 +804,16 @@ hlightning.xyz2xyz(lightningType, x1, y1, z1, x2, y2, z2, during)
 hlightning.loc2loc(lightningType, loc1, loc2, during)
 hlightning.unit2unit(lightningType, unit1, unit2, during)
 ```
+* [L]**lib\missile.lua**
+```
+missile(options)
+```
+* [L]**lib\modelTag.lua**
+```
+hmodelTag.char(char, modelAlias, bit)
+hmodelTag.word(options)
+hmodelTag.model(options)
+```
 * [L]**lib\monitor.lua**
 ```
 hmonitor.create(key, frequency, action, ignoreFilter)
@@ -983,37 +932,6 @@ hrect.lock(options)
 * [L]**lib\shop.lua**
 ```
 ```
-* [L]**lib\skill\basic.lua**
-```
-hskill.invulnerable(whichUnit, during, effect)
-hskill.invulnerableRange(x, y, radius, filter, during, effect)
-hskill.pause(whichUnit, during, pauseColor)
-hskill.invisible(whichUnit, during, transition, effect)
-hskill.visible(whichUnit, during, transition, effect)
-hskill.modelEffect(whichUnit, whichAbility, abilityLevel, during)
-hskill.diy(options)
-```
-* [L]**lib\skill\complex.lua**
-```
-hskill.broken(options)
-hskill.swim(options)
-hskill.silent(options)
-hskill.unarm(options)
-hskill.lightningChain(options)
-hskill.crackFly(options)
-hskill.rangeSwim(options)
-hskill.whirlwind(options)
-hskill.leap(options)
-hskill.leapPaw(options)
-```
-* [L]**lib\skill\damage.lua**
-```
-local _damageTtg(targetUnit, damage, fix, rgb, speed)
-hskill.damage(options)
-hskill.damageStep(options)
-hskill.damageRange(options)
-hskill.damageGroup(options)
-```
 * [L]**lib\skill.lua**
 ```
 hskill.getAttribute(abilityId)
@@ -1026,6 +944,8 @@ hskill.del(whichUnit, abilityId, delay)
 hskill.forever(whichUnit, abilityId)
 hskill.has(whichUnit, abilityId)
 hskill.setCoolDown(whichUnit, abilityID, coolDown)
+hskill.damage(options)
+hskill.invulnerable(whichUnit, during, effect)
 ```
 * [L]**lib\slk.lua**
 ```
@@ -1078,7 +998,6 @@ htextTag.del(ttg, delay)
 htextTag.create(msg, size, color, opacity, during)
 htextTag.create2XY(x, y, msg, size, color, opacity, during, zOffset)
 htextTag.create2Unit(u, msg, size, color, opacity, during, zOffset)
-htextTag.createFollowUnit(u, msg, size, color, opacity, during, zOffset)
 htextTag.getSize(ttg)
 htextTag.getColor(ttg)
 htextTag.getMsg(ttg)
@@ -1108,7 +1027,7 @@ htime.setTimeout(period, callFunc)
 htime.setInterval(period, callFunc)
 htime.gone()
 htime.unix()
-htime.date()
+htime.date(timestamp)
 ```
 * [L]**lib\unit.lua**
 ```

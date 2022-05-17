@@ -1,345 +1,226 @@
 ## JAPI
 
-### SDK马仔自带一些JAPI，实装函数一览
+### 马仔编辑器本地环境自带一些JAPI，实装函数一览
 
-> 以代码提示函数存在作为依据，下列函数名仅供参考
+> 如果你不用马仔导致没有下列函数，请自行解决
+>
+> 以下函数仅供参考，以代码提示为准
 
 ```lua
-    EXSetEffectXY
-    DzIsKeyDown
-    EXGetUnitArrayString
-    DzFrameSetPoint
-    DzAPI_UnitType_SetEnum_PreventOrReguirePlace
-    EXSetUnitReal
-    EXSetUnitCollisionType
-    DzAPI_UnitType_GetUnitTypeDataAbilID
-    GetUnitState
-    DzAPI_UnitType_SetEnum_armor
-    SetUnitState
-    RequestExtraIntegerData
-    EXGetUnitReal
-    DzAPI_UnitType_GetUnitTypeDataBoolean
-    EXGetUnitString
-    EXSetUnitString
-    DzAPI_Map_SaveServerValue
-    EXGetUnitInteger
-    EXSetEffectSpeed
-    DzAPI_Map_IsBlueVIP
-    EXEffectMatReset
-    EXSetUnitInteger
-    DzGetWheelDelta
-    EXBlendButtonIcon
-    DzAPI_UnitType_CountUnitTypeDataArrayTechID
-    EXSetItemDataString
-    DzAPI_UnitType_GetEnum_weapTp
-    EXSetUnitArrayString
-    EXGetEffectY
-    EXPauseUnit
-    EXGetAbilityDataString
-    EXSetUnitMoveType
-    EXSetUnitFacing
-    DzSetCustomFovFix
-    EXGetUnitAbility
-    EXExecuteScript
-    DzGetPlayerName
-    EXGetUnitAbilityByIndex
-    EXGetAbilityId
-    DzAPI_UnitType_SetUnitTypeDataArrayString
-    EXGetAbilityState
-    EXSetAbilityState
-    EXEffectMatRotateX
-    EXGetAbilityDataReal
-    EXSetAbilityDataReal
-    DzEvent_Tech_Finish
-    EXGetAbilityDataInteger
-    DzSimpleFontStringFindByName
-    EXSetAbilityDataInteger
-    DzAPI_UnitType_ResizeUnitTypeDataArrayAbilID
-    EXSetAbilityString
-    DzAPI_UnitType_GetEnum_type
-    EXSetAbilityDataString
-    DzDotaInfo_Item_HE
-    DzAPI_UnitType_CountUnitTypeDataArrayItemID
-    EXSetAbilityAEmeDataA
-    DzGetPlayerSelectedHero
-    DzAPI_UnitType_ResizeUnitTypeDataArrayReal
-    EXGetBuffDataString
-    GetEventDamage
-    DzGetPlayerInitGold
-    EXSetBuffDataString
-    EXGetAbilityString
-    EXGetItemDataString
-    DzTriggerRegisterMouseEventByCode
-    DzDotaInfo_Item
-    EXGetEventDamageData
-    EXSetEventDamage
-    EXDisplayChat
-    EXSetEffectSize
-    EXDclareButtonIcon
-    EXSetEffectZ
-    DzSetParams
-    DzLoadToc
-    EXGetEffectX
-    DzAPI_UnitType_SetUnitTypeDataArrayAbilID
-    EXGetEffectZ
-    RequestExtraBooleanData
-    EXGetEffectSize
-    EXEffectMatRotateY
-    DzFrameSetAnimateOffset
-    DzDotaInfo_IsPlayerRandom
-    EXEffectMatRotateZ
-    DzAPI_UnitType_GetUnitTypeDataRequiresamount
-    DzEvent_Building_Dead
-    DzAPI_UnitType_SetUnitTypeDataReal
-    DzAPI_Map_Ladder_SetPlayerStat
-    DzEvent_Unit_Hired
-    EXEffectMatScale
-    DzDebugString
-    DzUnitLearningSkill
-    DzAPI_UnitType_CountUnitTypeDataArrayAbilID
-    DzGetGameMode
-    DzDotaInfo_IsRepicked
-    DzDotaInfo_Item_TM
-    DzEvent_Building_Cancel
-    DzAPI_UnitType_SetEnum_typeModify
-    DzEvent_Building_Start
-    DzEvent_Building_Finish
-    DzAPI_UnitType_GetUnitTypeDataRequires
-    DzEvent_Hero_Dead
-    DzFrameGetText
-    DzAPI_UnitType_GetUnitTypeDataArrayString
-    DzEvent_Unit_Dead
-    DzEvent_Unit_Start
-    DzEvent_Unit_Cancel
-    DzAPI_UnitType_GetEnum_weapType
-    DzEvent_Unit_Finish
-    DzAPI_UnitType_GetUnitTypeDataReal
-    DzEvent_Tech_Start
-    DzGetClientHeight
-    DzEvent_Tech_Cancel
-    DzSimpleFrameFindByName
-    DzFrameGetPortrait
-    DzGetMouseTerrainX
-    DzEvent_Hero_Level
-    DzGetColor
-    DzEvent_Unit_ChangeOwner
-    DzEvent_Item_Drop
-    DzEvent_Item_Pickup
-    DzEvent_Item_Use
-    DzEvent_Item_Sell
-    DzGetMouseY
-    DzPlatform_HasGameOver
-    DzPlatform_HasGameOver_Player
-    DzPlatform_GameStart
-    DzAPI_UnitType_GetEnum_movetp
-    DzAPI_Map_MissionComplete
-    DzAPI_Map_GetActivityData
-    DzAPI_Map_GetMapLevel
-    DzAPI_Map_GetServerValue
-    DzAPI_Map_Stat_SetStat
-    DzAPI_Map_Ladder_SetStat
-    DzAPI_Map_IsRPGLobby
-    DzAPI_Map_GetGameStartTime
-    DzAPI_Map_IsRPGLadder
-    DzFrameSetAlpha
-    DzAPI_Map_GetMatchType
-    DzAPI_Map_UpdatePlayerHero
-    DzFrameClearAllPoints
-    DzAPI_Map_GetLadderLevel
-    DzAPI_Map_IsRedVIP
-    DzAPI_Map_GetLadderRank
-    DzAPI_Map_GetMapLevelRank
-    DzAPI_Map_GetServerValueErrorCode
-    DzAPI_Map_GetGuildName
-    DzAPI_Map_GetGuildRole
-    DzAPI_UnitType_GetUnitTypeDataArrayUnitID
-    DzAPI_Map_GetMapConfig
-    DzAPI_UnitType_SetUnitTypeDataArrayReal
-    DzAPI_Map_HasMallItem
-    DzTriggerRegisterWindowResizeEventByCode
-    DzAPI_Map_ChangeStoreItemCount
-    DzFrameGetParent
-    DzAPI_Map_ChangeStoreItemCoolDown
-    DzAPI_Map_ToggleStore
-    DzAPI_Map_GetServerArchiveEquip
-    DzAPI_Map_GetServerArchiveDrop
-    DzFrameSetMinMaxValue
-    DzFrameSetScript
-    DzFrameGetMinimapButton
-    DzAPI_Map_OrpgTrigger
-    DzAPI_Map_GetUserID
-    DzAPI_Map_GetPlatformVIP
-    DzAPI_Map_SavePublicArchive
-    DzAPI_Map_GetPublicArchive
-    DzAPI_Map_UseConsumablesItem
-    DzAPI_Map_Statistics
-    RequestExtraStringData
-    DzFrameGetHeroManaBar
-    RequestExtraRealData
-    DzSyncData
-    DzAPI_UnitType_GetUnitTypeDataString
-    DzAPI_CommonFunc_SetARGBColorValue
-    DzAPI_UnitType_SetUnitTypeDataArrayUnitID
-    DzAPI_CommonFunc_SetARGBColorValuePercent
-    DzAPI_CommonFunc_GetARGBColorValue
-    DzUnitDisableInventory
-    DzAPI_CommonFunc_GetARGBColorValuePercent
-    DzFrameSetScale
-    DzAPI_UnitType_GetUnitTypeDataArrayReal
-    DzAPI_UnitstateToInteger
-    DzAPI_UnitType_GettUnitTypeDataRequirescount
-    DzAPI_UnitType_GetEnum_PreventOrReguirePlaceCheck
-    DzAPI_UnitType_GetUnitTypeDataInt
-    DzAPI_UnitType_SetUnitTypeDataInt
-    DzFrameCageMouse
-    DzFrameSetScriptByCode
-    DzAPI_UnitType_CountUnitTypeDataArrayReal
-    DzAPI_UnitType_SetUnitTypeDataBoolean
-    DzAPI_UnitType_CountUnitTypeDataArrayBoolean
-    DzAPI_UnitType_ResizeUnitTypeDataArrayBoolean
-    DzGetWindowHeight
-    DzAPI_UnitType_GetUnitTypeDataArrayBoolean
-    DzTriggerRegisterMouseWheelEventByCode
-    DzAPI_UnitType_SetUnitTypeDataArrayBoolean
-    DzAPI_UnitType_SetUnitTypeDataString
-    DzAPI_UnitType_CountUnitTypeDataArrayString
-    DzAPI_UnitType_ResizeUnitTypeDataArrayString
-    DzAPI_UnitType_ResizeUnitTypeDataArrayTechID
-    DzAPI_UnitType_GetUnitTypeDataArrayTechID
-    DzAPI_UnitType_SetUnitTypeDataArrayTechID
-    DzAPI_UnitType_SetUnitTypeDataAbilID
-    DzAPI_UnitType_GetUnitTypeDataArrayAbilID
-    DzAPI_UnitType_CountUnitTypeDataArrayUnitID
-    DzAPI_UnitType_SetEnum_TargetTypeSeries
-    DzAPI_UnitType_SetEnum_atkType
-    DzAPI_UnitType_ResizeUnitTypeDataArrayUnitID
-    DzTriggerRegisterMouseMoveEventByCode
-    DzAPI_UnitType_ResizeUnitTypeDataArrayItemID
-    DzAPI_UnitType_GetUnitTypeDataArrayItemID
-    DzAPI_UnitType_SetUnitTypeDataArrayItemID
-    DzAPI_UnitType_GetEnum_regenType
-    DzAPI_UnitType_SetEnum_regenType
-    DzAPI_UnitType_SetEnum_race
-    DzAPI_UnitType_SetEnum_weapTp
-    DzAPI_UnitType_GetEnum_defType
-    DzAPI_UnitType_GetEnum_PreventOrReguirePlace
-    DzAPI_UnitType_SetEnum_defType
-    DzFrameGetTooltip
-    DzAPI_UnitType_GetEnum_Primary
-    DzAPI_UnitType_GetEnum_warpsOn
-    DzFrameSetTooltip
-    DzAPI_UnitType_SetEnum_warpsOn
-    DzAPI_UnitType_GetEnum_atkType
-    DzAPI_UnitType_SetEnum_weapType
-    DzFrameSetStepValue
-    DzAPI_UnitType_SetEnum_Primary
-    DzFrameSetTextColor
-    DzAPI_UnitType_SetEnum_movetp
-    DzAPI_UnitType_GetEnum_buffType
-    DzAPI_UnitType_SetEnum_buffType
-    DzGetTriggerUIEventPlayer
-    DzAPI_UnitType_GetEnum_race
-    DzAPI_UnitType_GetEnum_deathType
-    DzAPI_UnitType_SetEnum_deathType
-    DzAPI_UnitType_GetEnum_armor
-    DzAPI_UnitType_GetEnum_TargetTypeSeries
-    DzAPI_UnitType_GetEnum_TargetTypeCheck
-    DzAPI_UnitType_SetEnum_TargetTypeModify
-    DzAPI_UnitType_SetEnum_type
-    DzAPI_UnitType_GetEnum_typeCheck
-    DzAPI_UnitType_SetEnum_PreventOrReguirePlaceModify
-    DzAPI_UnitType_CountUnitTypeDataRequires
-    DzAPI_UnitType_ResizeUnitTypeDataRequires
-    DzGetConvertWorldPositionX
-    DzAPI_UnitType_SetUnitTypeDataRequires
-    DzSetUnitTexture
-    DzAPI_UnitType_CountUnitTypeDataRequiresamount
-    DzAPI_UnitType_ResizeUnitTypeDataRequiresamount
-    DzAPI_UnitType_SetUnitTypeDataRequiresamount
-    DzGetMouseXRelative
-    DzGetMouseTerrainY
-    DzFrameGetHeroBarButton
-    DzGetMouseTerrainZ
-    DzIsMouseOverUI
-    DzGetMouseX
-    DzGetLocale
-    DzGetMouseYRelative
-    DzSetMousePos
-    DzTriggerRegisterMouseEvent
-    DzTriggerRegisterKeyEvent
-    DzTriggerRegisterKeyEventByCode
-    DzTriggerRegisterMouseWheelEvent
-    DzOriginalUIAutoResetPoint
-    DzTriggerRegisterMouseMoveEvent
-    DzGetTriggerKey
-    DzGetTriggerKeyPlayer
-    DzGetWindowWidth
-    DzGetClientWidth
-    DzGetWindowX
-    DzGetWindowY
-    DzTriggerRegisterWindowResizeEvent
-    DzIsWindowActive
-    DzTriggerRegisterSyncData
-    DzSyncBuffer
-    DzGetTriggerSyncData
-    DzGetTriggerSyncPlayer
-    DzFrameHideInterface
-    DzFrameEditBlackBorders
-    DzFrameGetMinimap
-    DzFrameGetCommandBarButton
-    DzFrameGetHeroHPBar
-    DzExecuteFunc
-    DzFrameGetItemBarButton
-    DzFrameGetUpperButtonBarButton
-    DzFrameGetChatMessage
-    DzFrameGetUnitMessage
-    DzFrameGetTopMessage
-    DzGetConvertWorldPositionY
-    DzFrameSetUpdateCallback
-    DzGetUnitNeededXP
-    DzFrameSetUpdateCallbackByCode
-    DzFrameShow
-    DzCreateFrame
-    DzCreateSimpleFrame
-    DzDestroyFrame
-    DzFrameSetAbsolutePoint
-    DzFrameSetEnable
-    DzFrameGetAlpha
-    DzGetTriggerUIEventFrame
-    DzFrameFindByName
-    DzSimpleTextureFindByName
-    DzGetGameUI
-    DzClickFrame
-    DzEnableWideScreen
-    DzFrameSetText
-    DzFrameSetTextSizeLimit
-    DzFrameGetTextSizeLimit
-    DzGetMouseFocus
-    DzFrameSetPriority
-    DzFrameSetAllPoints
-    DzFrameSetFocus
-    DzFrameSetModel
-    DzFrameGetEnable
-    DzFrameSetAnimate
-    DzFrameSetTexture
-    DzFrameGetValue
-    DzFrameSetValue
-    DzFrameSetSize
-    DzCreateFrameByTagName
-    DzFrameSetVertexColor
-    DzFrameSetParent
-    DzFrameGetHeight
-    DzFrameSetFont
-    DzFrameSetTextAlignment
-    DzFrameGetName
-    DzConvertWorldPosition
-    DzGetUnitUnderMouse
-    DzDestructablePosition
-    DzSetUnitPosition
-    DzSetMemory
-    DzSetUnitModel
-    DzSetUnitID
-    DzSetWar3MapMap
-    DzUnitSilence
-    DzUnitDisableAttack
+DzAPI_Map_ChangeStoreItemCoolDown
+DzAPI_Map_ChangeStoreItemCount
+DzAPI_Map_GetActivityData
+DzAPI_Map_GetGameStartTime
+DzAPI_Map_GetGuildName
+DzAPI_Map_GetGuildRole
+DzAPI_Map_GetLadderLevel
+DzAPI_Map_GetLadderRank
+DzAPI_Map_GetMapConfig
+DzAPI_Map_GetMapLevel
+DzAPI_Map_GetMapLevelRank
+DzAPI_Map_GetMatchType
+DzAPI_Map_GetPlatformVIP
+DzAPI_Map_GetPublicArchive
+DzAPI_Map_GetServerArchiveDrop
+DzAPI_Map_GetServerArchiveEquip
+DzAPI_Map_GetServerValue
+DzAPI_Map_GetServerValueErrorCode
+DzAPI_Map_GetUserID
+DzAPI_Map_HasMallItem
+DzAPI_Map_IsBlueVIP
+DzAPI_Map_IsRPGLadder
+DzAPI_Map_IsRPGLobby
+DzAPI_Map_IsRedVIP
+DzAPI_Map_Ladder_SetPlayerStat
+DzAPI_Map_Ladder_SetStat
+DzAPI_Map_MissionComplete
+DzAPI_Map_OrpgTrigger
+DzAPI_Map_SavePublicArchive
+DzAPI_Map_SaveServerValue
+DzAPI_Map_Stat_SetStat
+DzAPI_Map_Statistics
+DzAPI_Map_ToggleStore
+DzAPI_Map_UpdatePlayerHero
+DzAPI_Map_UseConsumablesItem
+DzClickFrame
+DzConvertWorldPosition
+DzCreateFrame
+DzCreateFrameByTagName
+DzCreateSimpleFrame
+DzDestroyFrame
+DzDestructablePosition
+DzEnableWideScreen
+DzExecuteFunc
+DzFrameCageMouse
+DzFrameClearAllPoints
+DzFrameEditBlackBorders
+DzFrameFindByName
+DzFrameGetAlpha
+DzFrameGetChatMessage
+DzFrameGetCommandBarButton
+DzFrameGetEnable
+DzFrameGetHeight
+DzFrameGetHeroBarButton
+DzFrameGetHeroHPBar
+DzFrameGetHeroManaBar
+DzFrameGetItemBarButton
+DzFrameGetMinimap
+DzFrameGetMinimapButton
+DzFrameGetName
+DzFrameGetParent
+DzFrameGetPortrait
+DzFrameGetText
+DzFrameGetTextSizeLimit
+DzFrameGetTooltip
+DzFrameGetTopMessage
+DzFrameGetUnitMessage
+DzFrameGetUpperButtonBarButton
+DzFrameGetValue
+DzFrameHideInterface
+DzFrameSetAbsolutePoint
+DzFrameSetAllPoints
+DzFrameSetAlpha
+DzFrameSetAnimate
+DzFrameSetAnimateOffset
+DzFrameSetEnable
+DzFrameSetFocus
+DzFrameSetFont
+DzFrameSetMinMaxValue
+DzFrameSetModel
+DzFrameSetParent
+DzFrameSetPoint
+DzFrameSetPriority
+DzFrameSetScale
+DzFrameSetScript
+DzFrameSetScriptByCode
+DzFrameSetSize
+DzFrameSetStepValue
+DzFrameSetText
+DzFrameSetTextAlignment
+DzFrameSetTextColor
+DzFrameSetTextSizeLimit
+DzFrameSetTexture
+DzFrameSetTooltip
+DzFrameSetUpdateCallback
+DzFrameSetUpdateCallbackByCode
+DzFrameSetValue
+DzFrameSetVertexColor
+DzFrameShow
+DzGetClientHeight
+DzGetClientWidth
+DzGetColor
+DzGetConvertWorldPositionX
+DzGetConvertWorldPositionY
+DzGetGameUI
+DzGetLocale
+DzGetMouseFocus
+DzGetMouseTerrainX
+DzGetMouseTerrainY
+DzGetMouseTerrainZ
+DzGetMouseX
+DzGetMouseXRelative
+DzGetMouseY
+DzGetMouseYRelative
+DzGetTriggerKey
+DzGetTriggerKeyPlayer
+DzGetTriggerSyncData
+DzGetTriggerSyncPlayer
+DzGetTriggerUIEventFrame
+DzGetTriggerUIEventPlayer
+DzGetUnitNeededXP
+DzGetUnitUnderMouse
+DzGetWheelDelta
+DzGetWindowHeight
+DzGetWindowWidth
+DzGetWindowX
+DzGetWindowY
+DzIsKeyDown
+DzIsMouseOverUI
+DzIsWindowActive
+DzLoadToc
+DzOriginalUIAutoResetPoint
+DzSetCustomFovFix
+DzSetMemory
+DzSetMousePos
+DzSetUnitID
+DzSetUnitModel
+DzSetUnitPosition
+DzSetUnitTexture
+DzSetWar3MapMap
+DzSimpleFontStringFindByName
+DzSimpleFrameFindByName
+DzSimpleTextureFindByName
+DzSyncBuffer
+DzSyncData
+DzSyncDataImmediately
+DzTriggerRegisterKeyEvent
+DzTriggerRegisterKeyEventByCode
+DzTriggerRegisterMouseEvent
+DzTriggerRegisterMouseEventByCode
+DzTriggerRegisterMouseMoveEvent
+DzTriggerRegisterMouseMoveEventByCode
+DzTriggerRegisterMouseWheelEvent
+DzTriggerRegisterMouseWheelEventByCode
+DzTriggerRegisterSyncData
+DzTriggerRegisterWindowResizeEvent
+DzTriggerRegisterWindowResizeEventByCode
+DzUnitDisableAttack
+DzUnitDisableInventory
+DzUnitSilence
+EXBlendButtonIcon
+EXDclareButtonIcon
+EXDisplayChat
+EXEffectMatReset
+EXEffectMatRotateX
+EXEffectMatRotateY
+EXEffectMatRotateZ
+EXEffectMatScale
+EXExecuteScript
+EXGetAbilityDataInteger
+EXGetAbilityDataReal
+EXGetAbilityDataString
+EXGetAbilityId
+EXGetAbilityState
+EXGetAbilityString
+EXGetBuffDataString
+EXGetEffectSize
+EXGetEffectX
+EXGetEffectY
+EXGetEffectZ
+EXGetEventDamageData
+EXGetItemDataString
+EXGetUnitAbility
+EXGetUnitAbilityByIndex
+EXGetUnitArrayString
+EXGetUnitInteger
+EXGetUnitReal
+EXGetUnitString
+EXPauseUnit
+EXSetAbilityAEmeDataA
+EXSetAbilityDataInteger
+EXSetAbilityDataReal
+EXSetAbilityDataString
+EXSetAbilityState
+EXSetAbilityString
+EXSetBuffDataString
+EXSetEffectSize
+EXSetEffectSpeed
+EXSetEffectXY
+EXSetEffectZ
+EXSetEventDamage
+EXSetItemDataString
+EXSetUnitArrayString
+EXSetUnitCollisionType
+EXSetUnitFacing
+EXSetUnitInteger
+EXSetUnitMoveType
+EXSetUnitReal
+EXSetUnitString
+GetEventDamage
+GetUnitState
+RequestExtraBooleanData
+RequestExtraIntegerData
+RequestExtraRealData
+RequestExtraStringData
+SetUnitState
 ```

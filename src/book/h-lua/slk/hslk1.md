@@ -54,13 +54,9 @@ hslk_conf({
     itemOverlie = "ff59ff", -- 物品叠加
     itemWeight = "ee82ee", -- 物品重量
     itemRemarks = "969696", -- 物品备注
-    itemFragment = hcolor.orange, -- 物品零部件
-    itemProfit = "ffd88c", -- 物品合成品
     abilityCoolDown = "ccffff", -- 技能冷却时间
     abilityAttr = "b0f26e", -- 技能属性
     abilityRemarks = "969696", -- 技能备注
-    ringArea = "99ccff", -- 光环范围
-    ringTarget = "99ccff", -- 光环作用目标
     heroWeapon = "ff3939", -- 英雄攻击武器类型
     heroAttack = "ff8080", -- 英雄基础攻击
     heroRange = "99ccff", -- 英雄攻击范围
