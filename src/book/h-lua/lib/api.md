@@ -1,7 +1,7 @@
 ## API大全
 
-* [B]blizzard.lua
-* [L]**console\build.lua**
+* [B]builtIn\blizzard.lua
+* [L]**builtIn\console\build.lua**
 ```
 JassRuntime.error_handle(msg)
 print(...) JassConsole.write(...)
@@ -9,19 +9,19 @@ stack(...)
 dump(value, description, nesting)
 err(val)
 ```
-* [L]**console\dist.lua**
+* [L]**builtIn\console\dist.lua**
 ```
 print(...)
 stack(...)
 dump(value, description, nesting)
 err(val)
 ```
-* [L]**console\hslk.lua**
+* [L]**builtIn\console\go.lua**
 ```
 stack(...)
 dump(value, description, nesting)
 ```
-* [L]**console\test.lua**
+* [L]**builtIn\console\test.lua**
 ```
 JassRuntime.error_handle(msg)
 print(...) JassConsole.write(...)
@@ -29,6 +29,22 @@ tlen(table)
 stack(...)
 dump(value, description, nesting)
 err(val)
+```
+* [L]**builtIn\echo.lua**
+```
+echo(msg, whichPlayer, duration, x, y)
+```
+* [L]**builtIn\engine.lua**
+```
+c2i(idChar)
+i2c(id)
+```
+* [L]**builtIn\id.lua**
+```
+HL_ID_INIT()
+```
+* [L]**builtIn\initialization.lua**
+```
 ```
 * [B]const\abilityTarget.lua
 * [L]**const\attribute.lua**
@@ -52,15 +68,6 @@ CONST_UBERTIP_ATTR(attr, sep, indent)
 CONST_UBERTIP_RESEARCH_ATTR(attr)
 ```
 * [B]const\unit.lua
-* [L]**echo.lua**
-```
-echo(msg, whichPlayer, duration, x, y)
-```
-* [L]**engine.lua**
-```
-c2i(idChar)
-i2c(id)
-```
 * [L]**foundation\array.lua**
 ```
 Array(params)
@@ -141,10 +148,6 @@ table.value(arr, key)
 table.obj2arr(obj, keyMap)
 ```
 * [B]h-lua.lua
-* [L]**id.lua**
-```
-HL_ID_INIT()
-```
 * [L]**lib\attribute.lua**
 ```
 hattribute.setRelation(relation)
@@ -336,9 +339,6 @@ hhero.getPlayerAllowQty(whichPlayer)
 hhero.setBornXY(x, y)
 hhero.reborn(whichHero, delay, invulnerable, x, y)
 hhero.buildSelector(options)
-```
-* [L]**lib\initialization.lua**
-```
 ```
 * [L]**lib\is.lua**
 ```
