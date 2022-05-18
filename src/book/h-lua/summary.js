@@ -5,6 +5,7 @@ import {
   AntOutline,
   AppOutline,
   BankcardOutline,
+  BellOutline,
   CollectMoneyOutline,
   ContentOutline,
   EnvironmentOutline,
@@ -58,10 +59,12 @@ export default [
   },
   {
     icon: <HandPayCircleOutline/>, key: 'example', label: "例子", children: [
-      {icon: <GiftOutline/>, key: 'attr', label: "自定义Attr属性"},
       {icon: <CollectMoneyOutline/>, key: 'dialog', label: "难度选择对话框"},
       {icon: <FingerdownOutline/>, key: 'pickHero', label: "常见两种选英雄"},
       {icon: <PlayOutline/>, key: 'attack', label: "简单刷兵"},
+      {icon: <GiftOutline/>, key: 'attr', label: "自定义Attr属性"},
+      {icon: <GiftOutline/>, key: 'damaging', label: "预设伤害流"},
+      {icon: <BellOutline/>, key: 'eventReaction', label: "事件反应"},
     ]
   },
   {
