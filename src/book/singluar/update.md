@@ -3,6 +3,7 @@
 > 2022/05
 
 * Attribute增加cost、castChant、coolDown、coolDownSec
+* 优化FrameButton
 * 修复Unit\punish判定有几率错误的问题
 
 > 2022/04
