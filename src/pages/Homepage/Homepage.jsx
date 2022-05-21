@@ -19,6 +19,7 @@ class Homepage extends Component {
   push = () => {
     let u = '/' + Parse.urlEncode({p: this.state.p, n: this.state.n})
     window.history.replaceState(null, null, History.prefix + u);
+    document.getElementById("page").scrollTop = 0;
   }
 
   renderSideBar = () => {
@@ -128,7 +129,7 @@ class Homepage extends Component {
                 this.state.n = children[0].key;
               }
               this.setState({n: this.state.n,});
-              this.push()
+              this.push();
             }}
           >
             {this.renderSideBar()}

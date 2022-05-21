@@ -1,8 +1,6 @@
 ## Process 流程管理
 
-> 由于框架自带极其有用的热加载 hotLoader
->
-> 在 hot 的加持下，Process的效能变得极其有力
+> 在全局热更新 hotLoader 的扶持下，Process的效能变得突破天际的强
 >
 > 你可以使用 Process 编写某一段的游戏流程，随时回滚测试，跳跃测试
 

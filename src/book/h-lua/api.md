@@ -72,6 +72,16 @@ CONST_UBERTIP_RESEARCH_ATTR(attr)
 ```
 Array(params)
 ```
+* [L]**foundation\cache.lua**
+```
+hcache.exist(handle, key)
+hcache.alloc(handle)
+hcache.protect(handle)
+hcache.protected(handle)
+hcache.free(handle, key)
+hcache.set(handle, key, value)
+hcache.get(handle, key, default)
+```
 * [L]**foundation\color.lua**
 ```
 hcolor.hex(str, color)
@@ -190,16 +200,6 @@ haward.forPlayer(gold, lumber)
 haward.forPlayerGold(gold)
 haward.forPlayerLumber(lumber)
 ```
-* [L]**lib\cache.lua**
-```
-hcache.exist(handle, key)
-hcache.alloc(handle)
-hcache.protect(handle)
-hcache.protected(handle)
-hcache.free(handle, key)
-hcache.set(handle, key, value)
-hcache.get(handle, key, default)
-```
 * [L]**lib\camera.lua**
 ```
 hcamera.reset(whichPlayer, during)
@@ -212,7 +212,7 @@ hcamera.shock(whichPlayer, whichType, during, scale)
 ```
 * [L]**lib\cmd.lua**
 ```
-hcmd.conf(commands, playerIndexes)
+hcmd(pattern, callFunc)
 ```
 * [L]**lib\damaging.lua**
 ```
@@ -691,10 +691,6 @@ hlightning.xyz2xyz(lightningType, x1, y1, z1, x2, y2, z2, during)
 hlightning.loc2loc(lightningType, loc1, loc2, during)
 hlightning.unit2unit(lightningType, unit1, unit2, during)
 ```
-* [L]**lib\missile.lua**
-```
-missile(options)
-```
 * [L]**lib\modelTag.lua**
 ```
 hmodelTag.char(char, modelAlias, bit)
@@ -731,8 +727,6 @@ hplayer.hideUnit(whichPlayer)
 hplayer.clearUnit(whichPlayer)
 hplayer.defeat(whichPlayer, tips)
 hplayer.victory(whichPlayer, tips)
-hplayer.setIsAutoConvert(whichPlayer, b)
-hplayer.getIsAutoConvert(whichPlayer)
 hplayer.setIsShocking(whichPlayer, b)
 hplayer.getIsShocking(whichPlayer)
 hplayer.getDamage(whichPlayer)
