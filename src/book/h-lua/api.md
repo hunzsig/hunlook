@@ -881,7 +881,6 @@ htextTag.getOpacity(ttg)
 htextTag.getDuring(ttg)
 htextTag.setVelocity(ttg, xSpeed, ySpeed)
 htextTag.style(ttg, showType, xSpeed, ySpeed)
-htextTag.model(options)
 ```
 * [L]**lib\texture.lua**
 ```
