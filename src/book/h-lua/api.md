@@ -61,12 +61,6 @@ ATTR_CONFIGURATOR(conf)
 * [B]const\monitor.lua
 * [B]const\orderStr.lua
 * [B]const\target.lua
-* [L]**const\ubertip.lua**
-```
-CONST_UBERTIP_IS_PERCENT(key)
-CONST_UBERTIP_ATTR(attr, sep, indent)
-CONST_UBERTIP_RESEARCH_ATTR(attr)
-```
 * [B]const\unit.lua
 * [L]**foundation\array.lua**
 ```
@@ -107,6 +101,38 @@ hcolor.purpleLight(str)
 hcolor.purple(str)
 hcolor.format(str, containColor, options)
 ```
+* [L]**foundation\damaging.lua**
+```
+damaging.defined(key, callFunc)
+```
+* [L]**foundation\description.lua**
+```
+description.setPercentKey(keys)
+description.isPercent(key)
+description.noName(name)
+description.attribute(attr, sep, indent)
+description.attributeResearch(attr)
+description.unitName(v)
+description.unitTip(v)
+description.unitUbertip(v)
+description.heroName(v)
+description.heroTip(v)
+description.heroUbertip(v)
+description.abilityName(v)
+description.abilityTip(v)
+description.abilityResearchtip(v)
+description.abilityUbertip(v)
+description.abilityResearchubertip(v)
+description.itemName(v)
+description.itemTip(v)
+description.itemUbertip(v)
+description.itemDescription(v)
+description.buffEditorName(v)
+description.buffTip(v)
+description.buffUbertip(v)
+description.upgradeName(v)
+description.upgradeUbertip(v)
+```
 * [L]**foundation\math.lua**
 ```
 math.random(n, m)
@@ -138,7 +164,6 @@ string.split(str, size)
 string.strpos(str, pattern)
 string.findAllPos(str, pattern)
 string.findCount(str, pattern)
-string.attrBuffKey(val)
 string.random(n)
 string.trim(str)
 ```
@@ -213,10 +238,6 @@ hcamera.shock(whichPlayer, whichType, during, scale)
 * [L]**lib\cmd.lua**
 ```
 hcmd(pattern, callFunc)
-```
-* [L]**lib\damaging.lua**
-```
-damaging.defined(key, callFunc)
 ```
 * [L]**lib\dialog.lua**
 ```
@@ -340,55 +361,9 @@ hhero.setBornXY(x, y)
 hhero.reborn(whichHero, delay, invulnerable, x, y)
 hhero.buildSelector(options)
 ```
-* [L]**lib\is.lua**
-```
-his.computer(whichPlayer)
-his.playerSite(whichPlayer)
-his.playing(whichPlayer)
-his.neutral(whichPlayer)
-his.detected(whichUnit, whichPlayer)
-his.hasSlot(whichUnit, slotId)
-his.canAttack(whichUnit)
-his.dead(whichUnit)
-his.alive(whichUnit)
-his.unitDestroyed(whichUnit)
-his.invincible(whichUnit)
-his.hero(whichUnit)
-his.structure(whichUnit)
-his.illusion(whichUnit)
-his.ground(whichUnit)
-his.air(whichUnit)
-his.melee(whichUnit)
-his.ranged(whichUnit)
-his.summoned(whichUnit)
-his.mechanical(whichUnit)
-his.ancient(whichUnit)
-his.sapper(whichUnit)
-his.ethereal(whichUnit)
-his.immune(whichUnit)
-his.race(whichUnit, whichRace)
-his.locust(whichUnit)
-his.beDamaging(whichUnit)
-his.damaging(whichUnit)
-his.playerBeDamaging(whichPlayer)
-his.playerDamaging(whichPlayer)
-his.water(whichUnit)
-his.floor(whichUnit)
-his.unit(whichUnit, otherUnit)
-his.enemy(whichUnit, otherUnit)
-his.ally(whichUnit, otherUnit)
-his.enemyPlayer(whichUnit, whichPlayer)
-his.allyPlayer(whichUnit, whichPlayer)
-his.marking(whichPlayer)
-his.inRect(whichRect, x, y)
-his.borderRect(whichRect, x, y)
-his.borderMap(x, y)
-his.borderCamera(x, y)
-his.itemDestroyed(whichItem)
-his.hasItem(whichUnit, whichItemId)
-```
 * [L]**lib\item.lua**
 ```
+hitem.isDestroyed(whichItem)
 hitem.x(it)
 hitem.y(it)
 hitem.z(it)
@@ -707,6 +682,13 @@ hmonitor.ignore(key, obj)
 ```
 * [L]**lib\player.lua**
 ```
+hplayer.isComputer(whichPlayer)
+hplayer.isUser(whichPlayer)
+hplayer.isPlaying(whichPlayer)
+hplayer.isNeutral(whichPlayer)
+hplayer.isBeDamaging(whichPlayer)
+hplayer.isDamaging(whichPlayer)
+hplayer.isMarking(whichPlayer)
 hplayer.adjustPlayerState(delta, whichPlayer, whichPlayerState)
 hplayer.setPlayerState(whichPlayer, whichPlayerState, value)
 hplayer.forEach(action)
@@ -792,6 +774,10 @@ hquest.setDiscovered(q)
 * [L]**lib\rect.lua**
 ```
 hrect.alloc(r, name)
+hrect.isInner(whichRect, x, y)
+hrect.isBorder(whichRect, x, y)
+hrect.isBorderPlayable(x, y)
+hrect.isBorderCamera(x, y)
 hrect.world()
 hrect.camera()
 hrect.playable()
@@ -814,6 +800,8 @@ hskill.getAttribute(abilityId)
 hskill.addProperty(whichUnit, abilityId, level)
 hskill.subProperty(whichUnit, abilityId, level)
 hskill.getName(abilityId)
+hskill.getLevel(whichUnit, abilityId)
+hskill.setLevel(whichUnit, abilityId, level)
 hskill.add(whichUnit, abilityId, level, during)
 hskill.set(whichUnit, abilityId, level, during)
 hskill.destroy(whichUnit, abilityId, delay)
@@ -886,7 +874,6 @@ htextTag.style(ttg, showType, xSpeed, ySpeed)
 ```
 htexture.cinematicFilterGeneric(duration, bmode, tex, red0, green0, blue0, trans0, red1, green1, blue1, trans1)
 htexture.mark(path, during, whichPlayer, red, green, blue)
-htexture.alertCircle(diameter, x, y, during, token, color)
 ```
 * [L]**lib\time.lua**
 ```
@@ -906,6 +893,42 @@ htime.date(timestamp)
 ```
 * [L]**lib\unit.lua**
 ```
+hunit.isDetected(whichUnit, whichPlayer)
+hunit.isInvisible(whichUnit, whichPlayer)
+hunit.isAttackAble(whichUnit)
+hunit.isDead(whichUnit)
+hunit.isAlive(whichUnit)
+hunit.isPaused(whichUnit)
+hunit.isHidden(whichUnit)
+hunit.isSleeping(whichUnit)
+hunit.isDestroyed(whichUnit)
+hunit.isInvincible(whichUnit)
+hunit.isHero(whichUnit)
+hunit.isStructure(whichUnit)
+hunit.isIllusion(whichUnit)
+hunit.isGround(whichUnit)
+hunit.isAir(whichUnit)
+hunit.isMelee(whichUnit)
+hunit.isRanged(whichUnit)
+hunit.isSummoned(whichUnit)
+hunit.isMechanical(whichUnit)
+hunit.isAncient(whichUnit)
+hunit.isSapper(whichUnit)
+hunit.isEthereal(whichUnit)
+hunit.isImmune(whichUnit)
+hunit.isRace(whichUnit, whichRace)
+hunit.isLocust(whichUnit)
+hunit.isBeDamaging(whichUnit)
+hunit.isDamaging(whichUnit)
+hunit.isWater(whichUnit)
+hunit.isFloor(whichUnit)
+hunit.isUnit(whichUnit, otherUnit)
+hunit.isEnemy(whichUnit, otherUnit)
+hunit.isAlly(whichUnit, otherUnit)
+hunit.isEnemyPlayer(whichUnit, whichPlayer)
+hunit.isAllyPlayer(whichUnit, whichPlayer)
+hunit.hasSlot(whichUnit, slotId)
+hunit.hasItem(whichUnit, whichItemId)
 hunit.getAvatar(uOrId)
 hunit.getSight(uOrId)
 hunit.getNSight(uOrId)
@@ -975,18 +998,17 @@ _attr(_v)
 ```
 * [L]**slk\setter.lua**
 ```
-F6V_A(_v)
-F6V_U(_v)
-F6V_I_CD(_v)
-F6V_I(_v)
-F6V_B(_v)
-F6V_UP(_v)
+F6V_A(v)
+F6V_U(v)
+F6V_I_CD(v)
+F6V_I(v)
+F6V_B(v)
+F6V_UP(v)
 ```
 * [L]**slk\slk.lua**
 ```
 hslk_init()
 hslk_cli_set(_v)
-hslk_conf(conf)
 hslk_ability(_v)
 hslk_ability_empty(_v)
 hslk_unit(_v)
