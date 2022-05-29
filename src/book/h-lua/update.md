@@ -18,7 +18,6 @@
 * 删除 默认的多余资源
 * 删除 默认的fonts.ttf
 * 删除 多余的cache keys
-* 删除 多余的cache keys
 * 删除 默认的cmd命令（有需要去demo自取）
 * 删除 alertCircle（有需要去demo自取）
 * 删除 attr对table数据的支持
