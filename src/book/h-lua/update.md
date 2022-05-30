@@ -11,6 +11,7 @@
 * ··· 转移builtIn
 * ··· 删除 textTag模型相关方法，转到modelTag库
 * ··· 删除 dzui
+* ··· 删除 dzapi
 * ··· 删除 japi部分判定，修正部分函数名称统一性
 * ··· 删除 外置json
 * ··· 删除 skill大部分技能
@@ -23,7 +24,7 @@
 * ··· 删除 attr对table数据的支持，增加对number类型的支持(同义"=")
 * ··· 删除 attr对buff的支持，对外提供Timer返回值供自定义构建
 * ··· 删除 his 转移至 相应各自库内实现
-* ··· 删除 slk对默认描述文本的管理 foundation/description
+* ··· 删除 slk对默认描述文本的管理转到 foundation/description
 * ··· 新增 foundation/damaging
 * ··· 新增 foundation/eventReaction
 * ··· 新增 skillEffect事件可选回调数据 targetDestructable
