@@ -7,36 +7,38 @@
 > 2022/05
 
 * chore(*): 适当临期维护：
-* 修正全局函数注释
-* 转移builtIn
-* 删除 ttg模型相关方法，转到mtg库
-* 删除 dzui
-* 删除 japi部分判定，修正部分函数名称统一性
-* 删除 外置json
-* 删除 skill大部分技能（有需要去demo自取）
-* 删除 event所有无效的key
-* 删除 默认的多余资源
-* 删除 默认的fonts.ttf
-* 删除 多余的cache keys
-* 删除 默认的cmd命令（有需要去demo自取）
-* 删除 alertCircle（有需要去demo自取）
-* 删除 attr对table数据的支持
-* 删除 his，转移至对应库内实现
-* 新增 foundation/damaging
-* 新增 foundation/eventReaction
-* 新增 foundation/description
+* ··· 规正函数、注释的语义
+* ··· 转移builtIn
+* ··· 删除 textTag模型相关方法，转到modelTag库
+* ··· 删除 dzui
+* ··· 删除 japi部分判定，修正部分函数名称统一性
+* ··· 删除 外置json
+* ··· 删除 skill大部分技能
+* ··· 删除 event所有无效的key
+* ··· 删除 默认的多余资源
+* ··· 删除 默认的fonts.ttf
+* ··· 删除 多余的cache keys
+* ··· 删除 默认的cmd命令
+* ··· 删除 alertCircle
+* ··· 删除 attr对table数据的支持，增加对number类型的支持(同义"=")
+* ··· 删除 attr对buff的支持，对外提供Timer返回值供自定义构建
+* ··· 删除 his 转移至 相应各自库内实现
+* ··· 删除 slk对默认描述文本的管理 foundation/description
+* ··· 新增 foundation/damaging
+* ··· 新增 foundation/eventReaction
+* ··· 新增 skillEffect事件可选回调数据 targetDestructable
 
 > 2022/03
 
 * chore(*): 项目大量精简，删除大部分非必要的功能及模块
 * fix(*): 修复已知bug
+* fix(*): 优化中量细节
 
 > 2021/07 ~ 10
 
 * feat(sdk): 新增multi、kill、dist命令
 * feat(const): 增加通魔命令串数据
 * feat(var): 补全文本对齐参数
-* feat(skill): 新增技能[missile箭矢]
 * feat(terrain): 新增掌管地形
 * fix(*): 修复已知bug
 
