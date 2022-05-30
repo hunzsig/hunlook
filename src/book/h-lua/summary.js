@@ -55,6 +55,7 @@ export default [
       {icon: <ControlOutlined/>, key: 'hslk2', label: "进阶"},
       {icon: <FileSearchOutlined/>, key: 'f6', label: "原生物编字段"},
       {icon: <FileSearchOutlined/>, key: 'misc', label: "MISC数据"},
+      {icon: <FileSearchOutlined/>, key: 'setData', label: "设置数据"},
       {icon: <FileExcelOutlined/>, key: 'excel', label: "Excel"},
     ]
   },
