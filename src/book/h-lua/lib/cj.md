@@ -1,6 +1,6 @@
 ## CJ (Common Jass)
 
-> 在使用时，使用J即可引导所有CJ函数
+> 在使用时，使用cj调用通用Jass函数
 
 ```lua
 cj.AbilityId

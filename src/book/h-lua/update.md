@@ -438,7 +438,7 @@
 * 致命 | - math删除了两个已经无用的函数 oddsItem coverAttrEffectVal
 * 功能 | - 新增一个quest模块
 * 功能 | - debug新增rem方法，用于检测执行时间
-* 优化 | - 修复hluaF9事件错误的bug
+* 优化 | - 修复hLuaF9事件错误的bug
 
 > 2020/02/02
 

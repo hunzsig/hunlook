@@ -1,8 +1,8 @@
 ## 目录结构
 
 ```
-    ├── depend - 依赖的开发套件
-    │   ├── h-lua - h-lua(v:latest，随sdk更新的最新版)
+    ├── depend - 开发依赖组合
+    │   ├── h-lua - Core
     │   ├── w3x2lni - w3x2lni工具(v:2.7.2)
     │   └── YDWE - 马仔工具
     ├── projects - 用来放置你的地图项目目录，如 helloworld

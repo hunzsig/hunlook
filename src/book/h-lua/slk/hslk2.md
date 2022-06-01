@@ -1,5 +1,19 @@
 ## hslk 使用进阶
 
+### 获得动态ID
+
+> 不熟悉的情况下，不建议自定义ID，容易犯错
+>
+> 可以通过返回值获得动态ID用于物编
+
+```lua
+local ab = hslk_ability({ Name = "一个技能" })
+hslk_unit({
+    Name = "一个单位",
+    abilList = ab._id,
+})
+```
+
 ### 多级技能配置
 
 ```lua
@@ -15,7 +29,7 @@ hslk_ability({
 
 ### hslk属性的获取
 
-> hslk生成的物编，在游戏脚本运行时，可以超级方便地自由读取数据
+> hslk生成的物编，在游戏脚本运行时，可以方便地自由读取数据
 
 ```lua
 hslk.i2v(id) --根据物编ID，获取全数据
@@ -27,7 +41,7 @@ hslk.n2i(id) --根据物编Name，获取物编ID，如果名字有重复，只�
 
 ```lua
 hslk.i2v(id,"slk") --slk数据放在第1级的slk的key里
-hslk.i2v(id,"_id") --hlua的自定义数据也在第1级里
+hslk.i2v(id,"_id") --h-lua的自定义数据也在第1级里
 ```
 
 > 注意，slk数据的值，一开始获取都是字符串，需要自己转换

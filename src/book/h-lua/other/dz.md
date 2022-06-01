@@ -24,6 +24,10 @@
 > sdk.exe dist h-lua-jsqszl
 ```
 
+* 如果你的物编信息过于凌乱，或不符合w2l工具规则，slk优化后会出错
+* 你可以通过修改builtIn里面的console自择放弃slk优化
+* 也可以努力修正好混乱无比的物编，解决问题
+
 5、项目打包完会启动测试，此时已经在你的war3根目录的map/test目录内有了结果文件，如：
 
 > \Warcraft3\Maps\Test\WorldEditTestMap.w3x，这个文件已经经过slk加密
