@@ -1,11 +1,44 @@
 ## 更新日志
 
+> 2022/06
+
+* 新的 Destructable替代Deco
+* 新的 prop底层技术，绝不出错的数据沙盒封锁态
+    * ··· 增加异步数据修改捕捉的允许
+    * ··· 可以在prop中get、set、clear而不用再担心数据问题
+* 新的 ability missile、leap、crackFly
+    * ··· 回调函数转为point数据结构体
+    * ··· missile效率精准度大大提升
+    * ··· leap效率优化且可轻浮转弯参数
+    * ··· crackFly效率优化且增加多维弹跳参数
+* 新的 Bgm 音乐，现在为实时分离异步式数据流
+* 新的 Vcm 普遍音效，现在为分离异步式数据流
+* 新的 V3d 环绕音效，现在为分离异步式数据流
+* 新的 Camera 镜头，现在为实时控制的分离异步式数据流
+* 新的 Cursor 指针，现在为黑盒子封装态，可轻松自定义图案、安全区域
+* 新的 Frame（包括子类），实现任意事件跟踪注册机制，可以自定义奇特事件
+* 新的 FrameTooltips 默认展示机制，更人性化
+* 新的 FrameLabel 新的尺寸和文字优化
+* 新的 math 方法 trunc和format
+* 新的 Image 类
+* 新的 must 断言
+* 优化 ttg
+* 优化 prop 初始设定机制
+* 优化 bj 参数
+* 优化 Buff，暴露时间修改接口
+* 修复 Array 数据有几率错乱的问题。删除部分方法
+* 废弃 所有的portal方法，改名为position
+* 废弃 主要以Button为核心的大部分废物fdf
+* 废弃 一部分japi函数（主要是事件，100%舍弃，还有一些很拉的方法）
+
 > 2022/05
 
-* Attribute增加cost、castChant、coolDown、coolDownSec
-* 优化FrameButton
-* 优化ability.crashFly的功能，提升性能
-* 修复Unit\punish判定有几率错误的问题
+* 新的 Attribute方法 增加cost、castChant、coolDown、coolDownSec
+    * ···可用于动态修改任意技能属性
+* 新的 Unit方法 stature（单位身材高度）
+* 优化 FrameButton
+* 优化 ability crashFly的功能，提升性能
+* 修复 Unit punish判定有几率错误的问题
 
 > 2022/04
 
