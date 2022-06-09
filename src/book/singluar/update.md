@@ -15,21 +15,23 @@
 * 新的 Vcm 普遍音效，改为分离异步式数据流
 * 新的 V3d 环绕音效，改为分离异步式数据流
 * 新的 Camera 镜头，改为实时控制的分离异步式数据流
-* 新的 Cursor 指针，现在为封存实现态，可轻松自定义图案、安全区域
+* 新的 Cursor 指针，现在封存隔离，可轻松自定义图案、安全区域
 * 新的 Frame（包括子类），实现任意事件跟踪注册机制，可以自定义奇特事件
 * 新的 FrameTooltips 默认展示机制，更人性化
 * 新的 FrameLabel 新的尺寸和文字优化
-* 新的 math 方法 trunc、format、isNaN
+* 新的 Game 新方法 worth：Equal、Greater、Less、EqualOrGreater、EqualOrLess
+* 新的 math 新方法 trunc、format、isNaN
 * 新的 Image 类
 * 新的 must 断言
+* 优化 Buff，暴露时间修改接口
+* 优化 Game 的 worthCompare 方法现在相等和无法判断会是不一样的返回值
 * 优化 ttg
 * 优化 prop 初始设定机制
 * 优化 bj 参数
-* 优化 Buff，暴露时间修改接口
 * 修复 Array 数据有几率错乱的问题。删除部分方法
 * 废弃 所有的portal方法，改名为position
 * 废弃 主要以Button为核心的大部分废物fdf
-* 废弃 部分japi函数，并将之重置为封存实现态
+* 废弃 部分japi函数，并将之封存隔离
 
 > 2022/05
 

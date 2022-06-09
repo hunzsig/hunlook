@@ -7,11 +7,13 @@
 ### 类型
 
 ```
-unit(common/hero/courier) 单位
-item(common/synthesis) 物品
-ability(common/empty/ring) 技能
+unit(common/hero) 单位
+item(common) 物品
+ability(common/empty) 技能
 buff(common) 魔法效果
 upgrade(common) 科技
+destructable(common) 可破坏物
+doodad(common) 装饰物
 ```
 
 ### 框架自定义字段
