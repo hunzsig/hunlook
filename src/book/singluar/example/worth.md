@@ -35,7 +35,7 @@ dump(Game().worthL2U({ copper = 16400 }))
 dump(Game().worthL2U({ copper = 11203 }))
 dump(Game().worthL2U({ copper = 21374 }))
 
-print("数学计算")
+print("数学运算")
 dump(Game().worthCale({ gold = 100 }, "*", 0.5))
 dump(Game().worthCale({ gold = 100 }, "/", 2))
 dump(Game().worthCale(3, "*", { gold = 100 }))
