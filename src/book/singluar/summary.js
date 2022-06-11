@@ -45,6 +45,7 @@ import {
   BellOutlined,
   UnorderedListOutlined,
   FontSizeOutlined,
+  StockOutlined,
 } from "@ant-design/icons";
 
 // only one layout
@@ -91,6 +92,7 @@ export default [
       {icon: <ClockCircleOutlined/>, key: 'timer', label: "计时器"},
       {icon: <DollarCircleOutlined/>, key: 'worth', label: "层级资源"},
       {icon: <MenuUnfoldOutlined/>, key: 'dialog', label: "难度选择对话框"},
+      {icon: <StockOutlined/>, key: 'orderRoute', label: "路线蓝图"},
     ]
   },
   {
