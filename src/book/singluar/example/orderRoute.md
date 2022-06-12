@@ -52,4 +52,13 @@
     },
     { -500, -1000 },
 })
+
+time.setTimeout(6, function()
+    print("第5段")
+    u1.orderRouteSet(5, { 0, 0 })
+    time.setTimeout(10, function()
+        print("删除第5段")
+        u1.orderRouteSet(5, nil)
+    end)
+end)
 ```
