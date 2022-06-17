@@ -1,12 +1,20 @@
 ## 快速开始
 
-singluar是一套特立独行反魔兽原生的魔兽地图开发集成。
+Singluar是一套特立独行反魔兽原生的魔兽地图开发封闭集成。
 
-更贴近独立游戏开发者的使用套路。
+代码有限制地开源，如果不接受相关协定，继续往下看大可不必。
+
+该有的功能框架内全都有，不该有的功能也不会有。
 
 ### 安装一个fork
 
 > <a target="_blank" href="https://www.git-fork.com">Fork - a fast and friendly git client for Mac and Windows (git-fork.com)</a>
+
+### 使用git clone克隆项目，下载zip将视为不遵循协定
+
+```
+git clone https://github.com/singluar/singluar-abridged.git
+```
 
 ### 代码编辑器
 
