@@ -18,13 +18,13 @@
 > sdk.exe build h-lua-jsqszl
 ```
 
-4、使用dist将项目打包并进行slk优化
+4、使用dist将项目打包并进行slk优化，优化后加载速度会有极大的提升
 
 ```
 > sdk.exe dist h-lua-jsqszl
 ```
 
-* 如果你的物编信息过于凌乱，或不符合w2l工具规则，slk优化后会出错
+* 如果你的物编信息过于凌乱，或不符合w2l工具规则 [w3x2lni role](https://sumneko.github.io/w3x2lni)，slk优化后会出错
 * 你可以通过修改builtIn里面的console自择放弃slk优化
 * 也可以努力修正好混乱无比的物编，解决问题
 
