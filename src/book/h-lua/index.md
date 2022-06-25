@@ -1,8 +1,8 @@
 ## 快速开始
 
-h-lua是一套完全开源的魔兽地图框架，适合菜鸟入门作图。
+h-lua是一套完全开源的魔兽地图框架，适合菜鸟入门作图。 从建图到上线，一波跑通。
 
-从建图到上线，一波跑通。
+**( * 此项目现已完全存档封库)**
 
 ### 安装一个fork 或 git
 
@@ -92,4 +92,3 @@ cd ./h-lua
 * lua基本语法： <a target="_blank" href="https://www.runoob.com/lua/lua-tutorial.html">Runoob Lua教学</a>
 * YDLua引擎： 其他学习 -> YDLua引擎，坊间传闻bug。送真言一句：有则无之，无则有之。
 * 有魄力的人可以先略一遍 h-lua 的源码，即使你不用框架内实现，也是有所帮助的。
-* QQ 325338043 Pwd HJux213jP
