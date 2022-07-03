@@ -1,5 +1,14 @@
 ## 更新日志
 
+> 2022/07
+
+* 新的 Array GC机制
+* 优化 weaponMaterial 改为 weaponSound
+* 优化 damage 事件反馈，改为数据引流及中断机制
+* 修复 sight 数据有几率偏移的bug
+* 删除 base64
+* 删除 Frame 系列的highlight方法，需要自定义引用
+
 > 2022/06
 
 * 新的 Destructable替代Deco
