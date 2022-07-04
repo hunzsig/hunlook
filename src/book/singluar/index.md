@@ -4,8 +4,6 @@ Singluar是一套特立独行反原生的魔兽地图一般级开发内封集成
 
 代码有限制地开源，该有的功能框架内全都有，不该有的功能也不会提供。
 
-决心使用者可联系作者得到适当的协助，但不会得到教学。
-
 ### 安装一个fork
 
 > <a target="_blank" href="https://www.git-fork.com">Fork - a fast and friendly git client for Mac and Windows (git-fork.com)</a>
@@ -47,3 +45,5 @@ cd ./singluar
 > 使用win11时，特别是较新版本时，有时会遇到弹窗错误（但其实可以继续玩）
 >
 > 此时你可以选择不理弹窗继续玩，或者将终端或编辑器（使用内置终端时）以管理员启动即可解决问题
+
+* 决心入门者若要得到适当的协助，可加入[QQ群<小菜门帮><325338043>](https://qm.qq.com/cgi-bin/qm/qr?k=fLsKy0Gp5-vKIOfbVZufC1xDVgJfeOW3&jump_from=webapi)
