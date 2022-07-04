@@ -91,4 +91,4 @@ cd ./h-lua
 
 * lua基本语法： <a target="_blank" href="https://www.runoob.com/lua/lua-tutorial.html">Runoob Lua教学</a>
 * YDLua引擎： 其他学习 -> YDLua引擎，坊间传闻bug。送真言一句：有则无之，无则有之。
-* 本框架已停止开发，如确实需要帮助，可加入[QQ群<菜菜入门帮助><325338043>](https://qm.qq.com/cgi-bin/qm/qr?k=fLsKy0Gp5-vKIOfbVZufC1xDVgJfeOW3&jump_from=webapi)。
+* 本框架已完全停止开发，如确实需要帮助，可加入[QQ群<小菜门帮><325338043>](https://qm.qq.com/cgi-bin/qm/qr?k=fLsKy0Gp5-vKIOfbVZufC1xDVgJfeOW3&jump_from=webapi)。
