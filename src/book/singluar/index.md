@@ -46,4 +46,4 @@ cd ./singluar
 >
 > 此时你可以选择不理弹窗继续玩，或者将终端或编辑器（使用内置终端时）以管理员启动即可解决问题
 
-* 决心入门者若要得到适当的协助，可加入[QQ群<小菜门帮><325338043>](https://qm.qq.com/cgi-bin/qm/qr?k=fLsKy0Gp5-vKIOfbVZufC1xDVgJfeOW3&jump_from=webapi)
+* 决心入门者若要得到适当的协助，可加入[QQ群<拔菜基地><325338043>](https://qm.qq.com/cgi-bin/qm/qr?k=fLsKy0Gp5-vKIOfbVZufC1xDVgJfeOW3&jump_from=webapi)
