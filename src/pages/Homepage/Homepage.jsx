@@ -1,6 +1,7 @@
 import './Homepage.less';
 import React, {Component} from 'react';
 import {SideBar, Tabs, Toast} from 'antd-mobile';
+import {SoundOutline, SoundMuteOutline} from "antd-mobile-icons";
 import {History, Parse} from 'h-react-antd-mobile';
 import Book from './Book';
 
@@ -12,6 +13,7 @@ class Homepage extends Component {
     this.state = {
       p: search.p || 'index',
       n: search.n || undefined,
+      autoPlay: false,
     }
     this.summary = require(`./../../book/${History.state.book}/summary.js`).default;
   }
@@ -154,6 +156,23 @@ class Homepage extends Component {
           </div>
           <Book path={this.book()}/>
         </div>
+        {
+          History.state.bgm &&
+          <div className="audio">
+            <audio id="bgm" autoPlay={this.state.autoPlay} loop={true} src={History.state.bgm}/>
+            {
+              this.state.autoPlay ?
+                <SoundOutline color='var(--adm-color-primary)' onClick={() => {
+                  document.getElementById("bgm").pause();
+                  this.setState({autoPlay: false});
+                }}/> :
+                <SoundMuteOutline color='var(--adm-color-weak)' onClick={() => {
+                  document.getElementById("bgm").play();
+                  this.setState({autoPlay: true});
+                }}/>
+            }
+          </div>
+        }
       </div>
     );
   }
