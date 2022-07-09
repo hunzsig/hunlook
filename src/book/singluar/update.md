@@ -3,11 +3,15 @@
 > 2022/07
 
 * 新的 Array GC机制
+* 新的 Cursor 种类
+* 新的 logger 调试日志
 * 优化 weaponMaterial 改为 weaponSound
 * 优化 damage 事件反馈，改为数据引流及瞬断机制
+* 优化 Image 现在支持随心尺寸
 * 修复 sight 数据有几率偏移的bug
 * 删除 base64
 * 删除 Frame 系列的highlight方法，需要自定义引用
+* 删除 attach型effect的重复判定，现在需要自行判减
 
 > 2022/06
 
