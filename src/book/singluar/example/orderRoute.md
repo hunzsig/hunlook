@@ -75,7 +75,7 @@ end)
 
 ```lua
 --- 例子2
-local path = {
+local lineMap = {
     { -500, -1000 },
     { 500, -1000 },
     { 500, -2000 },
@@ -83,8 +83,8 @@ local path = {
 }
 
 local routes = {}
-for i = 1, #path do
-    routes[i] = table.wheel(path, 1 * (i - 1))
+for i = 1, #lineMap do
+    routes[i] = table.wheel(lineMap, 1 * (i - 1))
 end
 
 for i = 1, #routes do
