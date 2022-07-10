@@ -5,6 +5,7 @@
 * 新的 Array GC机制
 * 新的 Cursor 种类
 * 新的 logger 调试日志
+* 新的 table.wheel 轮偏
 * 优化 weaponMaterial 改为 weaponSound
 * 优化 damage 事件反馈，改为数据引流及瞬断机制
 * 优化 Image 现在支持随心尺寸
