@@ -4,7 +4,7 @@
 ├── assets
 │   ├── war3mapFont - 放字体，只支持 ttf
 │   ├── war3mapIcon - 放图标，只支持 tga
-│   ├── war3MapLoading - 载入图，只支持 tga
+│   ├── war3MapLoading - 载入图，只支持单图 tga 或 规则组合 tga
 │   ├── war3mapModel - 放模型，只支持 mdx，贴图不要扔进来
 │   ├── war3mapPreview - 预览图，只支持 tga
 │   ├── war3mapSelection - 放选择圈，参考已提供格式
@@ -16,8 +16,8 @@
 │   └── project_demo
 ├── temp - 临时目录
 ├── vendor
+│   ├── kernel - 功能核心
 │   ├── lni - 重要地图数据
-│   ├── MdxPather - 模型贴图查看器
 │   ├── models - model命令地图模版
 │   ├── w3x2lni - w3x2lni工具(v:2.7.2)
 │   └── WE - 马仔工具
