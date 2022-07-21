@@ -96,7 +96,7 @@ export default [
       {icon: <PictureOutline/>, key: 'war3_terrainArt', label: "魔兽地形贴图路径"},
       {icon: <ExclamationShieldOutline/>, key: 'war3_crash', label: "魔兽常见崩溃原因"},
       {icon: <TransportQRcodeOutline/>, key: 'lua_engine', label: "YDLua引擎"},
-      {icon: <BankcardOutline/>, key: 'ui_fdf', label: "FDF"},
+      {icon: <BankcardOutline/>, key: 'fdf', label: "FDF"},
     ]
   },
 ]

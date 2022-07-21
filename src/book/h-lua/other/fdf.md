@@ -1,24 +1,12 @@
-## UI 与 FDF
+## FDF
 
-### UI制作就是运用界面函数对原有界面进行增删查改的美化
+#### FDF就是一种UI静态格式，让你可以声明一些frame组件，拓展麻烦，用处不大
 
-#### FDF就是一种格式，让你可以编写一些frame静态组件声明，用处不大
-
-#### 至于为什么说用处不大，这里就留给您自行思考了
-
-下面是一些网上的教程，虽然不咋的，反正看看也好
+下面是一篇网上的教程，随便看看了解一下就行
 
 > <a target="_blank" href="https://blog.csdn.net/CarlosX/article/details/89161467">[War3]Fdf文件详解，简单的UI教程演示 - 魔兽争霸3</a>
->
-> <a target="_blank" href="https://www.hiveworkshop.com/threads/ui-list-default-mainframes.317884">魔兽默认组件对照</a>
->
-> <a target="_blank" href="http://bbs.dz.blizzard.cn/forum.php?mod=viewthread&tid=8038&extra=page%3D1%26filter%3Dtypeid%26typeid%3D18">[老CK教程]官方平台界面功能入门</a>
 
-教程看完了吗？为什么说不咋的，因为其实这些教程不过是给你写一些FDF罢了，就是入个门，看个印象
-
-如果你想看FDF，魔兽客户端自带就有一大堆暴雪写好的，完全不需要看他教程，暴雪写的更全更多
-
-> 已经提取了原生的fdf，有兴趣可自行查看
+> 暴雪魔兽原生也有很多fdf，有兴趣可自行查看，意义不大
 >
 > 可参考提取项目：<a target="_blank" href="https://github.com/hunzsig-warcraft3/FrameDef">FrameDef</a>
 
