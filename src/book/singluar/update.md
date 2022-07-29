@@ -2,18 +2,23 @@
 
 > 2022/07
 
-* 新的 Array GC机制
 * 新的 Cursor 种类
+* 新的 FrameTooltips 机制
 * 新的 logger 调试日志
 * 新的 table.wheel 轮偏
+* 新的 Frame.show
+* 新的 Ability worthCost
 * 优化 weaponMaterial 改为 weaponSound
 * 优化 damage 事件反馈，改为数据引流及瞬断机制
 * 优化 Image 现在支持随心尺寸
 * 优化 Unit orderRoute的功能，现在不能被无端打断，并支持手动暂停
 * 修复 sight 数据有几率偏移的bug
+* 修复 itemTpl 初始pawnable数据错误的bug
 * 删除 base64
+* 删除 Unit stand
 * 删除 Frame 系列的highlight方法，现在需要自行引用
 * 删除 attach型effect的重复判定，现在需要自行判别
+* 删除 底层的DzFrameSetParent，不再支持仅执行虚拟设定
 
 > 2022/06
 
