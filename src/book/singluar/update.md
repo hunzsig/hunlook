@@ -2,6 +2,7 @@
 
 > 2022/07
 
+* 新的 Array GC机制
 * 新的 Cursor 种类
 * 新的 FrameTooltips 机制
 * 新的 logger 调试日志
