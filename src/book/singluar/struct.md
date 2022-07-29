@@ -10,8 +10,8 @@
 │   ├── war3mapSelection - 放选择圈，参考已提供格式
 │   ├── war3mapSound - 放音效音乐，只支持 mp3
 │   ├── war3mapTextures - 放模型贴图，只支持 blp
-│   └── war3mapUI - 放UI套件，参考已提供格式
-├── assetsNew - 与assets结构一致，处理新模式时使用
+│   └── war3mapUI - 放UI套件，已有格式参考
+├── assetsNew - 与assets结构一致，处理新资源时使用
 ├── projects - 用来放置你的地图项目目录，如 project_demo
 │   └── project_demo
 ├── temp - 临时目录
@@ -40,8 +40,8 @@
     │   │    ├── setup - 用于定义游戏设定（仅供参考）
     │   │    ├── tpl - 用于建立对象模版（仅供参考）
     │   └── process - 项目流程代码，流程以 start 开始
-    └── w3x - 地图文件（没事别乱改，使用we命令修改参数，会备份）
-        ├── map - 地图lni（不要改，易崩图）
+    └── w3x - 地图文件（没事别乱改，使用we命令修改参数，保存后自动生成备份）
+        ├── map - 地图lni（不要轻易改，除非你懂）
         ├── table - ini式的物编（不要改，不搭理物编）
-        └── war3mapMap.blp - 略缩图（不要改，we命令完事后会自动生成）
+        └── war3mapMap.blp - 略缩图（不用改）
 ```

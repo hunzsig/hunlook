@@ -2,24 +2,27 @@
 
 Singluar是一套特立独行反原生的魔兽地图一般级开发内封集成。
 
-代码有限制地开源，该有的功能框架内全都有，不该有的功能也不会提供。
+代码限制型开源，该有的功能框架内全都有，不该有的功能也不会提供。
+
+不禁止商用。
 
 ### 安装一个fork
 
+###### 熟练使用 git 可跳过此步
+
 > <a target="_blank" href="https://www.git-fork.com">Fork - a fast and friendly git client for Mac and Windows (
 > git-fork.com)</a>
+>
 
-### 使用git clone克隆项目，下载zip将视为不遵循协定
+### 使用 git clone 克隆项目
 
 ```
-git clone https://github.com/singluar/singluar-abridged.git
+git clone https://github.com/singluar/singluar-restricted.git
 ```
 
-### 代码编辑器
+### 安装IDE
 
-编辑器推荐使用Jetbrain Ideac(社区版免费) 并安装插件【EmmyLua】。
-
-相信得到编辑器 Buff加成 的你，会如虎添翼~
+使用Jetbrain Ideac(社区版免费)，并安装插件【EmmyLua】。
 
 > <a target="_blank" href="https://www.jetbrains.com/idea/download/#section=windows">Ideac (Jetbrain)</a>
 
