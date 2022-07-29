@@ -54,7 +54,7 @@ export default [
   {icon: <ApartmentOutlined/>, key: 'struct', label: "项目结构"},
   {icon: <ToolOutlined/>, key: 'cmd', label: "命令工具"},
   {icon: <ExceptionOutlined/>, key: 'update', label: "更新日志"},
-  {icon: <BugOutlined/>, key: 'print', label: "调试打印"},
+  {icon: <BugOutlined/>, key: 'debug', label: "调试打印"},
   {icon: <VideoCameraOutlined/>, key: 'video', label: "视频演示"},
   {
     icon: <FunctionOutlined/>, key: 'library', label: "功能库", children: [
