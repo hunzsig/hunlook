@@ -20,13 +20,17 @@ Singluar是一套特立独行反原生的魔兽地图一般级开发内封集成
 git clone https://github.com/singluar/singluar-restricted.git
 ```
 
-### 安装IDE
+### 安装免费的IDE - Ideac
 
-使用Jetbrain Ideac(社区版免费)，并安装插件【EmmyLua】。
+##### 安装插件 EmmyLua
+
+##### 安装插件 Image Icon Viewer
 
 > <a target="_blank" href="https://www.jetbrains.com/idea/download/#section=windows">Ideac (Jetbrain)</a>
 
 ![Emmylua](https://gitlab.com/h-document/singluar/-/raw/main/images/emmylua.png)
+
+![ImageIconViewer](https://gitlab.com/h-document/singluar/-/raw/main/images/imageIconViewer.png)
 
 ### 打开终端并进入框架根目录（工作区）
 
@@ -48,4 +52,4 @@ cd ./singluar
 
 > 使用win11时，特别是较新版本时，有时会遇到弹窗错误（但其实可以继续玩）
 >
-> 此时你可以选择不理弹窗继续玩，或者将终端或编辑器（使用内置终端时）以管理员启动即可解决问题
+> 此时你可以选择不理弹窗继续玩，或者将终端或IDE（使用IDE终端时）以管理员启动即可解决问题
