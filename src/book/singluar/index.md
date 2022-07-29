@@ -13,7 +13,7 @@
 ### 使用 git clone 克隆项目
 
 ```
-git clone https://github.com/singluar/singluar-restricted.git
+> git clone https://github.com/singluar/singluar-restricted.git
 ```
 
 ### 安装IDE - Ideac
@@ -31,7 +31,7 @@ git clone https://github.com/singluar/singluar-restricted.git
 ### 打开终端并进入框架根
 
 ```
-cd ./singluar
+> cd ./singluar
 ```
 
 ### 创建新项目
