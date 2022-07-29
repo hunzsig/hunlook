@@ -1,226 +1,271 @@
 ## JAPI
 
-### 马仔编辑器本地环境自带一些JAPI，实装函数一览
+### 框架内实装JAPI库
 
-> 如果你不用马仔导致没有下列函数，请自行解决
->
-> 以下函数仅供参考，以代码提示为准
+###### 详细调用自行查看 /vendor/kernel/library/foundation/japi.lua
+
+> 方法与JAPI环境、框架内嵌环境紧密相关，不要随意乱改
 
 ```lua
-DzAPI_Map_ChangeStoreItemCoolDown
-DzAPI_Map_ChangeStoreItemCount
-DzAPI_Map_GetActivityData
-DzAPI_Map_GetGameStartTime
-DzAPI_Map_GetGuildName
-DzAPI_Map_GetGuildRole
-DzAPI_Map_GetLadderLevel
-DzAPI_Map_GetLadderRank
-DzAPI_Map_GetMapConfig
-DzAPI_Map_GetMapLevel
-DzAPI_Map_GetMapLevelRank
-DzAPI_Map_GetMatchType
-DzAPI_Map_GetPlatformVIP
-DzAPI_Map_GetPublicArchive
-DzAPI_Map_GetServerArchiveDrop
-DzAPI_Map_GetServerArchiveEquip
-DzAPI_Map_GetServerValue
-DzAPI_Map_GetServerValueErrorCode
-DzAPI_Map_GetUserID
-DzAPI_Map_HasMallItem
-DzAPI_Map_IsBlueVIP
-DzAPI_Map_IsRPGLadder
-DzAPI_Map_IsRPGLobby
-DzAPI_Map_IsRedVIP
-DzAPI_Map_Ladder_SetPlayerStat
-DzAPI_Map_Ladder_SetStat
-DzAPI_Map_MissionComplete
-DzAPI_Map_OrpgTrigger
-DzAPI_Map_SavePublicArchive
-DzAPI_Map_SaveServerValue
-DzAPI_Map_Stat_SetStat
-DzAPI_Map_Statistics
-DzAPI_Map_ToggleStore
-DzAPI_Map_UpdatePlayerHero
-DzAPI_Map_UseConsumablesItem
-DzClickFrame
-DzConvertWorldPosition
-DzCreateFrame
-DzCreateFrameByTagName
-DzCreateSimpleFrame
-DzDestroyFrame
-DzDestructablePosition
-DzEnableWideScreen
-DzExecuteFunc
-DzFrameCageMouse
-DzFrameClearAllPoints
-DzFrameEditBlackBorders
-DzFrameFindByName
-DzFrameGetAlpha
-DzFrameGetChatMessage
-DzFrameGetCommandBarButton
-DzFrameGetEnable
-DzFrameGetHeight
-DzFrameGetHeroBarButton
-DzFrameGetHeroHPBar
-DzFrameGetHeroManaBar
-DzFrameGetItemBarButton
-DzFrameGetMinimap
-DzFrameGetMinimapButton
-DzFrameGetName
-DzFrameGetParent
-DzFrameGetPortrait
-DzFrameGetText
-DzFrameGetTextSizeLimit
-DzFrameGetTooltip
-DzFrameGetTopMessage
-DzFrameGetUnitMessage
-DzFrameGetUpperButtonBarButton
-DzFrameGetValue
-DzFrameHideInterface
-DzFrameSetAbsolutePoint
-DzFrameSetAllPoints
-DzFrameSetAlpha
-DzFrameSetAnimate
-DzFrameSetAnimateOffset
-DzFrameSetEnable
-DzFrameSetFocus
-DzFrameSetFont
-DzFrameSetMinMaxValue
-DzFrameSetModel
-DzFrameSetParent
-DzFrameSetPoint
-DzFrameSetPriority
-DzFrameSetScale
-DzFrameSetScript
-DzFrameSetScriptByCode
-DzFrameSetSize
-DzFrameSetStepValue
-DzFrameSetText
-DzFrameSetTextAlignment
-DzFrameSetTextColor
-DzFrameSetTextSizeLimit
-DzFrameSetTexture
-DzFrameSetTooltip
-DzFrameSetUpdateCallback
-DzFrameSetUpdateCallbackByCode
-DzFrameSetValue
-DzFrameSetVertexColor
-DzFrameShow
-DzGetClientHeight
-DzGetClientWidth
-DzGetColor
-DzGetConvertWorldPositionX
-DzGetConvertWorldPositionY
-DzGetGameUI
-DzGetLocale
-DzGetMouseFocus
-DzGetMouseTerrainX
-DzGetMouseTerrainY
-DzGetMouseTerrainZ
-DzGetMouseX
-DzGetMouseXRelative
-DzGetMouseY
-DzGetMouseYRelative
-DzGetTriggerKey
-DzGetTriggerKeyPlayer
-DzGetTriggerSyncData
-DzGetTriggerSyncPlayer
-DzGetTriggerUIEventFrame
-DzGetTriggerUIEventPlayer
-DzGetUnitNeededXP
-DzGetUnitUnderMouse
-DzGetWheelDelta
-DzGetWindowHeight
-DzGetWindowWidth
-DzGetWindowX
-DzGetWindowY
-DzIsKeyDown
-DzIsMouseOverUI
-DzIsWindowActive
-DzLoadToc
-DzOriginalUIAutoResetPoint
-DzSetCustomFovFix
-DzSetMemory
-DzSetMousePos
-DzSetUnitID
-DzSetUnitModel
-DzSetUnitPosition
-DzSetUnitTexture
-DzSetWar3MapMap
-DzSimpleFontStringFindByName
-DzSimpleFrameFindByName
-DzSimpleTextureFindByName
-DzSyncBuffer
-DzSyncData
-DzSyncDataImmediately
-DzTriggerRegisterKeyEvent
-DzTriggerRegisterKeyEventByCode
-DzTriggerRegisterMouseEvent
-DzTriggerRegisterMouseEventByCode
-DzTriggerRegisterMouseMoveEvent
-DzTriggerRegisterMouseMoveEventByCode
-DzTriggerRegisterMouseWheelEvent
-DzTriggerRegisterMouseWheelEventByCode
-DzTriggerRegisterSyncData
-DzTriggerRegisterWindowResizeEvent
-DzTriggerRegisterWindowResizeEventByCode
-DzUnitDisableAttack
-DzUnitDisableInventory
-DzUnitSilence
-EXBlendButtonIcon
-EXDclareButtonIcon
-EXDisplayChat
-EXEffectMatReset
-EXEffectMatRotateX
-EXEffectMatRotateY
-EXEffectMatRotateZ
-EXEffectMatScale
-EXExecuteScript
-EXGetAbilityDataInteger
-EXGetAbilityDataReal
-EXGetAbilityDataString
-EXGetAbilityId
-EXGetAbilityState
-EXGetAbilityString
-EXGetBuffDataString
-EXGetEffectSize
-EXGetEffectX
-EXGetEffectY
-EXGetEffectZ
-EXGetEventDamageData
-EXGetItemDataString
-EXGetUnitAbility
-EXGetUnitAbilityByIndex
-EXGetUnitArrayString
-EXGetUnitInteger
-EXGetUnitReal
-EXGetUnitString
-EXPauseUnit
-EXSetAbilityAEmeDataA
-EXSetAbilityDataInteger
-EXSetAbilityDataReal
-EXSetAbilityDataString
-EXSetAbilityState
-EXSetAbilityString
-EXSetBuffDataString
-EXSetEffectSize
-EXSetEffectSpeed
-EXSetEffectXY
-EXSetEffectZ
-EXSetEventDamage
-EXSetItemDataString
-EXSetUnitArrayString
-EXSetUnitCollisionType
-EXSetUnitFacing
-EXSetUnitInteger
-EXSetUnitMoveType
-EXSetUnitReal
-EXSetUnitString
-GetEventDamage
-GetUnitState
-RequestExtraBooleanData
-RequestExtraIntegerData
-RequestExtraRealData
-RequestExtraStringData
-SetUnitState
+japi.DzAPI_Map_ChangeStoreItemCoolDown(...)
+japi.DzAPI_Map_ChangeStoreItemCount(...)
+japi.DzAPI_Map_GetActivityData()
+japi.DzAPI_Map_GetGameStartTime()
+japi.DzAPI_Map_GetGuildName(whichPlayer)
+japi.DzAPI_Map_GetGuildRole(whichPlayer)
+japi.DzAPI_Map_GetLadderLevel(whichPlayer)
+japi.DzAPI_Map_GetLadderRank(whichPlayer)
+japi.DzAPI_Map_GetMapConfig(key)
+japi.DzAPI_Map_GetMapLevel(whichPlayer)
+japi.DzAPI_Map_GetMapLevelRank(whichPlayer)
+japi.DzAPI_Map_GetMatchType()
+japi.DzAPI_Map_GetPlatformVIP(whichPlayer)
+japi.DzAPI_Map_GetPublicArchive(whichPlayer, key)
+japi.DzAPI_Map_GetServerArchiveDrop(whichPlayer, key)
+japi.DzAPI_Map_GetServerArchiveEquip(whichPlayer, key)
+japi.DzAPI_Map_GetServerValue(whichPlayer, key)
+japi.DzAPI_Map_GetServerValueErrorCode(whichPlayer)
+japi.DzAPI_Map_GetUserID(...)
+japi.DzAPI_Map_HasMallItem(whichPlayer, key)
+japi.DzAPI_Map_IsBlueVIP(whichPlayer)
+japi.DzAPI_Map_IsRPGLadder()
+japi.DzAPI_Map_IsRPGLobby()
+japi.DzAPI_Map_IsRedVIP(whichPlayer)
+japi.DzAPI_Map_Ladder_SetPlayerStat(whichPlayer, key, value)
+japi.DzAPI_Map_Ladder_SetStat(whichPlayer, key, value)
+japi.DzAPI_Map_MissionComplete(whichPlayer, key, value)
+japi.DzAPI_Map_OrpgTrigger(whichPlayer, key)
+japi.DzAPI_Map_SavePublicArchive(whichPlayer, key, value)
+japi.DzAPI_Map_SaveServerValue(whichPlayer, key, value)
+japi.DzAPI_Map_Stat_SetStat(whichPlayer, key, value)
+japi.DzAPI_Map_Statistics(whichPlayer, eventKey, eventType, value)
+japi.DzAPI_Map_ToggleStore(...)
+japi.DzAPI_Map_UpdatePlayerHero(...)
+japi.DzAPI_Map_UseConsumablesItem(whichPlayer, key)
+japi.DzConvertWorldPosition(x, y, z)
+japi.DzCreateFrame(frame, parent, id)
+japi.DzCreateFrameByTagName(frameType, name, parent, template, id)
+japi.DzCreateSimpleFrame(frame, parent, id)
+japi.DzDestroyFrame(frameId)
+japi.DzDestructablePosition(d, x, y)
+japi.DzEnableWideScreen(enable)
+japi.DzExecuteFunc(funcName)
+japi.DzFrameCageMouse(frame, enable)
+japi.DzFrameClearAllPoints(frame)
+japi.DzFrameEditBlackBorders(topHeight, bottomHeight)
+japi.DzFrameFindByName(name, id)
+japi.DzFrameGetAlpha(frame)
+japi.DzFrameGetChatMessage()
+japi.DzFrameGetCommandBarButton(row, column)
+japi.DzFrameGetEnable(frame)
+japi.DzFrameGetHeight(frame)
+japi.DzFrameGetHeroBarButton(buttonId)
+japi.DzFrameGetHeroHPBar(buttonId)
+japi.DzFrameGetHeroManaBar(buttonId)
+japi.DzFrameGetItemBarButton(buttonId)
+japi.DzFrameGetMinimap()
+japi.DzFrameGetMinimapButton(buttonId)
+japi.DzFrameGetName(frame)
+japi.DzFrameGetParent(frame)
+japi.DzFrameGetPortrait()
+japi.DzFrameGetText(frame)
+japi.DzFrameGetTextSizeLimit(frame)
+japi.DzFrameGetTooltip()
+japi.DzFrameGetTopMessage()
+japi.DzFrameGetUnitMessage()
+japi.DzFrameGetUpperButtonBarButton(buttonId)
+japi.DzFrameGetValue(frame)
+japi.DzFrameHideInterface()
+japi.DzFrameSetAbsolutePoint(frame, point, x, y)
+japi.DzFrameSetAllPoints(frame, relativeFrame)
+japi.DzFrameSetAlpha(frame, alpha)
+japi.DzFrameSetAnimate(frame, animId, autoCast)
+japi.DzFrameSetAnimateOffset(frame, offset)
+japi.DzFrameSetEnable(frame, enable)
+japi.DzFrameSetFocus(frame, enable)
+japi.DzFrameSetFont(frame, fileName, height, flag)
+japi.DzFrameSetMinMaxValue(frame, minValue, maxValue)
+japi.DzFrameSetModel(frame, modelFile, modelType, flag)
+japi.DzFrameSetParent(frame, parent)
+japi.DzFrameSetPoint(frame, point, relativeFrame, relativePoint, x, y)
+japi.DzFrameSetPriority(frame, priority)
+japi.DzFrameSetScale(frame, scale)
+japi.DzFrameSetSize(frame, w, h)
+japi.DzFrameSetStepValue(frame, step)
+japi.DzFrameSetText(frame, text)
+japi.DzFrameSetTextAlignment(frame, align)
+japi.DzFrameSetTextColor(frame, color)
+japi.DzFrameSetTextSizeLimit(frame, limit)
+japi.DzFrameSetTexture(frame, texture, flag)
+japi.DzFrameSetTooltip(frame, tooltip)
+japi.DzFrameSetValue(frame, value)
+japi.DzFrameSetVertexColor(frame, vertexColor)
+japi.DzFrameShow(frame, enable)
+japi.DzGetClientHeight(...)
+japi.DzGetClientWidth(...)
+japi.DzGetColor(r, g, b, a)
+japi.DzGetGameUI()
+japi.DzGetLocale()
+japi.DzGetMouseFocus()
+japi.DzGetMouseTerrainX()
+japi.DzGetMouseTerrainY()
+japi.DzGetMouseTerrainZ()
+japi.DzGetMouseX()
+japi.DzGetMouseXRelative()
+japi.DzGetMouseY()
+japi.DzGetMouseYRelative()
+japi.DzGetTriggerKey()
+japi.DzGetTriggerKeyPlayer()
+japi.DzGetTriggerSyncData()
+japi.DzGetTriggerSyncPlayer()
+japi.DzGetUnitNeededXP(whichUnit, level)
+japi.DzGetUnitUnderMouse()
+japi.DzGetWheelDelta()
+japi.DzGetWindowHeight()
+japi.DzGetWindowWidth()
+japi.DzGetWindowX()
+japi.DzGetWindowY()
+japi.DzIsKeyDown(iKey)
+japi.DzIsMouseOverUI()
+japi.DzIsWindowActive()
+japi.DzLoadToc(tocFilePath)
+japi.DzOriginalUIAutoResetPoint(enable)
+japi.DzSetCustomFovFix(value)
+japi.DzSetMemory(address, value)
+japi.DzSetMousePos(x, y)
+japi.DzSetUnitID(whichUnit, id)
+japi.DzSetUnitModel(whichUnit, model)
+japi.DzSetUnitPosition(whichUnit, x, y)
+japi.DzSetUnitTexture(whichUnit, path, texId)
+japi.DzSetWar3MapMap(blp)
+japi.DzSimpleFontStringFindByName(name, id)
+japi.DzSimpleFrameFindByName(name, id)
+japi.DzSimpleTextureFindByName(name, id)
+japi.DzSyncBuffer(...)
+japi.DzSyncData(prefix, data)
+japi.DzSyncDataImmediately(prefix, data)
+japi.DzTriggerRegisterSyncData(trig, prefix, server)
+japi.DzUnitDisableAttack(...)
+japi.DzUnitDisableInventory(...)
+japi.DzUnitSilence(...)
+japi.EXBlendButtonIcon(...)
+japi.EXDclareButtonIcon(...)
+japi.EXDisplayChat(...)
+japi.EXEffectMatReset(effect)
+japi.EXEffectMatRotateX(effect, angle)
+japi.EXEffectMatRotateY(effect, angle)
+japi.EXEffectMatRotateZ(effect, angle)
+japi.EXEffectMatScale(effect, x, y, z)
+japi.EXExecuteScript(script)
+japi.EXGetAbilityDataInteger(abil, level, dataType)
+japi.EXGetAbilityDataReal(abil, level, dataType)
+japi.EXGetAbilityDataString(abil, level, dataType)
+japi.EXGetAbilityId(abil)
+japi.EXGetAbilityState(abil, stateType)
+japi.EXGetAbilityString(...)
+japi.EXGetBuffDataString(buffCode, dataType)
+japi.EXGetEffectSize(effect)
+japi.EXGetEffectX(effect)
+japi.EXGetEffectY(effect)
+japi.EXGetEffectZ(effect)
+japi.EXGetEventDamageData(eddType)
+japi.EXGetItemDataString(itemCode, dataType)
+japi.EXGetUnitAbility(whichUnit, abilityID)
+japi.EXGetUnitAbilityByIndex(whichUnit, index)
+japi.EXGetUnitArrayString(...)
+japi.EXGetUnitInteger(...)
+japi.EXGetUnitReal(...)
+japi.EXGetUnitString(...)
+japi.EXPauseUnit(whichUnit, enable)
+japi.EXSetAbilityAEmeDataA(...)
+japi.EXSetAbilityDataInteger(...)
+japi.EXSetAbilityDataReal(...)
+japi.EXSetAbilityDataString(...)
+japi.EXSetAbilityState(ability, stateType, value)
+japi.EXSetAbilityString(...)
+japi.EXSetBuffDataString(buffCode, dataType, value)
+japi.EXSetEffectSize(e, size)
+japi.EXSetEffectSpeed(e, speed)
+japi.EXSetEffectXY(e, x, y)
+japi.EXSetEffectZ(e, z)
+japi.EXSetEventDamage(amount)
+japi.EXSetItemDataString(itemCode, dataType, value)
+japi.EXSetUnitArrayString(...)
+japi.EXSetUnitCollisionType(enable, u, t)
+japi.EXSetUnitFacing(u, angle)
+japi.EXSetUnitInteger(...)
+japi.EXSetUnitMoveType(u, t)
+japi.EXSetUnitReal(...)
+japi.EXSetUnitString(...)
+japi.GetEventDamage()
+japi.GetUnitState(whichUnit, state)
+japi.RequestExtraBooleanData(dataType, whichPlayer, param1, param2, param3, param4, param5, param6)
+japi.RequestExtraIntegerData(dataType, whichPlayer, param1, param2, param3, param4, param5, param6)
+japi.RequestExtraRealData(dataType, whichPlayer, param1, param2, param3, param4, param5, param6)
+japi.RequestExtraStringData(dataType, whichPlayer, param1, param2, param3, param4, param5, param6)
+japi.SetUnitState(whichUnit, state, value)
+japi.DzAPI_Map_IsPlatformVIP(whichPlayer)
+japi.DzAPI_Map_IsPresetAward(whichPlayer)
+japi.DzAPI_Map_Ladder_SubmitPlayerRank(whichPlayer, value)
+japi.DzAPI_Map_Ladder_SubmitTitle(whichPlayer, value)
+japi.DzAPI_Map_Ladder_SubmitPlayerExtraExp(whichPlayer, value)
+japi.DzTriggerRegisterMallItemSyncData(trig)
+japi.DzAPI_Map_Global_ChangeMsg(trig)
+japi.DzAPI_Map_IsRPGQuickMatch()
+japi.DzAPI_Map_GetMallItemCount(whichPlayer, key)
+japi.DzAPI_Map_ConsumeMallItem(whichPlayer, key, value)
+japi.DzAPI_Map_EnablePlatformSettings(whichPlayer, option, enable)
+japi.DzAPI_Map_IsBuyReforged(whichPlayer)
+japi.DzAPI_Map_PlayedGames(whichPlayer)
+japi.DzAPI_Map_CommentCount(whichPlayer)
+japi.DzAPI_Map_FriendCount(whichPlayer)
+japi.DzAPI_Map_IsConnoisseur(whichPlayer)
+japi.DzAPI_Map_IsBattleNetAccount(whichPlayer)
+japi.DzAPI_Map_IsAuthor(whichPlayer)
+japi.DzAPI_Map_CommentTotalCount()
+japi.DzAPI_Map_CustomRanking(whichPlayer, id)
+japi.DzAPI_Map_IsPlatformReturn(whichPlayer)
+japi.DzAPI_Map_IsMapReturn(whichPlayer)
+japi.DzAPI_Map_IsPlatformReturnUsed(whichPlayer)
+japi.DzAPI_Map_IsMapReturnUsed(whichPlayer)
+japi.DzAPI_Map_IsCollected(whichPlayer)
+japi.DzAPI_Map_ContinuousCount(whichPlayer, id)
+japi.DzAPI_Map_IsPlayer(whichPlayer)
+japi.DzAPI_Map_MapsTotalPlayed(whichPlayer)
+japi.DzAPI_Map_MapsLevel(whichPlayer, mapId)
+japi.DzAPI_Map_MapsConsumeGold(whichPlayer, mapId)
+japi.DzAPI_Map_MapsConsumeLumber(whichPlayer, mapId)
+japi.DzAPI_Map_MapsConsume_1_199(whichPlayer, mapId)
+japi.DzAPI_Map_MapsConsume_200_499(whichPlayer, mapId)
+japi.DzAPI_Map_MapsConsume_500_999(whichPlayer, mapId)
+japi.DzAPI_Map_MapsConsume_1000(whichPlayer, mapId)
+japi.DzAPI_Map_GetForumData(whichPlayer, data)
+japi.DzAPI_Map_OpenMall(whichPlayer, key)
+japi.ServerAlready(whichPlayer)
+japi.ServerSaveValue(whichPlayer, key, value)
+japi.ServerLoadValue(whichPlayer, key)
+japi.ServerSaveRoom(whichPlayer, key, value)
+japi.GetFrameBorders()
+japi.IsWideScreen()
+japi.IsEventPhysicalDamage()
+japi.IsEventAttackDamage()
+japi.IsEventRangedDamage()
+japi.IsEventDamageType(damageType)
+japi.IsEventWeaponType(weaponType)
+japi.IsEventAttackType(attackType)
+japi.FrameTagIndex()
+japi.Z(x, y)
+japi.PX(x)
+japi.PY(y)
+japi.RX(x)
+japi.RY(y)
+japi.MousePX()
+japi.MousePY()
+japi.MouseRX()
+japi.MouseRY()
+japi.InWindow(x, y)
+japi.InWindowMouse()
+japi.FrameAdaptive(w)
+japi.FrameDisAdaptive(w)
+japi.Refresh(key, callFunc)
 ```
