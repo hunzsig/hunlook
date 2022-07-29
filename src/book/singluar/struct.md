@@ -1,7 +1,13 @@
 ## 目录结构
 
+> （*）Required 必要性，丢失崩溃
+> 
+> （~）Automatic 临时性，缺少自动构建
+> 
+> （·）Customize 自定义，按需构建
+
 ```
-├── assets
+├── assets -（*|·）资源库
 │   ├── war3mapFont - 放字体，只支持 ttf
 │   ├── war3mapIcon - 放图标，只支持 tga
 │   ├── war3MapLoading - 载入图，只支持单图 tga 或 规则组合 tga
@@ -11,17 +17,18 @@
 │   ├── war3mapSound - 放音效音乐，只支持 mp3
 │   ├── war3mapTextures - 放模型贴图，只支持 blp
 │   └── war3mapUI - 放UI套件，已有格式参考
-├── assetsNew - 与assets结构一致，处理新资源时使用
-├── projects - 用来放置你的地图项目目录，如 project_demo
-│   └── project_demo
-├── temp - 临时目录
-├── vendor
+├── assetsNew -（*|·）与assets结构一致，处理新资源时使用
+├── projects -（~|·）用来放置你的地图项目目录，如 project_demo
+│   └── project_demo -（·）
+├── temp -（~）缓存
+├── vendor -（*）
 │   ├── kernel - 功能核心
 │   ├── lni - 重要地图数据
 │   ├── models - model命令地图模版
 │   ├── w3x2lni - w3x2lni工具(v:2.7.2)
 │   └── WE - 马仔工具
-└── sl.exe - 命令工具
+├── conf -（~|·）配置
+└── sl.exe -（*）命令工具
 ```
 
 ### 项目结构

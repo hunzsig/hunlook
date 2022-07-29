@@ -1,8 +1,8 @@
 ## 快速开始
 
-Singluar是一个特别的魔兽地图开发框架，以上。
+###### 认真阅览技术文档每个章节
 
-### 安装免费的fork
+### 安装fork
 
 ###### 熟练使用 git 可跳过此步
 
@@ -16,7 +16,7 @@ Singluar是一个特别的魔兽地图开发框架，以上。
 git clone https://github.com/singluar/singluar-restricted.git
 ```
 
-### 安装免费的IDE - Ideac
+### 安装IDE - Ideac
 
 ##### 安装插件 EmmyLua
 
@@ -28,7 +28,7 @@ git clone https://github.com/singluar/singluar-restricted.git
 
 ![ImageIconViewer](https://gitlab.com/h-document/singluar/-/raw/main/images/imageIconViewer.png)
 
-### 打开终端并进入框架根目录（工作区）
+### 打开终端并进入框架根
 
 ```
 cd ./singluar
