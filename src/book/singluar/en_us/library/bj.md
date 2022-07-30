@@ -1,22 +1,23 @@
 ## BJ (Blizzard Jass)
 
-### 因为BJ本质是多余的，所以YDlua引擎自带并没有BJ。
+### Because BJ is redundant in nature, ydlua engine comes with theout BJ.
 
-> 下面说明下为什么BJ是多余的？
+> Why is BJ redundant?
 >
-> 因为BJ本质就是对CJ的封装，所以编写lua可以自己封装需要的而没必要用它的。
+> Because BJ is essentially the encapsulation of CJ, writing Lua can encapsulate what you need without using it.
 >
-> 简单来说就是并不需要它来帮你封装
+> Simply put, you don't need it to help you package
 
-例如我们来看一个暴雪的BJ封装 （设置单位的生命周期）
+For example, let's look at a blizzard BJ package (set the life cycle of the unit)
 
 ```jass
 UnitApplyTimedLifeBJ( 60, 'BTLF', GetTriggerUnit() )
 ```
 
-那么这个BJ其实对应CJ的是什么呢？
+So what does this BJ actually correspond to CJ?
 
-> 在F4触发编辑器，将T转为jass自定义文本后，按住ctrl点击函数名即可查看WE的函数详情
+> Press F4 to trigger the editor, turn t into jass custom text, press and hold Ctrl and click the function name to view
+> the function details of we
 
 ```jass
 function UnitApplyTimedLifeBJ takes real duration, integer buffId, unit whichUnit returns nothing
@@ -24,28 +25,28 @@ function UnitApplyTimedLifeBJ takes real duration, integer buffId, unit whichUni
 endfunction
 ```
 
-可以看到，暴雪的BJ封装大多都是这种换个位置的无谓封装
+It can be seen that Blizzard BJ packages are mostly such meaningless packages with different positions
 
-假如说是在编写其他语种的代码（例如lua）需要封装就算了，在jass里面这样的封装根本毫无意义
+If you are writing code in other languages (such as Lua) and need encapsulation, it's OK. Such encapsulation is meaningless in jass
 
-所以一般认为BJ在自定义代码层面来讲是没用的
+So it is generally believed that BJ is useless in terms of custom code
 
 ```jass
 UnitApplyTimedLife(whichUnit, buffId, duration)
 ```
 
-那么有的BJ函数是有用的，那怎么办呢？相信聪明的你已经明白了
+So some BJ functions are useful, so what should we do? Believe that smart you already understand
 
-没错，就和上面一样嘛。看看它的BJ怎么写的，然后写你自己的代码风格封装就好了
+Yes, just like above. Just look at how its BJ is written, and then write your own code style encapsulation
 
-举个例子，玩家选择单位这个BJ方法
+For example, the BJ method of players choosing units
 
-> 并不是名字有BJ才是BJ函数，在WE里面显示红名的就是BJ函数
+> BJ function is not the name with BJ. BJ function displays the red name in we
 
 ```
 SelectUnitForPlayerSingle( GetTriggerUnit(), Player(0) )
 
-// 它的本质
+// Its essence
 function SelectUnitForPlayerSingle takes unit whichUnit, player whichPlayer returns nothing
     if (GetLocalPlayer() == whichPlayer) then
         // Use only local code (no net traffic) within this block to avoid desyncs.
@@ -55,12 +56,12 @@ function SelectUnitForPlayerSingle takes unit whichUnit, player whichPlayer retu
 endfunction
 ```
 
-那么你在lua里面就可以这样写
+Then you can write this in Lua
 
 ```lua
-if (cj.GetLocalPlayer() == whichPlayer) then
-    ClearSelection()
-    SelectUnit(whichUnit, true)
+if (J.GetLocalPlayer() == whichPlayer) then
+    J.ClearSelection()
+    J.SelectUnit(whichUnit, true)
 end
 ```
 

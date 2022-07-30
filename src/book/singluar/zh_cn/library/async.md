@@ -19,10 +19,7 @@ end)
 #### 异步随机整数
 
 ```lua
--- 同步建池
-async.randIntPool(1, 1000)
--- 异步读池
 async.call(PlayerLocal(), function()
-    print(async.randInt())
+    print(async.rand(0, 1000))
 end)
 ```

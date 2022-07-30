@@ -136,7 +136,7 @@ AModel("echo")
 
 > 资源文件放在 war3mapSelection 里
 >
-> 以自带提供8套，默认为Common
+> 已自带提供8套，默认为Common
 
 ```lua
 _assets_selection("CorneredBox")

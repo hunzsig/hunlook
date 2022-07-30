@@ -58,9 +58,9 @@ endfunction
 那么你在lua里面就可以这样写
 
 ```lua
-if (cj.GetLocalPlayer() == whichPlayer) then
-    ClearSelection()
-    SelectUnit(whichUnit, true)
+if (J.GetLocalPlayer() == whichPlayer) then
+    J.ClearSelection()
+    J.SelectUnit(whichUnit, true)
 end
 ```
 

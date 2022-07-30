@@ -1,10 +1,10 @@
-## 框架特定设计
+## Frame specific design
 
-### modify特定修改参数
+### Modify specific modification parameters
 
-* 当带有该参数时，不存在时方法为获取，存在为修改
+* With this parameter, the method is get when it does not exist and modify when it exists
 
-> 以Game对象的名字为例
+> Take the name of the game object as an example
 >
 > Game().name(modify:string)
 
@@ -18,9 +18,9 @@ Game().name("剑圣求生之路") -- return this
 
 ```
 
-* 支持数值型属性的浮动修改
+* Support floating modification of numeric attributes
 
-> 以Game对象的玩家仓库容量为例
+> Take the player warehouse capacity of game object as an example
 >
 > Game().warehouseSlot(max:number)
 
@@ -37,11 +37,11 @@ Game().warehouseSlot("*=3")
 Game().warehouseSlot("/=2")
 ```
 
-### 连贯操作
+### Coherent operation
 
-* 大部分对象的方法，都会返回this，即对象本身，从而可实现连贯操作
+* Most object methods will return this, that is, the object itself, so that coherent operations can be achieved
 
-> 以 AbilityTpl 技能模版举例
+> Take the abilitytpl skill template as an example
 
 ```lua
 AbilityTpl("一个被动", ABILITY_TARGET_TYPE.PAS)

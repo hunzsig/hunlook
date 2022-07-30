@@ -1,6 +1,6 @@
 ## CJ (Common Jass)
 
-> 在使用时，使用J即可引导所有CJ函数
+> When in use, use J to boot all CJ functions
 
 ```lua
 J.AbilityId

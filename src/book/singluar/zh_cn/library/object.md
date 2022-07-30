@@ -19,13 +19,14 @@ FrameBackdrop
 FrameBackdropTile
 FrameBar
 FrameButton
+FrameCustom
 FrameHighLight
 FrameLabel
 FrameList
 FrameModel
-FrameOrigin
 FrameText
-FrameToolTip
+FrameTextarea
+FrameToolTips
 Game
 Item
 ItemGroup

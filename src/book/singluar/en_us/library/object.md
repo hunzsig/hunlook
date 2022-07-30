@@ -1,6 +1,6 @@
-## Object 对象
+## Object
 
-> BOP设计，拓展功能的同时，增强编码效率
+> BOP design can expand functions and enhance coding efficiency at the same time
 
 ```
 Ability
@@ -19,13 +19,14 @@ FrameBackdrop
 FrameBackdropTile
 FrameBar
 FrameButton
+FrameCustom
 FrameHighLight
 FrameLabel
 FrameList
 FrameModel
-FrameOrigin
 FrameText
-FrameToolTip
+FrameTextarea
+FrameToolTips
 Game
 Item
 ItemGroup

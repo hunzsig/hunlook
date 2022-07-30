@@ -1,16 +1,16 @@
 ## Colour 文本颜色
 
-> 框架提供了文本颜色修改的库
+> The framework provides a library of text color modification
 
-#### hex 方法，使用6位长度颜色
+#### hex method, Use 6-bit length color
 
 ```lua
 colour.hex("一个字符串", "FF0000")
 ```
 
-#### hex衍生方法
+#### hex derivative method
 
-> 自带的一些常用颜色，你也可以自己拓展
+> You can also expand some common colors you bring
 
 ```lua
 --- 耀金
@@ -71,9 +71,9 @@ colour.purpleLight("一个字符串")
 colour.purple("一个字符串")
 ```
 
-#### format 方法
+#### format
 
-> 适用于复杂文本颜色处理
+> Suitable for complex text color processing
 
 ```lua
 -- 例子

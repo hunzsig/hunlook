@@ -1,49 +1,50 @@
-## Assets 资产
+## Assets
 
-> 用过 h-lua 的都知道有个 hslk，本框架已基本废除改为assets管理
+> Anyone who has used h-lua knows that there is an hslk. This framework has been basically abolished and changed to
+> assets management
 >
-> 如果你很熟悉hslk，也许你很快也能掌握
+> If you are familiar with hslk, maybe you can master it soon
 >
-> 假如实在没法掌握assets，此处建议直接放弃此框架
+> If you really can't master assets, it is suggested to abandon this framework directly
 
-### 共有 9 种资产
+### There are 9 kinds of assets in total
 
-> 以下类别都可以参考assets目录下的实现
+> The following categories can refer to the implementation under the assets directory
 >
-> 后缀如找不到则必须小写，下面说明一般都默认大小写强制
+> If the suffix cannot be found, it must be lowercase. The following description generally defaults to case enforcement
 >
-> _assets 系列函数是在地图生成前自动引入
+> _assets series functions are automatically introduced before map generation
 
 * Font
-  > 字体 格式支持：ttf
+  > Font - Only: ttf
 * Icon
-  > 图标 格式支持：tga
+  > Icon - Only：tga
 * Loading
-  > 载入图 格式支持：tga
+  > Loading - Only：tga
 * Preview
-  > 预览图 格式支持：tga
+  > Preview - Only：tga
 * Model
-  > 模型 格式支持：mdx
+  > Model - Only：mdx
 * Selection
-  > 选择圈 格式支持：限定形式套件
+  > Selection - Only：Limited form Kit
 * Sound
-  > 声效 格式支持：mp3
+  > Sound - Only：mp3
 * Textures
-  > 模型贴图 格式支持：blp
+  > Model Textures - Only：blp
 * UI
-  > 界面 格式支持：限定形式套件
+  > UIKit - Only：Limited form Kit
 
-#### 引用 Font(字体)
+#### Reference Font
 
-> 资源文件放在 war3mapFont 里
+> Resource files are placed in war3mapFont
 
 ```lua
 _assets_font("微软雅黑") --后缀可省略
 ```
 
-#### 引用 Icon(图标)
+#### Reference Icon
 
-> 资源文件放在 war3mapIcon 里
+> Resource files are placed in war3mapIcon
 
 ```lua
 -- 原生魔兽的图标路径需要在前面加一个冒号 ":"
@@ -55,7 +56,7 @@ _assets_icon("black") -- 例如载入 war3mapIcon\black.tga
 _assets_icon("black","黑") --可以赋予一个别称，后续也能在代码中引用
 ```
 
-scripts中引用
+References in scripts
 
 ```lua
 AIcon("Sheep")
@@ -63,35 +64,35 @@ AIcon("black")
 AIcon("黑") -- 有别称的用别称
 ```
 
-#### 引用 Loading(载入图)
+#### Reference Loading
 
-> 资源文件放在 war3MapLoading 里
+> Resource files are placed in war3MapLoading
 
 ```lua
 _assets_loading("default") --后缀可省略
 ```
 
-#### 引用 Preview(预览图)
+#### Reference Preview
 
-> 资源文件放在 war3MapPreview 里
+> Resource files are placed in war3MapPreview
 
 ```lua
 _assets_preview("default") --后缀可省略
 ```
 
-#### 引用 Model(模型)
+#### Reference Model
 
-> 资源文件放在 war3mapModel 里
+> Resource files are placed in war3mapModel
 >
-> 模型有 3 种形态：| common | unit | item | destructable
+> The model has three forms：| common | unit | item | destructable
 >
-> unit | item | destructable |的模型通用可以使用AModel获取
+> unit | item | destructable |can be obtained by Amodel
 >
-> * 【单位】Unit对象只能使用unit形态的模型
+> * 【unit】Unit object can only use the model in the form of unit
 >
-> * 【物品】Item对象只能使用item形态的模型
+> * 【item】Item objects can only use models in item form
 >
-> * 【可破坏物】Destructable对象只能使用destructable形态的模型
+> * 【destructable】Destructible objects can only use destructible models
 
 ```lua
 -- 绵羊（这个是unit形态，由于是原生路径，所以冒号别忘了）
@@ -106,17 +107,17 @@ _assets_model(":units\\critters\\Sheep\\Sheep", "Sheep", "unit", {
 _assets_model(":Doodads\\LordaeronSummer\\Props\\Cage\\Cage", "Cage", "destructable")
 ```
 
-> war3mapModel内的模型如果有贴图，必须放在 war3mapTextures 内
+> If the model in war3mapModel has maps, it must be placed in war3mapTextures
 >
-> 请自行修改好模型贴图路径
+> Please modify the model map path by yourself
 >
-> 当贴图在 war3mapTextures 存在时，模型被加载时会自动引入需要的贴图
+> When the map exists in war3mapTextures, the required map will be automatically introduced when the model is loaded
 >
-> 如果魔兽存在 Portrait，文件名格式为在对应本体模型名字加 _Portrait，
-> 例如你有个hero.mdx的模型，该模型作者提供了Portrait.mdx，
-> 你应该将其命名为hero_Portrait.mdx
+> If there is a portlet in Warcraft, the file name format is added to the name of the corresponding ontology model + _Portrait，
+> For example, you have a model of hero.mdx, and the author of the model provides portrait.mdx,
+> You should name it hero_Portrait.mdx
 >
-> 目录内就有两个文件 hero.mdx 和 hero_Portrait.mdx
+> There are two files in the directory hero.mdx and hero_Portrait.mdx
 
 ```lua
 -- war3mapModel 目录下的直接相对路径就可以了
@@ -132,26 +133,26 @@ AModel("slash/Red_swing")
 AModel("echo")
 ```
 
-#### 引用 Selection(选择圈)
+#### Reference Selection
 
-> 资源文件放在 war3mapSelection 里
+> Resource files are placed in war3mapSelection
 >
-> 以自带提供8套，默认为Common
+> 8 sets have been provided, and the default is common
 
 ```lua
 _assets_selection("CorneredBox")
 ```
 
-#### 引用 Sound(声效)
+#### Reference Sound
 
-> 资源文件放在 war3mapSound 里
+> Resource files are placed in war3mapSound
 >
-> 声效分为4种：vwp vcm v3d bgm
+> There are four kinds of sound effects：vwp vcm v3d bgm
 
-* vwp 武器套件，参考提供的编谱你自己的
-* vcm 界面音效，不以地点绑定的音效，与距离无关
-* v3d 3D音效，以地点、单位、区域绑定的音效，距离远近影响音量
-* bgm 背景音乐
+* vwp - Weapon kit, refer to the provided compilation of your own
+* vcm - Interface sound effect, which is not bound by location, has nothing to do with distance
+* v3d - 3D sound effects, sound effects bound by place, unit and area, and the distance affects the volume
+* bgm - background music
 
 ```lua
 _assets_sound("metal_bash_heavy", nil, "vwp")
@@ -160,24 +161,24 @@ _assets_sound("voice/action/打鼓", "drum", "v3d")
 _assets_sound("bgm/dnf/Dungeon and Fighter - GBL女神殿 - goddess temple", "gbl", "bgm")
 ```
 
-#### 引用 模型贴图
+#### Reference Model
 
-> 资源文件放在 war3mapTextures 里
+> Resource files are placed in war3mapTextures
 >
-> 必须和 war3mapModel 联动才有用，单指模型的贴图，其他贴图不要放这里
+> It is only useful if it is linked with war3mapmodel. It only refers to the map of the model. Don't put other maps here
 
-#### 引用 UI 套件
+#### Reference UI Kits
 
-> 资源文件放在 war3mapUI 里
+> Resource files are placed in war3mapUI
 >
-> UI 套件（Kit）使用的资源与其他目录无关，UI套件是自成一体的，便于移植
+> The resources used by the UI kit are independent of other directories. The UI kit is self-contained and easy to migrate
 >
-> 项目组已免费提供了很多强有力的 UI 套件，请参考它们的格式，编写你的UI（不可随意用于商用）
+> The project team has provided many powerful UI Suites for free. Please refer to their formats and write your UI (not for commercial use at will)
 
 ```lua
 _assets_ui("singluar_debug")
 _assets_ui("singluar_echo")
 _assets_ui("singluar_chat")
 _assets_ui("singluar_set")
-_assets_ui("singluar_cursor") --指针置顶
+_assets_ui("singluar_cursor") --Pointer on top
 ```

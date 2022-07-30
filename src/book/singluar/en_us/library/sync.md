@@ -1,8 +1,8 @@
-## sync 同步
+## Sync synchronization
 
-> 网易给我们提供的与同步数据有关的函数有4条：
+> Netease provided us with 4 functions related to synchronizing data
 >
-> japi已附带
+> Japi comes with:
 
 ```
 DzSyncData
@@ -11,21 +11,21 @@ DzGetTriggerSyncPlayer
 DzGetTriggerSyncData
 ```
 
-> 原理和服务器请求响应一样，简单易懂
+> The principle is as simple as the server request response
 >
-> 一个发，一个收（注意过程时间）
+> One send, one receive (pay attention to the process time of 0.1~0.15s)
 
-#### 直接使用Game对象的同步
+#### Synchronization using game objects directly
 
-> 并不建议直接调用japi
+> It is not recommended to call japi directly
 >
-> 使用两组配套，经由框架协助你优化调度同步过程
+> Use two sets of supporting devices to help you optimize the scheduling synchronization process through the framework
 
 ```lua
--- 发
+-- send
 sync.send("hzg", { "hunzsig", "是个开源框架作者" })
 
--- 收
+-- receive
 sync.receive("hzg", function(syncData)
     echo(syncData.transferData[1] .. "确实" .. syncData.transferData[2])
 end)

@@ -1,10 +1,10 @@
 ## JAPI
 
-### 框架内实装JAPI库
+### Real installed japi Library in the framework
 
-###### 详细调用自行查看 /vendor/kernel/library/foundation/japi.lua
+###### details /vendor/kernel/library/foundation/japi.lua
 
-> 方法与JAPI环境、框架内嵌环境紧密相关，不要随意乱改
+> The method is closely related to the japi environment and the framework embedded environment. Do not change it randomly
 
 ```lua
 japi.DzAPI_Map_ChangeStoreItemCoolDown(...)
