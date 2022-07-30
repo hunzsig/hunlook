@@ -1,21 +1,21 @@
-## timer 计时器
+## timer
 
-#### 一次性计时器
+#### One time timer
 
-> 一次性计时器可摧毁也可以略写，框架会自动清理
+> The one-time timer can be destroyed or written slightly, and the frame will be cleaned automatically
 >
-> 但为了不在循环计时器中忘记摧毁计时器，建议养成用完即弃的好习惯
+> However, in order not to forget to destroy the timer in the cycle timer, it is recommended to develop the good habit of giving up when used up
 
 ```lua
 time.setTimeout(3, function(curTimer)
     curTimer.destroy()
-    print("3秒已到")
+    print("Three seconds have passed")
 end)
 ```
 
-#### 循环计时器
+#### Cycle timer
 
-> 循环计时器如需要必须手动清理
+> The cycle timer must be cleaned manually if necessary
 
 ```lua
 local i = 0
@@ -23,16 +23,16 @@ time.setInterval(1, function(curTimer)
     i = i + 1
     if (i == 100) then
         curTimer.destroy()
-        print("i等于100了")
+        print("i equals 100")
     end
 end)
 ```
 
-#### 异步计时器
+#### Asynchronous timer
 
-> 框架支持异步计时器
+> The framework supports asynchronous timers
 >
-> 但不建议跨域操纵计时器，除非你能自己把控异步数据的可靠性
+> However, it is not recommended to manipulate timers across domains unless you can control the reliability of asynchronous data by yourself
 
 ```lua
 

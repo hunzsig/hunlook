@@ -1,6 +1,6 @@
-## 难度选择对话框
+## Difficulty selection dialog box
 
-创建一个带文本当作数值的“难度选择”对话框，自动挑选第一位玩家，让他选
+Create a "difficulty selection" dialog box with text as a value, and automatically select the first player to choose
 
 ```lua
 Dialog(
@@ -25,7 +25,7 @@ Dialog(
 ).show()
 ```
 
-创建一个带热键、文本、数值的“难度选择”对话框，给玩家1，让他选
+Create a "difficulty selection" dialog box with hotkeys, text and values, and give player 1 to choose
 
 ```lua
 Dialog(
@@ -55,7 +55,7 @@ Dialog(
 ).show(Player(1))
 ```
 
-预定义对话框，后续可根据title取回同一个对象
+Predefined dialog box, and then the same object can be retrieved according to the title
 
 > 如上面的对话框，没有destroy前都可以重新取回数据
 

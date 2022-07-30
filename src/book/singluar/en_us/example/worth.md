@@ -1,27 +1,27 @@
-## worth 层级资源
+## Worth Hierarchical resources
 
-### 玩家财物资源单位转化规则的设定
+### Setting of conversion rules for player property resource units
 
-> 游戏财物规则设定
+> Game property rule setting
 >
-> 一般写于setup
+> Usually written in setup
 
 ```lua
--- 财物设定
+-- Property setting
 Game().worth("lumber", "木头", { "gold", 1000000 }) -- 1木 = 1000000金
 Game().worth("gold", "黄金", { "silver", 100 }) -- 1金 = 100银
 Game().worth("silver", "白银", { "copper", 100 }) -- 1银 = 100铜
 Game().worth("copper", "青铜") -- 无下级
 ```
 
-### 使用玩家方法设定资源
+### Use the player method to set resources
 
 ```lua
 Player(1).worth("=", { gold = 1, silver = 101, copper = 111 })
 Player(1).worth("-", { silver = 110 })
 ```
 
-### 资源其他方法测试
+### Resource other method test
 
 ```lua
 

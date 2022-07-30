@@ -1,19 +1,19 @@
-## Process 流程管理
+## Process management
 
-> 在全局热更新 hotLoader 的扶持下，Process的效能变得突破天际的强
+> With the support of global hot update hotloader, the efficiency of process has become stronger than the sky
 >
-> 你可以使用 Process 编写某一段的游戏流程，随时回滚测试，跳跃测试
+> You can use process to write a certain game flow, roll back the test and jump the test at any time
 
-### 先在项目里面新建一个流程目录，专门用来写流程，如 process
+### First, create a new process directory in the project, which is specially used to write processes, such as process
 
 ```
-└── project_demo - 项目目录
+└── project_demo - Project directory
     └── scripts
-        └── process - 项目流程代码
-            └── start.lua -- 流程以 start 开始
+        └── process - Project process code
+            └── start.lua -- The process starts with start
 ```
 
-你可以在初始流程里写一些简单的东西，因为一般只作为入口，如
+You can write some simple things in the initial process, because it is generally only used as an entry, such as
 
 ```lua
 local process = Process("start")
@@ -23,7 +23,7 @@ process.onStart(function(this)
 end)
 ```
 
-### 使用 next方法，跳到下一个流程
+### Use the next method to jump to the next process
 
 ```lua
 -- 以名定义流程 start 将会游戏启动时自动运行
@@ -37,7 +37,7 @@ process.onStart(function(this)
 end)
 ```
 
-### 然后在建一个test流程
+### Then a test process is under construction
 
 ```
 └── project_demo - 项目目录
@@ -47,7 +47,7 @@ end)
             └── test.lua -- test流程
 ```
 
-这个 test.lua 里面回响一句话
+This test A sentence echoed in Lua
 
 ```lua
 local process = Process("test")
@@ -56,15 +56,15 @@ process.onStart(function(this)
 end)
 ```
 
-### 流程内的资源管理
+### Resource management within the process
 
-> 一般局部变量可以无视，不管理即可
+> General local variables can be ignored without management
 >
-> 但例如有个流程叫bossComing，它创建了一个boss攻击玩家
+> But for example, there is a process called bossComing, which creates a boss attack player
 >
-> 你可以把它绑定到stage里，然后在结束回调时，令它删除
+> You can bind it to the stage, and then delete it at the end of the callback
 >
-> 这样这个boss就会在流程跳跃或重置时，自动消灭
+> In this way, the boss will be automatically eliminated when the process jumps or resets
 
 ```lua
 local process = Process("bossComing")
@@ -81,10 +81,11 @@ process
     end)
 ```
 
-### 你也可以注册一些命令，来手动控制流程的跳跃
+### You can also register some commands to manually control the jump of the process
 
-> 下面是个例子，如敲入 -proc test，将会重置执行 test
-> 下面是个例子，如敲入 -proc this，将会重置当前流程
+> The following is an example. If you type -proc test, the execution of test will be reset
+> 
+> The following is an example. If you type -proc this, the current process will be reset
 
 ```lua
 if (DEBUGGING) then
