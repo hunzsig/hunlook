@@ -1,4 +1,4 @@
-### 技能信息
+### Ability Description
 
 ```lua
 -- 定义技能描述体
@@ -43,7 +43,7 @@ Game().defineDescription("abilityLvPoint", function(this, _)
 end)
 ```
 
-### 物品信息
+### Item Description
 
 ```lua
 -- 定义物品技能描述体
@@ -109,7 +109,7 @@ Game().defineDescription("itemBase", function(this, _)
 end)
 ```
 
-### 属性信息
+### Attribute Description
 
 ```lua
 attribute.labelOpts = {
@@ -162,7 +162,7 @@ Game().defineDescription("attributes", function(this, options)
 end)
 ```
 
-### 游戏随性信息
+### Game Description
 
 ```lua
 -- 游戏信息

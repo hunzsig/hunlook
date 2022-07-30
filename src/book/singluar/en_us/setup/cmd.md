@@ -1,4 +1,4 @@
-### 聊天命令注册
+### Chat command registration
 
 ```lua
 --- -gg 投降

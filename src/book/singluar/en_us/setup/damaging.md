@@ -1,8 +1,8 @@
-### 预设伤害流
+### Damage flow
 
-> 用于插入伤害流程的设定
+> Settings for inserting damage flow
 >
-> 根据你编写定义的顺序自上而下开始执行，options会向下流动保存，可以往里面保存一些值，流到下一个定义使用
+> Execute from top to bottom according to the order in which you write the definitions, options will flow down and save, you can save some values ​​in it, and flow to the next definition for use
 
 ```lua
 --- 提取一些需要的参数

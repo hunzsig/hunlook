@@ -1,6 +1,6 @@
-### 飘浮字
+### TextTag
 
-> 模型漂浮字需要提前设置
+> Model floating words need to be set in advance
 
 ```lua
 -- 漂浮字符

@@ -1,6 +1,6 @@
-### 事件反应
+### Event reaction
 
-> 用于增添事件发生时的效果补充，可自定义
+> Used to add supplementary effects when events occur, which can be customized
 
 ```lua
 -- 事件反应

@@ -1,11 +1,11 @@
-### 单位等级极限、技能经验计算
+### Unit level limit, skill experience calculation
 
 ```lua
 -- 技能升级极限以及经验计算参数 max fixed ratio limit
 Game().unitExp(100, 100, 1.20, 1000000)
 ```
 
-### 技能栏热键、等级极限、技能经验计算
+### Skill bar hotkey, level limit, skill experience calculation
 
 ```lua
 -- 配置游戏 - 技能栏热键
@@ -16,7 +16,7 @@ Game().abilityHotkey({ "Q", "W", "E", "R", "D", "F", "C", "V" })
 Game().abilityExp(99, 100, 1.00, 10000)
 ```
 
-### 物品栏热键、等级极限、技能经验计算
+### Inventory hotkey, level limit, skill experience calculation
 
 ```lua
 -- 配置游戏 - 物品栏热键
@@ -27,7 +27,7 @@ Game().itemHotkey({ "Numpad7", "Numpad8", "Numpad4", "Numpad5", "Numpad1", "Nump
 Game().itemExp(99, 100, 1.00, 10000)
 ```
 
-### 玩家仓库上限
+### Player warehouse cap
 
 ```lua
 -- 配置游戏 - 玩家仓库

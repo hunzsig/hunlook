@@ -1,6 +1,6 @@
-### 预设附魔
+### Enchantments
 
-> 用于定义附魔种类、反应的设置
+> Settings for defining enchantment types and reactions
 
 ```lua
 --- 方便伤害类型引用 {value:string,label:string}

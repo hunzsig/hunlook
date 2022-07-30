@@ -1,14 +1,14 @@
-## TPL 模版
+## TPL Template
 
-> 不再依赖物编的本框架，衍生出了新的代替品：TPL
+> No longer rely on the framework compiled by Wu, a new substitute has been derived: TPL
 >
-> TPL 是 template 的简称，意为模板、标准
+> TPL is the abbreviation of template, which means template and standard
 >
-> Ability、Item、Unit三大件都基于Tpl来构建
+> Ability, item and unit are all built based on TPL
 
-##### 由于写法太多，这里只随便写几种，仅供简单参考
+##### Because there are too many ways to write, only a few are written here for simple reference only
 
-> TPL 就像是代码物编一样，但可以在运行时修改热更新，配合流程测试会很爽
+> TPL is like code editing, but you can modify hot updates at run time. It will be great to cooperate with process testing
 
 ### AbilityTpl
 
@@ -102,7 +102,7 @@ _assets_model(
  )
 ```
 
-> 然后定义Tpl
+> Then define TPL
 
 ```lua
 TPL_ITEM = {
@@ -155,7 +155,7 @@ _assets_model(
 )
 ```
 
-> 然后定义Tpl
+> Then define TPL
 
 ```lua
 TPL_UNIT = {}
