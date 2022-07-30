@@ -1,7 +1,8 @@
 import './Homepage.less';
 import React, {Component} from 'react';
-import {SideBar, Tabs, Toast} from 'antd-mobile';
+import {SideBar, Tabs, Toast, Button, Modal} from 'antd-mobile';
 import {SoundOutline, SoundMuteOutline} from "antd-mobile-icons";
+import {TranslationOutlined} from "@ant-design/icons";
 import {History, Parse} from 'h-react-antd-mobile';
 import Book from './Book';
 
@@ -12,21 +13,41 @@ class Homepage extends Component {
     this.books = {};
     this.state = {
       p: search.p || 'index',
+      l: search.l || History.state.lang[0].key,
       n: search.n || undefined,
       autoPlay: false,
     }
-    this.summary = require(`./../../book/${History.state.book}/summary.js`).default;
   }
 
   push = () => {
-    let u = '/' + Parse.urlEncode({p: this.state.p, n: this.state.n})
+    let u = '/' + Parse.urlEncode({p: this.state.p, n: this.state.n, l: this.state.l})
     window.history.replaceState(null, null, History.prefix + u);
     document.getElementById("page").scrollTop = 0;
   }
 
+  summary = () => {
+    return require(`./../../book/${History.state.book}/${this.state.l}/summary.js`).default;
+  }
+
+  book = () => {
+    let k = this.state.p || 'index';
+    k += this.state.n ? `/${this.state.n}` : ''
+    try {
+      this.books[k] = require(`./../../book/${History.state.book}/${this.state.l}/${k}.md`);
+    } catch (error) {
+      Toast.show({
+        icon: 'fail',
+        content: 'Page Lost!',
+        position: 'top',
+      })
+    }
+    return this.books[k]
+  }
+
   renderSideBar = () => {
+    let summary = this.summary()
     return (
-      this.summary.map((val) => {
+      summary.map((val) => {
         if (val.hidden === true) {
           return null;
         }
@@ -54,8 +75,9 @@ class Homepage extends Component {
 
   renderTabs = () => {
     let children = undefined;
-    for (let i in this.summary) {
-      const v = this.summary[i]
+    let summary = this.summary()
+    for (let i in summary) {
+      const v = summary[i]
       if (v.key === this.state.p) {
         children = v.children;
         break;
@@ -92,24 +114,8 @@ class Homepage extends Component {
     );
   }
 
-  book = () => {
-    let k = this.state.p || 'index';
-    k += this.state.n ? `/${this.state.n}` : ''
-    if (this.books[k] === undefined) {
-      try {
-        this.books[k] = require(`./../../book/${History.state.book}/${k}.md`);
-      } catch (error) {
-        Toast.show({
-          icon: 'fail',
-          content: '文档已丢失',
-          position: 'top',
-        })
-      }
-    }
-    return this.books[k]
-  }
-
   render() {
+    let summary = this.summary()
     return (
       <div className="page-homepage">
         <div className="sidebar">
@@ -118,10 +124,10 @@ class Homepage extends Component {
             onChange={(key) => {
               this.state.p = key;
               this.state.n = undefined;
-              this.setState({p: this.state.p,});
+              this.setState({p: this.state.p});
               let children = undefined;
-              for (let i in this.summary) {
-                const v = this.summary[i]
+              for (let i in summary) {
+                const v = summary[i]
                 if (v.key === this.state.p) {
                   children = v.children;
                   break;
@@ -130,7 +136,7 @@ class Homepage extends Component {
               if (children !== undefined) {
                 this.state.n = children[0].key;
               }
-              this.setState({n: this.state.n,});
+              this.setState({n: this.state.n});
               this.push();
             }}
           >
@@ -138,6 +144,33 @@ class Homepage extends Component {
           </SideBar>
         </div>
         <div className="books">
+          <Button
+            className="series"
+            color='primary'
+            onClick={() => {
+              const actions = [];
+              History.state.lang.forEach((l) => {
+                actions.push({
+                  key: l.key,
+                  text: l.label,
+                  disabled: l.key === this.state.l,
+                  primary: true,
+                  onClick: () => {
+                    this.state.l = l.key;
+                    this.setState({l: this.state.l});
+                    this.push();
+                  }
+                })
+              })
+              Modal.show({
+                closeOnAction: true,
+                closeOnMaskClick: true,
+                actions: actions,
+              })
+            }}
+          >
+            <TranslationOutlined/>
+          </Button>
           <div className="tabs">
             <Tabs
               stretch={false}
@@ -174,7 +207,8 @@ class Homepage extends Component {
           </div>
         }
       </div>
-    );
+    )
+      ;
   }
 }
 

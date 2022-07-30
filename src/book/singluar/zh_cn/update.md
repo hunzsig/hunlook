@@ -8,7 +8,7 @@
 * 新的 logger 调试日志
 * 新的 table.wheel 轮偏
 * 新的 Frame.show
-* 新的 Ability worthCost
+* 新的 Ability.worthCost
 * 优化 weaponMaterial 改为 weaponSound
 * 优化 damage 事件反馈，改为数据引流及瞬断机制
 * 优化 Image 现在支持随心尺寸
@@ -50,9 +50,9 @@
 * 优化 prop 初始设定机制
 * 优化 bj 参数
 * 修复 Array 数据有几率错乱的问题。删除部分方法
-* 废弃 所有的portal方法，改名为position
-* 废弃 主要以Button为核心的大部分废物fdf
-* 废弃 部分japi函数，并将之封存隔离
+* 删除 所有的portal方法，改名为position
+* 删除 主要以Button为核心的大部分废物fdf
+* 删除 部分japi函数，并将之封存隔离
 
 > 2022/05
 
@@ -65,66 +65,66 @@
 
 > 2022/04
 
-* 新的附魔分离执行
-* 新的事件反应编写器
-* 新的伤害流执行
-* 新的datum库
-* 新的math库函数cale
-* 新的table库函数rand
-* 新的prop底层活力，支持全面解离数据流
-* 新的Buff捕获器
-* 新的Worth计算
-* 优化run缓存命令
-* 优化Item等级与Ability等级的绑定机制
-* 优化流程过渡机制
-* 修复工具在特定情况出错的bug
-* 修复Player.alert bug
-* 修复FrameLabel adaptive 辨识错误的问题
-* 修复engine堆桟历史残留bug
-* 修复prop在diff存在时有几率出现偏移的bug
-* 增加方法coolingInstant
-* 删除Game的introduction
+* 新的 附魔分离执行
+* 新的 事件反应编写器
+* 新的 伤害流执行
+* 新的 datum库
+* 新的 math库函数cale
+* 新的 table库函数rand
+* 新的 prop底层活力，支持全面解离数据流
+* 新的 Buff捕获器
+* 新的 Worth计算
+* 新的 方法coolingInstant
+* 优化 run缓存命令
+* 优化 Item等级与Ability等级的绑定机制
+* 优化 流程过渡机制
+* 修复 工具在特定情况出错的bug
+* 修复 Player.alert bug
+* 修复 FrameLabel adaptive 辨识错误的问题
+* 修复 engine堆桟历史残留bug
+* 修复 prop在diff存在时有几率出现偏移的bug
+* 删除 Game的introduction
 
 > 2022/03
 
-* 新增跳过资源的run方法
-* 修复已知的bugs
-* 修复部分事件对象错误的bug
-* 修复工具在项目名为空时进入错误逻辑分支的bug
+* 新的 跳过资源的run方法
+* 修复 已知的bugs
+* 修复 部分事件对象错误的bug
+* 修复 工具在项目名为空时进入错误逻辑分支的bug
 
 > 2022/02
 
-* 新的预备事件Prop
-* 工具精简化
-* 优化attr的自动换算机制
-* 修复异步数据可能出现索引偏移的bug
+* 新的 预备事件Prop
+* 优化 工具精简化
+* 优化 attr的自动换算机制
+* 修复 异步数据可能出现索引偏移的bug
 
 > 2022/01
 
-* 新的字符串魔术方法
-* 新的ttg库
-* 优化Timer
+* 新的 字符串魔术方法
+* 新的 ttg库
+* 优化 Timer
 
 > 2021/12
 
-* 阶段性完结
-* 测试并修复各种bugs
-* 新命令 version
+* 新的 命令 version
+* 优化 阶段性完结
+* 修复 各种bugs
 
 > 2021/11
 
-* 结构化 UIKit
-* 新命令 model run
+* 新的 命令 model run
+* 优化 结构化UIKit
 
 > 2021/09 ~ 10
 
-* 功能补充及优化重构
-* 新增 Process
+* 新的 Process
+* 优化 功能补充及重构
 
 > 2021/05 ~ 09
 
-* 大量功能补充
-* bug补充
+* 新的 大量功能补充
+* 修复 bugs
 
 > 2021/05/01
 

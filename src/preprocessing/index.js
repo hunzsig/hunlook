@@ -15,4 +15,8 @@ export default {
   // bgm: "https://github.com/singluar/assets/raw/main/war3mapSound/bgm/Geoff%20Knorr%20-%20China%20(The%20Atomic%20Era).mp3",
   title: undefined, // title 标题，默认 <book>技术文档 · 魂书
   router: router,
+  lang: [
+    {key: "zh_cn", label: "简体中文",},
+    {key: "en_us", label: "English",},
+  ]
 }
