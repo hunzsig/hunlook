@@ -14,7 +14,8 @@
 * Optimization Image now supports free size
 * Optimization Unit the function of order Route cannot be interrupted for no reason now, and supports manual pause
 * Fixed sight a bug where the data has a chance of drifting
-* Fixed itemTpl bug with wrong initial pawnable data
+* Fixed ItemTpl bug with wrong initial pawnable data
+* Fixed Image position init bug
 * Remove base64
 * Remove Unit stand
 * Remove The highlight method of the Frame series now needs to be referenced by itself

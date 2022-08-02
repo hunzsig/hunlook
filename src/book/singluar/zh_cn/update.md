@@ -14,7 +14,8 @@
 * 优化 Image 现在支持随心尺寸
 * 优化 Unit orderRoute的功能，现在不能被无端打断，并支持手动暂停
 * 修复 sight 数据有几率偏移的bug
-* 修复 itemTpl 初始pawnable数据错误的bug
+* 修复 ItemTpl 初始pawnable数据错误的bug
+* 修复 Image position init bug
 * 删除 base64
 * 删除 Unit stand
 * 删除 Frame 系列的highlight方法，现在需要自行引用
