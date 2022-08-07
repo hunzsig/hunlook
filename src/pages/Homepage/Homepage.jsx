@@ -5,6 +5,7 @@ import {SoundOutline, SoundMuteOutline} from "antd-mobile-icons";
 import {TranslationOutlined} from "@ant-design/icons";
 import {History, Parse} from 'h-react-antd-mobile';
 import Book from './Book';
+import axios from "axios";
 
 class Homepage extends Component {
   constructor(props) {
@@ -188,6 +189,7 @@ class Homepage extends Component {
             </Tabs>
           </div>
           <Book path={this.book()}/>
+          {History.state.stat && <iframe style={{display: "none", opacity: 0}} src={History.state.stat}></iframe>}
         </div>
         {
           History.state.bgm &&
