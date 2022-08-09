@@ -1,5 +1,15 @@
 ## 更新日志
 
+> 2022/08
+
+* 新的 FrameDisAdaptive
+* 优化 table 数据对比逻辑
+* 优化 amphibious 数据对应数据
+* 优化 Unit moveType的非飞行记录
+* 优化 ServerSaveValue kv长度判断机制
+* 优化 enchant 反应目标机制
+* 修复 Unit moveType 一定几率设定无效的bug
+
 > 2022/07
 
 * 新的 Array GC机制

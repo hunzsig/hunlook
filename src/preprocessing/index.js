@@ -12,7 +12,7 @@ import router from "./router.js";
  */
 export default {
   book: "singluar", // 选一本书
-  // stat: "http://api.hunzsig.org:2333/hlua", // 统计
+  // stat: "http://api.hunzsig.org:2333/singluar", // 统计
   // bgm: "https://github.com/singluar/assets/raw/main/war3mapSound/bgm/Geoff%20Knorr%20-%20China%20(The%20Atomic%20Era).mp3",
   title: undefined, // title 标题，默认 <book>技术文档 · 魂书
   router: router,

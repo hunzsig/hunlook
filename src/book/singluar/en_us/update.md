@@ -1,5 +1,15 @@
 ## Changelog
 
+> 2022/08
+
+* New FrameDisAdaptive
+* Optimization table equal data comparison logic
+* Optimization data of amphibious
+* Optimization NoFly record of Unit moveType
+* Optimization ServerSaveValue KV length judging mechanism
+* Optimization enchant reaction
+* Fixed bug Unit moveType probability invalid set
+
 > 2022/07
 
 * New Array GC
