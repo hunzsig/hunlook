@@ -23,7 +23,7 @@ _assets_sound("metal_bash_heavy", nil, "vwp")
 Vwp(sourceUnit, targetUnit)
 
 -- 一般只需要配置单位属性
-Unit.weaponMaterial("metal_bash_heavy")
+Unit.weaponSound("metal_bash_heavy")
 ```
 
 ### Vcm（广播音效）

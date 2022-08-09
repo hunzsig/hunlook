@@ -65,9 +65,7 @@ local txtArray = Game().combineDescription(whichAbility, {whichLevel = 10}, "abi
 local txtArray = Game().combineDescription(whichAbility, nil, "abilityBase", "myAbility")
 ```
 
-#### If your object defines a description function, you can also use the specific abbreviation &lt;D&gt; to import the function's callback data
-
-> You can refer to the existing writing methods of Ability, Item, and Unit.
+#### Ability、Item、Unit objects defines a description function, you can also use the specific abbreviation &lt;D&gt; to import the function's callback data
 
 ```lua
 -- 对象定义descrption特殊引入

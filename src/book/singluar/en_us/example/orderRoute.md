@@ -8,7 +8,7 @@
 * Use orderRouteSet to modify the route
 * Use orderRoutePause to pause the route behavior (but continue to finish the road section from which to start)
 * Use orderRouteResume to resume the route behavior (if it has not been resumed after 10 seconds of suspension, the route will be automatically abolished)
-* Use orderRoute to eliminate route behavior
+* Use orderRouteDestroy to eliminate route behavior
 
 ### Example 1
 

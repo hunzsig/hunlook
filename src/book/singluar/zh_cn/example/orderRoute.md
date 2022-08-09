@@ -8,7 +8,7 @@
 * 使用 orderRouteSet 来修改路线
 * 使用 orderRoutePause 来暂停路线行为（但会继续走完以出发的路段）
 * 使用 orderRouteResume 来恢复路线行为（在暂停10秒后如还未恢复，路线会自动废除）
-* 使用 orderRoute 来消除路线行为
+* 使用 orderRouteDestroy 来消除路线行为
 
 ### 例子1
 

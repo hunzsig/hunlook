@@ -23,7 +23,7 @@ _assets_sound("metal_bash_heavy", nil, "vwp")
 Vwp(sourceUnit, targetUnit)
 
 -- Generally, only company attributes need to be configured
-Unit.weaponMaterial("metal_bash_heavy")
+Unit.weaponSound("metal_bash_heavy")
 ```
 
 ### Vcm（broadcast）

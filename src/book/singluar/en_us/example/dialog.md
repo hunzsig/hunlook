@@ -5,7 +5,7 @@ Create a "difficulty selection" dialog box with text as a value, and automatical
 ```lua
 Dialog(
     "选择难度",
-    { "一般困难", "非常困难", "极奇困难", "破天荒难" },
+    { "一般困难", "非常困难", "极其困难", "破天荒难" },
     function(evtData)
     
         -- 对话框不再使用则清理
@@ -13,7 +13,7 @@ Dialog(
         
         if (evtData.value == "非常困难") then
             --搞点事情
-        elseif (evtData.value == "极奇困难") then
+        elseif (evtData.value == "极其困难") then
             --搞点事情
         elseif (evtData.value == "破天荒难") then
             --搞点事情
@@ -33,7 +33,7 @@ Dialog(
     {
         { hotkey = "Q", label = "一般困难", value = 1 },
         { hotkey = "W", label = "非常困难", value = 2 },
-        { hotkey = "E", label = "极奇困难", value = 3 },
+        { hotkey = "E", label = "极其困难", value = 3 },
         { hotkey = "R", label = "破天荒难", value = 4 },
     },
     function(evtData)

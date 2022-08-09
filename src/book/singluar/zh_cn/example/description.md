@@ -65,9 +65,7 @@ local txtArray = Game().combineDescription(whichAbility, {whichLevel = 10}, "abi
 local txtArray = Game().combineDescription(whichAbility, nil, "abilityBase", "myAbility")
 ```
 
-#### 如果你的对象定义了description函数，还可以使用特定的简称 &lt;D&gt; 来引入该函数的回调数据
-
-> 可参考Ability、Item、Unit的已有写法
+#### Ability、Item、Unit对象定义了description函数，可以使用特定的简称 &lt;D&gt; 来引入该函数的回调数据
 
 ```lua
 -- 对象定义descrption特殊引入

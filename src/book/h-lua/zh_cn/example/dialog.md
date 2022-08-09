@@ -10,14 +10,14 @@ hdialog.create(
         buttons = {
             "一般困难",
             "非常困难",
-            "极奇困难",
+            "极其困难",
             "破天荒难",
         }
     },
     function(btnIdx)
         if (btnIdx == "非常困难") then
             --搞点事情
-        elseif (btnIdx == "极奇困难") then
+        elseif (btnIdx == "极其困难") then
             --搞点事情
         elseif (btnIdx == "破天荒难") then
             --搞点事情
@@ -39,7 +39,7 @@ hdialog.create(
         buttons = {
             { value = "Q", label = "一般困难" },
             { value = "W", label = "非常困难" },
-            { value = "E", label = "极奇困难" },
+            { value = "E", label = "极其困难" },
             { value = "R", label = "破天荒难" },
         }
     },
