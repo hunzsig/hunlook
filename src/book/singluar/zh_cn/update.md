@@ -3,6 +3,7 @@
 > 2022/08
 
 * 新的 FrameDisAdaptive
+* 新的 工具命令 clean
 * 优化 table 数据对比逻辑
 * 优化 amphibious 数据对应数据
 * 优化 Unit moveType的非飞行记录

@@ -3,6 +3,7 @@
 > 2022/08
 
 * New FrameDisAdaptive
+* New Command: clean
 * Optimization table equal data comparison logic
 * Optimization data of amphibious
 * Optimization NoFly record of Unit moveType

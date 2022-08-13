@@ -87,6 +87,12 @@ There are 3 parameters after the command
 > sl.exe clear demo //Clean build temporary files
 ```
 
+### Clean local DZ server data
+
+```
+> sl.exe clean
+```
+
 ### View current tool version
 
 ```
