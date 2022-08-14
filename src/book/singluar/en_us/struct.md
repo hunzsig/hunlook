@@ -1,9 +1,9 @@
 ## Directory Structure
 
 > （*）Required Necessity, Lost Crash
-> 
+>
 > （~）Automatic Temporary, lack of automatic builds
-> 
+>
 > （·）Customize Custom, build on demand
 
 ```
@@ -34,11 +34,12 @@
 ### Project Structure
 
 > Most of the functions of sinluar are **configuration declarative**, and the sequence requirements are low.
-> 
+>
 > It is **not required** and should **not be used** to load files with require at all within the project
 >
 > The files will be automatically loaded **from top to bottom** according to the file name.
-> If you write a self-running script, please pay attention to the loading order (such as adding an underscore before the name or something)
+> If you write a self-running script, please pay attention to the loading order (such as adding an underscore before the
+> name or something)
 
 ```
 └── project_demo - Project Directory
@@ -52,4 +53,29 @@
         ├── map - Map lni (don't change it easily, unless you understand it)
         ├── table - ini-style object editing (don't change it, don't follow the physical editing)
         └── war3mapMap.blp - Thumbnail (do not change)
+```
+
+### UI Kit Structure
+
+```
+└── my_kit - name
+    ├── assets -（*|·）
+    │   ├── my.tga - A picture
+    │   ├── btn - Support Directory
+    │   │   └── bag.tga - A picture of bag
+    │   └── brun.mdx - Support Model or other assets
+    ├── main.fdf -（·）Support additional FDF, but not recommended (must be called main name)
+    └── main.lua -（*）Codes (must be called main name)
+```
+
+### Loading Structure
+
+> In case of the same name, the directory preference is preferred over the single graph
+
+```
+├── default.tga - Support single graph loading graph mode
+└── default - It also supports directory set loading diagram mode
+    ├── bc.tga - Progress bar color
+    ├── bg.tga - Progress bar background color
+    └── pic.tga - Main background with hollow out drawing
 ```
