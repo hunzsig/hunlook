@@ -18,13 +18,13 @@
 
 ### Install IDE - Ideac
 
+> <a target="_blank" href="https://www.jetbrains.com/idea/download/#section=windows">Ideac (Jetbrain)</a>
+
 ##### Install plugins - EmmyLua
 
 ##### Install plugins - Image Icon Viewer
 
 ##### Install plugins - Translation
-
-> <a target="_blank" href="https://www.jetbrains.com/idea/download/#section=windows">Ideac (Jetbrain)</a>
 
 ![Emmylua](https://gitlab.com/h-document/singluar/-/raw/main/images/emmylua.png)
 
@@ -52,4 +52,5 @@
 
 > When using win11, especially the newer version, you sometimes encounter pop-up errors (but you can continue to play)
 >
-> At this time, you can choose to continue playing regardless of the pop-up window, or start the terminal or IDE (when using the IDE terminal) as an administrator to solve the problem.
+> At this time, you can choose to continue playing regardless of the pop-up window, or start the terminal or IDE (when
+> using the IDE terminal) as an administrator to solve the problem.

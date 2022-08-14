@@ -18,13 +18,13 @@
 
 ### 安装IDE - Ideac
 
+> <a target="_blank" href="https://www.jetbrains.com/idea/download/#section=windows">Ideac (Jetbrain)</a>
+
 ##### 安装插件 EmmyLua
 
 ##### 安装插件 Image Icon Viewer
 
 ##### 安装插件 Translation
-
-> <a target="_blank" href="https://www.jetbrains.com/idea/download/#section=windows">Ideac (Jetbrain)</a>
 
 ![Emmylua](https://gitlab.com/h-document/singluar/-/raw/main/images/emmylua.png)
 
