@@ -27,7 +27,15 @@ class Homepage extends Component {
   }
 
   summary = () => {
-    return require(`./../../book/${History.state.book}/${this.state.l}/summary.js`).default;
+    return require(`./../../book/${History.state.book}/${this.state.l}/_js/summary.js`).default;
+  }
+
+  bgm = () => {
+    return require(`./../../book/${History.state.book}/${this.state.l}/_js/bgm.js`).default;
+  }
+
+  stat = () => {
+    return require(`./../../book/${History.state.book}/${this.state.l}/_js/stat.js`).default;
   }
 
   book = () => {
@@ -117,6 +125,8 @@ class Homepage extends Component {
 
   render() {
     let summary = this.summary()
+    let bgm = this.bgm()
+    let stat = this.stat()
     return (
       <div className="page-homepage">
         <div className="sidebar">
@@ -188,13 +198,13 @@ class Homepage extends Component {
               {this.renderTabs()}
             </Tabs>
           </div>
-          <Book path={this.book()}/>
-          {History.state.stat && <iframe style={{display: "none", opacity: 0}} src={History.state.stat}></iframe>}
+          <Book path={this.book()}>{this.stat()}</Book>
+          {stat && <iframe style={{display: "none", opacity: 0}} src={stat}/>}
         </div>
         {
-          History.state.bgm &&
+          bgm &&
           <div className="audio">
-            <audio id="bgm" autoPlay={this.state.autoPlay} loop={true} src={History.state.bgm}/>
+            <audio id="bgm" autoPlay={this.state.autoPlay} loop={true} src={bgm}/>
             {
               this.state.autoPlay ?
                 <SoundOutline color='var(--adm-color-primary)' onClick={() => {
