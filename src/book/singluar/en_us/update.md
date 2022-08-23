@@ -3,12 +3,16 @@
 > 2022/08
 
 * New FrameDisAdaptive
-* New Command: clean
+* New Tool Command: clean
+* New string.fill
+* New table.slice
 * Optimization table equal data comparison logic
 * Optimization data of amphibious
 * Optimization NoFly record of Unit moveType
 * Optimization ServerSaveValue KV length judging mechanism
 * Optimization enchant reaction
+* Optimization japi.Z data source
+* Optimization attack motion’s delay
 * Fixed bug Unit moveType probability invalid set
 
 > 2022/07

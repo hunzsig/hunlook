@@ -4,11 +4,15 @@
 
 * 新的 FrameDisAdaptive
 * 新的 工具命令 clean
+* 新的 string.fill
+* 新的 table.slice
 * 优化 table 数据对比逻辑
 * 优化 amphibious 数据对应数据
 * 优化 Unit moveType的非飞行记录
 * 优化 ServerSaveValue kv长度判断机制
 * 优化 enchant 反应目标机制
+* 优化 japi.Z 数据获取机制
+* 优化 Attack 动作时延
 * 修复 Unit moveType 一定几率设定无效的bug
 
 > 2022/07
