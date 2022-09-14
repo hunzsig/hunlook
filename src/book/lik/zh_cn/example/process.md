@@ -52,7 +52,7 @@ end)
 ```lua
 local process = Process("test")
 process.onStart(function(this)
-    echo("ralarvo无敌")
+    echo("lik无敌")
 end)
 ```
 

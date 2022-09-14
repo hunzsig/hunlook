@@ -11,9 +11,9 @@ end
 
 ---@param evtData noteOnUnitCritData
 event.reaction(EVENT.Unit.Crit, function(evtData)
-    evtData.targetUnit.attach("ralarvo_crit", "origin", 0.5, 1)
+    evtData.targetUnit.attach("lik_crit", "origin", 0.5, 1)
     ttg.model({
-        model = "ralarvo_ttg_crit",
+        model = "lik_ttg_crit",
         size = 1.4,
         x = evtData.targetUnit.x(),
         y = evtData.targetUnit.y(),
@@ -25,13 +25,13 @@ event.reaction(EVENT.Unit.Crit, function(evtData)
 end)
 ---@param evtData noteOnUnitAvoidData
 event.reaction(EVENT.Unit.Avoid, function(evtData)
-    evtData.triggerUnit.attach("ralarvo_ttg_avoid", "overhead", 0.3, 0.2)
+    evtData.triggerUnit.attach("lik_ttg_avoid", "overhead", 0.3, 0.2)
 end)
 ---@param evtData noteOnUnitImmuneInvincibleData
 event.reaction(EVENT.Unit.ImmuneInvincible, function(evtData)
     evtData.triggerUnit.attach("DivineShieldTarget", "origin", 1)
     ttg.model({
-        model = "ralarvo_ttg_immuneInvincible",
+        model = "lik_ttg_immuneInvincible",
         size = 1.4,
         x = evtData.triggerUnit.x(),
         y = evtData.triggerUnit.y(),
@@ -43,7 +43,7 @@ end)
 ---@param evtData noteOnUnitImmuneDefendData
 event.reaction(EVENT.Unit.ImmuneDefend, function(evtData)
     ttg.model({
-        model = "ralarvo_ttg_immune",
+        model = "lik_ttg_immune",
         size = 1.2,
         x = evtData.triggerUnit.x(),
         y = evtData.triggerUnit.y(),
@@ -55,7 +55,7 @@ end)
 ---@param evtData noteOnUnitImmuneReductionData
 event.reaction(EVENT.Unit.ImmuneReduction, function(evtData)
     ttg.model({
-        model = "ralarvo_ttg_immune",
+        model = "lik_ttg_immune",
         size = 1.2,
         x = evtData.triggerUnit.x(),
         y = evtData.triggerUnit.y(),
@@ -83,7 +83,7 @@ end)
 ---@param evtData noteOnUnitPunishData
 event.reaction(EVENT.Unit.Punish, function(evtData)
     evtData.triggerUnit.rgba(140, 140, 140, 255, evtData.duration)
-    evtData.triggerUnit.attach("ralarvo_ttg_punish", "head", 4.9, 0.2)
+    evtData.triggerUnit.attach("lik_ttg_punish", "head", 4.9, 0.2)
 end)
 ---@param evtData noteOnUnitBeStunData
 event.reaction(EVENT.Unit.Be.Stun, function(evtData)
@@ -113,7 +113,7 @@ end)
 ---@param evtData noteOnUnitEnchantData
 event.reaction(EVENT.Unit.Enchant, function(evtData)
     ttg.model({
-        model = "ralarvo_ttg_e_" .. evtData.enchantType,
+        model = "lik_ttg_e_" .. evtData.enchantType,
         size = 1.1,
         x = evtData.targetUnit.x() - math.rand(50, 100),
         y = evtData.targetUnit.y() - math.rand(50, 100),

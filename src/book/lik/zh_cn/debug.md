@@ -27,7 +27,7 @@ dump({
 })
 ```
 
-![Print](https://gitlab.com/h-document/ralarvo/-/raw/main/images/print.png)
+![Print](https://gitlab.com/h-document/lik/-/raw/main/images/print.png)
 
 ### 跟踪调试
 
@@ -54,4 +54,4 @@ logger("message")
 
 ### 上线须知
 
-> 使用测试版本上线依然会启用调试，请打包上线版本再上传平台 [参考](https://ralarvo.hunzsig.org/?p=other&n=dz)
+> 使用测试版本上线依然会启用调试，请打包上线版本再上传平台 [参考](https://lik.hunzsig.org/?p=other&n=dz)

@@ -14,16 +14,16 @@
 
 ##### 安装插件 Translation
 
-![Emmylua](https://gitlab.com/h-document/ralarvo/-/raw/main/images/emmylua.png)
+![Emmylua](https://gitlab.com/h-document/lik/-/raw/main/images/emmylua.png)
 
-![ImageIconViewer](https://gitlab.com/h-document/ralarvo/-/raw/main/images/imageIconViewer.png)
+![ImageIconViewer](https://gitlab.com/h-document/lik/-/raw/main/images/imageIconViewer.png)
 
-![Translation](https://gitlab.com/h-document/ralarvo/-/raw/main/images/translation.png)
+![Translation](https://gitlab.com/h-document/lik/-/raw/main/images/translation.png)
 
 ### 打开终端并进入框架根
 
 ```
-> cd ./ralarvo
+> cd ./lik
 ```
 
 ### 创建新项目

@@ -175,9 +175,9 @@ _assets_sound("bgm/dnf/Dungeon and Fighter - GBL女神殿 - goddess temple", "gb
 > 项目组已免费提供了很多强有力的 UI 套件，请参考它们的格式，编写你的UI（不可随意用于商用）
 
 ```lua
-_assets_ui("ralarvo_debug")
-_assets_ui("ralarvo_echo")
-_assets_ui("ralarvo_chat")
-_assets_ui("ralarvo_set")
-_assets_ui("ralarvo_cursor") --指针置顶
+_assets_ui("lik_debug")
+_assets_ui("lik_echo")
+_assets_ui("lik_chat")
+_assets_ui("lik_set")
+_assets_ui("lik_cursor") --指针置顶
 ```
