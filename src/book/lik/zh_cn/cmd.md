@@ -92,9 +92,3 @@
 ```
 > lik.exe clean
 ```
-
-### 查看当前工具版本
-
-```
-> lik.exe version
-```

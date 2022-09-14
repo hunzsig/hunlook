@@ -1,16 +1,17 @@
 ### 聊天命令注册
 
 ```lua
+-- 命令
 --- -gg 投降
-Game().command("^-gg$", function()
+Game():command("^-gg$", function()
     evtData.triggerPlayer.quit("GG")
 end)
 --- -apm 查看玩家分钟操作数
-Game().command("^-apm$", function(evtData)
-    echo("您的apm为:" .. evtData.triggerPlayer.apm(), evtData.triggerPlayer.__HANDLE__)
+Game():command("^-apm$", function(evtData)
+    echo("您的apm为:" .. evtData.triggerPlayer.apm(), evtData.triggerPlayer)
 end)
 --- -d [+|-|=][NUMBER]减少/增加/设置视距
-Game().command("^-d [-+=]%d+$", function(evtData)
+Game():command("^-d [-+=]%d+$", function(evtData)
     local cds = string.explode(" ", string.lower(evtData.chatString))
     local first = string.sub(cds[2], 1, 1)
     if (first == "+" or first == "-" or first == "=") then
@@ -34,18 +35,18 @@ Game().command("^-d [-+=]%d+$", function(evtData)
 end)
 if (DEBUGGING) then
     --- 流程掌控
-    Game().command("^-proc [a-zA-Z0-9_]+$", function(evtData)
+    Game():command("^-proc [a-zA-Z0-9_]+$", function(evtData)
         local p = string.trim(evtData.matchedString)
         p = string.sub(p, 7, string.len(p))
         local proc
         if (p == "this") then
             proc = ProcessCurrent
         else
-            proc = Processes.get(p)
+            proc = Process(p)
         end
-        if (instanceof(proc, "Process")) then
+        if (isClass(proc, ProcessClass)) then
             print(p .. "流程已重置")
-            proc.start()
+            proc:start()
         end
     end)
 end

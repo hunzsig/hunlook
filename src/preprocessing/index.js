@@ -16,6 +16,6 @@ export default {
   router: router,
   lang: [
     {key: "zh_cn", label: "简体中文",},
-    {key: "en_us", label: "English",},
+    // {key: "en_us", label: "English",},
   ]
 }
