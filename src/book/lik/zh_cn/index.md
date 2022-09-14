@@ -29,13 +29,13 @@
 ### 创建新项目
 
 ```
-> ral.exe new demo
+> lik.exe new demo
 ```
 
 ### 测试
 
 ```
-> ral.exe run demo -h
+> lik.exe run demo -h
 ```
 
 > 使用win11时，特别是较新版本时，有时会遇到弹窗错误（但其实可以继续玩）

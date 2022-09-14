@@ -20,15 +20,16 @@
 ├── assetsNew -（*|·）与assets结构一致，处理新资源时使用
 ├── projects -（~|·）用来放置你的地图项目目录，如 project_demo
 │   └── project_demo -（·）
+├── library -（*）核心
+├── kit -（*）核心
 ├── temp -（~）缓存
 ├── vendor -（*）
-│   ├── kernel - 功能核心
 │   ├── lni - 重要地图数据
 │   ├── models - model命令地图模版
 │   ├── w3x2lni - w3x2lni工具(v:2.7.2)
-│   └── WE - 马仔工具
+│   └── WE - 新马仔
 ├── conf -（~|·）配置
-└── ral.exe -（*）命令工具
+└── lik.exe -（*）命令工具
 ```
 
 ### 项目结构

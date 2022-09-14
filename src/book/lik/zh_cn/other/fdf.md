@@ -6,7 +6,7 @@
 
 > <a target="_blank" href="https://blog.csdn.net/CarlosX/article/details/89161467">[War3]Fdf文件详解，简单的UI教程演示 - 魔兽争霸3</a>
 
-> 暴雪魔兽原生也有很多fdf，有兴趣可自行查看，意义不大
+> 暴雪魔兽原生也有很多fdf，有兴趣可自行查看，没什么大用处，可直接无视
 >
 > 可参考提取项目：<a target="_blank" href="https://github.com/hunzsig-warcraft3/FrameDef">FrameDef</a>
 

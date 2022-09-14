@@ -9,25 +9,25 @@
 2、热更新测试项目
 
 ```
-> ral.exe run helloworld
+> lik.exe run helloworld
 ```
 
 3、测试项目预打包
 
 ```
-> ral.exe run helloworld -b
+> lik.exe run helloworld -b
 ```
 
 4、二次测试
 
 ```
-> ral.exe run helloworld -d
+> lik.exe run helloworld -d
 ```
 
 5、将项目进行上线打包
 
 ```
-> ral.exe run helloworld -r
+> lik.exe run helloworld -r
 ```
 
 6、项目打包完会启动测试，此时已经在你的war3根目录的map/test目录内有了结果文件，如：

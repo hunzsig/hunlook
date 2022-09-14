@@ -40,8 +40,8 @@ stack()
 > must 可判断布尔式，当不成立时程序将直接中止抛出错误及跟踪
 
 ```lua
-must(isObject(whichUnit,"Unit")) -- 判断单位是否<Unit>
-must(instanceof(whichButton,"Frame")) -- 判断按钮是否<子Frame>
+must(isClass(whichUnit, UnitClass)) -- 判断单位是否<Unit>类
+must(instanceof(whichButton, FrameClass)) -- 判断按钮是否<Frame>子类
 ```
 
 ### 文件日志

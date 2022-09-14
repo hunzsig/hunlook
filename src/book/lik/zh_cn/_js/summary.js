@@ -32,7 +32,6 @@ import {
   AppstoreOutlined,
   CopyOutlined,
   ClockCircleOutlined,
-  VideoCameraOutlined,
   RetweetOutlined,
   BoxPlotOutlined,
   HighlightOutlined,
@@ -55,13 +54,12 @@ export default [
   {icon: <ToolOutlined/>, key: 'cmd', label: "命令工具"},
   {icon: <ExceptionOutlined/>, key: 'update', label: "更新日志"},
   {icon: <BugOutlined/>, key: 'debug', label: "调试打印"},
-  {icon: <VideoCameraOutlined/>, key: 'video', label: "视频演示"},
   {
     icon: <FunctionOutlined/>, key: 'library', label: "功能库", children: [
       {icon: <AaOutline/>, key: 'assets', label: "资产"},
       {icon: <NodeIndexOutlined/>, key: 'bj', label: "BJ"},
       {icon: <NodeIndexOutlined/>, key: 'cj', label: "CJ"},
-      {icon: <NodeIndexOutlined/>, key: 'japi', label: "JAPI(RAL)"},
+      {icon: <NodeIndexOutlined/>, key: 'japi', label: "JAPI"},
       {icon: <FormatPainterOutlined/>, key: 'colour', label: "文本颜色"},
       {icon: <AppstoreOutlined/>, key: 'object', label: "对象"},
       {icon: <HighlightOutlined/>, key: 'modify', label: "修改器"},
