@@ -3,7 +3,6 @@ import React from "react";
 import {
   AaOutline,
   BankcardOutline,
-  ExclamationShieldOutline,
   KoubeiOutline,
   PictureOutline,
   SetOutline,
@@ -99,7 +98,6 @@ export default [
       {icon: <CloudUploadOutlined/>, key: 'dz', label: "平台上线须知"},
       {icon: <KoubeiOutline/>, key: 'war3_tec', label: "魔兽作图小技巧"},
       {icon: <PictureOutline/>, key: 'war3_terrainArt', label: "魔兽地形贴图路径"},
-      {icon: <ExclamationShieldOutline/>, key: 'war3_crash', label: "魔兽常见崩溃原因"},
       {icon: <BoxPlotOutlined/>, key: 'war3_func', label: "魔兽函数异同特征"},
       {icon: <TransportQRcodeOutline/>, key: 'lua_engine', label: "YDLua引擎"},
       {icon: <BankcardOutline/>, key: 'fdf', label: "FDF"},
