@@ -9,7 +9,7 @@ Dialog(
     function(evtData)
     
         -- 对话框不再使用则清理
-        evtData.triggerDialog.destroy()
+        destroy(evtData.triggerDialog)
         
         if (evtData.value == "非常困难") then
             --搞点事情
@@ -22,7 +22,7 @@ Dialog(
         end
         echo("选择了：" .. evtData.value)
     end
-).show()
+):show()
 ```
 
 创建一个带热键、文本、数值的“难度选择”对话框，给玩家1，让他选
@@ -39,7 +39,7 @@ Dialog(
     function(evtData)
     
         -- 对话框不再使用则清理
-        evtData.triggerDialog.destroy()
+        destroy(evtData.triggerDialog)
         
         if (evtData.hotkey == "Q") then
             --搞点事情
@@ -52,7 +52,7 @@ Dialog(
         end
         echo("选择了：" .. evtData.label .. "等级：" .. evtData.value)
     end
-).show(Player(1))
+):show(Player(1))
 ```
 
 预定义对话框，后续可根据title取回同一个对象

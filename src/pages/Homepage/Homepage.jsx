@@ -16,7 +16,7 @@ class Homepage extends Component {
       p: search.p || 'index',
       l: search.l || History.state.lang[0].key,
       n: search.n || undefined,
-      autoPlay: false,
+      bgmPlaying: true,
     }
   }
 
@@ -204,23 +204,22 @@ class Homepage extends Component {
         {
           bgm &&
           <div className="audio">
-            <audio id="bgm" autoPlay={this.state.autoPlay} loop={true} src={bgm}/>
+            <audio id="bgm" autoPlay={true} loop={true} src={bgm}/>
             {
-              this.state.autoPlay ?
+              this.state.bgmPlaying ?
                 <SoundOutline color='var(--adm-color-primary)' onClick={() => {
                   document.getElementById("bgm").pause();
-                  this.setState({autoPlay: false});
+                  this.setState({bgmPlaying: false});
                 }}/> :
                 <SoundMuteOutline color='var(--adm-color-weak)' onClick={() => {
                   document.getElementById("bgm").play();
-                  this.setState({autoPlay: true});
+                  this.setState({bgmPlaying: true});
                 }}/>
             }
           </div>
         }
       </div>
     )
-      ;
   }
 }
 

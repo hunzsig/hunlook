@@ -16,13 +16,13 @@
 
 ```lua
 local u = Unit(TPL_UNIT.HeroFlameLord, Player(i), 0, 0, 0)
-u.orderRoute(true, {
+u:orderRoute(true, {
     {
         -500, -500,
         ---@param orderUnit Unit
         function(orderUnit)
-            orderUnit.effect("HCancelDeath")
-            orderUnit.orderRouteResume()
+            orderUnit:effect("HCancelDeath")
+            orderUnit:orderRouteResume()
         end
     },
     {
@@ -36,7 +36,7 @@ u.orderRoute(true, {
                 height = 500,
                 reflex = 2,
                 onEnd = function(options)
-                    options.sourceUnit.orderRouteResume()
+                    options.sourceUnit:orderRouteResume()
                 end
             })
         end
@@ -51,7 +51,7 @@ u.orderRoute(true, {
                 height = 500,
                 bounce = { qty = 3 },
                 onEnd = function(options)
-                    options.targetUnit.orderRouteResume()
+                    options.targetUnit:orderRouteResume()
                 end
             })
         end
@@ -61,10 +61,10 @@ u.orderRoute(true, {
 
 time.setTimeout(6, function()
     print("第5段")
-    u.orderRouteSet(5, { 0, 0 })
+    u:orderRouteSet(5, { 0, 0 })
     time.setTimeout(10, function()
         print("删除第5段")
-        u.orderRouteSet(5, nil)
+        u:orderRouteSet(5, nil)
     end)
 end)
 ```
@@ -90,6 +90,6 @@ end
 for i = 1, #routes do
     local r = routes[i]
     local u = Unit(TPL_UNIT.HeroFlameLord, Player(i), r[1][1], r[1][2], 0)
-    u.orderRoute(true, r)
+    u:orderRoute(true, r)
 end
 ```

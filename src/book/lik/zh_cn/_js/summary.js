@@ -2,7 +2,6 @@ import React from "react";
 
 import {
   AaOutline,
-  BankcardOutline,
   KoubeiOutline,
   PictureOutline,
   SetOutline,
@@ -56,8 +55,6 @@ export default [
   {
     icon: <FunctionOutlined/>, key: 'library', label: "功能库", children: [
       {icon: <AaOutline/>, key: 'assets', label: "资产"},
-      {icon: <NodeIndexOutlined/>, key: 'bj', label: "BJ"},
-      {icon: <NodeIndexOutlined/>, key: 'cj', label: "CJ"},
       {icon: <NodeIndexOutlined/>, key: 'japi', label: "JAPI"},
       {icon: <FormatPainterOutlined/>, key: 'colour', label: "文本颜色"},
       {icon: <AppstoreOutlined/>, key: 'object', label: "对象"},
@@ -100,7 +97,6 @@ export default [
       {icon: <PictureOutline/>, key: 'war3_terrainArt', label: "魔兽地形贴图路径"},
       {icon: <BoxPlotOutlined/>, key: 'war3_func', label: "魔兽函数异同特征"},
       {icon: <TransportQRcodeOutline/>, key: 'lua_engine', label: "YDLua引擎"},
-      {icon: <BankcardOutline/>, key: 'fdf', label: "FDF"},
     ]
   },
 ]

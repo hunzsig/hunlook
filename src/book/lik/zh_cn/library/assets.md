@@ -1,12 +1,6 @@
 ## Assets 资产
 
-> 用过 h-lua 的都知道有个 hslk，本框架已基本废除改为assets管理
->
-> 如果你很熟悉hslk，也许你很快也能掌握
->
-> 假如实在没法掌握assets，此处建议直接放弃此框架
-
-### 共有 9 种资产
+##### 共有 10 种资产
 
 > 以下类别都可以参考assets目录下的实现
 >
@@ -32,6 +26,8 @@
   > 模型贴图 格式支持：blp
 * UI
   > 界面 格式支持：限定形式套件
+* Speech(内置资源)
+  > 语音模版 只支持：origin
 
 #### 引用 Font(字体)
 
@@ -83,29 +79,6 @@ _assets_preview("default") --后缀可省略
 
 > 资源文件放在 war3mapModel 里
 >
-> 模型有 3 种形态：| common | unit | item | destructable
->
-> unit | item | destructable |的模型通用可以使用AModel获取
->
-> * 【单位】Unit对象只能使用unit形态的模型
->
-> * 【物品】Item对象只能使用item形态的模型
->
-> * 【可破坏物】Destructable对象只能使用destructable形态的模型
-
-```lua
--- 绵羊（这个是unit形态，由于是原生路径，所以冒号别忘了）
--- 单位形态可以配置options，使模型参数更具体
--- options内可以配置Art（类似slk）这个图标也会自动引用Icon
-_assets_model(":units\\critters\\Sheep\\Sheep", "Sheep", "unit", {
-    Art = ":ReplaceableTextures\\CommandButtons\\BTNSheep.blp",
-    unitSound = "Sheep", scale = 1.20,
-})
-
--- 牢笼
-_assets_model(":Doodads\\LordaeronSummer\\Props\\Cage\\Cage", "Cage", "destructable")
-```
-
 > war3mapModel内的模型如果有贴图，必须放在 war3mapTextures 内
 >
 > 请自行修改好模型贴图路径
@@ -180,4 +153,20 @@ _assets_ui("lik_echo")
 _assets_ui("lik_chat")
 _assets_ui("lik_set")
 _assets_ui("lik_cursor") --指针置顶
+```
+
+#### Speech 语音模版
+
+> 语音模版为魔兽自带资源
+>
+> 在单位TPL定义时引用或Unit对象后续修改使用
+>
+> 已默认挑选最精妙的语音origin数据，无需自行处理
+
+```lua
+-- 圣骑士
+_assets_speech(":HeroPaladin", "HeroPaladin")
+
+-- 在tpl中使用
+UnitTpl("HeroPaladin")
 ```

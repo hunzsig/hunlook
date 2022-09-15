@@ -8,7 +8,7 @@
 
 ```lua
 time.setTimeout(3, function(curTimer)
-    curTimer.destroy()
+    destroy(curTimer)
     print("3秒已到")
 end)
 ```
@@ -22,7 +22,7 @@ local i = 0
 time.setInterval(1, function(curTimer)
     i = i + 1
     if (i == 100) then
-        curTimer.destroy()
+        destroy(curTimer)
         print("i等于100了")
     end
 end)

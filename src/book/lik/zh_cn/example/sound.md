@@ -23,7 +23,7 @@ _assets_sound("metal_bash_heavy", nil, "vwp")
 Vwp(sourceUnit, targetUnit)
 
 -- 一般只需要配置单位属性
-Unit.weaponSound("metal_bash_heavy")
+Unit():weaponSound("metal_bash_heavy")
 ```
 
 ### Vcm（广播音效）
@@ -35,10 +35,10 @@ Unit.weaponSound("metal_bash_heavy")
 _assets_sound("voice/clickhero/level_up", "lv", "vcm")
 
 -- 播放代码
-Vcm("lv").play() -- 全部玩家听到
+Vcm("lv"):play() -- 全部玩家听到
 -- 指定玩家用法
 async.call(Player(1), function()
-    Vcm("lv").play()
+    Vcm("lv"):play()
 end)
 ```
 
@@ -53,14 +53,14 @@ _assets_sound("voice/clickhero/level_up", "lv", "v3d")
 -- 播放代码
 local 3d = V3d("lv")
 
-3d.xyz(0,0,0) -- 绑定点
-3d.unit(bindUnit) -- 绑定单位
-3d.rect(bindRect) -- 绑定区域
+3d:xyz(0,0,0) -- 绑定点
+3d:unit(bindUnit) -- 绑定单位
+3d:rect(bindRect) -- 绑定区域
 
-3d.play() -- 全部玩家听到
+3d:play() -- 全部玩家听到
 -- 指定玩家用法
 async.call(Player(1), function()
-    3d.play()
+    3d:play()
 end)
 ```
 
@@ -73,12 +73,12 @@ end)
 _assets_sound("bgm/Dungeon and Fighter - GBL女神殿 - goddess temple", "gbl", "bgm")
 
 -- 全体用法
-Bgm().stop() -- 停止
-Bgm().play("gbl") -- 播放gbl音乐
+Bgm():stop() -- 停止
+Bgm():play("gbl") -- 播放gbl音乐
 
 -- 指定玩家用法
 async.call(Player(1), function()
-    Bgm().play("gbl")
+    Bgm():play("gbl")
 end)
 ```
 

@@ -2,10 +2,6 @@
 
 ### 框架内实装JAPI库
 
-###### 详细调用自行查看 /vendor/kernel/library/foundation/japi.lua
-
-> 方法与JAPI环境、框架内嵌环境紧密相关，不要随意乱改
-
 ```lua
 japi.DzAPI_Map_ChangeStoreItemCoolDown(...)
 japi.DzAPI_Map_ChangeStoreItemCount(...)
