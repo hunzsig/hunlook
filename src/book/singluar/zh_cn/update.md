@@ -1,5 +1,9 @@
 ## 更新日志
 
+> 2022/09
+
+* 新的 math.slopeAngle
+
 > 2022/08
 
 * 新的 FrameDisAdaptive

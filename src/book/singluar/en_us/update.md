@@ -1,5 +1,9 @@
 ## Changelog
 
+> 2022/09
+
+* New math.slopeAngle
+
 > 2022/08
 
 * New FrameDisAdaptive
