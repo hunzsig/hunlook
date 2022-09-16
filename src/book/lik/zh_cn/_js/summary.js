@@ -1,7 +1,6 @@
 import React from "react";
 
 import {
-  AaOutline,
   KoubeiOutline,
   PictureOutline,
   SetOutline,
@@ -16,16 +15,15 @@ import {
   QuestionOutlined,
   CloudUploadOutlined,
   BuildOutlined,
-  ToolOutlined,
+  AntDesignOutlined,
   ApartmentOutlined,
-  ExceptionOutlined,
   BugOutlined,
   FunctionOutlined,
-  ReadOutlined,
+  BulbOutlined,
   SoundOutlined,
   SyncOutlined,
   FormatPainterOutlined,
-  NodeIndexOutlined,
+  SubnodeOutlined,
   FireOutlined,
   AppstoreOutlined,
   CopyOutlined,
@@ -42,25 +40,30 @@ import {
   BellOutlined,
   UnorderedListOutlined,
   FontSizeOutlined,
+  FontColorsOutlined,
   StockOutlined,
 } from "@ant-design/icons";
 
 // only one layout
 export default [
-  {icon: <ReadOutlined/>, key: 'index', label: "快速开始"},
+  {icon: <BulbOutlined/>, key: 'index', label: "快速开始"},
   {icon: <ApartmentOutlined/>, key: 'struct', label: "项目结构"},
-  {icon: <ToolOutlined/>, key: 'cmd', label: "命令工具"},
-  {icon: <ExceptionOutlined/>, key: 'update', label: "更新日志"},
-  {icon: <BugOutlined/>, key: 'debug', label: "调试打印"},
+  {icon: <AntDesignOutlined/>, key: 'cmd', label: "命令工具"},
+  {icon: <SubnodeOutlined/>, key: 'japi', label: "JAPI"},
+  {icon: <FontColorsOutlined/>, key: 'assets', label: "Assets"},
+  {icon: <AppstoreOutlined/>, key: 'object', label: "对象门面"},
   {
-    icon: <FunctionOutlined/>, key: 'library', label: "功能库", children: [
-      {icon: <AaOutline/>, key: 'assets', label: "资产"},
-      {icon: <NodeIndexOutlined/>, key: 'japi', label: "JAPI"},
-      {icon: <FormatPainterOutlined/>, key: 'colour', label: "文本颜色"},
-      {icon: <AppstoreOutlined/>, key: 'object', label: "对象"},
-      {icon: <HighlightOutlined/>, key: 'modify', label: "修改器"},
+    icon: <FunctionOutlined/>, key: 'library', label: "重要功能", children: [
+      {icon: <BugOutlined/>, key: 'debug', label: "调试打印"},
       {icon: <SyncOutlined/>, key: 'sync', label: "同步"},
       {icon: <RetweetOutlined/>, key: 'async', label: "异步"},
+      {icon: <ClockCircleOutlined/>, key: 'timer', label: "计时器"},
+      {icon: <HighlightOutlined/>, key: 'modify', label: "修改器"},
+      {icon: <ProfileOutlined/>, key: 'description', label: "描述体"},
+      {icon: <ForwardOutlined/>, key: 'process', label: "流程"},
+      {icon: <SoundOutlined/>, key: 'sound', label: "声效"},
+      {icon: <DollarCircleOutlined/>, key: 'worth', label: "层级资源"},
+      {icon: <FormatPainterOutlined/>, key: 'colour', label: "文本颜色"},
     ]
   },
   {
@@ -79,11 +82,6 @@ export default [
   },
   {
     icon: <BuildOutlined/>, key: 'example', label: "例子", children: [
-      {icon: <ProfileOutlined/>, key: 'description', label: "描述体"},
-      {icon: <ForwardOutlined/>, key: 'process', label: "流程"},
-      {icon: <SoundOutlined/>, key: 'sound', label: "声效"},
-      {icon: <ClockCircleOutlined/>, key: 'timer', label: "计时器"},
-      {icon: <DollarCircleOutlined/>, key: 'worth', label: "层级资源"},
       {icon: <MenuUnfoldOutlined/>, key: 'dialog', label: "难度选择对话框"},
       {icon: <StockOutlined/>, key: 'orderRoute', label: "路线蓝图"},
     ]
