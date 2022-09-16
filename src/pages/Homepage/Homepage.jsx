@@ -5,7 +5,6 @@ import {SoundOutline, SoundMuteOutline} from "antd-mobile-icons";
 import {TranslationOutlined} from "@ant-design/icons";
 import {History, Parse} from 'h-react-antd-mobile';
 import Book from './Book';
-import axios from "axios";
 
 class Homepage extends Component {
   constructor(props) {

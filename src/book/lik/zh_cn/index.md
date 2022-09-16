@@ -14,11 +14,11 @@
 
 ##### 安装插件 Translation
 
-![Emmylua](https://gitlab.com/h-document/lik/-/raw/main/images/emmylua.png)
+![Emmylua](https://gitlab.com/h-document/lik/-/raw/main/assets/emmylua.png)
 
-![ImageIconViewer](https://gitlab.com/h-document/lik/-/raw/main/images/imageIconViewer.png)
+![ImageIconViewer](https://gitlab.com/h-document/lik/-/raw/main/assets/imageIconViewer.png)
 
-![Translation](https://gitlab.com/h-document/lik/-/raw/main/images/translation.png)
+![Translation](https://gitlab.com/h-document/lik/-/raw/main/assets/translation.png)
 
 ### 打开终端并进入框架根
 

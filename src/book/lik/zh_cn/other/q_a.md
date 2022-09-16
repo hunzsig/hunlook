@@ -4,6 +4,6 @@
 
 下列问问题方法相信可以帮助你~
 
-![question](https://gitlab.com/h-document/lik/-/raw/main/images/question1.png)
+![question](https://gitlab.com/h-document/lik/-/raw/main/assets/question1.png)
 
-![question](https://gitlab.com/h-document/lik/-/raw/main/images/question2.png)
+![question](https://gitlab.com/h-document/lik/-/raw/main/assets/question2.png)

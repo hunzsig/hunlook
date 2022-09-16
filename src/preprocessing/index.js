@@ -11,11 +11,11 @@ import router from "./router.js";
  * setting可以设 function _promise() { return new Promise... } 或值
  */
 export default {
-  book: "singluar", // 选一本书
+  book: "lik", // 选一本书
   title: undefined, // title 标题，默认 <book>技术文档 · 魂书
   router: router,
   lang: [
     {key: "zh_cn", label: "简体中文",},
-    {key: "en_us", label: "English",},
+    // {key: "en_us", label: "English",},
   ]
 }

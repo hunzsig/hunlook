@@ -27,7 +27,7 @@ dump({
 })
 ```
 
-![Print](https://gitlab.com/h-document/lik/-/raw/main/images/print.png)
+![Print](https://gitlab.com/h-document/lik/-/raw/main/assets/print.png)
 
 ### 跟踪调试
 
