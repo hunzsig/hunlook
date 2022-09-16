@@ -49,3 +49,15 @@ async.call(Player(2),function()
 end)
 
 ```
+
+#### 修改计时器时间
+
+> 框架支持修改计时器的设定
+
+```lua
+local t = time.setTimeout(3, function(curTimer) end)
+t:period(2) -- 修改周期为2秒（注意当周期小于当前剩余时间时，剩余时间自动变为设定的周期时间）
+t:remain(9) -- 修改剩余为9秒[实际效果为3秒]（注意当剩余时间大于周期时，只能最大设定为周期时间）
+t:period(10) -- 修改周期为10秒
+t:remain(9) -- 修改剩余为9秒
+```

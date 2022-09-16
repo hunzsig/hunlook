@@ -42,6 +42,10 @@ import {
   FontSizeOutlined,
   FontColorsOutlined,
   StockOutlined,
+  TranslationOutlined,
+  FundViewOutlined,
+  FolderViewOutlined,
+  LoadingOutlined,
 } from "@ant-design/icons";
 
 // only one layout
@@ -67,7 +71,7 @@ export default [
     ]
   },
   {
-    icon: <DingtalkOutlined/>, key: 'setup', label: "预设套路", children: [
+    icon: <DingtalkOutlined/>, key: 'setup', label: "预设设计", children: [
       {icon: <UnorderedListOutlined/>, key: 'slot', label: "常规栏"},
       {icon: <ProfileOutlined/>, key: 'description', label: "描述体"},
       {icon: <NodeExpandOutlined/>, key: 'damaging', label: "伤害流"},
@@ -76,12 +80,20 @@ export default [
       {icon: <ThunderboltOutlined/>, key: 'eventReaction', label: "事件反应"},
       {icon: <CopyOutlined/>, key: 'tpl', label: "TPL"},
       {icon: <BellOutlined/>, key: 'monitor', label: "监听器"},
+      {icon: <BellOutlined/>, key: 'propChange', label: "参数监听"},
       {icon: <ScheduleOutlined/>, key: 'quest', label: "任务"},
       {icon: <CodeOutlined/>, key: 'cmd', label: "命令"},
+      {icon: <TranslationOutlined/>, key: 'i18n', label: "国际化"},
     ]
   },
   {
-    icon: <BuildOutlined/>, key: 'example', label: "例子", children: [
+    icon: <FundViewOutlined/>, key: 'ui', label: "UI界面", children: [
+      {icon: <FolderViewOutlined/>, key: 'kit', label: "套件"},
+      {icon: <LoadingOutlined/>, key: 'animate', label: "帧动画"},
+    ]
+  },
+  {
+    icon: <BuildOutlined/>, key: 'example', label: "更多例子", children: [
       {icon: <MenuUnfoldOutlined/>, key: 'dialog', label: "难度选择对话框"},
       {icon: <StockOutlined/>, key: 'orderRoute', label: "路线蓝图"},
     ]
