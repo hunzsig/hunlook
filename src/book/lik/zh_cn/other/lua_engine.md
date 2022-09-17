@@ -1,8 +1,8 @@
 ## ydwe lua引擎使用说明
 
-[来源 github/actboy168/jass2lua](https://github.com/actboy168/jass2lua/edit/master/lua-engine.md)
+###### 闲着无聊时了解即可
 
-> 记住：bug止于有能之士
+[来源 github/actboy168/jass2lua](https://github.com/actboy168/jass2lua/edit/master/lua-engine.md)
 
 ### 简介
 
