@@ -1,6 +1,6 @@
-## Object 对象门面
+## Object 对象
 
-> 所有对象门面一览
+#### 所有门面一览
 
 ```lua
 Ability 技能
@@ -67,4 +67,12 @@ Vector3 三维向量
 Vwp 武器音效
 WarehouseSlot 仓库栏
 Weather 天气
+```
+
+#### 对象的毁灭管理
+
+```lua
+local u = Unit(...)
+isDestory(u) -- 判断对象的存活态
+destory(u) -- 毁灭对象
 ```

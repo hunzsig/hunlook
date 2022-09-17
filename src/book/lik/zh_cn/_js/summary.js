@@ -46,6 +46,8 @@ import {
   FundViewOutlined,
   FolderViewOutlined,
   LoadingOutlined,
+  CaretDownOutlined,
+  PullRequestOutlined,
 } from "@ant-design/icons";
 
 // only one layout
@@ -56,6 +58,7 @@ export default [
   {icon: <SubnodeOutlined/>, key: 'japi', label: "JAPI"},
   {icon: <FontColorsOutlined/>, key: 'assets', label: "Assets"},
   {icon: <AppstoreOutlined/>, key: 'object', label: "对象门面"},
+  {icon: <PullRequestOutlined/>, key: 'event', label: "事件"},
   {
     icon: <FunctionOutlined/>, key: 'library', label: "重要功能", children: [
       {icon: <BugOutlined/>, key: 'debug', label: "调试打印"},
@@ -89,6 +92,7 @@ export default [
   {
     icon: <FundViewOutlined/>, key: 'ui', label: "UI界面", children: [
       {icon: <FolderViewOutlined/>, key: 'kit', label: "套件"},
+      {icon: <CaretDownOutlined/>, key: 'cursor', label: "指针"},
       {icon: <LoadingOutlined/>, key: 'animate', label: "帧动画"},
     ]
   },
