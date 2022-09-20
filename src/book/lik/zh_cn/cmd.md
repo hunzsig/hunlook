@@ -11,7 +11,7 @@
 > 编辑完后在使用test时会自动将改动记录回你的项目中
 
 ```
-> lik.exe we demo //以WE打开项目demo，主要用于编辑地形
+> lik.exe we demo //以马仔WE打开项目demo，主要用于编辑地形
 ```
 
 ### 模型批量查看
@@ -48,7 +48,7 @@
 > 一般实际运行的测试图都是放在 Warcraft III Frozen Throne\Maps\Test\WorldEditTestMap.w3x
 >
 > 具体位置可参考WE里面的配置
-> 
+>
 > 加密乱构可参考 [参考](https://lik.hunzsig.org/?p=other&n=encrypt)
 
 ```
@@ -60,6 +60,7 @@
 ```
 
 > 在模式后添加~符号，可以跳过资源变更，特别适用于纯代码改动时的测试
+
 ```
 > lik.exe run demo -h~
 > lik.exe run demo -b~
@@ -83,14 +84,8 @@
 > lik.exe kill
 ```
 
-### 清理缓存
+### 清理缓存并删除本地服务器数据
 
 ```
-> lik.exe clear demo //清理构建的临时文件
-```
-
-### 删除所有本地DZ服务器数据
-
-```
-> lik.exe clean
+> lik.exe clear
 ```

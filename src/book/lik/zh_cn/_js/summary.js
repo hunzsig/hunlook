@@ -49,6 +49,8 @@ import {
   CaretDownOutlined,
   PullRequestOutlined,
   StrikethroughOutlined,
+  SwapOutlined,
+  ExpandOutlined,
 } from "@ant-design/icons";
 
 // only one layout
@@ -95,12 +97,14 @@ export default [
       {icon: <FolderViewOutlined/>, key: 'kit', label: "套件"},
       {icon: <CaretDownOutlined/>, key: 'cursor', label: "指针"},
       {icon: <LoadingOutlined/>, key: 'animate', label: "帧动画"},
+      {icon: <ExpandOutlined/>, key: 'map', label: "地图"},
     ]
   },
   {
     icon: <BuildOutlined/>, key: 'example', label: "更多例子", children: [
-      {icon: <MenuUnfoldOutlined/>, key: 'dialog', label: "难度选择对话框"},
       {icon: <StockOutlined/>, key: 'orderRoute', label: "路线蓝图"},
+      {icon: <SwapOutlined/>, key: 'pos2pas', label: "主动改被动"},
+      {icon: <MenuUnfoldOutlined/>, key: 'dialog', label: "难度选择对话框"},
     ]
   },
   {
