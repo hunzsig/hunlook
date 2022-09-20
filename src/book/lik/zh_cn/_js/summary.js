@@ -105,8 +105,8 @@ export default [
   },
   {
     icon: <QuestionOutlined/>, key: 'other', label: "其他学习", children: [
-      {icon: <StrikethroughOutlined/>, key: 'encrypt', label: "混淆加密"},
       {icon: <SetOutline/>, key: 'jetbrain', label: "Jetbrain设置"},
+      {icon: <StrikethroughOutlined/>, key: 'encrypt', label: "混淆加密"},
       {icon: <SmileOutline/>, key: 'q_a', label: "询问的技巧"},
       {icon: <CloudUploadOutlined/>, key: 'dz', label: "平台上线须知"},
       {icon: <KoubeiOutline/>, key: 'war3_tec', label: "魔兽作图小技巧"},
