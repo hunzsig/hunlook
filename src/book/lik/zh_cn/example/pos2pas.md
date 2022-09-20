@@ -5,6 +5,7 @@
 > 技能效果：瞬间反击，使用后在短时间内反弹一定的伤害
 
 ```lua
+---@param effectiveData noteOnAbilityEffectiveData
 AbilityTpl()
     :name("瞬间反击")
     :levelMax(9)
