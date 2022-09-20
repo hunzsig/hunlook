@@ -48,6 +48,7 @@ import {
   LoadingOutlined,
   CaretDownOutlined,
   PullRequestOutlined,
+  StrikethroughOutlined,
 } from "@ant-design/icons";
 
 // only one layout
@@ -104,7 +105,7 @@ export default [
   },
   {
     icon: <QuestionOutlined/>, key: 'other', label: "其他学习", children: [
-      {icon: <SetOutline/>, key: 'encrypt', label: "混淆加密"},
+      {icon: <StrikethroughOutlined/>, key: 'encrypt', label: "混淆加密"},
       {icon: <SetOutline/>, key: 'jetbrain', label: "Jetbrain设置"},
       {icon: <SmileOutline/>, key: 'q_a', label: "询问的技巧"},
       {icon: <CloudUploadOutlined/>, key: 'dz', label: "平台上线须知"},
