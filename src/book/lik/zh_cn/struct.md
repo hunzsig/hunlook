@@ -21,13 +21,12 @@
 ├── projects -（~|·）用来放置你的地图项目目录，如 project_demo
 │   └── project_demo -（·）
 ├── library -（*）核心
-├── kit -（*）核心
-├── temp -（~）缓存
-├── vendor -（*）
+├── support -（*）
 │   ├── lni - 重要地图数据
 │   ├── models - model命令地图模版
 │   ├── w3x2lni - w3x2lni工具(v:2.7.2)
 │   └── WE - 新马仔
+├── temp -（~）缓存
 ├── conf -（~|·）配置
 └── lik.exe -（*）命令工具
 ```
@@ -43,6 +42,7 @@
 ```
 └── project_demo - 项目目录
     ├── assets - 项目资源引用, 必须写在此名字目录下，不要把流程代码写里面
+    ├── library -（·）局部核心库（只编写对核心库的自定义拓展，目录结构与全局library一致）
     ├── scripts - 项目脚本代码，必须写在此名字目录下
     │   ├── globals - 全局定义（仅供参考）
     │   │    ├── setup - 用于定义游戏设定（仅供参考）
