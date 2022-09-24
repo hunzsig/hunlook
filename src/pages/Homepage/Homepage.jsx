@@ -84,6 +84,7 @@ class Homepage extends Component {
   renderTabs = () => {
     let children = undefined;
     let summary = this.summary()
+
     for (let i in summary) {
       const v = summary[i]
       if (v.key === this.state.p) {
@@ -126,6 +127,7 @@ class Homepage extends Component {
     let summary = this.summary()
     let bgm = this.bgm()
     let stat = this.stat()
+    let Cover = History.state.cover
     return (
       <div className="page-homepage">
         <div className="sidebar">
@@ -200,6 +202,20 @@ class Homepage extends Component {
           <Book path={this.book()}>{this.stat()}</Book>
           {stat && <iframe style={{display: "none", opacity: 0}} src={stat}/>}
         </div>
+        {
+          Cover &&
+          <div
+            className={`cover ${this.state.coverClassName ? this.state.coverClassName : ''}`}
+            onClick={
+              () => {
+                this.setState({coverClassName: 'un'});
+                setTimeout(() => {
+                  this.setState({coverClassName: 'dis'});
+                }, 500)
+              }
+            }
+          ><Cover/></div>
+        }
         {
           bgm &&
           <div className="audio">

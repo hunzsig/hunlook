@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+.adm-modal-content {
+  padding: 0 !important;
+}
+
+::-webkit-scrollbar {
+  width: 0 !important
+}
+
+.page-cover {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  background: #000000;
+  opacity: 1;
+  transition: opacity 5s;
+
+  .face {
+    flex: 1;
+    text-align: center;
+
+    img {
+      width: 94%;
+      max-width: 400px;
+      padding: 10% 0;
+    }
+  }
+
+  .copyright {
+    color: #f0f0f0;
+    padding: 1vh 0;
+    text-align: center;
+
+    a {
+      color: lightyellow;
+    }
+  }
+
+}
+
+.page-cover:hover {
+  opacity: 0.95;
+}

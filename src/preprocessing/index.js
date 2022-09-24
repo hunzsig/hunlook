@@ -1,4 +1,5 @@
 import router from "./router.js";
+import Cover from './../pages/Cover';
 
 /**
  * 这里是h-react.HistoryInitial需要预处理的数据项
@@ -11,8 +12,9 @@ import router from "./router.js";
  * setting可以设 function _promise() { return new Promise... } 或值
  */
 export default {
-  book: "lik", // 选一本书
-  title: undefined, // title 标题，默认 <book>技术文档 · 魂书
+  book: "www", // 选一本书
+  title: "HunZsig", // title 标题，默认 <book>技术文档 · 魂书
+  cover: Cover, // 使用封面(Composer)
   router: router,
   lang: [
     {key: "zh_cn", label: "简体中文",},

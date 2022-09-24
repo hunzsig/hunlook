@@ -5,11 +5,13 @@ import {Api, History, Parse, LocalStorage, Navigator} from "h-react-antd-mobile"
 
 import Login from "./Login";
 import Catalog from "./Catalog";
+import preprocessing from "../../../src/preprocessing";
 
 class Initial extends Component {
   constructor(props) {
     super(props);
 
+    document.title = this.props.preprocessing.title || preprocessing.book.toUpperCase() + " 技术文档 · 魂书"
     this.location = Parse.urlDispatch();
 
     // 是否强制登录

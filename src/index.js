@@ -6,8 +6,6 @@ import {HistoryInitial} from 'h-react-antd-mobile';
 
 import preprocessing from "./preprocessing";
 
-document.title = preprocessing.book.toUpperCase() + " 技术文档 · 魂书"
-
 ReactDOM.render(
   <HistoryInitial
     preprocessing={preprocessing}
