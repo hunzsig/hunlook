@@ -24,17 +24,11 @@
 * php | go- | bat
 * 环境 | 库
 
-### LIK <a target="_blank">github</a>
+### LIK
 
-* war3
+* ralarvo · v2 · war3
 * lua+++ | go++ | rust
 * 框架++
-
-### Ralarvo <a target="_blank">github</a>
-
-* war3
-* lua++ | go+
-* 框架+
 
 ### SingLuar <a target="_blank" href="https://github.com/singluar/singluar-restricted">github</a>
 
@@ -54,7 +48,7 @@
 * vjass
 * 库
 
-### Nitee <a target="_blank">github</a>
+### Niweer
 
 * UE5
 * c++ | js | lua
