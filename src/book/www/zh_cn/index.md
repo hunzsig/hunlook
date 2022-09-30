@@ -26,7 +26,7 @@
 
 ### LIK
 
-* ralarvo · v2 · war3
+* ralarvo · war3
 * lua+++ | go++ | rust
 * 框架++
 
