@@ -3,6 +3,7 @@
 > 2022/09
 
 * 新的 math.slopeAngle
+* 删除 hot 不再支持自动 process
 
 > 2022/08
 

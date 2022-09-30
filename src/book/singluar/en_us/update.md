@@ -3,6 +3,7 @@
 > 2022/09
 
 * New math.slopeAngle
+* Remove hot automatic process is no longer supported
 
 > 2022/08
 
