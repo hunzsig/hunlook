@@ -29,6 +29,7 @@ class Cover extends Component {
         <div className="face">
           <div className="ring">
             <img src="/public/img/logo.png" alt="logo"/>
+            <video src="https://gitlab.com/h-document/www/-/raw/main/assets/logo.mp4" autoPlay={true} loop={true}/>
           </div>
         </div>
         <Grid className="copyright" columns={3} gap={8}>
