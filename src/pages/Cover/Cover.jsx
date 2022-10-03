@@ -14,8 +14,22 @@ class Cover extends Component {
   render() {
     return (
       <div className="page-cover">
+        <div className="stars">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <div className="face">
-          <img src="/public/img/logo.png" alt="logo"/>
+          <div className="ring">
+            <img src="/public/img/logo.png" alt="logo"/>
+          </div>
         </div>
         <Grid className="copyright" columns={3} gap={8}>
           <Grid.Item span={3}>
