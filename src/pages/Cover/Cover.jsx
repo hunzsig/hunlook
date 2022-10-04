@@ -1,7 +1,6 @@
 import './Cover.less';
 import React, {Component} from 'react';
 import {Grid} from 'antd-mobile';
-import {History} from 'h-react-antd-mobile';
 
 class Cover extends Component {
   constructor(props) {

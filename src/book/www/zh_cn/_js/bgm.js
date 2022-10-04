@@ -1,1 +1,1 @@
-export default "https://gitlab.com/h-document/www/-/raw/main/assets/kakusen.mp3";
+export default "https://gitlab.com/h-document/www/-/raw/main/assets/eternity.mp3";
