@@ -1,5 +1,9 @@
 ## 更新日志
 
+> 2022/10
+
+* 新的 string.repeater
+
 > 2022/09
 
 * 新的 math.slopeAngle

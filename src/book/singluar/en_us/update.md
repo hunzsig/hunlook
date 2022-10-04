@@ -1,9 +1,8 @@
 ## Changelog
 
-> 2022/09
+> 2022/10
 
-* New math.slopeAngle
-* Remove hot automatic process is no longer supported
+* New string.repeater
 
 > 2022/08
 
