@@ -12,13 +12,13 @@
 
 ##### 安装插件 Image Icon Viewer
 
-##### 安装插件 Translation
+##### 安装插件 Color Highlighter
 
 ![Emmylua](https://gitlab.com/h-document/lik/-/raw/main/assets/emmylua.png)
 
 ![ImageIconViewer](https://gitlab.com/h-document/lik/-/raw/main/assets/imageIconViewer.png)
 
-![Translation](https://gitlab.com/h-document/lik/-/raw/main/assets/translation.png)
+![Translation](https://gitlab.com/h-document/lik/-/raw/main/assets/colorHighlighter.png)
 
 ### 打开终端并进入框架根
 
