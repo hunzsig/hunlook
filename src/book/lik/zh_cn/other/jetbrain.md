@@ -6,11 +6,11 @@
 
 安装 Image Icon Viewer 插件
 
-![Emmylua](https://gitlab.com/h-document/lik/-/raw/main/assets/imageIconViewer.png)
+![ImageIconViewer](https://gitlab.com/h-document/lik/-/raw/main/assets/imageIconViewer.png)
 
-安装 Translation 插件
+安装 Color Highlighter 插件
 
-![Emmylua](https://gitlab.com/h-document/lik/-/raw/main/assets/translation.png)
+![ColorHighlighter](https://gitlab.com/h-document/lik/-/raw/main/assets/colorHighlighter.png)
 
 可以为 library 目录设置Resources Root，提高索引效率
 

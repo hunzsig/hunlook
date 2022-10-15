@@ -18,7 +18,7 @@
 
 ![ImageIconViewer](https://gitlab.com/h-document/lik/-/raw/main/assets/imageIconViewer.png)
 
-![Translation](https://gitlab.com/h-document/lik/-/raw/main/assets/colorHighlighter.png)
+![ColorHighlighter](https://gitlab.com/h-document/lik/-/raw/main/assets/colorHighlighter.png)
 
 ### 打开终端并进入框架根
 
