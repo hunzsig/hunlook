@@ -3,6 +3,12 @@
 > 2022/10
 
 * 新的 string.repeater
+* 新的 WEATHER_TYPE
+    * ··· 增加分类
+    * ··· 提示特性
+* 新的 Weather.period
+* 新的 Rect.weather
+    * ··· 支持多天气
 
 > 2022/09
 

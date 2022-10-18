@@ -3,6 +3,12 @@
 > 2022/10
 
 * New string.repeater
+* New WEATHER_TYPE
+    * ··· add categories
+    * ··· more tips
+* New Weather.period
+* New Rect.weather
+    * ··· multi weathers
 
 > 2022/08
 
