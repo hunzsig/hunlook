@@ -1,6 +1,6 @@
-## Event 事件
+## Event
 
-#### 事件一览
+#### All events
 
 ```lua
 EVENT.Game = {
