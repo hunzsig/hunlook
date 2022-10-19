@@ -1,4 +1,4 @@
-### 地图
+### Map
 
 ```lua
 FrameMap(kit, FrameGameUI)

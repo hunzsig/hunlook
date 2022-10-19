@@ -1,4 +1,4 @@
-### 指针
+### Cursor
 
 ```lua
 Cursor()
