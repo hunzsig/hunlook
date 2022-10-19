@@ -1,8 +1,8 @@
-import './Cover.less';
+import './Www.less';
 import React, {Component} from 'react';
 import {Grid} from 'antd-mobile';
 
-class Cover extends Component {
+class Www extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -47,4 +47,4 @@ class Cover extends Component {
   }
 }
 
-export default Cover;
+export default Www;
