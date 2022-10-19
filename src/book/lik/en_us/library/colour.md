@@ -1,84 +1,81 @@
-## Colour 文本颜色
+## Colour text color
 
-> 框架提供了文本颜色修改的库
+> The framework provides a library for text color modification
 
-#### hex 方法，使用6位长度颜色
+#### hex method 6 length
 
 ```lua
-colour.hex("FF0000", "一个字符串")
-colour.hex(colour.gold, "金色字符串")
+colour.hex("FF0000", "A string")
+colour.hex(colour.gold, "Gold string")
 ```
 
-#### format 方法
+#### format method
 
-> 适用于复杂文本颜色处理
+> Suitable for complex text color processing
 
 ```lua
 -- 例子
-local txt = colour.format("%s在%s里观摩%s，结果弄坏了，赔了%s", colour.white, {
-    { "80ff00", "剑圣" },
-    { "ff59ff", "武器屋" },
-    { "ff0000", "[圣剑·火之高兴]" },
-    { colour.gold, "100W" },
+local txt = colour.format("Hello %s", colour.white, {
+    { "80ff00", "World" },
 })
 
 print(txt)
 echo(txt)
 ```
 
-#### 框架已自带提供多种优秀颜色
+#### The frame comes with many excellent colors
 
 ```lua
-colour.black = "000000" -- 黑色
-colour.white = "FFFFFF" -- 白色
-colour.snow = "FFFAFA" -- 雪白色
-colour.whitesmoke = "F5F5F5" -- 烟白色
-colour.lightgray = "D3D3D3" -- 浅灰
-colour.silver = "C0C0C0" -- 银色
-colour.darkgray = "A9A9A9" -- 暗灰色
-colour.red = "FF0000" -- 红色
-colour.indianred = "FF6A6A" -- 印度红色
-colour.littlepink = "FF8080" -- 小粉色
-colour.pink = "FFC0CB" -- 粉红色
-colour.mistyrose = "FFE4E1" -- 浅玫瑰色
-colour.gold = "FFCC00" -- 金色
-colour.orange = "FFA500" -- 橙色
-colour.sandybrown = "F4A460" -- 沙褐色
-colour.lightcoral = "F08080" -- 亮珊瑚色
-colour.salmon = "FA8072" -- 鲜肉色
-colour.lightsalmon = "FFA07A" -- 亮肉色
-colour.tomato = "FF6347" -- 西红柿色
-colour.yellow = "FFFF00" -- 黄色
-colour.darkkhaki = "BDB76B" -- 暗黄褐色
-colour.khaki = "F0E68C" -- 黄褐色
-colour.beige = "F5F5DC" -- 米色
-colour.lemonchiffon = "FFFACD" -- 柠檬绸色
-colour.lightyellow = "FFFFE0" -- 浅黄色
-colour.green = "80FF00" -- 大绿色
-colour.limegreen = "32CD32" -- 橙绿色
-colour.lawngreen = "7CFC00" -- 草绿色
-colour.lightgreen = "90EE90" -- 亮绿色
-colour.palegreen = "98F898" -- 苍绿色
-colour.aquamarine = "7FFFD4" -- 碧绿色
-colour.honeydew = "F0FFF0" -- 蜜色
-colour.darkseagreen = "C1FFC1" -- 浅绿色
-colour.mintcream = "F5FFFA" -- 薄荷色
-colour.royalblue = "4169E1" -- 皇家蓝
-colour.dodgerblue = "1E90FF" -- 闪兰色
-colour.cornflowerblue = "6495ED" -- 菊兰色
-colour.deepskyblue = "00BFFF" -- 深天蓝色
-colour.skyblue = "87CECB" -- 天蓝色
-colour.lightskyblue = "87CEFA" -- 亮天蓝色
-colour.lightsteelblue = "B0C4DE" -- 亮钢兰色
-colour.lightblue = "ADD8E6" -- 亮蓝色
-colour.lightcyan = "E0FFFF" -- 亮青色
-colour.aliceblue = "F0F8FF" -- 艾利斯兰
-colour.purple = "800080" -- 紫色
-colour.darkorchid = "9932CC" -- 暗紫色
-colour.mediumpurple = "9370DB" -- 间紫色
-colour.mediumorchid = "BA55D3" -- 间紫兰色
-colour.violet = "EE82EE" -- 浅紫色
-colour.plum = "DDA0DD" -- 洋李色
-colour.thistle = "D8BFD8" -- 蓟色
-colour.lavender = "E6E6FA" -- 淡紫色
+colour.black = "000000"
+colour.white = "FFFFFF"
+colour.snow = "FFFAFA"
+colour.whitesmoke = "F5F5F5"
+colour.lightgray = "D3D3D3"
+colour.silver = "C0C0C0"
+colour.darkgray = "A9A9A9"
+colour.red = "FF0000"
+colour.indianred = "FF6A6A"
+colour.littlepink = "FF8080"
+colour.pink = "FFC0CB"
+colour.mistyrose = "FFE4E1"
+colour.gold = "FFCC00"
+colour.orange = "FFA500"
+colour.sandybrown = "F4A460"
+colour.lightcoral = "F08080"
+colour.salmon = "FA8072"
+colour.lightsalmon = "FFA07A"
+colour.tomato = "FF6347"
+colour.yellow = "FFFF00"
+colour.darkkhaki = "BDB76B"
+colour.khaki = "F0E68C"
+colour.beige = "F5F5DC"
+colour.lemonchiffon = "FFFACD"
+colour.lightyellow = "FFFFE0"
+colour.green = "80FF00"
+colour.limegreen = "32CD32"
+colour.lawngreen = "7CFC00"
+colour.lightgreen = "90EE90"
+colour.palegreen = "98F898"
+colour.aquamarine = "7FFFD4"
+colour.honeydew = "F0FFF0"
+colour.darkseagreen = "C1FFC1"
+colour.mintcream = "F5FFFA"
+colour.royalblue = "4169E1"
+colour.dodgerblue = "1E90FF"
+colour.cornflowerblue = "6495ED"
+colour.deepskyblue = "00BFFF"
+colour.skyblue = "87CECB"
+colour.lightskyblue = "87CEFA"
+colour.lightsteelblue = "B0C4DE"
+colour.lightblue = "ADD8E6"
+colour.lightcyan = "E0FFFF"
+colour.aliceblue = "F0F8FF"
+colour.purple = "800080"
+colour.darkorchid = "9932CC"
+colour.mediumpurple = "9370DB"
+colour.mediumorchid = "BA55D3"
+colour.violet = "EE82EE"
+colour.plum = "DDA0DD"
+colour.thistle = "D8BFD8"
+colour.lavender = "E6E6FA"
 ```

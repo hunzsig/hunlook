@@ -1,20 +1,20 @@
-### 参数监听
+### Parameter monitoring
 
-> 可以预设任意参数在变动时的触发机制
+> You can preset the trigger mechanism when any parameter changes
 
-#### 任意监听范围
+#### Any monitoring range
 
 ```lua
--- 任意同步监听范围
+-- Any synchronous monitoring range
 event._prop_std = "any"
 
--- 任意异步监听范围
+-- Any asynchronous listening range
 event._prop_dyn = "any"
 ```
 
-#### 只限定异步监听3个key的变动
+#### Only three key changes can be monitored asynchronously
 
-> 当设为true时才有效，可作为临时改动
+> It is valid only when it is set to true and can be used as a temporary change
 
 ```lua
 event._prop_dyn = {
@@ -24,16 +24,16 @@ event._prop_dyn = {
 }
 ```
 
-#### 监听事件的使用
+#### Use of listening events
 
-> number数据没有变化时，不会触发此事件
+> This event will not be triggered when the number data has not changed
 
 ```lua
 ---@param evtData noteOnPropPlayer
 event.reaction(EVENT.Prop.Change, "myChange", function(evtData)
     if (isClass(evtData.triggerObject, UnitClass)) then
         if (evtData.key == "attack") then
-            print("攻击改变了")
+            print("Attack changed")
         end
     end
 end)
