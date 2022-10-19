@@ -1,9 +1,9 @@
-### 事件反应
+### Event reactions
 
-> 用于增添事件发生时的效果补充，可自定义
+> It is used to add the effect supplement when an event occurs. It can be customized
 
 ```lua
--- 事件反应
+-- Event reactions
 ---@param u Unit
 local function _z(u, offset)
     return u:h() + 130 + offset

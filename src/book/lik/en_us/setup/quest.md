@@ -1,22 +1,22 @@
-### F9 任务
+### F9 Quest
 
 ```lua
---- 任务
+--- Quest
 Quest("gg")
-    :title("主动投降")
+    :title("Voluntary surrender")
     :side("right")
     :icon("ReplaceableTextures\\CommandButtons\\BTNTomeOfRetraining.blp")
-    :content("-gg 投降并退出")
+    :content("-gg Surrender and exit")
 
 Quest("apm")
-    :title("查看你的APM数值")
+    :title("View your APM value")
     :side("right")
     :icon("ReplaceableTextures\\CommandButtons\\BTNTomeOfRetraining.blp")
-    :content("-apm 查看你的APM数值")
+    :content("-apm view your APM value")
 
 Quest("fov")
-    :title("调整你的视距")
+    :title("Adjust your sight distance")
     :side("right")
     :icon("ReplaceableTextures\\CommandButtons\\BTNTomeOfRetraining.blp")
-    :content({ "-d +[number] 增加视距", "-d -[number] 减少视距", "-d =[number] 设置视距" })
+    :content({ "-d +[number] Increase", "-d -[number] Reduce", "-d =[number] Set" })
 ```
