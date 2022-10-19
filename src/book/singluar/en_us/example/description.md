@@ -9,7 +9,7 @@
 > return string[] or nil
 
 ```lua
--- 这样一个描述配置就定义好了
+-- So a description configuration is defined
 Game().defineDescription("myAbility", function(this, options)
     return {"第一行","第二行"}
 end)
