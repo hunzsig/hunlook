@@ -37,7 +37,7 @@ EVENT.Prop = {
 ---@alias noteOnPlayerBase {triggerPlayer:Player}
 EVENT.Player = {
     --- Players chat
-    ---@alias noteOnPlayerChatData noteOnPlayerBase|{chatString:"聊天的内容",matchedString:"匹配命中的内容"}
+    ---@alias noteOnPlayerChatData noteOnPlayerBase|{chatString:"Chat content",matchedString:"Match hit content"}
     Chat = "playerChat",
     --- Players press Esc
     ---@alias noteOnPlayerEscData noteOnPlayerBase
@@ -68,16 +68,16 @@ EVENT.Unit = {
     ---@alias noteOnUnitAvoidData noteOnUnitBase|{sourceUnit:Unit}
     Avoid = "unitAvoid",
     --- Armor piercing
-    ---@alias noteOnUnitBreakArmorData noteOnUnitBase|{targetUnit:Unit,breakType:"无视类型"}
+    ---@alias noteOnUnitBreakArmorData noteOnUnitBase|{targetUnit:Unit,breakType:"type"}
     BreakArmor = "unitBreakArmor",
     --- Hit the target
-    ---@alias noteOnUnitCrackFlyData noteOnUnitBase|{targetUnit:Unit,distance:"击退距离",height:"击飞高度",duration:"凌空时长"}
+    ---@alias noteOnUnitCrackFlyData noteOnUnitBase|{targetUnit:Unit,distance:"value",height:"value",duration:"time"}
     CrackFly = "unitCrackFly",
     --- Critical hit target
     ---@alias noteOnUnitCritData noteOnUnitBase|{targetUnit:Unit}
     Crit = "unitCrit",
     --- Cause damage
-    ---@alias noteOnUnitDamageData noteOnUnitBase|{targetUnit:Unit,damage:"伤害值",damageSrc:"伤害来源",damageType:"伤害类型"}
+    ---@alias noteOnUnitDamageData noteOnUnitBase|{targetUnit:Unit,damage:"data",damageSrc:"source",damageType:"type"}
     Damage = "unitDamage",
     --- Unit birth
     ---@alias noteOnUnitBornData noteOnUnitBase
@@ -92,19 +92,19 @@ EVENT.Unit = {
     ---@alias noteOnUnitDestroyData noteOnUnitBase
     Destroy = "unitDestroy",
     --- Enchant
-    ---@alias noteOnUnitEnchantData noteOnUnitBase|{sourceUnit:Unit,enchantType:"附魔类型",addition:"加成百分比"}
+    ---@alias noteOnUnitEnchantData noteOnUnitBase|{sourceUnit:Unit,enchantType:"type",addition:"%"}
     Enchant = "unitEnchant",
     --- Attack blood sucking
-    ---@alias noteOnUnitHPSuckAttackData noteOnUnitBase|{targetUnit:Unit,value:"吸血值",percent:"吸血百分比"}
+    ---@alias noteOnUnitHPSuckAttackData noteOnUnitBase|{targetUnit:Unit,value:"value",percent:"%"}
     HPSuckAttack = "unitHPSuckAttack",
     --- Skill Vampire
-    ---@alias noteOnUnitHPSuckAbilityData noteOnUnitBase|{targetUnit:Unit,value:"吸血值",percent:"吸血百分比"}
+    ---@alias noteOnUnitHPSuckAbilityData noteOnUnitBase|{targetUnit:Unit,value:"value",percent:"%"}
     HPSuckAbility = "unitHPSuckAbility",
     --- Hold Command
     ---@alias noteOnUnitStopData noteOnUnitBase
     Hold = "unitHold",
     --- Unit injured
-    ---@alias noteOnUnitHurtData noteOnUnitBase|{sourceUnit:Unit,targetUnit:Unit,damage:"伤害值",damageSrc:"伤害来源",damageType:"伤害类型"}
+    ---@alias noteOnUnitHurtData noteOnUnitBase|{sourceUnit:Unit,targetUnit:Unit,damage:"data",damageSrc:"source",damageType:"type"}
     Hurt = "unitHurt",
     --- Before unit injury
     ---@alias noteOnUnitBeforeHurtData noteOnUnitHurtData
@@ -122,31 +122,31 @@ EVENT.Unit = {
     ---@alias noteOnUnitKillData noteOnUnitBase|{targetUnit:Unit}
     Kill = "unitKill",
     --- Lightning chain hits the target
-    ---@alias noteOnUnitLightningChainData noteOnUnitBase|{targetUnit:Unit,index:"链索引"}
+    ---@alias noteOnUnitLightningChainData noteOnUnitBase|{targetUnit:Unit,index:"index"}
     LightningChain = "unitLightningChain",
     --- Attack absorb magic
-    ---@alias noteOnUnitMPSuckAttackData noteOnUnitBase|{targetUnit:Unit,value:"吸魔值",percent:"吸魔百分比"}
+    ---@alias noteOnUnitMPSuckAttackData noteOnUnitBase|{targetUnit:Unit,value:"value",percent:"%"}
     MPSuckAttack = "unitMPSuckAttack",
     --- Skills absorb magic
-    ---@alias noteOnUnitMPSuckAbilityData noteOnUnitBase|{targetUnit:Unit,value:"吸魔值",percent:"吸魔百分比"}
+    ---@alias noteOnUnitMPSuckAbilityData noteOnUnitBase|{targetUnit:Unit,value:"value",percent:"%"}
     MPSuckAbility = "unitMPSuckAbility",
     --- Move Start
-    ---@alias noteOnUnitMoveStartData noteOnUnitBase|{x:"目标X",y:"目标Y"}
+    ---@alias noteOnUnitMoveStartData noteOnUnitBase|{x:"x",y:"y"}
     MoveStart = "unitMoveStart",
     --- Move Stop
     ---@alias noteOnUnitMoveStopData noteOnUnitBase
     MoveStop = "unitMoveStop",
     --- Move change direction
-    ---@alias noteOnUnitMoveTurnData noteOnUnitBase|{x:"当前X",y:"当前Y"}
+    ---@alias noteOnUnitMoveTurnData noteOnUnitBase|{x:"x",y:"y"}
     MoveTurn = "unitMoveTurn",
     --- Moving
-    ---@alias noteOnUnitMovingData noteOnUnitBase|{x:"当前X",y:"当前Y",step:"第几步"}
+    ---@alias noteOnUnitMovingData noteOnUnitBase|{x:"x",y:"y",step:"which"}
     Moving = "unitMoving",
     --- Move Route
-    ---@alias noteOnUnitMoveRouteData noteOnUnitBase|{x:"当前X",y:"当前Y"}
+    ---@alias noteOnUnitMoveRouteData noteOnUnitBase|{x:"x",y:"y"}
     MoveRoute = "unitMoveRoute",
     --- Punish
-    ---@alias noteOnUnitPunishData noteOnUnitBase|{sourceUnit:Unit,percent:"硬直程度",duration:"持续时间"}
+    ---@alias noteOnUnitPunishData noteOnUnitBase|{sourceUnit:Unit,percent:"value",duration:"time"}
     Punish = "unitPunish",
     --- Rebound
     ---@alias noteOnUnitReboundData noteOnUnitDamageData
@@ -164,7 +164,7 @@ EVENT.Unit = {
     ---@alias noteOnUnitStunData noteOnUnitBase|{targetUnit:Unit,duration:number}
     Stun = "unitStun",
     --- Unit level Change
-    ---@alias noteOnUnitLevelChangeData noteOnUnitBase|{value:"变值差额"}
+    ---@alias noteOnUnitLevelChangeData noteOnUnitBase|{value:"Variation difference"}
     LevelChange = "unitLevelChange",
     Be = {
         --- Be attacked
@@ -174,42 +174,42 @@ EVENT.Unit = {
         ---@alias noteOnUnitBeAvoidData noteOnUnitBase|{targetUnit:Unit}
         Avoid = "be:unitAvoid",
         --- Be broken
-        ---@alias noteOnUnitBeBreakArmorData noteOnUnitBase|{sourceUnit:Unit,breakType:"无视类型"}
+        ---@alias noteOnUnitBeBreakArmorData noteOnUnitBase|{sourceUnit:Unit,breakType:"type"}
         BreakArmor = "be:unitBreakArmor",
-        --- 被击飞
-        ---@alias noteOnUnitBeCrackFlyData noteOnUnitBase|{sourceUnit:Unit,distance:"击退距离",height:"击飞高度",duration:"凌空时长"}
+        --- Be crack fly
+        ---@alias noteOnUnitBeCrackFlyData noteOnUnitBase|{sourceUnit:Unit,distance:number,height:number,duration:number}
         CrackFly = "be:unitCrackFly",
-        --- 被暴击
+        --- Be critically hit
         ---@alias noteOnUnitBeCritData noteOnUnitBase|{sourceUnit:Unit}
         Crit = "be:unitCrit",
-        --- 被攻击吸血
-        ---@alias noteOnUnitBeHPSuckAttackData noteOnUnitBase|{sourceUnit:Unit,value:"吸血值",percent:"吸血百分比"}
+        --- Be attacked to suck blood
+        ---@alias noteOnUnitBeHPSuckAttackData noteOnUnitBase|{sourceUnit:Unit,value:"value",percent:"%"}
         HPSuckAttack = "be:unitHPSuckAttack",
-        --- 被技能吸血
-        ---@alias noteOnUnitBeHPSuckAbilityData noteOnUnitBase|{sourceUnit:Unit,value:"吸血值",percent:"吸血百分比"}
+        --- Sucked by skills
+        ---@alias noteOnUnitBeHPSuckAbilityData noteOnUnitBase|{sourceUnit:Unit,value:"value",percent:"%"}
         HPSuckAbility = "be:unitHPSuckAbility",
-        --- 被闪电链击中
-        ---@alias noteOnUnitBeLightningChainData noteOnUnitBase|{sourceUnit:Unit,index:"链索引"}
+        --- Hit by lightning chain
+        ---@alias noteOnUnitBeLightningChainData noteOnUnitBase|{sourceUnit:Unit,index:"index"}
         LightningChain = "be:unitLightningChain",
-        --- 被攻击吸魔
-        ---@alias noteOnUnitBeMPSuckAttackData noteOnUnitBase|{sourceUnit:Unit,value:"吸魔值",percent:"吸魔百分比"}
+        --- Be attacked and absorb demons
+        ---@alias noteOnUnitBeMPSuckAttackData noteOnUnitBase|{sourceUnit:Unit,value:"value",percent:"%"}
         MPSuckAttack = "be:unitMPSuckAttack",
-        --- 被技能吸魔
-        ---@alias noteOnUnitBeMPSuckAbilityData noteOnUnitBase|{sourceUnit:Unit,value:"吸魔值",percent:"吸魔百分比"}
+        --- Absorbed by skills
+        ---@alias noteOnUnitBeMPSuckAbilityData noteOnUnitBase|{sourceUnit:Unit,value:"value",percent:"%"}
         MPSuckAbility = "be:unitMPSuckAbility",
-        --- 被反伤
+        --- Be injured in return
         ---@alias noteOnUnitBeReboundData noteOnUnitHurtData
         Rebound = "be:unitRebound",
-        --- 被打断[不大于0.05秒的眩晕]
+        --- Be interrupted[Vertigo lasting no more than 0.05 seconds]
         ---@alias noteOnUnitBeShockData noteOnUnitBase|{sourceUnit:Unit,duration:number}
         Shock = "be:unitShock",
-        --- 被分裂[核心型]
+        --- Be divided[Core type]
         ---@alias noteOnUnitBeSplitData noteOnUnitBase|{sourceUnit:Unit,radius:number}
         Split = "be:unitSplit",
-        --- 被分裂[扩散型]
+        --- Be divided[Diffusive type]
         ---@alias noteOnUnitBeSplitSpreadData noteOnUnitBase|{sourceUnit:Unit}
         SplitSpread = "be:unitSplitSpread",
-        --- 被眩晕[大于0.05秒的眩晕]
+        --- Be Stun[Vertigo lasting more than 0.05 seconds]
         ---@alias noteOnUnitBeStunData noteOnUnitBase|{sourceUnit:Unit,duration:number}
         Stun = "be:unitStun",
     }
@@ -217,73 +217,73 @@ EVENT.Unit = {
 
 ---@alias noteOnAbilityBase {triggerAbility:Ability,triggerUnit:Unit}
 EVENT.Ability = {
-    -- 当单位获得技能
+    -- When the unit gains skills
     ---@alias noteOnAbilityGetData noteOnAbilityBase
     Get = "abilityGet",
-    --- 单位失去技能
+    --- Unit lost skill
     ---@alias noteOnAbilityLoseData noteOnAbilityBase
     Lose = "abilityLose",
-    --- 单位开始施放技能（施法瞬间）
+    --- When Unit starts to cast skills (at the moment of casting)
     ---@alias noteOnAbilitySpellData noteOnAbilityBase|{triggerItem:Item,targetUnit:Unit,targetX:number,targetY:number,targetZ:number}
     Spell = "abilitySpell",
-    --- 技能生效
+    --- Skills come into effect
     ---@alias noteOnAbilityEffectiveData noteOnAbilityBase|{triggerItem:Item,targetUnit:Unit,targetX:number,targetY:number,targetZ:number}
     Effective = "abilityEffective",
-    --- 施放技能结束（只有持续施法有结束状态）
+    --- End of casting skill (only continuous casting can end)
     ---@alias noteOnAbilityStopData noteOnAbilityBase
     Stop = "abilityStop",
-    --- 停止施放技能（吟唱、持续施法有停止状态）
+    --- Stop casting skills (chanting and continuous casting have a stop state)
     ---@alias noteOnAbilityOverData noteOnAbilityBase
     Over = "abilityOver",
-    --- 等级改变
-    ---@alias noteOnAbilityLevelChangeData noteOnAbilityBase|{value:"变值差额"}
+    --- Level change
+    ---@alias noteOnAbilityLevelChangeData noteOnAbilityBase|{value:"Variation difference"}
     LevelChange = "abilityLevelChange",
 }
 
 ---@alias noteOnItemBase {triggerItem:Item,triggerUnit:Unit}
 EVENT.Item = {
-    --- 获得物品
+    --- Get items
     ---@alias noteOnItemGetData noteOnItemBase
     Get = "itemGet",
-    --- 失去物品
+    --- Lose items
     ---@alias noteOnItemLoseData noteOnItemBase
     Lose = "itemLose",
-    --- 使用物品
+    --- Use items
     ---@alias noteOnItemUsedData noteOnItemBase|noteOnAbilityEffectiveData
     Used = "itemUsed",
-    --- 丢弃物品
+    --- Drop items
     ---@alias noteOnItemDropData noteOnItemBase
     Drop = "itemDrop",
-    --- 抵押物品（持有人售出）
+    --- Pawn(Sold by the holder)
     ---@alias noteOnItemPawnData noteOnItemBase
     Pawn = "itemPawn",
-    --- 合成物品
+    --- Synthesis items
     ---@alias noteOnItemSynthesisData noteOnItemBase
     Synthesis = "itemSynthesis",
-    --- 拆分物品
+    --- Separate items
     ---@alias noteOnItemSeparateData noteOnItemBase
     Separate = "itemSeparate",
-    --- 等级改变
-    ---@alias noteOnItemLevelChangeData noteOnItemBase|{value:"变值差额"}
+    --- Level change
+    ---@alias noteOnItemLevelChangeData noteOnItemBase|{value:"Variation difference"}
     LevelChange = "itemLevelChange",
-    --- 物品毁灭
+    --- Destruction of goods
     ---@alias noteOnItemDestroyData noteOnItemBase
     Destroy = "itemDestroy",
 }
 
 ---@alias noteOnStoreBase {triggerStore:Store}
 EVENT.Store = {
-    --- 卖出货品
-    ---@alias noteOnStoreSellData noteOnStoreBase|{qty:"卖出数量"}
+    --- Goods sold
+    ---@alias noteOnStoreSellData noteOnStoreBase|{qty:"Quantity sold"}
     Sell = "storeSell",
 }
 
 ---@alias noteOnRectBase {triggerRect:Rect}
 EVENT.Rect = {
-    --- 进入区域
+    --- Entry area
     ---@alias noteOnRectEnterData noteOnRectBase
     Enter = "rectEnter",
-    --- 离开区域
+    --- Leave the area
     ---@alias noteOnRectLeaveData noteOnRectBase
     Leave = "rectLeave",
 }
@@ -291,7 +291,7 @@ EVENT.Rect = {
 ---@alias noteOnDestructableBase {triggerDestructable:Destructable|number}
 EVENT.Destructable = {
     --- Destructible objects die
-    ---@alias noteOnDestructableDeadData noteOnDestructableBase|{name:"名称",x:"坐标X",y:"坐标Y"}
+    ---@alias noteOnDestructableDeadData noteOnDestructableBase|{name:"name",x:"x",y:"y"}
     Dead = "destructableDead",
 }
 
@@ -307,13 +307,13 @@ EVENT.Frame = {
     ---@alias noteOnFrameLeftClickData noteOnFrameBase|{triggerPlayer:Player}
     LeftClick = "frameLeftClick",
     --- Mouse Release Left
-    ---@alias noteOnFrameLeftReleaseData noteOnFrameBase|{triggerPlayer:Player,status:"鼠标是否还在Frame内"}
+    ---@alias noteOnFrameLeftReleaseData noteOnFrameBase|{triggerPlayer:Player,status:"Whether the mouse is still in the frame"}
     LeftRelease = "frameLeftRelease",
     --- Mouse Click Right
     ---@alias noteOnFrameRightClickData noteOnFrameBase|{triggerPlayer:Player}
     RightClick = "frameRightClick",
     --- Mouse Release Right
-    ---@alias noteOnFrameRightReleaseData noteOnFrameBase|{triggerPlayer:Player,status:"鼠标是否还在Frame内"}
+    ---@alias noteOnFrameRightReleaseData noteOnFrameBase|{triggerPlayer:Player,status:"Whether the mouse is still in the frame"}
     RightRelease = "frameRightRelease",
     --- Mouse move on
     ---@alias noteOnFrameMoveData noteOnFrameBase|{triggerPlayer:Player}
@@ -325,7 +325,7 @@ EVENT.Frame = {
     ---@alias noteOnFrameLeaveData noteOnFrameBase|{triggerPlayer:Player}
     Leave = "frameLeave",
     --- Mouse roll
-    ---@alias noteOnFrameWheelData noteOnFrameBase|{triggerPlayer:Player,delta:"滚动数值"}
+    ---@alias noteOnFrameWheelData noteOnFrameBase|{triggerPlayer:Player,delta:"Scroll Values"}
     Wheel = "frameWheel",
 }
 ```
