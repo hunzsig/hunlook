@@ -9,6 +9,7 @@
 * New Weather.period
 * New Rect.weather
     * ··· multi weathers
+* Optimization support duplicate assets detection
 
 > 2022/08
 

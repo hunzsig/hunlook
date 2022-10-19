@@ -9,6 +9,7 @@
 * 新的 Weather.period
 * 新的 Rect.weather
     * ··· 支持多天气
+* 优化 工具支持重复资源检测
 
 > 2022/09
 

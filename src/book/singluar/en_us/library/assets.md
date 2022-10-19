@@ -1,13 +1,6 @@
 ## Assets
 
-> Anyone who has used h-lua knows that there is an hslk. This framework has been basically abolished and changed to
-> assets management
->
-> If you are familiar with hslk, maybe you can master it soon
->
-> If you really can't master assets, it is suggested to abandon this framework directly
-
-### There are 9 kinds of assets in total
+#### There are 9 kinds of assets in total
 
 > The following categories can refer to the implementation under the assets directory
 >
