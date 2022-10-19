@@ -1,65 +1,65 @@
-## 命令行
+## Command Line
 
-### 新建项目
-
-```
-> lik.exe new demo //新建一个地图项目，名为demo
-```
-
-### 使用WE编辑地形
-
-> 编辑完后在使用test时会自动将改动记录回你的项目中
+### New Project
 
 ```
-> lik.exe we demo //以马仔WE打开项目demo，主要用于编辑地形
+> lik.exe new demo //Create a new map project named demo
 ```
 
-### 模型批量查看
+### Edit terrain with WE
 
-命令后续共有3个参数
-
-* 1 类别：分为 -a(查看assets) -n(查看assetsNew) -p(查看某个项目assets的model声明虚幻代码)
-* 2 页数：数目字，从第1页开始
-* 3 过滤：搜索
-
-> 模型默认scale1.00，方便对比
+> After editing, the changes will be automatically recorded back to your project when using test
 
 ```
-> lik.exe model -a //查看根assets目录下的模型，第1页
-> lik.exe model -a 2 buff //查看根assets目录下的模型，第2页，同时只查看路径带有buff的模型
-> lik.exe model -n //查看根assetsNew目录下的模型，第1页
-> lik.exe model -n 3//查看根assetsNew目录下的模型，第3页
-> lik.exe model -p:demo 1  //查看demo项目的model声明虚幻模型，第1页
-> lik.exe model -p:demo 2 unit //查看demo项目的model声明虚幻模型，第2页，同时只查看路径带有unit的模型
+> lik.exe we demo //Open the project demo with WE, mainly for editing terrain
 ```
 
-### 运行测试
+### Model batch view
 
-命令后续共有3个参数
+There are 3 parameters after the command
 
-* 1 项目：具体项目名称，如demo
-* 2 模式：(默认 -h)
-    * -t(test 临时) 只建立临时目录并打包ini地图等资源，不会构建测试地图和开启测试
-    * -h(hot 热更新) 开窗口调试。可F10重启获得脚本更新，也可以修改文件实时更新脚本
-    * -b(build 构建打包) 开窗口调试。无热更，加密，没有slk优化。
-    * -d(distributable 构建打包) 开窗口调试。无热更，加密并乱构、自动slk优化。
-    * -r(release 上线发行+slk优化) 没有调试窗口。无热更，加密并乱构、自动slk优化。
+* 1 Category: Divided into -a (view assets) -n (view assetsNew) -p (view the model declaration unreal code of a project's assets)
+* 2 Pages: Numbers, starting from page 1
+* 3 Filter: Search
 
-> 一般实际运行的测试图都是放在 Warcraft III Frozen Throne\Maps\Test\WorldEditTestMap.w3x
+> The default scale of the model is 1.00, which is convenient for comparison
+
+```
+> lik.exe model -a //View models in root assets directory, page 1
+> lik.exe model -a 2 buff //View models in the root assets directory, page 2, and only view models with buffs in the path
+> lik.exe model -n //View models in root assets New directory, page 1
+> lik.exe model -n 3//View the models in the root assets New directory, page 3
+> lik.exe model -p:demo 1  //Check out the model declaration for the demo project Unreal Model, page 1
+> lik.exe model -p:demo 2 unit //View the model declaration Unreal model of the demo project, page 2, and only view the model with the path unit
+```
+
+### Run the test
+
+There are 3 parameters after the command
+
+* 1 Project: specific project name, such as demo
+* 2 mode: (default -h)
+  * -t(test Temporary) Only create a temporary directory and package resources such as ini maps, without building test maps and opening tests
+  * -h(hot HotUpdate) Open window debugging. You can restart F 10 to get script updates, and you can also modify files to update scripts in real time
+  * -b(build BuildPackage) Open window debugging. No hot update, encryption, no slk optimization.
+  * -d(distributable DistPackage) Open window debugging. No hot update, encrypted and shuffled, automatic slk optimization.
+  * -r(release PublishPackage+slk) There is no debug window. No hot update, encrypted and shuffled, automatic slk optimization.
+
+> Generally, the actual running test charts are placed in \Warcraft III Frozen Throne\Maps\Test\WorldEditTestMap.w3x
 >
-> 具体位置可参考WE里面的配置
+> For the specific location, please refer to the configuration in WE
 >
-> 加密乱构可参考 [参考](https://lik.hunzsig.org/?p=other&n=encrypt)
+> encrypt [see](https://lik.hunzsig.org/?p=other&n=encrypt)
 
 ```
-> lik.exe run demo -t //生成临时文件查看
-> lik.exe run demo -h //热更新模式下并调试demo
-> lik.exe run demo -b //构建脚本加密地图并调试demo
-> lik.exe run demo -d //构建脚本加密且slk优化的地图并调试demo
-> lik.exe run demo -r //构建上线地图并测试
+> lik.exe run demo -t //Generate temporary files to view
+> lik.exe run demo -h //In hot update mode and debug the demo
+> lik.exe run demo -b //Build script to encrypt map and debug demo
+> lik.exe run demo -d //Build script encrypted and slk optimized map and debug demo
+> lik.exe run demo -r //Publish
 ```
 
-> 在模式后添加~符号，可以跳过资源变更，特别适用于纯代码改动时的测试
+> Add the ~ symbol after the pattern to skip resource changes, especially for testing when pure code changes
 
 ```
 > lik.exe run demo -h~
@@ -68,23 +68,23 @@
 > lik.exe run demo -r~
 ```
 
-### 同时开启N个魔兽客户端（支持JAPI）
+### Open N Warcraft clients at the same time (support JAPI)
 
-> 默认打开2个，最多一次性打开9个(并不建议，单人4个足矣)
+> Open 2 by default, and open 9 at most at one time (not recommended, 4 for a single person is enough)
 
 ```
-> lik.exe multi 4 //打开4个
+> lik.exe multi 4 //open 4
 ```
 
-### 关闭所有War3客户端
+### Close all War 3 clients
 
-> 此命令需要管理员权限，请留意
+> This command requires administrator privileges, please note
 
 ```
 > lik.exe kill
 ```
 
-### 清理缓存并删除本地服务器数据
+### Clear All Cache(with DZ server data)
 
 ```
 > lik.exe clear
