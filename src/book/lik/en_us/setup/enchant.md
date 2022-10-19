@@ -1,9 +1,9 @@
-### 预设附魔
+### Preset enchantment
 
-> 用于定义附魔种类、反应的设置
+> It is used to define the type and reaction of enchanting
 
 ```lua
---- 方便伤害类型引用
+--- Convenient injury type reference
 ---@alias noteDamageTypeData {value:string,label:string}
 
 ---@type noteDamageTypeData
@@ -29,9 +29,9 @@ DAMAGE_TYPE.poison = nil
 ---@type noteDamageTypeData
 DAMAGE_TYPE.steel = nil
 
--- 附魔设定
+-- Enchant setting
 Enchant("fire")
-    :name("火")
+    :name("Fire")
     :strengthen(0)
     :resistance(0)
     :attachEffect("origin", "BreathOfFireDamage")
@@ -40,14 +40,14 @@ Enchant("fire")
     :attachEffect("head", "BreathOfFireDamage")
     :reaction("grass", function(evtData) evtData.triggerUnit:hpRegen("-=200;5") end)
 
-Enchant("rock"):name("岩")
-Enchant("water"):name("水")
-Enchant("ice"):name("冰")
-Enchant("wind"):name("风")
-Enchant("light"):name("光")
-Enchant("dark"):name("暗")
-Enchant("grass"):name("草")
-Enchant("thunder"):name("雷")
-Enchant("poison"):name("毒")
-Enchant("steel"):name("钢")
+Enchant("rock"):name("Rock")
+Enchant("water"):name("Water")
+Enchant("ice"):name("Ice")
+Enchant("wind"):name("Wind")
+Enchant("light"):name("Light")
+Enchant("dark"):name("Dark")
+Enchant("grass"):name("Grass")
+Enchant("thunder"):name("Thunder")
+Enchant("poison"):name("Poison")
+Enchant("steel"):name("Steel")
 ```
