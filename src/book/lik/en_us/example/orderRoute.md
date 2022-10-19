@@ -1,18 +1,18 @@
-## orderRoute 路线蓝图
+## OrderRoute Route blueprint
 
-> 为单位设定一个路线移动的计划
+> Set a route movement plan for the unit
 
-* 可以被中途阻扰，但依然会非常坚持的一直遵循后续路线坐标移动下去
-* 可以在每一段停顿点加入一个自定义函数来做出额外的动作（路线会被强行暂停，动作中需要手动恢复）
-* 使用 orderRoute 来执行路线行为
-* 使用 orderRouteSet 来修改路线
-* 使用 orderRoutePause 来暂停路线行为（但会继续走完以出发的路段）
-* 使用 orderRouteResume 来恢复路线行为（在暂停10秒后如还未恢复，路线会自动废除）
-* 使用 orderRouteDestroy 来消除路线行为
+* It can be obstructed halfway, but it will continue to follow the coordinates of the follow-up route
+* You can add a user-defined function to each pause point to make additional actions (the route will be forcibly suspended, and the action needs to be manually resumed)
+* Use orderRoute to perform route behavior
+* Use orderRouteSet to modify the route
+* Use orderRoutePause to pause the route behavior (but continue to finish the road section from which to start)
+* Use orderRouteResume to resume the route behavior (if it has not been resumed after 10 seconds of suspension, the route will be automatically abolished)
+* Use orderRouteDestroy to eliminate route behavior
 
-### 例子1
+### Example 1
 
-> 常规的定义、修改、暂停、恢复
+> General definition, modification, suspension and recovery
 
 ```lua
 local u = Unit(TPL_UNIT.HeroFlameLord, Player(i), 0, 0, 0)
@@ -60,21 +60,21 @@ u:orderRoute(true, {
 })
 
 time.setTimeout(6, function()
-    print("第5段")
+    print("Patch 5")
     u:orderRouteSet(5, { 0, 0 })
     time.setTimeout(10, function()
-        print("删除第5段")
+        print("Delete patch 5")
         u:orderRouteSet(5, nil)
     end)
 end)
 ```
 
-### 例子2
+### Example 2
 
-> 常用于多方路线设计
+> Commonly used in multi route design
 
 ```lua
---- 例子2
+--- Example 2
 local lineMap = {
     { -500, -1000 },
     { 500, -1000 },
