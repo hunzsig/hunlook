@@ -51,16 +51,16 @@ end)
 _assets_sound("voice/clickhero/level_up", "lv", "v3d")
 
 -- 播放代码
-local 3d = V3d("lv")
+local v3d = V3d("lv")
 
-3d.xyz(0,0,0) -- 绑定点
-3d.unit(bindUnit) -- 绑定单位
-3d.rect(bindRect) -- 绑定区域
+v3d.xyz(0,0,0) -- 绑定点
+v3d.unit(bindUnit) -- 绑定单位
+v3d.rect(bindRect) -- 绑定区域
 
-3d.play() -- 全部玩家听到
+v3d.play() -- 全部玩家听到
 -- 指定玩家用法
 async.call(Player(1), function()
-    3d.play()
+    v3d.play()
 end)
 ```
 

@@ -51,16 +51,16 @@ end)
 _assets_sound("voice/clickhero/level_up", "lv", "v3d")
 
 -- Play
-local 3d = V3d("lv")
+local v3d = V3d("lv")
 
-3d.xyz(0,0,0) -- Binding point
-3d.unit(bindUnit) -- Binding unit
-3d.rect(bindRect) -- Binding area
+v3d.xyz(0,0,0) -- Binding point
+v3d.unit(bindUnit) -- Binding unit
+v3d.rect(bindRect) -- Binding area
 
-3d.play() -- All players heard
+v3d.play() -- All players heard
 -- Specify player usage
 async.call(Player(1), function()
-    3d.play()
+    v3d.play()
 end)
 ```
 
