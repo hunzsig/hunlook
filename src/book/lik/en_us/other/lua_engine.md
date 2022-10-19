@@ -379,8 +379,8 @@ The jass.debug library can help you dig deeper into the internals of the lua eng
 
 ```lua
 	local log = require 'jass.log'
-	log.info('这是一行日志')
-	log.error('这是一行', '日志')
+	log.info('This is a line of logs')
+	log.error('This is a line of', 'logs')
 ```
 
 ### jass.message
