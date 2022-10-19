@@ -1,80 +1,82 @@
-## 目录结构
+## Directory Structure
 
-> （*）Required 必要性，丢失崩溃
+> （*）Required Necessity, Lost Crash
 >
-> （~）Automatic 临时性，缺少自动构建
+> （~）Automatic Temporary, lack of automatic builds
 >
-> （·）Customize 自定义，按需构建
+> （·）Customize Custom, build on demand
 
 ```
-├── assets -（*|·）资源库
-│   ├── war3mapFont - 放字体，只支持 ttf
-│   ├── war3mapIcon - 放图标，只支持 tga
-│   ├── war3MapLoading - 载入图，只支持单图 tga 或 规则组合 tga
-│   ├── war3mapModel - 放模型，只支持 mdx，贴图不要扔进来
-│   ├── war3mapPreview - 预览图，只支持 tga
-│   ├── war3mapSelection - 放选择圈，参考已提供格式
-│   ├── war3mapSound - 放音效音乐，只支持 mp3
-│   ├── war3mapTextures - 放模型贴图，只支持 blp
-│   └── war3mapUI - 放UI套件，已有格式参考
-├── assetsNew -（*|·）与assets结构一致，处理新资源时使用
-├── projects -（~|·）用来放置你的地图项目目录，如 project_demo
+├── assets -（*|·）Resource Library
+│   ├── war3mapFont - Put fonts, only support ttf
+│   ├── war3mapIcon - Put icon, only support tga
+│   ├── war3MapLoading - Load image, only supports single image tga or rule combination tga
+│   ├── war3mapModel - Put the model, only support mdx, do not throw in the texture
+│   ├── war3mapPreview - Preview image, only supports tga
+│   ├── war3mapSelection - Put the selection circle, refer to the provided format
+│   ├── war3mapSound - Play sound effect music, only support mp3
+│   ├── war3mapTextures - Put model texture, only support blp
+│   └── war3mapUI - Put UI kit, existing format reference
+├── assetsNew -（*|·）Consistent with the assets structure, used when dealing with new resources
+├── projects -（~|·）Used to place your map project directory, such as project_demo
 │   └── project_demo -（·）
-├── library -（*）核心
+├── library -（*）Core
 ├── support -（*）
-│   ├── lni - 重要地图数据
-│   ├── models - model命令地图模版
-│   ├── w3x2lni - w3x2lni工具(v:2.7.2)
-│   └── WE - 新马仔
-├── temp -（~）缓存
-├── conf -（~|·）配置
-└── lik.exe -（*）命令工具
+│   ├── lni - ImportantMap Data
+│   ├── models - ModelCommandMap Template
+│   ├── w3x2lni - w3x2lni Tool(v:2.7.2)
+│   └── WE - MaZai WE Tool
+├── temp -（~）Cache
+├── conf -（~|·）Configure
+└── lik.exe -（*）Command Tool
 ```
 
-### 项目结构
+### Project Structure
 
-> lik大多数功能皆为**配置声明式**，先后顺序要求较低
+> Most of the functions of sinluar are **configuration declarative**, and the sequence requirements are low.
 >
-> 在项目内完全**不需要**且**不应该**使用require加载文件
+> It is **not required** and should **not be used** to load files with require at all within the project
 >
-> 文件会按文件名**从上往下**自动载入，如果你编写了自运行的脚本，请自己注意加载顺序（例如加个下划线在名字前面什么的）
+> The files will be automatically loaded **from top to bottom** according to the file name.
+> If you write a self-running script, please pay attention to the loading order (such as adding an underscore before the
+> name or something)
 
 ```
-└── project_demo - 项目目录
-    ├── assets - 项目资源引用, 必须写在此名字目录下，不要把流程代码写里面
-    ├── scripts - 项目脚本代码，必须写在此名字目录下
-    │   ├── globals - 全局定义（仅供参考）
-    │   │    ├── setup - 用于定义游戏设定（仅供参考）
-    │   │    ├── tpl - 用于建立对象模版（仅供参考）
-    │   └── process - 项目流程代码，流程以 start 开始
-    ├── sublibrary -（·）局部子核心库（只编写对核心库的自定义拓展，文件对应结构须与全局library一致）
-    └── w3x - 地图文件（没事别乱改，使用we命令修改参数，保存后自动生成备份）
-        ├── map - 地图lni（不要轻易改，除非你懂）
-        ├── table - ini式的物编（不要改，不搭理物编）
-        └── war3mapMap.blp - 略缩图（不用改）
+└── project_demo - Project Directory
+    ├── assets - Project resource reference, must be written in this name directory, do not write process code in it
+    ├── scripts - Project script code, must be written in this name directory
+    │   ├── globals - Global Definition(For ReferenceOnly)
+    │   │    ├── setup - Used to define game settings(For ReferenceOnly)
+    │   │    ├── tpl - Used to create object templates(For ReferenceOnly)
+    │   └── process - Project process code, the process starts with start
+    ├── sublibrary -（·）Local sub core library (only the user-defined extension of the core library is written, and the corresponding structure of the file must be consistent with the global library)
+    └── w3x - Map file (don't change anything, use the we command to modify the parameters, and automatically generate a backup after saving)
+        ├── map - Map lni (don't change it easily, unless you understand it)
+        ├── table - ini-style object editing (don't change it, don't follow the physical editing)
+        └── war3mapMap.blp - Thumbnail (do not change)
 ```
 
-### UI套件(Kit)结构
+### UI Kit Structure
 
 ```
-└── my_kit - 套件名称
-    ├── assets -（*|·）放资源
-    │   ├── my.tga - 一个我的图
-    │   ├── btn - 支持多级目录
-    │   │   └── bag.tga - 一个背包图标
-    │   └── brun.mdx - 支持模型等
-    ├── main.fdf -（·）支持额外fdf，但不推荐（必须叫main名字）
-    └── main.lua -（*）套件脚本代码（必须叫main名字）
+└── my_kit - name
+    ├── assets -（*|·）
+    │   ├── my.tga - A picture
+    │   ├── btn - Support Directory
+    │   │   └── bag.tga - A picture of bag
+    │   └── brun.mdx - Support Model or other assets
+    ├── main.fdf -（·）Support additional FDF, but not recommended (must be called main name)
+    └── main.lua -（*）Codes (must be called main name)
 ```
 
-### 载入图结构
+### Loading Structure
 
-> 同名时，优先使用目录而不是单图
+> In case of the same name, the directory preference is preferred over the single graph
 
 ```
-├── default.tga - 支持单图载入图模式
-└── default - 也支持目录套载入图模式
-    ├── bc.tga - 进度条颜色
-    ├── bg.tga - 进度条底色
-    └── pic.tga - 背景镂空图
+├── default.tga - Support single graph loading graph mode
+└── default - It also supports directory set loading diagram mode
+    ├── bc.tga - Progress bar color
+    ├── bg.tga - Progress bar background color
+    └── pic.tga - Main background with hollow out drawing
 ```

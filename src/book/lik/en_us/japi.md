@@ -1,14 +1,14 @@
 ## JAPI
 
-### 实装接口
+### Real installed api
 
-> 存在同名原有API，但是是经过提升强化的版本与原版参数一致，与原来的弱关联
+> The original API with the same name exists, but the enhanced version is consistent with the original version parameters and weakly associated with the original version
 >
-> 存在同名原有API，但是原来无效，重新实现，与原来的无关联
+> The original API with the same name exists, but it is invalid. It is re implemented and has no association with the original API
 >
-> 存在部分API为框架独占实现，与原来的无关联
+> Some APIs are implemented exclusively by the framework and are not associated with the original
 >
-> 存在部分危险API（如无效、泄漏、异步等）直接废弃，不提供使用
+> Some dangerous APIs (such as invalid, leaking, asynchronous, etc.) are directly discarded and not available for use
 
 ```lua
 japi.DzAPI_Map_ChangeStoreItemCoolDown(...)
