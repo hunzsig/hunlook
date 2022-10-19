@@ -1,39 +1,39 @@
-## 上線官方對戰平臺須知
+## 上线官方对战平台须知
 
-> 上線的地圖需要在發佈後臺勾選上啓用平臺的 japi 選項，否則無法調用 lua 引擎庫
+> 上线的地图需要在发布后台勾选上启用平台的 japi 选项，否则无法调用 lua 引擎库
 
-> 如我的項目叫 helloworld
+> 如我的项目叫 helloworld
 
-1、第一步做好你的圖，做不好就不用看後麵了
+1、第一步做好你的图，做不好就不用看后面了
 
-2、熱更新測試項目
-
-```
-> sl.exe run helloworld
-```
-
-3、測試項目預打包
+2、热更新测试项目
 
 ```
-> sl.exe run helloworld -b
+> lik.exe run helloworld
 ```
 
-4、二次測試
+3、测试项目预打包
 
 ```
-> sl.exe run helloworld -d
+> lik.exe run helloworld -b
 ```
 
-5、將項目進行上線打包
+4、二次测试
 
 ```
-> sl.exe run helloworld -r
+> lik.exe run helloworld -d
 ```
 
-6、項目打包完會啓動測試，此時已經在你的war3根目錄的map/test目錄內有了結果文件，如：
+5、将项目进行上线打包
+
+```
+> lik.exe run helloworld -r
+```
+
+6、项目打包完会启动测试，此时已经在你的war3根目录的map/test目录内有了结果文件，如：
 
 > \Warcraft3\Maps\Test\WorldEditTestMap.w3x
 
-7、把地圖文件改個名，例如你的地圖是劍聖求生之路：crazy.v1.0.w3x,就可以上傳地圖到官方對戰平臺了！
+7、把地图文件改个名，例如你的地图是剑圣求生之路：crazy.v1.0.w3x,就可以上传地图到官方对战平台了！
 
 ### CONGRATULATIONS！

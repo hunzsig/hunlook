@@ -1,13 +1,21 @@
-## Jetbrain設置學習
+## Jetbrain设置学习
 
-安裝 Emmylua 插件，如虎添翼
+安装 Emmylua 插件
 
-![Emmylua](https://gitlab.com/h-document/singluar/-/raw/main/images/emmylua.png)
+![Emmylua](https://gitlab.com/h-document/lik/-/raw/main/assets/emmylua.png)
 
-可以為 kernel 目錄設置Resources Root，提高索引效率
+安装 Image Icon Viewer 插件
 
-![Sources](https://gitlab.com/h-document/singluar/-/raw/main/images/jetbrain1.png)
+![ImageIconViewer](https://gitlab.com/h-document/lik/-/raw/main/assets/imageIconViewer.png)
 
-可以為 temp 目錄設置Excluded，忽略其索引，提高索引準確性
+安装 Color Highlighter 插件
 
-![Excluded](https://gitlab.com/h-document/singluar/-/raw/main/images/jetbrain2.png)
+![ColorHighlighter](https://gitlab.com/h-document/lik/-/raw/main/assets/colorHighlighter.png)
+
+可以为 library 目录设置Resources Root，提高索引效率
+
+![Sources](https://gitlab.com/h-document/lik/-/raw/main/assets/jetbrain1.png)
+
+可以为 temp 目录设置Excluded，忽略其索引，提高索引准确性
+
+![Excluded](https://gitlab.com/h-document/lik/-/raw/main/assets/jetbrain2.png)

@@ -1,179 +1,179 @@
-## Event
+## Event 事件
 
-#### All events
+#### 事件一览
 
 ```lua
 EVENT.Game = {
-    --- Start the game (this event will be automatically destroyed after the game starts)
+    --- 开始游戏(此事件游戏开始后会自动销毁)
     ---@alias noteOnGameStartData nil
     Start = "gameStart",
-    --- Entering the early morning
+    --- 进入凌晨
     ---@alias noteOnGameDawnData nil
     Dawn = "gameDawn",
-    --- Entering the day
+    --- 进入正午
     ---@alias noteOnGameDayData nil
     Day = "gameDay",
-    --- Entering noon
+    --- 进入正午
     ---@alias noteOnGameNoonData nil
     Noon = "gameNoon",
-    --- Entering night
+    --- 进入黑夜
     ---@alias noteOnGameNightData nil
     Night = "gameNight",
 }
 
----@alias noteOnPropBase {key:"prop key", old:"old value", new:"new value"}
+---@alias noteOnPropBase {key:"对应属性key", old:"旧值", new:"新值"}
 ---@alias noteOnPropGame noteOnPropBase|{triggerObject:Game}
 ---@alias noteOnPropPlayer noteOnPropBase|{triggerObject:Player}
 ---@alias noteOnPropUnit noteOnPropBase|{triggerObject:Unit}
 ---@alias noteOnPropAbility noteOnPropBase|{triggerObject:Ability}
 ---@alias noteOnPropItem noteOnPropBase|{triggerObject:Item}
 EVENT.Prop = {
-    --- Before changing game parameters
+    --- 游戏参数改变前
     BeforeChange = "propBeforeChange",
-    --- After changing game parameters
+    --- 游戏参数改变后
     Change = "propChange",
 }
 
 ---@alias noteOnPlayerBase {triggerPlayer:Player}
 EVENT.Player = {
-    --- Players chat
+    --- 玩家聊天
     ---@alias noteOnPlayerChatData noteOnPlayerBase|{chatString:"聊天的内容",matchedString:"匹配命中的内容"}
     Chat = "playerChat",
-    --- Players press Esc
+    --- 玩家按下Esc
     ---@alias noteOnPlayerEscData noteOnPlayerBase
     Esc = "playerEsc",
-    --- Player selected unit
+    --- 玩家选中单位
     ---@alias noteOnPlayerSelectUnitData noteOnPlayerBase|{triggerUnit:Unit}
     SelectUnit = "playerSelectUnit",
-    --- Players deselect units
+    --- 玩家取消选择单位
     ---@alias noteOnPlayerDeSelectUnitData noteOnPlayerBase|{triggerUnit:Unit}
     DeSelectUnit = "playerDeSelectUnit",
-    --- Player selected item
+    --- 玩家选中物品
     ---@alias noteOnPlayerSelectItemData noteOnPlayerBase|{triggerItem:Item}
     SelectItem = "playerSelectItem",
-    --- Players cancel the selection of items
+    --- 玩家取消选择物品
     ---@alias noteOnPlayerDeSelectItemData noteOnPlayerBase|{triggerUnit:Unit}
     DeSelectItem = "playerDeSelectItem",
-    --- Players leave the game
+    --- 玩家离开游戏
     ---@alias noteOnPlayerQuitData noteOnPlayerBase
     Quit = "playerQuit",
 }
 
 ---@alias noteOnUnitBase {triggerUnit:Unit,triggerAbility:Ability,triggerItem:Item}
 EVENT.Unit = {
-    --- Attack
+    --- 攻击
     ---@alias noteOnUnitAttackData noteOnUnitDamageData
     Attack = "unitAttack",
-    --- Avoid
+    --- 回避
     ---@alias noteOnUnitAvoidData noteOnUnitBase|{sourceUnit:Unit}
     Avoid = "unitAvoid",
-    --- Armor piercing
+    --- 破防
     ---@alias noteOnUnitBreakArmorData noteOnUnitBase|{targetUnit:Unit,breakType:"无视类型"}
     BreakArmor = "unitBreakArmor",
-    --- Hit the target
+    --- 击飞目标
     ---@alias noteOnUnitCrackFlyData noteOnUnitBase|{targetUnit:Unit,distance:"击退距离",height:"击飞高度",duration:"凌空时长"}
     CrackFly = "unitCrackFly",
-    --- Critical hit target
+    --- 暴击目标
     ---@alias noteOnUnitCritData noteOnUnitBase|{targetUnit:Unit}
     Crit = "unitCrit",
-    --- Cause damage
+    --- 造成伤害
     ---@alias noteOnUnitDamageData noteOnUnitBase|{targetUnit:Unit,damage:"伤害值",damageSrc:"伤害来源",damageType:"伤害类型"}
     Damage = "unitDamage",
-    --- Unit birth
+    --- 单位出生
     ---@alias noteOnUnitBornData noteOnUnitBase
     Born = "unitBorn",
-    --- Unit reborn
+    --- 复活
     ---@alias noteOnUnitRebornData noteOnUnitBase
     Reborn = "unitReborn",
-    --- Unit objects die
+    --- 单位死亡
     ---@alias noteOnUnitDeadData noteOnUnitBase|{sourceUnit:Unit}
     Dead = "unitDead",
-    --- Unit objects destroy
+    --- 单位毁灭
     ---@alias noteOnUnitDestroyData noteOnUnitBase
     Destroy = "unitDestroy",
-    --- Enchant
+    --- 附魔反应
     ---@alias noteOnUnitEnchantData noteOnUnitBase|{sourceUnit:Unit,enchantType:"附魔类型",addition:"加成百分比"}
     Enchant = "unitEnchant",
-    --- Attack blood sucking
+    --- 攻击吸血
     ---@alias noteOnUnitHPSuckAttackData noteOnUnitBase|{targetUnit:Unit,value:"吸血值",percent:"吸血百分比"}
     HPSuckAttack = "unitHPSuckAttack",
-    --- Skill Vampire
+    --- 技能吸血
     ---@alias noteOnUnitHPSuckAbilityData noteOnUnitBase|{targetUnit:Unit,value:"吸血值",percent:"吸血百分比"}
     HPSuckAbility = "unitHPSuckAbility",
-    --- Hold Command
+    --- 候住命令
     ---@alias noteOnUnitStopData noteOnUnitBase
     Hold = "unitHold",
-    --- Unit injured
+    --- 单位受伤
     ---@alias noteOnUnitHurtData noteOnUnitBase|{sourceUnit:Unit,targetUnit:Unit,damage:"伤害值",damageSrc:"伤害来源",damageType:"伤害类型"}
     Hurt = "unitHurt",
-    --- Before unit injury
+    --- 单位受伤前
     ---@alias noteOnUnitBeforeHurtData noteOnUnitHurtData
     BeforeHurt = "unitBeforeHurt",
-    --- Total resistance[defence]
+    --- 全抵抗[防御]
     ---@alias noteOnUnitImmuneDefendData noteOnUnitBase|{sourceUnit:Unit}
     ImmuneDefend = "unitImmuneDefend",
-    --- Total resistance[invincible]
+    --- 全抵抗[无敌]
     ---@alias noteOnUnitImmuneInvincibleData noteOnUnitBase|{sourceUnit:Unit}
     ImmuneInvincible = "unitImmuneInvincible",
-    --- Total resistance[reduction]
+    --- 全抵抗[减伤]
     ---@alias noteOnUnitImmuneReductionData noteOnUnitBase|{sourceUnit:Unit}
     ImmuneReduction = "unitImmuneReduction",
-    --- Unit kills enemies
+    --- 单位杀敌
     ---@alias noteOnUnitKillData noteOnUnitBase|{targetUnit:Unit}
     Kill = "unitKill",
-    --- Lightning chain hits the target
+    --- 闪电链击中目标
     ---@alias noteOnUnitLightningChainData noteOnUnitBase|{targetUnit:Unit,index:"链索引"}
     LightningChain = "unitLightningChain",
-    --- Attack absorb magic
+    --- 攻击吸魔
     ---@alias noteOnUnitMPSuckAttackData noteOnUnitBase|{targetUnit:Unit,value:"吸魔值",percent:"吸魔百分比"}
     MPSuckAttack = "unitMPSuckAttack",
-    --- Skills absorb magic
+    --- 技能吸魔
     ---@alias noteOnUnitMPSuckAbilityData noteOnUnitBase|{targetUnit:Unit,value:"吸魔值",percent:"吸魔百分比"}
     MPSuckAbility = "unitMPSuckAbility",
-    --- Move Start
+    --- 移动开始
     ---@alias noteOnUnitMoveStartData noteOnUnitBase|{x:"目标X",y:"目标Y"}
     MoveStart = "unitMoveStart",
-    --- Move Stop
+    --- 移动停止
     ---@alias noteOnUnitMoveStopData noteOnUnitBase
     MoveStop = "unitMoveStop",
-    --- Move change direction
+    --- 移动转向
     ---@alias noteOnUnitMoveTurnData noteOnUnitBase|{x:"当前X",y:"当前Y"}
     MoveTurn = "unitMoveTurn",
-    --- Moving
+    --- 移动中
     ---@alias noteOnUnitMovingData noteOnUnitBase|{x:"当前X",y:"当前Y",step:"第几步"}
     Moving = "unitMoving",
-    --- Move Route
+    --- 移动路由
     ---@alias noteOnUnitMoveRouteData noteOnUnitBase|{x:"当前X",y:"当前Y"}
     MoveRoute = "unitMoveRoute",
-    --- Punish
+    --- 硬直
     ---@alias noteOnUnitPunishData noteOnUnitBase|{sourceUnit:Unit,percent:"硬直程度",duration:"持续时间"}
     Punish = "unitPunish",
-    --- Rebound
+    --- 反伤
     ---@alias noteOnUnitReboundData noteOnUnitDamageData
     Rebound = "unitRebound",
-    --- Shock[Vertigo lasting no more than 0.05 seconds]
+    --- 打断[不大于0.05秒的眩晕]
     ---@alias noteOnUnitShockData noteOnUnitBase|{targetUnit:Unit,duration:number}
     Shock = "unitShock",
-    --- Split
+    --- 分裂
     ---@alias noteOnUnitSplitData noteOnUnitBase|{targetUnit:Unit,radius:number}
     Split = "unitSplit",
-    --- Stop Command
+    --- 停止命令
     ---@alias noteOnUnitStopData noteOnUnitBase
     Stop = "unitStop",
-    --- Stun[Vertigo lasting more than 0.05 seconds]
+    --- 眩晕[大于0.05秒的眩晕]
     ---@alias noteOnUnitStunData noteOnUnitBase|{targetUnit:Unit,duration:number}
     Stun = "unitStun",
-    --- Unit level Change
+    --- 等级改变
     ---@alias noteOnUnitLevelChangeData noteOnUnitBase|{value:"变值差额"}
     LevelChange = "unitLevelChange",
     Be = {
-        --- Be attacked
+        --- 被攻击
         ---@alias noteOnUnitBeAttackData noteOnUnitHurtData
         Attack = "be:unitAttack",
-        --- Be evaded
+        --- 被回避
         ---@alias noteOnUnitBeAvoidData noteOnUnitBase|{targetUnit:Unit}
         Avoid = "be:unitAvoid",
-        --- Be broken
+        --- 被破防
         ---@alias noteOnUnitBeBreakArmorData noteOnUnitBase|{sourceUnit:Unit,breakType:"无视类型"}
         BreakArmor = "be:unitBreakArmor",
         --- 被击飞
@@ -290,58 +290,58 @@ EVENT.Rect = {
 
 ---@alias noteOnDestructableBase {triggerDestructable:Destructable|number}
 EVENT.Destructable = {
-    --- Destructible objects die
+    --- 可破坏物死亡
     ---@alias noteOnDestructableDeadData noteOnDestructableBase|{name:"名称",x:"坐标X",y:"坐标Y"}
     Dead = "destructableDead",
 }
 
 ---@alias noteOnFrameBase {triggerFrame:Frame}
 EVENT.Frame = {
-    --- When Frame Show
+    --- 显示
     ---@alias noteOnFrameShowData noteOnFrameBase
     Show = "frameShow",
-    --- When Frame Hide
+    --- 隐藏
     ---@alias noteOnFrameHideData noteOnFrameBase
     Hide = "frameHide",
-    --- Mouse Click Left
+    --- 左键点击
     ---@alias noteOnFrameLeftClickData noteOnFrameBase|{triggerPlayer:Player}
     LeftClick = "frameLeftClick",
-    --- Mouse Release Left
+    --- 左键释放
     ---@alias noteOnFrameLeftReleaseData noteOnFrameBase|{triggerPlayer:Player,status:"鼠标是否还在Frame内"}
     LeftRelease = "frameLeftRelease",
-    --- Mouse Click Right
+    --- 右键点击
     ---@alias noteOnFrameRightClickData noteOnFrameBase|{triggerPlayer:Player}
     RightClick = "frameRightClick",
-    --- Mouse Release Right
+    --- 右键释放
     ---@alias noteOnFrameRightReleaseData noteOnFrameBase|{triggerPlayer:Player,status:"鼠标是否还在Frame内"}
     RightRelease = "frameRightRelease",
-    --- Mouse move on
+    --- 在上移动
     ---@alias noteOnFrameMoveData noteOnFrameBase|{triggerPlayer:Player}
     Move = "frameMove",
-    --- Mouse enter
+    --- 移入
     ---@alias noteOnFrameEnterData noteOnFrameBase|{triggerPlayer:Player}
     Enter = "frameEnter",
-    --- Mouse leave
+    --- 移出
     ---@alias noteOnFrameLeaveData noteOnFrameBase|{triggerPlayer:Player}
     Leave = "frameLeave",
-    --- Mouse roll
+    --- 滚动
     ---@alias noteOnFrameWheelData noteOnFrameBase|{triggerPlayer:Player,delta:"滚动数值"}
     Wheel = "frameWheel",
 }
 ```
 
-#### Build custom events
+#### 自定义事件的构建
 
 ```lua
--- Trigger buried point
+-- 触发埋点
 event.trigger(obj, "MY_EVENT_1", {a = 1})
 
--- Registration trigger[default key]
+-- 注册触发[default key]
 event.register(obj, "MY_EVENT_1", function(evtData){
     print(evtData.a) --1
 })
 
--- Registration trigger[custom key]
+-- 注册触发[custom key]
 event.register(obj, "MY_EVENT_1", "custom_key", function(evtData){
     print(evtData.a) --1
 })
