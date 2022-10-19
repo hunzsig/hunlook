@@ -1,82 +1,82 @@
-## Sound 声效
+## Sound effect
 
-> 声效分为 4 种：
+> There are 4 kinds of sound effects:
 >
-> Vwp（武器音）、Vcm（广播音效）、V3d（3D音效）、Bgm（背景音乐）
+> Vwp（weaponSound）、Vcm（broadcast）、V3d（3D）、Bgm（music）
 
-* 不支持原生音频！
-* 只支持mp3
-* 音效(v??)荐：48000HZ 192K 单
-* 音乐(bgm)荐：48000HZ 320K (wav->mp3)
+* Native audio is not supported
+* Only MP3 is supported
+* Sound effect (V??) Recommendation: 48000hz 192K single
+* Music(bgm) Recommendation：48000HZ 320K (wav->mp3)
 
-### Vwp（武器音）
+### Vwp（weaponSound）
 
-> 武器音一般只在Unit武器声音配置
+> Weapon sound is generally configured only in unit weapon sound
 >
-> 和 war3mapSound/weapon 套件配套使用（一般不需要手动播放）
+> It is used with war3mapsound/weapon Suite (generally, it does not need to be played manually)
 
 ```lua
--- assets的写法
+-- Writing method of assets
 _assets_sound("metal_bash_heavy", nil, "vwp")
 
--- damagedArrived的播放（展示，不需要管）
+--Playback of damagedArrived (display, no need to manage)
 Vwp(sourceUnit, targetUnit)
 
--- 一般只需要配置单位属性
+-- Generally, only company attributes need to be configured
 Unit():weaponSound("metal_bash_heavy")
 ```
 
-### Vcm（广播音效）
+### Vcm（broadcast）
 
-> 广播音效是最普通的音效，平常界面听到的按钮点击等都是Vcm
+> The broadcast sound effect is the most common sound effect. The buttons and clicks heard on the interface are VCM
 
 ```lua
--- assets的写法
+-- Writing method of assets
 _assets_sound("voice/clickhero/level_up", "lv", "vcm")
 
--- 播放代码
-Vcm("lv"):play() -- 全部玩家听到
--- 指定玩家用法
+-- Play
+Vcm("lv"):play() -- All players heard
+-- Specify player usage
 async.call(Player(1), function()
     Vcm("lv"):play()
 end)
 ```
 
-### V3d（3D音效）
+### V3d（3D）
 
-> 3D音效就是绑定某个地方的音效，特点是远近的音量会随之改变
+> 3D sound effect is the sound effect bound to a certain place, which is characterized by the change of far and near volume
 
 ```lua
--- assets的写法
+-- Writing method of assets
 _assets_sound("voice/clickhero/level_up", "lv", "v3d")
 
--- 播放代码
+-- Play
 local v3d = V3d("lv")
 
-v3d:xyz(0,0,0) -- 绑定点
-v3d:unit(bindUnit) -- 绑定单位
-v3d:rect(bindRect) -- 绑定区域
+v3d:xyz(0,0,0) -- Binding point
+v3d:unit(bindUnit) -- Binding unit
+v3d:rect(bindRect) -- Binding rect
 
-v3d:play() -- 全部玩家听到
--- 指定玩家用法
+v3d:play() -- All players heard
+-- Specify player usage
 async.call(Player(1), function()
     v3d:play()
 end)
 ```
 
-### Bgm（背景音乐）
+### Bgm（music）
 
-> Bgm会与Player对象紧密连系
+> BGM will be closely associated with the player object
 
 ```lua
--- assets的写法
+-- Writing method of assets
 _assets_sound("bgm/Dungeon and Fighter - GBL女神殿 - goddess temple", "gbl", "bgm")
 
--- 全体用法
-Bgm():stop() -- 停止
-Bgm():play("gbl") -- 播放gbl音乐
+-- General usage
+Bgm():stop() -- Stop
+Bgm():play("gbl") -- Play GBL music
 
--- 指定玩家用法
+-- Specify player usage
 async.call(Player(1), function()
     Bgm():play("gbl")
 end)

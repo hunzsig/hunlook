@@ -18,7 +18,7 @@ You can write some simple things in the initial process, because it is generally
 ```lua
 local process = Process("start")
 process.onStart(function(this)
-    -- 调试自动去除迷雾
+    -- Debug automatic mist removal
     Game().fog(not DEBUGGING).mark(not DEBUGGING)
 end)
 ```
@@ -26,13 +26,13 @@ end)
 ### Use the next method to jump to the next process
 
 ```lua
--- 以名定义流程 start 将会游戏启动时自动运行
+-- Define the process by name Start will automatically run when the game starts
 local process = Process("start")
--- 流程主体
+-- Main process
 process.onStart(function(this)
-    -- 调试自动去除迷雾
+    -- Debug automatic mist removal
     Game().fog(not DEBUGGING).mark(not DEBUGGING)
-    -- 使用next然后就可以跳去下一个流程了，这里跳去test流程了
+    -- Use “next” to jump to the next process. Here we jump to the test process
     this.next("test")
 end)
 ```
@@ -40,11 +40,11 @@ end)
 ### Then a test process is under construction
 
 ```
-└── project_demo - 项目目录
+└── project_demo - dir
     └── scripts
-        └── process - 项目流程代码
-            ├── start.lua -- 流程以 start 开始
-            └── test.lua -- test流程
+        └── process - codes
+            ├── start.lua -- The process starts with start
+            └── test.lua -- Process test
 ```
 
 This test A sentence echoed in Lua
@@ -52,7 +52,7 @@ This test A sentence echoed in Lua
 ```lua
 local process = Process("test")
 process.onStart(function(this)
-    echo("singluar无敌")
+    echo("singluar power")
 end)
 ```
 
@@ -70,13 +70,13 @@ end)
 local process = Process("bossComing")
 process
     .onStart(function(this)
-        -- 创建一个BOSS
+        -- A boss
         local boss = TPL_UNIT.BOSS.create(Player(12), 0, 0, 0)
-        -- 注册进stage
+        -- save in stage
         this.stage("boss", boss)
     end)
     .onOver(function(this)
-        -- 干掉boss
+        -- Destroy boss
         this.stage("boss").destroy()
     end)
 ```
@@ -84,12 +84,12 @@ process
 ### You can also register some commands to manually control the jump of the process
 
 > The following is an example. If you type -proc test, the execution of test will be reset
-> 
+>
 > The following is an example. If you type -proc this, the current process will be reset
 
 ```lua
 if (DEBUGGING) then
-    --- 流程掌控
+    --- Process control
     Game().command("^-proc [a-zA-Z0-9_]+$", function(evtData)
         local p = string.trim(evtData.matchedString)
         p = string.sub(p, 7, string.len(p))
@@ -100,7 +100,7 @@ if (DEBUGGING) then
             proc = Processes.get(p)
         end
         if (instanceof(proc, "Process")) then
-            print(p .. "流程已重置")
+            print(p .. "Process reset")
             proc.start()
         end
     end)

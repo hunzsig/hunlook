@@ -1,21 +1,21 @@
-## timer 计时器
+## Timer
 
-#### 一次性计时器
+#### One time timer
 
-> 一次性计时器可摧毁也可以略写，框架会自动清理
+> The one-time timer can be destroyed or sketched, and the framework will be automatically cleaned
 >
-> 但为了不在循环计时器中忘记摧毁计时器，建议养成用完即弃的好习惯
+> But in order not to forget to destroy the timer in the cycle timer, it is recommended to develop the good habit of discarding the timer when it is used up
 
 ```lua
 time.setTimeout(3, function(curTimer)
     destroy(curTimer)
-    print("3秒已到")
+    print("3 seconds have arrived")
 end)
 ```
 
-#### 循环计时器
+#### Cycle Timer
 
-> 循环计时器如需要必须手动清理
+> The cycle timer must be cleaned manually if necessary
 
 ```lua
 local i = 0
@@ -23,16 +23,16 @@ time.setInterval(1, function(curTimer)
     i = i + 1
     if (i == 100) then
         destroy(curTimer)
-        print("i等于100了")
+        print("i equals 100")
     end
 end)
 ```
 
-#### 异步计时器
+#### Asynchronous timer
 
-> 框架支持异步计时器
+> The framework supports asynchronous timers
 >
-> 但不建议跨域操纵计时器，除非你能自己把控异步数据的可靠性
+> However, it is not recommended to operate timers across domains unless you can control the reliability of asynchronous data yourself
 
 ```lua
 
@@ -50,14 +50,14 @@ end)
 
 ```
 
-#### 修改计时器时间
+#### Modify timer time
 
-> 框架支持修改计时器的设定
+> The framework supports modifying timer settings
 
 ```lua
 local t = time.setTimeout(3, function(curTimer) end)
-t:period(2) -- 修改周期为2秒（注意当周期小于当前剩余时间时，剩余时间自动变为设定的周期时间）
-t:remain(9) -- 修改剩余为9秒[实际效果为3秒]（注意当剩余时间大于周期时，只能最大设定为周期时间）
-t:period(10) -- 修改周期为10秒
+t:period(2) -- Modify the cycle to 2 seconds (note that when the cycle is less than the current remaining time, the remaining time automatically changes to the set cycle time)
+t:remain(9) -- Modify the remaining time to 9 seconds [the actual effect is 3 seconds] (note that when the remaining time is greater than the cycle, only the maximum cycle time can be set)
+t:period(10) -- The modification cycle is 10 seconds
 t:remain(9) -- 修改剩余为9秒
 ```
