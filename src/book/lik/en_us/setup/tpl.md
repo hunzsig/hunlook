@@ -1,14 +1,15 @@
-## TPL 模版
+## TPL Template
 
-> 不再依赖物编的本框架，衍生出了新的代替品：TPL
+> No longer rely on the framework compiled by Wu, a new substitute has been derived: TPL
 >
-> TPL 是 template 的简称，意为模板、标准
+> TPL is the abbreviation of template, which means template and standard
 >
-> Ability、Item、Unit三大件都基于Tpl来构建
+> Ability, item and unit are all built based on TPL
 
-##### 由于写法太多，这里只随便写几种，仅供简单参考
+##### Because there are too many ways to write, only a few are written here for simple reference only
 
-> TPL 就像是代码物编一样，但可以在运行时修改热更新，配合流程测试会很爽
+> TPL is like code editing, but you can modify hot updates at run time. It will be great to cooperate with process
+> testing
 
 ### AbilityTpl
 
@@ -17,20 +18,20 @@ TPL_ABILITY = {
 
     ---@param effectiveData noteOnAbilityEffectiveData
     TPL_ABILITY.DEMO = AbilityTpl()
-        :name("技能例子")
+        :name("Demo Ability")
         :targetType(ABILITY_TARGET_TYPE.tag_nil)
         :icon("black")
         :coolDownAdv(10, 0)
         :mpCostAdv(100, 0)
         :onEvent(EVENT.Ability.Effective,
         function(effectiveData)
-            echo("技能释放", effectiveData.triggerUnit:owner())
+            echo("spell", effectiveData.triggerUnit:owner())
         end),
 
     ---@param hurtData noteOnUnitHurtData
     ---@param effectiveData noteOnAbilityEffectiveData
     TPL_ABILITY.ZZJY = AbilityTpl()
-        :name("自在极意被动")
+        :name("hurtRebound")
         :targetType(ABILITY_TARGET_TYPE.pas)
         :icon("ChaosBody")
         :coolDownAdv(5, 0)
@@ -43,10 +44,10 @@ TPL_ABILITY = {
         end)
         :onEvent(EVENT.Ability.Effective,
         function(effectiveData)
-            -- 技能被触发的效果
+            -- Effect of skill being triggered
             local tu = effectiveData.triggerUnit
             tu:attach("DivineShieldTarget", "origin", 3)
-              :buff("自在极意被动")
+              :buff("hurtRebound")
               :duration(3)
               :purpose(function(buffObj)
                 buffObj:hurtReduction("+=100"):hurtRebound("+=100"):odds("hurtRebound", "+=100")
@@ -58,11 +59,11 @@ TPL_ABILITY = {
         end)
 }
 
--- 后续代码创建技能对象
--- 单位既可以pushAbility也可以pushAbilityTpl，智能加技能
+-- Create skill object in subsequent code
+-- Units can either pushAbility or pushAbilityTpl, with intelligence and skills
 
--- myUnit是一个Unit对象，这里只是演示，请自行理解
--- myUnitSlot是一个AbilitySlot对象，代表该单位的技能栏
+-- MyUnit is a Unit object. This is just a demonstration. Please understand
+-- MyUnitSlot is an AbilitySlot object, representing the skill bar of the unit
 
 local myUnitSlot = myUnit:abilitySlot()
 myUnitSlot:push(Ability(TPL_ABILITY.AB1))
@@ -77,47 +78,47 @@ TPL_ITEM = {
 
     ---@param getData noteOnItemGetData
     DEMO = ItemTpl()
-        :modelAlias("TreasureChest") -- 宝箱模型
-        :name("物品例子")
+        :modelAlias("TreasureChest") -- Treasure box model
+        :name("Demo Item")
         :ability(TPL_ABILITY.DEMO)
         :icon("black")
         :worth({ gold = 10 })
         :onEvent(EVENT.Item.Get,
         function(getData)
-            echo("获得物品", getData.triggerUnit:owner())
+            echo("get", getData.triggerUnit:owner())
         end)
 
 }
 
--- 运行时代码创建
--- 直接实例
+-- Runtime Code Creation
+-- Direct instance
 local it1 = TPL_ITEM.IT1:create(0, 0)
 local it2 = TPL_ITEM.IT2:create(0, 0)
 
--- 可以看到前面直接create到0,0坐标了
--- 实际上Item对象是有两种状态的，实例化状态和虚拟化状态，简单理解就是物品需要在大地图的时候才会是实体
+-- You can see that the front is directly created to the 0,0 coordinates
+-- In fact, the Item object has two states, instantiation state and virtualization state. The simple understanding is that an item is an entity only when it is on the big map
 
-local it1 = Item(TPL_ITEM.IT1) -- 此时Item对象由Tpl建立，但是虚拟的
-it1:position(0, 0) -- 我将其移动到0,0后，触发了大地图所以自动转为实体
+local it1 = Item(TPL_ITEM.IT1) -- At this time, the Item object is created by Tpl, but it is virtual
+it1:position(0, 0) -- After I move it to 0,0, the big map is triggered, so it is automatically converted into an entity
 
--- 如果一个单位持有物品但是被position，由于转化为了地图实体，所以单位会失去物品
--- 感觉类似瞬间无视距离丢弃物品一样
+-- If a unit holds an item but is placed, it will lose the item because it is converted to a map entity
+-- It feels like discarding objects at an instant regardless of distance
 ```
 
 ### UnitTpl
 
 ```lua
 TPL_UNIT = {
-    Footman = UnitTpl("Footman") -- 此处的Footman指引用语音，默认无
-        :name("步兵")
-        :barStateMode(2) -- 血条样式设定
+    Footman = UnitTpl("Footman") -- Footman here refers to the quoted voice, and the default is none
+        :name("Footman")
+        :barStateMode(2) -- Blood Bar Style Settings
         :barStateAlways(true)
         :barStateMarker(500)
-        :iconMap(AUIKit("looplorer_minimap", "dot/me", "tga"), 0.03, 0.03) -- 小地图图标样式
-        :modelAlias("TheCaptain") -- 使用的模型
+        :iconMap(AUIKit("looplorer_minimap", "dot/me", "tga"), 0.03, 0.03) -- Small map icon style
+        :modelAlias("TheCaptain") -- Models used
         :icon("unit/TheCaptain")
         :scale(1.2)
-        :pickItemMode("warehouseSlot") -- 物品拾取模式
+        :pickItemMode("warehouseSlot") -- Item Picking Mode
         :abilitySlot(table.slice(TPL_ABILITY.Me, 1, 4))
         :level(1)
         :hp(100)
@@ -133,7 +134,7 @@ TPL_UNIT = {
         :attackRange(100)
 }
 
--- 运行时代码创建
+-- Runtime Code Creation
 local u1 = Unit(TPL_UNIT.Footman, Player(1), 0, 0, 270)
 u1:reborn(0.5)
 ```
