@@ -1,6 +1,6 @@
 ## CJ (Common Jass)
 
-> 在使用時，使用J即可引導所有CJ函數
+> 在使用時，使用J即可引導所有CJ函式
 
 ```lua
 J.AbilityId

@@ -2,16 +2,16 @@
 
 > 用於插入傷害流程的設定
 >
-> 根據你編寫定義的順序自上而下開始執行，options會嚮下流動保存，可以往裏麵保存一些值，流到下一個定義使用
+> 根據你編寫定義的順序自上而下開始執行，options會嚮下流動儲存，可以往裡麵儲存一些值，流到下一個定義使用
 
 ```lua
---- 提取一些需要的參數
+--- 提取一些需要的引數
 damaging.defined("prop", function(options)
     options.defend = options.targetUnit.defend()
     options.avoid = options.targetUnit.avoid() - options.sourceUnit.aim()
 end)
 
---- 判斷無視裝甲類型
+--- 判斷無視裝甲型別
 damaging.defined("breakArmor", function(options)
     local ignore = { defend = false, avoid = false, invincible = false }
     if (#options.breakArmor > 0) then
@@ -270,14 +270,14 @@ damaging.defined("punishCur", function(options)
     end
 end)
 
---- 傷害類型佔比處理
+--- 傷害型別佔比處理
 damaging.defined("enchant", function(options)
     options.damageTypeRatio = {}
     options.enchantType = {}
     local damageTypeOcc = 0
     local ratio = {}
     if (options.damageSrc == DAMAGE_SRC.attack and options.sourceUnit ~= nil) then
-        -- 附加攻擊形態的傷害類型
+        -- 附加攻擊形態的傷害型別
         enchant.types.forEach(function(ek, _)
             local ew = options.sourceUnit.enchantWeapon(ek)
             if (ew > 0) then
@@ -314,7 +314,7 @@ damaging.defined("enchant", function(options)
     end
 end)
 
--- 附魔類型(加成|抵抗|上身)
+-- 附魔型別(加成|抵抗|上身)
 damaging.defined("enchantAppend", function(options)
     for _, et in ipairs(options.enchantType) do
         local addition = 0

@@ -8,7 +8,7 @@
 >
 > 簡單來說就是並不需要它來幫你封裝
 
-例如我們來看一個暴雪的BJ封裝 （設置單位的生命周期）
+例如我們來看一個暴雪的BJ封裝 （設定單位的生命周期）
 
 ```jass
 UnitApplyTimedLifeBJ( 60, 'BTLF', GetTriggerUnit() )
@@ -16,7 +16,7 @@ UnitApplyTimedLifeBJ( 60, 'BTLF', GetTriggerUnit() )
 
 那麼這個BJ其實對應CJ的是什麼呢？
 
-> 在F4觸發編輯器，將T轉為jass自定義文本後，按住ctrl點擊函數名即可查看WE的函數詳情
+> 在F4觸發編輯器，將T轉為jass自定義文字後，按住ctrl點選函式名即可檢視WE的函式詳情
 
 ```jass
 function UnitApplyTimedLifeBJ takes real duration, integer buffId, unit whichUnit returns nothing
@@ -26,21 +26,21 @@ endfunction
 
 可以看到，暴雪的BJ封裝大多都是這種換個位置的無謂封裝
 
-假如說是在編寫其他語種的代碼（例如lua）需要封裝就算了，在jass裏麵這樣的封裝根本毫無意義
+假如說是在編寫其他語種的程式碼（例如lua）需要封裝就算了，在jass裡麵這樣的封裝根本毫無意義
 
-所以一般認為BJ在自定義代碼層麵來講是冇用的
+所以一般認為BJ在自定義程式碼層麵來講是冇用的
 
 ```jass
 UnitApplyTimedLife(whichUnit, buffId, duration)
 ```
 
-那麼有的BJ函數是有用的，那怎麼辦呢？相信聰明的你已經明白了
+那麼有的BJ函式是有用的，那怎麼辦呢？相信聰明的你已經明白了
 
-冇錯，就和上麵一樣嘛。看看它的BJ怎麼寫的，然後寫你自己的代碼風格封裝就好了
+冇錯，就和上麵一樣嘛。看看它的BJ怎麼寫的，然後寫你自己的程式碼風格封裝就好了
 
 舉個例子，玩家選擇單位這個BJ方法
 
-> 並不是名字有BJ才是BJ函數，在WE裏麵顯示紅名的就是BJ函數
+> 並不是名字有BJ才是BJ函式，在WE裡麵顯示紅名的就是BJ函式
 
 ```
 SelectUnitForPlayerSingle( GetTriggerUnit(), Player(0) )
@@ -55,7 +55,7 @@ function SelectUnitForPlayerSingle takes unit whichUnit, player whichPlayer retu
 endfunction
 ```
 
-那麼你在lua裏麵就可以這樣寫
+那麼你在lua裡麵就可以這樣寫
 
 ```lua
 if (J.GetLocalPlayer() == whichPlayer) then

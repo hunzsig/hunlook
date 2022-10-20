@@ -1,6 +1,6 @@
-## 難度選擇對話框
+## 難度選擇對話方塊
 
-創建一個帶文本當作數值的“難度選擇”對話框，自動挑選第一位玩家，讓他選
+建立一個帶文字當作數值的“難度選擇”對話方塊，自動挑選第一位玩家，讓他選
 
 ```lua
 Dialog(
@@ -8,7 +8,7 @@ Dialog(
     { "一般睏難", "非常睏難", "極其睏難", "破天荒難" },
     function(evtData)
     
-        -- 對話框不再使用則清理
+        -- 對話方塊不再使用則清理
         evtData.triggerDialog.destroy()
         
         if (evtData.value == "非常睏難") then
@@ -25,7 +25,7 @@ Dialog(
 ).show()
 ```
 
-創建一個帶熱鍵、文本、數值的“難度選擇”對話框，給玩家1，讓他選
+建立一個帶熱鍵、文字、數值的“難度選擇”對話方塊，給玩家1，讓他選
 
 ```lua
 Dialog(
@@ -38,7 +38,7 @@ Dialog(
     },
     function(evtData)
     
-        -- 對話框不再使用則清理
+        -- 對話方塊不再使用則清理
         evtData.triggerDialog.destroy()
         
         if (evtData.hotkey == "Q") then
@@ -55,9 +55,9 @@ Dialog(
 ).show(Player(1))
 ```
 
-預定義對話框，後續可根據title取回同一個對象
+預定義對話方塊，後續可根據title取回同一個物件
 
-> 如上麵的對話框，冇有destroy前都可以重新取回數據
+> 如上麵的對話方塊，冇有destroy前都可以重新取回資料
 
 ```lua
 Dialog("選擇難度")

@@ -2,7 +2,7 @@
 
 ### 框架內實裝JAPI庫
 
-###### 詳細調用自行查看 /vendor/kernel/library/foundation/japi.lua
+###### 詳細呼叫自行檢視 /vendor/kernel/library/foundation/japi.lua
 
 > 方法與JAPI環境、框架內嵌環境緊密相關，不要隨意亂改
 

@@ -6,9 +6,9 @@
 >
 > Ability、Item、Unit三大件都基於Tpl來構建
 
-##### 由於寫法太多，這裏隻隨便寫幾種，僅供簡單參考
+##### 由於寫法太多，這裡隻隨便寫幾種，僅供簡單參考
 
-> TPL 就像是代碼物編一樣，但可以在運行時修改熱更新，配合流程測試會很爽
+> TPL 就像是程式碼物編一樣，但可以在執行時修改熱更新，配合流程測試會很爽
 
 ### AbilityTpl
 
@@ -77,11 +77,11 @@ TPL_ABILITY = {
         end)
 }
 
--- 後續代碼創建技能對象
--- 單位既可以pushAbility也可以pushAbilityTpl，智能加技能
+-- 後續程式碼建立技能物件
+-- 單位既可以pushAbility也可以pushAbilityTpl，智慧加技能
 
--- myUnit是一個Unit對象，這裏隻是演示，請自行理解
--- myUnitSlot是一個AbilitySlot對象，代錶該單位的技能欄
+-- myUnit是一個Unit物件，這裡隻是演示，請自行理解
+-- myUnitSlot是一個AbilitySlot物件，代錶該單位的技能欄
 
 local myUnitSlot = myUnit.abilitySlot()
 myUnitSlot.push(Ability(TPL_ABILITY.AB1))
@@ -92,13 +92,13 @@ myUnitSlot.push(TPL_ABILITY.AB3, 6)
 ### ItemTpl
 
 ```lua
--- 物品首先要有物品類別的模型支撐，這裏也演示一下assets的資源
--- !!! 這個資源在new項目的origin資産裏有，一般不需要你再去尋找F6物編
+-- 物品首先要有物品類別的模型支撐，這裡也演示一下assets的資源
+-- !!! 這個資源在new專案的origin資産裡有，一般不需要你再去尋找F6物編
 
 -- 物品寶箱
 _assets_model(
     ":Objects\\InventoryItems\\TreasureChest\\treasurechest.mdl",
-    "TreasureChest", "item" -- 這個"item"代錶這個model可用於Item對象,冇有是不行的
+    "TreasureChest", "item" -- 這個"item"代錶這個model可用於Item物件,冇有是不行的
  )
 ```
 
@@ -122,15 +122,15 @@ TPL_ITEM = {
 
 }
 
--- 運行時代碼創建
--- 直接實例
+-- 執行時程式碼建立
+-- 直接例項
 local it1 = TPL_ITEM.IT1.create(0, 0)
 local it2 = TPL_ITEM.IT2.create(0, 0)
 
 -- 可以看到前麵直接create到0,0坐標了
--- 實際上Item對象是有兩種狀態的，實例化狀態和虛擬化狀態，簡單理解就是物品需要在大地圖的時候才會是實體
+-- 實際上Item物件是有兩種狀態的，例項化狀態和虛擬化狀態，簡單理解就是物品需要在大地圖的時候才會是實體
 
-local it1 = Item(TPL_ITEM.IT1) -- 此時Item對象由Tpl建立，但是虛擬的
+local it1 = Item(TPL_ITEM.IT1) -- 此時Item物件由Tpl建立，但是虛擬的
 it1.portal(0, 0) -- 我將其移動到0,0後，觸發了大地圖所以自動轉為實體
 
 -- 如果一個單位持有物品但是被portal，由於轉化為了地圖實體，所以單位會失去物品
@@ -140,8 +140,8 @@ it1.portal(0, 0) -- 我將其移動到0,0後，觸發了大地圖所以自動轉
 ### UnitTpl
 
 ```lua
--- 單位和物品一樣，要有單位類別的模型支撐，這裏也演示一下assets的資源
--- !!! 這個資源也在new項目的origin資産裏有，一般不需要你再去尋找F6物編
+-- 單位和物品一樣，要有單位類別的模型支撐，這裡也演示一下assets的資源
+-- !!! 這個資源也在new專案的origin資産裡有，一般不需要你再去尋找F6物編
 
 -- 黑暗遊俠
 _assets_model(
@@ -164,12 +164,12 @@ TPL_UNIT.BansheeRanger = UnitTpl("BansheeRanger")
 -- 火焰巨魔
 TPL_UNIT.HeroFlameLord = UnitTpl("HeroFlameLord")
 
--- TPL也定義提前設置技能、物品
+-- TPL也定義提前設定技能、物品
 TPL_UNIT.Footman = UnitTpl("Footman")
     .abilitySlot({TPL_ABILITY.AB1,TPL_ABILITY.AB2})
     .itemSlot({TPL_ITEM.IT1,TPL_ITEM.IT2})
 
--- 運行時代碼創建
+-- 執行時程式碼建立
 local u1 = TPL_UNIT.BansheeRanger
   .create(Player(1), 0, 0, 66.6).level(1)
   .reborn(0.5)

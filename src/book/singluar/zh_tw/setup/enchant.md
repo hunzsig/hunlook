@@ -1,9 +1,9 @@
 ### 預設附魔
 
-> 用於定義附魔種類、反應的設置
+> 用於定義附魔種類、反應的設定
 
 ```lua
---- 方便傷害類型引用 {value:string,label:string}
+--- 方便傷害型別引用 {value:string,label:string}
 DAMAGE_TYPE.fire = nil
 DAMAGE_TYPE.rock = nil
 DAMAGE_TYPE.water = nil

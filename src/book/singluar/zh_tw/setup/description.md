@@ -1,8 +1,8 @@
-### 技能信息
+### 技能資訊
 
 ```lua
 -- 定義技能描述體
--- [基礎信息]
+-- [基礎資訊]
 ---@param this Ability
 ---@param options {level:number}
 Game().defineDescription("abilityBase", function(this, options)
@@ -18,7 +18,7 @@ Game().defineDescription("abilityBase", function(this, options)
     else
         table.insert(desc, this.name())
     end
-    table.insert(desc, '類型：' .. colour.gold(tt.label))
+    table.insert(desc, '型別：' .. colour.gold(tt.label))
     if (tt ~= ABILITY_TARGET_TYPE.PAS) then
         local chantCast = this.castChant(lv)
         if (chantCast > 0) then
@@ -34,7 +34,7 @@ Game().defineDescription("abilityBase", function(this, options)
     return desc
 end)
 
--- [技能點信息]
+-- [技能點資訊]
 ---@param this Ability
 Game().defineDescription("abilityLvPoint", function(this, _)
     if (this.levelUpNeedPoint() > 0) then
@@ -43,18 +43,18 @@ Game().defineDescription("abilityLvPoint", function(this, _)
 end)
 ```
 
-### 物品信息
+### 物品資訊
 
 ```lua
 -- 定義物品技能描述體
--- [基礎信息]
+-- [基礎資訊]
 ---@param this Ability
 Game().defineDescription("itemAbility", function(this, options)
     local str = { '', this.name() .. ': ' }
     local lv = math.floor(this.level())
     local tt = this.targetType()
     local indent = '    '
-    table.insert(str, indent .. '類型：%s')
+    table.insert(str, indent .. '型別：%s')
     table.insert(options, { 'ffcc00', tt.label })
     if (tt ~= ABILITY_TARGET_TYPE.PAS) then
         local chantCast = this.castChant(lv)
@@ -75,7 +75,7 @@ Game().defineDescription("itemAbility", function(this, options)
 end)
 
 -- 定義物品描述體
--- [基礎信息]
+-- [基礎資訊]
 ---@param this Item
 Game().defineDescription("itemBase", function(this, _)
     local desc = {}
@@ -109,7 +109,7 @@ Game().defineDescription("itemBase", function(this, _)
 end)
 ```
 
-### 屬性信息
+### 屬性資訊
 
 ```lua
 attribute.labelOpts = {
@@ -118,8 +118,8 @@ attribute.labelOpts = {
     ["<WEAPON>e_water"] = "水武裝",
 }
 
--- 定義智能屬性描述體
--- [基礎信息]
+-- 定義智慧屬性描述體
+-- [基礎資訊]
 ---@param this Ability|Item
 ---@param options {level:number}
 Game().defineDescription("attributes", function(this, options)
@@ -162,16 +162,16 @@ Game().defineDescription("attributes", function(this, options)
 end)
 ```
 
-### 遊戲隨性信息
+### 遊戲隨性資訊
 
 ```lua
--- 遊戲信息
+-- 遊戲資訊
 Game().onEvent(EVENT.Game.Start, function()
 
     --- 遊戲介紹
     Game().prop("infoIntro", "暫無")
 
-    --- 中央頂部信息
+    --- 中央頂部資訊
     time.setInterval(1, function()
         local info = {}
         local timeOfDay = time.timeOfDay()

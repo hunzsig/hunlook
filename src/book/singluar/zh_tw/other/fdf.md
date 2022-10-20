@@ -1,14 +1,14 @@
 ## FDF
 
-#### FDF就是一種UI靜態格式，讓你可以聲明一些frame組件，拓展麻煩，用處不大
+#### FDF就是一種UI靜態格式，讓你可以宣告一些frame元件，拓展麻煩，用處不大
 
 下麵是一篇網上的教程，隨便看看了解一下就行
 
-> <a target="_blank" href="https://blog.csdn.net/CarlosX/article/details/89161467">[War3]Fdf文件詳解，簡單的UI教程演示 - 魔獸爭霸3</a>
+> <a target="_blank" href="https://blog.csdn.net/CarlosX/article/details/89161467">[War3]Fdf檔案詳解，簡單的UI教程演示 - 魔獸爭霸3</a>
 
-> 暴雪魔獸原生也有很多fdf，有興趣可自行查看，意義不大
+> 暴雪魔獸原生也有很多fdf，有興趣可自行檢視，意義不大
 >
-> 可參考提取項目：<a target="_blank" href="https://github.com/hunzsig-warcraft3/FrameDef">FrameDef</a>
+> 可參考提取專案：<a target="_blank" href="https://github.com/hunzsig-warcraft3/FrameDef">FrameDef</a>
 
 ```
     UI\FrameDef\GlobalStrings.fdf

@@ -1,6 +1,6 @@
-## async 異步
+## async 非同步
 
-#### 本地玩家調用
+#### 本地玩家呼叫
 
 ```lua
 async.call(PlayerLocal(), function()
@@ -8,7 +8,7 @@ async.call(PlayerLocal(), function()
 end)
 ```
 
-#### 單獨玩家1異步調用
+#### 單獨玩家1非同步呼叫
 
 ```lua
 async.call(Player(1), function()
@@ -16,7 +16,7 @@ async.call(Player(1), function()
 end)
 ```
 
-#### 異步隨機整數
+#### 非同步隨機整數
 
 ```lua
 async.call(PlayerLocal(), function()

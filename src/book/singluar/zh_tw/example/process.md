@@ -1,24 +1,24 @@
 ## Process 流程管理
 
-> 在全局熱更新 hotLoader 的扶持下，Process的效能變得突破天際的強
+> 在全域性熱更新 hotLoader 的扶持下，Process的效能變得突破天際的強
 >
 > 你可以使用 Process 編寫某一段的遊戲流程，隨時回滾測試，跳躍測試
 
-### 先在項目裏麵新建一個流程目錄，專門用來寫流程，如 process
+### 先在專案裡麵新建一個流程目錄，專門用來寫流程，如 process
 
 ```
-└── project_demo - 項目目錄
+└── project_demo - 專案目錄
     └── scripts
-        └── process - 項目流程代碼
+        └── process - 專案流程程式碼
             └── start.lua -- 流程以 start 開始
 ```
 
-你可以在初始流程裏寫一些簡單的東西，因為一般隻作為入口，如
+你可以在初始流程裡寫一些簡單的東西，因為一般隻作為入口，如
 
 ```lua
 local process = Process("start")
 process.onStart(function(this)
-    -- 調試自動去除迷霧
+    -- 除錯自動去除迷霧
     Game().fog(not DEBUGGING).mark(not DEBUGGING)
 end)
 ```
@@ -26,13 +26,13 @@ end)
 ### 使用 next方法，跳到下一個流程
 
 ```lua
--- 以名定義流程 start 將會遊戲啓動時自動運行
+-- 以名定義流程 start 將會遊戲啟動時自動執行
 local process = Process("start")
 -- 流程主體
 process.onStart(function(this)
-    -- 調試自動去除迷霧
+    -- 除錯自動去除迷霧
     Game().fog(not DEBUGGING).mark(not DEBUGGING)
-    -- 使用next然後就可以跳去下一個流程了，這裏跳去test流程了
+    -- 使用next然後就可以跳去下一個流程了，這裡跳去test流程了
     this.next("test")
 end)
 ```
@@ -40,14 +40,14 @@ end)
 ### 然後在建一個test流程
 
 ```
-└── project_demo - 項目目錄
+└── project_demo - 專案目錄
     └── scripts
-        └── process - 項目流程代碼
+        └── process - 專案流程程式碼
             ├── start.lua -- 流程以 start 開始
             └── test.lua -- test流程
 ```
 
-這個 test.lua 裏麵回響一句話
+這個 test.lua 裡麵回響一句話
 
 ```lua
 local process = Process("test")
@@ -58,11 +58,11 @@ end)
 
 ### 流程內的資源管理
 
-> 一般局部變量可以無視，不管理即可
+> 一般區域性變數可以無視，不管理即可
 >
-> 但例如有個流程叫bossComing，它創建了一個boss攻擊玩家
+> 但例如有個流程叫bossComing，它建立了一個boss攻擊玩家
 >
-> 你可以把它綁定到stage裏，然後在結束回調時，令它刪除
+> 你可以把它繫結到stage裡，然後在結束回撥時，令它刪除
 >
 > 這樣這個boss就會在流程跳躍或重置時，自動消滅
 
@@ -70,7 +70,7 @@ end)
 local process = Process("bossComing")
 process
     .onStart(function(this)
-        -- 創建一個BOSS
+        -- 建立一個BOSS
         local boss = TPL_UNIT.BOSS.create(Player(12), 0, 0, 0)
         -- 註冊進stage
         this.stage("boss", boss)

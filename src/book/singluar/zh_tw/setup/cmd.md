@@ -5,11 +5,11 @@
 Game().command("^-gg$", function()
     evtData.triggerPlayer.quit("GG")
 end)
---- -apm 查看玩家分鍾操作數
+--- -apm 檢視玩家分鍾運算元
 Game().command("^-apm$", function(evtData)
     echo("您的apm為:" .. evtData.triggerPlayer.apm(), evtData.triggerPlayer.__HANDLE__)
 end)
---- -d [+|-|=][NUMBER]減少/增加/設置視距
+--- -d [+|-|=][NUMBER]減少/增加/設定視距
 Game().command("^-d [-+=]%d+$", function(evtData)
     local cds = string.explode(" ", string.lower(evtData.chatString))
     local first = string.sub(cds[2], 1, 1)
@@ -27,7 +27,7 @@ Game().command("^-d [-+=]%d+$", function(evtData)
                 elseif (first == "=") then
                     Camera().distance(val)
                 end
-                echo("視距已設置為：" .. Camera().distance(), evtData.triggerPlayer)
+                echo("視距已設定為：" .. Camera().distance(), evtData.triggerPlayer)
             end)
         end
     end
