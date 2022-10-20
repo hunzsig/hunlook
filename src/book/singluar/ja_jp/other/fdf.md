@@ -1,0 +1,87 @@
+## FDF
+
+#### FDFはUI静的フォーマットであり、frameコンポーネントを宣言したり、面倒を広げたりすることができ、あまり役に立たない
+
+次はネット上のチュートリアルです。見て理解すればいいです
+
+> <a target="_blank" href="https://blog.csdn.net/CarlosX/article/details/89161467">[War3]Fdf文件详解，简单的UI教程演示 - 魔兽争霸3</a>
+
+> 大雪魔獣原生にもたくさんのfdfがあり、興味があれば自分で見ることができ、あまり意味がない
+>
+> 参照可能な抽出項目：<a target="_blank" href="https://github.com/hunzsig-warcraft3/FrameDef">FrameDef</a>
+
+```
+    UI\FrameDef\GlobalStrings.fdf
+    UI\FrameDef\InfoPanelStrings.fdf
+    UI\FrameDef\NetworkStrings.fdf
+    UI\FrameDef\DateStrings.fdf
+    UI\FrameDef\Glue\DialogWar3.fdf
+    UI\FrameDef\Glue\MapInfoPane.fdf
+    UI\FrameDef\Glue\AdvancedOptionsDisplay.fdf
+    UI\FrameDef\Glue\AdvancedOptionsPane.fdf
+    UI\FrameDef\Glue\ListBoxWar3.fdf
+    UI\FrameDef\Glue\MapListBox.fdf
+    UI\FrameDef\Glue\DecoratedMapListBox.fdf
+    UI\FrameDef\Glue\MapPreferenceBox.fdf
+    UI\FrameDef\Glue\CheckListBox.fdf
+    UI\FrameDef\Glue\MainMenu.fdf
+    UI\FrameDef\Glue\Loading.fdf
+    UI\FrameDef\Glue\LoadSavedGameScreen.fdf
+    UI\FrameDef\Glue\OptionsMenu.fdf
+    UI\FrameDef\Glue\SinglePlayerMenu.fdf
+    UI\FrameDef\Glue\ViewReplayScreen.fdf
+    UI\FrameDef\Glue\CustomCampaignMenu.fdf
+    UI\FrameDef\Glue\CampaignMenu.fdf
+    UI\FrameDef\Glue\TeamSetup.fdf
+    UI\FrameDef\Glue\PlayerSlot.fdf
+    UI\FrameDef\Glue\Skirmish.fdf
+    UI\FrameDef\Glue\ScoreScreen.fdf
+    UI\FrameDef\Glue\LocalMultiplayerJoin.fdf
+    UI\FrameDef\Glue\LocalMultiplayerCreate.fdf
+    UI\FrameDef\Glue\LocalMultiplayerLoad.fdf
+    UI\FrameDef\Glue\GameChatroom.fdf
+    UI\FrameDef\Glue\CampaignListBox.fdf
+    UI\FrameDef\Glue\BattleNetMain.fdf
+    UI\FrameDef\Glue\BattleNetNewsBox.fdf
+    UI\FrameDef\Glue\BattleNetUserListBox.fdf
+    UI\FrameDef\Glue\BattleNetChatPanel.fdf
+    UI\FrameDef\Glue\BattleNetChatActionMenu.fdf
+    UI\FrameDef\Glue\BattleNetStandardPanel.fdf
+    UI\FrameDef\Glue\BattleNetTeamPanel.fdf
+    UI\FrameDef\Glue\BattleNetTeamInvitation.fdf
+    UI\FrameDef\Glue\BattleNetProfilePanel.fdf
+    UI\FrameDef\Glue\BattleNetCustomJoinPanel.fdf
+    UI\FrameDef\Glue\BattleNetCustomCreatePanel.fdf
+    UI\FrameDef\Glue\BattleNetCustomLoadPanel.fdf
+    UI\FrameDef\Glue\BattleNetScheduledGame.fdf
+    UI\FrameDef\Glue\BattleNetChatroom.fdf
+    UI\FrameDef\Glue\BattleNetFriendsListBox.fdf
+    UI\FrameDef\Glue\BattleNetFriendsPane.fdf
+    UI\FrameDef\Glue\BattleNetClanMateListBox.fdf
+    UI\FrameDef\Glue\BattleNetClanPane.fdf
+    UI\FrameDef\Glue\BattleNetClanInvitation.fdf
+    UI\FrameDef\Glue\BattleNetStatusBox.fdf
+    UI\FrameDef\Glue\BattleNetIconSelectBox.fdf
+    UI\FrameDef\UI\ConsoleUI.fdf
+    UI\FrameDef\UI\AllianceSlot.fdf
+    UI\FrameDef\UI\AllianceDialog.fdf
+    UI\FrameDef\UI\ChatDialog.fdf
+    UI\FrameDef\UI\LogDialog.fdf
+    UI\FrameDef\UI\EscMenuMainPanel.fdf
+    UI\FrameDef\UI\EscMenuOptionsPanel.fdf
+    UI\FrameDef\UI\EscMenuSaveGamePanel.fdf
+    UI\FrameDef\UI\GameResultDialog.fdf
+    UI\FrameDef\UI\UpperButtonBar.fdf
+    UI\FrameDef\UI\ResourceBar.fdf
+    UI\FrameDef\UI\SimpleInfoPanel.fdf
+    UI\FrameDef\UI\SuspendDialog.fdf
+    UI\FrameDef\UI\UnresponsiveDialog.fdf
+    UI\FrameDef\UI\ReplayPanel.fdf
+    UI\FrameDef\UI\QuestDialog.fdf
+    UI\FrameDef\UI\TimerDialog.fdf
+    UI\FrameDef\UI\Leaderboard.fdf
+    UI\FrameDef\UI\Multiboard.fdf
+    UI\FrameDef\UI\CinematicPanel.fdf
+    UI\FrameDef\UI\ScriptDialog.fdf
+    UI\FrameDef\UI\GameSaveSplashDialog.fdf`
+```
