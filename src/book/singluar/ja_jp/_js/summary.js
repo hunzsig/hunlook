@@ -65,8 +65,8 @@ export default [
       {icon: <FormatPainterOutlined/>, key: 'colour', label: "カラー"},
       {icon: <AppstoreOutlined/>, key: 'object', label: "対象"},
       {icon: <HighlightOutlined/>, key: 'modify', label: "変更"},
-      {icon: <SyncOutlined/>, key: 'sync', label: "同期"},
-      {icon: <RetweetOutlined/>, key: 'async', label: "非同期"},
+      {icon: <SyncOutlined/>, key: 'sync', label: "同時発生"},
+      {icon: <RetweetOutlined/>, key: 'async', label: "非同時発生"},
     ]
   },
   {

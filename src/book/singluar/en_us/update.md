@@ -11,6 +11,11 @@
     * ··· multi weathers
 * Optimization | support duplicate assets detection
 
+> 2022/09
+
+* New | math.slopeAngle
+* Remove | Hot no longer supports automatic process
+
 > 2022/08
 
 * New | FrameDisAdaptive
