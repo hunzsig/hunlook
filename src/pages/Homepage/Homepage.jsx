@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import {SideBar, Tabs, Toast, Button, Modal} from 'antd-mobile';
 import {SoundOutline, SoundMuteOutline} from "antd-mobile-icons";
 import {TranslationOutlined} from "@ant-design/icons";
-import {History, Parse} from 'h-react-antd-mobile';
+import {History, LocalStorage, Parse} from 'h-react-antd-mobile';
 import Book from './Book';
 
 class Homepage extends Component {
@@ -13,14 +13,14 @@ class Homepage extends Component {
     this.books = {};
     this.state = {
       p: search.p || 'index',
-      l: search.l || History.state.lang[0].key,
       n: search.n || undefined,
+      l: LocalStorage.get("lang") || History.state.lang[0].key,
       bgmPlaying: true,
     }
   }
 
   push = () => {
-    let u = '/' + Parse.urlEncode({p: this.state.p, n: this.state.n, l: this.state.l})
+    let u = '/' + Parse.urlEncode({p: this.state.p, n: this.state.n})
     window.history.replaceState(null, null, History.prefix + u);
     document.getElementById("page").scrollTop = 0;
   }
@@ -170,7 +170,7 @@ class Homepage extends Component {
                   onClick: () => {
                     this.state.l = l.key;
                     this.setState({l: this.state.l});
-                    this.push();
+                    LocalStorage.set("lang", this.state.l);
                   }
                 })
               })
