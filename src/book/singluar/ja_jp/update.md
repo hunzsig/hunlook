@@ -29,7 +29,7 @@
 * 最適化 | enchant 反応目標メカニズム
 * 最適化 | japi.Z データ取得メカニズム
 * 最適化 | attack 動作の遅延
-* 修理 | Unit moveType 一定確率設定が無効なバグ
+* 修正 | Unit moveType 一定確率設定が無効なバグ
 
 > 2022/07
 
@@ -40,124 +40,123 @@
 * 新登場 | table.wheel
 * 新登場 | Frame.show
 * 新登場 | Ability.worthCost
-* 最適化 | weaponMaterial to weaponSound
-* 最適化 | damage event feedback, changed to data drainage and instantaneous interruption mechanism
-* 最適化 | Image now supports free size
-* 最適化 | Unit the function of order Route cannot be interrupted for no reason now, and supports manual pause
-* 修理 | sight a bug where the data has a chance of drifting
-* 修理 | ItemTpl bug with wrong initial pawnable data
-* 修理 | Image position init bug
+* 最適化 | weaponMaterialをweaponSoundに変更
+* 最適化 | damageイベントフィードバック、データドレナージおよび瞬断メカニズムへの変更
+* 最適化 | Image今すぐ随意寸法をサポート
+* 最適化 | Unit orderRouteの機能は、エンドレスに中断されず、手動で一時停止できるようになりました
+* 修正 | sightデータが確率的にずれているバグ
+* 修正 | ItemTpl初期pawnableデータエラーのバグ
+* 修正 | Image position initバグ
 * 削除 | base64
 * 削除 | Unit stand
-* 削除 | The highlight method of the Frame series now needs to be referenced by itself
-* 削除 | The repeated judgment of attach-type effect now needs to be judged by itself
-* 削除 | The underlying Dz Frame Set Parent no longer supports virtual setting only
+* 削除 | FrameシリーズのHighlightメソッドは、現在は自己参照が必要です
+* 削除 | attach型effectの重複判定は、現在自己判別が必要
+* 削除 | 最下位DzFrameSetParent、仮想設定のみの実行はサポートされていない
 
 > 2022/06
 
-* 新登場 | Destructable replaces Deco
-* 新登場 | The underlying technology of prop, the data sandbox blocking state that never goes wrong
-    * ··· Added allow for asynchronous data modification capture
-    * ··· You can get, set, and clear in prop without worrying about data problems
+* 新登場 | Decoの代わりにDestructable
+* 新登場 | prop基盤テクノロジー、間違いのないデータサンドボックスのブロック状態
+    * ··· 非同期データ修正キャプチャの追加
+    * ··· propでデータ問題を心配することなくget、set、clearが可能
 * 新登場 | ability missile、leap、crackFly
-    * ··· The callback function is converted to a point data structure
-    * ··· The efficiency and accuracy of missiles are greatly improved
-    * ··· Leap efficiency Optimization and frivolous turning parameters
-    * ··· Optimize crack Fly efficiency and increase multi-dimensional bounce parameters
-* 新登場 | Bgm music split asynchronous data stream instead
-* 新登場 | Vcm universal sound effects, split asynchronous data streams instead
-* 新登場 | V3d surround sound, split asynchronous data stream instead
-* 新登場 | Camera shots, instead of separate asynchronous data streams for real-time control
-* 新登場 | Cursor pointer, now archived in isolation, easily customizable pattern, safe area
-* 新登場 | Frame (including subclasses), implements any event tracking registration mechanism, and can customize peculiar
-  events
-* 新登場 | FrameTooltips default display mechanism, more humanized
-* 新登場 | FrameLabel new size and text optimization
-* 新登場 | Game new methods for worth：Equal、Greater、Less、EqualOrGreater、EqualOrLess
-* 新登場 | math new methods trunc、format、isNaN
-* 新登場 | Image Class
-* 新登場 | must Assertion
-* 最適化 | Buff，exposure time modification interface
-* 最適化 | Game's worthCompare methods are now equal and cannot be judged. The return value will be different
+    * ··· コールバック関数からpointデータ構造体へ
+    * ··· missile効率精度が大幅に向上
+    * ··· leap効率最適化かつ軽薄な旋回パラメータ
+    * ··· crackFly効率を最適化し、多次元バウンドパラメータを追加
+* 新登場 | Bgm音楽、非同期データストリームの分離に変更
+* 新登場 | Vcm普遍的なサウンド、非同期データストリームの分離に変更
+* 新登場 | V3dサラウンドサウンド、非同期データストリームの分離に変更
+* 新登場 | カメラレンズ、リアルタイム制御の分離非同期データストリームに変更
+* 新登場 | Cursorポインタ、図案、安全領域を簡単にカスタマイズできるようになりました
+* 新登場 | Frame（サブクラスを含む）、任意のイベント追跡登録メカニズムを実現し、奇抜なイベントをカスタマイズできる
+* 新登場 | FrameTooltipsのデフォルト表示メカニズム、より人間的
+* 新登場 | FrameLabel新しいサイズと文字の最適化
+* 新登場 | Game新しいメソッドworth：Equal、Greater、Less、EqualOrGreater、EqualOrLess
+* 新登場 | math新しいメソッドtrunc、format、isNaN
+* 新登場 | Image 画像
+* 新登場 | mustアサーション
+* 最適化 | Buff、暴露時間修正インタフェース
+* 最適化 | GameのworthCompareメソッドは現在、等しいと判断できないが異なる戻り値になる
 * 最適化 | ttg
-* 最適化 | prop initial setting mechanism
-* 最適化 | bj params
-* 修理 | Array the data has the problem of probability disorder. Remove some methods
-* 削除 | all portal methods are renamed position
-* 削除 | most waste FDF with button as the core
-* 削除 | part of the japi functions are sealed and isolated
+* 最適化 | prop初期設定メカニズム
+* 最適化 | bjパラメータ
+* 修正 | Arrayデータが乱れる可能性がある問題。メソッドの一部を削除
+* 削除 | すべてのportalメソッド、positionに改名
+* 削除 | Buttonを中心とする廃棄物の大部分fdf
+* 削除 | japi関数の一部をブロックして隔離
 
 > 2022/05
 
-* 新登場 | Attribute methods: cost、castChant、coolDown、coolDownSec
-    * ···It can be used to dynamically modify any skill attribute
-* 新登場 | Unit method stature
+* 新登場 | Attributeメソッドによってcost、castChant、coolDown、coolDownSecが追加されました
+    * ··· 任意のスキル属性を動的に修正するために使用可能
+* 新登場 | Unitメソッドstature（単位体高）
 * 最適化 | FrameButton
-* 最適化 | ability crashFly
-* 修理 | Unit punish bugs
+* 最適化 | ability crashFlyの機能によりパフォーマンスを向上
+* 修正 | Unit punish判定確率エラーの問題
 
 > 2022/04
 
-* 新登場 | Enchantment Separation Execution
-* 新登場 | Event response writer
-* 新登場 | Damage flow execution
+* 新登場 | Enchantment 分離実行
+* 新登場 | Event 反応ライター
+* 新登場 | Damage flow 実行
 * 新登場 | datum library
 * 新登場 | math.cale
 * 新登場 | table.rand
-* 新登場 | The underlying vitality of prop supports comprehensive dissociation of data flow
+* 新登場 | データフローの完全な解離をサポートする新しい｜prop底辺の活力
 * 新登場 | Buff catcher
 * 新登場 | Worth calculation
-* 新登場 | CoolingInstant`
+* 新登場 | CoolingInstant
 * 最適化 | Run cache command
-* 最適化 | Binding mechanism between Item level and Ability level
-* 最適化 | Process transition mechanism
-* 修理 | A bug where the tool fails in certain situations
-* 修理 | Player.alert bug
-* 修理 | FrameLabel adaptive identifying the wrong problem
-* 修理 | Engine heap history residual bug
-* 修理 | A bug where prop has a chance of being offset when diff exists
+* 最適化 | ItemレベルとAbilityレベルのバインドメカニズム
+* 最適化 | プロセス移行メカニズム
+* 修正 | 特定の状況でツールによってエラーが発生したバグ
+* 修正 | Player.alert bug
+* 修正 | FrameLabel adaptive 認識エラーの問題
+* 修正 | Engine ヒープスタックスタック履歴残留バグ
+* 修正 | propがdiff存在時にオフセットする確率があるバグ
 * 削除 | Game.introduction
 
 > 2022/03
 
 * 新登場 | リソースをスキップするrunメソッド
-* 修理 | 既知のバグ
-* 修理 | 一部のイベントオブジェクトのエラー
-* 修理 | プロジェクト名がNULLの場合ツール入力エラー論理分岐のエラー
+* 修正 | 既知のバグ
+* 修正 | 一部のイベントオブジェクトのエラー
+* 修正 | プロジェクト名がNULLの場合ツール入力エラー論理分岐のエラー
 
 > 2022/02
 
-* 新登場 | Preparatory Event Prop
-* 最適化 | Tools
-* 最適化 | Automatic conversion mechanism of attr
-* 修理 | Asynchronous data may have index offset bug
+* 新登場 | 予備イベントProp
+* 最適化 | ツールの簡素化
+* 最適化 | attrの自動換算メカニズム
+* 修正 | 非同期データにインデックスオフセットが発生する可能性があるバグ
 
 > 2022/01
 
-* 新登場 | String magic methods
-* 新登場 | ttg lib
+* 新登場 | 文字列マジック方法
+* 新登場 | ttg ライブラリ
 * 最適化 | Timer
 
 > 2021/12
 
-* 段階的終了
-* 修理 | bugs
-* 新登場 | command version
+* 新規 | コマンドversion
+* 最適化 | 段階的終了
+* 修復 | 各種bugs
 
 > 2021/11
 
-* 構造化 | UIKit
 * 新登場 | model run
+* 最適化 | UIKit
 
 > 2021/09 ~ 10
 
 * 新登場 | Process
-* 最適化 | Function addition and reconstruction
+* 最適化 | 機能補完と再構築
 
 > 2021/05 ~ 09
 
-* 新登場 | Lots of functional
-* 修理 | bugs
+* 新登場 | 大量の機能追加
+* 修正 | bugs
 
 > 2021/05/01
 

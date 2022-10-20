@@ -77,11 +77,8 @@ colour.purple("文字列")
 
 ```lua
 -- 例
-local txt = colour.format("%s在%s里观摩%s，结果弄坏了，赔了%s", colour.white, {
-    { "80ff00", "剑圣" },
-    { "ff59ff", "武器屋" },
-    { "ff0000", "[圣剑·火之高兴]" },
-    { colour.gold, "100W" },
+local txt = colour.format("%s 世界平和", colour.white, {
+    { "80ff00", "永遠の" },
 })
 
 print(txt)

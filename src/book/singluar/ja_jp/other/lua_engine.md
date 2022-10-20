@@ -95,7 +95,7 @@ jass.hookライブラリは、common.j内に登録されている関数のフッ
 ```lua
 	local hook = require 'jass.hook'
 	function hook.CreateUnit(pid, uid, x, y, face, realCreateUnit)
-		-- 当jass内调用CreateUnit时，就会被执行
+		-- jass内でCreateUnitを呼び出すと実行される
 		print('CreateUnit')
 		print(type(x))
 		return realCreateUnit(pid, uid, x, y, face)
@@ -299,7 +299,7 @@ console.readを最初に呼び出すと、ユーザーはコンソールに入�
 	local jass    = require 'jass.common'
 	local console = require 'jass.console'
 
-	console.write('测试开始...')
+	console.write('テスト開始...')
 
 	--タイマーをオンにし、0.1秒ごとに入力をチェック
 	jass.TimerStart(jass.CreateTimer(), 0.1, true,
@@ -360,8 +360,8 @@ jass.debugライブラリは、luaエンジンの内部メカニズムをより�
 
 ```lua
 	local log = require 'jass.log'
-	log.info('这是一行日志')
-	log.error('这是一行', '日志')
+	log.info('これはログの行です')
+	log.error('これは一行です', 'ログ')
 ```
 
 ### jass.message

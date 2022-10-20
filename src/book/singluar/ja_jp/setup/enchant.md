@@ -15,7 +15,7 @@ DAMAGE_TYPE.grass = nil
 DAMAGE_TYPE.thunder = nil
 DAMAGE_TYPE.poison = nil
 
--- 附魔设定
+-- 付魔を設ける
 enchant.defined("fire", "火", {
     strengthen = 0,
     resistance = 0,
@@ -37,8 +37,8 @@ enchant.defined("water", "水")
 enchant.defined("ice", "氷")
 enchant.defined("wind", "風")
 enchant.defined("light", "光")
-enchant.defined("dark", "暗い")
+enchant.defined("dark", "暗")
 enchant.defined("grass", "草")
-enchant.defined("thunder", "雷")
+enchant.defined("thunder", "电")
 enchant.defined("poison", "毒")
 ```

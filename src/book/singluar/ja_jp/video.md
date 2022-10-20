@@ -1,6 +1,6 @@
 ## ビデオ録画
 
-に由来 Bilibili
+Bilibiliから
 
 > <a target="_blank" href="https://www.bilibili.com/video/BV1Dt4y1t7eF">菱镜展示</a>
 
