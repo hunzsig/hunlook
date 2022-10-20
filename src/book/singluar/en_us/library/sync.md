@@ -23,10 +23,10 @@ DzGetTriggerSyncData
 
 ```lua
 -- send
-sync.send("hzg", { "hunzsig", "是个开源框架作者" })
+sync.send("hzg", { "hunzsig", "an author of an open source framework" })
 
 -- receive
 sync.receive("hzg", function(syncData)
-    echo(syncData.transferData[1] .. "确实" .. syncData.transferData[2])
+    echo(syncData.transferData[1] .. " is " .. syncData.transferData[2])
 end)
 ```

@@ -17,7 +17,7 @@
 * Set the equivalent cycle
 * Common unit hero inventory eats books
 * The coordinates of the icon are out of bounds such as (-1,-1) Or (5,4) 
-> Note that 0,-11 is allowed and can be used to hide the icon
+    > Note that 0,-11 is allowed and can be used to hide the icon
 * More than one unit put a normal unit-hero or hero-normal unit hero-hero's transformation
 * use the optimizer slk error optimization
 * "<" appears in the description of the item 

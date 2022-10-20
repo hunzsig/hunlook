@@ -44,7 +44,8 @@ end)
 
 ### V3d（3D）
 
-> 3D sound effect is the sound effect bound to a certain place, which is characterized by the change of far and near volume
+> 3D sound effect is the sound effect bound to a certain place, which is characterized by the change of far and near
+> volume
 
 ```lua
 -- Writing method of assets

@@ -11,15 +11,15 @@ print(123)
 print("abc")
 print({ 1, 2, 3 })
 print(123, "abc")
-print("你好，世界！")
+print("hello, world!")
 ```
 
 ### Dump print
 
 ```lua
 dump({
-    "你好",
-    string = "世界",
+    "hello",
+    string = "world",
     table = {
         1, 3, 5,
         7, 9, 72

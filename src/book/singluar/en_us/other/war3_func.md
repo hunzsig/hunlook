@@ -13,10 +13,10 @@ And creating units, damage targets, moving items, etc., most of them are synchro
 Asynchronous execution of the function does not require the support of the environment. When your environment is synchronous, the function is valid for all players, and when the environment is asynchronous, it is valid for specific players
 
 ```lua
--- 允许异步数据的异步执行函数
-japi.DzFrameSetTexture() -- 可以
+-- Asynchronous execution functions that allow asynchronous data
+japi.DzFrameSetTexture() -- Y
 async.call(Player(1),function()
-    japi.DzFrameSetTexture() -- 也可以
+    japi.DzFrameSetTexture() -- Y
 end)
 ```
 
@@ -25,10 +25,10 @@ end)
 The synchronous execution function requires the blessing of the environment, you must pay attention that the environment is in a synchronous state, and the effect is valid for all players
 
 ```lua
--- 必须同步数据的同步执行函数
-J.CreateUnit() -- 可以
+-- Synchronous execution functions that must synchronize data
+J.CreateUnit() -- Y
 async.call(Player(1),function()
-    J.CreateUnit() -- 几乎凉凉
+    J.CreateUnit() -- N
 end)
 ```
 
@@ -39,13 +39,13 @@ end)
 You must pay attention to this kind of function that the environment is in a synchronized state before it can be executed! But its data can be asynchronous, that is, each player is inconsistent
 
 ```lua
--- 允许异步数据的同步执行函数
+-- Allow synchronous execution of functions with asynchronous data
 local z = 100
 async.call(Player(1),function()
     z = 996
 end)
-japi.EXSetEffectXY(e, z) -- 可以,，但玩家1自己是996高度
+japi.EXSetEffectXY(e, z) -- Y,But player 1 is 996 high
 async.call(Player(1),function()
-    japi.EXSetEffectXY(e, z) -- 几乎凉凉
+    japi.EXSetEffectXY(e, z) -- N
 end
 ```

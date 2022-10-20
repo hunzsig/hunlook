@@ -2,41 +2,41 @@
 
 > Settings for inserting damage flow
 >
-> Execute from top to bottom according to the order in which you write the definitions, options will flow down and save, you can save some values ​​in it, and flow to the next definition for use
+> Execute from top to bottom according to the order in which you write the definitions, options will flow down and save, you can save some values in it, and flow to the next definition for use
 
 ```lua
---- 提取一些需要的参数
+--- Extract some required parameters
 damaging.defined("prop", function(options)
     options.defend = options.targetUnit.defend()
     options.avoid = options.targetUnit.avoid() - options.sourceUnit.aim()
 end)
 
---- 判断无视装甲类型
+--- Judge whether to ignore armor type
 damaging.defined("breakArmor", function(options)
     local ignore = { defend = false, avoid = false, invincible = false }
     if (#options.breakArmor > 0) then
         for _, b in ipairs(options.breakArmor) do
             if (b ~= nil) then
                 ignore[b.value] = true
-                --- 触发无视防御事件
+                --- Trigger Ignore Defense Event
                 event.trigger(options.sourceUnit, EVENT.Unit.BreakArmor, { triggerUnit = options.sourceUnit, targetUnit = options.targetUnit, breakType = b })
-                --- 触发被破防事件
+                --- Trigger the broken defense event
                 event.trigger(options.targetUnit, EVENT.Unit.Be.BreakArmor, { triggerUnit = options.targetUnit, breakUnit = options.sourceUnit, breakType = b })
             end
         end
     end
-    --- 处理护甲
+    --- Handling armor
     if (ignore.defend == true and options.defend > 0) then
         options.defend = 0
     end
-    --- 处理回避
+    --- Handling avoid
     if (ignore.avoid == true and options.avoid > 0) then
         options.avoid = 0
     end
-    --- 单位是否无视无敌
+    --- Whether the unit ignores invincibility
     if (true == options.targetUnit.isInvulnerable()) then
         if (ignore.invincible == false) then
-            --- 触发无敌抵御事件
+            --- Trigger invincible defense event
             options.damage = 0
             event.trigger(options.sourceUnit, EVENT.Unit.ImmuneInvincible, { triggerUnit = options.targetUnit, sourceUnit = options.sourceUnit })
             return
@@ -44,7 +44,7 @@ damaging.defined("breakArmor", function(options)
     end
 end)
 
---- 自身攻击暴击
+--- Self attack critical hit
 damaging.defined("crit", function(options)
     local approve = (options.sourceUnit ~= nil and (options.damageSrc == DAMAGE_SRC.attack or options.damageSrc == DAMAGE_SRC.ability))
     if (approve) then
@@ -53,21 +53,21 @@ damaging.defined("crit", function(options)
             local odds = options.sourceUnit.odds("crit") - options.targetUnit.resistance("crit")
             if (odds > math.rand(1, 100)) then
                 options.damage = options.damage * (1 + crit * 0.01)
-                --- 触发时自动无视回避
+                --- Automatically ignore avoidance when triggered
                 options.avoid = 0
-                --- 触发暴击事件
+                --- Trigger critical hit event
                 ability.crit({ sourceUnit = options.sourceUnit, targetUnit = options.targetUnit })
             end
         end
     end
 end)
 
---- 回避
+--- avoid
 damaging.defined("avoid", function(options)
     local approve = (options.avoid > 0 and (options.damageSrc == DAMAGE_SRC.attack or options.damageSrc == DAMAGE_SRC.rebound))
     if (approve) then
         if (options.avoid > math.rand(1, 100)) then
-            -- 触发回避事件
+            -- Trigger avoidance event
             options.damage = 0
             event.trigger(options.targetUnit, EVENT.Unit.Avoid, { triggerUnit = options.targetUnit, sourceUnit = options.sourceUnit })
             event.trigger(options.sourceUnit, EVENT.Unit.Be.Avoid, { triggerUnit = options.sourceUnit, targetUnit = options.targetUnit })
@@ -76,7 +76,7 @@ damaging.defined("avoid", function(options)
     end
 end)
 
---- 伤害加深(%)
+--- Damage deepening(%)
 damaging.defined("damageIncrease", function(options)
     local approve = (options.sourceUnit ~= nil)
     if (approve) then
@@ -87,7 +87,7 @@ damaging.defined("damageIncrease", function(options)
     end
 end)
 
---- 受伤加深(%)
+--- Injury deepens(%)
 damaging.defined("hurtIncrease", function(options)
     local hurtIncrease = options.targetUnit.hurtIncrease()
     if (hurtIncrease > 0) then
@@ -95,9 +95,9 @@ damaging.defined("hurtIncrease", function(options)
     end
 end)
 
---- 反伤(%)
+--- Reflexive injury(%)
 damaging.defined("hurtRebound", function(options)
-    -- 抵抗
+    -- resistance
     local approve = (options.sourceUnit ~= nil and options.damageSrc == DAMAGE_SRC.rebound)
     if (approve) then
         local resistance = options.sourceUnit.resistance("hurtRebound")
@@ -109,7 +109,7 @@ damaging.defined("hurtRebound", function(options)
             end
         end
     end
-    -- 反射
+    -- rebound
     approve = (options.sourceUnit ~= nil and (options.damageSrc == DAMAGE_SRC.attack or options.damageSrc == DAMAGE_SRC.ability))
     if (approve) then
         local hurtRebound = options.targetUnit.hurtRebound()
@@ -118,7 +118,7 @@ damaging.defined("hurtRebound", function(options)
             local dmgRebound = math.round(options.damage * hurtRebound * 0.01, 3)
             if (dmgRebound >= 1.000) then
                 local damagedArrived = function()
-                    --- 触发反伤事件
+                    --- Trigger a counter injury event
                     ability.damage({
                         sourceUnit = options.targetUnit,
                         targetUnit = options.sourceUnit,
@@ -128,7 +128,7 @@ damaging.defined("hurtRebound", function(options)
                     })
                 end
                 if (options.damageSrc == DAMAGE_SRC.attack) then
-                    -- 攻击下
+                    -- Under attack
                     if (options.sourceUnit.isMelee()) then
                         damagedArrived()
                     elseif (options.sourceUnit.isRanged()) then
@@ -157,7 +157,7 @@ damaging.defined("hurtRebound", function(options)
                         end
                     end
                 elseif (options.damageSrc == DAMAGE_SRC.ability) then
-                    -- 技能情况
+                    -- Skills
                     damagedArrived()
                 end
             end
@@ -165,14 +165,14 @@ damaging.defined("hurtRebound", function(options)
     end
 end)
 
---- 防御
+--- defense
 damaging.defined("defend", function(options)
     if (options.defend < 0) then
         options.damage = options.damage + math.abs(options.defend)
     elseif (options.defend > 0) then
         options.damage = options.damage - options.defend
         if (options.damage < 1) then
-            -- 触发防御完全抵消事件
+            -- Trigger defense completely offset event
             options.damage = 0
             event.trigger(options.targetUnit, EVENT.Unit.ImmuneDefend, { triggerUnit = options.targetUnit, sourceUnit = options.sourceUnit })
             return
@@ -180,13 +180,13 @@ damaging.defined("defend", function(options)
     end
 end)
 
---- 减伤(%)
+--- Reduce injuries(%)
 damaging.defined("hurtReduction", function(options)
     local hurtReduction = options.targetUnit.hurtReduction()
     if (hurtReduction > 0) then
         options.damage = options.damage * (1 - hurtReduction * 0.01)
         if (options.damage < 1) then
-            -- 触发减伤完全抵消事件
+            -- Trigger the event of fully canceling the damage reduction
             options.damage = 0
             event.trigger(options.targetUnit, EVENT.Unit.ImmuneReduction, { triggerUnit = options.targetUnit, sourceUnit = options.sourceUnit })
             return
@@ -194,7 +194,7 @@ damaging.defined("hurtReduction", function(options)
     end
 end)
 
---- 攻击吸血
+--- Attack blood sucking
 damaging.defined("hpSuckAttack", function(options)
     local approve = (options.sourceUnit ~= nil and options.damageSrc == DAMAGE_SRC.attack)
     if (approve) then
@@ -202,14 +202,14 @@ damaging.defined("hpSuckAttack", function(options)
         local val = options.damage * percent * 0.01
         if (percent > 0 and val > 0) then
             options.sourceUnit.hpCur("+=" .. val)
-            --- 触发吸血事件
+            --- Trigger blood sucking event
             event.trigger(options.sourceUnit, EVENT.Unit.HPSuckAttack, { triggerUnit = options.sourceUnit, targetUnit = options.targetUnit, value = val, percent = percent })
             event.trigger(options.targetUnit, EVENT.Unit.Be.HPSuckAttack, { triggerUnit = options.targetUnit, sourceUnit = options.sourceUnit, value = val, percent = percent })
         end
     end
 end)
 
---- 技能吸血
+--- Skill blood sucking
 damaging.defined("hpSuckAbility", function(options)
     local approve = (options.sourceUnit ~= nil and options.damageSrc == DAMAGE_SRC.ability)
     if (approve) then
@@ -217,14 +217,14 @@ damaging.defined("hpSuckAbility", function(options)
         local val = options.damage * percent * 0.01
         if (percent > 0 and val > 0) then
             options.sourceUnit.hpCur("+=" .. val)
-            --- 触发技能吸血事件
+            --- Trigger skill blood sucking event
             event.trigger(options.sourceUnit, EVENT.Unit.HPSuckAbility, { triggerUnit = options.sourceUnit, targetUnit = options.targetUnit, value = val, percent = percent })
             event.trigger(options.targetUnit, EVENT.Unit.Be.HPSuckAbility, { triggerUnit = options.targetUnit, sourceUnit = options.sourceUnit, value = val, percent = percent })
         end
     end
 end)
 
---- 攻击吸魔;吸魔会根据伤害，扣减目标的魔法值，再据百分比增加自己的魔法值;目标魔法值不足 1 从而吸收时，则无法吸取
+--- Attack and absorb demons; Absorbing magic will reduce the target's magic value according to the damage, and then increase your own magic value according to the percentage; When the target's magic value is less than 1, it cannot be absorbed
 damaging.defined("mpSuckAttack", function(options)
     local approve = (options.sourceUnit ~= nil and options.damageSrc == DAMAGE_SRC.attack and options.sourceUnit.mp() > 0 and options.targetUnit.mpCur() > 0)
     if (approve) then
@@ -235,7 +235,7 @@ damaging.defined("mpSuckAttack", function(options)
             if (val > 1) then
                 options.targetUnit.mpCur("-=" .. val)
                 options.sourceUnit.mpCur("+=" .. val)
-                --- 触发吸魔事件
+                --- Trigger the evil absorption event
                 event.trigger(options.sourceUnit, EVENT.Unit.MPSuckAttack, { triggerUnit = options.sourceUnit, targetUnit = options.targetUnit, value = val, percent = percent })
                 event.trigger(options.targetUnit, EVENT.Unit.Be.MPSuckAttack, { triggerUnit = options.targetUnit, sourceUnit = options.sourceUnit, value = val, percent = percent })
             end
@@ -243,7 +243,7 @@ damaging.defined("mpSuckAttack", function(options)
     end
 end)
 
---- 技能吸魔;吸魔会根据伤害，扣减目标的魔法值，再据百分比增加自己的魔法值;目标魔法值不足 1 从而吸收时，则无法吸取
+--- Skill absorption; Absorbing magic will reduce the target's magic value according to the damage, and then increase your own magic value according to the percentage; When the target's magic value is less than 1, it cannot be absorbed
 damaging.defined("mpSuckAbility", function(options)
     local approve = (options.sourceUnit ~= nil and options.damageSrc == DAMAGE_SRC.ability and options.sourceUnit.mp() > 0 and options.targetUnit.mpCur() > 0)
     if (approve) then
@@ -254,7 +254,7 @@ damaging.defined("mpSuckAbility", function(options)
             if (val > 1) then
                 options.targetUnit.mpCur("-=" .. val)
                 options.sourceUnit.mpCur("+=" .. val)
-                --- 触发技能吸魔事件
+                --- Trigger the event of skill absorption
                 event.trigger(options.sourceUnit, EVENT.Unit.MPSuckAbility, { triggerUnit = options.sourceUnit, targetUnit = options.targetUnit, value = val, percent = percent })
                 event.trigger(options.targetUnit, EVENT.Unit.Be.MPSuckAbility, { triggerUnit = options.targetUnit, sourceUnit = options.sourceUnit, value = val, percent = percent })
             end
@@ -262,7 +262,7 @@ damaging.defined("mpSuckAbility", function(options)
     end
 end)
 
---- 硬直
+--- punish
 damaging.defined("punishCur", function(options)
     local approve = (options.targetUnit.punish() > 0 and options.targetUnit.isPunishing() == false)
     if (approve) then
@@ -270,14 +270,14 @@ damaging.defined("punishCur", function(options)
     end
 end)
 
---- 伤害类型占比处理
+--- Proportion of injury types
 damaging.defined("enchant", function(options)
     options.damageTypeRatio = {}
     options.enchantType = {}
     local damageTypeOcc = 0
     local ratio = {}
     if (options.damageSrc == DAMAGE_SRC.attack and options.sourceUnit ~= nil) then
-        -- 附加攻击形态的伤害类型
+        -- Damage type of additional attack form
         enchant.types.forEach(function(ek, _)
             local ew = options.sourceUnit.enchantWeapon(ek)
             if (ew > 0) then
@@ -314,7 +314,7 @@ damaging.defined("enchant", function(options)
     end
 end)
 
--- 附魔类型(加成|抵抗|上身)
+-- Enchant type (bonus | resistance | append)
 damaging.defined("enchantAppend", function(options)
     for _, et in ipairs(options.enchantType) do
         local addition = 0
@@ -329,7 +329,7 @@ damaging.defined("enchantAppend", function(options)
             addition = addition - resistance * 0.01
         end
         local d = options.damage * addition * options.damageTypeRatio[et]
-        --- 触发附魔事件
+        --- Trigger Enchant Event
         event.trigger(options.targetUnit, EVENT.Unit.Enchant, {
             triggerUnit = options.sourceUnit, targetUnit = options.targetUnit,
             enchantType = et,

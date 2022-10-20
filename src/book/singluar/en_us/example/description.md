@@ -11,7 +11,7 @@
 ```lua
 -- So a description configuration is defined
 Game().defineDescription("myAbility", function(this, options)
-    return {"第一行","第二行"}
+    return {"first", "second"}
 end)
 ```
 
@@ -22,8 +22,8 @@ end)
 > This description body introduces an options, extra data, which will be brought into each reference, which has a whichLevel, and how to pass it will be shown later.
 
 ```lua
--- 定义技能描述体
--- [基础信息]
+-- Define skill descriptor
+-- [Basic info]
 ---@param this Ability
 ---@param options {whichLevel:number}
 Game().defineDescription("abilityBase", function(this, options)
@@ -31,21 +31,21 @@ Game().defineDescription("abilityBase", function(this, options)
     local whichLevel = math.floor(options.whichLevel or this.level())
     local tt = this.targetType()
     if (tt ~= ABILITY_TARGET_TYPE.PAS or this.coolDownRemain() > 0) then
-        table.insert(desc, this.name() .. ' - 等级 ' .. colour.gold(whichLevel) .. '（' .. colour.gold(this.hotkey()) .. '）')
+        table.insert(desc, this.name() .. ' - lv ' .. colour.gold(whichLevel) .. '（' .. colour.gold(this.hotkey()) .. '）')
     else
-        table.insert(desc, this.name() .. " - 等级 " .. colour.gold(whichLevel))
+        table.insert(desc, this.name() .. " - lv " .. colour.gold(whichLevel))
     end
-    table.insert(desc, '类型：' .. colour.gold(tt.label))
+    table.insert(desc, 'type：' .. colour.gold(tt.label))
     if (tt ~= ABILITY_TARGET_TYPE.PAS or this.coolDownRemain() > 0) then
         local chantCast = this.castChant(whichLevel)
         if (chantCast > 0) then
-            table.insert(desc, '吟唱时间：' .. colour.skyLight(chantCast .. " 秒"))
+            table.insert(desc, 'chantTime：' .. colour.skyLight(chantCast .. " Sec"))
         else
-            table.insert(desc, '吟唱时间：' .. colour.skyLight("瞬间施法"))
+            table.insert(desc, 'chantTime：' .. colour.skyLight("instant"))
         end
         local keepCast = this.castKeep(whichLevel)
         if (keepCast > 0) then
-            table.insert(desc, '最大施法持续：' .. colour.skyLight(keepCast .. " 秒"))
+            table.insert(desc, 'maxChant：' .. colour.skyLight(keepCast .. " Sec"))
         end
     end
     return desc
@@ -55,26 +55,26 @@ end)
 #### After the description body is defined, you can of course use them to combine to build your text data
 
 ```lua
--- 简单引用
+-- Simple reference
 local txtArray = Game().combineDescription(whichAbility, nil, "abilityBase")
 
--- 使用options，whichLevel设10
+-- set options，whichLevel = 10
 local txtArray = Game().combineDescription(whichAbility, {whichLevel = 10}, "abilityBase")
 
--- 前面我们还定义了一个myAbility，也可以使用两组数据，按你引入的顺序合并
+-- Earlier, we also defined a myAbility, which can also use two sets of data to merge in the order you introduced them
 local txtArray = Game().combineDescription(whichAbility, nil, "abilityBase", "myAbility")
 ```
 
 #### Ability、Item、Unit objects defines a description function, you can also use the specific abbreviation &lt;D&gt; to import the function's callback data
 
 ```lua
--- 对象定义descrption特殊引入
+-- Special introduction of object definition
 local txtArray = Game().combineDescription(whichAbility, nil, "<D>", "abilityBase")
 ```
 
 #### Use string array data directly, or supply it to combineDescription
 
 ```lua
--- 直接引入table
-local txtArray = Game().combineDescription(whichAbility, nil, {"第一行","第二行"})
+-- Directly import table
+local txtArray = Game().combineDescription(whichAbility, nil, {"first","second"})
 ```

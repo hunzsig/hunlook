@@ -11,7 +11,7 @@ Just paste the following code:
 
 ```jass
 function myBgm takes string s returns nothing
-    local string uri = "main.mp3" //这个路径你可以播放默认的音乐（在F5）也可以播放F12导入的音乐
+    local string uri = "main.mp3" //In this path, you can play the default music (in F5) or the music imported from F12
     call SetMapDescription(s)
     call PlayMusic(uri)
     set uri = null

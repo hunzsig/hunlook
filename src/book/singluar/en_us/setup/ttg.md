@@ -3,7 +3,7 @@
 > Model floating words need to be set in advance
 
 ```lua
--- 漂浮字符
+-- Floating character
 ttg.char("0", "singluar_ttg_0", 1.9)
 ttg.char("1", "singluar_ttg_1", 1.8)
 ttg.char("2", "singluar_ttg_2", 1.8)

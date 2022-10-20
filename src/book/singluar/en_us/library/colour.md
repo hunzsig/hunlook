@@ -1,11 +1,11 @@
-## Colour 文本颜色
+## Colour text color
 
 > The framework provides a library of text color modification
 
 #### hex method, Use 6-bit length color
 
 ```lua
-colour.hex("一个字符串", "FF0000")
+colour.hex("A string", "FF0000")
 ```
 
 #### hex derivative method
@@ -13,62 +13,62 @@ colour.hex("一个字符串", "FF0000")
 > You can also expand some common colors you bring
 
 ```lua
---- 耀金
-colour.gold("一个字符串")
+--- gold
+colour.gold("A string")
 
---- 纯白
-colour.white("一个字符串")
+--- white
+colour.white("A string")
 
---- 纯黑
-colour.black("一个字符串")
+--- black
+colour.black("A string")
 
---- 浅灰
-colour.grey("一个字符串")
+--- grey
+colour.grey("A string")
 
---- 深灰
-colour.greyDeep("一个字符串")
+--- greyDeep
+colour.greyDeep("A string")
 
---- 亮红
-colour.redLight("一个字符串")
+--- redLight
+colour.redLight("A string")
 
---- 大红
-colour.red("一个字符串")
+--- red
+colour.red("A string")
 
---- 浅绿
-colour.greenLight("一个字符串")
+--- greenLight
+colour.greenLight("A string")
 
---- 深绿
-colour.green("一个字符串")
+--- green
+colour.green("A string")
 
---- 浅黄
-colour.yellowLight("一个字符串")
+--- yellowLight
+colour.yellowLight("A string")
 
---- 亮黄
-colour.yellow("一个字符串")
+--- yellow
+colour.yellow("A string")
 
---- 浅橙
-colour.orangeLight("一个字符串")
+--- orangeLight
+colour.orangeLight("A string")
 
---- 橙色
-colour.orange("一个字符串")
+--- orange
+colour.orange("A string")
 
---- 天空蓝
-colour.skyLight("一个字符串")
+--- skyLight
+colour.skyLight("A string")
 
---- 青空蓝
-colour.sky("一个字符串")
+--- sky
+colour.sky("A string")
 
---- 浅海蓝
-colour.seaLight("一个字符串")
+--- seaLight
+colour.seaLight("A string")
 
---- 深海蓝
-colour.sea("一个字符串")
+--- sea
+colour.sea("A string")
 
---- 浅紫
-colour.purpleLight("一个字符串")
+--- purpleLight
+colour.purpleLight("A string")
 
---- 亮紫
-colour.purple("一个字符串")
+--- purple
+colour.purple("A string")
 ```
 
 #### format
@@ -76,12 +76,9 @@ colour.purple("一个字符串")
 > Suitable for complex text color processing
 
 ```lua
--- 例子
-local txt = colour.format("%s在%s里观摩%s，结果弄坏了，赔了%s", colour.white, {
-    { "80ff00", "剑圣" },
-    { "ff59ff", "武器屋" },
-    { "ff0000", "[圣剑·火之高兴]" },
-    { colour.gold, "100W" },
+-- example
+local txt = colour.format("%s world", colour.white, {
+    { "80ff00", "Hello" },
 })
 
 print(txt)

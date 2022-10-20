@@ -1,20 +1,20 @@
 ### F9 Quest
 
 ```lua
--- 任务
-Quest("主动投降", "right")
+-- mission
+Quest("Voluntary surrender", "right")
     .icon("ReplaceableTextures\\CommandButtons\\BTNTomeOfRetraining.blp")
-    .content("-gg 投降并退出")
+    .content("-gg Surrender and exit")
 
-Quest("查看你的APM数值", "right")
+Quest("View your APM value", "right")
     .icon("ReplaceableTextures\\CommandButtons\\BTNTomeOfRetraining.blp")
     .content("-apm 查看你的APM数值")
 
-Quest("调整你的视距", "right")
+Quest("Adjust your sight distance", "right")
     .icon("ReplaceableTextures\\CommandButtons\\BTNTomeOfRetraining.blp")
     .content({
-    "-d +[number] 增加视距",
-    "-d -[number] 减少视距",
-    "-d =[number] 设置视距",
+    "-d +[number] increase",
+    "-d -[number] reduce",
+    "-d =[number] set",
 })
 ```

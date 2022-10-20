@@ -8,7 +8,8 @@
 
 ##### Because there are too many ways to write, only a few are written here for simple reference only
 
-> TPL is like code editing, but you can modify hot updates at run time. It will be great to cooperate with process testing
+> TPL is like code editing, but you can modify hot updates at run time. It will be great to cooperate with process
+> testing
 
 ### AbilityTpl
 
@@ -16,7 +17,7 @@
 TPL_ABILITY = {
 
     ---@param effectiveData noteOnAbilityEffectiveData
-     AbilityTpl("技能1", ABILITY_TARGET_TYPE.TAG_R)
+     AbilityTpl("AB1", ABILITY_TARGET_TYPE.TAG_R)
         .icon("AB1")
         .coolDownAdv(2.5, -0.05)
         .hpCostAdv(10, 5)
@@ -27,8 +28,8 @@ TPL_ABILITY = {
         .levelMax(9)
         .description(
         {
-            "基础消耗：" .. colour.purple("{this.mpCost()}"),
-            "对目标造成伤害：" .. colour.gold("{math.floor(this.bindUnit().attack()*100)}") .. "(攻击x100)"
+            "Cost：" .. colour.purple("{this.mpCost()}"),
+            "Dmg：" .. colour.gold("{math.floor(this.bindUnit().attack()*100)}") .. "(Atkx100)"
         })
         .castTargetAllow(
             function(this, targetUnit)
@@ -39,8 +40,8 @@ TPL_ABILITY = {
             function(effectiveData)
             local ftp = 1
             time.setInterval(ftp, function(curTimer)
-                -- 只是一个持续施法技能，施法后使用isAbilityKeepCasting判定是否仍在施法
-                -- 从而可以实现各种周期的效果
+                -- It's just a continuous casting skill. After casting, use isAbilityKeepCasting to determine whether you are still casting
+                -- So as to achieve the effect of various cycles
                 if (not effectiveData.triggerUnit.isAbilityKeepCasting()) then
                     curTimer.destroy()
                     return
@@ -54,9 +55,9 @@ TPL_ABILITY = {
     ---@param getData noteOnAbilityGetData
     ---@param loseData noteOnAbilityLoseData
     ---@param lvcData noteOnAbilityLevelChangeData
-    AbilityTpl("唯我独尊", ABILITY_TARGET_TYPE.PAS)
+    AbilityTpl("AB2", ABILITY_TARGET_TYPE.PAS)
         .icon("AB2")
-        .description({ "强击单人特效: +{50+this.level()*100}攻击" })
+        .description({ "eff: +{50+this.level()*100}Atk" })
         .levelMax(5)
         .levelUpNeedPoint(101)
         .onEvent(EVENT.Item.Get,
@@ -77,11 +78,11 @@ TPL_ABILITY = {
         end)
 }
 
--- 后续代码创建技能对象
--- 单位既可以pushAbility也可以pushAbilityTpl，智能加技能
+-- Create skill object in subsequent code
+-- Units can either pushAbility or pushAbilityTpl, with intelligence and skills
 
--- myUnit是一个Unit对象，这里只是演示，请自行理解
--- myUnitSlot是一个AbilitySlot对象，代表该单位的技能栏
+-- myUnit is a Unit object. This is just a demonstration. Please understand
+-- myUnitSlot is an AbilitySlot object, representing the skill bar of the unit
 
 local myUnitSlot = myUnit.abilitySlot()
 myUnitSlot.push(Ability(TPL_ABILITY.AB1))
@@ -92,13 +93,13 @@ myUnitSlot.push(TPL_ABILITY.AB3, 6)
 ### ItemTpl
 
 ```lua
--- 物品首先要有物品类别的模型支撑，这里也演示一下assets的资源
--- !!! 这个资源在new项目的origin资产里有，一般不需要你再去寻找F6物编
+-- The item must first be supported by the model of the item category. Here is also a demonstration of assets resources
+-- !!! This resource is in the origin asset of the new project, and you don't need to search for the F6 inventory
 
--- 物品宝箱
+-- Item chest
 _assets_model(
     ":Objects\\InventoryItems\\TreasureChest\\treasurechest.mdl",
-    "TreasureChest", "item" -- 这个"item"代表这个model可用于Item对象,没有是不行的
+    "TreasureChest", "item" -- The "item" represents that the model can be used for the Item object, and it is not allowed if there is no item
  )
 ```
 
@@ -122,33 +123,33 @@ TPL_ITEM = {
 
 }
 
--- 运行时代码创建
--- 直接实例
+-- Runtime Code Creation
+-- Direct instance
 local it1 = TPL_ITEM.IT1.create(0, 0)
 local it2 = TPL_ITEM.IT2.create(0, 0)
 
--- 可以看到前面直接create到0,0坐标了
--- 实际上Item对象是有两种状态的，实例化状态和虚拟化状态，简单理解就是物品需要在大地图的时候才会是实体
+-- You can see that the front is directly created to the 0,0 coordinates
+-- In fact, the Item object has two states, instantiation state and virtualization state. The simple understanding is that an item is an entity only when it is on the big map
 
-local it1 = Item(TPL_ITEM.IT1) -- 此时Item对象由Tpl建立，但是虚拟的
-it1.portal(0, 0) -- 我将其移动到0,0后，触发了大地图所以自动转为实体
+local it1 = Item(TPL_ITEM.IT1) -- At this time, the Item object is created by Tpl, but it is virtual
+it1.portal(0, 0) -- After I move it to 0,0, the big map is triggered, so it is automatically converted into an entity
 
--- 如果一个单位持有物品但是被portal，由于转化为了地图实体，所以单位会失去物品
--- 感觉类似瞬间无视距离丢弃物品一样
+-- If a unit holds an item but is transferred to a portal, it will lose the item because it is converted to a map entity
+-- It feels like discarding objects at an instant regardless of distance
 ```
 
 ### UnitTpl
 
 ```lua
--- 单位和物品一样，要有单位类别的模型支撑，这里也演示一下assets的资源
--- !!! 这个资源也在new项目的origin资产里有，一般不需要你再去寻找F6物编
+-- The same as the item, the unit should be supported by the model of the unit category. Here is also a demonstration of assets resources
+-- !!! This resource is also included in the origin asset of the new project. Generally, you do not need to look for F6 materials
 
--- 黑暗游侠
+-- BansheeRanger
 _assets_model(
     ":Units\\Creeps\\BansheeRanger\\BansheeRanger", "BansheeRanger", 
     "unit", { Art = "unit\\hero\\BansheeRanger"}
 )
--- 火焰巨魔
+-- HeroFlameLord
 _assets_model(
     ":Units\\Creeps\\HeroFlameLord\\HeroFlameLord", "HeroFlameLord",
     "unit", { Art = "unit\\hero\\HeroAvatarOfFlame"}
@@ -159,17 +160,17 @@ _assets_model(
 
 ```lua
 TPL_UNIT = {}
--- 黑暗游侠
+-- BansheeRanger
 TPL_UNIT.BansheeRanger = UnitTpl("BansheeRanger")
--- 火焰巨魔
+-- HeroFlameLord
 TPL_UNIT.HeroFlameLord = UnitTpl("HeroFlameLord")
 
--- TPL也定义提前设置技能、物品
+-- TPL also defines setting skills and items in advance
 TPL_UNIT.Footman = UnitTpl("Footman")
     .abilitySlot({TPL_ABILITY.AB1,TPL_ABILITY.AB2})
     .itemSlot({TPL_ITEM.IT1,TPL_ITEM.IT2})
 
--- 运行时代码创建
+-- Runtime Code Creation
 local u1 = TPL_UNIT.BansheeRanger
   .create(Player(1), 0, 0, 66.6).level(1)
   .reborn(0.5)

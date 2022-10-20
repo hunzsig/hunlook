@@ -3,7 +3,7 @@
 > Used to add supplementary effects when events occur, which can be customized
 
 ```lua
--- 事件反应
+-- event reaction
 ---@param u Unit
 local function _z(u, offset)
     return u.h() + 130 + offset

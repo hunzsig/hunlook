@@ -60,10 +60,10 @@ u.orderRoute(true, {
 })
 
 time.setTimeout(6, function()
-    print("第5段")
+    print("Paragraph 5")
     u.orderRouteSet(5, { 0, 0 })
     time.setTimeout(10, function()
-        print("删除第5段")
+        print("Del Paragraph 5")
         u.orderRouteSet(5, nil)
     end)
 end)
@@ -74,7 +74,7 @@ end)
 > Commonly used in multi route design
 
 ```lua
---- 例子2
+--- ex2
 local lineMap = {
     { -500, -1000 },
     { 500, -1000 },

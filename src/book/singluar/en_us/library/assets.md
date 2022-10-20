@@ -32,7 +32,7 @@
 > Resource files are placed in war3mapFont
 
 ```lua
-_assets_font("微软雅黑") --后缀可省略
+_assets_font("Microsoft YaHei") --Suffix name can be omitted
 ```
 
 #### Reference Icon
@@ -40,13 +40,13 @@ _assets_font("微软雅黑") --后缀可省略
 > Resource files are placed in war3mapIcon
 
 ```lua
--- 原生魔兽的图标路径需要在前面加一个冒号 ":"
--- 可以赋予一个别称来在代码中引用
+-- The icon path of native Warcraft needs to be preceded by a colon ":"
+-- You can assign a nickname to reference in code
 _assets_icon(":ReplaceableTextures\\CommandButtons\\BTNSheep.blp", "Sheep")
 
--- war3mapIcon 目录下的直接相对路径就可以了
-_assets_icon("black") -- 例如载入 war3mapIcon\black.tga
-_assets_icon("black","黑") --可以赋予一个别称，后续也能在代码中引用
+-- war3mapIcon The direct relative path under the directory is OK
+_assets_icon("black") -- like war3mapIcon\black.tga
+_assets_icon("black","B") --It can be given a nickname, and can be referenced in the code later
 ```
 
 References in scripts
@@ -54,7 +54,7 @@ References in scripts
 ```lua
 AIcon("Sheep")
 AIcon("black")
-AIcon("黑") -- 有别称的用别称
+AIcon("B") -- Use a nickname if you have one
 ```
 
 #### Reference Loading
@@ -62,7 +62,7 @@ AIcon("黑") -- 有别称的用别称
 > Resource files are placed in war3MapLoading
 
 ```lua
-_assets_loading("default") --后缀可省略
+_assets_loading("default") --Suffix name can be omitted
 ```
 
 #### Reference Preview
@@ -70,7 +70,7 @@ _assets_loading("default") --后缀可省略
 > Resource files are placed in war3MapPreview
 
 ```lua
-_assets_preview("default") --后缀可省略
+_assets_preview("default") --Suffix name can be omitted
 ```
 
 #### Reference Model
@@ -88,15 +88,15 @@ _assets_preview("default") --后缀可省略
 > * 【destructable】Destructible objects can only use destructible models
 
 ```lua
--- 绵羊（这个是unit形态，由于是原生路径，所以冒号别忘了）
--- 单位形态可以配置options，使模型参数更具体
--- options内可以配置Art（类似slk）这个图标也会自动引用Icon
+-- Sheep(This is the unit form. Since it is a native path, don't forget the colon.)
+-- Options can be configured for the unit type to make the model parameters more specific
+-- Art (similar to slk) can be configured in options. This icon will also automatically reference Icon
 _assets_model(":units\\critters\\Sheep\\Sheep", "Sheep", "unit", {
     Art = ":ReplaceableTextures\\CommandButtons\\BTNSheep.blp",
     unitSound = "Sheep", scale = 1.20,
 })
 
--- 牢笼
+-- Cage
 _assets_model(":Doodads\\LordaeronSummer\\Props\\Cage\\Cage", "Cage", "destructable")
 ```
 
@@ -113,14 +113,14 @@ _assets_model(":Doodads\\LordaeronSummer\\Props\\Cage\\Cage", "Cage", "destructa
 > There are two files in the directory hero.mdx and hero_Portrait.mdx
 
 ```lua
--- war3mapModel 目录下的直接相对路径就可以了
+-- war3mapModel The direct relative path under the directory is OK
 _assets_model("buff/ApaceGrowth")
 _assets_model("slash/Red_swing")
 _assets_model("buff/Echo","echo")
 ```
 
 ```lua
--- scripts中引用
+-- References in scripts
 AModel("buff/ApaceGrowth")
 AModel("slash/Red_swing")
 AModel("echo")

@@ -9,12 +9,12 @@
 > Game().name(modify:string)
 
 ```lua
--- 获取游戏地图名字
--- 默认会从地图结构获取
+-- Get the name of the game map
+-- Get from map structure by default
 Game().name() -- return string
 
--- 自定义游戏地图名字
-Game().name("剑圣求生之路") -- return this
+-- Custom game map name
+Game().name("MapName") -- return this
 
 ```
 
@@ -25,15 +25,15 @@ Game().name("剑圣求生之路") -- return this
 > Game().warehouseSlot(max:number)
 
 ```lua
--- 设置玩家的仓库容量为18
+-- Set the player's warehouse capacity to 18
 Game().warehouseSlot(18)
--- 设置玩家的仓库容量减少1
+-- Set the player's warehouse capacity to decrease by 1
 Game().warehouseSlot("-=1")
--- 设置玩家的仓库容量增加4
+-- Set the player's warehouse capacity to increase by 4
 Game().warehouseSlot("+=4")
--- 设置玩家的仓库容量为3倍
+-- Set the player's warehouse capacity to 3 times
 Game().warehouseSlot("*=3")
--- 设置玩家的仓库容量为当前一半
+-- Set the player's warehouse capacity to half of the current one
 Game().warehouseSlot("/=2")
 ```
 
@@ -44,9 +44,9 @@ Game().warehouseSlot("/=2")
 > Take the abilitytpl skill template as an example
 
 ```lua
-AbilityTpl("一个被动", ABILITY_TARGET_TYPE.PAS)
+AbilityTpl("A passive skill", ABILITY_TARGET_TYPE.PAS)
     .icon("AB2")
-    .description({ "效果: +{50+this.level()*100}攻击" })
+    .description({ "Effect: +{50+this.level()*100}Attack" })
     .levelMax(5)
     .levelUpNeedPoint(101)
 ```

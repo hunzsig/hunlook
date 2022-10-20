@@ -4,23 +4,23 @@ Create a "difficulty selection" dialog box with text as a value, and automatical
 
 ```lua
 Dialog(
-    "选择难度",
-    { "一般困难", "非常困难", "极其困难", "破天荒难" },
+    "Selection mode",
+    { "A", "B", "C", "D" },
     function(evtData)
     
-        -- 对话框不再使用则清理
+        -- Clean up when the dialog box is no longer used
         evtData.triggerDialog.destroy()
         
-        if (evtData.value == "非常困难") then
-            --搞点事情
-        elseif (evtData.value == "极其困难") then
-            --搞点事情
-        elseif (evtData.value == "破天荒难") then
-            --搞点事情
+        if (evtData.value == "B") then
+            --something
+        elseif (evtData.value == "C") then
+            --something
+        elseif (evtData.value == "D") then
+            --something
         else
-            --搞点事情
+            --something
         end
-        echo("选择了：" .. evtData.value)
+        echo("choose: " .. evtData.value)
     end
 ).show()
 ```
@@ -29,36 +29,36 @@ Create a "difficulty selection" dialog box with hotkeys, text and values, and gi
 
 ```lua
 Dialog(
-    "选择难度",
+    "Selection mode",
     {
-        { hotkey = "Q", label = "一般困难", value = 1 },
-        { hotkey = "W", label = "非常困难", value = 2 },
-        { hotkey = "E", label = "极其困难", value = 3 },
-        { hotkey = "R", label = "破天荒难", value = 4 },
+        { hotkey = "Q", label = "A", value = 1 },
+        { hotkey = "W", label = "B", value = 2 },
+        { hotkey = "E", label = "C", value = 3 },
+        { hotkey = "R", label = "D", value = 4 },
     },
     function(evtData)
     
-        -- 对话框不再使用则清理
+        -- Clean up when the dialog box is no longer used
         evtData.triggerDialog.destroy()
         
         if (evtData.hotkey == "Q") then
-            --搞点事情
+            --something
         elseif (evtData.hotkey == "W") then
-            --搞点事情
+            --something
         elseif (evtData.hotkey == "E") then
-            --搞点事情
+            --something
         else
-            --搞点事情
+            --something
         end
-        echo("选择了：" .. evtData.label .. "等级：" .. evtData.value)
+        echo("choose: " .. evtData.label .. "lv：" .. evtData.value)
     end
 ).show(Player(1))
 ```
 
 Predefined dialog box, and then the same object can be retrieved according to the title
 
-> 如上面的对话框，没有destroy前都可以重新取回数据
+> For example, in the above dialog box, data can be retrieved without destroy
 
 ```lua
-Dialog("选择难度")
+Dialog("Selection mode")
 ```
