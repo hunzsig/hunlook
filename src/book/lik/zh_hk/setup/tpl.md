@@ -1,14 +1,14 @@
 ## TPL 模版
 
-> 不再依赖物编的本框架，衍生出了新的代替品：TPL
+> 不再依賴物編的本框架，衍生出了新的代替品：TPL
 >
-> TPL 是 template 的简称，意为模板、标准
+> TPL 是 template 的簡稱，意為模板、標準
 >
-> Ability、Item、Unit三大件都基于Tpl来构建
+> Ability、Item、Unit三大件都基於Tpl來構建
 
-##### 由于写法太多，这里只随便写几种，仅供简单参考
+##### 由於寫法太多，這裏只隨便寫幾種，僅供簡單參考
 
-> TPL 就像是代码物编一样，但可以在运行时修改热更新，配合流程测试会很爽
+> TPL 就像是代碼物編一樣，但可以在運行時修改熱更新，配合流程測試會很爽
 
 ### AbilityTpl
 
@@ -24,13 +24,13 @@ TPL_ABILITY = {
         :mpCostAdv(100, 0)
         :onEvent(EVENT.Ability.Effective,
         function(effectiveData)
-            echo("技能释放", effectiveData.triggerUnit:owner())
+            echo("技能釋放", effectiveData.triggerUnit:owner())
         end),
 
     ---@param hurtData noteOnUnitHurtData
     ---@param effectiveData noteOnAbilityEffectiveData
     TPL_ABILITY.ZZJY = AbilityTpl()
-        :name("自在极意被动")
+        :name("自在極意被動")
         :targetType(ABILITY_TARGET_TYPE.pas)
         :icon("ChaosBody")
         :coolDownAdv(5, 0)
@@ -43,10 +43,10 @@ TPL_ABILITY = {
         end)
         :onEvent(EVENT.Ability.Effective,
         function(effectiveData)
-            -- 技能被触发的效果
+            -- 技能被觸發的效果
             local tu = effectiveData.triggerUnit
             tu:attach("DivineShieldTarget", "origin", 3)
-              :buff("自在极意被动")
+              :buff("自在極意被動")
               :duration(3)
               :purpose(function(buffObj)
                 buffObj:hurtReduction("+=100"):hurtRebound("+=100"):odds("hurtRebound", "+=100")
@@ -58,11 +58,11 @@ TPL_ABILITY = {
         end)
 }
 
--- 后续代码创建技能对象
--- 单位既可以pushAbility也可以pushAbilityTpl，智能加技能
+-- 後續代碼創建技能對象
+-- 單位既可以pushAbility也可以pushAbilityTpl，智能加技能
 
--- myUnit是一个Unit对象，这里只是演示，请自行理解
--- myUnitSlot是一个AbilitySlot对象，代表该单位的技能栏
+-- myUnit是一個Unit對象，這裏只是演示，請自行理解
+-- myUnitSlot是一個AbilitySlot對象，代表該單位的技能欄
 
 local myUnitSlot = myUnit:abilitySlot()
 myUnitSlot:push(Ability(TPL_ABILITY.AB1))
@@ -77,43 +77,43 @@ TPL_ITEM = {
 
     ---@param getData noteOnItemGetData
     DEMO = ItemTpl()
-        :modelAlias("TreasureChest") -- 宝箱模型
+        :modelAlias("TreasureChest") -- 寶箱模型
         :name("物品例子")
         :ability(TPL_ABILITY.DEMO)
         :icon("black")
         :worth({ gold = 10 })
         :onEvent(EVENT.Item.Get,
         function(getData)
-            echo("获得物品", getData.triggerUnit:owner())
+            echo("獲得物品", getData.triggerUnit:owner())
         end)
 
 }
 
--- 运行时代码创建
--- 直接实例
+-- 運行時代碼創建
+-- 直接實例
 local it1 = TPL_ITEM.IT1:create(0, 0)
 local it2 = TPL_ITEM.IT2:create(0, 0)
 
--- 可以看到前面直接create到0,0坐标了
--- 实际上Item对象是有两种状态的，实例化状态和虚拟化状态，简单理解就是物品需要在大地图的时候才会是实体
+-- 可以看到前面直接create到0,0座標了
+-- 實際上Item對象是有兩種狀態的，實例化狀態和虛擬化狀態，簡單理解就是物品需要在大地圖的時候才會是實體
 
-local it1 = Item(TPL_ITEM.IT1) -- 此时Item对象由Tpl建立，但是虚拟的
-it1:position(0, 0) -- 我将其移动到0,0后，触发了大地图所以自动转为实体
+local it1 = Item(TPL_ITEM.IT1) -- 此時Item對象由Tpl建立，但是虛擬的
+it1:position(0, 0) -- 我將其移動到0,0後，觸發了大地圖所以自動轉為實體
 
--- 如果一个单位持有物品但是被position，由于转化为了地图实体，所以单位会失去物品
--- 感觉类似瞬间无视距离丢弃物品一样
+-- 如果一個單位持有物品但是被position，由於轉化為了地圖實體，所以單位會失去物品
+-- 感覺類似瞬間無視距離丟棄物品一樣
 ```
 
 ### UnitTpl
 
 ```lua
 TPL_UNIT = {
-    Footman = UnitTpl("Footman") -- 此处的Footman指引用语音，默认无
+    Footman = UnitTpl("Footman") -- 此處的Footman指引用語音，默認無
         :name("步兵")
-        :barStateMode(2) -- 血条样式设定
+        :barStateMode(2) -- 血條樣式設定
         :barStateAlways(true)
         :barStateMarker(500)
-        :iconMap(AUIKit("looplorer_minimap", "dot/me", "tga"), 0.03, 0.03) -- 小地图图标样式
+        :iconMap(AUIKit("looplorer_minimap", "dot/me", "tga"), 0.03, 0.03) -- 小地圖圖標樣式
         :modelAlias("TheCaptain") -- 使用的模型
         :icon("unit/TheCaptain")
         :scale(1.2)
@@ -133,7 +133,7 @@ TPL_UNIT = {
         :attackRange(100)
 }
 
--- 运行时代码创建
+-- 運行時代碼創建
 local u1 = Unit(TPL_UNIT.Footman, Player(1), 0, 0, 270)
 u1:reborn(0.5)
 ```

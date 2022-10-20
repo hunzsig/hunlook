@@ -1,4 +1,4 @@
-### 聊天命令注册
+### 聊天命令註冊
 
 ```lua
 -- 命令
@@ -6,16 +6,16 @@
 Game():command("^-gg$", function()
     evtData.triggerPlayer.quit("GG")
 end)
---- -apm 查看玩家分钟操作数
+--- -apm 檢視玩家分鐘運算元
 Game():command("^-apm$", function(evtData)
-    echo("您的apm为:" .. evtData.triggerPlayer.apm(), evtData.triggerPlayer)
+    echo("您的apm為:" .. evtData.triggerPlayer.apm(), evtData.triggerPlayer)
 end)
---- -d [+|-|=][NUMBER]减少/增加/设置视距
+--- -d [+|-|=][NUMBER]減少/增加/設定視距
 Game():command("^-d [-+=]%d+$", function(evtData)
     local cds = string.explode(" ", string.lower(evtData.chatString))
     local first = string.sub(cds[2], 1, 1)
     if (first == "+" or first == "-" or first == "=") then
-        --视距
+        --視距
         local v = string.sub(cds[2], 2, string.len(cds[2]))
         v = math.abs(tonumber(v))
         if (v > 0) then
@@ -28,7 +28,7 @@ Game():command("^-d [-+=]%d+$", function(evtData)
                 elseif (first == "=") then
                     Camera().distance(val)
                 end
-                echo("视距已设置为：" .. Camera().distance(), evtData.triggerPlayer)
+                echo("視距已設定為：" .. Camera().distance(), evtData.triggerPlayer)
             end)
         end
     end

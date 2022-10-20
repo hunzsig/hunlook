@@ -1,9 +1,9 @@
-### 预设附魔
+### 預設附魔
 
-> 用于定义附魔种类、反应的设置
+> 用於定義附魔種類、反應的設置
 
 ```lua
---- 方便伤害类型引用
+--- 方便傷害類型引用
 ---@alias noteDamageTypeData {value:string,label:string}
 
 ---@type noteDamageTypeData
@@ -29,7 +29,7 @@ DAMAGE_TYPE.poison = nil
 ---@type noteDamageTypeData
 DAMAGE_TYPE.steel = nil
 
--- 附魔设定
+-- 附魔設定
 Enchant("fire")
     :name("火")
     :strengthen(0)
@@ -40,14 +40,14 @@ Enchant("fire")
     :attachEffect("head", "BreathOfFireDamage")
     :reaction("grass", function(evtData) evtData.triggerUnit:hpRegen("-=200;5") end)
 
-Enchant("rock"):name("岩")
+Enchant("rock"):name("巖")
 Enchant("water"):name("水")
 Enchant("ice"):name("冰")
-Enchant("wind"):name("风")
+Enchant("wind"):name("風")
 Enchant("light"):name("光")
 Enchant("dark"):name("暗")
 Enchant("grass"):name("草")
 Enchant("thunder"):name("雷")
 Enchant("poison"):name("毒")
-Enchant("steel"):name("钢")
+Enchant("steel"):name("鋼")
 ```

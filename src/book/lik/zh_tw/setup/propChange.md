@@ -1,20 +1,20 @@
-### 参数监听
+### 引數監聽
 
-> 可以预设任意参数在变动时的触发机制
+> 可以預設任意引數在變動時的觸發機制
 
-#### 任意监听范围
+#### 任意監聽範圍
 
 ```lua
--- 任意同步监听范围
+-- 任意同步監聽範圍
 event._prop_std = "any"
 
--- 任意异步监听范围
+-- 任意非同步監聽範圍
 event._prop_dyn = "any"
 ```
 
-#### 只限定异步监听3个key的变动
+#### 只限定非同步監聽3個key的變動
 
-> 当设为true时才有效，可作为临时改动
+> 當設為true時才有效，可作為臨時改動
 
 ```lua
 event._prop_dyn = {
@@ -24,16 +24,16 @@ event._prop_dyn = {
 }
 ```
 
-#### 监听事件的使用
+#### 監聽事件的使用
 
-> number数据没有变化时，不会触发此事件
+> number資料沒有變化時，不會觸發此事件
 
 ```lua
 ---@param evtData noteOnPropPlayer
 event.reaction(EVENT.Prop.Change, "myChange", function(evtData)
     if (isClass(evtData.triggerObject, UnitClass)) then
         if (evtData.key == "attack") then
-            print("攻击改变了")
+            print("攻擊改變了")
         end
     end
 end)

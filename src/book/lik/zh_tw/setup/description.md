@@ -1,8 +1,8 @@
-### 技能信息
+### 技能資訊
 
 ```lua
--- 定义技能描述体
--- [基础信息]
+-- 定義技能描述體
+-- [基礎資訊]
 ---@param this Ability
 ---@param options {level:number}
 Game():defineDescription("abilityBase", function(this, options)
@@ -11,77 +11,77 @@ Game():defineDescription("abilityBase", function(this, options)
     local tt = this.targetType()
     if (isClass(this, AbilityClass)) then
         if (tt ~= ABILITY_TARGET_TYPE.pas) then
-            table.insert(desc, this.name() .. " - 等级 " .. colour.hex(colour.gold, lv) .. "（" .. colour.hex(colour.gold, this.hotkey()) .. "）")
+            table.insert(desc, this.name() .. " - 等級 " .. colour.hex(colour.gold, lv) .. "（" .. colour.hex(colour.gold, this.hotkey()) .. "）")
         else
-            table.insert(desc, this.name() .. " - 等级 " .. colour.hex(colour.gold, lv))
+            table.insert(desc, this.name() .. " - 等級 " .. colour.hex(colour.gold, lv))
         end
     else
         table.insert(desc, this.name())
     end
-    table.insert(desc, "类型：" .. colour.hex(colour.gold, tt.label))
+    table.insert(desc, "型別：" .. colour.hex(colour.gold, tt.label))
     if (tt ~= ABILITY_TARGET_TYPE.pas) then
         local chantCast = this.castChant(lv)
         if (chantCast > 0) then
-            table.insert(desc, "吟唱时间：" .. colour.hex(colour.skyLight, chantCast .. " 秒"))
+            table.insert(desc, "吟唱時間：" .. colour.hex(colour.skyLight, chantCast .. " 秒"))
         else
-            table.insert(desc, "吟唱时间：" .. colour.hex(colour.skyLight, "瞬间施法"))
+            table.insert(desc, "吟唱時間：" .. colour.hex(colour.skyLight, "瞬間施法"))
         end
         local keepCast = this.castKeep(lv)
         if (keepCast > 0) then
-            table.insert(desc, "最大施法持续：" .. colour.hex(colour.skyLight, keepCast .. " 秒"))
+            table.insert(desc, "最大施法持續：" .. colour.hex(colour.skyLight, keepCast .. " 秒"))
         end
     end
     return desc
 end)
 
--- [技能点信息]
+-- [技能點資訊]
 ---@param this Ability
 Game():defineDescription("abilityLvPoint", function(this, _)
     if (this.levelUpNeedPoint() > 0) then
-        return { colour.hex("EFBA16", "升级需要技能点: " .. this.levelUpNeedPoint()) }
+        return { colour.hex("EFBA16", "升級需要技能點: " .. this.levelUpNeedPoint()) }
     end
 end)
 ```
 
-### 物品信息
+### 物品資訊
 
 ```lua
--- 定义物品技能描述体
--- [基础信息]
+-- 定義物品技能描述體
+-- [基礎資訊]
 ---@param this Ability
 Game():defineDescription("itemAbility", function(this, options)
     local str = { '', this.name() .. ": " }
     local lv = math.floor(this.level())
     local tt = this.targetType()
     local indent = "    "
-    table.insert(str, indent .. "类型：%s")
+    table.insert(str, indent .. "型別：%s")
     table.insert(options, { "ffcc00", tt.label })
     if (tt ~= ABILITY_TARGET_TYPE.pas) then
         local chantCast = this.castChant(lv)
         if (chantCast > 0) then
-            table.insert(str, indent .. "吟唱时间：%s 秒")
+            table.insert(str, indent .. "吟唱時間：%s 秒")
             table.insert(options, { "ccffff", chantCast })
         else
-            table.insert(str, indent .. "吟唱时间：%s")
-            table.insert(options, { "ccffff", "瞬间施法" })
+            table.insert(str, indent .. "吟唱時間：%s")
+            table.insert(options, { "ccffff", "瞬間施法" })
         end
         local keepCast = this.castKeep(lv)
         if (keepCast > 0) then
-            table.insert(str, indent .. "最大施法持续：%s 秒")
+            table.insert(str, indent .. "最大施法持續：%s 秒")
             table.insert(options, { "ccffff", keepCast })
         end
     end
     return colour.format(string.implode("|n", str), "ee82ee", options)
 end)
 
--- 定义物品描述体
--- [基础信息]
+-- 定義物品描述體
+-- [基礎資訊]
 ---@param this Item
 Game():defineDescription("itemBase", function(this, _)
     local desc = {}
     local name
     if (this:level() > 0) then
-        name = this:name() .. "[" .. colour.hex(colour.white, this:level()) .. " 级]"
+        name = this:name() .. "[" .. colour.hex(colour.white, this:level()) .. " 級]"
     else
         name = this:name()
     end
@@ -97,26 +97,26 @@ Game():defineDescription("itemBase", function(this, _)
         end
         desc = table.merge(desc, Game():combineDescription(this:ability(), nil, "itemAbility", SYMBOL_D, "attributes"))
         if (this:charges() > 0) then
-            table.insert(desc, colour.hex(colour.white, "|n剩余次数：" .. this:charges()))
+            table.insert(desc, colour.hex(colour.white, "|n剩餘次數：" .. this:charges()))
         end
     else
         table.insert(desc, name)
     end
     if (this:level() < this:levelMax()) then
-        table.insert(desc, colour.format("最大可升级到 %s 级", "c0c0c0", { { "ffcc00", this:levelMax() } }))
+        table.insert(desc, colour.format("最大可升級到 %s 級", "c0c0c0", { { "ffcc00", this:levelMax() } }))
     end
     return desc
 end)
 ```
 
-### 属性信息
+### 屬性資訊
 
 ```lua
-attribute.labels("attack", "攻击")
-attribute.labels("defend", "防御")
+attribute.labels("attack", "攻擊")
+attribute.labels("defend", "防禦")
 
--- 定义智能属性描述体
--- [基础信息]
+-- 定義智慧屬性描述體
+-- [基礎資訊]
 ---@param this Ability|Item
 ---@param options {level:number}
 Game():defineDescription("attributes", function(this, options)
@@ -160,16 +160,16 @@ Game():defineDescription("attributes", function(this, options)
 end)
 ```
 
-### 游戏随性信息
+### 遊戲隨性資訊
 
 ```lua
--- 游戏信息
+-- 遊戲資訊
 Game():onEvent(EVENT.Game.Start, function()
 
-    --- 游戏介绍
-    Game():prop("infoIntro", "暂无")
+    --- 遊戲介紹
+    Game():prop("infoIntro", "暫無")
 
-    --- 中央顶部信息
+    --- 中央頂部資訊
     time.setInterval(1, function()
         local info = {}
         local timeOfDay = time.ofDay()

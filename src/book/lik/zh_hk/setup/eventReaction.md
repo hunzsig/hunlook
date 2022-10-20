@@ -1,9 +1,9 @@
-### 事件反应
+### 事件反應
 
-> 用于增添事件发生时的效果补充，可自定义
+> 用於增添事件發生時的效果補充，可自定義
 
 ```lua
--- 事件反应
+-- 事件反應
 ---@param u Unit
 local function _z(u, offset)
     return u:h() + 130 + offset
