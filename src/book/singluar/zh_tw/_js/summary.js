@@ -88,7 +88,7 @@ export default [
       {icon: <ProfileOutlined/>, key: 'description', label: "描述體"},
       {icon: <ForwardOutlined/>, key: 'process', label: "流程"},
       {icon: <SoundOutlined/>, key: 'sound', label: "聲效"},
-      {icon: <ClockCircleOutlined/>, key: 'timer', label: "秒錶"},
+      {icon: <ClockCircleOutlined/>, key: 'timer', label: "計時器"},
       {icon: <DollarCircleOutlined/>, key: 'worth', label: "層級資源"},
       {icon: <MenuUnfoldOutlined/>, key: 'dialog', label: "難度選擇對話框"},
       {icon: <StockOutlined/>, key: 'orderRoute', label: "路線藍圖"},
