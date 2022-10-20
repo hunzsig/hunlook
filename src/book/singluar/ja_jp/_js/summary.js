@@ -70,7 +70,7 @@ export default [
     ]
   },
   {
-    icon: <DingtalkOutlined/>, key: 'setup', label: "設定", children: [
+    icon: <DingtalkOutlined/>, key: 'setup', label: "予定設定", children: [
       {icon: <UnorderedListOutlined/>, key: 'slot', label: "バッグ"},
       {icon: <ProfileOutlined/>, key: 'description', label: "記述体"},
       {icon: <NodeExpandOutlined/>, key: 'damaging', label: "ダメージフロー"},

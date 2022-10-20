@@ -1,18 +1,18 @@
-## 快速开始
+## 始める
 
-###### 需要先取得项目试用资格
+###### まずプロジェクトの試用資格を取得する必要があります
 
-###### 务必阅览技术文档每个章节
+###### 技術文書の各セクションを必ず閲覧してください
 
-### 安装IDE - Ideac
+### インストール IDE - Ideac
 
 > <a target="_blank" href="https://www.jetbrains.com/idea/download/#section=windows">Ideac (Jetbrain)</a>
 
-##### 安装插件 EmmyLua
+##### インストールプラグイン EmmyLua
 
-##### 安装插件 Image Icon Viewer
+##### インストールプラグイン Image Icon Viewer
 
-##### 安装插件 Color Highlighter
+##### インストールプラグイン Color Highlighter
 
 ![Emmylua](https://gitlab.com/h-document/lik/-/raw/main/assets/emmylua.png)
 
@@ -20,24 +20,24 @@
 
 ![ColorHighlighter](https://gitlab.com/h-document/lik/-/raw/main/assets/colorHighlighter.png)
 
-### 打开终端并进入框架根
+### Terminalを開いてフレームルートに入る
 
 ```
 > cd ./lik
 ```
 
-### 创建新项目
+### 新規プロジェクトの作成
 
 ```
 > lik.exe new demo
 ```
 
-### 测试
+### テスト
 
 ```
 > lik.exe run demo -h
 ```
 
-> 使用win11时，特别是较新版本时，有时会遇到弹窗错误（但其实可以继续玩）
+> win 11を使用する場合、特に新しいバージョンの場合、ポップアップエラーに遭遇することがあります（ただし、実際にはプレイを続けることができます）
 >
-> 此时你可以选择不理弹窗继续玩，或者将终端或IDE（使用IDE终端时）以管理员启动即可解决问题
+> ここでは、ポップアップを無視して遊び続けるか、管理者が起動するようにTerminalやIDE（IDE-Terminalを使用する場合）を選択して問題を解決することができます
