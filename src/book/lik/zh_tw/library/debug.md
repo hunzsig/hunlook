@@ -1,10 +1,10 @@
-### 调试打印
+### 除錯列印
 
-> **所有的**调试，-r打包后，自动失效，可安心使用
+> **所有的**除錯，-r打包後，自動失效，可安心使用
 >
-> 每个调试时会引起**I/O阻塞**，大量使用时会造成卡顿
+> 每個除錯時會引起**I/O阻塞**，大量使用時會造成卡頓
 
-### 简单调试
+### 簡單除錯
 
 ```lua
 print(123)
@@ -14,7 +14,7 @@ print(123, "abc")
 print("你好，世界！")
 ```
 
-### 详尽调试
+### 詳盡除錯
 
 ```lua
 dump({
@@ -29,29 +29,29 @@ dump({
 
 ![Print](https://gitlab.com/h-document/lik/-/raw/main/assets/print.png)
 
-### 跟踪调试
+### 跟蹤除錯
 
 ```lua
 stack()
 ```
 
-### 强制调试
+### 強制除錯
 
-> must 可判断布尔式，当不成立时程序将直接中止抛出错误及跟踪
+> must 可判斷布林式，當不成立時程式將直接中止丟擲錯誤及跟蹤
 
 ```lua
-must(isClass(whichUnit, UnitClass)) -- 判断单位是否<Unit>类
-must(instanceof(whichButton, FrameClass)) -- 判断按钮是否<Frame>子类
+must(isClass(whichUnit, UnitClass)) -- 判斷單位是否<Unit>類
+must(instanceof(whichButton, FrameClass)) -- 判斷按鈕是否<Frame>子類
 ```
 
-### 文件日志
+### 檔案日誌
 
-> logger 自动按分钟分段，将数据保存在调试魔兽目录下
+> logger 自動按分鐘分段，將資料儲存在除錯魔獸目錄下
 
 ```lua
 logger("message")
 ```
 
-### 上线须知
+### 上線須知
 
-> 使用测试版本上线依然会启用调试，请打包上线版本再上传平台 [参考](https://lik.hunzsig.org/?p=other&n=dz)
+> 使用測試版本上線依然會啟用除錯，請打包上線版本再上傳平臺 [參考](https://lik.hunzsig.org/?p=other&n=dz)

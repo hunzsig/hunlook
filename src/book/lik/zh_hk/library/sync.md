@@ -1,8 +1,8 @@
 ## sync 同步
 
-> 网易给我们提供的与同步数据有关的函数有4条：
+> 網易給我們提供的與同步數據有關的函數有4條：
 >
-> japi已附带
+> japi已附帶
 
 ```
 DzSyncData
@@ -11,22 +11,22 @@ DzGetTriggerSyncPlayer
 DzGetTriggerSyncData
 ```
 
-> 原理和服务器请求响应一样，简单易懂
+> 原理和服務器請求響應一樣，簡單易懂
 >
-> 一个发，一个收（注意过程时间0.1~0.15s）
+> 一個發，一個收（注意過程時間0.1~0.15s）
 
-#### 直接使用Game对象的同步
+#### 直接使用Game對象的同步
 
-> 并不建议直接调用japi
+> 並不建議直接調用japi
 >
-> 使用两组配套，经由框架协助你优化调度同步过程
+> 使用兩組配套，經由框架協助你優化調度同步過程
 
 ```lua
--- 发
-sync.send("hzg", { "hunzsig", "是个开源框架作者" })
+-- 發
+sync.send("hzg", { "hunzsig", "是個開源框架作者" })
 
 -- 收
 sync.receive("hzg", function(syncData)
-    echo(syncData.transferData[1] .. "确实" .. syncData.transferData[2])
+    echo(syncData.transferData[1] .. "確實" .. syncData.transferData[2])
 end)
 ```

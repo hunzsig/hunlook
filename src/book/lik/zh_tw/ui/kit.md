@@ -1,44 +1,44 @@
 ### UI套件
 
-### UI套件(Kit)结构
+### UI套件(Kit)結構
 
 ```
-└── my_kit - 套件名称
-    ├── assets -（*|·）放资源
-    │   ├── my.tga - 一个我的图
-    │   ├── btn - 支持多级目录
-    │   │   └── bag.tga - 一个背包图标
-    │   └── brun.mdx - 支持模型等
-    ├── main.fdf -（·）支持额外fdf，但不推荐（必须叫main名字）
-    └── main.lua -（*）套件脚本代码（必须叫main名字）
+└── my_kit - 套件名稱
+    ├── assets -（*|·）放資源
+    │   ├── my.tga - 一個我的圖
+    │   ├── btn - 支援多級目錄
+    │   │   └── bag.tga - 一個揹包圖示
+    │   └── brun.mdx - 支援模型等
+    ├── main.fdf -（·）支援額外fdf，但不推薦（必須叫main名字）
+    └── main.lua -（*）套件指令碼程式碼（必須叫main名字）
 ```
 
-### 一个简单的套件
+### 一個簡單的套件
 
 ```
 local kit = 'lik_my'
 local this = UIKit(kit)
---- 套件初始化资源
+--- 套件初始化資源
 this:onSetup(function()
     local stage = this:stage()
 end)
---- 套件刷新设定（可没有）
+--- 套件重新整理設定（可沒有）
 this:onRefresh(1, function()
-    -- 每秒干点啥
+    -- 每秒乾點啥
 end)
 ```
 
-### 为套件拓展功能
+### 為套件拓展功能
 
 ```
 local kit = 'lik_my'
---- 为套件注解一下，emmyLua插件自动索引
+--- 為套件註解一下，emmyLua外掛自動索引
 ---@class MyUI1
 local this = UIKit(kit)
 function this:update()
     --- your codes
 end
 
---- 别处调用套件的拓展功能
+--- 別處呼叫套件的拓展功能
 UIKit('lik_my'):update()
 ```

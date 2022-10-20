@@ -1,55 +1,55 @@
-## worth 层级资源
+## worth 層級資源
 
-### 玩家财物资源单位转化规则的设定
+### 玩家財物資源單位轉化規則的設定
 
-> 游戏财物规则设定
+> 遊戲財物規則設定
 >
-> 一般写于setup
+> 一般寫於setup
 
 ```lua
--- 财物设定
-Game():worth("lumber", "木头", { "gold", 1000000 }) -- 1木 = 1000000金
-Game():worth("gold", "黄金", { "silver", 100 }) -- 1金 = 100银
-Game():worth("silver", "白银", { "copper", 100 }) -- 1银 = 100铜
-Game():worth("copper", "青铜") -- 无下级
-Game():worth("other", "其他") -- 无下级
+-- 財物設定
+Game():worth("lumber", "木頭", { "gold", 1000000 }) -- 1木 = 1000000金
+Game():worth("gold", "黃金", { "silver", 100 }) -- 1金 = 100銀
+Game():worth("silver", "白銀", { "copper", 100 }) -- 1銀 = 100銅
+Game():worth("copper", "青銅") -- 無下級
+Game():worth("other", "其他") -- 無下級
 ```
 
-### 使用玩家方法设定资源
+### 使用玩家方法設定資源
 
 ```lua
 Player(1):worth("=", { gold = 1, silver = 101, copper = 111 })
 Player(1):worth("-", { silver = 110 })
 ```
 
-### 资源其他方法测试
+### 資源其他方法測試
 
 ```lua
 
-print("上->下转换")
+print("上->下轉換")
 dump(Game():worthU2L({ silver = 44, gold = 1 }))
 dump(Game():worthU2L({ gold = 1, silver = 2, copper = 3 }))
 dump(Game():worthU2L({ gold = 2, copper = 1234 }))
 
-print("下->上转换")
+print("下->上轉換")
 dump(Game():worthL2U({ copper = 16400 }))
 dump(Game():worthL2U({ copper = 11203 }))
 dump(Game():worthL2U({ copper = 21374 }))
 
-print("数学运算")
+print("數學運算")
 dump(Game():worthCale({ gold = 100 }, "*", 0.5))
 dump(Game():worthCale({ gold = 100 }, "/", 2))
 dump(Game():worthCale(3, "*", { gold = 100 }))
 dump(Game():worthCale({ gold = 100 }, "+", { gold = 100 }))
 dump(Game():worthCale({ gold = 100 }, "-", { gold = 100 }))
 
-print("对比测试")
+print("對比測試")
 print('Compare1 ', Game():worthCompare({ silver = 1, gold = 1 }, { silver = 98, copper = 22 }))
 print('Compare2 ', Game():worthCompare({ silver = 10, copper = 1000 }, { copper = 2000 }))
 print('Compare3 ', Game():worthCompare({ gold = 2 }, { copper = 1001, silver = 190 }))
 print('Compare4 ', Game():worthCompare({ gold = 2 }, { other = 5 }))
 
-print("子判断")
+print("子判斷")
 print('Equal1 ', Game():worthEqual({ silver = 1, gold = 1 }, { silver = 1, gold = 1 }))
 print('Equal2 ', Game():worthEqual({ silver = 1, gold = 1 }, { copper = 66 }))
 print('Equal3 ', Game():worthEqual({ silver = 1, gold = 1 }, { silver = 1, gold = 1, other = 3 }))

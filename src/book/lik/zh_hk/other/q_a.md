@@ -1,8 +1,8 @@
 ## Q & A
 
-懂得问问题才能让你变得更强！
+懂得問問題才能讓你變得更強！
 
-下列问问题方法相信可以帮助你~
+下列問問題方法相信可以幫助你~
 
 ![question](https://gitlab.com/h-document/lik/-/raw/main/assets/question1.png)
 

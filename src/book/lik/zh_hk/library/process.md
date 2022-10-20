@@ -1,91 +1,91 @@
 ## Process 流程管理
 
-> 在全局热更新 hotLoader 的扶持下，Process的效能变得突破天际的强
+> 在全局熱更新 hotLoader 的扶持下，Process的效能變得突破天際的強
 >
-> 你可以使用 Process 编写某一段的游戏流程，随时回滚测试，跳跃测试
+> 你可以使用 Process 編寫某一段的遊戲流程，隨時回滾測試，跳躍測試
 
-### 先在项目里面新建一个流程目录，专门用来写流程，如 process
+### 先在項目裏面新建一個流程目錄，專門用來寫流程，如 process
 
 ```
-└── project_demo - 项目目录
+└── project_demo - 項目目錄
     └── scripts
-        └── process - 项目流程代码
-            └── start.lua -- 流程以 start 开始
+        └── process - 項目流程代碼
+            └── start.lua -- 流程以 start 開始
 ```
 
-你可以在初始流程里写一些简单的东西，因为一般只作为入口，如
+你可以在初始流程裏寫一些簡單的東西，因為一般只作為入口，如
 
 ```lua
 local process = Process("start")
 process:onStart(function(this)
-    -- 调试自动去除迷雾
+    -- 調試自動去除迷霧
     Game():fog(not DEBUGGING):mark(not DEBUGGING)
 end)
 ```
 
-### 使用 next方法，跳到下一个流程
+### 使用 next方法，跳到下一個流程
 
 ```lua
--- 以名定义流程 start 将会游戏启动时自动运行
+-- 以名定義流程 start 將會遊戲啓動時自動運行
 local process = Process("start")
--- 流程主体
+-- 流程主體
 process:onStart(function(this)
-    -- 调试自动去除迷雾
+    -- 調試自動去除迷霧
     Game():fog(not DEBUGGING):mark(not DEBUGGING)
-    -- 使用next然后就可以跳去下一个流程了，这里跳去test流程了
+    -- 使用next然後就可以跳去下一個流程了，這裏跳去test流程了
     this:next("test")
 end)
 ```
 
-### 然后在建一个test流程
+### 然後在建一個test流程
 
 ```
-└── project_demo - 项目目录
+└── project_demo - 項目目錄
     └── scripts
-        └── process - 项目流程代码
-            ├── start.lua -- 流程以 start 开始
+        └── process - 項目流程代碼
+            ├── start.lua -- 流程以 start 開始
             └── test.lua -- test流程
 ```
 
-这个 test.lua 里面回响一句话
+這個 test.lua 裏面迴響一句話
 
 ```lua
 local process = Process("test")
 process:onStart(function(this)
-    echo("lik魅力无敌")
+    echo("lik魅力無敵")
 end)
 ```
 
-### 流程内的资源管理
+### 流程內的資源管理
 
-> 一般局部变量可以无视，不管理即可
+> 一般局部變量可以無視，不管理即可
 >
-> 但例如有个流程叫bossComing，它创建了一个boss攻击玩家
+> 但例如有個流程叫bossComing，它創建了一個boss攻擊玩家
 >
-> 你可以把它绑定到stage里，然后在结束回调时，令它删除
+> 你可以把它綁定到stage裏，然後在結束回調時，令它刪除
 >
-> 这样这个boss就会在流程跳跃或重置时，自动消灭
+> 這樣這個boss就會在流程跳躍或重置時，自動消滅
 
 ```lua
 local process = Process("bossComing")
 process
     :onStart(function(this)
-        -- 创建一个BOSS
+        -- 創建一個BOSS
         local boss = Unit(TPL_UNIT.BOSS, Player(12), 0, 0, 0)
-        -- 注册进stage
+        -- 註冊進stage
         this:stage("boss", boss)
     end)
     :onOver(function(this)
-        -- 干掉boss
+        -- 幹掉boss
         destroy(this:stage("boss"))
     end)
 ```
 
-### 你也可以注册一些命令，来手动控制流程的跳跃
+### 你也可以註冊一些命令，來手動控制流程的跳躍
 
-> 下面是个例子，如敲入 -proc test，将会重置执行 test
-> 
-> 下面是个例子，如敲入 -proc this，将会重置当前流程
+> 下面是個例子，如敲入 -proc test，將會重置執行 test
+>
+> 下面是個例子，如敲入 -proc this，將會重置當前流程
 
 ```lua
 if (DEBUGGING) then

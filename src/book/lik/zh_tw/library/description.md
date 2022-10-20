@@ -1,29 +1,29 @@
-## Description 描述体
+## Description 描述體
 
-> 框架提供了文本描述体的组合方法
+> 框架提供了文字描述體的組合方法
 >
-> 在Game()对象下
+> 在Game()物件下
 
-#### 先定义你喜欢的描述体
+#### 先定義你喜歡的描述體
 
 > 可返回 string[] 或者 nil
 
 ```lua
--- 这样一个描述配置就定义好了
+-- 這樣一個描述配置就定義好了
 Game():defineDescription("myAbility", function(this, options)
     return {"第一行","第二行"}
 end)
 ```
 
-> 描述体定义回调函数第一个this指你所引用的对象，例如Ability、Item、Unit
+> 描述體定義回撥函式第一個this指你所引用的物件，例如Ability、Item、Unit
 
-#### 看看技能的常用描述体
+#### 看看技能的常用描述體
 
-> 这个描述体引入了一个options，额外数据，会带入到每一个引用，里面有个whichLevel，后面会演示怎么传入
+> 這個描述體引入了一個options，額外資料，會帶入到每一個引用，裡面有個whichLevel，後面會演示怎麼傳入
 
 ```lua
--- 定义技能描述体
--- [基础信息]
+-- 定義技能描述體
+-- [基礎資訊]
 ---@param this Ability
 ---@param options {level:number}
 Game():defineDescription("abilityBase", function(this, options)
@@ -32,24 +32,24 @@ Game():defineDescription("abilityBase", function(this, options)
     local tt = this:targetType()
     if (isClass(this, AbilityClass)) then
         if (tt ~= ABILITY_TARGET_TYPE.pas) then
-            table.insert(desc, this:name() .. " - 等级 " .. colour.hex(colour.gold, lv) .. "（" .. colour.hex(colour.gold, this:hotkey()) .. "）")
+            table.insert(desc, this:name() .. " - 等級 " .. colour.hex(colour.gold, lv) .. "（" .. colour.hex(colour.gold, this:hotkey()) .. "）")
         else
-            table.insert(desc, this:name() .. " - 等级 " .. colour.hex(colour.gold, lv))
+            table.insert(desc, this:name() .. " - 等級 " .. colour.hex(colour.gold, lv))
         end
     else
         table.insert(desc, this:name())
     end
-    table.insert(desc, "类型：" .. colour.hex(colour.gold, tt.label))
+    table.insert(desc, "型別：" .. colour.hex(colour.gold, tt.label))
     if (tt ~= ABILITY_TARGET_TYPE.pas) then
         local chantCast = this:castChant(lv)
         if (chantCast > 0) then
-            table.insert(desc, "吟唱时间：" .. colour.hex(colour.skyLight, chantCast .. " 秒"))
+            table.insert(desc, "吟唱時間：" .. colour.hex(colour.skyLight, chantCast .. " 秒"))
         else
-            table.insert(desc, "吟唱时间：" .. colour.hex(colour.skyLight, "瞬间施法"))
+            table.insert(desc, "吟唱時間：" .. colour.hex(colour.skyLight, "瞬間施法"))
         end
         local keepCast = this:castKeep(lv)
         if (keepCast > 0) then
-            table.insert(desc, "最大施法持续：" .. colour.hex(colour.skyLight, keepCast .. " 秒"))
+            table.insert(desc, "最大施法持續：" .. colour.hex(colour.skyLight, keepCast .. " 秒"))
         end
     end
     table.insert(desc, "")
@@ -57,28 +57,28 @@ Game():defineDescription("abilityBase", function(this, options)
 end)
 ```
 
-#### 描述体定义后当然可以使用它们进行组合，构建你的文本数据
+#### 描述體定義後當然可以使用它們進行組合，構建你的文字資料
 
 ```lua
--- 简单引用
+-- 簡單引用
 local txtArray = Game():combineDescription(whichAbility, nil, "abilityBase")
 
--- 使用options，whichLevel设10
+-- 使用options，whichLevel設10
 local txtArray = Game():combineDescription(whichAbility, {whichLevel = 10}, "abilityBase")
 
--- 前面我们还定义了一个myAbility，也可以使用两组数据，按你引入的顺序合并
+-- 前面我們還定義了一個myAbility，也可以使用兩組資料，按你引入的順序合併
 local txtArray = Game():combineDescription(whichAbility, nil, "abilityBase", "myAbility")
 ```
 
-#### Ability、Item、Unit对象定义了description函数，可以使用特定的简称 &lt;D&gt; 来引入该函数的回调数据
+#### Ability、Item、Unit物件定義了description函式，可以使用特定的簡稱 &lt;D&gt; 來引入該函式的回撥資料
 
 ```lua
--- 对象定义descrption特殊引入
+-- 物件定義descrption特殊引入
 -- 使用 SYMBOL_D
 local txtArray = Game():combineDescription(whichAbility, nil, SYMBOL_D, "abilityBase")
 ```
 
-#### 直接使用字符串数组数据，也可以供给 combineDescription 使用
+#### 直接使用字串陣列資料，也可以供給 combineDescription 使用
 
 ```lua
 -- 直接引入table

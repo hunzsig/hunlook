@@ -1,18 +1,18 @@
-## orderRoute 路线蓝图
+## orderRoute 路線藍圖
 
-> 为单位设定一个路线移动的计划
+> 為單位設定一個路線移動的計劃
 
-* 可以被中途阻扰，但依然会非常坚持的一直遵循后续路线坐标移动下去
-* 可以在每一段停顿点加入一个自定义函数来做出额外的动作（路线会被强行暂停，动作中需要手动恢复）
-* 使用 orderRoute 来执行路线行为
-* 使用 orderRouteSet 来修改路线
-* 使用 orderRoutePause 来暂停路线行为（但会继续走完以出发的路段）
-* 使用 orderRouteResume 来恢复路线行为（在暂停10秒后如还未恢复，路线会自动废除）
-* 使用 orderRouteDestroy 来消除路线行为
+* 可以被中途阻擾，但依然會非常堅持的一直遵循後續路線座標移動下去
+* 可以在每一段停頓點加入一個自定義函數來做出額外的動作（路線會被強行暫停，動作中需要手動恢復）
+* 使用 orderRoute 來執行路線行為
+* 使用 orderRouteSet 來修改路線
+* 使用 orderRoutePause 來暫停路線行為（但會繼續走完以出發的路段）
+* 使用 orderRouteResume 來恢復路線行為（在暫停10秒後如還未恢復，路線會自動廢除）
+* 使用 orderRouteDestroy 來消除路線行為
 
 ### 例子1
 
-> 常规的定义、修改、暂停、恢复
+> 常規的定義、修改、暫停、恢復
 
 ```lua
 local u = Unit(TPL_UNIT.HeroFlameLord, Player(i), 0, 0, 0)
@@ -63,7 +63,7 @@ time.setTimeout(6, function()
     print("第5段")
     u:orderRouteSet(5, { 0, 0 })
     time.setTimeout(10, function()
-        print("删除第5段")
+        print("刪除第5段")
         u:orderRouteSet(5, nil)
     end)
 end)
@@ -71,7 +71,7 @@ end)
 
 ### 例子2
 
-> 常用于多方路线设计
+> 常用於多方路線設計
 
 ```lua
 --- 例子2
