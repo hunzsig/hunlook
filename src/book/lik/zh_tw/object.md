@@ -1,78 +1,78 @@
-## Object 对象
+## Object 物件
 
-#### 所有门面一览
+#### 所有門面一覽
 
 ```lua
 Ability 技能
 AbilityFunc 技能功能
-AbilitySlot 技能栏
+AbilitySlot 技能欄
 AbilityTpl 技能模版
-Array 数组
-AttackMode 攻击模式
-Attribute 属性
-AttributeFunc 属性功能
-Bgm 背景音乐
-Buff 可操状态
-Camera 镜头
-Cursor 指针
-Destructable 可破坏物
-Dialog 对话框
+Array 陣列
+AttackMode 攻擊模式
+Attribute 屬性
+AttributeFunc 屬性功能
+Bgm 背景音樂
+Buff 可操狀態
+Camera 鏡頭
+Cursor 指標
+Destructable 可破壞物
+Dialog 對話方塊
 Effect 特效
-EffectAttach 特效附着型
+EffectAttach 特效附著型
 Enchant 附魔
-Flow 流体
-Frame 界面
-FrameAnimate 界面动画
-FrameBackdrop 界面背景
-FrameBackdropTile 界面背景分型
-FrameBar 界面条
-FrameBarState 界面状态条
-FrameBlock 界面空占
-FrameButton 界面按钮
-FrameCustom 界面自定义
-FrameHighLight 界面高亮
-FrameLabel 界面词条
-FrameList 界面列表
-FrameMap 界面地图
-FrameModel 界面模型
-FrameText 界面文本
-FrameTextarea 界面文本域
-FrameToolTips 界面弹层
-Game 游戏
-Group 组
-Image 图
+Flow 流體
+Frame 介面
+FrameAnimate 介面動畫
+FrameBackdrop 介面背景
+FrameBackdropTile 介面背景分型
+FrameBar 介面條
+FrameBarState 介面狀態條
+FrameBlock 介面空佔
+FrameButton 介面按鈕
+FrameCustom 介面自定義
+FrameHighLight 介面高亮
+FrameLabel 介面詞條
+FrameList 介面列表
+FrameMap 介面地圖
+FrameModel 介面模型
+FrameText 介面文字
+FrameTextarea 介面文字域
+FrameToolTips 介面彈層
+Game 遊戲
+Group 組
+Image 圖
 Item 物品
 ItemFunc 物品功能
-ItemSlot 物品栏
+ItemSlot 物品欄
 ItemTpl 物品模版
-Matrix 矩阵
-Monitor 监听器
+Matrix 矩陣
+Monitor 監聽器
 Player 玩家
 Procoss 流程
-Quest 任务
-Rect 区域
-Server 服务器
-Store 仓贮
-Team 队伍
-Timer 计时器
+Quest 任務
+Rect 區域
+Server 伺服器
+Store 倉貯
+Team 隊伍
+Timer 計時器
 Tpl 模版
 UIKit UI套件
-Unit 单位
-UnitFunc 单位功能
-UnitTpl 单位模版
+Unit 單位
+UnitFunc 單位功能
+UnitTpl 單位模版
 V3d 3D音效
 Vcm 面板音效
-Vector2 二维向量 
-Vector3 三维向量
+Vector2 二維向量 
+Vector3 三維向量
 Vwp 武器音效
-WarehouseSlot 仓库栏
-Weather 天气
+WarehouseSlot 倉庫欄
+Weather 天氣
 ```
 
-#### 对象的毁灭管理
+#### 物件的毀滅管理
 
 ```lua
 local u = Unit(...)
-isDestory(u) -- 判断对象的存活态
-destory(u) -- 毁灭对象
+isDestory(u) -- 判斷物件的存活態
+destory(u) -- 毀滅物件
 ```

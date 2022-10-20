@@ -1,65 +1,65 @@
-## 命令行
+## 命令列
 
-### 新建项目
-
-```
-> lik.exe new demo //新建一个地图项目，名为demo
-```
-
-### 使用WE编辑地形
-
-> 编辑完后在使用test时会自动将改动记录回你的项目中
+### 新建專案
 
 ```
-> lik.exe we demo //以马仔WE打开项目demo，主要用于编辑地形
+> lik.exe new demo //新建一個地圖專案，名為demo
 ```
 
-### 模型批量查看
+### 使用WE編輯地形
 
-命令后续共有3个参数
-
-* 1 类别：分为 -a(查看assets) -n(查看assetsNew) -p(查看某个项目assets的model声明虚幻代码)
-* 2 页数：数目字，从第1页开始
-* 3 过滤：搜索
-
-> 模型默认scale1.00，方便对比
+> 編輯完後在使用test時會自動將改動記錄回你的專案中
 
 ```
-> lik.exe model -a //查看根assets目录下的模型，第1页
-> lik.exe model -a 2 buff //查看根assets目录下的模型，第2页，同时只查看路径带有buff的模型
-> lik.exe model -n //查看根assetsNew目录下的模型，第1页
-> lik.exe model -n 3//查看根assetsNew目录下的模型，第3页
-> lik.exe model -p:demo 1  //查看demo项目的model声明虚幻模型，第1页
-> lik.exe model -p:demo 2 unit //查看demo项目的model声明虚幻模型，第2页，同时只查看路径带有unit的模型
+> lik.exe we demo //以馬仔WE開啟專案demo，主要用於編輯地形
 ```
 
-### 运行测试
+### 模型批次檢視
 
-命令后续共有3个参数
+命令後續共有3個引數
 
-* 1 项目：具体项目名称，如demo
-* 2 模式：(默认 -h)
-    * -t(test 临时) 只建立临时目录并打包ini地图等资源，不会构建测试地图和开启测试
-    * -h(hot 热更新) 开窗口调试。可F10重启获得脚本更新，也可以修改文件实时更新脚本
-    * -b(build 构建打包) 开窗口调试。无热更，加密，没有slk优化。
-    * -d(distributable 构建打包) 开窗口调试。无热更，加密并乱构、自动slk优化。
-    * -r(release 上线发行+slk优化) 没有调试窗口。无热更，加密并乱构、自动slk优化。
+* 1 類別：分為 -a(檢視assets) -n(檢視assetsNew) -p(檢視某個專案assets的model宣告虛幻程式碼)
+* 2 頁數：數目字，從第1頁開始
+* 3 過濾：搜尋
 
-> 一般实际运行的测试图都是放在 Warcraft III Frozen Throne\Maps\Test\WorldEditTestMap.w3x
+> 模型預設scale1.00，方便對比
+
+```
+> lik.exe model -a //檢視根assets目錄下的模型，第1頁
+> lik.exe model -a 2 buff //檢視根assets目錄下的模型，第2頁，同時只檢視路徑帶有buff的模型
+> lik.exe model -n //檢視根assetsNew目錄下的模型，第1頁
+> lik.exe model -n 3//檢視根assetsNew目錄下的模型，第3頁
+> lik.exe model -p:demo 1  //檢視demo專案的model宣告虛幻模型，第1頁
+> lik.exe model -p:demo 2 unit //檢視demo專案的model宣告虛幻模型，第2頁，同時只檢視路徑帶有unit的模型
+```
+
+### 執行測試
+
+命令後續共有3個引數
+
+* 1 專案：具體專案名稱，如demo
+* 2 模式：(預設 -h)
+  * -t(test 臨時) 只建立臨時目錄並打包ini地圖等資源，不會構建測試地圖和開啟測試
+  * -h(hot 熱更新) 開視窗除錯。可F10重啟獲得指令碼更新，也可以修改檔案實時更新指令碼
+  * -b(build 構建打包) 開視窗除錯。無熱更，加密，沒有slk最佳化。
+  * -d(distributable 構建打包) 開視窗除錯。無熱更，加密並亂構、自動slk最佳化。
+  * -r(release 上線發行+slk最佳化) 沒有除錯視窗。無熱更，加密並亂構、自動slk最佳化。
+
+> 一般實際執行的測試圖都是放在 Warcraft III Frozen Throne\Maps\Test\WorldEditTestMap.w3x
 >
-> 具体位置可参考WE里面的配置
+> 具體位置可參考WE裡面的配置
 >
-> 加密乱构可参考 [参考](https://lik.hunzsig.org/?p=other&n=encrypt)
+> 加密亂構可參考 [參考](https://lik.hunzsig.org/?p=other&n=encrypt)
 
 ```
-> lik.exe run demo -t //生成临时文件查看
-> lik.exe run demo -h //热更新模式下并调试demo
-> lik.exe run demo -b //构建脚本加密地图并调试demo
-> lik.exe run demo -d //构建脚本加密且slk优化的地图并调试demo
-> lik.exe run demo -r //构建上线地图并测试
+> lik.exe run demo -t //生成臨時檔案檢視
+> lik.exe run demo -h //熱更新模式下並除錯demo
+> lik.exe run demo -b //構建指令碼加密地圖並除錯demo
+> lik.exe run demo -d //構建指令碼加密且slk最佳化的地圖並除錯demo
+> lik.exe run demo -r //構建上線地圖並測試
 ```
 
-> 在模式后添加~符号，可以跳过资源变更，特别适用于纯代码改动时的测试
+> 在模式後新增~符號，可以跳過資源變更，特別適用於純程式碼改動時的測試
 
 ```
 > lik.exe run demo -h~
@@ -68,23 +68,23 @@
 > lik.exe run demo -r~
 ```
 
-### 同时开启N个魔兽客户端（支持JAPI）
+### 同時開啟N個魔獸客戶端（支援JAPI）
 
-> 默认打开2个，最多一次性打开9个(并不建议，单人4个足矣)
+> 預設開啟2個，最多一次性開啟9個(並不建議，單人4個足矣)
 
 ```
-> lik.exe multi 4 //打开4个
+> lik.exe multi 4 //開啟4個
 ```
 
-### 关闭所有War3客户端
+### 關閉所有War3客戶端
 
-> 此命令需要管理员权限，请留意
+> 此命令需要管理員許可權，請留意
 
 ```
 > lik.exe kill
 ```
 
-### 清理缓存并删除本地服务器数据
+### 清理快取並刪除本地伺服器資料
 
 ```
 > lik.exe clear
