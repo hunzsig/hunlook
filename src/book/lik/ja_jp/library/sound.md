@@ -1,82 +1,82 @@
-## Sound 声效
+## Sound 音響
 
-> 声效分为 4 种：
+> 音響効果は4種類に分けられる：
 >
-> Vwp（武器音）、Vcm（广播音效）、V3d（3D音效）、Bgm（背景音乐）
+> Vwp（武器音）、Vcm（ラジオサウンド）、V 3 d（3 Dサウンド）、Bgm（BGM）
 
-* 不支持原生音频！
-* 只支持mp3
-* 音效(v??)荐：48000HZ 192K 单
-* 音乐(bgm)荐：48000HZ 320K (wav->mp3)
+* ネイティブオーディオはサポートされていません！
+* mp 3のみサポート
+* サウンド（v？？）リファレンス：48000 HZ 192 Kシングル
+* 音楽（bgm）リファレンス：48000 HZ 320 K（wav->mp 3）
 
 ### Vwp（武器音）
 
-> 武器音一般只在Unit武器声音配置
+> 武器音は一般的にユニット武器音のみに配置されている
 >
-> 和 war3mapSound/weapon 套件配套使用（一般不需要手动播放）
+> war3mapSound/weapon キットと組み合わせて使用します（通常は手動再生は必要ありません）
 
 ```lua
--- assets的写法
+-- assetsの書き方
 _assets_sound("metal_bash_heavy", nil, "vwp")
 
--- damagedArrived的播放（展示，不需要管）
+-- damagedArrivedの再生（展示、管理不要）
 Vwp(sourceUnit, targetUnit)
 
--- 一般只需要配置单位属性
+-- 一般的には単位属性のみを構成する必要があります
 Unit():weaponSound("metal_bash_heavy")
 ```
 
-### Vcm（广播音效）
+### Vcm（ラジオサウンド）
 
-> 广播音效是最普通的音效，平常界面听到的按钮点击等都是Vcm
+> ラジオサウンドは最も一般的なサウンドであり、通常のインタフェースで聞こえるボタンクリックなどはVcm
 
 ```lua
--- assets的写法
+-- assetsの書き方
 _assets_sound("voice/clickhero/level_up", "lv", "vcm")
 
--- 播放代码
-Vcm("lv"):play() -- 全部玩家听到
--- 指定玩家用法
+-- 再生コード
+Vcm("lv"):play() -- 全プレイヤーが聞く
+-- プレイヤー使用法の指定
 async.call(Player(1), function()
     Vcm("lv"):play()
 end)
 ```
 
-### V3d（3D音效）
+### V3d（3Dサウンドエフェクト）
 
-> 3D音效就是绑定某个地方的音效，特点是远近的音量会随之改变
+> 3Dサウンドとは、どこかをバインドするサウンドのことで、遠近の音量が変わるのが特徴です
 
 ```lua
--- assets的写法
+-- assetsの書き方
 _assets_sound("voice/clickhero/level_up", "lv", "v3d")
 
--- 播放代码
+-- 再生コード
 local v3d = V3d("lv")
 
-v3d:xyz(0,0,0) -- 绑定点
-v3d:unit(bindUnit) -- 绑定单位
-v3d:rect(bindRect) -- 绑定区域
+v3d:xyz(0,0,0) -- バインドポイント
+v3d:unit(bindUnit) -- バインド単位
+v3d:rect(bindRect) -- バインド領域
 
-v3d:play() -- 全部玩家听到
--- 指定玩家用法
+v3d:play() -- 全プレイヤーが聞く
+-- プレイヤー使用法の指定
 async.call(Player(1), function()
     v3d:play()
 end)
 ```
 
-### Bgm（背景音乐）
+### Bgm（バックミュージック）
 
-> Bgm会与Player对象紧密连系
+> BgmはPlayerオブジェクトと密接に関連しています
 
 ```lua
--- assets的写法
+-- assetsの書き方
 _assets_sound("bgm/Dungeon and Fighter - GBL女神殿 - goddess temple", "gbl", "bgm")
 
--- 全体用法
-Bgm():stop() -- 停止
-Bgm():play("gbl") -- 播放gbl音乐
+-- 全体的な使い方
+Bgm():stop() -- ストップ
+Bgm():play("gbl") -- gbl音楽を再生
 
--- 指定玩家用法
+-- プレイヤー使用法の指定
 async.call(Player(1), function()
     Bgm():play("gbl")
 end)

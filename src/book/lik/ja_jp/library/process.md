@@ -1,95 +1,95 @@
-## Process 流程管理
+## Processプロセス管理
 
-> 在全局热更新 hotLoader 的扶持下，Process的效能变得突破天际的强
+> グローバル熱更新hotLoaderに支えられて、Processの効能は天際を突破するほど強くなった
 >
-> 你可以使用 Process 编写某一段的游戏流程，随时回滚测试，跳跃测试
+> Processを使ってゲームの流れを記述し、いつでもロールバックテスト、ジャンプテストを行うことができます
 
-### 先在项目里面新建一个流程目录，专门用来写流程，如 process
+### まずプロジェクトにプロセスを書くためのプロセスディレクトリを新規作成します。たとえば、process
 
 ```
-└── project_demo - 项目目录
+└── project_demo - プロジェクトディレクトリ
     └── scripts
-        └── process - 项目流程代码
-            └── start.lua -- 流程以 start 开始
+        └── process - プロジェクトプロセスコード
+            └── start.lua -- プロセスはstartで開始
 ```
 
-你可以在初始流程里写一些简单的东西，因为一般只作为入口，如
+初期プロセスで簡単なことを書くことができます。一般的には入り口としてしか使われていないので、
 
 ```lua
 local process = Process("start")
 process:onStart(function(this)
-    -- 调试自动去除迷雾
+    -- 霧の自動除去のデバッグ
     Game():fog(not DEBUGGING):mark(not DEBUGGING)
 end)
 ```
 
-### 使用 next方法，跳到下一个流程
+### nextメソッドを使用して、次のプロセスにジャンプ
 
 ```lua
--- 以名定义流程 start 将会游戏启动时自动运行
+-- 名前でプロセスstartを定義すると、ゲームが起動するときに自動的に実行されます
 local process = Process("start")
--- 流程主体
+-- プロセス本体
 process:onStart(function(this)
-    -- 调试自动去除迷雾
+    -- 霧の自動除去のデバッグ
     Game():fog(not DEBUGGING):mark(not DEBUGGING)
-    -- 使用next然后就可以跳去下一个流程了，这里跳去test流程了
+    -- nextを使用して次のフローにジャンプできます。ここでtestフローにジャンプします
     this:next("test")
 end)
 ```
 
-### 然后在建一个test流程
+### そしてtestプロセスを構築しています
 
 ```
-└── project_demo - 项目目录
+└── project_demo - プロジェクトディレクトリ
     └── scripts
-        └── process - 项目流程代码
-            ├── start.lua -- 流程以 start 开始
-            └── test.lua -- test流程
+        └── process - プロジェクトプロセスコード
+            ├── start.lua -- プロセスはstartで開始
+            └── test.lua -- testフロー
 ```
 
-这个 test.lua 里面回响一句话
+このtest.luaの中に一言響く
 
 ```lua
 local process = Process("test")
 process:onStart(function(this)
-    echo("lik魅力无敌")
+    echo("lik無敵")
 end)
 ```
 
-### 流程内的资源管理
+### プロセス内のリソース管理
 
-> 一般局部变量可以无视，不管理即可
+> 一般的な局所変数は無視でき、管理しなければよい
 >
-> 但例如有个流程叫bossComing，它创建了一个boss攻击玩家
+> しかし、例えばボス攻撃プレイヤーを作成するbossComingというプロセスがあります。
 >
-> 你可以把它绑定到stage里，然后在结束回调时，令它删除
+> stageにバインドしてコールバックを終了すると削除することができます
 >
-> 这样这个boss就会在流程跳跃或重置时，自动消灭
+> これにより、このボスはプロセスがジャンプしたりリセットされたりすると、自動的に消滅します
 
 ```lua
 local process = Process("bossComing")
 process
     :onStart(function(this)
-        -- 创建一个BOSS
+        -- 作成boss
         local boss = Unit(TPL_UNIT.BOSS, Player(12), 0, 0, 0)
-        -- 注册进stage
+        -- 登録stage
         this:stage("boss", boss)
     end)
     :onOver(function(this)
-        -- 干掉boss
+        -- やっつけるboss
         destroy(this:stage("boss"))
     end)
 ```
 
-### 你也可以注册一些命令，来手动控制流程的跳跃
+### プロセスのジャンプを手動で制御するコマンドを登録することもできます
 
-> 下面是个例子，如敲入 -proc test，将会重置执行 test
-> 
-> 下面是个例子，如敲入 -proc this，将会重置当前流程
+> 次に例を示します：-proc testを入力すると、実行testがリセットされます
+>
+> 次の例では：-proc thisを入力すると、現在のプロセスがリセットされます
 
 ```lua
 if (DEBUGGING) then
-    --- 流程掌控
+    --- プロセス管理
     Game():command("^-proc [a-zA-Z0-9_]+$", function(evtData)
         local p = string.trim(evtData.matchedString)
         p = string.sub(p, 7, string.len(p))
@@ -100,7 +100,7 @@ if (DEBUGGING) then
             proc = Processes:get(p)
         end
         if (instanceof(proc, ProcessClass)) then
-            print(p .. "流程已重置")
+            print(p .. "プロセスがリセットされました")
             proc:start()
         end
     end)

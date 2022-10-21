@@ -70,7 +70,7 @@ end)
 local process = Process("bossComing")
 process
     .onStart(function(this)
-        -- 作成BOSS
+        -- 作成boss
         local boss = TPL_UNIT.BOSS.create(Player(12), 0, 0, 0)
         -- 登録stage
         this.stage("boss", boss)
@@ -83,8 +83,9 @@ process
 
 ### プロセスのジャンプを手動で制御するコマンドを登録することもできます
 
->次に例を示します。-proc testを入力すると、実行testがリセットされます
->次の例では、-proc thisを入力すると、現在のプロセスがリセットされます
+> 次に例を示します：-proc testを入力すると、実行testがリセットされます
+>
+> 次の例では：-proc thisを入力すると、現在のプロセスがリセットされます
 
 ```lua
 if (DEBUGGING) then

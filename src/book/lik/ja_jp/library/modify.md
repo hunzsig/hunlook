@@ -1,51 +1,51 @@
-## 框架特定设计
+## フレームワーク固有の設計
 
-### modify特定修改参数
+### modify固有の変更パラメータ
 
-* 当带有该参数时，不存在时方法为获取，存在为修改
+* このパラメータが存在しない場合、メソッドは取得、存在は修正
 
-> 以Game对象的名字为例
+> ゲーム相手の名前を例にとる
 >
 > Game():name(modify:string)
 
 ```lua
--- 获取游戏地图名字
--- 默认会从地图结构获取
+-- ゲームマップ名を取得
+-- デフォルトではマップ構造から取得されます
 Game():name() -- return string
 
--- 自定义游戏地图名字
-Game():name("死亡之轮") -- return this
+-- カスタムゲームマップ名
+Game():name("死の輪") -- return this
 
 ```
 
-* 支持数值型属性的浮动修改
+* 数値属性のフローティング修正をサポートする
 
-> 以Game对象的玩家仓库容量为例
+> ゲーム対象のプレイヤーの倉庫容量を例にとる
 >
 > Game():warehouseSlot(max:number)
 
 ```lua
--- 设置玩家的仓库容量为18
+-- プレイヤーの倉庫容量を18に設定
 Game():warehouseSlot(18)
--- 设置玩家的仓库容量减少1
+-- 設置プレイヤーの倉庫容量を1削減
 Game():warehouseSlot("-=1")
--- 设置玩家的仓库容量增加4
+-- 設置プレイヤーの倉庫容量が増加4
 Game():warehouseSlot("+=4")
--- 设置玩家的仓库容量为3倍
+-- プレイヤーの倉庫容量を3倍に設定
 Game():warehouseSlot("*=3")
--- 设置玩家的仓库容量为当前一半
+-- プレイヤーの倉庫容量を現在の半分に設定
 Game():warehouseSlot("/=2")
 ```
 
-### 连贯操作
+### れんけつそうさ
 
-* 大部分对象的方法，都会返回this，即对象本身，从而可实现连贯操作
+* ほとんどのオブジェクトのメソッドは、オブジェクト自体であるthisを返し、一貫した操作を可能にします
 
-> 以 AbilityTpl 技能模版举例
+> AbilityTpl スキルテンプレートの例
 
 ```lua
 AbilityTpl()
-    :name("瞬间反击")
+    :name("瞬間反撃")
     :levelMax(9)
     :targetType(ABILITY_TARGET_TYPE.pas)
     :icon("ability/HolyArdentDefender")
@@ -57,10 +57,10 @@ AbilityTpl()
         local rer = 8 + 2 * obj:level()
         local dur = 0.4 + 0.1 * obj:level()
         return {
-            "受到伤害时，运用盾牌进行防御并反弹伤害",
-            colour.format("抵御伤害：%s%", nil, { { colour.gold, dmg } }),
-            colour.format("反弹伤害：%s%", nil, { { colour.gold, rer } }),
-            colour.format("持续时间：%s秒", nil, { { colour.sky, dur } }),
+            "ダメージを受けた時、シールドを用いて防御してダメージを跳ね返す",
+            colour.format("傷害を防ぐ：%s%", nil, { { colour.gold, dmg } }),
+            colour.format("リバウンドダメージ：%s%", nil, { { colour.gold, rer } }),
+            colour.format("継続時間：%s秒", nil, { { colour.sky, dur } }),
         }
     end)
     :onUnitEvent(EVENT.Unit.Hurt,
@@ -75,7 +75,7 @@ AbilityTpl()
         local rebound = math.floor(8 + 2 * lv)
         local dur = 0.4 + 0.1 * lv
         tu:attach("buff/IonCentrifugalCircle", "origin", dur)
-          :buff("瞬间反击")
+          :buff("瞬間反撃")
           :duration(dur)
           :purpose(function(buffObj) buffObj:hurtReduction("+=" .. reduce):hurtRebound("+=" .. rebound):odds("hurtRebound", "+=100") end)
           :rollback(function(buffObj) buffObj:hurtReduction("-=" .. reduce):hurtRebound("-=" .. rebound):odds("hurtRebound", "-=100") end)

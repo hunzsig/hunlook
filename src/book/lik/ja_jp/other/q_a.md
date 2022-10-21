@@ -1,8 +1,8 @@
 ## Q & A
 
-懂得问问题才能让你变得更强！
+質問を知ってこそ、あなたをもっと強くすることができます！
 
-下列问问题方法相信可以帮助你~
+以下の質問方法はあなたを助けることができると信じています~
 
 ![question](https://gitlab.com/h-document/lik/-/raw/main/assets/question1.png)
 

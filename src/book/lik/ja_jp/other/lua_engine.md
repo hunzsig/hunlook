@@ -1,30 +1,30 @@
-## ydwe lua引擎使用说明
+## ydwe luaエンジン使用説明
 
-###### 闲着无聊时了解即可
+[ソース github/actboy168/jass2lua](https://github.com/actboy168/jass2lua/edit/master/lua-engine.md)
 
-[来源 github/actboy168/jass2lua](https://github.com/actboy168/jass2lua/edit/master/lua-engine.md)
+> 覚えておいて：バグは有能な人に止まる
 
-### 简介
+### 概要
 
-ydwe lua引擎(以下简称lua引擎)是一个嵌入到《魔兽争霸III》(以下简称魔兽)中的一个插件，它可以让魔兽可以执行lua并且调用魔兽的导出函数(在common.j内定义的函数)
-，就像使用jass那样。本说明假定你已经掌握了jass和lua的相关语法，有关语法的问题不再另行解释。
+ydwe luaエンジン（以下、luaエンジン）は、『魔獣争覇III』（以下、魔獣）に組み込まれたプラグインであり、魔獣がluaを実行し、魔獣の導出関数（common.j内で定義された関数）を呼び出すことができる
+ああ、jassを使うように。この説明では、jassとluaの関連文法を把握していると仮定して、文法に関する問題は別に説明しません。
 
-### 入口
+### エントリ
 
-在jass内调用 `call Cheat("exec-lua: hello")`，这等价于在lua里调用了 `require 'hello'` 。lua引擎已经把地图内的文件加载到搜索路径，所以地图内的hello.lua将会得到执行。
+jass内で` call Cheat("exec-lua:hello")を呼び出します。これはlua内で` require'hello'`を呼び出したのと等価です。luaエンジンは地図内のファイルを検索パスにロードしているので、地図内のhello.luaは実行されます。
 
-### lua引擎对标准lua的修改
+### 標準luaに対するluaエンジンの変更点
 
-为了适合在魔兽内使用lua引擎对lua略有修改。
+魔獣内でのluaエンジンの使用に適したluaの若干の修正。
 
-1. math.randomseed改为使用jass函数SetRandomSeed实现。
-2. math.random改为使用jass函数GetRandomReal实现。
-3. table元素随机化种子依赖于魔兽内部的随机种子。
-4. 屏蔽了部分被认为不安全的函数
+1.math.randomseedをjass関数SetRandomSeedを使用して実装するように変更しました。
+2.math.randomをjass関数GetRandomRealを使用して実装するように変更しました。
+3.table要素ランダム化種子は魔獣内部のランダム種子に依存する。
+4.安全ではないと思われる一部の関数がブロックされている
 
-### 内置库
+### 組み込みライブラリ
 
-lua引擎一共有12个内置库，可以通过"require '库名'"调用。
+luaエンジンには12個の内蔵ライブラリがあり、「require'ライブラリ名'」で呼び出すことができます。
 
 * jass.common
 * jass.ai
@@ -41,7 +41,7 @@ lua引擎一共有12个内置库，可以通过"require '库名'"调用。
 
 ### jass.common
 
-jass.common库包含common.j内注册的所有函数。 （不包括BJ）
+jass.commonライブラリにはcommonが含まれています。jに登録されているすべての関数。（BJを除く）
 
 ```lua
 	local jass = require 'jass.common'
@@ -50,7 +50,7 @@ jass.common库包含common.j内注册的所有函数。 （不包括BJ）
 
 ### jass.ai
 
-jass.ai库包含common.ai内注册的所有函数。
+jass.aiライブラリには、common.aiに登録されているすべての関数が含まれています。
 
 ```lua
 	local jass = require 'jass.common'
@@ -60,17 +60,17 @@ jass.ai库包含common.ai内注册的所有函数。
 
 ### jass.globals
 
-jass.globals库可以让你访问到jass内的全局变量。
-> 你可以使用此库访问预设在大地图的对象。
+jass.globalsライブラリでは、jass内のグローバル変数にアクセスできます。
+> このライブラリを使用して、大マップにプリセットされたオブジェクトにアクセスできます。
 
 ```lua
 	local cg = require 'jass.globals'
-    print(cg.udg_i) --获取jass中定义的i整数
+    print(cg.udg_i) --jassで定義されているi整数を取得する
 ```
 
 ### jass.japi
 
-jass.japi库当前已经注册的所有japi函数。（包含dz函数）
+jass.japiライブラリに現在登録されているすべてのjapi関数。（dz関数を含む）
 
 ```lua
 	local jass = require 'jass.common'
@@ -78,7 +78,7 @@ jass.japi库当前已经注册的所有japi函数。（包含dz函数）
 	japi.EXDisplayChat(jass.Player(0), 0, "Hello!")
 ```
 
-japi函数不同环境下可能会略有不同，你可以通过pairs遍历当前的所有japi函数
+japi関数は環境によって少し異なる場合があります。現在のすべてのjapi関数をpairs経由で巡回することができます
 
 ```lua
 	for k, v in pairs(require 'jass.japi') do
@@ -88,14 +88,14 @@ japi函数不同环境下可能会略有不同，你可以通过pairs遍历当�
 
 ### jass.hook
 
-jass.hook库可以对common.j内注册的函数下钩子。注：jass.common库不会受到影响。
+jass.hookライブラリは、common.j内に登録されている関数のフックを外すことができます。注意：jass.commonライブラリは影響を受けません。
 
-同时，为了避免jass和lua之间传递浮点数时产生误差，通过jass.hook传递到lua中的浮点数，并不是number类型，而是userdata。当你需要**精确**地操纵浮点数时，也请注意这点。
+同時に、jassとluaとの間で浮動小数点を伝達する際に誤差が生じるのを避けるために、jass.hookがluaに渡す浮動小数点数は、numberタイプではなくuserdataです。浮動小数点数を正確に**操作する必要がある場合も注意してください。
 
 ```lua
 	local hook = require 'jass.hook'
 	function hook.CreateUnit(pid, uid, x, y, face, realCreateUnit)
-		-- 当jass内调用CreateUnit时，就会被执行
+		-- jass内でCreateUnitを呼び出すと実行される
 		print('CreateUnit')
 		print(type(x))
 		return realCreateUnit(pid, uid, x, y, face)
@@ -104,14 +104,14 @@ jass.hook库可以对common.j内注册的函数下钩子。注：jass.common库�
 
 ### jass.slk
 
-jass.slk库可以在地图运行时读取地图内的slk/w3*文件。
+jass.slkライブラリは、地図の実行時に地図内のslk/w3*ファイルを読み込むことができる。
 
 ```lua
 	local slk = require 'jass.slk'
 	print(slk.ability.AHbz.Name)
 ```
 
-你也可以遍历一个表或者一个物体（不建议方式）
+時計や物体を巡回することもできます（推奨されていません）
 
 ```lua
 	local slk = require 'jass.slk'
@@ -123,7 +123,7 @@ jass.slk库可以在地图运行时读取地图内的slk/w3*文件。
 	end
 ```
 
-slk包含
+slkは、
 
 * unit
 * item
@@ -134,23 +134,24 @@ slk包含
 * upgrade
 * misc
 
-与你物体编辑器中的项目一一对应。
 
-获取数据时使用的索引你可以在物体编辑器中通过Ctrl+D来查询到
+あなたのオブジェクトエディタの項目に対応しています。
 
-注意，当访问正确时返回值永远是字符串。如果你获取的是某个单位的生命值，你可能需要使用tonumber来进行转换。当访问不正确时将返回nil。
+データを取得する際に使用するインデックスは、オブジェクトエディタでCtrl+Dで調べることができます。
+
+アクセスが正しい場合、戻り値は常に文字列であることに注意してください。単位のライフ値を取得している場合は、変換にtonumberを使用する必要があるかもしれません。アクセスが正しくない場合はnilを返します。
 
 ### jass.runtime
 
-#### jass.runtime库可以在地图运行时获取lua引擎的信息或修改lua引擎的部分配置。
+#### jass.runtimeライブラリは、地図の実行時にluaエンジンの情報を取得したり、luaエンジンの構成の一部を変更したりすることができます。
 
 ```lua
 	local runtime = require 'jass.runtime'
 ```
 
-##### runtime.console(默认为false)
+##### runtime.console(デフォルトはfalse)
 
-赋值为true后会打开一个cmd窗口，print与console.write函数可以输出到这里
+trueに割り当てるとcmdウィンドウが開き、printとconsole.write関数はここに出力できます
 
 ```lua
 	runtime.console = true
@@ -158,7 +159,7 @@ slk包含
 
 ##### runtime.version
 
-返回当前lua引擎的版本号
+現在のluaエンジンのバージョン番号を返します
 
 ```lua
 	print(runtime.version)
@@ -166,9 +167,9 @@ slk包含
 
 ##### runtime.error_handle
 
-当你的lua脚本出现错误时将会调用此函数。
+この関数は、luaスクリプトにエラーが発生した場合に呼び出されます。
 
-runtime.error_handle有一个默认值，等价于以下函数
+runtime.error_handleには次の関数と同等のデフォルト値があります。
 
 ```lua
 	runtime.error_handle = function(msg)
@@ -176,7 +177,7 @@ runtime.error_handle有一个默认值，等价于以下函数
 	end
 ```
 
-你也可以让它输出更多的信息，比如输出错误时的调用栈
+エラー出力時の呼び出しスタックなど、より多くの情報を出力させることもできます
 
 ```lua
 	runtime.error_handle = function(msg)
@@ -189,13 +190,13 @@ runtime.error_handle有一个默认值，等价于以下函数
 	end
 ```
 
-注意，注册此函数后lua脚本的效率会降低(即使并没有发生错误)。
+注意：この関数を登録すると、エラーが発生していなくてもluaスクリプトの効率が低下します。
 
-##### runtime.handle_level(默认为0)
+##### runtime.handle_level(デフォルトは0です)
 
-lua引擎处理的handle的安全等级，有效值为0~2，注，等级越高，效率越低，安全性越高、
+luaエンジン処理のhandleのセキュリティレベルは、有効値が0 ~ 2であり、注、レベルが高いほど、効率が低く、安全性が高く、
 
-###### 0: handle直接使用number，jass无法了解你在lua中对这个handle的引用情况，也不会通过增加引用计数来保护这个handle
+###### 0: handleはnumberを直接使用しています。jassはあなたがluaでこのhandleを参照していることを理解することができませんし、参照カウントを増やすことでこのhandleを保護することもできません
 
 ```lua
 	local t = jass.CreateTimer()
@@ -203,7 +204,7 @@ lua引擎处理的handle的安全等级，有效值为0~2，注，等级越高�
 	type(t) -- "number"
 ```
 
-###### 1: handle封装在lightuserdata中，保证handle不能和整数相互转换，同样不支持引用计数
+###### 1: handleはlightuserdataにカプセル化され、handleが整数と相互変換できないことを保証し、参照数もサポートしていない
 
 ```lua
 	local t = jass.CreateTimer()
@@ -225,7 +226,7 @@ lua引擎处理的handle的安全等级，有效值为0~2，注，等级越高�
 	)
 ```
 
-###### 2: handle封装在userdata中，lua持有该handle时将增加handle的引用计数。lua释放handle时会释放handle的引用计数。
+###### 2: handleはuserdataにカプセル化され、luaがhandleを保持するとhandleの参照数が増加します。luaがhandleを解放するとhandleの参照数が解放されます。
 
 ```lua
 	local t = jass.CreateTimer()
@@ -242,9 +243,9 @@ lua引擎处理的handle的安全等级，有效值为0~2，注，等级越高�
 
 ##### runtime.sleep(默认为false)
 
-common.j中包含sleep操作的函数有4个，TriggerSleepAction/TriggerSyncReady/TriggerWaitForSound/SyncSelections。当此项为false时，lua引擎会忽略这4个函数的调用，并给予运行时警告。当此项为true时，这4个函数将会得到正确的执行。
+common.jにsleep操作を含む関数は4つあり、TriggerSleepAction/TriggerSyncReady/TriggerWaitForSound/SyncSelections。この項目がfalseの場合、luaエンジンはこの4つの関数の呼び出しを無視し、ランタイム警告を与えます。この項目がtrueの場合、この4つの関数は正しく実行されます。
 
-但请注意此项为true时将降低lua引擎的运行效率，即使你没有使用这4个函数。
+ただし、この項目がtrueの場合は、この4つの関数を使用していなくてもluaエンジンの実行効率が低下することに注意してください。
 
 ```lua
 	local trg = jass.CreateTrigger()
@@ -259,11 +260,10 @@ common.j中包含sleep操作的函数有4个，TriggerSleepAction/TriggerSyncRea
 
 ##### runtime.catch_crash(默认为true)
 
-调用jass.xxx/japi.xxx发生崩溃时，会生产一个lua错误，并忽略这个崩溃。你可以注册jass.runtime.error_handle来获得这个错误。注：开启此项会略微增加运行时消耗（即使没有发生错误）。
-
+jass.xxx/japi.xxxを呼び出してクラッシュが発生すると、luaエラーが生成され、このクラッシュは無視されます。jass.runtimeに登録できます。error_handleはこのエラーを取得します。メモ：このオプションをオンにすると、エラーが発生していなくても、実行時の消費量が少し増加します。
 ##### runtime.debugger
 
-启动调试器并监听指定端口。需要使用`VSCode`并安装[Lua Debug](https://marketplace.visualstudio.com/items?itemName=actboy168.lua-debug)。
+デバッガを起動し、指定したポートをリスニングします。` VSCode `を使用してインストールする必要があります[Lua Debug](https://marketplace.visualstudio.com/items?itemName=actboy168.lua-debug)。
 
 ```lua
 	runtime.debugger = 4279
@@ -271,11 +271,11 @@ common.j中包含sleep操作的函数有4个，TriggerSleepAction/TriggerSyncRea
 
 ### jass.console
 
-#### jass.console与控制台相关
+#### jass.consoleコンソール関連
 
-##### console.enable(默认为false)
+##### console.enable(デフォルトはfalse)
 
-赋值为true后会打开一个cmd窗口，print与console.write函数可以输出到这里
+trueに割り当てるとcmdウィンドウが開き、printとconsole.write関数はここに出力できます
 
 ```lua
 	console.enable = true
@@ -283,32 +283,32 @@ common.j中包含sleep操作的函数有4个，TriggerSleepAction/TriggerSyncRea
 
 ##### console.write
 
-将utf8编码的字符串转化为ansi编码后输出到cmd窗口中，如果你需要输出魔兽中的中文，请使用该函数而不是print
+utf 8で符号化された文字列をansi符号化に変換してcmdウィンドウに出力します。魔獣の中の中国語を出力する必要がある場合は、printではなくこの関数を使用してください
 
 ##### console.read
 
-将控制台中的输入传入魔兽中(会自动转换编码)
+コンソールからの入力を魔獣に渡す（コードが自動的に変換される）
 
-首次调用console.read后将允许用户在控制台输入，输入完成后按回车键提交输入。
+console.readを最初に呼び出すと、ユーザーはコンソールに入力でき、入力が完了したらEnterキーを押して入力をコミットできます。
 
-用户提交完成后，传入一个函数f来调用console.read，将会调用函数f，并将用户的输入作为参数传入(已转换为utf8编码)。
+ユーザのコミットが完了すると、console.readを呼び出す関数fが渡され、関数fが呼び出され、ユーザの入力がパラメータとして渡されます（utf 8符号化に変換されました）。
 
-推荐的做法是每0.1秒运行一次console.read，见下面的例子：
+推奨する方法は、0.1秒ごとにconsole.readを実行することです。次の例を参照してください。
 
 ```lua
 	local jass    = require 'jass.common'
 	local console = require 'jass.console'
 
-	console.write('测试开始...')
+	console.write('テスト開始...')
 
-	--开启计时器,每0.1秒检查输入
+	--タイマーをオンにし、0.1秒ごとに入力をチェック
 	jass.TimerStart(jass.CreateTimer(), 0.1, true,
 		function()
 
-			--检查CMD窗口中的用户输入,如果用户有提交了的输入,则回调函数(按回车键提交输入).否则不做任何动作
+			--CMDウィンドウのユーザー入力をチェックし、ユーザーがコミットした入力があればコールバック関数（コールバックキーを押して入力をコミット）を押します。そうでなければ何もしません
 			console.read(
 				function(str)
-					--参数即为用户的输入.需要注意的是这个函数调用是不同步的(毕竟其他玩家不知道你输入了什么)
+					--パラメータはユーザーの入力です。この関数呼び出しは同期されていないことに注意してください（結局、他のプレイヤーはあなたが何を入力したか分からない）
 					jass.DisplayTimedTextToPlayer(jass.Player(0), 0, 0, 60, '你在控制台中输入了:' .. str)
 				end
 			)
@@ -316,13 +316,13 @@ common.j中包含sleep操作的函数有4个，TriggerSleepAction/TriggerSyncRea
 	)
 ```
 
-需要注意的是控制台输入是不同步的。
+コンソール入力が非同期であることに注意してください。
 
 ### jass.debug
 
-jass.debug库能帮助你更深入地剖析lua引擎的内部机制。
+jass.debugライブラリは、luaエンジンの内部メカニズムをより深く分析するのに役立ちます。
 
-* functiondef jass.common或者jass.japi函数的定义
+*functiondef jass.commonまたはjass.japi関数の定義
 
 ```lua
 	local jass = require 'jass.common'
@@ -332,49 +332,50 @@ jass.debug库能帮助你更深入地剖析lua引擎的内部机制。
 
 * globaldef jass.globals内值的定义
 
-* handledef handle对应对象的内部定义
+* handledef handle対応オブジェクトの内部定義
 
-* currentpos 当前jass执行到的位置
+* 現在のjass実行先
 
-* handlemax jass虚拟机当前最大的handle
+* handlemax jass仮想マシンの現在最大のhandle
 
-* handlecount jass虚拟机当前的handle数
+* handlecount jass仮想マシンの現在のhandle数
 
-* h2i/i2h handle和integer的转换，当你runtime.handle_level不是0时，你可能会需要它
+* runtime.handle _levelが0でない場合、必要になる可能性があります
 
-* handle_ref 增加handle的引用
+* handle_ref handleの参照を追加
 
-* handle_unref 减少handle的引用
+* handle_unref handleの参照を減らす
 
-* ~~gchash~~（已废弃） 指定一张table的gchash，gchash会决定了在其他table中这个table的排序次序
-  在默认的情况下，lua对table的排序次序是由随机数决定的，不同玩家的lua生成的随机数不一致，所以下面的代码在不同的玩家上执行的次序是不一致的，这可能会引起不同步掉线
+* ~~gchash~~（破棄）テーブルのgchashを指定すると、gchashは他のテーブルにおけるこのテーブルのソート順を決定します
+
+デフォルトでは、luaのtableに対するソート順序は乱数によって決定され、プレイヤーのluaによって生成される乱数は一致しないため、次のコードはプレイヤーによって実行される順序が一致しないため、非同期ドロップを引き起こす可能性があります
 
 ### jass.log
 
-日志库
+ログ・ライブラリ
 
-* path 日志的输出路径
-* level 日志的等级，指定等级以上的日志才会输出
-* 日志有6个等级 trace、debug、info、warn、error、fatal
+*pathログの出力パス
+*レベルを指定したレベル以上のログが出力されるlevelログのレベル
+*ログには6段階のtrace、debug、info、warn、error、fatalがあります
 
 ```lua
 	local log = require 'jass.log'
-	log.info('这是一行日志')
-	log.error('这是一行', '日志')
+	log.info('これはログの行です')
+	log.error('これは一行です', 'ログ')
 ```
 
 ### jass.message
 
-* keyboard 一张表，魔兽的键盘码
-* mouse 本地玩家的鼠标坐标(游戏坐标)
-* button 本地玩家技能按钮的状态
-* hook 魔兽的消息回调，可以获得部分鼠标和键盘消息
-* selection 获得本地玩家当前选中单位
-* order_immediate 发布本地命令，无目标
-* order_point 发布本地命令，点目标
-* order_target 发布本地命令，单位目标
-* order_enable_debug 开启后，会在控制台打印当前的本地命令，调试用
+* keyboard表、魔獣のキーボードコード
+* mouseネイティブプレイヤーのマウス座標（ゲーム座標）
+* buttonローカルプレイヤースキルボタンの状態
+* hook魔獣のメッセージコールバックにより、マウスとキーボードの一部のメッセージを得ることができます
+  *ローカルプレイヤーの現在選択されている単位を選択
+* order_immediateターゲットなしでローカルコマンドを発行
+* order_pointローカルコマンドを発行し、ポイントターゲット
+* order_targetはローカルコマンドを発行し、単位ターゲット
+* order_enable_debugがオンになると、コンソールに現在のローカルコマンドが印刷され、デバッグ用
 
 ### jass.bignum
 
-大数库
+だいすうライブラリ

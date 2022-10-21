@@ -1,29 +1,29 @@
-## Description 描述体
+## Description 記述体
 
-> 框架提供了文本描述体的组合方法
+> フレームワークはテキスト記述体の結合方法を提供する
 >
-> 在Game()对象下
+> Game() オブジェクトの下
 
-#### 先定义你喜欢的描述体
+#### まずあなたの好きな記述体を定義します
 
-> 可返回 string[] 或者 nil
+> string[] または nil に戻すことができます
 
 ```lua
--- 这样一个描述配置就定义好了
+-- このような記述構成を定義することができます
 Game():defineDescription("myAbility", function(this, options)
-    return {"第一行","第二行"}
+    return {"最初の行","次の行"}
 end)
 ```
 
-> 描述体定义回调函数第一个this指你所引用的对象，例如Ability、Item、Unit
+> 記述体定義コールバック関数の最初のthisは、Ability、Item、Unitなどの参照先を指します
 
-#### 看看技能的常用描述体
+#### スキルの一般的な記述体を見る
 
-> 这个描述体引入了一个options，额外数据，会带入到每一个引用，里面有个whichLevel，后面会演示怎么传入
+> この記述体はoptionsを導入し、追加のデータは、各参照に持ち込まれ、中にはwhichLevelがあり、後にどのように入力するかを示す
 
 ```lua
--- 定义技能描述体
--- [基础信息]
+-- スキル記述体の定義
+-- [基礎情報]
 ---@param this Ability
 ---@param options {level:number}
 Game():defineDescription("abilityBase", function(this, options)
@@ -32,24 +32,24 @@ Game():defineDescription("abilityBase", function(this, options)
     local tt = this:targetType()
     if (isClass(this, AbilityClass)) then
         if (tt ~= ABILITY_TARGET_TYPE.pas) then
-            table.insert(desc, this:name() .. " - 等级 " .. colour.hex(colour.gold, lv) .. "（" .. colour.hex(colour.gold, this:hotkey()) .. "）")
+            table.insert(desc, this:name() .. " - 等級 " .. colour.hex(colour.gold, lv) .. "（" .. colour.hex(colour.gold, this:hotkey()) .. "）")
         else
-            table.insert(desc, this:name() .. " - 等级 " .. colour.hex(colour.gold, lv))
+            table.insert(desc, this:name() .. " - 等級 " .. colour.hex(colour.gold, lv))
         end
     else
         table.insert(desc, this:name())
     end
-    table.insert(desc, "类型：" .. colour.hex(colour.gold, tt.label))
+    table.insert(desc, "分類：" .. colour.hex(colour.gold, tt.label))
     if (tt ~= ABILITY_TARGET_TYPE.pas) then
         local chantCast = this:castChant(lv)
         if (chantCast > 0) then
-            table.insert(desc, "吟唱时间：" .. colour.hex(colour.skyLight, chantCast .. " 秒"))
+            table.insert(desc, "吟唱時間：" .. colour.hex(colour.skyLight, chantCast .. " 秒"))
         else
-            table.insert(desc, "吟唱时间：" .. colour.hex(colour.skyLight, "瞬间施法"))
+            table.insert(desc, "吟唱時間：" .. colour.hex(colour.skyLight, "瞬間施法"))
         end
         local keepCast = this:castKeep(lv)
         if (keepCast > 0) then
-            table.insert(desc, "最大施法持续：" .. colour.hex(colour.skyLight, keepCast .. " 秒"))
+            table.insert(desc, "最大施法継続：" .. colour.hex(colour.skyLight, keepCast .. " 秒"))
         end
     end
     table.insert(desc, "")
@@ -57,30 +57,30 @@ Game():defineDescription("abilityBase", function(this, options)
 end)
 ```
 
-#### 描述体定义后当然可以使用它们进行组合，构建你的文本数据
+#### 説明体定義後はもちろんそれらを組み合わせてテキストデータを構築することができます
 
 ```lua
--- 简单引用
+-- 単純参照
 local txtArray = Game():combineDescription(whichAbility, nil, "abilityBase")
 
--- 使用options，whichLevel设10
+-- optionsを使用して、whichLevel設定10
 local txtArray = Game():combineDescription(whichAbility, {whichLevel = 10}, "abilityBase")
 
--- 前面我们还定义了一个myAbility，也可以使用两组数据，按你引入的顺序合并
+-- 前にもmyAbilityを定義しましたが、2つのデータセットを使用して、あなたが導入した順序でマージすることもできます
 local txtArray = Game():combineDescription(whichAbility, nil, "abilityBase", "myAbility")
 ```
 
-#### Ability、Item、Unit对象定义了description函数，可以使用特定的简称 &lt;D&gt; 来引入该函数的回调数据
+#### Ability、Item、Unitオブジェクトはdescription関数を定義し、特定の略称 &lt;D&gt; 関数のコールバックデータを導入する
 
 ```lua
--- 对象定义descrption特殊引入
+-- オブジェクト定義descrptionの特別な導入
 -- 使用 SYMBOL_D
 local txtArray = Game():combineDescription(whichAbility, nil, SYMBOL_D, "abilityBase")
 ```
 
-#### 直接使用字符串数组数据，也可以供给 combineDescription 使用
+#### 文字列配列データを直接使用するか、combineDescription に供給して使用することができます
 
 ```lua
 -- 直接引入table
-local txtArray = Game():combineDescription(whichAbility, nil, {"第一行","第二行"})
+local txtArray = Game():combineDescription(whichAbility, nil, {"最初の行","次の行"})
 ```

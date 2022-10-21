@@ -1,6 +1,6 @@
 ## ydwe luaエンジン使用説明
 
-[来源 github/actboy168/jass2lua](https://github.com/actboy168/jass2lua/edit/master/lua-engine.md)
+[ソース github/actboy168/jass2lua](https://github.com/actboy168/jass2lua/edit/master/lua-engine.md)
 
 > 覚えておいて：バグは有能な人に止まる
 
