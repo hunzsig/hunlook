@@ -1,14 +1,14 @@
-## TPL 模版
+## TPL テンプレート
 
-> 不再依赖物编的本框架，衍生出了新的代替品：TPL
+> 編集物に依存しなくなった本フレームワークは、新たな代替品：TPL
 >
-> TPL 是 template 的简称，意为模板、标准
+> TPLはtemplateの略称であり、テンプレート、標準を意味する
 >
-> Ability、Item、Unit三大件都基于Tpl来构建
+> Ability、Item、Unitの3つの要素はすべてTplに基づいて構築されています
 
-##### 由于写法太多，这里只随便写几种，仅供简单参考
+##### 書き方が多すぎるので、ここでは何種類か書きたいだけです。簡単な参考にしてください。
 
-> TPL 就像是代码物编一样，但可以在运行时修改热更新，配合流程测试会很爽
+> TPL ード物編のようなものですが、運転中に熱更新を修正することができ、プロセステストに合わせて快適になります
 
 ### AbilityTpl
 
@@ -17,20 +17,20 @@ TPL_ABILITY = {
 
     ---@param effectiveData noteOnAbilityEffectiveData
     TPL_ABILITY.DEMO = AbilityTpl()
-        :name("技能例子")
+        :name("スキル例")
         :targetType(ABILITY_TARGET_TYPE.tag_nil)
         :icon("black")
         :coolDownAdv(10, 0)
         :mpCostAdv(100, 0)
         :onEvent(EVENT.Ability.Effective,
         function(effectiveData)
-            echo("技能释放", effectiveData.triggerUnit:owner())
+            echo("スキル解放", effectiveData.triggerUnit:owner())
         end),
 
     ---@param hurtData noteOnUnitHurtData
     ---@param effectiveData noteOnAbilityEffectiveData
     TPL_ABILITY.ZZJY = AbilityTpl()
-        :name("自在极意被动")
+        :name("自在きわめて受動的である")
         :targetType(ABILITY_TARGET_TYPE.pas)
         :icon("ChaosBody")
         :coolDownAdv(5, 0)
@@ -43,10 +43,10 @@ TPL_ABILITY = {
         end)
         :onEvent(EVENT.Ability.Effective,
         function(effectiveData)
-            -- 技能被触发的效果
+            -- スキルがトリガーされる効果
             local tu = effectiveData.triggerUnit
             tu:attach("DivineShieldTarget", "origin", 3)
-              :buff("自在极意被动")
+              :buff("自在きわめて受動的である")
               :duration(3)
               :purpose(function(buffObj)
                 buffObj:hurtReduction("+=100"):hurtRebound("+=100"):odds("hurtRebound", "+=100")
@@ -58,11 +58,11 @@ TPL_ABILITY = {
         end)
 }
 
--- 后续代码创建技能对象
--- 单位既可以pushAbility也可以pushAbilityTpl，智能加技能
-
--- myUnit是一个Unit对象，这里只是演示，请自行理解
--- myUnitSlot是一个AbilitySlot对象，代表该单位的技能栏
+-- 後続コードによるスキルオブジェクトの作成
+-- 単位はpushAbilityもpushAbilityTplもでき、インテリジェントなスキルを追加できます
+            
+-- myUnitはUnitオブジェクトですが、ここではプレゼンテーションのみですので、ご自身でご理解ください
+-- myUnitSlotはAbilitySlotオブジェクトで、その単位を表すスキルバーです
 
 local myUnitSlot = myUnit:abilitySlot()
 myUnitSlot:push(Ability(TPL_ABILITY.AB1))
@@ -77,47 +77,47 @@ TPL_ITEM = {
 
     ---@param getData noteOnItemGetData
     DEMO = ItemTpl()
-        :modelAlias("TreasureChest") -- 宝箱模型
-        :name("物品例子")
+        :modelAlias("TreasureChest") -- 宝箱モデル
+        :name("アイテムの例")
         :ability(TPL_ABILITY.DEMO)
         :icon("black")
         :worth({ gold = 10 })
         :onEvent(EVENT.Item.Get,
         function(getData)
-            echo("获得物品", getData.triggerUnit:owner())
+            echo("アイテムを取得", getData.triggerUnit:owner())
         end)
 
 }
 
--- 运行时代码创建
--- 直接实例
+-- ランタイムコード作成
+-- 直接インスタンス
 local it1 = TPL_ITEM.IT1:create(0, 0)
 local it2 = TPL_ITEM.IT2:create(0, 0)
 
--- 可以看到前面直接create到0,0坐标了
--- 实际上Item对象是有两种状态的，实例化状态和虚拟化状态，简单理解就是物品需要在大地图的时候才会是实体
+-- 0、0座標に直接createが見えるようになりました
+-- 実際にItemオブジェクトには2つの状態があります。インスタンス化状態と仮想化状態、簡単に理解すると、アイテムは大きな地図のときにエンティティになる必要があります
 
-local it1 = Item(TPL_ITEM.IT1) -- 此时Item对象由Tpl建立，但是虚拟的
-it1:position(0, 0) -- 我将其移动到0,0后，触发了大地图所以自动转为实体
+local it1 = Item(TPL_ITEM.IT1) -- このときItemオブジェクトはTplによって構築されますが、仮想的な
+it1:position(0, 0) -- 私はそれを0、0に移動した後、大きな地図がトリガーされたので自動的にエンティティに変換しました
 
--- 如果一个单位持有物品但是被position，由于转化为了地图实体，所以单位会失去物品
--- 感觉类似瞬间无视距离丢弃物品一样
+-- 1つの単位が物を持っているがpositionされている場合、地図本体に変換されるため、単位は物を失う
+-- 瞬間的に距離を無視して物を捨てるような感覚です
 ```
 
 ### UnitTpl
 
 ```lua
 TPL_UNIT = {
-    Footman = UnitTpl("Footman") -- 此处的Footman指引用语音，默认无
-        :name("步兵")
-        :barStateMode(2) -- 血条样式设定
+    Footman = UnitTpl("Footman") -- ここでFootmanは参照音声を指し、デフォルトではなし
+        :name("歩兵")
+        :barStateMode(2) -- 血液ストリップパターン設定
         :barStateAlways(true)
         :barStateMarker(500)
-        :iconMap(AUIKit("looplorer_minimap", "dot/me", "tga"), 0.03, 0.03) -- 小地图图标样式
-        :modelAlias("TheCaptain") -- 使用的模型
+        :iconMap(AUIKit("looplorer_minimap", "dot/me", "tga"), 0.03, 0.03) -- 小さな地図アイコンスタイル
+        :modelAlias("TheCaptain") -- 使用するモデル
         :icon("unit/TheCaptain")
         :scale(1.2)
-        :pickItemMode("warehouseSlot") -- 物品拾取模式
+        :pickItemMode("warehouseSlot") -- アイテム選択モード
         :abilitySlot(table.slice(TPL_ABILITY.Me, 1, 4))
         :level(1)
         :hp(100)
@@ -133,7 +133,7 @@ TPL_UNIT = {
         :attackRange(100)
 }
 
--- 运行时代码创建
+-- アイテム選択モード
 local u1 = Unit(TPL_UNIT.Footman, Player(1), 0, 0, 270)
 u1:reborn(0.5)
 ```

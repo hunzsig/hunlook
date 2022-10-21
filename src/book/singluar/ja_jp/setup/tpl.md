@@ -1,10 +1,10 @@
 ## TPL テンプレート
 
->編集物に依存しなくなった本フレームワークは、新たな代替品：TPL
+> 編集物に依存しなくなった本フレームワークは、新たな代替品：TPL
 >
->TPLはtemplateの略称であり、テンプレート、標準を意味する
+> TPLはtemplateの略称であり、テンプレート、標準を意味する
 >
->Ability、Item、Unitの3つの要素はすべてTplに基づいて構築されています
+> Ability、Item、Unitの3つの要素はすべてTplに基づいて構築されています
 
 ##### 書き方が多すぎるので、ここでは何種類か書きたいだけです。簡単な参考にしてください。
 
@@ -16,7 +16,7 @@
 TPL_ABILITY = {
 
     ---@param effectiveData noteOnAbilityEffectiveData
-     AbilityTpl("スキル1", ABILITY_TARGET_TYPE.TAG_R)
+    AbilityTpl("スキル1", ABILITY_TARGET_TYPE.TAG_R)
         .icon("AB1")
         .coolDownAdv(2.5, -0.05)
         .hpCostAdv(10, 5)
@@ -77,11 +77,11 @@ TPL_ABILITY = {
         end)
 }
 
---後続コードによるスキルオブジェクトの作成
---単位はpushAbilityもpushAbilityTplもでき、インテリジェントなスキルを追加できます
+-- 後続コードによるスキルオブジェクトの作成
+-- 単位はpushAbilityもpushAbilityTplもでき、インテリジェントなスキルを追加できます
             
---myUnitはUnitオブジェクトですが、ここではプレゼンテーションのみですので、ご自身でご理解ください
---myUnitSlotはAbilitySlotオブジェクトで、その単位を表すスキルバーです
+-- myUnitはUnitオブジェクトですが、ここではプレゼンテーションのみですので、ご自身でご理解ください
+-- myUnitSlotはAbilitySlotオブジェクトで、その単位を表すスキルバーです
 
 local myUnitSlot = myUnit.abilitySlot()
 myUnitSlot.push(Ability(TPL_ABILITY.AB1))
