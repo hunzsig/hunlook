@@ -1,9 +1,9 @@
-### 预设附魔
+### 付魔を設ける
 
-> 用于定义附魔种类、反应的设置
+> 魔付きの種類、反応を定義するための設定
 
 ```lua
---- 方便伤害类型引用
+--- 便利なダメージタイプ参照
 ---@alias noteDamageTypeData {value:string,label:string}
 
 ---@type noteDamageTypeData
@@ -29,7 +29,7 @@ DAMAGE_TYPE.poison = nil
 ---@type noteDamageTypeData
 DAMAGE_TYPE.steel = nil
 
--- 附魔设定
+-- 魔の設定
 Enchant("fire")
     :name("火")
     :strengthen(0)
@@ -42,12 +42,12 @@ Enchant("fire")
 
 Enchant("rock"):name("岩")
 Enchant("water"):name("水")
-Enchant("ice"):name("冰")
-Enchant("wind"):name("风")
+Enchant("ice"):name("氷")
+Enchant("wind"):name("風")
 Enchant("light"):name("光")
-Enchant("dark"):name("暗")
+Enchant("dark"):name("闇")
 Enchant("grass"):name("草")
 Enchant("thunder"):name("雷")
 Enchant("poison"):name("毒")
-Enchant("steel"):name("钢")
+Enchant("steel"):name("鋼")
 ```

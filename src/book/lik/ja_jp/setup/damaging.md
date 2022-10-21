@@ -1,46 +1,46 @@
-### 预设伤害流
+### ダメージフロー
 
-> 用于插入伤害流程的设定
+> ダメージフローを挿入するための設定
 >
-> 根据你编写定义的顺序自上而下开始执行，options会向下流动保存，可以往里面保存一些值，流到下一个定义使用
+> 定義を記述する順序に従って上から下へ実行を開始すると、optionsは下へ流れて保存され、中にいくつかの値を保存して、次の定義に流れて使用することができます
 
 ```lua
---- 构建一个Flow对象
---- 这里伤害流必须填写 damage 用于对接底层入口
+--- Flowオブジェクトを構築するには
+--- ここではダメージフローにdamageを記入して下地入口に突き合わせる必要があります
 local damageFlow = Flow("damage")
 
---- 提取一些需要的参数
+--- 必要なパラメータを抽出する
 damageFlow:set("prop", function(options)
     options.defend = options.targetUnit:defend()
     options.avoid = options.targetUnit:avoid() - options.sourceUnit:aim()
 end)
 
---- 判断无视装甲类型
+--- 無視装甲タイプの判断
 damageFlow:set("breakArmor", function(options)
     local ignore = { defend = false, avoid = false, invincible = false }
     if (#options.breakArmor > 0) then
         for _, b in ipairs(options.breakArmor) do
             if (b ~= nil) then
                 ignore[b.value] = true
-                --- 触发无视防御事件
+                --- 防御無視イベントをトリガーする
                 event.trigger(options.sourceUnit, EVENT.Unit.BreakArmor, { triggerUnit = options.sourceUnit, targetUnit = options.targetUnit, breakType = b })
-                --- 触发被破防事件
+                --- 破壊されたイベントのトリガ
                 event.trigger(options.targetUnit, EVENT.Unit.Be.BreakArmor, { triggerUnit = options.targetUnit, breakUnit = options.sourceUnit, breakType = b })
             end
         end
     end
-    --- 处理护甲
+    --- 防甲処理
     if (ignore.defend == true and options.defend > 0) then
         options.defend = 0
     end
-    --- 处理回避
+    --- 回避処理
     if (ignore.avoid == true and options.avoid > 0) then
         options.avoid = 0
     end
-    --- 单位是否无视无敌
+    --- 単位が無敵を無視しているか
     if (true == options.targetUnit:isInvulnerable()) then
         if (ignore.invincible == false) then
-            --- 触发无敌抵御事件
+            --- 無敵防御イベントを触発する
             options.damage = 0
             event.trigger(options.sourceUnit, EVENT.Unit.ImmuneInvincible, { triggerUnit = options.targetUnit, sourceUnit = options.sourceUnit })
             return
@@ -48,7 +48,7 @@ damageFlow:set("breakArmor", function(options)
     end
 end)
 
---- 自身攻击暴击
+--- 自身攻撃クリティカル
 damageFlow:set("crit", function(options)
     local approve = (options.sourceUnit ~= nil and (options.damageSrc == DAMAGE_SRC.attack or options.damageSrc == DAMAGE_SRC.ability))
     if (approve) then
@@ -57,9 +57,9 @@ damageFlow:set("crit", function(options)
             local odds = options.sourceUnit:odds("crit") - options.targetUnit:resistance("crit")
             if (odds > math.rand(1, 100)) then
                 options.damage = options.damage * (1 + crit * 0.01)
-                --- 触发时自动无视回避
+                --- トリガ時に自動無視回避
                 options.avoid = 0
-                --- 触发暴击事件
+                --- クリティカル・イベントのトリガー
                 ability.crit({ sourceUnit = options.sourceUnit, targetUnit = options.targetUnit })
             end
         end
@@ -71,7 +71,7 @@ damageFlow:set("avoid", function(options)
     local approve = (options.avoid > 0 and (options.damageSrc == DAMAGE_SRC.attack or options.damageSrc == DAMAGE_SRC.rebound))
     if (approve) then
         if (options.avoid > math.rand(1, 100)) then
-            -- 触发回避事件
+            -- 回避イベントのトリガ
             options.damage = 0
             event.trigger(options.targetUnit, EVENT.Unit.Avoid, { triggerUnit = options.targetUnit, sourceUnit = options.sourceUnit })
             event.trigger(options.sourceUnit, EVENT.Unit.Be.Avoid, { triggerUnit = options.sourceUnit, targetUnit = options.targetUnit })
@@ -80,7 +80,7 @@ damageFlow:set("avoid", function(options)
     end
 end)
 
---- 伤害加深(%)
+--- 傷が深まる(%)
 damageFlow:set("damageIncrease", function(options)
     local approve = (options.sourceUnit ~= nil)
     if (approve) then
@@ -91,7 +91,7 @@ damageFlow:set("damageIncrease", function(options)
     end
 end)
 
---- 受伤加深(%)
+--- 傷が深くなる(%)
 damageFlow:set("hurtIncrease", function(options)
     local hurtIncrease = options.targetUnit:hurtIncrease()
     if (hurtIncrease > 0) then
@@ -99,9 +99,9 @@ damageFlow:set("hurtIncrease", function(options)
     end
 end)
 
---- 反伤(%)
+--- 切り傷(%)
 damageFlow:set("hurtRebound", function(options)
-    -- 抵抗
+    -- に抵抗
     local approve = (options.sourceUnit ~= nil and options.damageSrc == DAMAGE_SRC.rebound)
     if (approve) then
         local resistance = options.sourceUnit:resistance("hurtRebound")
@@ -113,7 +113,7 @@ damageFlow:set("hurtRebound", function(options)
             end
         end
     end
-    -- 反射
+    -- はんしゃ
     approve = (options.sourceUnit ~= nil and (options.damageSrc == DAMAGE_SRC.attack or options.damageSrc == DAMAGE_SRC.ability))
     if (approve) then
         local hurtRebound = options.targetUnit:hurtRebound()
@@ -122,7 +122,7 @@ damageFlow:set("hurtRebound", function(options)
             local dmgRebound = math.trunc(options.damage * hurtRebound * 0.01, 3)
             if (dmgRebound >= 1.000) then
                 local damagedArrived = function()
-                    --- 触发反伤事件
+                    --- アンチダメージイベントのトリガ
                     ability.damage({
                         sourceUnit = options.targetUnit,
                         targetUnit = options.sourceUnit,
@@ -133,7 +133,7 @@ damageFlow:set("hurtRebound", function(options)
                     })
                 end
                 if (options.damageSrc == DAMAGE_SRC.attack) then
-                    -- 攻击情况
+                    -- 攻撃状況
                     if (options.sourceUnit:isMelee()) then
                         damagedArrived()
                     else
@@ -164,7 +164,7 @@ damageFlow:set("hurtRebound", function(options)
                         end
                     end
                 elseif (options.damageSrc == DAMAGE_SRC.ability) then
-                    -- 技能情况
+                    -- スキル状況
                     damagedArrived()
                 end
             end
@@ -172,14 +172,14 @@ damageFlow:set("hurtRebound", function(options)
     end
 end)
 
---- 防御
+--- ガード
 damageFlow:set("defend", function(options)
     if (options.defend < 0) then
         options.damage = options.damage + math.abs(options.defend)
     elseif (options.defend > 0) then
         options.damage = options.damage - options.defend
         if (options.damage < 1) then
-            -- 触发防御完全抵消事件
+            -- ガード完全相殺イベントのトリガ
             options.damage = 0
             event.trigger(options.targetUnit, EVENT.Unit.ImmuneDefend, { triggerUnit = options.targetUnit, sourceUnit = options.sourceUnit })
             return
@@ -187,13 +187,13 @@ damageFlow:set("defend", function(options)
     end
 end)
 
---- 减伤(%)
+--- 傷を減らす(%)
 damageFlow:set("hurtReduction", function(options)
     local hurtReduction = options.targetUnit:hurtReduction()
     if (hurtReduction > 0) then
         options.damage = options.damage * (1 - hurtReduction * 0.01)
         if (options.damage < 1) then
-            -- 触发减伤完全抵消事件
+            -- トリガ減傷完全相殺イベント
             options.damage = 0
             event.trigger(options.targetUnit, EVENT.Unit.ImmuneReduction, { triggerUnit = options.targetUnit, sourceUnit = options.sourceUnit })
             return
@@ -201,7 +201,7 @@ damageFlow:set("hurtReduction", function(options)
     end
 end)
 
---- 攻击吸血
+--- 攻撃吸血
 damageFlow:set("hpSuckAttack", function(options)
     local approve = (options.sourceUnit ~= nil and options.damageSrc == DAMAGE_SRC.attack)
     if (approve) then
@@ -209,14 +209,14 @@ damageFlow:set("hpSuckAttack", function(options)
         local val = options.damage * percent * 0.01
         if (percent > 0 and val > 0) then
             options.sourceUnit:hpCur("+=" .. val)
-            --- 触发吸血事件
+            --- 吸血イベントのトリガー
             event.trigger(options.sourceUnit, EVENT.Unit.HPSuckAttack, { triggerUnit = options.sourceUnit, targetUnit = options.targetUnit, value = val, percent = percent })
             event.trigger(options.targetUnit, EVENT.Unit.Be.HPSuckAttack, { triggerUnit = options.targetUnit, sourceUnit = options.sourceUnit, value = val, percent = percent })
         end
     end
 end)
 
---- 技能吸血
+--- スキル吸血
 damageFlow:set("hpSuckAbility", function(options)
     local approve = (options.sourceUnit ~= nil and options.damageSrc == DAMAGE_SRC.ability)
     if (approve) then
@@ -224,14 +224,14 @@ damageFlow:set("hpSuckAbility", function(options)
         local val = options.damage * percent * 0.01
         if (percent > 0 and val > 0) then
             options.sourceUnit:hpCur("+=" .. val)
-            --- 触发技能吸血事件
+            --- スキル吸血イベントのトリガー
             event.trigger(options.sourceUnit, EVENT.Unit.HPSuckAbility, { triggerUnit = options.sourceUnit, targetUnit = options.targetUnit, value = val, percent = percent })
             event.trigger(options.targetUnit, EVENT.Unit.Be.HPSuckAbility, { triggerUnit = options.targetUnit, sourceUnit = options.sourceUnit, value = val, percent = percent })
         end
     end
 end)
 
---- 攻击吸魔;吸魔会根据伤害，扣减目标的魔法值，再据百分比增加自己的魔法值;目标魔法值不足 1 从而吸收时，则无法吸取
+--- 攻撃吸魔、吸魔はダメージに応じて、目標の魔法値を減算し、パーセンテージに応じて自分の魔法値を増加させる。目標魔法値が1未満で吸収した場合、吸収できません
 damageFlow:set("mpSuckAttack", function(options)
     local approve = (options.sourceUnit ~= nil and options.damageSrc == DAMAGE_SRC.attack and options.sourceUnit:mp() > 0 and options.targetUnit:mpCur() > 0)
     if (approve) then
@@ -242,7 +242,7 @@ damageFlow:set("mpSuckAttack", function(options)
             if (val > 1) then
                 options.targetUnit:mpCur("-=" .. val)
                 options.sourceUnit:mpCur("+=" .. val)
-                --- 触发吸魔事件
+                --- 魔吸収イベントを触発する
                 event.trigger(options.sourceUnit, EVENT.Unit.MPSuckAttack, { triggerUnit = options.sourceUnit, targetUnit = options.targetUnit, value = val, percent = percent })
                 event.trigger(options.targetUnit, EVENT.Unit.Be.MPSuckAttack, { triggerUnit = options.targetUnit, sourceUnit = options.sourceUnit, value = val, percent = percent })
             end
@@ -250,7 +250,7 @@ damageFlow:set("mpSuckAttack", function(options)
     end
 end)
 
---- 技能吸魔;吸魔会根据伤害，扣减目标的魔法值，再据百分比增加自己的魔法值;目标魔法值不足 1 从而吸收时，则无法吸取
+--- スキル吸魔、吸魔はダメージに応じて、目標の魔法値を減算し、パーセンテージに応じて自分の魔法値を増加させる。目標魔法値が1未満で吸収した場合、吸収できません
 damageFlow:set("mpSuckAbility", function(options)
     local approve = (options.sourceUnit ~= nil and options.damageSrc == DAMAGE_SRC.ability and options.sourceUnit.mp() > 0 and options.targetUnit.mpCur() > 0)
     if (approve) then
@@ -261,7 +261,7 @@ damageFlow:set("mpSuckAbility", function(options)
             if (val > 1) then
                 options.targetUnit:mpCur("-=" .. val)
                 options.sourceUnit:mpCur("+=" .. val)
-                --- 触发技能吸魔事件
+                --- トリガスキル吸魔イベント
                 event.trigger(options.sourceUnit, EVENT.Unit.MPSuckAbility, { triggerUnit = options.sourceUnit, targetUnit = options.targetUnit, value = val, percent = percent })
                 event.trigger(options.targetUnit, EVENT.Unit.Be.MPSuckAbility, { triggerUnit = options.targetUnit, sourceUnit = options.sourceUnit, value = val, percent = percent })
             end
@@ -277,7 +277,7 @@ damageFlow:set("punishCur", function(options)
     end
 end)
 
---- 附魔加成|抵抗
+--- 魔に憑いて加成｜抵抗する
 damageFlow:set("enchant", function(options)
     local addition = 0
     if (options.sourceUnit ~= nil) then
@@ -290,7 +290,7 @@ damageFlow:set("enchant", function(options)
     if (resistance ~= 0) then
         addition = addition - resistance * 0.01
     end
-    --- 触发附魔事件
+    --- 付魔事件を触発する
     event.trigger(options.targetUnit, EVENT.Unit.Enchant, {
         triggerUnit = options.sourceUnit,
         targetUnit = options.targetUnit,
@@ -300,7 +300,7 @@ damageFlow:set("enchant", function(options)
     options.damage = options.damage * (1 + addition)
 end)
 
--- 附魔附着
+-- 魔付き付き
 damageFlow:set("damageAppend", function(options)
     if (options.damageType ~= DAMAGE_TYPE.common) then
         ability.enchant(options.sourceUnit, options.targetUnit, options.damageType, options.damageTypeLevel)

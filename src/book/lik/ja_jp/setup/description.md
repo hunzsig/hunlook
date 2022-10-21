@@ -1,8 +1,8 @@
-### 技能信息
+### スキル情報
 
 ```lua
--- 定义技能描述体
--- [基础信息]
+-- スキル記述体の定義
+-- [基礎情報]
 ---@param this Ability
 ---@param options {level:number}
 Game():defineDescription("abilityBase", function(this, options)
@@ -11,77 +11,77 @@ Game():defineDescription("abilityBase", function(this, options)
     local tt = this.targetType()
     if (isClass(this, AbilityClass)) then
         if (tt ~= ABILITY_TARGET_TYPE.pas) then
-            table.insert(desc, this.name() .. " - 等级 " .. colour.hex(colour.gold, lv) .. "（" .. colour.hex(colour.gold, this.hotkey()) .. "）")
+            table.insert(desc, this.name() .. " - 等級 " .. colour.hex(colour.gold, lv) .. "（" .. colour.hex(colour.gold, this.hotkey()) .. "）")
         else
-            table.insert(desc, this.name() .. " - 等级 " .. colour.hex(colour.gold, lv))
+            table.insert(desc, this.name() .. " - 等級 " .. colour.hex(colour.gold, lv))
         end
     else
         table.insert(desc, this.name())
     end
-    table.insert(desc, "类型：" .. colour.hex(colour.gold, tt.label))
+    table.insert(desc, "分類：" .. colour.hex(colour.gold, tt.label))
     if (tt ~= ABILITY_TARGET_TYPE.pas) then
         local chantCast = this.castChant(lv)
         if (chantCast > 0) then
-            table.insert(desc, "吟唱时间：" .. colour.hex(colour.skyLight, chantCast .. " 秒"))
+            table.insert(desc, "吟唱時間：" .. colour.hex(colour.skyLight, chantCast .. " 秒"))
         else
-            table.insert(desc, "吟唱时间：" .. colour.hex(colour.skyLight, "瞬间施法"))
+            table.insert(desc, "吟唱時間：" .. colour.hex(colour.skyLight, "瞬間施法"))
         end
         local keepCast = this.castKeep(lv)
         if (keepCast > 0) then
-            table.insert(desc, "最大施法持续：" .. colour.hex(colour.skyLight, keepCast .. " 秒"))
+            table.insert(desc, "最大施法継続：" .. colour.hex(colour.skyLight, keepCast .. " 秒"))
         end
     end
     return desc
 end)
 
--- [技能点信息]
+-- [スキルポイント情報]
 ---@param this Ability
 Game():defineDescription("abilityLvPoint", function(this, _)
     if (this.levelUpNeedPoint() > 0) then
-        return { colour.hex("EFBA16", "升级需要技能点: " .. this.levelUpNeedPoint()) }
+        return { colour.hex("EFBA16", "スキルポイント要件: " .. this.levelUpNeedPoint()) }
     end
 end)
 ```
 
-### 物品信息
+### 物品情報
 
 ```lua
--- 定义物品技能描述体
--- [基础信息]
+-- 物品技能記述体の定義
+-- [基礎情報]
 ---@param this Ability
 Game():defineDescription("itemAbility", function(this, options)
     local str = { '', this.name() .. ": " }
     local lv = math.floor(this.level())
     local tt = this.targetType()
     local indent = "    "
-    table.insert(str, indent .. "类型：%s")
+    table.insert(str, indent .. "分類：%s")
     table.insert(options, { "ffcc00", tt.label })
     if (tt ~= ABILITY_TARGET_TYPE.pas) then
         local chantCast = this.castChant(lv)
         if (chantCast > 0) then
-            table.insert(str, indent .. "吟唱时间：%s 秒")
+            table.insert(str, indent .. "吟唱時間：%s 秒")
             table.insert(options, { "ccffff", chantCast })
         else
-            table.insert(str, indent .. "吟唱时间：%s")
-            table.insert(options, { "ccffff", "瞬间施法" })
+            table.insert(str, indent .. "吟唱時間：%s")
+            table.insert(options, { "ccffff", "瞬間施法" })
         end
         local keepCast = this.castKeep(lv)
         if (keepCast > 0) then
-            table.insert(str, indent .. "最大施法持续：%s 秒")
+            table.insert(str, indent .. "最大施法継続：%s 秒")
             table.insert(options, { "ccffff", keepCast })
         end
     end
     return colour.format(string.implode("|n", str), "ee82ee", options)
 end)
 
--- 定义物品描述体
--- [基础信息]
+-- 物品記述体の定義
+-- [基礎情報]
 ---@param this Item
 Game():defineDescription("itemBase", function(this, _)
     local desc = {}
     local name
     if (this:level() > 0) then
-        name = this:name() .. "[" .. colour.hex(colour.white, this:level()) .. " 级]"
+        name = this:name() .. "[" .. colour.hex(colour.white, this:level()) .. " 級]"
     else
         name = this:name()
     end
@@ -97,26 +97,26 @@ Game():defineDescription("itemBase", function(this, _)
         end
         desc = table.merge(desc, Game():combineDescription(this:ability(), nil, "itemAbility", SYMBOL_D, "attributes"))
         if (this:charges() > 0) then
-            table.insert(desc, colour.hex(colour.white, "|n剩余次数：" .. this:charges()))
+            table.insert(desc, colour.hex(colour.white, "|n残り回数：" .. this:charges()))
         end
     else
         table.insert(desc, name)
     end
     if (this:level() < this:levelMax()) then
-        table.insert(desc, colour.format("最大可升级到 %s 级", "c0c0c0", { { "ffcc00", this:levelMax() } }))
+        table.insert(desc, colour.format("最大 %s レベルにアップグレード可能", "c0c0c0", { { "ffcc00", this:levelMax() } }))
     end
     return desc
 end)
 ```
 
-### 属性信息
+### 属性情報
 
 ```lua
-attribute.labels("attack", "攻击")
-attribute.labels("defend", "防御")
+attribute.labels("attack", "攻撃")
+attribute.labels("defend", "守る")
 
--- 定义智能属性描述体
--- [基础信息]
+-- スマート属性記述体の定義
+-- [基礎情報]
 ---@param this Ability|Item
 ---@param options {level:number}
 Game():defineDescription("attributes", function(this, options)
@@ -160,32 +160,32 @@ Game():defineDescription("attributes", function(this, options)
 end)
 ```
 
-### 游戏随性信息
+### ゲーム随意性情報
 
 ```lua
--- 游戏信息
+-- ゲーム情報
 Game():onEvent(EVENT.Game.Start, function()
 
-    --- 游戏介绍
-    Game():prop("infoIntro", "暂无")
+    --- ゲーム紹介
+    Game():prop("infoIntro", "しばらく")
 
-    --- 中央顶部信息
+    --- 中央上部情報
     time.setInterval(1, function()
         local info = {}
         local timeOfDay = time.ofDay()
         local tit = ""
         if (timeOfDay >= 0.00 and timeOfDay < 6.00) then
-            tit = "凌晨"
+            tit = "夜明け前"
         elseif (timeOfDay >= 6.00 and timeOfDay < 8.00) then
-            tit = "清晨"
+            tit = "早朝"
         elseif (timeOfDay >= 8.00 and timeOfDay < 12.00) then
-            tit = "上午"
+            tit = "午前"
         elseif (timeOfDay >= 12.00 and timeOfDay < 13.00) then
-            tit = "中午"
+            tit = "昼ごろ"
         elseif (timeOfDay >= 13.00 and timeOfDay < 18.00) then
-            tit = "下午"
+            tit = "午後"
         elseif (timeOfDay >= 18.00 and timeOfDay < 22.00) then
-            tit = "夜晚"
+            tit = "夜"
         else
             tit = "深夜"
         end

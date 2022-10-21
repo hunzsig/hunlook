@@ -1,22 +1,22 @@
-### F9 任务
+### F9 任務
 
 ```lua
---- 任务
+--- 任務
 Quest("gg")
-    :title("主动投降")
+    :title("自発的に降伏する")
     :side("right")
     :icon("ReplaceableTextures\\CommandButtons\\BTNTomeOfRetraining.blp")
-    :content("-gg 投降并退出")
+    :content("-gg 降伏して退出する")
 
 Quest("apm")
-    :title("查看你的APM数值")
+    :title("あなたのAPM値を見る")
     :side("right")
     :icon("ReplaceableTextures\\CommandButtons\\BTNTomeOfRetraining.blp")
-    :content("-apm 查看你的APM数值")
+    :content("-apm あなたのAPM値を見る")
 
 Quest("fov")
-    :title("调整你的视距")
+    :title("視野を調整する")
     :side("right")
     :icon("ReplaceableTextures\\CommandButtons\\BTNTomeOfRetraining.blp")
-    :content({ "-d +[number] 增加视距", "-d -[number] 减少视距", "-d =[number] 设置视距" })
+    :content({ "-d +[number] による視距離の増加", "-d -[number] による視距離の減少", "-d =[number] による視距離の設定" })
 ```
