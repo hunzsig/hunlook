@@ -1,24 +1,24 @@
-### 调试打印
+### デバッグ & 印刷
 
-> **所有的**调试，-r打包后，自动失效，可安心使用
+> **すべての**デバッグ、-rパッケージ化後、自動的に失効し、安心して使用できる
 >
-> 每个调试时会引起**I/O阻塞**，大量使用时会造成卡顿
+> デバッグごとに**I/Oブロック**が発生し、大量に使用するとカートンが発生します
 
-### 简单调试
+### 簡単なデバッグ
 
 ```lua
 print(123)
 print("abc")
 print({ 1, 2, 3 })
 print(123, "abc")
-print("你好，世界！")
+print("こんにちは，世界！")
 ```
 
 ### 详尽调试
 
 ```lua
 dump({
-    "你好",
+    "こんにちは",
     string = "世界",
     table = {
         1, 3, 5,
@@ -29,29 +29,29 @@ dump({
 
 ![Print](https://gitlab.com/h-document/lik/-/raw/main/assets/print.png)
 
-### 跟踪调试
+### トレースデバッグ
 
 ```lua
 stack()
 ```
 
-### 强制调试
+### 強制デバッグ
 
-> must 可判断布尔式，当不成立时程序将直接中止抛出错误及跟踪
+> mustはブール式を判断し、成立しない場合はプログラムがエラーやトレースのスローを直接中止する
 
 ```lua
-must(isClass(whichUnit, UnitClass)) -- 判断单位是否<Unit>类
-must(instanceof(whichButton, FrameClass)) -- 判断按钮是否<Frame>子类
+must(isClass(whichUnit, UnitClass)) -- 単位が<Unit>であるかどうかを判断する
+must(instanceof(whichButton, FrameClass)) -- ボタンが<子Frame>であるかどうかを判断する
 ```
 
-### 文件日志
+### ファイルログ
 
-> logger 自动按分钟分段，将数据保存在调试魔兽目录下
+> loggerは自動的に分刻みで、デバッグ魔獣カタログにデータを保存します
 
 ```lua
 logger("message")
 ```
 
-### 上线须知
+### オンラインの注意事項
 
-> 使用测试版本上线依然会启用调试，请打包上线版本再上传平台 [参考](https://lik.hunzsig.org/?p=other&n=dz)
+> テストバージョンを使用してオンラインにするとデバッグが有効になります。オンラインバージョンをパッケージ化してプラットフォームをアップロードしてください [参照](https://lik.hunzsig.org/?p=other&n=dz)

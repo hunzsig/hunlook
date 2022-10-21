@@ -40,8 +40,8 @@ stack()
 > mustはブール式を判断し、成立しない場合はプログラムがエラーやトレースのスローを直接中止する
 
 ```lua
-must(isObject（whichUnit，"Unit)--単位が<Unit>であるかどうかを判断する
-must(instanceof（whichButton，"Frame"）--ボタンが<子Frame>であるかどうかを判断する
+must(isObject（whichUnit，"Unit) -- 単位が<Unit>であるかどうかを判断する
+must(instanceof（whichButton，"Frame"）-- ボタンが<子Frame>であるかどうかを判断する
 ```
 
 ### ファイルログ
@@ -54,4 +54,4 @@ logger("message")
 
 ### オンラインの注意事項
 
->テストバージョンを使用してオンラインにするとデバッグが有効になります。オンラインバージョンをパッケージ化してプラットフォームをアップロードしてください[参照]（https://singluar.hunzsig.org/?p=other&n=dz)
+> テストバージョンを使用してオンラインにするとデバッグが有効になります。オンラインバージョンをパッケージ化してプラットフォームをアップロードしてください [参照](https://singluar.hunzsig.org/?p=other&n=dz)
