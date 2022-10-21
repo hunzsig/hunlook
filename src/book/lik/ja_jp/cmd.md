@@ -1,41 +1,41 @@
-## 命令行
+## コマンドツール
 
-### 新建项目
-
-```
-> lik.exe new demo //新建一个地图项目，名为demo
-```
-
-### 使用WE编辑地形
-
-> 编辑完后在使用test时会自动将改动记录回你的项目中
+### 新規プロジェクト
 
 ```
-> lik.exe we demo //以马仔WE打开项目demo，主要用于编辑地形
+> lik.exe new demo //demoという新しい地図プロジェクト
 ```
 
-### 模型批量查看
+### WEを使用した地形の編集
 
-命令后续共有3个参数
+> 編集後にtestを使用すると自動的に変更がプロジェクトに記録されます
 
-* 1 类别：分为 -a(查看assets) -n(查看assetsNew) -p(查看某个项目assets的model声明虚幻代码)
-* 2 页数：数目字，从第1页开始
-* 3 过滤：搜索
+```
+> lik.exe we demo //馬仔WEでプロジェクトdemoを開き、主に地形編集に使用する
+```
+
+### モデルの一括表示
+
+コマンドに続くパラメータは3つあります
+
+* 1 カテゴリ：-a（assetsを表示）-n（assetsNewを表示）-p（あるプロジェクトassetsのmodel宣言幻コードを表示）に分ける
+* 2 ページ数：1ページ目から始まる数字
+* 3 フィルタリング：検索けんさく
 
 > 模型默认scale1.00，方便对比
 
 ```
-> lik.exe model -a //查看根assets目录下的模型，第1页
-> lik.exe model -a 2 buff //查看根assets目录下的模型，第2页，同时只查看路径带有buff的模型
-> lik.exe model -n //查看根assetsNew目录下的模型，第1页
-> lik.exe model -n 3//查看根assetsNew目录下的模型，第3页
-> lik.exe model -p:demo 1  //查看demo项目的model声明虚幻模型，第1页
-> lik.exe model -p:demo 2 unit //查看demo项目的model声明虚幻模型，第2页，同时只查看路径带有unit的模型
+> lik.exe model -a //ルートassetsディレクトリの下のモデルの表示、1ページ目
+> lik.exe model -a 2 buff //ルートassetsディレクトリの下のモデルを表示します。2ページ目、パスにbuffがあるモデルのみを表示します
+> lik.exe model -n //ルートassetsNewディレクトリの下のモデルを表示して、1ページ目
+> lik.exe model -n 3//ルートassetsNewディレクトリの下のモデルを表示して、3ページ目
+> lik.exe model -p:demo 1  //demoプロジェクトのmodel宣言幻モデルを見る、1ページ目
+> lik.exe model -p:demo 2 unit //demoプロジェクトのmodel宣言幻モデルを表示し、2ページ目、同時にunitを持つパスを持つモデルのみを表示する
 ```
 
-### 运行测试
+### テストの実行
 
-命令后续共有3个参数
+命令后续共有2个参数
 
 * 1 项目：具体项目名称，如demo
 * 2 模式：(默认 -h)

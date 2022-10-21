@@ -35,7 +35,7 @@ There are 3 parameters after the command
 
 ### Run the test
 
-There are 3 parameters after the command
+There are 2 parameters after the command
 
 * 1 Project: specific project name, such as demo
 * 2 mode: (default -h)
