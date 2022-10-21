@@ -1,18 +1,18 @@
-## orderRoute 路线蓝图
+## orderRoute ロードマップ
 
-> 为单位设定一个路线移动的计划
+> 単位の線形移動の計画を設定する
 
-* 可以被中途阻扰，但依然会非常坚持的一直遵循后续路线坐标移动下去
-* 可以在每一段停顿点加入一个自定义函数来做出额外的动作（路线会被强行暂停，动作中需要手动恢复）
-* 使用 orderRoute 来执行路线行为
-* 使用 orderRouteSet 来修改路线
-* 使用 orderRoutePause 来暂停路线行为（但会继续走完以出发的路段）
-* 使用 orderRouteResume 来恢复路线行为（在暂停10秒后如还未恢复，路线会自动废除）
-* 使用 orderRouteDestroy 来消除路线行为
+* 途中で妨害されることはありますが、引き続き次のルート座標に従って移動していきます
+* 停止点ごとにカスタム関数を追加して追加の動作を行うことができます（ルートは強制的に停止され、動作中は手動で復元する必要があります）
+* orderRouteを使用したルート動作の実行
+* orderRouteSetを使用して線形を変更する
+* orderRoutePauseを使用してルート動作を一時停止します（ただし、出発するルートを歩き続けます）
+* orderRouteResumeを使用して線形挙動を復元します（10秒停止しても復元されない場合、線形は自動的に廃止されます）
+* orderRouteDestroyを使用して線形挙動を排除
 
-### 例子1
+### 例1
 
-> 常规的定义、修改、暂停、恢复
+> 一般的な定義、変更、一時停止、リカバリ
 
 ```lua
 local u = Unit(TPL_UNIT.HeroFlameLord, Player(i), 0, 0, 0)
@@ -60,21 +60,21 @@ u:orderRoute(true, {
 })
 
 time.setTimeout(6, function()
-    print("第5段")
+    print("セグメント5")
     u:orderRouteSet(5, { 0, 0 })
     time.setTimeout(10, function()
-        print("删除第5段")
+        print("セグメント5の削除")
         u:orderRouteSet(5, nil)
     end)
 end)
 ```
 
-### 例子2
+### 例2
 
-> 常用于多方路线设计
+> 多角形線形設計でよく使用される
 
 ```lua
---- 例子2
+--- 例2
 local lineMap = {
     { -500, -1000 },
     { 500, -1000 },

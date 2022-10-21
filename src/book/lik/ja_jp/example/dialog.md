@@ -1,64 +1,64 @@
-## 难度选择对话框
+## 難易度選択ダイアログ
 
-创建一个带文本当作数值的“难度选择”对话框，自动挑选第一位玩家，让他选
+テキストを数値として使用する「難易度選択」ダイアログを作成し、最初のプレイヤーを自動的に選択して選択させる
 
 ```lua
 Dialog(
-    "选择难度",
-    { "一般困难", "非常困难", "极其困难", "破天荒难" },
+    "選択の難しさ",
+    { "一般的な困難", "非常に困難", "困難をきわめる", "破天荒で難しい" },
     function(evtData)
     
-        -- 对话框不再使用则清理
+        -- ダイアログボックスが使用されなくなったらクリーンアップ
         destroy(evtData.triggerDialog)
         
-        if (evtData.value == "非常困难") then
-            --搞点事情
-        elseif (evtData.value == "极其困难") then
-            --搞点事情
-        elseif (evtData.value == "破天荒难") then
-            --搞点事情
+        if (evtData.value == "非常に困難") then
+            --仕事をする
+        elseif (evtData.value == "困難をきわめる") then
+            --仕事をする
+        elseif (evtData.value == "破天荒で難しい") then
+            --仕事をする
         else
-            --搞点事情
+            --仕事をする
         end
-        echo("选择了：" .. evtData.value)
+        echo("選択した：" .. evtData.value)
     end
 ):show()
 ```
 
-创建一个带热键、文本、数值的“难度选择”对话框，给玩家1，让他选
+ホットキー、テキスト、数値を使用した「難易度選択」ダイアログを作成し、プレイヤーに1、選択させる
 
 ```lua
 Dialog(
-    "选择难度",
+    "選択の難しさ",
     {
-        { hotkey = "Q", label = "一般困难", value = 1 },
-        { hotkey = "W", label = "非常困难", value = 2 },
-        { hotkey = "E", label = "极其困难", value = 3 },
-        { hotkey = "R", label = "破天荒难", value = 4 },
+        { hotkey = "Q", label = "一般的な困難", value = 1 },
+        { hotkey = "W", label = "非常に困難", value = 2 },
+        { hotkey = "E", label = "困難をきわめる", value = 3 },
+        { hotkey = "R", label = "破天荒で難しい", value = 4 },
     },
     function(evtData)
     
-        -- 对话框不再使用则清理
+        -- ダイアログボックスが使用されなくなったらクリーンアップ
         destroy(evtData.triggerDialog)
         
         if (evtData.hotkey == "Q") then
-            --搞点事情
+            --仕事をする
         elseif (evtData.hotkey == "W") then
-            --搞点事情
+            --仕事をする
         elseif (evtData.hotkey == "E") then
-            --搞点事情
+            --仕事をする
         else
-            --搞点事情
+            --仕事をする
         end
-        echo("选择了：" .. evtData.label .. "等级：" .. evtData.value)
+        echo("選択した：" .. evtData.label .. "等級：" .. evtData.value)
     end
 ):show(Player(1))
 ```
 
-预定义对话框，后续可根据title取回同一个对象
+titleに基づいて同じオブジェクトをフェッチするための事前定義済みダイアログボックス
 
-> 如上面的对话框，没有destroy前都可以重新取回数据
+> 上のダイアログボックスのように、destroyなしでデータを再フェッチできます
 
 ```lua
-Dialog("选择难度")
+Dialog("選択の難しさ")
 ```
