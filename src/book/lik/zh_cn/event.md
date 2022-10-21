@@ -10,7 +10,7 @@ EVENT.Game = {
     --- 进入凌晨
     ---@alias noteOnGameDawnData nil
     Dawn = "gameDawn",
-    --- 进入正午
+    --- 进入白天
     ---@alias noteOnGameDayData nil
     Day = "gameDay",
     --- 进入正午
