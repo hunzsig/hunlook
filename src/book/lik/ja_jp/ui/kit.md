@@ -1,44 +1,44 @@
-### UI套件
+### UI スイート
 
-### UI套件(Kit)结构
+### UI スイート(Kit)こうぞう
 
 ```
-└── my_kit - 套件名称
-    ├── assets -（*|·）放资源
-    │   ├── my.tga - 一个我的图
-    │   ├── btn - 支持多级目录
-    │   │   └── bag.tga - 一个背包图标
-    │   └── brun.mdx - 支持模型等
-    ├── main.fdf -（·）支持额外fdf，但不推荐（必须叫main名字）
-    └── main.lua -（*）套件脚本代码（必须叫main名字）
+└── my_kit - スイート名
+    ├── assets -（*|·）リソースの配置
+    │   ├── my.tga - 私の図
+    │   ├── btn - マルチレベルディレクトリのサポート
+    │   │   └── bag.tga - リュックサックのアイコン
+    │   └── brun.mdx - サポートモデルなど
+    ├── main.fdf -（·）追加のfdfはサポートされていますが、推奨されていません（main名でなければなりません）
+    └── main.lua -（*）スイートスクリプトコード（main名でなければなりません）
 ```
 
-### 一个简单的套件
+### シンプルなスイート
 
 ```
 local kit = 'lik_my'
 local this = UIKit(kit)
---- 套件初始化资源
+--- スイート初期化リソース
 this:onSetup(function()
     local stage = this:stage()
 end)
---- 套件刷新设定（可没有）
+--- スイートリフレッシュ設定（なし）
 this:onRefresh(1, function()
-    -- 每秒干点啥
+    -- 毎秒何をする
 end)
 ```
 
-### 为套件拓展功能
+### スイートの機能拡張
 
 ```
 local kit = 'lik_my'
---- 为套件注解一下，emmyLua插件自动索引
+--- キットに注記すると、emmyLuaプラグインは自動的にインデックス化されます
 ---@class MyUI1
 local this = UIKit(kit)
 function this:update()
     --- your codes
 end
 
---- 别处调用套件的拓展功能
+--- 他の呼び出しキットの拡張機能
 UIKit('lik_my'):update()
 ```
