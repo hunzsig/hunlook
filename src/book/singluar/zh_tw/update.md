@@ -4,11 +4,11 @@
 
 * 新的 | string.repeater
 * 新的 | WEATHER_TYPE
-  * ··· | 增加分類
-  * ··· | 提示特性
+  * ··· 增加分類
+  * ··· 提示特性
 * 新的 | Weather.period
 * 新的 | Rect.weather
-  * ··· | 支援多天氣
+  * ··· 支援多天氣
 * 最佳化 | 工具支援重複資源檢測
 * 最佳化 | japi 二次封裝FPS
 * 最佳化 | japi DzConvertWorldPosition採用一種更強的畸變
@@ -60,13 +60,13 @@
 
 * 新的 | Destructable替代Deco
 * 新的 | prop底層技術，絕不出錯的資料沙盒封鎖態
-  * ··· | 增加非同步資料修改捕捉的允許
-  * ··· | 可以在prop中get、set、clear而不用再擔心資料問題
+  * ··· 增加非同步資料修改捕捉的允許
+  * ··· 可以在prop中get、set、clear而不用再擔心資料問題
 * 新的 | ability missile、leap、crackFly
-  * ··· | 回撥函式轉為point資料結構體
-  * ··· | missile效率精準度大大提升
-  * ··· | leap效率最佳化且可輕浮轉彎引數
-  * ··· | crackFly效率最佳化且增加多維彈跳引數
+  * ··· 回撥函式轉為point資料結構體
+  * ··· missile效率精準度大大提升
+  * ··· leap效率最佳化且可輕浮轉彎引數
+  * ··· crackFly效率最佳化且增加多維彈跳引數
 * 新的 | Bgm 音樂，改為分離非同步式資料流
 * 新的 | Vcm 普遍音效，改為分離非同步式資料流
 * 新的 | V3d 環繞音效，改為分離非同步式資料流

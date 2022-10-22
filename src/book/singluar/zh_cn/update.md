@@ -4,11 +4,11 @@
 
 * 新的 | string.repeater
 * 新的 | WEATHER_TYPE
-    * ··· | 增加分类
-    * ··· | 提示特性
+    * ··· 增加分类
+    * ··· 提示特性
 * 新的 | Weather.period
 * 新的 | Rect.weather
-    * ··· | 支持多天气
+    * ··· 支持多天气
 * 优化 | 工具支持重复资源检测
 * 优化 | japi 二次封装FPS
 * 优化 | japi DzConvertWorldPosition采用一种更强的畸变
@@ -60,13 +60,13 @@
 
 * 新的 | Destructable替代Deco
 * 新的 | prop底层技术，绝不出错的数据沙盒封锁态
-    * ··· | 增加异步数据修改捕捉的允许
-    * ··· | 可以在prop中get、set、clear而不用再担心数据问题
+    * ··· 增加异步数据修改捕捉的允许
+    * ··· 可以在prop中get、set、clear而不用再担心数据问题
 * 新的 | ability missile、leap、crackFly
-    * ··· | 回调函数转为point数据结构体
-    * ··· | missile效率精准度大大提升
-    * ··· | leap效率优化且可轻浮转弯参数
-    * ··· | crackFly效率优化且增加多维弹跳参数
+    * ··· 回调函数转为point数据结构体
+    * ··· missile效率精准度大大提升
+    * ··· leap效率优化且可轻浮转弯参数
+    * ··· crackFly效率优化且增加多维弹跳参数
 * 新的 | Bgm 音乐，改为分离异步式数据流
 * 新的 | Vcm 普遍音效，改为分离异步式数据流
 * 新的 | V3d 环绕音效，改为分离异步式数据流
