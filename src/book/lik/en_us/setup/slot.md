@@ -10,7 +10,7 @@ Game():unitExp(100, 100, 1.20, 1000000)
 ```lua
 -- Configure game - skill bar hotkey
 -- A S H It is recommended not to use it if it is occupied by the default command
-Game():abilityHotkey({ "Q", "W", "E", "R", "D", "F", "C", "V" })
+Game():abilityHotkey({ KEYBOARD.Q, KEYBOARD.W, KEYBOARD.E, KEYBOARD.R, KEYBOARD.D, KEYBOARD.F, KEYBOARD.C, KEYBOARD.V })
 
 Game():abilityUpgrade(99, 100, 1.00, 10000)
 ```
@@ -20,7 +20,7 @@ Game():abilityUpgrade(99, 100, 1.00, 10000)
 ```lua
 -- Configure Game - Item List Hotkey
 -- Use War3: 78 45 12
-Game():itemHotkey({ "Numpad7", "Numpad8", "Numpad4", "Numpad5", "Numpad1", "Numpad2" })
+Game():itemHotkey({ KEYBOARD.Numpad7, KEYBOARD.Numpad8, KEYBOARD.Numpad4, KEYBOARD.Numpad5, KEYBOARD.Numpad1, KEYBOARD.Numpad2 })
 
 -- Skill upgrading limit and experience calculation parameters: max fixed ratio limit
 Game():itemExp(99, 100, 1.00, 10000)
