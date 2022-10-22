@@ -10,6 +10,9 @@
 * 新的 | Rect.weather
   * ··· | 支援多天氣
 * 最佳化 | 工具支援重複資源檢測
+* 最佳化 | japi 二次封裝FPS
+* 最佳化 | japi DzConvertWorldPosition採用一種更強的畸變
+* 最佳化 | Image show 在特定情況時機率出現鎖定視覺錯誤的問題
 
 > 2022/09
 

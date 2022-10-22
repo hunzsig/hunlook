@@ -10,6 +10,9 @@
 * New | Rect.weather
     * ··· multi weathers
 * Optimization | support duplicate assets detection
+* Optimization | japi secondary packaging FPS
+* Optimization | japi DzConvertWorldPosition uses a stronger distortion
+* Optimization | Image show may have a problem of locking vision error under certain circumstances
 
 > 2022/09
 

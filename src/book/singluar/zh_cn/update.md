@@ -10,6 +10,9 @@
 * 新的 | Rect.weather
     * ··· | 支持多天气
 * 优化 | 工具支持重复资源检测
+* 优化 | japi 二次封装FPS
+* 优化 | japi DzConvertWorldPosition采用一种更强的畸变
+* 优化 | Image show 在特定情况时几率出现锁定视觉错误的问题
 
 > 2022/09
 
