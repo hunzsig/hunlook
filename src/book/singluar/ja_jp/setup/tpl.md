@@ -31,7 +31,7 @@ TPL_ABILITY = {
             "ターゲットにダメージを与える：" .. colour.gold("{math.floor(this.bindUnit().attack()*100)}") .. "(攻撃x 100)"
         })
         .castTargetAllow(
-            function(this, targetUnit)
+        function(this, targetUnit)
             return targetUnit ~= nil and targetUnit.isEnemy(this.bindUnit().owner())
         end)
         .onEvent(EVENT.Ability.Effective,
@@ -61,11 +61,11 @@ TPL_ABILITY = {
         .levelUpNeedPoint(101)
         .onEvent(EVENT.Item.Get,
         function(getData)
-            getData.triggerUnit.attack("+=" .. 100 * getData.triggerAbility.level())
+            getData.triggerUnit.attack("+=" .. 50 + 100 * getData.triggerAbility.level())
         end)
         .onEvent(EVENT.Item.Lose,
         function(loseData)
-            loseData.triggerUnit.attack("-=" .. 100 * loseData.triggerAbility.level())
+            loseData.triggerUnit.attack("-=" .. 50 + 100 * loseData.triggerAbility.level())
         end)
         .onEvent(EVENT.Ability.LevelChange,
         function(lvcData)
