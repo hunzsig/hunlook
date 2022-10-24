@@ -17,7 +17,7 @@
 TPL_ABILITY = {
 
     ---@param effectiveData noteOnAbilityEffectiveData
-     AbilityTpl("AB1", ABILITY_TARGET_TYPE.TAG_R)
+    AB1 = AbilityTpl("AB1", ABILITY_TARGET_TYPE.TAG_R)
         .icon("AB1")
         .coolDownAdv(2.5, -0.05)
         .hpCostAdv(10, 5)
@@ -55,7 +55,7 @@ TPL_ABILITY = {
     ---@param getData noteOnAbilityGetData
     ---@param loseData noteOnAbilityLoseData
     ---@param lvcData noteOnAbilityLevelChangeData
-    AbilityTpl("AB2", ABILITY_TARGET_TYPE.PAS)
+    AB2 = AbilityTpl("AB2", ABILITY_TARGET_TYPE.PAS)
         .icon("AB2")
         .description({ "eff: +{50+this.level()*100}Atk" })
         .levelMax(5)
@@ -86,8 +86,8 @@ TPL_ABILITY = {
 
 local myUnitSlot = myUnit.abilitySlot()
 myUnitSlot.push(Ability(TPL_ABILITY.AB1))
-myUnitSlot.push(TPL_ABILITY.AB2)
-myUnitSlot.push(TPL_ABILITY.AB3, 6)
+myUnitSlot.push(TPL_ABILITY.AB1)
+myUnitSlot.push(TPL_ABILITY.AB2, 6)
 ```
 
 ### ItemTpl

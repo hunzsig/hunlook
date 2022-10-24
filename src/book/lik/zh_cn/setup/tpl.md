@@ -13,50 +13,47 @@
 ### AbilityTpl
 
 ```lua
-TPL_ABILITY = {
+---@param effectiveData noteOnAbilityEffectiveData
+TPL_ABILITY.DEMO = AbilityTpl()
+    :name("技能例子")
+    :targetType(ABILITY_TARGET_TYPE.tag_nil)
+    :icon("black")
+    :coolDownAdv(10, 0)
+    :mpCostAdv(100, 0)
+    :onEvent(EVENT.Ability.Effective,
+    function(effectiveData)
+        echo("技能释放", effectiveData.triggerUnit:owner())
+    end),
 
-    ---@param effectiveData noteOnAbilityEffectiveData
-    TPL_ABILITY.DEMO = AbilityTpl()
-        :name("技能例子")
-        :targetType(ABILITY_TARGET_TYPE.tag_nil)
-        :icon("black")
-        :coolDownAdv(10, 0)
-        :mpCostAdv(100, 0)
-        :onEvent(EVENT.Ability.Effective,
-        function(effectiveData)
-            echo("技能释放", effectiveData.triggerUnit:owner())
-        end),
-
-    ---@param hurtData noteOnUnitHurtData
-    ---@param effectiveData noteOnAbilityEffectiveData
-    TPL_ABILITY.ZZJY = AbilityTpl()
-        :name("自在极意被动")
-        :targetType(ABILITY_TARGET_TYPE.pas)
-        :icon("ChaosBody")
-        :coolDownAdv(5, 0)
-        :mpCostAdv(50, 0)
-        :levelMax(10)
-        :levelUpNeedPoint(2)
-        :onUnitEvent(EVENT.Unit.Hurt,
-        function(hurtData)
-            hurtData.triggerAbility:effective()
+---@param hurtData noteOnUnitHurtData
+---@param effectiveData noteOnAbilityEffectiveData
+TPL_ABILITY.ZZJY = AbilityTpl()
+    :name("自在极意被动")
+    :targetType(ABILITY_TARGET_TYPE.pas)
+    :icon("ChaosBody")
+    :coolDownAdv(5, 0)
+    :mpCostAdv(50, 0)
+    :levelMax(10)
+    :levelUpNeedPoint(2)
+    :onUnitEvent(EVENT.Unit.Hurt,
+    function(hurtData)
+        hurtData.triggerAbility:effective()
+    end)
+    :onEvent(EVENT.Ability.Effective,
+    function(effectiveData)
+        -- 技能被触发的效果
+        local tu = effectiveData.triggerUnit
+        tu:attach("DivineShieldTarget", "origin", 3)
+          :buff("自在极意被动")
+          :duration(3)
+          :purpose(function(buffObj)
+            buffObj:hurtReduction("+=100"):hurtRebound("+=100"):odds("hurtRebound", "+=100")
         end)
-        :onEvent(EVENT.Ability.Effective,
-        function(effectiveData)
-            -- 技能被触发的效果
-            local tu = effectiveData.triggerUnit
-            tu:attach("DivineShieldTarget", "origin", 3)
-              :buff("自在极意被动")
-              :duration(3)
-              :purpose(function(buffObj)
-                buffObj:hurtReduction("+=100"):hurtRebound("+=100"):odds("hurtRebound", "+=100")
-            end)
-              :rollback(function(buffObj)
-                buffObj:hurtReduction("-=100"):hurtRebound("-=100"):odds("hurtRebound", "-=100")
-            end)
-              :run()
+          :rollback(function(buffObj)
+            buffObj:hurtReduction("-=100"):hurtRebound("-=100"):odds("hurtRebound", "-=100")
         end)
-}
+          :run()
+    end)
 
 -- 后续代码创建技能对象
 -- 单位既可以pushAbility也可以pushAbilityTpl，智能加技能
@@ -64,10 +61,10 @@ TPL_ABILITY = {
 -- myUnit是一个Unit对象，这里只是演示，请自行理解
 -- myUnitSlot是一个AbilitySlot对象，代表该单位的技能栏
 
-local myUnitSlot = myUnit:abilitySlot()
-myUnitSlot:push(Ability(TPL_ABILITY.AB1))
-myUnitSlot:push(TPL_ABILITY.AB2)
-myUnitSlot:push(TPL_ABILITY.AB3, 6)
+local myUnitSlot = (myUnit):abilitySlot()
+myUnitSlot:push(Ability(TPL_ABILITY.DEMO))
+myUnitSlot:push(TPL_ABILITY.DEMO)
+myUnitSlot:push(TPL_ABILITY.ZZJY, 6)
 ```
 
 ### ItemTpl

@@ -14,50 +14,47 @@
 ### AbilityTpl
 
 ```lua
-TPL_ABILITY = {
+---@param effectiveData noteOnAbilityEffectiveData
+TPL_ABILITY.DEMO = AbilityTpl()
+    :name("Demo Ability")
+    :targetType(ABILITY_TARGET_TYPE.tag_nil)
+    :icon("black")
+    :coolDownAdv(10, 0)
+    :mpCostAdv(100, 0)
+    :onEvent(EVENT.Ability.Effective,
+    function(effectiveData)
+        echo("spell", effectiveData.triggerUnit:owner())
+    end),
 
-    ---@param effectiveData noteOnAbilityEffectiveData
-    TPL_ABILITY.DEMO = AbilityTpl()
-        :name("Demo Ability")
-        :targetType(ABILITY_TARGET_TYPE.tag_nil)
-        :icon("black")
-        :coolDownAdv(10, 0)
-        :mpCostAdv(100, 0)
-        :onEvent(EVENT.Ability.Effective,
-        function(effectiveData)
-            echo("spell", effectiveData.triggerUnit:owner())
-        end),
-
-    ---@param hurtData noteOnUnitHurtData
-    ---@param effectiveData noteOnAbilityEffectiveData
-    TPL_ABILITY.ZZJY = AbilityTpl()
-        :name("hurtRebound")
-        :targetType(ABILITY_TARGET_TYPE.pas)
-        :icon("ChaosBody")
-        :coolDownAdv(5, 0)
-        :mpCostAdv(50, 0)
-        :levelMax(10)
-        :levelUpNeedPoint(2)
-        :onUnitEvent(EVENT.Unit.Hurt,
-        function(hurtData)
-            hurtData.triggerAbility:effective()
+---@param hurtData noteOnUnitHurtData
+---@param effectiveData noteOnAbilityEffectiveData
+TPL_ABILITY.ZZJY = AbilityTpl()
+    :name("hurtRebound")
+    :targetType(ABILITY_TARGET_TYPE.pas)
+    :icon("ChaosBody")
+    :coolDownAdv(5, 0)
+    :mpCostAdv(50, 0)
+    :levelMax(10)
+    :levelUpNeedPoint(2)
+    :onUnitEvent(EVENT.Unit.Hurt,
+    function(hurtData)
+        hurtData.triggerAbility:effective()
+    end)
+    :onEvent(EVENT.Ability.Effective,
+    function(effectiveData)
+        -- Effect of skill being triggered
+        local tu = effectiveData.triggerUnit
+        tu:attach("DivineShieldTarget", "origin", 3)
+          :buff("hurtRebound")
+          :duration(3)
+          :purpose(function(buffObj)
+            buffObj:hurtReduction("+=100"):hurtRebound("+=100"):odds("hurtRebound", "+=100")
         end)
-        :onEvent(EVENT.Ability.Effective,
-        function(effectiveData)
-            -- Effect of skill being triggered
-            local tu = effectiveData.triggerUnit
-            tu:attach("DivineShieldTarget", "origin", 3)
-              :buff("hurtRebound")
-              :duration(3)
-              :purpose(function(buffObj)
-                buffObj:hurtReduction("+=100"):hurtRebound("+=100"):odds("hurtRebound", "+=100")
-            end)
-              :rollback(function(buffObj)
-                buffObj:hurtReduction("-=100"):hurtRebound("-=100"):odds("hurtRebound", "-=100")
-            end)
-              :run()
+          :rollback(function(buffObj)
+            buffObj:hurtReduction("-=100"):hurtRebound("-=100"):odds("hurtRebound", "-=100")
         end)
-}
+          :run()
+    end)
 
 -- Create skill object in subsequent code
 -- Units can either pushAbility or pushAbilityTpl, with intelligence and skills
@@ -65,10 +62,10 @@ TPL_ABILITY = {
 -- MyUnit is a Unit object. This is just a demonstration. Please understand
 -- MyUnitSlot is an AbilitySlot object, representing the skill bar of the unit
 
-local myUnitSlot = myUnit:abilitySlot()
-myUnitSlot:push(Ability(TPL_ABILITY.AB1))
-myUnitSlot:push(TPL_ABILITY.AB2)
-myUnitSlot:push(TPL_ABILITY.AB3, 6)
+local myUnitSlot = (myUnit):abilitySlot()
+myUnitSlot:push(Ability(TPL_ABILITY.DEMO))
+myUnitSlot:push(TPL_ABILITY.DEMO)
+myUnitSlot:push(TPL_ABILITY.ZZJY, 6)
 ```
 
 ### ItemTpl

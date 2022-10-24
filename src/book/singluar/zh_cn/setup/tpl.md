@@ -16,7 +16,7 @@
 TPL_ABILITY = {
 
     ---@param effectiveData noteOnAbilityEffectiveData
-     AbilityTpl("技能1", ABILITY_TARGET_TYPE.TAG_R)
+    AB1 = AbilityTpl("技能1", ABILITY_TARGET_TYPE.TAG_R)
         .icon("AB1")
         .coolDownAdv(2.5, -0.05)
         .hpCostAdv(10, 5)
@@ -54,7 +54,7 @@ TPL_ABILITY = {
     ---@param getData noteOnAbilityGetData
     ---@param loseData noteOnAbilityLoseData
     ---@param lvcData noteOnAbilityLevelChangeData
-    AbilityTpl("唯我独尊", ABILITY_TARGET_TYPE.PAS)
+    AB2 = AbilityTpl("唯我独尊", ABILITY_TARGET_TYPE.PAS)
         .icon("AB2")
         .description({ "强击单人特效: +{50+this.level()*100}攻击" })
         .levelMax(5)
@@ -85,8 +85,8 @@ TPL_ABILITY = {
 
 local myUnitSlot = myUnit.abilitySlot()
 myUnitSlot.push(Ability(TPL_ABILITY.AB1))
-myUnitSlot.push(TPL_ABILITY.AB2)
-myUnitSlot.push(TPL_ABILITY.AB3, 6)
+myUnitSlot.push(TPL_ABILITY.AB1)
+myUnitSlot.push(TPL_ABILITY.AB2, 6)
 ```
 
 ### ItemTpl
