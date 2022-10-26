@@ -15,6 +15,7 @@
 * 優化 | japi 二次封裝FPS
 * 優化 | japi DzConvertWorldPosition採用一種更強的畸變
 * 優化 | Image show 在特定情況時幾率出現鎖定視覺錯誤的問題
+* 優化 | 微調了new指令Demo的例子代碼
 * 修復 | Frame 在某種佈局修改情況下定位偏移的問題
 
 > 2022/09
