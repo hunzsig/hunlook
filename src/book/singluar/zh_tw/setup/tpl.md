@@ -164,10 +164,14 @@ TPL_UNIT.BansheeRanger = UnitTpl("BansheeRanger")
 -- 火焰巨魔
 TPL_UNIT.HeroFlameLord = UnitTpl("HeroFlameLord")
 
--- TPL也定義提前設定技能、物品
+-- TPL也定義提前設定技能、物品、事件
 TPL_UNIT.Footman = UnitTpl("Footman")
     .abilitySlot({TPL_ABILITY.AB1,TPL_ABILITY.AB2})
     .itemSlot({TPL_ITEM.IT1,TPL_ITEM.IT2})
+    .onEvent(EVENT.Unit.MoveTurn, "myTurn",
+    function()
+        print("I am turning!")
+    end)
 
 -- 執行時程式碼建立
 local u1 = TPL_UNIT.BansheeRanger

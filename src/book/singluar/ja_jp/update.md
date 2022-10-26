@@ -2,6 +2,8 @@
 
 > 2022/10
 
+* 新登場 | Frame.upperNode
+* 新登場 | Frame.lowerNodes
 * 新登場 | string.repeater
 * 新登場 | WEATHER_TYPE
     * ··· カテゴリーを追加
@@ -13,6 +15,7 @@
 * 最適化 | japi 二次パッケージFPS
 * 最適化 | japi DzConvertWorldPositionはより強い歪みを採用
 * 最適化 | Image show 特定の状況において確率的にロックされた視覚エラーが発生する問題
+* 修正 | レイアウトを変更した場合のFrameの位置決めオフセットの問題
 
 > 2022/09
 

@@ -165,10 +165,14 @@ TPL_UNIT.BansheeRanger = UnitTpl("BansheeRanger")
 -- HeroFlameLord
 TPL_UNIT.HeroFlameLord = UnitTpl("HeroFlameLord")
 
--- TPL also defines setting skills and items in advance
+-- TPL also defines setting skills and items and events in advance
 TPL_UNIT.Footman = UnitTpl("Footman")
     .abilitySlot({TPL_ABILITY.AB1,TPL_ABILITY.AB2})
     .itemSlot({TPL_ITEM.IT1,TPL_ITEM.IT2})
+    .onEvent(EVENT.Unit.MoveTurn, "myTurn",
+    function()
+        print("I am turning!")
+    end)
 
 -- Runtime Code Creation
 local u1 = TPL_UNIT.BansheeRanger

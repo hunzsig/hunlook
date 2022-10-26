@@ -2,6 +2,8 @@
 
 > 2022/10
 
+* New | Frame.upperNode
+* New | Frame.lowerNodes
 * New | string.repeater
 * New | WEATHER_TYPE
     * ··· add categories
@@ -13,6 +15,7 @@
 * Optimization | japi secondary packaging FPS
 * Optimization | japi DzConvertWorldPosition uses a stronger distortion
 * Optimization | Image show may have a problem of locking vision error under certain circumstances
+* Fixed | The problem of positioning the offset of the frame when the layout is modified
 
 > 2022/09
 

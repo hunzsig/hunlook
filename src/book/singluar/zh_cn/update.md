@@ -2,6 +2,8 @@
 
 > 2022/10
 
+* 新的 | Frame.upperNode
+* 新的 | Frame.lowerNodes
 * 新的 | string.repeater
 * 新的 | WEATHER_TYPE
     * ··· 增加分类
@@ -13,6 +15,7 @@
 * 优化 | japi 二次封装FPS
 * 优化 | japi DzConvertWorldPosition采用一种更强的畸变
 * 优化 | Image show 在特定情况时几率出现锁定视觉错误的问题
+* 修复 | Frame 在某种布局修改情况下定位偏移的问题
 
 > 2022/09
 
