@@ -23,6 +23,10 @@ There are 3 parameters after the command
 * 3 Filter: Search
 
 > The default scale of the model is 1.00, which is convenient for comparison
+> 
+> Path with item_ The model of will scale 2.00 for easy viewing (because the item model is usually small)
+>
+> Path with eff_ The model of will scale 0.75 for easy viewing (because the special effects model is usually messy)
 
 ```
 > lik.exe model -a //View models in root assets directory, page 1

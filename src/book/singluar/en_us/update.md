@@ -12,6 +12,7 @@
 * New | Rect.weather
     * ··· multi weathers
 * Optimization | support duplicate assets detection
+* Optimization | if there is item_ in the path name, the scale in the model command becomes 2.00
 * Optimization | japi secondary packaging FPS
 * Optimization | japi DzConvertWorldPosition uses a stronger distortion
 * Optimization | Image show may have a problem of locking vision error under certain circumstances

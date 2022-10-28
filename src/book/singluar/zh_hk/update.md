@@ -12,6 +12,7 @@
 * 新的 | Rect.weather
   * ··· 支持多天氣
 * 優化 | 工具支持重複資源檢測
+* 優化 | 工具model命令現在對路徑帶有item_的模型縮放為2.00
 * 優化 | japi 二次封裝FPS
 * 優化 | japi DzConvertWorldPosition採用一種更強的畸變
 * 優化 | Image show 在特定情況時幾率出現鎖定視覺錯誤的問題

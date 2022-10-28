@@ -12,6 +12,7 @@
 * 新登場 | Rect.weather
     * ··· 多天気をサポート
 * 最適化 | ツールは重複リソース検出をサポートする
+* 最適化 | パス名に item_ すると、modelコマンドのscaleが2.00になります
 * 最適化 | japi 二次パッケージFPS
 * 最適化 | japi DzConvertWorldPositionはより強い歪みを採用
 * 最適化 | Image show 特定の状況において確率的にロックされた視覚エラーが発生する問題
