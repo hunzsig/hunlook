@@ -6,11 +6,11 @@
 * 新的 | Frame.lowerNodes
 * 新的 | string.repeater
 * 新的 | WEATHER_TYPE
-  * ··· 增加分類
-  * ··· 提示特性
+    * ··· 增加分類
+    * ··· 提示特性
 * 新的 | Weather.period
 * 新的 | Rect.weather
-  * ··· 支持多天氣
+    * ··· 支持多天氣
 * 優化 | 工具支持重複資源檢測
 * 優化 | 工具model命令現在對路徑帶有item_的模型縮放為2.00
 * 優化 | japi 二次封裝FPS
@@ -18,6 +18,7 @@
 * 優化 | Image show 在特定情況時幾率出現鎖定視覺錯誤的問題
 * 優化 | 微調了new指令Demo的例子代碼
 * 修復 | Frame 在某種佈局修改情況下定位偏移的問題
+* 修復 | colour.format 在containColor為nil時出錯的問題
 
 > 2022/09
 
@@ -65,13 +66,13 @@
 
 * 新的 | Destructable替代Deco
 * 新的 | prop底層技術，絕不出錯的數據沙盒封鎖態
-  * ··· 增加異步數據修改捕捉的允許
-  * ··· 可以在prop中get、set、clear而不用再擔心數據問題
+    * ··· 增加異步數據修改捕捉的允許
+    * ··· 可以在prop中get、set、clear而不用再擔心數據問題
 * 新的 | ability missile、leap、crackFly
-  * ··· 回調函數轉為point數據結構體
-  * ··· missile效率精準度大大提升
-  * ··· leap效率優化且可輕浮轉彎參數
-  * ··· crackFly效率優化且增加多維彈跳參數
+    * ··· 回調函數轉為point數據結構體
+    * ··· missile效率精準度大大提升
+    * ··· leap效率優化且可輕浮轉彎參數
+    * ··· crackFly效率優化且增加多維彈跳參數
 * 新的 | Bgm 音樂，改為分離異步式數據流
 * 新的 | Vcm 普遍音效，改為分離異步式數據流
 * 新的 | V3d 環繞音效，改為分離異步式數據流
@@ -97,7 +98,7 @@
 > 2022/05
 
 * 新的 | Attribute方法 增加cost、castChant、coolDown、coolDownSec
-  * ···可用於動態修改任意技能屬性
+    * ···可用於動態修改任意技能屬性
 * 新的 | Unit方法 stature（單位身材高度）
 * 優化 | FrameButton
 * 優化 | ability crashFly的功能，提升性能

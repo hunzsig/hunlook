@@ -18,6 +18,7 @@
 * Optimization | Image show may have a problem of locking vision error under certain circumstances
 * Optimization | The demo example code of the new instruction has been fine tuned
 * Fixed | The problem of positioning the offset of the frame when the layout is modified
+* Fixed | colour.format error when containColor is nil
 
 > 2022/09
 
