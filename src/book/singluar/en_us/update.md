@@ -2,6 +2,8 @@
 
 > 2022/10
 
+* New | sync.must
+* New | async.must
 * New | Frame.upperNode
 * New | Frame.lowerNodes
 * New | string.repeater

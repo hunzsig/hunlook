@@ -2,6 +2,8 @@
 
 > 2022/10
 
+* 新的 | sync.must
+* 新的 | async.must
 * 新的 | Frame.upperNode
 * 新的 | Frame.lowerNodes
 * 新的 | string.repeater

@@ -2,6 +2,8 @@
 
 > 2022/10
 
+* 新登場 | sync.must
+* 新登場 | async.must
 * 新登場 | Frame.upperNode
 * 新登場 | Frame.lowerNodes
 * 新登場 | string.repeater
