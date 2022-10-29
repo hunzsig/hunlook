@@ -25,13 +25,13 @@
 
 ##### インストール プラグイン - Image Icon Viewer
 
-##### インストール プラグイン - Translation
+##### インストール プラグイン - Highlighter
 
 ![Emmylua](https://gitlab.com/h-document/singluar/-/raw/main/images/emmylua.png)
 
 ![ImageIconViewer](https://gitlab.com/h-document/singluar/-/raw/main/images/imageIconViewer.png)
 
-![Translation](https://gitlab.com/h-document/singluar/-/raw/main/images/translation.png)
+![Highlighter](https://gitlab.com/h-document/singluar/-/raw/main/images/colorHighlighter.png)
 
 ### 端末を開いてルートを入力
 

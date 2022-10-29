@@ -24,13 +24,13 @@
 
 ##### Install plugins - Image Icon Viewer
 
-##### Install plugins - Translation
+##### Install plugins - Highlighter
 
 ![Emmylua](https://gitlab.com/h-document/singluar/-/raw/main/images/emmylua.png)
 
 ![ImageIconViewer](https://gitlab.com/h-document/singluar/-/raw/main/images/imageIconViewer.png)
 
-![Translation](https://gitlab.com/h-document/singluar/-/raw/main/images/translation.png)
+![ColorHighlighter](https://gitlab.com/h-document/singluar/-/raw/main/images/colorHighlighter.png)
 
 ### Open the terminal and enter the root
 

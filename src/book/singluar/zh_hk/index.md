@@ -24,13 +24,13 @@
 
 ##### 安裝插件 Image Icon Viewer
 
-##### 安裝插件 Translation
+##### 安裝插件 Highlighter
 
 ![Emmylua](https://gitlab.com/h-document/singluar/-/raw/main/images/emmylua.png)
 
 ![ImageIconViewer](https://gitlab.com/h-document/singluar/-/raw/main/images/imageIconViewer.png)
 
-![Translation](https://gitlab.com/h-document/singluar/-/raw/main/images/translation.png)
+![Highlighter](https://gitlab.com/h-document/singluar/-/raw/main/images/colorHighlighter.png)
 
 ### 打開終端並進入框架根
 

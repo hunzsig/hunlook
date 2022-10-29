@@ -24,13 +24,13 @@
 
 ##### 安裝外掛 Image Icon Viewer
 
-##### 安裝外掛 Translation
+##### 安裝外掛 Highlighter
 
 ![Emmylua](https://gitlab.com/h-document/singluar/-/raw/main/images/emmylua.png)
 
 ![ImageIconViewer](https://gitlab.com/h-document/singluar/-/raw/main/images/imageIconViewer.png)
 
-![Translation](https://gitlab.com/h-document/singluar/-/raw/main/images/translation.png)
+![Highlighter](https://gitlab.com/h-document/singluar/-/raw/main/images/colorHighlighter.png)
 
 ### 開啟終端並進入框架根
 
