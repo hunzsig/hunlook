@@ -11,24 +11,24 @@ Game().defineDescription("abilityBase", function(this, options)
     local tt = this.targetType()
     if (isObject(this, "Ability")) then
         if (tt ~= ABILITY_TARGET_TYPE.PAS) then
-            table.insert(desc, this.name() .. ' - 等级 ' .. colour.gold(lv) .. '（' .. colour.gold(this.hotkey()) .. '）')
+            table.insert(desc, this.name() .. ' - 等级 ' .. colour.hex(colour.gold, lv) .. '（' .. colour.hex(colour.gold, this.hotkey()) .. '）')
         else
-            table.insert(desc, this.name() .. " - 等级 " .. colour.gold(lv))
+            table.insert(desc, this.name() .. " - 等级 " .. colour.hex(colour.gold, lv))
         end
     else
         table.insert(desc, this.name())
     end
-    table.insert(desc, '类型：' .. colour.gold(tt.label))
+    table.insert(desc, '类型：' .. colour.hex(colour.gold, tt.label))
     if (tt ~= ABILITY_TARGET_TYPE.PAS) then
         local chantCast = this.castChant(lv)
         if (chantCast > 0) then
-            table.insert(desc, '吟唱时间：' .. colour.skyLight(chantCast .. " 秒"))
+            table.insert(desc, '吟唱时间：' .. colour.hex(colour.skyblue, chantCast .. " 秒"))
         else
-            table.insert(desc, '吟唱时间：' .. colour.skyLight("瞬间施法"))
+            table.insert(desc, '吟唱时间：' .. colour.hex(colour.skyblue, "瞬间施法"))
         end
         local keepCast = this.castKeep(lv)
         if (keepCast > 0) then
-            table.insert(desc, '最大施法持续：' .. colour.skyLight(keepCast .. " 秒"))
+            table.insert(desc, '最大施法持续：' .. colour.hex(colour.skyblue, keepCast .. " 秒"))
         end
     end
     return desc
@@ -81,7 +81,7 @@ Game().defineDescription("itemBase", function(this, _)
     local desc = {}
     local name
     if (this.level() > 0) then
-        name = this.name() .. '[' .. colour.white(this.level()) .. ' 级]'
+        name = this.name() .. '[' .. this.level() .. ' 级]'
     else
         name = this.name()
     end
@@ -89,7 +89,7 @@ Game().defineDescription("itemBase", function(this, _)
         local tt = this.ability().targetType()
         if (isObject(this, "Item")) then
             if (tt ~= ABILITY_TARGET_TYPE.PAS and this.hotkey() ~= nil) then
-                name = name .. '（' .. colour.gold(this.hotkey()) .. '）'
+                name = name .. '（' .. colour.hex(colour.gold, this.hotkey()) .. '）'
             end
             table.insert(desc, name)
         else
@@ -97,7 +97,7 @@ Game().defineDescription("itemBase", function(this, _)
         end
         desc = table.merge(desc, Game().combineDescription(this.ability(), nil, "itemAbility", "<D>", "attributes"))
         if (this.charges() > 0) then
-            table.insert(desc, colour.white("|n剩余次数：" .. this.charges()))
+            table.insert(desc, "|n剩余次数：" .. this.charges())
         end
     else
         table.insert(desc, name)

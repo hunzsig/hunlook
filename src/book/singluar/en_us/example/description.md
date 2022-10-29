@@ -31,21 +31,21 @@ Game().defineDescription("abilityBase", function(this, options)
     local whichLevel = math.floor(options.whichLevel or this.level())
     local tt = this.targetType()
     if (tt ~= ABILITY_TARGET_TYPE.PAS or this.coolDownRemain() > 0) then
-        table.insert(desc, this.name() .. ' - lv ' .. colour.gold(whichLevel) .. '（' .. colour.gold(this.hotkey()) .. '）')
+        table.insert(desc, this.name() .. ' - lv ' .. colour.hex(colour.gold, whichLevel) .. '（' .. colour.hex(colour.gold, this.hotkey()) .. '）')
     else
-        table.insert(desc, this.name() .. " - lv " .. colour.gold(whichLevel))
+        table.insert(desc, this.name() .. " - lv " .. colour.hex(colour.gold, whichLevel))
     end
-    table.insert(desc, 'type：' .. colour.gold(tt.label))
+    table.insert(desc, 'type：' .. colour.hex(colour.gold, tt.label))
     if (tt ~= ABILITY_TARGET_TYPE.PAS or this.coolDownRemain() > 0) then
         local chantCast = this.castChant(whichLevel)
         if (chantCast > 0) then
-            table.insert(desc, 'chantTime：' .. colour.skyLight(chantCast .. " Sec"))
+            table.insert(desc, 'chantTime：' .. colour.hex(colour.skyblue, chantCast .. " Sec"))
         else
-            table.insert(desc, 'chantTime：' .. colour.skyLight("instant"))
+            table.insert(desc, 'chantTime：' .. colour.hex(colour.skyblue, "instant"))
         end
         local keepCast = this.castKeep(whichLevel)
         if (keepCast > 0) then
-            table.insert(desc, 'maxChant：' .. colour.skyLight(keepCast .. " Sec"))
+            table.insert(desc, 'maxChant：' .. colour.hex(colour.skyblue, keepCast .. " Sec"))
         end
     end
     return desc
