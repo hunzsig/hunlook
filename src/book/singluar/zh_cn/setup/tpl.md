@@ -67,7 +67,7 @@ TPL_ABILITY = {
         .name("唯我独尊")
         .targetType(ABILITY_TARGET_TYPE.PAS)
         .icon("AB2")
-        .description("公式: 50+等级*100")
+        .description({"公式: 50+等级*100"})
         .levelMax(5)
         .levelUpNeedPoint(101)
         .onEvent(EVENT.Item.Get,
@@ -91,7 +91,7 @@ TPL_ABILITY = {
         .name("唯我独尊 attributes 写法")
         .targetType(ABILITY_TARGET_TYPE.PAS)
         .icon("AB3")
-        .description("公式: 50+等级*100"})
+        .description("公式: 50+等级*100")
         .levelMax(5)
         .levelUpNeedPoint(101)
         .attributes({
