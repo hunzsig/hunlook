@@ -2,6 +2,8 @@
 
 > 2022/10
 
+* 新的 | Tpl.description 現支持字符串、字符串數組、函數，廢棄了{}語法糖
+* 新的 | colour 重構
 * 新的 | sync.must
 * 新的 | async.must
 * 新的 | Frame.upperNode

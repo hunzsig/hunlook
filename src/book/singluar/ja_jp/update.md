@@ -2,6 +2,8 @@
 
 > 2022/10
 
+* 新登場 | Tpl.description 現在サポートされている文字列、文字列配列、関数、は文法糖を廃棄した
+* 新登場 | colour リファクタリング
 * 新登場 | sync.must
 * 新登場 | async.must
 * 新登場 | Frame.upperNode

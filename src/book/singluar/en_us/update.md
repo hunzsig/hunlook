@@ -2,6 +2,8 @@
 
 > 2022/10
 
+* New | Tpl.description now supports string, string[] and function, discards the {} syntax sugar
+* New | colour refactoring
 * New | sync.must
 * New | async.must
 * New | Frame.upperNode

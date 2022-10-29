@@ -16,7 +16,9 @@
 TPL_ABILITY = {
 
     ---@param effectiveData noteOnAbilityEffectiveData
-    AB1 = AbilityTpl("技能1", ABILITY_TARGET_TYPE.TAG_R)
+    AB1 = AbilityTpl()
+        .name("技能1")
+        .targetType(ABILITY_TARGET_TYPE.TAG_R)
         .icon("AB1")
         .coolDownAdv(2.5, -0.05)
         .hpCostAdv(10, 5)
@@ -26,17 +28,24 @@ TPL_ABILITY = {
         .castRadiusAdv(500, 50)
         .levelMax(9)
         .description(
-        {
-            "基础消耗：" .. colour.purple("{this.mpCost()}"),
-            "对目标造成伤害：" .. colour.gold("{math.floor(this.bindUnit().attack()*100)}") .. "(攻击x100)"
-        })
-        .castTargetAllow(
+        function(this)
+            local dmg = 0
+            if (this.bindUnit and this.bindUnit()) then
+                dmg = math.floor(this.bindUnit().attack() * 100)
+            else
+                dmg = "（基于攻击）"
+            end
+            return {
+                "基础消耗：" .. colour.hex(colour.violet, this.mpCost()),
+                "对目标造成伤害：" .. colour.hex(colour.gold, dmg) .. "[攻击x100]"
+            }
+        end)
+        .castTargetFilter(
         function(this, targetUnit)
             return targetUnit ~= nil and targetUnit.isEnemy(this.bindUnit().owner())
         end)
         .onEvent(EVENT.Ability.Effective,
         function(effectiveData)
-            function(effectiveData)
             local ftp = 1
             time.setInterval(ftp, function(curTimer)
                 -- 只是一个持续施法技能，施法后使用isAbilityKeepCasting判定是否仍在施法
@@ -54,9 +63,11 @@ TPL_ABILITY = {
     ---@param getData noteOnAbilityGetData
     ---@param loseData noteOnAbilityLoseData
     ---@param lvcData noteOnAbilityLevelChangeData
-    AB2 = AbilityTpl("唯我独尊", ABILITY_TARGET_TYPE.PAS)
+    AB2 = AbilityTpl()
+        .name("唯我独尊")
+        .targetType(ABILITY_TARGET_TYPE.PAS)
         .icon("AB2")
-        .description({ "强击单人特效: +{50+this.level()*100}攻击" })
+        .description("公式: 50+等级*100")
         .levelMax(5)
         .levelUpNeedPoint(101)
         .onEvent(EVENT.Item.Get,
@@ -75,6 +86,17 @@ TPL_ABILITY = {
                 lvcData.triggerUnit.attack("-=" .. 100 * math.abs(lvcData.value))
             end
         end)
+        
+    AB3 = AbilityTpl()
+        .name("唯我独尊 attributes 写法")
+        .targetType(ABILITY_TARGET_TYPE.PAS)
+        .icon("AB3")
+        .description("公式: 50+等级*100"})
+        .levelMax(5)
+        .levelUpNeedPoint(101)
+        .attributes({
+            { "attack", 100, 50 },
+        })
 }
 
 -- 后续代码创建技能对象
@@ -85,8 +107,8 @@ TPL_ABILITY = {
 
 local myUnitSlot = myUnit.abilitySlot()
 myUnitSlot.push(Ability(TPL_ABILITY.AB1))
-myUnitSlot.push(TPL_ABILITY.AB1)
-myUnitSlot.push(TPL_ABILITY.AB2, 6)
+myUnitSlot.push(TPL_ABILITY.AB2)
+myUnitSlot.push(TPL_ABILITY.AB3, 6)
 ```
 
 ### ItemTpl
@@ -108,6 +130,7 @@ _assets_model(
 TPL_ITEM = {
 
     IT1 = ItemTpl("TreasureChest")
+        .name("物品1")
         .ability(Ability(TPL_ABILITY.AB1))
         .icon("AB1")
         .levelMax(9)
@@ -115,6 +138,7 @@ TPL_ITEM = {
         .charges(999)
 
     IT2 = ItemTpl("TreasureChest")
+        .name("物品2")
         .ability(Ability(TPL_ABILITY.AB2))
         .icon("AB2")
         .levelMax(9)
@@ -166,6 +190,7 @@ TPL_UNIT.HeroFlameLord = UnitTpl("HeroFlameLord")
 
 -- TPL也定义提前设置技能、物品、事件
 TPL_UNIT.Footman = UnitTpl("Footman")
+    .superposition("attack", 1)
     .abilitySlot({TPL_ABILITY.AB1,TPL_ABILITY.AB2})
     .itemSlot({TPL_ITEM.IT1,TPL_ITEM.IT2})
     .onEvent(EVENT.Unit.MoveTurn, "myTurn",
@@ -182,7 +207,7 @@ local u1 = TPL_UNIT.BansheeRanger
   .move(522)
   .attack(91).attackRange(1000).attackSpeed(100)
   .attackRipple(30)
-  .missileAdd(Missile("DragonHawkMissile").homing(true))
+  .missilePush(Missile("DragonHawkMissile").homing(true))
 
 local u2 = Player(2)
   .unit(TPL_UNIT.HeroFlameLord, -400, 400, 66.6)
@@ -193,6 +218,6 @@ local u2 = Player(2)
   .attack(109).attackRange(300)
   .punish(1000)
   .avoid(35)
-  .lightningAdd(Lighting(LIGHTING_TYPE.thunderRed))
+  .lightningPush(Lighting(LIGHTING_TYPE.thunderRed))
   
 ```
