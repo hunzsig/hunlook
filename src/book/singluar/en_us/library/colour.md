@@ -1,86 +1,81 @@
 ## Colour text color
 
-> The framework provides a library of text color modification
+> The framework provides a library for text color modification
 
-#### hex method, Use 6-bit length color
-
-```lua
-colour.hex("A string", "FF0000")
-```
-
-#### hex derivative method
-
-> You can also expand some common colors you bring
+#### hex method 6 length
 
 ```lua
---- gold
-colour.gold("A string")
-
---- white
-colour.white("A string")
-
---- black
-colour.black("A string")
-
---- grey
-colour.grey("A string")
-
---- greyDeep
-colour.greyDeep("A string")
-
---- redLight
-colour.redLight("A string")
-
---- red
-colour.red("A string")
-
---- greenLight
-colour.greenLight("A string")
-
---- green
-colour.green("A string")
-
---- yellowLight
-colour.yellowLight("A string")
-
---- yellow
-colour.yellow("A string")
-
---- orangeLight
-colour.orangeLight("A string")
-
---- orange
-colour.orange("A string")
-
---- skyLight
-colour.skyLight("A string")
-
---- sky
-colour.sky("A string")
-
---- seaLight
-colour.seaLight("A string")
-
---- sea
-colour.sea("A string")
-
---- purpleLight
-colour.purpleLight("A string")
-
---- purple
-colour.purple("A string")
+colour.hex("FF0000", "A string")
+colour.hex(colour.gold, "Gold string")
 ```
 
-#### format
+#### format method
 
 > Suitable for complex text color processing
 
 ```lua
--- example
-local txt = colour.format("%s world", colour.white, {
-    { "80ff00", "Hello" },
+-- 例子
+local txt = colour.format("Hello %s", colour.white, {
+    { "80ff00", "World" },
 })
 
 print(txt)
 echo(txt)
+```
+
+#### The frame comes with many excellent colors
+
+```lua
+colour.black = "000000"
+colour.white = "FFFFFF"
+colour.snow = "FFFAFA"
+colour.whitesmoke = "F5F5F5"
+colour.lightgray = "D3D3D3"
+colour.silver = "C0C0C0"
+colour.darkgray = "A9A9A9"
+colour.red = "FF0000"
+colour.indianred = "FF6A6A"
+colour.littlepink = "FF8080"
+colour.pink = "FFC0CB"
+colour.mistyrose = "FFE4E1"
+colour.gold = "FFCC00"
+colour.orange = "FFA500"
+colour.sandybrown = "F4A460"
+colour.lightcoral = "F08080"
+colour.salmon = "FA8072"
+colour.lightsalmon = "FFA07A"
+colour.tomato = "FF6347"
+colour.yellow = "FFFF00"
+colour.darkkhaki = "BDB76B"
+colour.khaki = "F0E68C"
+colour.beige = "F5F5DC"
+colour.lemonchiffon = "FFFACD"
+colour.lightyellow = "FFFFE0"
+colour.green = "80FF00"
+colour.limegreen = "32CD32"
+colour.lawngreen = "7CFC00"
+colour.lightgreen = "90EE90"
+colour.palegreen = "98F898"
+colour.aquamarine = "7FFFD4"
+colour.honeydew = "F0FFF0"
+colour.darkseagreen = "C1FFC1"
+colour.mintcream = "F5FFFA"
+colour.royalblue = "4169E1"
+colour.dodgerblue = "1E90FF"
+colour.cornflowerblue = "6495ED"
+colour.deepskyblue = "00BFFF"
+colour.skyblue = "87CECB"
+colour.lightskyblue = "87CEFA"
+colour.lightsteelblue = "B0C4DE"
+colour.lightblue = "ADD8E6"
+colour.lightcyan = "E0FFFF"
+colour.aliceblue = "F0F8FF"
+colour.purple = "800080"
+colour.darkorchid = "9932CC"
+colour.mediumpurple = "9370DB"
+colour.mediumorchid = "BA55D3"
+colour.violet = "EE82EE"
+colour.plum = "DDA0DD"
+colour.thistle = "D8BFD8"
+colour.lavender = "E6E6FA"
 ```
