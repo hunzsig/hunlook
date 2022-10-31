@@ -24,10 +24,11 @@
 * New | Weather.period
 * New | Rect.weather
     * ··· multi weathers
-* Optimization | support duplicate assets detection
-* Optimization | if there is item_ in the path name, the scale in the model command becomes 2.00
-* Optimization | japi secondary packaging FPS
-* Optimization | japi DzConvertWorldPosition uses a stronger distortion
+* Optimization | The duration of all sound effects returns seconds
+* Optimization | Support duplicate assets detection
+* Optimization | If there is item_ in the path name, the scale in the model command becomes 2.00
+* Optimization | JAPI secondary packaging FPS
+* Optimization | JAPI DzConvertWorldPosition uses a stronger distortion
 * Optimization | Image show may have a problem of locking vision error under certain circumstances
 * Optimization | The demo example code of the new instruction has been fine tuned
 * Fixed | The problem of positioning the offset of the frame when the layout is modified

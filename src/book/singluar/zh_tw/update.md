@@ -24,6 +24,7 @@
 * 新的 | Weather.period
 * 新的 | Rect.weather
     * ··· 支援多天氣
+* 最佳化 | 所有音效的 duration 時長返回秒
 * 最佳化 | 工具支援重複資源檢測
 * 最佳化 | 工具model命令現在對路徑帶有item_的模型縮放為2.00
 * 最佳化 | japi 二次封裝FPS

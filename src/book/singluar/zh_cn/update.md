@@ -24,6 +24,7 @@
 * 新的 | Weather.period
 * 新的 | Rect.weather
     * ··· 支持多天气
+* 优化 | 所有音效的 duration 时长返回秒
 * 优化 | 工具支持重复资源检测
 * 优化 | 工具model命令现在对路径带有item_的模型缩放为2.00
 * 优化 | japi 二次封装FPS
