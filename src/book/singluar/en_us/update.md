@@ -2,8 +2,17 @@
 
 > 2022/10
 
-* New | Tpl.description now supports string, string[] and function, discards the {} syntax sugar
+* New | Player.worthRatio
+    * ··· assets updated
+    * ··· Automatic linkage with the + operator of word
+    * ··· defend 100%
+* New | EVENT.Unit.FeignDead
+    * ··· Units that can now be revived will no longer trigger a Dead event, but will trigger a FeignDead event
+* New | Tpl.description
+    * ··· now supports string, string[] and function
+    * ··· discards the {} syntax sugar
 * New | colour refactoring
+    * ··· assets updated
 * New | sync.must
 * New | async.must
 * New | Frame.upperNode
@@ -23,6 +32,7 @@
 * Optimization | The demo example code of the new instruction has been fine tuned
 * Fixed | The problem of positioning the offset of the frame when the layout is modified
 * Fixed | colour.format error when containColor is nil
+* Fixed | ability.reborn data error in some cases
 
 > 2022/09
 

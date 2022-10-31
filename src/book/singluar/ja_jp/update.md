@@ -2,8 +2,17 @@
 
 > 2022/10
 
-* 新登場 | Tpl.description 現在サポートされている文字列、文字列配列、関数、は文法糖を廃棄した
+* 新登場 | Player.worthRatio 財産取得率
+    * ··· assets更生
+    * ··· 自動的にworthの+オペレータと連動
+    * ··· デフォルト100%
+* 新登場 | EVENT.Unit.FeignDead 事件
+    * ··· 現在復活できる単位は、死亡イベントではなく仮死イベントをトリガします
+* 新登場 | Tpl.description
+    * ··· 現在サポートされている文字列、文字列配列、関数
+    * ··· {}文法糖を廃棄した
 * 新登場 | colour リファクタリング
+    * ··· assets更生
 * 新登場 | sync.must
 * 新登場 | async.must
 * 新登場 | Frame.upperNode
@@ -23,6 +32,7 @@
 * 最適化 | new命令Demoの例コードを微調整した
 * 修正 | レイアウトを変更した場合のFrameの位置決めオフセットの問題
 * 修正 | colour.containColorがnilであるformatでエラーが発生した問題
+* 修正 | ability.rebornデータエラー
 
 > 2022/09
 

@@ -2,8 +2,17 @@
 
 > 2022/10
 
-* 新的 | Tpl.description 现支持字符串、字符串数组、函数，废弃了{}语法糖
+* 新的 | Player.worthRatio 财产获得率
+    * ··· assets更新
+    * ··· 自动与worth的+操作符联动
+    * ··· 默认100%
+* 新的 | EVENT.Unit.FeignDead 事件
+    * ··· 现在能够复活的单位不会再触发死亡事件而是触发假死事件
+* 新的 | Tpl.description
+    * ··· 现支持字符串、字符串数组、函数
+    * ··· 废弃了{}语法糖
 * 新的 | colour 重构
+    * ··· assets更新
 * 新的 | sync.must
 * 新的 | async.must
 * 新的 | Frame.upperNode
@@ -23,6 +32,7 @@
 * 优化 | 微调了new指令Demo的例子代码
 * 修复 | Frame 在某种布局修改情况下定位偏移的问题
 * 修复 | colour.format 在containColor为nil时出错的问题
+* 修复 | ability.reborn 在某些情况数据错误的问题
 
 > 2022/09
 
