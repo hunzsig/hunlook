@@ -1,5 +1,10 @@
 ## Changelog
 
+> 2022/11
+
+* Optimize | Server now adopt a better strategy and consolidate data
+* Fix | ability.CrackFly wrong event data
+
 > 2022/10
 
 * New | Player.worthRatio
@@ -24,16 +29,16 @@
 * New | Weather.period
 * New | Rect.weather
     * ··· multi weathers
-* Optimization | The duration of all sound effects returns seconds
-* Optimization | Support duplicate assets detection
-* Optimization | If there is item_ in the path name, the scale in the model command becomes 2.00
-* Optimization | JAPI secondary packaging FPS
-* Optimization | JAPI DzConvertWorldPosition uses a stronger distortion
-* Optimization | Image show may have a problem of locking vision error under certain circumstances
-* Optimization | The demo example code of the new instruction has been fine tuned
-* Fixed | The problem of positioning the offset of the frame when the layout is modified
-* Fixed | colour.format error when containColor is nil
-* Fixed | ability.reborn data error in some cases
+* Optimize | The duration of all sound effects returns seconds
+* Optimize | Support duplicate assets detection
+* Optimize | If there is item_ in the path name, the scale in the model command becomes 2.00
+* Optimize | JAPI secondary packaging FPS
+* Optimize | JAPI DzConvertWorldPosition uses a stronger distortion
+* Optimize | Image show may have a problem of locking vision error under certain circumstances
+* Optimize | The demo example code of the new instruction has been fine tuned
+* Fix | The problem of positioning the offset of the frame when the layout is modified
+* Fix | colour.format error when containColor is nil
+* Fix | ability.reborn data error in some cases
 
 > 2022/09
 
@@ -46,14 +51,14 @@
 * New | Tool Command: clean
 * New | string.fill
 * New | table.slice
-* Optimization | table equal data comparison logic
-* Optimization | data of amphibious
-* Optimization | NoFly record of Unit moveType
-* Optimization | ServerSaveValue KV length judging mechanism
-* Optimization | enchant reaction
-* Optimization | japi.Z data source
-* Optimization | attack motion’s delay
-* Fixed | bug Unit moveType probability invalid set
+* Optimize | table equal data comparison logic
+* Optimize | data of amphibious
+* Optimize | NoFly record of Unit moveType
+* Optimize | ServerSaveValue KV length judging mechanism
+* Optimize | enchant reaction
+* Optimize | japi.Z data source
+* Optimize | attack motion’s delay
+* Fix | bug Unit moveType probability invalid set
 
 > 2022/07
 
@@ -64,13 +69,13 @@
 * New | table.wheel
 * New | Frame.show
 * New | Ability.worthCost
-* Optimization | weaponMaterial to weaponSound
-* Optimization | damage event feedback, changed to data drainage and instantaneous interruption mechanism
-* Optimization | Image now supports free size
-* Optimization | Unit the function of order Route cannot be interrupted for no reason now, and supports manual pause
-* Fixed | sight a bug where the data has a chance of drifting
-* Fixed | ItemTpl bug with wrong initial pawnable data
-* Fixed | Image position init bug
+* Optimize | weaponMaterial to weaponSound
+* Optimize | damage event feedback, changed to data drainage and instantaneous interruption mechanism
+* Optimize | Image now supports free size
+* Optimize | Unit the function of order Route cannot be interrupted for no reason now, and supports manual pause
+* Fix | sight a bug where the data has a chance of drifting
+* Fix | ItemTpl bug with wrong initial pawnable data
+* Fix | Image position init bug
 * Remove | base64
 * Remove | Unit stand
 * Remove | The highlight method of the Frame series now needs to be referenced by itself
@@ -86,7 +91,7 @@
 * New | ability missile、leap、crackFly
     * ··· The callback function is converted to a point data structure
     * ··· The efficiency and accuracy of missiles are greatly improved
-    * ··· Leap efficiency Optimization and frivolous turning parameters
+    * ··· Leap efficiency Optimize and frivolous turning parameters
     * ··· Optimize crack Fly efficiency and increase multi-dimensional bounce parameters
 * New | Bgm music split asynchronous data stream instead
 * New | Vcm universal sound effects, split asynchronous data streams instead
@@ -101,12 +106,12 @@
 * New | math new methods trunc、format、isNaN
 * New | Image Class
 * New | must Assertion
-* Optimization | Buff，exposure time modification interface
-* Optimization | Game's worthCompare methods are now equal and cannot be judged. The return value will be different
-* Optimization | ttg
-* Optimization | prop initial setting mechanism
-* Optimization | bj params
-* Fixed | Array the data has the problem of probability disorder. Remove some methods
+* Optimize | Buff，exposure time modification interface
+* Optimize | Game's worthCompare methods are now equal and cannot be judged. The return value will be different
+* Optimize | ttg
+* Optimize | prop initial setting mechanism
+* Optimize | bj params
+* Fix | Array the data has the problem of probability disorder. Remove some methods
 * Remove | all portal methods are renamed position
 * Remove | most waste FDF with button as the core
 * Remove | part of the japi functions are sealed and isolated
@@ -116,9 +121,9 @@
 * New | Attribute methods: cost、castChant、coolDown、coolDownSec
     * ···It can be used to dynamically modify any skill attribute
 * New | Unit method stature
-* Optimization | FrameButton
-* Optimization | ability crashFly
-* Fixed | Unit punish bugs
+* Optimize | FrameButton
+* Optimize | ability crashFly
+* Fix | Unit punish bugs
 
 > 2022/04
 
@@ -132,40 +137,40 @@
 * New | Buff catcher
 * New | Worth calculation
 * New | CoolingInstant`
-* Optimization | Run cache command
-* Optimization | Binding mechanism between Item level and Ability level
-* Optimization | Process transition mechanism
-* Fixed | A bug where the tool fails in certain situations
-* Fixed | Player.alert bug
-* Fixed | FrameLabel adaptive identifying the wrong problem
-* Fixed | Engine heap history residual bug
-* Fixed | A bug where prop has a chance of being offset when diff exists
+* Optimize | Run cache command
+* Optimize | Binding mechanism between Item level and Ability level
+* Optimize | Process transition mechanism
+* Fix | A bug where the tool fails in certain situations
+* Fix | Player.alert bug
+* Fix | FrameLabel adaptive identifying the wrong problem
+* Fix | Engine heap history residual bug
+* Fix | A bug where prop has a chance of being offset when diff exists
 * Remove | Game.introduction
 
 > 2022/03
 
 * New | skip the run method of the resource
-* Fixed | known bugs
-* Fixed | A bug that some event objects are wrong
-* Fixed | A bug where the tool entered the wrong logical branch when the project name was empty
+* Fix | known bugs
+* Fix | A bug that some event objects are wrong
+* Fix | A bug where the tool entered the wrong logical branch when the project name was empty
 
 > 2022/02
 
 * New | Preparatory Event Prop
-* Optimization | Tools
-* Optimization | Automatic conversion mechanism of attr
-* Fixed | Asynchronous data may have index offset bug
+* Optimize | Tools
+* Optimize | Automatic conversion mechanism of attr
+* Fix | Asynchronous data may have index offset bug
 
 > 2022/01
 
 * New | String magic methods
 * New | ttg lib
-* Optimization | Timer
+* Optimize | Timer
 
 > 2021/12
 
 * PhasedEnd
-* Fixed | bugs
+* Fix | bugs
 * New | command version
 
 > 2021/11
@@ -176,12 +181,12 @@
 > 2021/09 ~ 10
 
 * New | Process
-* Optimization | Function addition and reconstruction
+* Optimize | Function addition and reconstruction
 
 > 2021/05 ~ 09
 
 * New | Lots of functional
-* Fixed | bugs
+* Fix | bugs
 
 > 2021/05/01
 

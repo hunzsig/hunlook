@@ -1,5 +1,10 @@
 ## 更新日志
 
+> 2022/11
+
+* 优化 | Server 现采用更优策略且合并数据
+* 修复 | ability.CrackFly 事件数据错误的问题
+
 > 2022/10
 
 * 新的 | Player.worthRatio 财产获得率
