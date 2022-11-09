@@ -2,6 +2,10 @@
 
 > 2022/11
 
+* 新的 | Unit.attackPoint
+* 新的 | Unit.weaponSoundMode
+* 新的 | Unit.weaponLength
+* 新的 | Unit.weaponHeight
 * 优化 | Server 现采用更优策略且合并数据
 * 修复 | ability.CrackFly 事件数据错误的问题
 

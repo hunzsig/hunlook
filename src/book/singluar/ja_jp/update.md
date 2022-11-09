@@ -2,6 +2,10 @@
 
 > 2022/11
 
+* 新登場 | Unit.attackPoint
+* 新登場 | Unit.weaponSoundMode
+* 新登場 | Unit.weaponLength
+* 新登場 | Unit.weaponHeight
 * 最適化 | Server より優れたポリシーでデータを統合
 * 修正 | ability.CrackFly イベントデータエラーの問題
 
