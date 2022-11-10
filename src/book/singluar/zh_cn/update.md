@@ -2,6 +2,9 @@
 
 > 2022/11
 
+* 新的 | Missile.scale
+* 新的 | EVENT.Unit.BeforeAttack
+* 新的 | EVENT.Unit.Be.BeforeAttack
 * 新的 | Unit.attackPoint
 * 新的 | Unit.weaponSoundMode
 * 新的 | Unit.weaponLength

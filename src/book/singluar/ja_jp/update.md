@@ -2,6 +2,9 @@
 
 > 2022/11
 
+* 新登場 | Missile.scale
+* 新登場 | EVENT.Unit.BeforeAttack
+* 新登場 | EVENT.Unit.Be.BeforeAttack
 * 新登場 | Unit.attackPoint
 * 新登場 | Unit.weaponSoundMode
 * 新登場 | Unit.weaponLength
