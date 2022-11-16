@@ -10,7 +10,9 @@
 * 新的 | Unit.weaponLength
 * 新的 | Unit.weaponHeight
 * 最佳化 | Server 現採用更優策略且合併資料
-* 修復 | ability.CrackFly 事件資料錯誤的問題
+* 最佳化 | ability.lightning
+* 修復 | ability.crackFly 事件資料錯誤的問題
+* 修復 | 被動及無目標技能在特定情況下使打頻定格的問題
 
 > 2022/10
 

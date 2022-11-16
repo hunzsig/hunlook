@@ -10,7 +10,9 @@
 * 新登場 | Unit.weaponLength
 * 新登場 | Unit.weaponHeight
 * 最適化 | Server より優れたポリシーでデータを統合
-* 修正 | ability.CrackFly イベントデータエラーの問題
+* 最適化 | ability.lightning
+* 修正 | ability.crackFly イベントデータエラーの問題
+* 修正 | パッシブスキルと非ターゲットスキルが特定の状況下で攻撃アニメーションを妨害する問題
 
 > 2022/10
 

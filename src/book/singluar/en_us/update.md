@@ -10,7 +10,9 @@
 * New | Unit.weaponLength
 * New | Unit.weaponHeight
 * Optimize | Server now adopt a better strategy and consolidate data
-* Fix | ability.CrackFly wrong event data
+* Optimize | ability.lightning
+* Fix | ability.crackFly wrong event data
+* Fix | 被動及無目標技能在特定情況下使打頻定格的問題
 
 > 2022/10
 
