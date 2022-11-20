@@ -11,8 +11,10 @@
 * New | Unit.weaponHeight
 * Optimize | Server now adopt a better strategy and consolidate data
 * Optimize | ability.lightning
+* Optimize | Map Color Reference for Square Pointers
 * Fix | ability.crackFly wrong event data
 * Fix | the problem that passive and non target skills can jam the attack animation under specific circumstances
+* Fix | The problem that the continuous casting of the skill is invalid under specific circumstances
 
 > 2022/10
 
