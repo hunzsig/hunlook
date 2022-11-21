@@ -9,10 +9,15 @@
 * 新的 | Unit.weaponSoundMode
 * 新的 | Unit.weaponLength
 * 新的 | Unit.weaponHeight
+* 新的 | japi.DzAPI_Map_GetLastRecommendTime
+* 新的 | japi.DzAPI_Map_GetLotteryUsedCount
+* 新的 | japi.DzAPI_Map_GameResult_CommitData
+* 新的 | japi.DzAPI_Map_IsMapTest
+* 新的 | japi.IsTyping
 * 优化 | Server 现采用更优策略且合并数据
 * 优化 | ability.lightning
 * 优化 | 方形指针的贴图颜色引用
-* 修复 | ability.crackFly 事件数据错误的问题
+* 修复 | ability.crackFly、crit、lightningchain、split 事件数据错误的问题
 * 修复 | 被动及无目标技能在特定情况下使打频定格的问题
 * 修复 | 技能持续施法在特定情况无效的问题
 

@@ -9,10 +9,15 @@
 * New | Unit.weaponSoundMode
 * New | Unit.weaponLength
 * New | Unit.weaponHeight
+* New | japi.DzAPI_Map_GetLastRecommendTime
+* New | japi.DzAPI_Map_GetLotteryUsedCount
+* New | japi.DzAPI_Map_GameResult_CommitData
+* New | japi.DzAPI_Map_IsMapTest
+* New | japi.IsTyping
 * Optimize | Server now adopt a better strategy and consolidate data
 * Optimize | ability.lightning
 * Optimize | Map Color Reference for Square Pointers
-* Fix | ability.crackFly wrong event data
+* Fix | ability.crackFly、crit、lightningchain、split wrong event data
 * Fix | the problem that passive and non target skills can jam the attack animation under specific circumstances
 * Fix | The problem that the continuous casting of the skill is invalid under specific circumstances
 

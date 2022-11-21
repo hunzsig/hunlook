@@ -9,10 +9,15 @@
 * 新登場 | Unit.weaponSoundMode
 * 新登場 | Unit.weaponLength
 * 新登場 | Unit.weaponHeight
+* 新登場 | japi.DzAPI_Map_GetLastRecommendTime
+* 新登場 | japi.DzAPI_Map_GetLotteryUsedCount
+* 新登場 | japi.DzAPI_Map_GameResult_CommitData
+* 新登場 | japi.DzAPI_Map_IsMapTest
+* 新登場 | japi.IsTyping
 * 最適化 | Server より優れたポリシーでデータを統合
 * 最適化 | ability.lightning
 * 最適化 | スクエアポインタのマップカラーリファレンス
-* 修正 | ability.crackFly イベントデータエラーの問題
+* 修正 | ability.crackFly、crit、lightningchain、split イベントデータエラーの問題
 * 修正 | パッシブスキルと非ターゲットスキルが特定の状況下で攻撃アニメーションを妨害する問題
 * 修正 | 特定の状況において技能継続的な施法が無効である問題
 
