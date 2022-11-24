@@ -12,6 +12,7 @@
 * 新的 | Unit.weaponHeight
 * 新的 | Unit.castAnimation
 * 新的 | Unit.keepAnimation
+* 新的 | Ability.coolingEnter
 * 新的 | japi.DzAPI_Map_GetLastRecommendTime
 * 新的 | japi.DzAPI_Map_GetLotteryUsedCount
 * 新的 | japi.DzAPI_Map_GameResult_CommitData
@@ -19,6 +20,7 @@
 * 新的 | japi.IsTyping
 * 優化 | Server 現採用更優策略且合併數據
 * 優化 | ability.lightning
+* 優化 | ability.leap
 * 優化 | 方形指針的貼圖顏色引用
 * 修復 | ability.crackFly、crit、lightningchain、split 事件數據錯誤的問題
 * 修復 | 被動及無目標技能在特定情況下使打頻定格的問題

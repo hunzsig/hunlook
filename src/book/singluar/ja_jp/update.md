@@ -12,6 +12,7 @@
 * 新登場 | Unit.weaponHeight
 * 新登場 | Unit.castAnimation
 * 新登場 | Unit.keepAnimation
+* 新登場 | Ability.coolingEnter
 * 新登場 | japi.DzAPI_Map_GetLastRecommendTime
 * 新登場 | japi.DzAPI_Map_GetLotteryUsedCount
 * 新登場 | japi.DzAPI_Map_GameResult_CommitData
@@ -19,6 +20,7 @@
 * 新登場 | japi.IsTyping
 * 最適化 | Server より優れたポリシーでデータを統合
 * 最適化 | ability.lightning
+* 最適化 | ability.leap
 * 最適化 | スクエアポインタのマップカラーリファレンス
 * 修正 | ability.crackFly、crit、lightningchain、split イベントデータエラーの問題
 * 修正 | パッシブスキルと非ターゲットスキルが特定の状況下で攻撃アニメーションを妨害する問題

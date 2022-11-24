@@ -12,6 +12,7 @@
 * New | Unit.weaponHeight
 * New | Unit.castAnimation
 * New | Unit.keepAnimation
+* New | Ability.coolingEnter
 * New | japi.DzAPI_Map_GetLastRecommendTime
 * New | japi.DzAPI_Map_GetLotteryUsedCount
 * New | japi.DzAPI_Map_GameResult_CommitData
@@ -19,6 +20,7 @@
 * New | japi.IsTyping
 * Optimize | Server now adopt a better strategy and consolidate data
 * Optimize | ability.lightning
+* Optimize | ability.leap
 * Optimize | Map Color Reference for Square Pointers
 * Fix | ability.crackFly、crit、lightningchain、split wrong event data
 * Fix | the problem that passive and non target skills can jam the attack animation under specific circumstances
