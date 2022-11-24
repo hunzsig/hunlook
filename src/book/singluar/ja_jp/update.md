@@ -18,6 +18,10 @@
 * 新登場 | japi.DzAPI_Map_GameResult_CommitData
 * 新登場 | japi.DzAPI_Map_IsMapTest
 * 新登場 | japi.IsTyping
+* 削除 | Player.dead
+* 削除 | Player.kill
+* 削除 | Player.hurt
+* 削除 | Player.damage
 * 最適化 | Server より優れたポリシーでデータを統合
 * 最適化 | ability.lightning
 * 最適化 | ability.leap

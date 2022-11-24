@@ -18,6 +18,10 @@
 * New | japi.DzAPI_Map_GameResult_CommitData
 * New | japi.DzAPI_Map_IsMapTest
 * New | japi.IsTyping
+* Remove | Player.dead
+* Remove | Player.kill
+* Remove | Player.hurt
+* Remove | Player.damage
 * Optimize | Server now adopt a better strategy and consolidate data
 * Optimize | ability.lightning
 * Optimize | ability.leap

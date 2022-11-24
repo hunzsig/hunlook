@@ -18,6 +18,10 @@
 * 新的 | japi.DzAPI_Map_GameResult_CommitData
 * 新的 | japi.DzAPI_Map_IsMapTest
 * 新的 | japi.IsTyping
+* 删除 | Player.dead
+* 删除 | Player.kill
+* 删除 | Player.hurt
+* 删除 | Player.damage
 * 最佳化 | Server 現採用更優策略且合併資料
 * 最佳化 | ability.lightning
 * 最佳化 | ability.leap
