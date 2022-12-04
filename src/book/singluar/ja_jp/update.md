@@ -1,5 +1,17 @@
 ## 更新日誌
 
+> 2022/12
+
+* 新登場 | Buff.key
+* 新登場 | Buff.name
+* 新登場 | Buff.icon
+* 新登場 | Buff.visible
+* 新登場 | Buff.description
+* 最適化 | コメントの一部
+* 修正 | ability hp要件がhpCurに等しい場合に使用できる問題
+* 修正 | ability.leap Timer.destroyの書き方の問題
+* 修正 | order.targetXYZデータ損失の可能性がある問題
+
 > 2022/11
 
 * 新登場 | Missile.scale

@@ -1,5 +1,17 @@
 ## 更新日誌
 
+> 2022/12
+
+* 新的 | Buff.key
+* 新的 | Buff.name
+* 新的 | Buff.icon
+* 新的 | Buff.visible
+* 新的 | Buff.description
+* 優化 | 部分註釋
+* 修復 | ability hp需求等於hpCur時允許使用的問題
+* 修復 | ability.leap Timer.destroy寫法問題
+* 修復 | order.targetXYZ可能數據丟失的問題
+
 > 2022/11
 
 * 新的 | Missile.scale

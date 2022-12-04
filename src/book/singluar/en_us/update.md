@@ -1,5 +1,17 @@
 ## Changelog
 
+> 2022/12
+
+* New | Buff.key
+* New | Buff.name
+* New | Buff.icon
+* New | Buff.visible
+* New | Buff.description
+* Optimize | Some comments
+* Fix | The problem allowed when the capability hp requirement is equal to hpCur
+* Fix | ability. The writing method of leap Timer. destroy
+* Fix | order.targetXYZ Possible data loss
+
 > 2022/11
 
 * New | Missile.scale
