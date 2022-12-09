@@ -8,6 +8,7 @@
 * 新的 | Buff.icon
 * 新的 | Buff.visible
 * 新的 | Buff.description
+* 优化 | Game.worth*
 * 优化 | 部分注释
 * 修复 | ability hp需求等于hpCur时允许使用的问题
 * 修复 | ability.leap Timer.destroy写法问题

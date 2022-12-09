@@ -8,6 +8,7 @@
 * New | Buff.icon
 * New | Buff.visible
 * New | Buff.description
+* Optimize | Game.worth*
 * Optimize | Some comments
 * Fix | The problem allowed when the capability hp requirement is equal to hpCur
 * Fix | ability. The writing method of leap Timer. destroy
