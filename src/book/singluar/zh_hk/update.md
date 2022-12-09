@@ -2,6 +2,7 @@
 
 > 2022/12
 
+* 新的 | AI
 * 新的 | Buff.key
 * 新的 | Buff.name
 * 新的 | Buff.icon

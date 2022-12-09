@@ -16,6 +16,8 @@
 > git clone https://github.com/singluar/singluar-restricted.git
 ```
 
+> [如果访问github非常缓慢可尝试下载Ghips](https://gitcode.net/aardio/Ghips/-/raw/master/dist/Ghips.7z)
+
 ### 安装IDE - Ideac
 
 > <a target="_blank" href="https://www.jetbrains.com/idea/download/#section=windows">Ideac (Jetbrain)</a>
