@@ -2,7 +2,6 @@
 
 > 2022/12
 
-* 新登場 | AI
 * 新登場 | Buff.key
 * 新登場 | Buff.name
 * 新登場 | Buff.icon
