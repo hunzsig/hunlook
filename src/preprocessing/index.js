@@ -12,7 +12,7 @@ import router from "./router.js";
  * setting可以设 function _promise() { return new Promise... } 或值
  */
 export default {
-  book: "h-lua", // 选一本书
+  book: "singluar", // 选一本书
   // title: "HunZsig", // title 标题，默认 <book>技术文档 · 魂书
   // cover: Www, // 封面(Composer)
   router: router,
