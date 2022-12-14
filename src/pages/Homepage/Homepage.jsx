@@ -11,10 +11,21 @@ class Homepage extends Component {
     super(props);
     const search = Parse.urlSearch();
     this.books = {};
+    let lang = LocalStorage.get("lang");
+    let langExist = false
+    for (const l of History.state.lang) {
+      if (lang === l.key) {
+        langExist = true;
+        break;
+      }
+    }
+    if (!langExist) {
+      lang = null;
+    }
     this.state = {
       p: search.p || 'index',
       n: search.n || undefined,
-      l: LocalStorage.get("lang") || History.state.lang[0].key,
+      l: lang || History.state.lang[0].key,
       bgmPlaying: true,
     }
   }
@@ -157,7 +168,7 @@ class Homepage extends Component {
         </div>
         <div className="books">
           {
-            History.state.lang.length > 0 &&
+            History.state.lang.length > 1 &&
             <Button
               className="series"
               color='primary'
