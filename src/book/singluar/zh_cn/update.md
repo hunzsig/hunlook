@@ -10,6 +10,7 @@
 * 新的 | Buff.description
 * 优化 | Game.worth*
 * 优化 | 部分注释
+* 优化 | we 命令不再限制启动只作提醒
 * 修复 | ability hp需求等于hpCur时允许使用的问题
 * 修复 | ability.leap Timer.destroy写法问题
 * 修复 | order.targetXYZ可能数据丢失的问题

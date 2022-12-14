@@ -156,33 +156,36 @@ class Homepage extends Component {
           </SideBar>
         </div>
         <div className="books">
-          <Button
-            className="series"
-            color='primary'
-            onClick={() => {
-              const actions = [];
-              History.state.lang.forEach((l) => {
-                actions.push({
-                  key: l.key,
-                  text: l.label,
-                  disabled: l.key === this.state.l,
-                  primary: true,
-                  onClick: () => {
-                    this.state.l = l.key;
-                    this.setState({l: this.state.l});
-                    LocalStorage.set("lang", this.state.l);
-                  }
+          {
+            History.state.lang.length > 0 &&
+            <Button
+              className="series"
+              color='primary'
+              onClick={() => {
+                const actions = [];
+                History.state.lang.forEach((l) => {
+                  actions.push({
+                    key: l.key,
+                    text: l.label,
+                    disabled: l.key === this.state.l,
+                    primary: true,
+                    onClick: () => {
+                      this.state.l = l.key;
+                      this.setState({l: this.state.l});
+                      LocalStorage.set("lang", this.state.l);
+                    }
+                  })
                 })
-              })
-              Modal.show({
-                closeOnAction: true,
-                closeOnMaskClick: true,
-                actions: actions,
-              })
-            }}
-          >
-            <TranslationOutlined/>
-          </Button>
+                Modal.show({
+                  closeOnAction: true,
+                  closeOnMaskClick: true,
+                  actions: actions,
+                })
+              }}
+            >
+              <TranslationOutlined/>
+            </Button>
+          }
           <div className="tabs">
             <Tabs
               stretch={false}

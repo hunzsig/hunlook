@@ -10,6 +10,7 @@
 * New | Buff.description
 * Optimize | Game.worth*
 * Optimize | Some comments
+* Optimize | The we command is no longer limited to startup as a reminder
 * Fix | The problem allowed when the capability hp requirement is equal to hpCur
 * Fix | ability. The writing method of leap Timer. destroy
 * Fix | order.targetXYZ Possible data loss

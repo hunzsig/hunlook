@@ -10,6 +10,7 @@
 * 新的 | Buff.description
 * 最佳化 | Game.worth*
 * 最佳化 | 部分註釋
+* 最佳化 | we 命令不再限制啟動只作提醒
 * 修復 | ability hp需求等於hpCur時允許使用的問題
 * 修復 | ability.leap Timer.destroy寫法問題
 * 修復 | order.targetXYZ可能資料丟失的問題

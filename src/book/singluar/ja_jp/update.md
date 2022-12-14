@@ -10,6 +10,7 @@
 * 新登場 | Buff.description
 * 最適化 | Game.worth*
 * 最適化 | コメントの一部
+* 最適化 | we コマンドは起動を制限せずにリマインダのみを行う
 * 修正 | ability hp要件がhpCurに等しい場合に使用できる問題
 * 修正 | ability.leap Timer.destroyの書き方の問題
 * 修正 | order.targetXYZデータ損失の可能性がある問題
