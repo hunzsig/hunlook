@@ -3,6 +3,7 @@
 > 2022/12
 
 * 新的 | AI
+* 新的 | audio
 * 新的 | Buff.key
 * 新的 | Buff.name
 * 新的 | Buff.icon
@@ -10,8 +11,9 @@
 * 新的 | Buff.description
 * 优化 | Game.worth*
 * 优化 | 部分注释
-* 优化 | we 命令不再限制启动只作提醒
-* 修复 | ability hp需求等于hpCur时允许使用的问题
+* 优化 | 部分底层事件栈
+* 优化 | we命令不再限制启动只作提醒
+* 修复 | ability的hp需求等于hpCur时允许使用的问题
 * 修复 | ability.leap Timer.destroy写法问题
 * 修复 | order.targetXYZ可能数据丢失的问题
 
@@ -185,6 +187,7 @@
 * 修复 | engine堆桟历史残留bug
 * 修复 | prop在diff存在时有几率出现偏移的bug
 * 删除 | Game的introduction
+* 删除 | 考虑到使用者能力有限，去除hot新增、删除的监听
 
 > 2022/03
 
