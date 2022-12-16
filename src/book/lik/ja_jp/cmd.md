@@ -19,8 +19,7 @@
 コマンドに続くパラメータは3つあります
 
 * 1 カテゴリ：-a（assetsを表示）-n（assetsNewを表示）-p（あるプロジェクトassetsのmodel宣言幻コードを表示）に分ける
-* 2 ページ数：1ページ目から始まる数字
-* 3 フィルタリング：検索けんさく
+* 2 フィルタリング：検索けんさく
 
 > モデルのデフォルト scale1.00 比較しやすい
 > 
@@ -29,12 +28,11 @@
 > eff_ のモデルは scale 0.75 になり、見やすくなります（特効モデルは通常乱れるため）
 
 ```
-> lik.exe model -a //ルートassetsディレクトリの下のモデルの表示、1ページ目
-> lik.exe model -a 2 buff //ルートassetsディレクトリの下のモデルを表示します。2ページ目、パスにbuffがあるモデルのみを表示します
-> lik.exe model -n //ルートassetsNewディレクトリの下のモデルを表示して、1ページ目
-> lik.exe model -n 3//ルートassetsNewディレクトリの下のモデルを表示して、3ページ目
-> lik.exe model -p:demo 1  //demoプロジェクトのmodel宣言幻モデルを見る、1ページ目
-> lik.exe model -p:demo 2 unit //demoプロジェクトのmodel宣言幻モデルを表示し、2ページ目、同時にunitを持つパスを持つモデルのみを表示する
+> lik.exe model -a //ルートassetsディレクトリの下のモデルの表示
+> lik.exe model -a buff //ルートassetsディレクトリの下のモデルを表示します。パスにbuffがあるモデルのみを表示します
+> lik.exe model -a buff,eff //ルートassetsディレクトリの下のモデルを表示します。パスにbuff、effがあるモデルのみを表示します
+> lik.exe model -n //ルートassetsNewディレクトリの下のモデルを表示して
+> lik.exe model -p:demo  //demoプロジェクトのmodel宣言幻モデルを見る
 ```
 
 ### テストの実行

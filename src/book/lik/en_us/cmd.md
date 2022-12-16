@@ -19,8 +19,7 @@
 There are 3 parameters after the command
 
 * 1 Category: Divided into -a (view assets) -n (view assetsNew) -p (view the model declaration unreal code of a project's assets)
-* 2 Pages: Numbers, starting from page 1
-* 3 Filter: Search
+* 2 Filter: Search
 
 > The default scale of the model is 1.00, which is convenient for comparison
 > 
@@ -29,12 +28,11 @@ There are 3 parameters after the command
 > Path with eff_ The model of will scale 0.75 for easy viewing (because the special effects model is usually messy)
 
 ```
-> lik.exe model -a //View models in root assets directory, page 1
-> lik.exe model -a 2 buff //View models in the root assets directory, page 2, and only view models with buffs in the path
-> lik.exe model -n //View models in root assets New directory, page 1
-> lik.exe model -n 3//View the models in the root assets New directory, page 3
-> lik.exe model -p:demo 1  //Check out the model declaration for the demo project Unreal Model, page 1
-> lik.exe model -p:demo 2 unit //View the model declaration Unreal model of the demo project, page 2, and only view the model with the path unit
+> lik.exe model -a //View models in root assets directory
+> lik.exe model -a buff //View models in the root assets directory, and only view models with buffs in the path
+> lik.exe model -a buff,eff //View models in the root assets directory, and only view models with buff or eff in the path
+> lik.exe model -n //View models in root assets New directory
+> lik.exe model -p:demo 1  //Check out the model declaration for the demo project Unreal Model
 ```
 
 ### Run the test
