@@ -20,7 +20,6 @@ import {
   BuildOutlined,
   ToolOutlined,
   ApartmentOutlined,
-  ExceptionOutlined,
   BugOutlined,
   FunctionOutlined,
   ReadOutlined,
@@ -53,7 +52,6 @@ export default [
   {icon: <ReadOutlined/>, key: 'index', label: "快速開始"},
   {icon: <ApartmentOutlined/>, key: 'struct', label: "項目結構"},
   {icon: <ToolOutlined/>, key: 'cmd', label: "命令工具"},
-  {icon: <ExceptionOutlined/>, key: 'update', label: "更新日誌"},
   {icon: <BugOutlined/>, key: 'debug', label: "調試打印"},
   {icon: <VideoCameraOutlined/>, key: 'video', label: "視頻演示"},
   {

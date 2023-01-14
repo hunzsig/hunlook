@@ -16,23 +16,25 @@
 
 ### 模型批量查看
 
-命令後續共有3個參數
+### 模型批量查看
+
+命令後續共有2個參數
 
 * 1 類別：分為 -a(查看assets) -n(查看assetsNew) -p(查看某個項目assets的model聲明虛幻代碼)
-* 2 頁數：數目字，從第1頁開始
-* 3 過濾：搜索
+* 2 過濾：搜索
 
 > 模型默認scale1.00，方便對比
-> 
+>
 > 路徑帶有item_的模型將scale2.00，便於查看（因為物品模型通常偏小）
+>
+> 路徑帶有eff_的模型將scale0.75，便於查看（因為特效模型通常凌亂）
 
 ```
-> sl.exe model -a //查看根assets目錄下的模型，第1頁
-> sl.exe model -a 2 buff //查看根assets目錄下的模型，第2頁，同時隻查看路徑帶有buff的模型
-> sl.exe model -n //查看根assetsNew目錄下的模型，第1頁
-> sl.exe model -n 3//查看根assetsNew目錄下的模型，第3頁
-> sl.exe model -p:demo 1  //查看demo項目的model聲明虛幻模型，第1頁
-> sl.exe model -p:demo 2 unit //查看demo項目的model聲明虛幻模型，第2頁，同時隻查看路徑帶有unit的模型
+> sl.exe model -a //查看根assets目錄下的模型
+> sl.exe model -a buff //查看根assets目錄下的模型，同時只查看路徑帶有buff的模型
+> sl.exe model -a buff,eff //查看根assets目錄下的模型，同時只查看路徑帶有buff或eff的模型
+> sl.exe model -n //查看根assetsNew目錄下的模型
+> sl.exe model -p:demo  //查看demo項目的model聲明虛幻模型
 ```
 
 ### 運行測試

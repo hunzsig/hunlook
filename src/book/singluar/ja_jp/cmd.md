@@ -3,7 +3,7 @@
 ##### 新規プロジェクト
 
 ```
->sl.exe new demo//demoという新しい地図プロジェクト
+> sl.exe new demo//demoという新しい地図プロジェクト
 ```
 
 ##### WEを使用した地形の編集
@@ -11,28 +11,28 @@
 > 編集後にtestを使用すると自動的に変更がプロジェクトに記録されます
 
 ```
->sl.exe we demo//プロジェクトdemoをWEで開き、主に地形を編集するために使用します
+> sl.exe we demo//プロジェクトdemoをWEで開き、主に地形を編集するために使用します
 ```
 
-##### モデル一括表示
+### モデルの一括表示
 
-コマンドに続くパラメータは3つあります
+コマンドに続くパラメータは2つあります
 
-* 1 カテゴリ：-a（assetsを表示）-n（assets Newを表示）-p（あるプロジェクトassetsのmodel宣言幻コードを表示）に分類される
-* 2 ページ数：1ページ目から始まる数字
-* 3 フィルタリング：検索
+* 1 カテゴリ：-a（assetsを表示）-n（assetsNewを表示）-p（あるプロジェクトassetsのmodel宣言幻コードを表示）に分ける
+* 2 フィルタリング：検索けんさく
 
-> モデルのデフォルトscale 1.00、比較しやすい
+> モデルのデフォルト scale1.00 比較しやすい
 >
 > item_ のモデルは scale2.00 になり、見やすくなります（アイテムモデルは通常小さいため）
+>
+> eff_ のモデルは scale 0.75 になり、見やすくなります（特効モデルは通常乱れるため）
 
 ```
->sl.exe model-a//ルートassetsディレクトリ下のモデルを見る、1ページ目
->sl.exe model-a 2 buff//ルートassetsディレクトリ下のモデルを表示し、2ページ目、同時にパスにbuffがあるモデルのみを表示する
->sl.exe model-n//ルートassetsNewディレクトリ下のモデルを見る、1ページ目
->sl.exe model-n 3//ルートassetsNewディレクトリ下のモデルを見る、3ページ目
->sl.exe model-p：demo 1//demoプロジェクトのmodel宣言幻モデルを見る、1ページ目
->sl.exe model-p：demo 2 unit//demoプロジェクトのmodel宣言幻モデルを表示し、2ページ目、同時に経路にunitがあるモデルのみを表示する
+> sl.exe model -a //ルートassetsディレクトリの下のモデルの表示
+> sl.exe model -a buff //ルートassetsディレクトリの下のモデルを表示します。パスにbuffがあるモデルのみを表示します
+> sl.exe model -a buff,eff //ルートassetsディレクトリの下のモデルを表示します。パスにbuff、effがあるモデルのみを表示します
+> sl.exe model -n //ルートassetsNewディレクトリの下のモデルを表示して
+> sl.exe model -p:demo  //demoプロジェクトのmodel宣言幻モデルを見る
 ```
 
 ##### テストの実行
@@ -49,14 +49,14 @@
 
 > 一般的に実際に実行されるテスト図は、Warcraft III Frozen Throne Maps Test WorldEditTestMap.w 3 x
 >
->具体的な場所はWEの構成を参照することができます
+> 具体的な場所はWEの構成を参照することができます
 
 ```
->sl.exe run demo-t//一時ファイル表示の生成
->sl.exe run demo-h//熱更新モードでdemoをデバッグします
->sl.exe run demo-b//スクリプト暗号化マップを構築し、demoをデバッグする
->sl.exe run demo-d//スクリプト暗号化され、slk最適化された地図を構築し、demoをデバッグする
->sl.exe run demo-r//オンライン地図を構築してテスト
+> sl.exe run demo-t//一時ファイル表示の生成
+> sl.exe run demo-h//熱更新モードでdemoをデバッグします
+> sl.exe run demo-b//スクリプト暗号化マップを構築し、demoをデバッグする
+> sl.exe run demo-d//スクリプト暗号化され、slk最適化された地図を構築し、demoをデバッグする
+> sl.exe run demo-r//オンライン地図を構築してテスト
 ```
 
 > モード後に～記号を追加すると、リソース変更をスキップできます。特に純コード変更時のテストに適しています
@@ -87,7 +87,7 @@
 ##### キャッシュのクリーンアップ
 
 ```
->sl.exe clear demo//構築された一時ファイルのクリーンアップ
+> sl.exe clear demo//構築された一時ファイルのクリーンアップ
 ```
 
 ##### ローカルDZサーバデータをすべて削除

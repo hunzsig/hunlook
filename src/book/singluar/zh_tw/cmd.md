@@ -16,23 +16,23 @@
 
 ### 模型批次檢視
 
-命令後續共有3個引數
+命令後續共有2個引數
 
 * 1 類別：分為 -a(檢視assets) -n(檢視assetsNew) -p(檢視某個專案assets的model宣告虛幻程式碼)
-* 2 頁數：數目字，從第1頁開始
-* 3 過濾：搜尋
+* 2 過濾：搜尋
 
 > 模型預設scale1.00，方便對比
-> 
+>
 > 路徑帶有item_的模型將scale2.00，便於檢視（因為物品模型通常偏小）
+>
+> 路徑帶有eff_的模型將scale0.75，便於檢視（因為特效模型通常凌亂）
 
 ```
-> sl.exe model -a //檢視根assets目錄下的模型，第1頁
-> sl.exe model -a 2 buff //檢視根assets目錄下的模型，第2頁，同時隻檢視路徑帶有buff的模型
-> sl.exe model -n //檢視根assetsNew目錄下的模型，第1頁
-> sl.exe model -n 3//檢視根assetsNew目錄下的模型，第3頁
-> sl.exe model -p:demo 1  //檢視demo專案的model宣告虛幻模型，第1頁
-> sl.exe model -p:demo 2 unit //檢視demo專案的model宣告虛幻模型，第2頁，同時隻檢視路徑帶有unit的模型
+> sl.exe model -a //檢視根assets目錄下的模型
+> sl.exe model -a buff //檢視根assets目錄下的模型，同時只檢視路徑帶有buff的模型
+> sl.exe model -a buff,eff //檢視根assets目錄下的模型，同時只檢視路徑帶有buff或eff的模型
+> sl.exe model -n //檢視根assetsNew目錄下的模型
+> sl.exe model -p:demo 1  //檢視demo專案的model宣告虛幻模型
 ```
 
 ### 執行測試

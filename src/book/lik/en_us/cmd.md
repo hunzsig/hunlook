@@ -16,7 +16,7 @@
 
 ### Model batch view
 
-There are 3 parameters after the command
+There are 2 parameters after the command
 
 * 1 Category: Divided into -a (view assets) -n (view assetsNew) -p (view the model declaration unreal code of a project's assets)
 * 2 Filter: Search

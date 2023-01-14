@@ -16,23 +16,23 @@
 
 ### 模型批量查看
 
-命令后续共有3个参数
+命令后续共有2个参数
 
 * 1 类别：分为 -a(查看assets) -n(查看assetsNew) -p(查看某个项目assets的model声明虚幻代码)
-* 2 页数：数目字，从第1页开始
-* 3 过滤：搜索
+* 2 过滤：搜索
 
 > 模型默认scale1.00，方便对比
 >
 > 路径带有item_的模型将scale2.00，便于查看（因为物品模型通常偏小）
+>
+> 路径带有eff_的模型将scale0.75，便于查看（因为特效模型通常凌乱）
 
 ```
-> sl.exe model -a //查看根assets目录下的模型，第1页
-> sl.exe model -a 2 buff //查看根assets目录下的模型，第2页，同时只查看路径带有buff的模型
-> sl.exe model -n //查看根assetsNew目录下的模型，第1页
-> sl.exe model -n 3//查看根assetsNew目录下的模型，第3页
-> sl.exe model -p:demo 1  //查看demo项目的model声明虚幻模型，第1页
-> sl.exe model -p:demo 2 unit //查看demo项目的model声明虚幻模型，第2页，同时只查看路径带有unit的模型
+> sl.exe model -a //查看根assets目录下的模型
+> sl.exe model -a buff //查看根assets目录下的模型，同时只查看路径带有buff的模型
+> sl.exe model -a buff,eff //查看根assets目录下的模型，同时只查看路径带有buff或eff的模型
+> sl.exe model -n //查看根assetsNew目录下的模型
+> sl.exe model -p:demo  //查看demo项目的model声明虚幻模型
 ```
 
 ### 运行测试
