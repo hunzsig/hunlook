@@ -85,16 +85,10 @@ There are 2 parameters after the command
 > sl.exe kill
 ```
 
-### Clear Cache
+### Clear All Cache(with server data)
 
 ```
-> sl.exe clear demo //Clean build temporary files
-```
-
-### Clean local DZ server data
-
-```
-> sl.exe clean
+> sl.exe clear
 ```
 
 ### View current tool version

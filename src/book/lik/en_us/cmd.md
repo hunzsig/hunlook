@@ -86,7 +86,7 @@ There are 2 parameters after the command
 > lik.exe kill
 ```
 
-### Clear All Cache(with DZ server data)
+### Clear All Cache(with server data)
 
 ```
 > lik.exe clear
