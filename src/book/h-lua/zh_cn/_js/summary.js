@@ -55,7 +55,7 @@ export default [
       {icon: <NodeIndexOutlined/>, key: 'bj', label: "BJ"},
       {icon: <NodeIndexOutlined/>, key: 'cj', label: "CJ"},
       {icon: <NodeIndexOutlined/>, key: 'japi', label: "JAPI(本地)"},
-      {icon: <NodeIndexOutlined/>, key: 'japi_sev', label: "JAPI(服务)"},
+      {icon: <NodeIndexOutlined/>, key: 'japi_ol', label: "JAPI(在线)"},
       {icon: <FontColorsOutlined/>, key: 'attr', label: "属性"},
       {icon: <SyncOutlined/>, key: 'sync', label: "同步"},
       {icon: <FormatPainterOutlined/>, key: 'color', label: "文本颜色"},
