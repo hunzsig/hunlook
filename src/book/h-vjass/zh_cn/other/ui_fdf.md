@@ -12,7 +12,7 @@
 >
 > <a target="_blank" href="https://www.hiveworkshop.com/threads/ui-list-default-mainframes.317884">魔兽默认组件对照</a>
 >
-> <a target="_blank" href="http://bbs.dz.blizzard.cn/forum.php?mod=viewthread&tid=8038&extra=page%3D1%26filter%3Dtypeid%26typeid%3D18">[老CK教程]官方平台界面功能入门</a>
+> <a target="_blank" href="http://bbs.dz.blizzard.cn/forum.php?mod=viewthread&tid=8038&extra=page%3D1%26filter%3Dtypeid%26typeid%3D18">[老CK教程]平台界面功能入门</a>
 
 教程看完了吗？为什么说不咋的，因为其实这些教程不过是给你写一些FDF罢了，就是入个门，看个印象
 

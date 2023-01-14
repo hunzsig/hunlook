@@ -72,7 +72,7 @@ hslk.classIds({"ability","item"})
 ```
 hslk每组数据都必定会含有一个 _type 字段，是构建时用来记录数据类别的
 _type 字段一般情况下都是 common
-而引用hslk官方的拓展函数，如hslk_ability_empty,会有固定的搭配
+而引用hslk设计的拓展函数，如hslk_ability_empty,会有固定的搭配
 
 _type 可以在定义时自定义值，你写什么就是什么，可用于后续脚本中的ID集合获取
 

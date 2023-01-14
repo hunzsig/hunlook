@@ -2,9 +2,7 @@ import React from "react";
 
 import {
   AaOutline,
-  BankcardOutline,
   ExclamationShieldOutline,
-  KoubeiOutline,
   PictureOutline,
   SetOutline,
   SmileOutline,
@@ -96,13 +94,11 @@ export default [
     icon: <QuestionOutlined/>, key: 'other', label: "Other", children: [
       {icon: <SetOutline/>, key: 'jetbrain', label: "JetbrainSetting"},
       {icon: <SmileOutline/>, key: 'q_a', label: "Q&A"},
-      {icon: <CloudUploadOutlined/>, key: 'dz', label: "DZ"},
-      {icon: <KoubeiOutline/>, key: 'war3_tec', label: "War3Technic"},
+      {icon: <CloudUploadOutlined/>, key: 'pt', label: "Publish"},
       {icon: <PictureOutline/>, key: 'war3_terrainArt', label: "War3Terrain"},
       {icon: <ExclamationShieldOutline/>, key: 'war3_crash', label: "War3Crash"},
       {icon: <BoxPlotOutlined/>, key: 'war3_func', label: "War3Sync"},
       {icon: <TransportQRcodeOutline/>, key: 'lua_engine', label: "YDLuaEngine"},
-      {icon: <BankcardOutline/>, key: 'fdf', label: "FDF"},
     ]
   },
 ]

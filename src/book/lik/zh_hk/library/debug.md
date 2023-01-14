@@ -54,4 +54,4 @@ logger("message")
 
 ### 上線須知
 
-> 使用測試版本上線依然會啓用調試，請打包上線版本再上傳平台 [參考](https://lik.hunzsig.org/?p=other&n=dz)
+> 使用測試版本上線依然會啓用調試，請打包上線版本再上傳平台 [參考](https://lik.hunzsig.org/?p=other&n=pt)

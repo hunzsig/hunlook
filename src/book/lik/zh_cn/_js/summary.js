@@ -112,7 +112,7 @@ export default [
       {icon: <SetOutline/>, key: 'jetbrain', label: "Jetbrain设置"},
       {icon: <StrikethroughOutlined/>, key: 'encrypt', label: "混淆加密"},
       {icon: <SmileOutline/>, key: 'q_a', label: "询问的技巧"},
-      {icon: <CloudUploadOutlined/>, key: 'dz', label: "平台上线须知"},
+      {icon: <CloudUploadOutlined/>, key: 'pt', label: "平台上线须知"},
       {icon: <KoubeiOutline/>, key: 'war3_tec', label: "魔兽作图小技巧"},
       {icon: <PictureOutline/>, key: 'war3_terrainArt', label: "魔兽地形贴图路径"},
       {icon: <BoxPlotOutlined/>, key: 'war3_func', label: "魔兽函数异同特征"},

@@ -2,9 +2,7 @@ import React from "react";
 
 import {
   AaOutline,
-  BankcardOutline,
   ExclamationShieldOutline,
-  KoubeiOutline,
   PictureOutline,
   SetOutline,
   SmileOutline,
@@ -96,13 +94,11 @@ export default [
     icon: <QuestionOutlined/>, key: 'other', label: "他のもの", children: [
       {icon: <SetOutline/>, key: 'jetbrain', label: "Jetbrain設定"},
       {icon: <SmileOutline/>, key: 'q_a', label: "に質問"},
-      {icon: <CloudUploadOutlined/>, key: 'dz', label: "DZのオンライン上の注意事項"},
-      {icon: <KoubeiOutline/>, key: 'war3_tec', label: "魔獣のトリック"},
+      {icon: <CloudUploadOutlined/>, key: 'pt', label: "発表する"},
       {icon: <PictureOutline/>, key: 'war3_terrainArt', label: "魔獣地形マップパス"},
       {icon: <ExclamationShieldOutline/>, key: 'war3_crash', label: "魔獣崩壊原因"},
       {icon: <BoxPlotOutlined/>, key: 'war3_func', label: "魔獣関数異同特徴"},
       {icon: <TransportQRcodeOutline/>, key: 'lua_engine', label: "YDluaエンジン"},
-      {icon: <BankcardOutline/>, key: 'fdf', label: "FDF"},
     ]
   },
 ]

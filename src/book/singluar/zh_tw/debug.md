@@ -54,4 +54,4 @@ logger("message")
 
 ### 上線須知
 
-> 使用測試版本上線依然會啟用除錯，請打包上線版本再上傳平臺 [參考](https://singluar.hunzsig.org/?p=other&n=dz)
+> 使用測試版本上線依然會啟用除錯，請打包上線版本再上傳平臺 [參考](https://singluar.hunzsig.org/?p=other&n=pt)

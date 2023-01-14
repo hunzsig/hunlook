@@ -73,7 +73,7 @@ The jass.globals library allows you to access global variables in jass.
 
 ### jass.japi
 
-All japi functions currently registered by the jass.japi library. (including dz function)
+All japi functions currently registered by the jass.japi library. (including server function)
 
 ```lua
 	local jass = require 'jass.common'

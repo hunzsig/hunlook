@@ -112,7 +112,7 @@ export default [
       {icon: <SetOutline/>, key: 'jetbrain', label: "Jetbrain設定"},
       {icon: <StrikethroughOutlined/>, key: 'encrypt', label: "難読暗号化"},
       {icon: <SmileOutline/>, key: 'q_a', label: "問い合わせのテクニック"},
-      {icon: <CloudUploadOutlined/>, key: 'dz', label: "DZのオンライン上の注意事項"},
+      {icon: <CloudUploadOutlined/>, key: 'pt', label: "発表する"},
       {icon: <KoubeiOutline/>, key: 'war3_tec', label: "魔獣のトリック"},
       {icon: <PictureOutline/>, key: 'war3_terrainArt', label: "魔獣地形マップパス"},
       {icon: <BoxPlotOutlined/>, key: 'war3_func', label: "魔獣関数異同特徴"},

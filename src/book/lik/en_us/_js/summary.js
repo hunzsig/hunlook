@@ -112,7 +112,7 @@ export default [
       {icon: <SetOutline/>, key: 'jetbrain', label: "JetbrainSetting"},
       {icon: <StrikethroughOutlined/>, key: 'encrypt', label: "Encrypt"},
       {icon: <SmileOutline/>, key: 'q_a', label: "Q&A"},
-      {icon: <CloudUploadOutlined/>, key: 'dz', label: "DZ"},
+      {icon: <CloudUploadOutlined/>, key: 'pt', label: "Publish"},
       {icon: <KoubeiOutline/>, key: 'war3_tec', label: "War3Technic"},
       {icon: <PictureOutline/>, key: 'war3_terrainArt', label: "War3Terrain"},
       {icon: <BoxPlotOutlined/>, key: 'war3_func', label: "War3Sync"},
