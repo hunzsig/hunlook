@@ -34,19 +34,26 @@
       width: 100%;
     }
 
-    .series {
+    .actions {
       position: fixed;
-      bottom: 6vh;
-      right: 2%;
-      width: 4vh;
-      height: 4vh;
-      padding: 0;
-      opacity: 0.7;
+      bottom: 5.6%;
+      right: 2.5%;
+      display: flex;
+      flex-direction: column;
+
+      .adm-button {
+        width: 5vh;
+        height: 5vh;
+        padding: 0;
+        opacity: 0.7;
+        margin-bottom: 0.4vh;
+      }
+
+      .adm-button:hover {
+        opacity: 1;
+      }
     }
 
-    .series:hover {
-      opacity: 1;
-    }
   }
 
   .cover {

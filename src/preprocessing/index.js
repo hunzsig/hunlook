@@ -12,10 +12,11 @@ import router from "./router.js";
  * setting可以设 function _promise() { return new Promise... } 或值
  */
 export default {
-  book: "lik", // 选一本书
+  book: "singluar", // 选一本书
   // title: "HunZsig", // title 标题，默认 <book>技术文档 · 魂书
   // cover: Www, // 封面(Composer)
   router: router,
+  support: "https://afdian.net/a/hunzsig",
   lang: [
     {key: "zh_cn", label: "简体中文",},
     {key: "zh_hk", label: "香港繁體",},

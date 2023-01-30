@@ -2,8 +2,6 @@
 
 h-vjass是一套完全开源的魔兽地图框架。
 
-**( * 此项目现已完全存档封库)**
-
 ### 先行准备
 
 关闭编辑器的"逆天"触发
@@ -86,3 +84,5 @@ war3mapskin.txt -> war3mapskin.txt
 > 拓展地图会编写一些业务，来引导你进行学习
 
 * <a target="_blank" href="https://github.com/h-vjass/hyper-space-td">时空之轮TD</a>
+
+###### 温馨提示：此框架已完全停止维护，完全开源，请自行维护。可加入粉丝群了解框架的前世今生。

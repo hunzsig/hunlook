@@ -2,7 +2,7 @@ import './Homepage.less';
 import React, {Component} from 'react';
 import {SideBar, Tabs, Toast, Button, Modal} from 'antd-mobile';
 import {SoundOutline, SoundMuteOutline} from "antd-mobile-icons";
-import {TranslationOutlined} from "@ant-design/icons";
+import {TranslationOutlined, LikeOutlined} from "@ant-design/icons";
 import {History, LocalStorage, Parse} from 'h-react-antd-mobile';
 import Book from './Book';
 
@@ -167,36 +167,48 @@ class Homepage extends Component {
           </SideBar>
         </div>
         <div className="books">
-          {
-            History.state.lang.length > 1 &&
-            <Button
-              className="series"
-              color='primary'
-              onClick={() => {
-                const actions = [];
-                History.state.lang.forEach((l) => {
-                  actions.push({
-                    key: l.key,
-                    text: l.label,
-                    disabled: l.key === this.state.l,
-                    primary: true,
-                    onClick: () => {
-                      this.state.l = l.key;
-                      this.setState({l: this.state.l});
-                      LocalStorage.set("lang", this.state.l);
-                    }
+          <div className="actions">
+            {
+              History.state.support &&
+              <Button
+                color='warning'
+                onClick={() => {
+                  window.open(History.state.support)
+                }}
+              >
+                <LikeOutlined/>
+              </Button>
+            }
+            {
+              History.state.lang.length > 1 &&
+              <Button
+                color='primary'
+                onClick={() => {
+                  const actions = [];
+                  History.state.lang.forEach((l) => {
+                    actions.push({
+                      key: l.key,
+                      text: l.label,
+                      disabled: l.key === this.state.l,
+                      primary: true,
+                      onClick: () => {
+                        this.state.l = l.key;
+                        this.setState({l: this.state.l});
+                        LocalStorage.set("lang", this.state.l);
+                      }
+                    })
                   })
-                })
-                Modal.show({
-                  closeOnAction: true,
-                  closeOnMaskClick: true,
-                  actions: actions,
-                })
-              }}
-            >
-              <TranslationOutlined/>
-            </Button>
-          }
+                  Modal.show({
+                    closeOnAction: true,
+                    closeOnMaskClick: true,
+                    actions: actions,
+                  })
+                }}
+              >
+                <TranslationOutlined/>
+              </Button>
+            }
+          </div>
           <div className="tabs">
             <Tabs
               stretch={false}
