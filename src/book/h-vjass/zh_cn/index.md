@@ -85,4 +85,4 @@ war3mapskin.txt -> war3mapskin.txt
 
 * <a target="_blank" href="https://github.com/h-vjass/hyper-space-td">时空之轮TD</a>
 
-###### 温馨提示：此框架已完全停止维护，完全开源，请自行维护。可加入粉丝群了解框架的前世今生。
+###### 温馨提示：此框架已完全停止维护，完全开源，可自行维护拓展。
