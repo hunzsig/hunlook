@@ -1,6 +1,6 @@
 ## Quick Start
 
-###### Carefully read each chapter of the technical documents
+###### Version stability and independent function
 
 ### Install fork
 
@@ -50,8 +50,6 @@
 > sl.exe run demo -h
 ```
 
-###### Warm prompt: the design content of this document is only the tip of the iceberg. If you feel uncomfortable, please discard the pit in time.
-
+###### Warm prompt: the design content of this document is only the tip of the iceberg. Join the fan group to learn more.
 ###### When using win11, especially the newer version, you sometimes encounter pop-up errors (but you can continue to play)
-
 ###### At this time, you can choose to continue playing regardless of the pop-up window, or start the terminal or IDE (when using the IDE terminal) as an administrator to solve the problem.
