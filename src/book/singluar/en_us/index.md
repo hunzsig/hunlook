@@ -50,6 +50,6 @@
 > sl.exe run demo -h
 ```
 
-###### Warm prompt: the design content of this document is only the tip of the iceberg. Join the fan group to learn more.
+###### Warm prompt: the design content of this document is only the tip of the iceberg
 ###### When using win11, especially the newer version, you sometimes encounter pop-up errors (but you can continue to play)
 ###### At this time, you can choose to continue playing regardless of the pop-up window, or start the terminal or IDE (when using the IDE terminal) as an administrator to solve the problem.
