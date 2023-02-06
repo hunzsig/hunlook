@@ -50,6 +50,6 @@
 > sl.exe run demo -h
 ```
 
-###### 溫馨提示：如果想成為粉絲請[點選這裡](https://afdian.net/a/hunzsig)
+###### 溫馨提示：如果想成為粉絲請 <a target="_blank" href="https://afdian.net/a/hunzsig">點選這裡</a>
 ###### 使用win11時，特別是較新版本時，有時會遇到彈窗錯誤（但其實可以繼續玩）
 ###### 此時你可以選擇不理彈窗繼續玩，或者將終端或IDE（使用IDE終端時）以管理員啟動即可解決問題

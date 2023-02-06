@@ -16,7 +16,7 @@
 > git clone https://github.com/singluar/singluar-fans.git
 ```
 
-> [如果访问github非常缓慢可尝试下载Ghips](https://gitcode.net/aardio/Ghips/-/raw/master/dist/Ghips.7z)
+> <a target="_blank" href="https://gitcode.net/aardio/Ghips/-/raw/master/dist/Ghips.7z">如果访问github非常缓慢可尝试下载Ghips</a>
 
 ### 安装IDE - Ideac
 
@@ -52,6 +52,6 @@
 > sl.exe run demo -h
 ```
 
-###### 温馨提示：如果想成为粉丝请[点击这里](https://afdian.net/a/hunzsig)
+###### 温馨提示：如果想成为粉丝请 <a target="_blank" href="https://afdian.net/a/hunzsig">点击这里</a>
 ###### 使用win11时，特别是较新版本时，有时会遇到弹窗错误（但其实可以继续玩）
 ###### 此时你可以选择不理弹窗继续玩，或者将终端或IDE（使用IDE终端时）以管理员启动即可解决问题

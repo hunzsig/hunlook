@@ -50,6 +50,6 @@
 > sl.exe run demo -h
 ```
 
-###### Warm prompt: If you want to become a fan, please [click here](https://afdian.net/a/hunzsig)
+###### Warm prompt: If you want to become a fan, please <a target="_blank" href="https://afdian.net/a/hunzsig">CLICK HERE</a>
 ###### When using win11, especially the newer version, you sometimes encounter pop-up errors (but you can continue to play)
 ###### At this time, you can choose to continue playing regardless of the pop-up window, or start the terminal or IDE (when using the IDE terminal) as an administrator to solve the problem.
