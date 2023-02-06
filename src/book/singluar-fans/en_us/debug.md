@@ -55,4 +55,4 @@ logger("message")
 ### Publish notice
 
 > Debugging will still be enabled when using the test version to go online. Please package the online version and upload
-> it to the platform.[refer](https://singluar.hunzsig.org/?p=other&n=pt)
+> it to the platform.[refer](https://singluar-fans.hunzsig.org/?p=other&n=pt)
