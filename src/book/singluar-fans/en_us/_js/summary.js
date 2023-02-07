@@ -44,14 +44,12 @@ import {
   FontSizeOutlined,
   StockOutlined,
   TeamOutlined,
-  SaveOutlined,
 } from "@ant-design/icons";
 
 // only one layout
 export default [
   {icon: <ReadOutlined/>, key: 'index', label: "Start"},
   {icon: <TeamOutlined/>, key: 'fans', label: "Fans"},
-  {icon: <SaveOutlined/>, key: 'get', label: "Get"},
   {icon: <ApartmentOutlined/>, key: 'struct', label: "Struct"},
   {icon: <ToolOutlined/>, key: 'cmd', label: "CMD Tool"},
   {icon: <BugOutlined/>, key: 'debug', label: "Debug"},
