@@ -1,22 +1,16 @@
 ## 快速开始
 
-###### 粉丝版本、更强更优
+###### 粉丝版本、更强力、更优质、更自由
 
-### 安装fork
+###### 由于维护成本巨大，故粉丝们将提供更多技术协助
 
-###### 熟练使用 git 可跳过此步
+### 获得粉丝版框架
 
-> <a target="_blank" href="https://www.git-fork.com">Fork - a fast and friendly git client for Mac and Windows (
-> git-fork.com)</a>
->
+###### 如果你还不是粉丝，请加入粉丝群 <a target="_blank" href="https://afdian.net/a/hunzsig">点击这里</a>
 
-### 使用 git clone 克隆项目
+###### 如果你不是粉丝，可使用公开版本 <a target="_blank" href="https://singluar.hunzsig.org">点击这里</a>
 
-```
-> git clone https://github.com/singluar/singluar-fans.git
-```
-
-> <a target="_blank" href="https://gitcode.net/aardio/Ghips/-/raw/master/dist/Ghips.7z">如果访问github非常缓慢可尝试下载Ghips</a>
+> 公开版本可随意商用，但不能获得源码，且得不到任何的技术协助，请见谅
 
 ### 安装IDE - Ideac
 
@@ -53,5 +47,7 @@
 ```
 
 ###### 温馨提示：如果想成为粉丝请 <a target="_blank" href="https://afdian.net/a/hunzsig">点击这里</a>
+
 ###### 使用win11时，特别是较新版本时，有时会遇到弹窗错误（但其实可以继续玩）
+
 ###### 此时你可以选择不理弹窗继续玩，或者将终端或IDE（使用IDE终端时）以管理员启动即可解决问题

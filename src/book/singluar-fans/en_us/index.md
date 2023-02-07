@@ -1,20 +1,17 @@
 ## Quick Start
 
-###### Fans version, stronger and better
+###### Fans version, more powerful, better quality, more free
 
-### Install fork
+###### Due to the huge maintenance cost, fans will provide more technical assistance
 
-###### Skilled use of git can skip this step
+## Get fan frameworks
 
-> <a target="_blank" href="https://www.git-fork.com">Fork - a fast and friendly git client for Mac and Windows (
-> git-fork.com)</a>
->
+###### If you are not a fan, please join the fan group <a target="_blank" href="https://afdian.net/a/hunzsig">Click here</a>
 
-### Cloning projects with git clone
+###### If you don't want to be a fan, you can use the public version <a target="_blank" href="https://singluar.hunzsig.org">Click here</a>
 
-```
-> git clone https://github.com/singluar/singluar-fans.git
-```
+> The public version can be used for commercial use at will, but the source code cannot be obtained and no technical
+> assistance can be obtained. Please forgive me
 
 ### Install IDE - Ideac
 
@@ -51,5 +48,7 @@
 ```
 
 ###### Warm prompt: If you want to become a fan, please <a target="_blank" href="https://afdian.net/a/hunzsig">CLICK HERE</a>
+
 ###### When using win11, especially the newer version, you sometimes encounter pop-up errors (but you can continue to play)
+
 ###### At this time, you can choose to continue playing regardless of the pop-up window, or start the terminal or IDE (when using the IDE terminal) as an administrator to solve the problem.

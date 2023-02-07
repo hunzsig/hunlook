@@ -31,5 +31,3 @@ Bilibiliから
 > <a target="_blank" href="https://www.bilibili.com/video/BV16D4y1c7nS">脚本混淆</a>
 
 > <a target="_blank" href="https://www.bilibili.com/video/BV1CZ4y1X7rw">实时热更新</a>
-
-> <a target="_blank" href="https://www.bilibili.com/video/BV1D3411x7MC">国际化</a>

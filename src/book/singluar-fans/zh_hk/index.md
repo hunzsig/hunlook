@@ -1,20 +1,16 @@
 ## 快速開始
 
-###### 粉絲版本、更強更優
+###### 粉丝版本、更强力、更优质、更自由
 
-### 安裝fork
+###### 由於維護成本巨大，故粉絲們將提供更多技術協助
 
-###### 熟練使用 git 可跳過此步
+### 获得粉丝版框架
 
-> <a target="_blank" href="https://www.git-fork.com">Fork - a fast and friendly git client for Mac and Windows (
-> git-fork.com)</a>
->
+###### 如果你还不是粉丝，请加入粉丝群 <a target="_blank" href="https://afdian.net/a/hunzsig">点击这里</a>
 
-### 使用 git clone 克隆項目
+###### 如果你不是粉丝，可使用公开版本 <a target="_blank" href="https://singluar.hunzsig.org">点击这里</a>
 
-```
-> git clone https://github.com/singluar/singluar-fans.git
-```
+> 公开版本可随意商用，但不能获得源码，且得不到任何的技术协助，请见谅
 
 ### 安裝IDE - Ideac
 
@@ -51,5 +47,7 @@
 ```
 
 ###### 温馨提示：如果想成為粉絲請 <a target="_blank" href="https://afdian.net/a/hunzsig">點擊這裏</a>
+
 ###### 使用win11時，特別是較新版本時，有時會遇到彈窗錯誤（但其實可以繼續玩）
+
 ###### 此時你可以選擇不理彈窗繼續玩，或者將終端或IDE（使用IDE終端時）以管理員啓動即可解決問題
