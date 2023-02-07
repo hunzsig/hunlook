@@ -10,4 +10,6 @@
 
 ### List of differences from restricted versions
 
+* Performance optimization
+* New item event: Deliverer
 * Enhancement of object pointer function
