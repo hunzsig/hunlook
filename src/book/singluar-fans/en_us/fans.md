@@ -12,4 +12,5 @@
 
 * Performance optimization
 * New item event: Deliverer
+* The targeting accuracy of the object pointer to the unit is improved
 * Enhancement of object pointer function
