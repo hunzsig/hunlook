@@ -12,7 +12,6 @@
 
 ### git clone を使用したプロジェクトのクローン作成
 
-
 ```
 > git clone https://github.com/singluar/singluar-restricted.git
 ```
@@ -41,7 +40,6 @@
 
 ### 新規プロジェクトの作成
 
-
 ```
 > sl.exe new demo
 ```
@@ -52,6 +50,8 @@
 > sl.exe run demo -h
 ```
 
-###### ご注意：この書類の設計内容は氷山の一角にすぎないので。後援する <a target="_blank" href="https://afdian.net/a/hunzsig">点击这里</a>
+###### ご注意：この書類の設計内容は氷山の一角にすぎないので。 <a target="_blank" href="https://afdian.net/a/hunzsig">後援する</a>
+
 ###### win 11を使用している場合、特に新しいバージョンの場合、ポップアップエラーが発生することがあります（ただし、実際にはプレイを続けることができます）
+
 ###### ここでは、ポップアップを無視して遊び続けるか、管理者が起動する端末やIDE（IDE端末を使用する場合）を選択して問題を解決することができます
