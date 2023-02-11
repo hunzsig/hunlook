@@ -44,6 +44,7 @@ import {
   FontSizeOutlined,
   StockOutlined,
   TeamOutlined,
+  QuestionCircleOutlined,
 } from "@ant-design/icons";
 
 // only one layout
@@ -92,6 +93,7 @@ export default [
       {icon: <StockOutlined/>, key: 'orderRoute', label: "路線藍圖"},
     ]
   },
+  {icon: <QuestionCircleOutlined/>, key: 'problemUI', label: "UI疑難雜症"},
   {
     icon: <QuestionOutlined/>, key: 'other', label: "其他學習", children: [
       {icon: <SetOutline/>, key: 'jetbrain', label: "Jetbrain設定"},
