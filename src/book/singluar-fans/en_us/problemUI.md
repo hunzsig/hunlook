@@ -11,8 +11,9 @@
 
 * Solution
 
-> Adhere to the principle that one package does one thing, and do not write complex nested UI before capacity
-> improvement
+```
+Adhere to the principle that one package does one thing, and do not write complex nested UI before capacity improvement
+```
 
 ### The texture setting of FrameBackdrop is invalid
 
