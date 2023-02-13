@@ -27,7 +27,7 @@ dump({
 })
 ```
 
-![Print](https://gitlab.com/h-document/singluar/-/raw/main/images/print.png)
+![Print](https://gitlab.com/h-document/singluar-fans/-/raw/main/assets/print.png)
 
 ### Stack Debug
 

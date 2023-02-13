@@ -139,7 +139,7 @@ class Homepage extends Component {
   }
 
   componentDidMount() {
-    document.getElementById("bgm").volume = 0.5;
+    document.getElementById("bgm").volume = 0.4;
   }
 
   render() {
@@ -151,6 +151,19 @@ class Homepage extends Component {
     return (
       <div className="page-homepage">
         <div className="sidebar">
+          {
+            exhibit &&
+            <img className="exhibit" alt="exhibit" src={exhibit} loading="lazy"
+                 onError={(evt) => {
+                   evt.target.style.display = "none";
+                 }}
+                 onClick={() => {
+                   if (History.state.support) {
+                     window.open(History.state.support)
+                   }
+                 }}
+            />
+          }
           <SideBar
             activeKey={this.state.p}
             onChange={(key) => {
@@ -174,12 +187,6 @@ class Homepage extends Component {
           >
             {this.renderSideBar()}
           </SideBar>
-          {
-            exhibit &&
-            <img className="exhibit" alt="exhibit" src={exhibit} loading="lazy" onError={(evt) => {
-              evt.target.style.display = "none";
-            }}/>
-          }
         </div>
         <div className="books">
           <div className="actions">

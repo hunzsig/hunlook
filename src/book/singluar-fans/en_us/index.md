@@ -23,11 +23,11 @@
 
 ##### Install plugins - Highlighter
 
-![Emmylua](https://gitlab.com/h-document/singluar/-/raw/main/images/emmylua.png)
+![Emmylua](https://gitlab.com/h-document/singluar-fans/-/raw/main/assets/emmylua.png)
 
-![ImageIconViewer](https://gitlab.com/h-document/singluar/-/raw/main/images/imageIconViewer.png)
+![ImageIconViewer](https://gitlab.com/h-document/singluar-fans/-/raw/main/assets/imageIconViewer.png)
 
-![ColorHighlighter](https://gitlab.com/h-document/singluar/-/raw/main/images/colorHighlighter.png)
+![ColorHighlighter](https://gitlab.com/h-document/singluar-fans/-/raw/main/assets/colorHighlighter.png)
 
 ### Open the terminal and enter the root
 

@@ -22,11 +22,11 @@
 
 ##### 安装插件 Highlighter
 
-![Emmylua](https://gitlab.com/h-document/singluar/-/raw/main/images/emmylua.png)
+![Emmylua](https://gitlab.com/h-document/singluar-fans/-/raw/main/assets/emmylua.png)
 
-![ImageIconViewer](https://gitlab.com/h-document/singluar/-/raw/main/images/imageIconViewer.png)
+![ImageIconViewer](https://gitlab.com/h-document/singluar-fans/-/raw/main/assets/imageIconViewer.png)
 
-![Highlighter](https://gitlab.com/h-document/singluar/-/raw/main/images/colorHighlighter.png)
+![Highlighter](https://gitlab.com/h-document/singluar-fans/-/raw/main/assets/colorHighlighter.png)
 
 ### 打开终端并进入框架根
 
