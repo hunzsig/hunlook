@@ -1,6 +1,6 @@
 ## Start
 
-###### Be sure to read each chapter of the technical document
+###### During research and development, this document does not represent the final result
 
 ### Install IDE - Ideac
 
@@ -36,7 +36,7 @@
 > lik.exe run demo -h
 ```
 
-###### Reminder: You need to obtain the project probation qualification first
+###### Reminder: This project is in the internal test of R&D, and will be open for trial in the future <a target="_blank" href="https://afdian.net/a/hunzsig">Join the fan group to know more</a>
 
 ###### When using Win11, especially the newer version, you will sometimes encounter pop-up errors (but you can continue to play)
 
