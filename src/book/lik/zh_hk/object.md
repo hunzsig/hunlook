@@ -16,7 +16,7 @@ Aura 領域
 Bgm 背景音樂
 Buff 可操狀態
 Camera 鏡頭
-Corpse 屍體
+Corpse 消逝物
 Cursor 指針
 Destructable 可破壞物
 Dialog 對話框
@@ -28,6 +28,7 @@ Frame 界面
 FrameAnimate 界面動畫
 FrameBackdrop 界面背景
 FrameBackdropTile 界面背景分型
+FrameBalloon 界面氣泡對話
 FrameBar 界面條
 FrameBarState 界面狀態條
 FrameBlock 界面空佔
@@ -39,9 +40,9 @@ FrameLabel 界面詞條
 FrameList 界面列表
 FrameMap 界面地圖
 FrameModel 界面模型
-FramePop 界面氣泡
 FrameText 界面文本
 FrameTextarea 界面文本域
+FrameToast 界面吐司信息
 FrameToolTips 界面彈層
 Game 遊戲
 Group 組
@@ -57,6 +58,7 @@ Player 玩家
 Procoss 流程
 Quest 任務
 Rect 區域
+Screen 熒屏
 Server 服務器
 Store 倉貯
 Team 隊伍
@@ -81,4 +83,30 @@ Weather 天氣
 local u = Unit(...)
 isDestory(u) -- 判斷對象的存活態
 destory(u) -- 毀滅對象
+```
+
+#### 對象的類型判斷
+
+```lua
+local u = Unit(...)
+if (isClass(u,UnitClass)) then
+  -- 判斷對象是否Unit
+end
+```
+
+#### 對象的類型父類判斷
+
+```lua
+local u = Unit(...)
+if (instanceof(u, UnitTplClass)) then
+  -- 判斷對象是否繼承自UnitTpl
+end
+```
+
+#### 對象的繼承關係
+
+```lua
+local u = Unit(...)
+dump(classHierarchy(u)) -- table展示
+print(classHierarchyString(u)) -- string展示
 ```

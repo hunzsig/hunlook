@@ -28,6 +28,7 @@ Frame インタフェース
 FrameAnimate インタフェースアニメーション
 FrameBackdrop インタフェースの背景
 FrameBackdropTile 界面背景分類
+FrameBalloon インタフェース気泡
 FrameBar インタフェースバー
 FrameBarState インタフェースステータスバー
 FrameBlock インタフェース空占
@@ -39,9 +40,9 @@ FrameLabel インタフェースの見出し
 FrameList インタフェースのリスト
 FrameMap インタフェースマップ
 FrameModel インタフェースモデル
-FramePop インタフェース気泡
 FrameText インタフェーステキスト
 FrameTextarea インタフェーステキストフィールド
+FrameToast 界面トースト情報
 FrameToolTips かいめんだんそう
 Game ゲーム
 Group グループ
@@ -57,6 +58,7 @@ Player プレイヤー
 Procoss プロセス
 Quest クエスト
 Rect 領域
+Screen スクリーン
 Server サーバ
 Store 倉庫
 Team チーム
@@ -81,4 +83,30 @@ Weather 天気
 local u = Unit(...)
 isDestory(u) -- 判定オブジェクトの生存状態
 destory(u) -- オブジェクトを破壊する
+```
+
+#### オブジェクトのタイプ判定
+
+```lua
+local u = Unit(...)
+if (isClass(u,UnitClass)) then
+  -- 対象がUnitかどうかを判断する
+end
+```
+
+#### オブジェクトのタイプ親クラス判定
+
+```lua
+local u = Unit(...)
+if (instanceof(u, UnitTplClass)) then
+  -- オブジェクトがUnitTplから継承されているかどうかを判断する
+end
+```
+
+#### オブジェクトの継承関係
+
+```lua
+local u = Unit(...)
+dump(classHierarchy(u)) -- table展示
+print(classHierarchyString(u)) -- string展示
 ```

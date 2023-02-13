@@ -28,6 +28,7 @@ Frame 界面
 FrameAnimate 界面动画
 FrameBackdrop 界面背景
 FrameBackdropTile 界面背景分型
+FrameBalloon 界面气泡对话
 FrameBar 界面条
 FrameBarState 界面状态条
 FrameBlock 界面空占
@@ -39,9 +40,9 @@ FrameLabel 界面词条
 FrameList 界面列表
 FrameMap 界面地图
 FrameModel 界面模型
-FramePop 界面气泡
 FrameText 界面文本
 FrameTextarea 界面文本域
+FrameToast 界面吐司信息
 FrameToolTips 界面弹层
 Game 游戏
 Group 组
@@ -57,6 +58,7 @@ Player 玩家
 Procoss 流程
 Quest 任务
 Rect 区域
+Screen 荧屏
 Server 服务器
 Store 仓贮
 Team 队伍
@@ -81,4 +83,30 @@ Weather 天气
 local u = Unit(...)
 isDestory(u) -- 判断对象的存活态
 destory(u) -- 毁灭对象
+```
+
+#### 对象的类型判断
+
+```lua
+local u = Unit(...)
+if (isClass(u,UnitClass)) then
+  -- 判断对象是否Unit
+end
+```
+
+#### 对象的类型父类判断
+
+```lua
+local u = Unit(...)
+if (instanceof(u, UnitTplClass)) then
+  -- 判断对象是否继承自UnitTpl
+end
+```
+
+#### 对象的继承关系
+
+```lua
+local u = Unit(...)
+dump(classHierarchy(u)) -- table展示
+print(classHierarchyString(u)) -- string展示
 ```
