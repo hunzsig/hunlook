@@ -37,15 +37,19 @@ class Homepage extends Component {
   }
 
   summary = () => {
-    return require(`./../../book/${History.state.book}/${this.state.l}/_js/summary.js`).default;
+    return require(`./../../book/${History.state.book}/${this.state.l}/summary.js`).default;
   }
 
   bgm = () => {
-    return require(`./../../book/${History.state.book}/${this.state.l}/_js/bgm.js`).default;
+    return require(`./../../book/${History.state.book}/bgm.js`).default;
+  }
+
+  exhibit = () => {
+    return require(`./../../book/${History.state.book}/exhibit.js`).default;
   }
 
   stat = () => {
-    return require(`./../../book/${History.state.book}/${this.state.l}/_js/stat.js`).default;
+    return require(`./../../book/${History.state.book}/stat.js`).default;
   }
 
   book = () => {
@@ -134,9 +138,14 @@ class Homepage extends Component {
     );
   }
 
+  componentDidMount() {
+    document.getElementById("bgm").volume = 0.5;
+  }
+
   render() {
     let summary = this.summary()
     let bgm = this.bgm()
+    let exhibit = this.exhibit()
     let stat = this.stat()
     let Cover = History.state.cover
     return (
@@ -165,6 +174,12 @@ class Homepage extends Component {
           >
             {this.renderSideBar()}
           </SideBar>
+          {
+            exhibit &&
+            <img className="exhibit" alt="exhibit" src={exhibit} loading="lazy" onError={(evt) => {
+              evt.target.style.display = "none";
+            }}/>
+          }
         </div>
         <div className="books">
           <div className="actions">

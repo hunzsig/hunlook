@@ -16,12 +16,27 @@
   padding: 0;
 
   .sidebar {
+    display: flex;
+    flex-direction: column;
     width: 25%;
     max-width: 250px;
 
     .adm-side-bar {
+      z-index: 1;
       width: 100%;
       margin: 0;
+    }
+
+    .exhibit {
+      z-index: 2;
+      width: 100%;
+      padding: 0;
+      margin-top: -10px;
+      border-radius: 0 10px 0 0;
+    }
+
+    .exhibit[src=""], .exhibit:not([src]) {
+      display: none;
     }
   }
 
