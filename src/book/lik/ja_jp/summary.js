@@ -60,7 +60,9 @@ export default [
   {icon: <AntDesignOutlined/>, key: 'cmd', label: "コマンドツール"},
   {icon: <SubnodeOutlined/>, key: 'japi', label: "JAPI"},
   {icon: <FontColorsOutlined/>, key: 'assets', label: "Assets"},
+  {icon: <AppstoreOutlined/>, key: 'base', label: "ベースライブラリ"},
   {icon: <AppstoreOutlined/>, key: 'object', label: "対象"},
+  {icon: <AppstoreOutlined/>, key: 'ability', label: "コンピテンシー"},
   {icon: <PullRequestOutlined/>, key: 'event', label: "事件"},
   {
     icon: <FunctionOutlined/>, key: 'library', label: "ライブラリ", children: [

@@ -52,7 +52,6 @@ ItemFunc
 ItemSlot
 ItemTpl
 Lightning
-Matrix
 Monitor
 Player
 Procoss
@@ -70,8 +69,6 @@ UnitFunc
 UnitTpl
 V3d
 Vcm
-Vector2
-Vector3
 Vwp
 WarehouseSlot
 Weather

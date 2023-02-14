@@ -52,7 +52,6 @@ ItemFunc アイテム機能
 ItemSlot アイテムバー
 ItemTpl アイテムテンプレート
 Lightning 稲妻効果
-Matrix 行列
 Monitor モニタ
 Player プレイヤー
 Procoss プロセス
@@ -70,8 +69,6 @@ UnitFunc 単位機能
 UnitTpl 単位テンプレート
 V3d 3Dサウンド
 Vcm パネルサウンド
-Vector 2の2次元ベクトル
-Vector 3の3次元ベクトル
 Vwp 武器音効果
 WarehouseSlot倉庫バー
 Weather 天気

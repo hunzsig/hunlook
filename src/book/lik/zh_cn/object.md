@@ -52,7 +52,6 @@ ItemFunc 物品功能
 ItemSlot 物品栏
 ItemTpl 物品模版
 Lightning 闪电效果
-Matrix 矩阵
 Monitor 监听器
 Player 玩家
 Procoss 流程
@@ -70,8 +69,6 @@ UnitFunc 单位功能
 UnitTpl 单位模版
 V3d 3D音效
 Vcm 面板音效
-Vector2 二维向量 
-Vector3 三维向量
 Vwp 武器音效
 WarehouseSlot 仓库栏
 Weather 天气
