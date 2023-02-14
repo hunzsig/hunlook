@@ -3,6 +3,34 @@
 #### 事件一览
 
 ```lua
+---@alias noteOnPropBase {key:"对应属性key", old:"旧值", new:"新值"}
+---@alias noteOnPropGame noteOnPropBase|{triggerObject:Game}
+---@alias noteOnPropPlayer noteOnPropBase|{triggerObject:Player}
+---@alias noteOnPropUnit noteOnPropBase|{triggerObject:Unit}
+---@alias noteOnPropAbility noteOnPropBase|{triggerObject:Ability}
+---@alias noteOnPropItem noteOnPropBase|{triggerObject:Item}
+EVENT.Prop = {
+    --- 游戏参数改变前
+    BeforeChange = "propBeforeChange",
+    --- 游戏参数改变后
+    Change = "propChange",
+}
+
+---@alias noteOnObjectCreateData {triggerObject:Object}
+---@alias noteOnObjectDestroyData {triggerObject:Object}
+---@alias noteOnAIDestroyData {triggerObject:AI} AI
+---@alias noteOnAbilityDestroyData {triggerObject:Ability} 技能
+---@alias noteOnCorpseDestroyData {triggerObject:Corpse} 尸体
+---@alias noteOnEffectDestroyData {triggerObject:Effect} 特效
+---@alias noteOnItemDestroyData {triggerObject:Item} 物品
+---@alias noteOnUnitDestroyData {triggerObject:Unit} 单位
+EVENT.Object = {
+    --- 对象创建
+    Create = "CorpseCreate",
+    --- 对象毁灭
+    Destroy = "CorpseDestroy",
+}
+
 EVENT.Game = {
     --- 开始游戏(此事件游戏开始后会自动销毁)
     ---@alias noteOnGameStartData nil
@@ -19,19 +47,6 @@ EVENT.Game = {
     --- 进入黑夜
     ---@alias noteOnGameNightData nil
     Night = "gameNight",
-}
-
----@alias noteOnPropBase {key:"对应属性key", old:"旧值", new:"新值"}
----@alias noteOnPropGame noteOnPropBase|{triggerObject:Game}
----@alias noteOnPropPlayer noteOnPropBase|{triggerObject:Player}
----@alias noteOnPropUnit noteOnPropBase|{triggerObject:Unit}
----@alias noteOnPropAbility noteOnPropBase|{triggerObject:Ability}
----@alias noteOnPropItem noteOnPropBase|{triggerObject:Item}
-EVENT.Prop = {
-    --- 游戏参数改变前
-    BeforeChange = "propBeforeChange",
-    --- 游戏参数改变后
-    Change = "propChange",
 }
 
 ---@alias noteOnPlayerBase {triggerPlayer:Player}
@@ -57,10 +72,16 @@ EVENT.Player = {
     --- 玩家离开游戏
     ---@alias noteOnPlayerQuitData noteOnPlayerBase
     Quit = "playerQuit",
+    --- 仓库栏有所变化
+    ---@alias noteOnPlayerWarehouseSlotChangeData noteOnPlayerBase|{triggerSlot:WarehouseSlot}
+    WarehouseSlotChange = "playerWarehouseSlotChange",
 }
 
 ---@alias noteOnUnitBase {triggerUnit:Unit,triggerAbility:Ability,triggerItem:Item}
 EVENT.Unit = {
+    --- 准备攻击
+    ---@alias noteOnUnitBeforeAttackData noteOnUnitBase|{targetUnit:Unit}
+    BeforeAttack = "unitBeforeAttack",
     --- 攻击
     ---@alias noteOnUnitAttackData noteOnUnitDamageData
     Attack = "unitAttack",
@@ -73,24 +94,39 @@ EVENT.Unit = {
     --- 击飞目标
     ---@alias noteOnUnitCrackFlyData noteOnUnitBase|{targetUnit:Unit,distance:"击退距离",height:"击飞高度",duration:"凌空时长"}
     CrackFly = "unitCrackFly",
-    --- 暴击目标
+    --- 暴击目标（本体属性方式）
     ---@alias noteOnUnitCritData noteOnUnitBase|{targetUnit:Unit}
     Crit = "unitCrit",
+    --- 暴击目标（调用技能方式）
+    ---@alias noteOnUnitCritAbilityData noteOnUnitBase|{targetUnit:Unit}
+    CritAbility = "unitCritAbility",
     --- 造成伤害
     ---@alias noteOnUnitDamageData noteOnUnitBase|{targetUnit:Unit,damage:"伤害值",damageSrc:"伤害来源",damageType:"伤害类型"}
     Damage = "unitDamage",
     --- 单位出生
     ---@alias noteOnUnitBornData noteOnUnitBase
     Born = "unitBorn",
-    --- 复活
-    ---@alias noteOnUnitRebornData noteOnUnitBase
-    Reborn = "unitReborn",
     --- 单位死亡
     ---@alias noteOnUnitDeadData noteOnUnitBase|{sourceUnit:Unit}
     Dead = "unitDead",
-    --- 单位毁灭
-    ---@alias noteOnUnitDestroyData noteOnUnitBase
-    Destroy = "unitDestroy",
+    --- 单位假死（可以复活的单位被击杀时触发）
+    ---@alias noteOnUnitFeignDeadData noteOnUnitDeadData
+    FeignDead = "unitFeignDead",
+    --- 复活
+    ---@alias noteOnUnitRebornData noteOnUnitBase
+    Reborn = "unitReborn",
+    --- 候住命令
+    ---@alias noteOnUnitOrderHoldData noteOnUnitBase
+    OrderHold = "unitOrderHold",
+    --- 停止命令
+    ---@alias noteOnUnitOrderStopData noteOnUnitBase
+    OrderStop = "unitOrderStop",
+    --- 移动命令
+    ---@alias noteOnUnitOrderMoveData noteOnUnitBase|{targetX:number,targetY:number}
+    OrderMove = "unitOrderMove",
+    --- 攻击命令
+    ---@alias noteOnUnitOrderAttackData noteOnUnitBase|{targetX:number,targetY:number}
+    OrderAttack = "unitOrderAttack",
     --- 附魔反应
     ---@alias noteOnUnitEnchantData noteOnUnitBase|{sourceUnit:Unit,enchantType:"附魔类型",addition:"加成百分比"}
     Enchant = "unitEnchant",
@@ -100,9 +136,6 @@ EVENT.Unit = {
     --- 技能吸血
     ---@alias noteOnUnitHPSuckAbilityData noteOnUnitBase|{targetUnit:Unit,value:"吸血值",percent:"吸血百分比"}
     HPSuckAbility = "unitHPSuckAbility",
-    --- 候住命令
-    ---@alias noteOnUnitStopData noteOnUnitBase
-    Hold = "unitHold",
     --- 单位受伤
     ---@alias noteOnUnitHurtData noteOnUnitBase|{sourceUnit:Unit,targetUnit:Unit,damage:"伤害值",damageSrc:"伤害来源",damageType:"伤害类型"}
     Hurt = "unitHurt",
@@ -151,22 +184,28 @@ EVENT.Unit = {
     --- 反伤
     ---@alias noteOnUnitReboundData noteOnUnitDamageData
     Rebound = "unitRebound",
-    --- 打断[不大于0.05秒的眩晕]
-    ---@alias noteOnUnitShockData noteOnUnitBase|{targetUnit:Unit,duration:number}
-    Shock = "unitShock",
     --- 分裂
     ---@alias noteOnUnitSplitData noteOnUnitBase|{targetUnit:Unit,radius:number}
     Split = "unitSplit",
-    --- 停止命令
-    ---@alias noteOnUnitStopData noteOnUnitBase
-    Stop = "unitStop",
-    --- 眩晕[大于0.05秒的眩晕]
+    --- 眩晕
     ---@alias noteOnUnitStunData noteOnUnitBase|{targetUnit:Unit,duration:number}
     Stun = "unitStun",
+    --- 破护盾
+    ---@alias noteOnUnitBreakShieldData noteOnUnitBase|{targetUnit:Unit}
+    BreakShield = "unitBreakShield",
     --- 等级改变
     ---@alias noteOnUnitLevelChangeData noteOnUnitBase|{value:"变值差额"}
     LevelChange = "unitLevelChange",
+    --- 技能栏有所变化
+    ---@alias noteOnUnitAbilitySlotChangeData noteOnUnitBase|{triggerSlot:AbilitySlot}
+    AbilitySlotChange = "unitAbilitySlotChange",
+    --- 物品栏有所变化
+    ---@alias noteOnUnitItemSlotChangeData noteOnUnitBase|{triggerSlot:ItemSlot}
+    ItemSlotChange = "unitItemSlotChange",
     Be = {
+        --- 准备被攻击
+        ---@alias noteOnUnitBeBeforeAttackData noteOnUnitBase|{sourceUnit:Unit}
+        BeforeAttack = "be:unitBeforeAttack",
         --- 被攻击
         ---@alias noteOnUnitBeAttackData noteOnUnitHurtData
         Attack = "be:unitAttack",
@@ -176,12 +215,18 @@ EVENT.Unit = {
         --- 被破防
         ---@alias noteOnUnitBeBreakArmorData noteOnUnitBase|{sourceUnit:Unit,breakType:"无视类型"}
         BreakArmor = "be:unitBreakArmor",
+        --- 被减少护盾
+        ---@alias noteOnUnitBeShieldData noteOnUnitBase|{sourceUnit:Unit,value:"减盾值"}
+        Shield = "be:unitShield",
         --- 被击飞
         ---@alias noteOnUnitBeCrackFlyData noteOnUnitBase|{sourceUnit:Unit,distance:"击退距离",height:"击飞高度",duration:"凌空时长"}
         CrackFly = "be:unitCrackFly",
-        --- 被暴击
+        --- 被暴击（本体属性方式）
         ---@alias noteOnUnitBeCritData noteOnUnitBase|{sourceUnit:Unit}
         Crit = "be:unitCrit",
+        --- 被暴击（调用技能方式）
+        ---@alias noteOnUnitCritAbilityData noteOnUnitBase|{sourceUnit:Unit}
+        CritAbility = "be:unitCritAbility",
         --- 被攻击吸血
         ---@alias noteOnUnitBeHPSuckAttackData noteOnUnitBase|{sourceUnit:Unit,value:"吸血值",percent:"吸血百分比"}
         HPSuckAttack = "be:unitHPSuckAttack",
@@ -200,19 +245,25 @@ EVENT.Unit = {
         --- 被反伤
         ---@alias noteOnUnitBeReboundData noteOnUnitHurtData
         Rebound = "be:unitRebound",
-        --- 被打断[不大于0.05秒的眩晕]
-        ---@alias noteOnUnitBeShockData noteOnUnitBase|{sourceUnit:Unit,duration:number}
-        Shock = "be:unitShock",
         --- 被分裂[核心型]
         ---@alias noteOnUnitBeSplitData noteOnUnitBase|{sourceUnit:Unit,radius:number}
         Split = "be:unitSplit",
         --- 被分裂[扩散型]
         ---@alias noteOnUnitBeSplitSpreadData noteOnUnitBase|{sourceUnit:Unit}
         SplitSpread = "be:unitSplitSpread",
-        --- 被眩晕[大于0.05秒的眩晕]
+        --- 被眩晕
         ---@alias noteOnUnitBeStunData noteOnUnitBase|{sourceUnit:Unit,duration:number}
         Stun = "be:unitStun",
+        --- 被破护盾
+        ---@alias noteOnUnitBeBreakShieldData noteOnUnitBase|{sourceUnit:Unit}
+        BreakShield = "be:unitBreakShield",
     }
+}
+
+EVENT.Slot = {
+    --- 技能栏有所变化
+    ---@alias noteOnSlotAbilityData {triggerSlot: AbilitySlot,triggerUnit:Unit}
+    Ability = "slotAbility",
 }
 
 ---@alias noteOnAbilityBase {triggerAbility:Ability,triggerUnit:Unit}
@@ -229,6 +280,9 @@ EVENT.Ability = {
     --- 技能生效
     ---@alias noteOnAbilityEffectiveData noteOnAbilityBase|{triggerItem:Item,targetUnit:Unit,targetX:number,targetY:number,targetZ:number}
     Effective = "abilityEffective",
+    --- 技能持续施法每周期时（动作时）
+    ---@alias noteOnAbilityCastingData noteOnAbilitySpellData
+    Casting = "abilityCasting",
     --- 施放技能结束（只有持续施法有结束状态）
     ---@alias noteOnAbilityStopData noteOnAbilityBase
     Stop = "abilityStop",
@@ -242,6 +296,9 @@ EVENT.Ability = {
 
 ---@alias noteOnItemBase {triggerItem:Item,triggerUnit:Unit}
 EVENT.Item = {
+    --- 捡取物品
+    ---@alias noteOnItemPickData noteOnItemBase
+    Pick = "itemPick",
     --- 获得物品
     ---@alias noteOnItemGetData noteOnItemBase
     Get = "itemGet",
@@ -254,6 +311,9 @@ EVENT.Item = {
     --- 丢弃物品
     ---@alias noteOnItemDropData noteOnItemBase
     Drop = "itemDrop",
+    --- 传递物品
+    ---@alias noteOnItemDeliverData noteOnItemBase|{targetUnit:Unit}
+    Deliver = "itemDeliver",
     --- 抵押物品（持有人售出）
     ---@alias noteOnItemPawnData noteOnItemBase
     Pawn = "itemPawn",
@@ -266,9 +326,6 @@ EVENT.Item = {
     --- 等级改变
     ---@alias noteOnItemLevelChangeData noteOnItemBase|{value:"变值差额"}
     LevelChange = "itemLevelChange",
-    --- 物品毁灭
-    ---@alias noteOnItemDestroyData noteOnItemBase
-    Destroy = "itemDestroy",
 }
 
 ---@alias noteOnStoreBase {triggerStore:Store}
@@ -286,6 +343,16 @@ EVENT.Rect = {
     --- 离开区域
     ---@alias noteOnRectLeaveData noteOnRectBase
     Leave = "rectLeave",
+}
+
+---@alias noteOnAuraBase {triggerAura:Aura}
+EVENT.Aura = {
+    --- 进入领域
+    ---@alias noteOnAuraEnterData noteOnAuraBase|{triggerUnit:Unit}
+    Enter = "auraEnter",
+    --- 离开领域
+    ---@alias noteOnAuraLeaveData noteOnAuraBase|{triggerUnit:Unit}
+    Leave = "auraLeave",
 }
 
 ---@alias noteOnDestructableBase {triggerDestructable:Destructable|number}
@@ -327,6 +394,16 @@ EVENT.Frame = {
     --- 滚动
     ---@alias noteOnFrameWheelData noteOnFrameBase|{triggerPlayer:Player,delta:"滚动数值"}
     Wheel = "frameWheel",
+}
+
+---@alias noteOnAIBase {triggerAI:AI}
+EVENT.AI = {
+    --- 关连单位
+    ---@alias noteOnAILinkData noteOnAIBase|{triggerUnit:Unit}
+    Link = "aiLink",
+    --- 断连单位
+    ---@alias noteOnAIUnlinkData noteOnAIBase|{triggerUnit:Unit}
+    Unlink = "aiUnlink",
 }
 ```
 

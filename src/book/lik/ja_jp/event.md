@@ -3,6 +3,34 @@
 #### イベント一覧
 
 ```lua
+---@alias noteOnPropBase {key:"対応属性key", old:"古い値", new:"新しい値"}
+---@alias noteOnPropGame noteOnPropBase|{triggerObject:Game}
+---@alias noteOnPropPlayer noteOnPropBase|{triggerObject:Player}
+---@alias noteOnPropUnit noteOnPropBase|{triggerObject:Unit}
+---@alias noteOnPropAbility noteOnPropBase|{triggerObject:Ability}
+---@alias noteOnPropItem noteOnPropBase|{triggerObject:Item}
+EVENT.Prop = {
+    --- ゲームパラメータ変更前
+    BeforeChange = "propBeforeChange",
+    --- ゲームパラメータ変更後
+    Change = "propChange",
+}
+
+---@alias noteOnObjectCreateData {triggerObject:Object}
+---@alias noteOnObjectDestroyData {triggerObject:Object}
+---@alias noteOnAIDestroyData {triggerObject:AI} AI
+---@alias noteOnAbilityDestroyData {triggerObject:Ability} スキル
+---@alias noteOnCorpseDestroyData {triggerObject:Corpse} 死体
+---@alias noteOnEffectDestroyData {triggerObject:Effect} 効果
+---@alias noteOnItemDestroyData {triggerObject:Item} アイテム
+---@alias noteOnUnitDestroyData {triggerObject:Unit} 単位
+EVENT.Object = {
+    --- オブジェクト作成
+    Create = "CorpseCreate",
+    --- オブジェクト破壊
+    Destroy = "CorpseDestroy",
+}
+
 EVENT.Game = {
     --- ゲームを開始（このイベントはゲームが開始されると自動的に破棄されます）
     ---@alias noteOnGameStartData nil
@@ -19,19 +47,6 @@ EVENT.Game = {
     --- 夜になる
     ---@alias noteOnGameNightData nil
     Night = "gameNight",
-}
-
----@alias noteOnPropBase {key:"対応属性key", old:"古い値", new:"新しい値"}
----@alias noteOnPropGame noteOnPropBase|{triggerObject:Game}
----@alias noteOnPropPlayer noteOnPropBase|{triggerObject:Player}
----@alias noteOnPropUnit noteOnPropBase|{triggerObject:Unit}
----@alias noteOnPropAbility noteOnPropBase|{triggerObject:Ability}
----@alias noteOnPropItem noteOnPropBase|{triggerObject:Item}
-EVENT.Prop = {
-    --- ゲームパラメータ変更前
-    BeforeChange = "propBeforeChange",
-    --- ゲームパラメータ変更後
-    Change = "propChange",
 }
 
 ---@alias noteOnPlayerBase {triggerPlayer:Player}
@@ -57,10 +72,16 @@ EVENT.Player = {
     --- プレイヤーがゲームから離れる
     ---@alias noteOnPlayerQuitData noteOnPlayerBase
     Quit = "playerQuit",
+    --- 倉庫バーが変化
+    ---@alias noteOnPlayerWarehouseSlotChangeData noteOnPlayerBase|{triggerSlot:WarehouseSlot}
+    WarehouseSlotChange = "playerWarehouseSlotChange",
 }
 
 ---@alias noteOnUnitBase {triggerUnit:Unit,triggerAbility:Ability,triggerItem:Item}
 EVENT.Unit = {
+    --- 攻撃の準備
+    ---@alias noteOnUnitBeforeAttackData noteOnUnitBase|{targetUnit:Unit}
+    BeforeAttack = "unitBeforeAttack",
     --- 攻撃する
     ---@alias noteOnUnitAttackData noteOnUnitDamageData
     Attack = "unitAttack",
@@ -71,26 +92,41 @@ EVENT.Unit = {
     ---@alias noteOnUnitBreakArmorData noteOnUnitBase|{targetUnit:Unit,breakType:"無視タイプ"}
     BreakArmor = "unitBreakArmor",
     --- ターゲットを飛ばす
-    ---@alias noteOnUnitCrackFlyData noteOnUnitBase|{targetUnit:Unit,distance:"撃退距離",height:"しょうげきこうど",duration:"凌空時間"}
+    ---@alias noteOnUnitCrackFlyData noteOnUnitBase|{targetUnit:Unit,distance:"撃退距離",height:"しょうげきこうど",duration:"凌空時間長"}
     CrackFly = "unitCrackFly",
-    --- ターゲットをクリティカル
+    --- 致命的ヒットターゲット（バルク属性方式）
     ---@alias noteOnUnitCritData noteOnUnitBase|{targetUnit:Unit}
     Crit = "unitCrit",
+    --- 致命的ヒットターゲット（スキル呼び出し）
+    ---@alias noteOnUnitCritAbilityData noteOnUnitBase|{targetUnit:Unit}
+    CritAbility = "unitCritAbility",
     --- ダメージを与える
     ---@alias noteOnUnitDamageData noteOnUnitBase|{targetUnit:Unit,damage:"ダメージ値",damageSrc:"ダメージ源",damageType:"ダメージタイプ"}
     Damage = "unitDamage",
     --- 単位出産
     ---@alias noteOnUnitBornData noteOnUnitBase
     Born = "unitBorn",
-    --- 復活
-    ---@alias noteOnUnitRebornData noteOnUnitBase
-    Reborn = "unitReborn",
     --- 単位死亡
     ---@alias noteOnUnitDeadData noteOnUnitBase|{sourceUnit:Unit}
     Dead = "unitDead",
-    --- 単位破滅
-    ---@alias noteOnUnitDestroyData noteOnUnitBase
-    Destroy = "unitDestroy",
+    --- 単位仮死（復活可能な単位が撃ち殺されたときにトリガーされる）
+    ---@alias noteOnUnitFeignDeadData noteOnUnitDeadData
+    FeignDead = "unitFeignDead",
+    --- 復活
+    ---@alias noteOnUnitRebornData noteOnUnitBase
+    Reborn = "unitReborn",
+    ---命令を待つ
+    ---@alias noteOnUnitOrderHoldData noteOnUnitBase
+    OrderHold = "unitOrderHold",
+    ---停止コマンド
+    ---@alias noteOnUnitOrderStopData noteOnUnitBase
+    OrderStop = "unitOrderStop",
+    ---移動コマンド
+    ---@alias noteOnUnitOrderMoveData noteOnUnitBase|{targetX:number,targetY:number}
+    OrderMove = "unitOrderMove",
+    ---攻撃コマンド
+    ---@alias noteOnUnitOrderAttackData noteOnUnitBase|{targetX:number,targetY:number}
+    OrderAttack = "unitOrderAttack",
     --- 魔付き反応
     ---@alias noteOnUnitEnchantData noteOnUnitBase|{sourceUnit:Unit,enchantType:"魔付きタイプ",addition:"加算率"}
     Enchant = "unitEnchant",
@@ -100,9 +136,6 @@ EVENT.Unit = {
     --- わざ吸血
     ---@alias noteOnUnitHPSuckAbilityData noteOnUnitBase|{targetUnit:Unit,value:"吸血値",percent:"吸血率"}
     HPSuckAbility = "unitHPSuckAbility",
-    --- 命令を待つ
-    ---@alias noteOnUnitStopData noteOnUnitBase
-    Hold = "unitHold",
     --- 単位負傷
     ---@alias noteOnUnitHurtData noteOnUnitBase|{sourceUnit:Unit,targetUnit:Unit,damage:"ダメージ値",damageSrc:"ダメージ源",damageType:"ダメージタイプ"}
     Hurt = "unitHurt",
@@ -151,22 +184,28 @@ EVENT.Unit = {
     --- 切り傷
     ---@alias noteOnUnitReboundData noteOnUnitDamageData
     Rebound = "unitRebound",
-    --- 遮断[0.05秒以下のめまい]
-    ---@alias noteOnUnitShockData noteOnUnitBase|{targetUnit:Unit,duration:number}
-    Shock = "unitShock",
     --- ぶんれつ
     ---@alias noteOnUnitSplitData noteOnUnitBase|{targetUnit:Unit,radius:number}
     Split = "unitSplit",
-    --- ストップコマンド
-    ---@alias noteOnUnitStopData noteOnUnitBase
-    Stop = "unitStop",
-    --- めまい[0.05秒より大きいめまい]
+    --- めまい
     ---@alias noteOnUnitStunData noteOnUnitBase|{targetUnit:Unit,duration:number}
     Stun = "unitStun",
+    --- 破壊シールド
+    ---@alias noteOnUnitBreakShieldData noteOnUnitBase|{targetUnit:Unit}
+    BreakShield = "unitBreakShield",
     --- レベル変更
     ---@alias noteOnUnitLevelChangeData noteOnUnitBase|{value:"へんかさ"}
     LevelChange = "unitLevelChange",
+    --- スキルバーが変化
+    ---@alias noteOnUnitAbilitySlotChangeData noteOnUnitBase|{triggerSlot:AbilitySlot}
+    AbilitySlotChange = "unitAbilitySlotChange",
+    --- アイテム欄に変化があった
+    ---@alias noteOnUnitItemSlotChangeData noteOnUnitBase|{triggerSlot:ItemSlot}
+    ItemSlotChange = "unitItemSlotChange",
     Be = {
+        --- 攻撃準備されている
+        ---@alias noteOnUnitBeBeforeAttackData noteOnUnitBase|{sourceUnit:Unit}
+        BeforeAttack = "be:unitBeforeAttack",
         --- 攻撃される
         ---@alias noteOnUnitBeAttackData noteOnUnitHurtData
         Attack = "be:unitAttack",
@@ -176,12 +215,18 @@ EVENT.Unit = {
         --- 破られて防ぐ
         ---@alias noteOnUnitBeBreakArmorData noteOnUnitBase|{sourceUnit:Unit,breakType:"無視タイプ"}
         BreakArmor = "be:unitBreakArmor",
+         --- シールド低減
+        ---@alias noteOnUnitBeShieldData noteOnUnitBase|{sourceUnit:Unit,value:"減盾値"}
+        Shield = "be:unitShield",
         --- 撃たれて飛ぶ
         ---@alias noteOnUnitBeCrackFlyData noteOnUnitBase|{sourceUnit:Unit,distance:"撃退距離",height:"しょうげきこうど",duration:"凌空時間"}
         CrackFly = "be:unitCrackFly",
-        --- クリティカルを受ける
+        --- 致命的な一撃を受ける（本体属性方式）
         ---@alias noteOnUnitBeCritData noteOnUnitBase|{sourceUnit:Unit}
         Crit = "be:unitCrit",
+        --- 致命的な一撃（スキル呼び出し）
+        ---@alias noteOnUnitCritAbilityData noteOnUnitBase|{sourceUnit:Unit}
+        CritAbility = "be:unitCritAbility",
         --- 攻撃されて血を吸う
         ---@alias noteOnUnitBeHPSuckAttackData noteOnUnitBase|{sourceUnit:Unit,value:"吸血値",percent:"吸血率"}
         HPSuckAttack = "be:unitHPSuckAttack",
@@ -200,19 +245,25 @@ EVENT.Unit = {
         --- 切り傷を負う
         ---@alias noteOnUnitBeReboundData noteOnUnitHurtData
         Rebound = "be:unitRebound",
-        --- 遮断された[0.05秒以下のめまい]
-        ---@alias noteOnUnitBeShockData noteOnUnitBase|{sourceUnit:Unit,duration:number}
-        Shock = "be:unitShock",
-        --- 被分裂[コア型]
+        --- 分裂される[コア型]
         ---@alias noteOnUnitBeSplitData noteOnUnitBase|{sourceUnit:Unit,radius:number}
         Split = "be:unitSplit",
-        --- 被分裂[拡散型]
+        --- 分裂される[拡散型]
         ---@alias noteOnUnitBeSplitSpreadData noteOnUnitBase|{sourceUnit:Unit}
         SplitSpread = "be:unitSplitSpread",
-        --- 被眩暈[0.05秒超の眩暈]
+        --- めまいがする
         ---@alias noteOnUnitBeStunData noteOnUnitBase|{sourceUnit:Unit,duration:number}
         Stun = "be:unitStun",
+        --- 破壊されたシールド
+        ---@alias noteOnUnitBeBreakShieldData noteOnUnitBase|{sourceUnit:Unit}
+        BreakShield = "be:unitBreakShield",
     }
+}
+
+EVENT.Slot = {
+    --- スキルバーが変更されました
+    ---@alias noteOnSlotAbilityData {triggerSlot: AbilitySlot,triggerUnit:Unit}
+    Ability = "slotAbility",
 }
 
 ---@alias noteOnAbilityBase {triggerAbility:Ability,triggerUnit:Unit}
@@ -229,6 +280,9 @@ EVENT.Ability = {
     --- スキルの有効化
     ---@alias noteOnAbilityEffectiveData noteOnAbilityBase|{triggerItem:Item,targetUnit:Unit,targetX:number,targetY:number,targetZ:number}
     Effective = "abilityEffective",
+    --- 技能継続施法周期ごと（動作時）
+    ---@alias noteOnAbilityCastingData noteOnAbilitySpellData
+    Casting = "abilityCasting",
     --- 施術スキル終了（継続施術のみ終了状態）
     ---@alias noteOnAbilityStopData noteOnAbilityBase
     Stop = "abilityStop",
@@ -242,6 +296,9 @@ EVENT.Ability = {
 
 ---@alias noteOnItemBase {triggerItem:Item,triggerUnit:Unit}
 EVENT.Item = {
+    --- 物を拾う
+    ---@alias noteOnItemPickData noteOnItemBase
+    Pick = "itemPick",
     --- アイテムを取得
     ---@alias noteOnItemGetData noteOnItemBase
     Get = "itemGet",
@@ -254,6 +311,9 @@ EVENT.Item = {
     --- アイテムを破棄
     ---@alias noteOnItemDropData noteOnItemBase
     Drop = "itemDrop",
+    --- 伝達物
+    ---@alias noteOnItemDeliverData noteOnItemBase|{targetUnit:Unit}
+    Deliver = "itemDeliver",
     --- 抵当アイテム（所有者による販売）
     ---@alias noteOnItemPawnData noteOnItemBase
     Pawn = "itemPawn",
@@ -266,9 +326,6 @@ EVENT.Item = {
     --- レベル変更
     ---@alias noteOnItemLevelChangeData noteOnItemBase|{value:"へんかさ"}
     LevelChange = "itemLevelChange",
-    --- アイテム破滅
-    ---@alias noteOnItemDestroyData noteOnItemBase
-    Destroy = "itemDestroy",
 }
 
 ---@alias noteOnStoreBase {triggerStore:Store}
@@ -286,6 +343,16 @@ EVENT.Rect = {
     --- ゾーンを出る
     ---@alias noteOnRectLeaveData noteOnRectBase
     Leave = "rectLeave",
+}
+
+---@alias noteOnAuraBase {triggerAura:Aura}
+EVENT.Aura = {
+    --- ゾーンに入る
+    ---@alias noteOnAuraEnterData noteOnAuraBase|{triggerUnit:Unit}
+    Enter = "auraEnter",
+    --- ゾーンを出る
+    ---@alias noteOnAuraLeaveData noteOnAuraBase|{triggerUnit:Unit}
+    Leave = "auraLeave",
 }
 
 ---@alias noteOnDestructableBase {triggerDestructable:Destructable|number}
@@ -327,6 +394,16 @@ EVENT.Frame = {
     --- スクロール
     ---@alias noteOnFrameWheelData noteOnFrameBase|{triggerPlayer:Player,delta:"スクロール値"}
     Wheel = "frameWheel",
+}
+
+---@alias noteOnAIBase {triggerAI:AI}
+EVENT.AI = {
+    --- 関連単位
+    ---@alias noteOnAILinkData noteOnAIBase|{triggerUnit:Unit}
+    Link = "aiLink",
+    --- 切断単位
+    ---@alias noteOnAIUnlinkData noteOnAIBase|{triggerUnit:Unit}
+    Unlink = "aiUnlink",
 }
 ```
 

@@ -3,6 +3,34 @@
 #### All events
 
 ```lua
+---@alias noteOnPropBase {key:"prop key", old:"old value", new:"new value"}
+---@alias noteOnPropGame noteOnPropBase|{triggerObject:Game}
+---@alias noteOnPropPlayer noteOnPropBase|{triggerObject:Player}
+---@alias noteOnPropUnit noteOnPropBase|{triggerObject:Unit}
+---@alias noteOnPropAbility noteOnPropBase|{triggerObject:Ability}
+---@alias noteOnPropItem noteOnPropBase|{triggerObject:Item}
+EVENT.Prop = {
+    --- Before changing game parameters
+    BeforeChange = "propBeforeChange",
+    --- After changing game parameters
+    Change = "propChange",
+}
+
+---@alias noteOnObjectCreateData {triggerObject:Object}
+---@alias noteOnObjectDestroyData {triggerObject:Object}
+---@alias noteOnAIDestroyData {triggerObject:AI} AI
+---@alias noteOnAbilityDestroyData {triggerObject:Ability}
+---@alias noteOnCorpseDestroyData {triggerObject:Corpse}
+---@alias noteOnEffectDestroyData {triggerObject:Effect}
+---@alias noteOnItemDestroyData {triggerObject:Item}
+---@alias noteOnUnitDestroyData {triggerObject:Unit}
+EVENT.Object = {
+    --- objects creating
+    Create = "CorpseCreate",
+    --- Object destruction
+    Destroy = "CorpseDestroy",
+}
+
 EVENT.Game = {
     --- Start the game (this event will be automatically destroyed after the game starts)
     ---@alias noteOnGameStartData nil
@@ -19,19 +47,6 @@ EVENT.Game = {
     --- Entering night
     ---@alias noteOnGameNightData nil
     Night = "gameNight",
-}
-
----@alias noteOnPropBase {key:"prop key", old:"old value", new:"new value"}
----@alias noteOnPropGame noteOnPropBase|{triggerObject:Game}
----@alias noteOnPropPlayer noteOnPropBase|{triggerObject:Player}
----@alias noteOnPropUnit noteOnPropBase|{triggerObject:Unit}
----@alias noteOnPropAbility noteOnPropBase|{triggerObject:Ability}
----@alias noteOnPropItem noteOnPropBase|{triggerObject:Item}
-EVENT.Prop = {
-    --- Before changing game parameters
-    BeforeChange = "propBeforeChange",
-    --- After changing game parameters
-    Change = "propChange",
 }
 
 ---@alias noteOnPlayerBase {triggerPlayer:Player}
@@ -57,10 +72,16 @@ EVENT.Player = {
     --- Players leave the game
     ---@alias noteOnPlayerQuitData noteOnPlayerBase
     Quit = "playerQuit",
+    --- 仓库栏有所变化
+    ---@alias noteOnPlayerWarehouseSlotChangeData noteOnPlayerBase|{triggerSlot:WarehouseSlot}
+    WarehouseSlotChange = "playerWarehouseSlotChange",
 }
 
 ---@alias noteOnUnitBase {triggerUnit:Unit,triggerAbility:Ability,triggerItem:Item}
 EVENT.Unit = {
+    --- Prepare for attack
+    ---@alias noteOnUnitBeforeAttackData noteOnUnitBase|{targetUnit:Unit}
+    BeforeAttack = "unitBeforeAttack",
     --- Attack
     ---@alias noteOnUnitAttackData noteOnUnitDamageData
     Attack = "unitAttack",
@@ -73,24 +94,39 @@ EVENT.Unit = {
     --- Hit the target
     ---@alias noteOnUnitCrackFlyData noteOnUnitBase|{targetUnit:Unit,distance:"value",height:"value",duration:"time"}
     CrackFly = "unitCrackFly",
-    --- Critical hit target
+    --- Critical hit target(Ontology attribute method)
     ---@alias noteOnUnitCritData noteOnUnitBase|{targetUnit:Unit}
     Crit = "unitCrit",
+    --- Critical hit target(Call ability method)
+    ---@alias noteOnUnitCritAbilityData noteOnUnitBase|{targetUnit:Unit}
+    CritAbility = "unitCritAbility",
     --- Cause damage
     ---@alias noteOnUnitDamageData noteOnUnitBase|{targetUnit:Unit,damage:"data",damageSrc:"source",damageType:"type"}
     Damage = "unitDamage",
     --- Unit birth
     ---@alias noteOnUnitBornData noteOnUnitBase
     Born = "unitBorn",
-    --- Unit reborn
-    ---@alias noteOnUnitRebornData noteOnUnitBase
-    Reborn = "unitReborn",
     --- Unit objects die
     ---@alias noteOnUnitDeadData noteOnUnitBase|{sourceUnit:Unit}
     Dead = "unitDead",
-    --- Unit objects destroy
-    ---@alias noteOnUnitDestroyData noteOnUnitBase
-    Destroy = "unitDestroy",
+    --- Unit feign death (triggered when a unit that can be revived is killed)
+    ---@alias noteOnUnitFeignDeadData noteOnUnitDeadData
+    FeignDead = "unitFeignDead",
+    --- Unit reborn
+    ---@alias noteOnUnitRebornData noteOnUnitBase
+    Reborn = "unitReborn",
+    --- Hold Command
+    ---@alias noteOnUnitOrderHoldData noteOnUnitBase
+    OrderHold = "unitOrderHold",
+    --- Stop Command
+    ---@alias noteOnUnitOrderStopData noteOnUnitBase
+    OrderStop = "unitOrderStop",
+    --- Move Command
+    ---@alias noteOnUnitOrderMoveData noteOnUnitBase|{targetX:number,targetY:number}
+    OrderMove = "unitOrderMove",
+    --- Attack Command
+    ---@alias noteOnUnitOrderAttackData noteOnUnitBase|{targetX:number,targetY:number}
+    OrderAttack = "unitOrderAttack",
     --- Enchant
     ---@alias noteOnUnitEnchantData noteOnUnitBase|{sourceUnit:Unit,enchantType:"type",addition:"%"}
     Enchant = "unitEnchant",
@@ -100,9 +136,6 @@ EVENT.Unit = {
     --- Skill Vampire
     ---@alias noteOnUnitHPSuckAbilityData noteOnUnitBase|{targetUnit:Unit,value:"value",percent:"%"}
     HPSuckAbility = "unitHPSuckAbility",
-    --- Hold Command
-    ---@alias noteOnUnitStopData noteOnUnitBase
-    Hold = "unitHold",
     --- Unit injured
     ---@alias noteOnUnitHurtData noteOnUnitBase|{sourceUnit:Unit,targetUnit:Unit,damage:"data",damageSrc:"source",damageType:"type"}
     Hurt = "unitHurt",
@@ -151,22 +184,28 @@ EVENT.Unit = {
     --- Rebound
     ---@alias noteOnUnitReboundData noteOnUnitDamageData
     Rebound = "unitRebound",
-    --- Shock[Vertigo lasting no more than 0.05 seconds]
-    ---@alias noteOnUnitShockData noteOnUnitBase|{targetUnit:Unit,duration:number}
-    Shock = "unitShock",
     --- Split
     ---@alias noteOnUnitSplitData noteOnUnitBase|{targetUnit:Unit,radius:number}
     Split = "unitSplit",
-    --- Stop Command
-    ---@alias noteOnUnitStopData noteOnUnitBase
-    Stop = "unitStop",
-    --- Stun[Vertigo lasting more than 0.05 seconds]
+    --- Stun
     ---@alias noteOnUnitStunData noteOnUnitBase|{targetUnit:Unit,duration:number}
     Stun = "unitStun",
+     --- Break the shield
+    ---@alias noteOnUnitBreakShieldData noteOnUnitBase|{targetUnit:Unit}
+    BreakShield = "unitBreakShield",
     --- Unit level Change
     ---@alias noteOnUnitLevelChangeData noteOnUnitBase|{value:"Variation difference"}
     LevelChange = "unitLevelChange",
+    --- The skill column has changed
+    ---@alias noteOnUnitAbilitySlotChangeData noteOnUnitBase|{triggerSlot:AbilitySlot}
+    AbilitySlotChange = "unitAbilitySlotChange",
+    --- The item column has changed
+    ---@alias noteOnUnitItemSlotChangeData noteOnUnitBase|{triggerSlot:ItemSlot}
+    ItemSlotChange = "unitItemSlotChange",
     Be = {
+        --- Prepare to be attacked
+        ---@alias noteOnUnitBeBeforeAttackData noteOnUnitBase|{sourceUnit:Unit}
+        BeforeAttack = "be:unitBeforeAttack",
         --- Be attacked
         ---@alias noteOnUnitBeAttackData noteOnUnitHurtData
         Attack = "be:unitAttack",
@@ -176,12 +215,18 @@ EVENT.Unit = {
         --- Be broken
         ---@alias noteOnUnitBeBreakArmorData noteOnUnitBase|{sourceUnit:Unit,breakType:"type"}
         BreakArmor = "be:unitBreakArmor",
+        --- Shield reduced
+        ---@alias noteOnUnitBeShieldData noteOnUnitBase|{sourceUnit:Unit,value:"value"}
+        Shield = "be:unitShield",
         --- Be crack fly
         ---@alias noteOnUnitBeCrackFlyData noteOnUnitBase|{sourceUnit:Unit,distance:number,height:number,duration:number}
         CrackFly = "be:unitCrackFly",
         --- Be critically hit
         ---@alias noteOnUnitBeCritData noteOnUnitBase|{sourceUnit:Unit}
         Crit = "be:unitCrit",
+        --- Be critically hit
+        ---@alias noteOnUnitCritAbilityData noteOnUnitBase|{sourceUnit:Unit}
+        CritAbility = "be:unitCritAbility",
         --- Be attacked to suck blood
         ---@alias noteOnUnitBeHPSuckAttackData noteOnUnitBase|{sourceUnit:Unit,value:"value",percent:"%"}
         HPSuckAttack = "be:unitHPSuckAttack",
@@ -200,19 +245,25 @@ EVENT.Unit = {
         --- Be injured in return
         ---@alias noteOnUnitBeReboundData noteOnUnitHurtData
         Rebound = "be:unitRebound",
-        --- Be interrupted[Vertigo lasting no more than 0.05 seconds]
-        ---@alias noteOnUnitBeShockData noteOnUnitBase|{sourceUnit:Unit,duration:number}
-        Shock = "be:unitShock",
         --- Be divided[Core type]
         ---@alias noteOnUnitBeSplitData noteOnUnitBase|{sourceUnit:Unit,radius:number}
         Split = "be:unitSplit",
         --- Be divided[Diffusive type]
         ---@alias noteOnUnitBeSplitSpreadData noteOnUnitBase|{sourceUnit:Unit}
         SplitSpread = "be:unitSplitSpread",
-        --- Be Stun[Vertigo lasting more than 0.05 seconds]
+        --- Be Stun
         ---@alias noteOnUnitBeStunData noteOnUnitBase|{sourceUnit:Unit,duration:number}
         Stun = "be:unitStun",
+        --- Broken shield
+        ---@alias noteOnUnitBeBreakShieldData noteOnUnitBase|{sourceUnit:Unit}
+        BreakShield = "be:unitBreakShield",
     }
+}
+
+EVENT.Slot = {
+    --- The skill column has changed
+    ---@alias noteOnSlotAbilityData {triggerSlot: AbilitySlot,triggerUnit:Unit}
+    Ability = "slotAbility",
 }
 
 ---@alias noteOnAbilityBase {triggerAbility:Ability,triggerUnit:Unit}
@@ -229,6 +280,9 @@ EVENT.Ability = {
     --- Skills come into effect
     ---@alias noteOnAbilityEffectiveData noteOnAbilityBase|{triggerItem:Item,targetUnit:Unit,targetX:number,targetY:number,targetZ:number}
     Effective = "abilityEffective",
+    --- Skill continuous casting weekly period (action time)
+    ---@alias noteOnAbilityCastingData noteOnAbilitySpellData
+    Casting = "abilityCasting",
     --- End of casting skill (only continuous casting can end)
     ---@alias noteOnAbilityStopData noteOnAbilityBase
     Stop = "abilityStop",
@@ -242,6 +296,9 @@ EVENT.Ability = {
 
 ---@alias noteOnItemBase {triggerItem:Item,triggerUnit:Unit}
 EVENT.Item = {
+    --- Pick up items
+    ---@alias noteOnItemPickData noteOnItemBase
+    Pick = "itemPick",
     --- Get items
     ---@alias noteOnItemGetData noteOnItemBase
     Get = "itemGet",
@@ -254,6 +311,9 @@ EVENT.Item = {
     --- Drop items
     ---@alias noteOnItemDropData noteOnItemBase
     Drop = "itemDrop",
+    --- Deliver items
+    ---@alias noteOnItemDeliverData noteOnItemBase|{targetUnit:Unit}
+    Deliver = "itemDeliver",
     --- Pawn(Sold by the holder)
     ---@alias noteOnItemPawnData noteOnItemBase
     Pawn = "itemPawn",
@@ -266,9 +326,6 @@ EVENT.Item = {
     --- Level change
     ---@alias noteOnItemLevelChangeData noteOnItemBase|{value:"Variation difference"}
     LevelChange = "itemLevelChange",
-    --- Destruction of goods
-    ---@alias noteOnItemDestroyData noteOnItemBase
-    Destroy = "itemDestroy",
 }
 
 ---@alias noteOnStoreBase {triggerStore:Store}
@@ -280,12 +337,22 @@ EVENT.Store = {
 
 ---@alias noteOnRectBase {triggerRect:Rect}
 EVENT.Rect = {
-    --- Entry area
+    --- Entry the rect
     ---@alias noteOnRectEnterData noteOnRectBase
     Enter = "rectEnter",
-    --- Leave the area
+    --- Leave the rect
     ---@alias noteOnRectLeaveData noteOnRectBase
     Leave = "rectLeave",
+}
+
+---@alias noteOnAuraBase {triggerAura:Aura}
+EVENT.Aura = {
+    --- Entry the aura
+    ---@alias noteOnAuraEnterData noteOnAuraBase|{triggerUnit:Unit}
+    Enter = "auraEnter",
+    --- Leave the aura
+    ---@alias noteOnAuraLeaveData noteOnAuraBase|{triggerUnit:Unit}
+    Leave = "auraLeave",
 }
 
 ---@alias noteOnDestructableBase {triggerDestructable:Destructable|number}
@@ -327,6 +394,16 @@ EVENT.Frame = {
     --- Mouse roll
     ---@alias noteOnFrameWheelData noteOnFrameBase|{triggerPlayer:Player,delta:"Scroll Values"}
     Wheel = "frameWheel",
+}
+
+---@alias noteOnAIBase {triggerAI:AI}
+EVENT.AI = {
+    --- link unit
+    ---@alias noteOnAILinkData noteOnAIBase|{triggerUnit:Unit}
+    Link = "aiLink",
+    --- unlink unit
+    ---@alias noteOnAIUnlinkData noteOnAIBase|{triggerUnit:Unit}
+    Unlink = "aiUnlink",
 }
 ```
 
