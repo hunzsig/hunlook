@@ -1,10 +1,35 @@
 ### 指针
 
+#### sizeRate 范围变化值
+
+> 当范围指针已显示，动态修改了技能的范围时，可渐进变化而不是瞬间变化
+
+#### texture
+
+> 各种行为的指针贴图设置
+>
+> normal指常规态、positive一般指友军态、negative一般指敌军态
+>
+> arrow 平时中心指针，以贴图左上角为瞄准点
+>
+> aim 技能为点、单位目标时的指针，以贴图中心为瞄准点
+>
+> drag 拖拽生效时的指针，以贴图中心为瞄准点
+>
+> circle 技能为圆范围目标时的指针，以贴图中心为瞄准点
+>
+> square 技能为方型范围目标时的指针，以贴图中心为瞄准点
+
 ```lua
 Cursor()
     :uiKit(kit)
     :sizeRate(20)
-    :textureAim({ normal = "aim\\white", ally = "aim\\green", enemy = "aim\\red", neutral = "aim\\gold" })
-    :textureDrag({ alpha = 170, normal = "drag\\normal" })
-    :textureSquare({ alpha = 130, allow = "square\\white", ban = "square\\red" })
+    :texture(
+    {
+        arrow = { width = 0.024, height = 0.024 * 68 / 46, alpha = 255, normal = "arrow\\normal", positive = "arrow\\focus", negative = "arrow\\attack" },
+        aim = { width = 0.04, height = 0.04, alpha = 255, normal = "aim\\white", positive = "aim\\green", negative = "aim\\red", neutral = "aim\\gold" },
+        drag = { width = 0.04, height = 0.04, alpha = 255, normal = "drag\\normal" },
+        circle = { alpha = 255, positive = "circle\\white", negative = "circle\\red" },
+        square = { alpha = 150, positive = "square\\white", negative = "square\\red" },
+    })
 ```

@@ -51,6 +51,9 @@ import {
   StrikethroughOutlined,
   SwapOutlined,
   ExpandOutlined,
+  FrownOutlined,
+  PictureOutlined,
+  MessageOutlined,
 } from "@ant-design/icons";
 
 // only one layout
@@ -97,9 +100,16 @@ export default [
   {
     icon: <FundViewOutlined/>, key: 'ui', label: "UIインタフェース", children: [
       {icon: <FolderViewOutlined/>, key: 'kit', label: "スイート"},
+      {icon: <PictureOutlined/>, key: 'backdrop', label: "背景"},
       {icon: <CaretDownOutlined/>, key: 'cursor', label: "ポインタ"},
       {icon: <LoadingOutlined/>, key: 'animate', label: "フレームアニメーション"},
       {icon: <ExpandOutlined/>, key: 'map', label: "地図"},
+    ]
+  },
+  {
+    icon: <FundViewOutlined/>, key: 'uiUp', label: "UIステップアップ", children: [
+      {icon: <FrownOutlined/>, key: 'problem', label: "難病"},
+      {icon: <MessageOutlined/>, key: 'echo', label: "メッセージ体"},
     ]
   },
   {

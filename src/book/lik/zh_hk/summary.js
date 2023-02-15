@@ -51,6 +51,9 @@ import {
   StrikethroughOutlined,
   SwapOutlined,
   ExpandOutlined,
+  FrownOutlined,
+  PictureOutlined,
+  MessageOutlined,
 } from "@ant-design/icons";
 
 // only one layout
@@ -95,11 +98,18 @@ export default [
     ]
   },
   {
-    icon: <FundViewOutlined/>, key: 'ui', label: "UI界麵", children: [
+    icon: <FundViewOutlined/>, key: 'ui', label: "UI界面基礎", children: [
       {icon: <FolderViewOutlined/>, key: 'kit', label: "套件"},
+      {icon: <PictureOutlined/>, key: 'backdrop', label: "背景"},
       {icon: <CaretDownOutlined/>, key: 'cursor', label: "指針"},
       {icon: <LoadingOutlined/>, key: 'animate', label: "幀動畫"},
       {icon: <ExpandOutlined/>, key: 'map', label: "地圖"},
+    ]
+  },
+  {
+    icon: <FundViewOutlined/>, key: 'uiUp', label: "UI界面進階", children: [
+      {icon: <FrownOutlined/>, key: 'problem', label: "疑難雜症"},
+      {icon: <MessageOutlined/>, key: 'echo', label: "消息體"},
     ]
   },
   {

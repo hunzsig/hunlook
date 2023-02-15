@@ -51,6 +51,9 @@ import {
   StrikethroughOutlined,
   SwapOutlined,
   ExpandOutlined,
+  FrownOutlined,
+  PictureOutlined,
+  MessageOutlined,
 } from "@ant-design/icons";
 
 // only one layout
@@ -91,15 +94,22 @@ export default [
       {icon: <BellOutlined/>, key: 'propChange', label: "Prop"},
       {icon: <ScheduleOutlined/>, key: 'quest', label: "Quest"},
       {icon: <CodeOutlined/>, key: 'cmd', label: "CMD"},
-      {icon: <translationoutlined/>, key: 'i18n', label: "I18N"},
+      {icon: <TranslationOutlined/>, key: 'i18n', label: "I18N"},
     ]
   },
   {
     icon: <FundViewOutlined/>, key: 'ui', label: "UI", children: [
       {icon: <FolderViewOutlined/>, key: 'kit', label: "Kit"},
+      {icon: <PictureOutlined/>, key: 'backdrop', label: "Backdrop"},
       {icon: <CaretDownOutlined/>, key: 'cursor', label: "Cursor"},
       {icon: <LoadingOutlined/>, key: 'animate', label: "Animate"},
       {icon: <ExpandOutlined/>, key: 'map', label: "Map"},
+    ]
+  },
+  {
+    icon: <FundViewOutlined/>, key: 'uiUp', label: "UI UP", children: [
+      {icon: <FrownOutlined/>, key: 'problem', label: "Difficult"},
+      {icon: <MessageOutlined/>, key: 'echo', label: "Echo"},
     ]
   },
   {
