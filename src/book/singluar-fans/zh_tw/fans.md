@@ -13,6 +13,8 @@
 > 【~】代表考慮到使用場景，已同步到公開版的功能
 
 * 效能优化
+* ability.missile优化
+* ability.leap优化
 * JAPI优化
 * 新的物品事件：Deliver
 * 物品指標對單位瞄準精準度提升

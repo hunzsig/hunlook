@@ -13,6 +13,8 @@
 > 【~】Represents the function that has been synchronized to the public version considering the use scenario
 
 * Performance optimization
+* Performance ability.missile
+* Performance ability.leap
 * Performance JAPI
 * New item event: Deliverer
 * The targeting accuracy of the object pointer to the unit is improved
