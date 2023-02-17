@@ -110,6 +110,7 @@ export default [
     icon: <FundViewOutlined/>, key: 'uiUp', label: "UIステップアップ", children: [
       {icon: <FrownOutlined/>, key: 'problem', label: "難病"},
       {icon: <MessageOutlined/>, key: 'echo', label: "メッセージ体"},
+      {icon: <BoxPlotOutlined/>, key: 'targetGage', label: "ステータスバー"},
     ]
   },
   {

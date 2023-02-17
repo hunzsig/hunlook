@@ -1,6 +1,9 @@
 ## UI Echo
 
 ```lua
+--[[
+    カスタム Echo
+]]
 
 local kit = 'my_echo'
 
@@ -12,11 +15,13 @@ this:onSetup(function()
     ---@class noteLikEchoStage
     local stage = this:stage()
 
+    --- ようき
     stage.main = FrameBackdrop(kit .. "->main", FrameGameUI)
         :adaptive(true)
         :relation(FRAME_ALIGN_LEFT, FrameGameUI, FRAME_ALIGN_LEFT, 0.01, 0.09)
         :size(0.1, 0.1)
 
+    --- じょうほうベクター
     stage.textMax = 10
     ---@type FrameText[]
     stage.texts = {}
@@ -33,10 +38,12 @@ this:onSetup(function()
         end
     end
 
+    --- プレイヤーコンテンツの初期化
     for i = 1, BJ_MAX_PLAYERS, 1 do
         Player(i):prop(kit, {})
     end
 
+    --- デフォルトechoの引き継ぎ
     echo = function(msg, whichPlayer, duration)
         if (isClass(whichPlayer, PlayerClass)) then
             async.call(whichPlayer, function()

@@ -1,6 +1,9 @@
 ## UI Echo
 
 ```lua
+--[[
+    自定義 Echo
+]]
 
 local kit = 'my_echo'
 
@@ -12,11 +15,13 @@ this:onSetup(function()
     ---@class noteLikEchoStage
     local stage = this:stage()
 
+    --- 容器
     stage.main = FrameBackdrop(kit .. "->main", FrameGameUI)
         :adaptive(true)
         :relation(FRAME_ALIGN_LEFT, FrameGameUI, FRAME_ALIGN_LEFT, 0.01, 0.09)
         :size(0.1, 0.1)
 
+    --- 資訊載體
     stage.textMax = 10
     ---@type FrameText[]
     stage.texts = {}
@@ -33,10 +38,12 @@ this:onSetup(function()
         end
     end
 
+    --- 初始化玩家內容
     for i = 1, BJ_MAX_PLAYERS, 1 do
         Player(i):prop(kit, {})
     end
 
+    --- 接管預設echo
     echo = function(msg, whichPlayer, duration)
         if (isClass(whichPlayer, PlayerClass)) then
             async.call(whichPlayer, function()
