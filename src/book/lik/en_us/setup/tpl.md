@@ -111,7 +111,7 @@ TPL_UNIT = {
         :barStateMode(2) -- Blood Bar Style Settings
         :barStateAlways(true)
         :barStateMarker(500)
-        :iconMap(AUIKit("looplorer_minimap", "dot/me", "tga"), 0.03, 0.03) -- Small map icon style
+        :iconMap(AUIKit("my_minimap", "dot/me", "tga"), 0.03, 0.03) -- Small map icon style
         :modelAlias("TheCaptain") -- Models used
         :icon("unit/TheCaptain")
         :scale(1.2)

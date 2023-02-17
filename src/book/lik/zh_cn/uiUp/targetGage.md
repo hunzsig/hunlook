@@ -1,4 +1,4 @@
-## UI targetGage
+## UI TargetGage
 
 ```lua
 
@@ -7,14 +7,14 @@
     include: 血条、buff等
 ]]
 
-local kit = 'looplorer_targetGage'
+local kit = 'my_targetGage'
 
 ---@type UIKitClass
 local this = UIKit(kit)
 
 this:onSetup(function()
 
-    ---@class looplorerTargetGageStage
+    ---@class myTargetGageStage
     local stage = this:stage()
 
     stage.length = 0.18
@@ -127,7 +127,7 @@ this:onSetup(function()
 end)
 
 function this:maskClose()
-    ---@type looplorerTargetGageStage
+    ---@type myTargetGageStage
     local stage = self:stage()
     local rk = kit .. "mask"
     japi.Refresh(rk, nil)
@@ -148,7 +148,7 @@ function this:maskRemain(uniqueKey, ratio, relation)
         self:clear("maskRemain")
     end
     self:prop("prevId", curId)
-    ---@type looplorerTargetGageStage
+    ---@type myTargetGageStage
     local stage = self:stage()
     local rk = kit .. "mask"
     local prevRatio = self:prop("prevRatio") or 1
@@ -182,7 +182,7 @@ end
 --- 例如EVENT.Unit.Damage，当你的单位造成伤害时，就可以调用刷新
 function this:updated(target)
     async.must()
-    ---@type looplorerTargetGageStage
+    ---@type myTargetGageStage
     local stage = self:stage()
     local gd = Game():GD()
     local me = gd.me

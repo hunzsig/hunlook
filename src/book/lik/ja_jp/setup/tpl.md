@@ -110,7 +110,7 @@ TPL_UNIT = {
         :barStateMode(2) -- 血液ストリップパターン設定
         :barStateAlways(true)
         :barStateMarker(500)
-        :iconMap(AUIKit("looplorer_minimap", "dot/me", "tga"), 0.03, 0.03) -- 小さな地図アイコンスタイル
+        :iconMap(AUIKit("my_minimap", "dot/me", "tga"), 0.03, 0.03) -- 小さな地図アイコンスタイル
         :modelAlias("TheCaptain") -- 使用するモデル
         :icon("unit/TheCaptain")
         :scale(1.2)
