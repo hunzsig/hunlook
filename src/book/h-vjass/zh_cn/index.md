@@ -1,6 +1,8 @@
 ## 快速开始
 
-h-vjass是一套魔兽原生地图框架。
+* 版本稳定、安全安心
+* 菜鸟入门、自由拓展
+* 功能基础、魔兽原生
 
 ### 先行准备
 
@@ -59,8 +61,6 @@ include "[relatively_path]/h-vjass/h-vjass.j"
 include "[relatively_path]/h-vjass/hMain.j"
 ```
 
-h-vjass库开源，不定时更新，可访问 https://www.hunzsig.org 查看下载最新版
-
 h-vjass库仅仅提供一些功能函数协助做图作者更加轻松制作地图
 
 h-vjass库不保证完全正确无bug，高效率，所以如有需要，请自行修改源码进行游戏制作，这里不过是给出一种方式
@@ -86,3 +86,5 @@ war3mapskin.txt -> war3mapskin.txt
 * <a target="_blank" href="https://github.com/h-vjass/hyper-space-td">时空之轮TD</a>
 
 ###### 温馨提示：此框架已完全停止维护，可自行维护 <a target="_blank" href="https://afdian.net/a/hunzsig">请作者喝杯茶</a>
+
+###### 其他框架： <a target="_blank" href="https://h-lua.hunzsig.org">H-Lua</a> <a target="_blank" href="https://singluar-fans.hunzsig.org">Singluar</a>

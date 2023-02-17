@@ -1,6 +1,8 @@
 ## Quick Start
 
-###### Version stability and independent function
+* The version is stable and safe
+* Abandon concepts and create original concepts
+* Powerful, tip of the iceberg
 
 ### Install fork
 

@@ -1,6 +1,8 @@
 ## Quick Start
 
-###### Fans version, more powerful, better quality, more free
+* Fan version, safe and secure
+* Abandon concepts and create original concepts
+* Powerful and prioritized support
 
 ###### Due to the huge maintenance cost, fans will provide more technical assistance
 

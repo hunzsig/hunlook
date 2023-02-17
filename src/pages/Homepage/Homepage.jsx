@@ -139,7 +139,10 @@ class Homepage extends Component {
   }
 
   componentDidMount() {
-    document.getElementById("bgm").volume = 0.4;
+    const vol = document.getElementById("bgm")
+    if (vol) {
+      vol.volume = 0.4;
+    }
   }
 
   render() {
