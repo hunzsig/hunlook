@@ -4,9 +4,9 @@
 * Abandon concepts and create original concepts
 * Powerful and prioritized support
 
-###### Due to the huge maintenance cost, fans will provide more technical assistance
-
 ## Get fan frameworks
+
+###### Due to the huge maintenance cost, fans will provide more technical assistance
 
 ###### If you are not a fan, please join the fan group <a target="_blank" href="https://afdian.net/a/hunzsig">Click here</a>
 
