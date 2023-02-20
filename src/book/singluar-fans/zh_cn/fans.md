@@ -13,8 +13,8 @@
 > 【~】代表考虑到使用场景，已同步到公开版的功能
 
 * 性能优化
-* ability.missile优化
-* ability.leap优化
+* ability.missile优化【~】
+* ability.leap优化【~】
 * JAPI优化
 * 新的物品事件：Deliver【~】
 * 物品指针功能强化【~】
