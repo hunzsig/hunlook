@@ -14,6 +14,19 @@
 秉承一个套件做一件事的原则，在能力提升之前不编写复杂嵌套UI
 ```
 
+### 在其他作用域调用UI套件里面的assets资源
+
+* 状况：在assets里面放好了tga图片，套件内main的kit名也对应了，但不知道如何在其他套件或其他代码里使用
+
+> 问题所在：套件在内固然好用，但在外确不知道如何调用
+
+* 解决办法
+
+```
+-- 使用AUIKit即可随意引用
+local path = AUIKit("kit", "bg", "tga")
+```
+
 ### FrameBackdrop的texture设置无效
 
 * 状况：在FrameBackdrop里面使用assets里面的tga图片资源，但找不到

@@ -15,6 +15,20 @@
 Adhere to the principle that one package does one thing, and do not write complex nested UI before capacity improvement
 ```
 
+### Call the assets resources in the UI suite in other scopes
+
+* Status: The tga image is placed in assets, and the kit name of main in the kit is also corresponding, but I don't know
+  how to use it in other kits or other codes
+
+> The problem is that the suite is easy to use inside, but it doesn't know how to call outside
+
+* Solution
+
+```
+-- Use AUIKit to reference at will
+local path = AUIKit("kit", "bg", "tga")
+```
+
 ### The texture setting of FrameBackdrop is invalid
 
 * Status: Use the tga image resource in assets in FrameBackdrop, but can't find it

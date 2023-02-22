@@ -54,6 +54,7 @@ import {
   FrownOutlined,
   PictureOutlined,
   MessageOutlined,
+  ZoomInOutlined,
 } from "@ant-design/icons";
 
 // only one layout
@@ -110,6 +111,7 @@ export default [
     icon: <FundViewOutlined/>, key: 'uiUp', label: "UI UP", children: [
       {icon: <FrownOutlined/>, key: 'problem', label: "Difficult"},
       {icon: <MessageOutlined/>, key: 'echo', label: "Echo"},
+      {icon: <ZoomInOutlined/>, key: 'detail', label: "Detail"},
       {icon: <BoxPlotOutlined/>, key: 'targetGage', label: "TargetGage"},
     ]
   },
