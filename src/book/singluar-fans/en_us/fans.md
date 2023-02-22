@@ -12,10 +12,12 @@
 
 > 【~】Represents the function that has been synchronized to the public version considering the use scenario
 
-* Performance optimization
-* Performance ability.missile【~】
-* Performance ability.leap【~】
-* Performance JAPI
-* New item event: Deliverer【~】
-* Enhancement of object pointer function【~】
-* The targeting accuracy of the object pointer to the unit is improved
+* Camera: new lock, unlock
+* Camera: new spacePosition (original quickPosition)
+* Cursor: object pointer function enhancement [~]
+* Cursor: object pointer improves the accuracy of unit aiming
+* Event: New item event: Delivery [~]
+* JAPI: optimization
+* ability: mission optimization, leap optimization [~]
+* async: new method is
+* sync: new method is

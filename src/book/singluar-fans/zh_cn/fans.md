@@ -12,10 +12,12 @@
 
 > 【~】代表考虑到使用场景，已同步到公开版的功能
 
-* 性能优化
-* ability.missile优化【~】
-* ability.leap优化【~】
-* JAPI优化
-* 新的物品事件：Deliver【~】
-* 物品指针功能强化【~】
-* 物品指针对单位瞄准精准度提升
+* Camera：新的lock、unlock
+* Camera：新的spacePosition(原quickPosition)
+* Cursor：物品指针功能强化【~】
+* Cursor：物品指针对单位瞄准精准度提升
+* Event：新的物品事件：Deliver【~】
+* JAPI：优化
+* ability：missile优化，leap优化【~】
+* async：新的is
+* sync：新的is
