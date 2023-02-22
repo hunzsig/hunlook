@@ -10,14 +10,14 @@
 
 ### 制限バージョンとの差異一覧
 
-> 【~】シーンの使用を考慮して公開版に同期した機能を表します
+> 【☆】シーンの使用を考慮して公開版に同期した機能を表します
 
 * Camera：新しいロック、unlock
-* Camera：新しいspacePosition（旧quickPosition）
-* Cursor：物品指針機能強化【~】
+* Camera：新しいspacePosition（旧quickPosition）【☆】
+* Cursor：物品指針機能強化【☆】
 * Cursor：物品ポインタの単位照準精度向上
-* Event：新たなアイテムイベント：Deliver【~】
+* Event：新たなアイテムイベント：Deliver【☆】
 * JAPI：最適化
-* ability：missile最適化、leap最適化【~】
+* ability：missile最適化、leap最適化【☆】
 * async：新しいis
 * sync：新しいis

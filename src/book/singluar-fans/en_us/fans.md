@@ -10,14 +10,14 @@
 
 ### List of differences from restricted versions
 
-> 【~】Represents the function that has been synchronized to the public version considering the use scenario
+> 【☆】Represents the function that has been synchronized to the public version considering the use scenario
 
 * Camera: new lock, unlock
-* Camera: new spacePosition (original quickPosition)
-* Cursor: object pointer function enhancement [~]
+* Camera: new spacePosition (original quickPosition)【☆】
+* Cursor: object pointer function enhancement【☆】
 * Cursor: object pointer improves the accuracy of unit aiming
-* Event: New item event: Delivery [~]
+* Event: New item event: Delivery【☆】
 * JAPI: optimization
-* ability: mission optimization, leap optimization [~]
+* ability: mission optimization, leap optimization【☆】
 * async: new method is
 * sync: new method is
