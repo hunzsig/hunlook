@@ -12,12 +12,15 @@
 
 > 【☆】Represents the function that has been synchronized to the public version considering the use scenario
 
-* Camera: new lock, unlock
-* Camera: new spacePosition (original quickPosition)【☆】
+* Ability: new method tpl
+* Camera: new method lock, unlock
+* Camera: new method spacePosition (original quickPosition)【☆】
 * Cursor: object pointer function enhancement【☆】
 * Cursor: object pointer improves the accuracy of unit aiming
 * Event: New item event: Delivery【☆】
+* Item: new method tpl
 * JAPI: optimization
+* Unit: new method tpl
 * ability: mission optimization, leap optimization【☆】
 * async: new method is
 * sync: new method is

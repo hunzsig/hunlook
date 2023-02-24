@@ -12,12 +12,15 @@
 
 > 【☆】代表考慮到使用場景，已同步到公開版的功能
 
-* Camera：新的lock、unlock
-* Camera：新的spacePosition(原quickPosition)【☆】
+* Ability：新的方法tpl
+* Camera：新的方法lock、unlock
+* Camera：新的方法spacePosition(原quickPosition)【☆】
 * Cursor：物品指標功能強化【☆】
 * Cursor：物品指標對單位瞄準精準度提升
 * Event：新的物品事件：Deliver【☆】
+* Item：新的方法tpl
 * JAPI：最佳化
+* Unit：新的方法tpl
 * ability：missile最佳化，leap最佳化【☆】
 * async：新的is
 * sync：新的is
