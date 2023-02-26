@@ -141,7 +141,7 @@ class Homepage extends Component {
   componentDidMount() {
     const vol = document.getElementById("bgm")
     if (vol) {
-      vol.volume = 0.4;
+      vol.volume = 0.8;
     }
   }
 

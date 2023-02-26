@@ -2,8 +2,8 @@
 
 * More timely document maintenance and richer content
 * The bottom of the fan group open source framework for learning
-* Fans give high-quality drawing tools
-* Fans give a lot of resources
+* Fans present selected high-quality drawing tools
+* Fans can present up to dozens of sets of massive interface resources
 * There are additional code references in the fan group file
 * Confusion is more intelligent
 * Fans can contact the group owner to fix known bugs
