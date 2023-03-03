@@ -6,7 +6,7 @@
 >
 > 【◇】Customize Custom, build on demand
 
-```
+```text
 ├── assets -【*|◇】Resource Library
 │   ├── war3mapFont - Put fonts, only support ttf
 │   ├── war3mapIcon - Put icon, only support tga

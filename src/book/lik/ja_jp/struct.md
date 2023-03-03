@@ -6,7 +6,7 @@
 >
 > （·）Customize カスタム、オンデマンド構築
 
-```
+```text
 ├── assets -（*|·）リポジトリ
 │   ├── war3mapFont - フォントを入れて、ttfだけをサポートします
 │   ├── war3mapIcon - アイコンを放して、tgaだけをサポートします

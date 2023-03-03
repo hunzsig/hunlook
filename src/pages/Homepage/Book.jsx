@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import hljs from 'highlight.js';
-import './Hlvs.less';
+import 'highlight.js/styles/vs.css';
 import './Book.less';
 
 class Book extends Component {

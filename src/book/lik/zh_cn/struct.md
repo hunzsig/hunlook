@@ -6,7 +6,7 @@
 >
 > （·）Customize 自定义，按需构建
 
-```
+```text
 ├── assets -（*|·）资源库
 │   ├── war3mapFont - 放字体，只支持 ttf
 │   ├── war3mapIcon - 放图标，只支持 tga
