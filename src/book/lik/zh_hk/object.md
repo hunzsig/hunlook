@@ -16,6 +16,7 @@ Aura 領域
 Bgm 背景音樂
 Buff 可操狀態
 Camera 鏡頭
+Coordinate 座標
 Corpse 消逝物
 Cursor 指針
 Destructable 可破壞物
@@ -54,6 +55,7 @@ ItemTpl 物品模版
 Lightning 閃電效果
 Monitor 監聽器
 Player 玩家
+Pool 池
 Procoss 流程
 Quest 任務
 Rect 區域

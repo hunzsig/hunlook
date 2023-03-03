@@ -16,6 +16,7 @@ Aura
 Bgm
 Buff
 Camera
+Coordinate
 Corpse
 Cursor
 Destructable
@@ -54,6 +55,7 @@ ItemTpl
 Lightning
 Monitor
 Player
+Pool
 Procoss
 Quest
 Rect

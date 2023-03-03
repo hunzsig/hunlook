@@ -16,6 +16,7 @@ Aura 領域
 Bgm バックミュージック
 Buff 操作可能状態
 Camera カメラレンズ
+Coordinate 座標
 Corpse 死体
 Cursor ポインタ
 Destructable 破壊可能物
@@ -54,6 +55,7 @@ ItemTpl アイテムテンプレート
 Lightning 稲妻効果
 Monitor モニタ
 Player プレイヤー
+Pool いけにえ
 Procoss プロセス
 Quest クエスト
 Rect 領域
