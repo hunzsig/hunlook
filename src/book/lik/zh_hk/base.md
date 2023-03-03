@@ -4,7 +4,7 @@
 
 ### Common 通用類
 
-```lua
+```text
 base64
 colour
 curve
@@ -20,7 +20,7 @@ vector3
 
 ### Foundation 基類
 
-```lua
+```text
 alliance
 assets
 async

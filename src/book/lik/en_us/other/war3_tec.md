@@ -9,7 +9,7 @@ Convert to custom code and delete all code inside
 Just paste the following code:
 > * This method may not work in Reforged Warcraft
 
-```jass
+```c
 function myBgm takes string s returns nothing
     local string uri = "main.mp3" //In this path, you can play the default music (in F5) or the music imported from F12
     call SetMapDescription(s)

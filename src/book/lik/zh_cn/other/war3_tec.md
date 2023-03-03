@@ -9,7 +9,7 @@
 贴上以下代码即可：
 > * 此方法在重制版魔兽中可能是无效的
 
-```jass
+```c
 function myBgm takes string s returns nothing
     local string uri = "main.mp3" //这个路径你可以播放默认的音乐（在F5）也可以播放F12导入的音乐
     call SetMapDescription(s)

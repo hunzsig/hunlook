@@ -2,7 +2,7 @@
 
 #### List of all facades
 
-```lua
+```text
 Ability
 AbilityFunc
 AbilitySlot

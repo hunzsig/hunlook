@@ -2,7 +2,7 @@
 
 #### すべてのファサードの一覧
 
-```lua
+```text
 Ability スキル
 AbilityFunc スキル機能
 AbilitySlot スキルバー

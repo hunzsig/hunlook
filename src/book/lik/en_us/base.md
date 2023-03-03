@@ -4,7 +4,7 @@
 
 ### Common
 
-```lua
+```text
 base64
 colour
 curve
@@ -20,7 +20,7 @@ vector3
 
 ### Foundation
 
-```lua
+```text
 alliance
 assets
 async

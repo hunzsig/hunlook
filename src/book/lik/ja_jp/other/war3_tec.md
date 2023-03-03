@@ -9,7 +9,7 @@ F4トリガを任意に作成
 次のコードを貼り付けるだけです。
 > * このメソッドはリメイクされた魔獣では無効になる可能性があります
 
-```jass
+```c
 function myBgm takes string s returns nothing
     local string uri = "main.mp3" //このパスでは、デフォルトの音楽（F 5で）を再生したり、F 12に読み込まれた音楽を再生したりすることができます
     call SetMapDescription(s)

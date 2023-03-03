@@ -2,7 +2,7 @@
 
 #### 所有門面一覽
 
-```lua
+```text
 Ability 技能
 AbilityFunc 技能功能
 AbilitySlot 技能欄
