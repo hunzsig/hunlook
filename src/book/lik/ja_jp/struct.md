@@ -1,13 +1,13 @@
 ## ディレクトリ構造
 
-> （*）Required 必要性、クラッシュを失う
+> 【*】Required 必要性、クラッシュを失う
 >
-> （~）Automatic 一時的で自動構築が不足している
+> 【~】Automatic 一時的で自動構築が不足している
 >
-> （·）Customize カスタム、オンデマンド構築
+> 【·】Customize カスタム、オンデマンド構築
 
 ```
-├── assets -（*|·）リポジトリ
+├── assets -【*|·】リポジトリ
 │   ├── war3mapFont - フォントを入れて、ttfだけをサポートします
 │   ├── war3mapIcon - アイコンを放して、tgaだけをサポートします
 │   ├── war3MapLoading - 図をロードして、単一図のtgaあるいは規則の組み合わせのtgaだけをサポートします
@@ -17,18 +17,21 @@
 │   ├── war3mapSound - サウンドトラックを再生し、mp 3のみをサポート
 │   ├── war3mapTextures - モデルマップを配置し、blpのみをサポートする
 │   └── war3mapUI - UIスイートを配置して、すでにフォーマット参照があります
-├── assetsNew -（*|·）assets構造と一致し、新しいリソースを処理する際に使用する
-├── projects -（~|·）地図プロジェクトディレクトリ、たとえば project_demo
-│   └── project_demo -（·）
-├── library -（*）コア
-├── support -（*）
+├── assetsNew -【*|·】assets構造と一致し、新しいリソースを処理する際に使用する
+├── projects -【~|·】地図プロジェクトディレクトリ、たとえば project_demo
+│   └── project_demo -【·】
+├── encrypt -【·】Define obfuscated rules
+│   ├── force.json -【·】Forced confusion of root words, low efficiency
+│   └── rule.json -【·】Confuse library file rules
+├── library -【*】コア
+├── support -【*】
 │   ├── lni - 重要な地図データ
 │   ├── models - modelコマンドマップテンプレート
 │   ├── w3x2lni - w3x2lniツール(v:2.7.2)
 │   └── WE - 新末の弟WE
-├── temp -（~）キャッシュ
-├── conf -（~|·）構成
-└── lik.exe -（*）コマンドツール
+├── temp -【~】キャッシュ
+├── conf -【~|·】構成
+└── lik.exe -【*】コマンドツール
 ```
 
 ### プロジェクト構造
