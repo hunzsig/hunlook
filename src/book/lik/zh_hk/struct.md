@@ -1,13 +1,13 @@
 ## 目錄結構
 
-> 【*】Required 必要性，丟失崩潰
+> （*）Required 必要性，丟失崩潰
 >
-> 【~】Automatic 臨時性，缺少自動構建
+> （~）Automatic 臨時性，缺少自動構建
 >
-> 【◇】Customize 自定義，按需構建
+> （·）Customize 自定義，按需構建
 
 ```
-├── assets -【*|◇】資源庫
+├── assets -（*|·）資源庫
 │   ├── war3mapFont - 放字體，只支持 ttf
 │   ├── war3mapIcon - 放圖標，只支持 tga
 │   ├── war3MapLoading - 載入圖，只支持單圖 tga 或 規則組合 tga
@@ -17,21 +17,21 @@
 │   ├── war3mapSound - 放音效音樂，只支持 mp3
 │   ├── war3mapTextures - 放模型貼圖，只支持 blp
 │   └── war3mapUI - 放UI套件，已有格式參考
-├── assetsNew -【*|◇】與assets結構一致，處理新資源時使用
-├── projects -【~|◇】用來放置你的地圖項目目錄，如 project_demo
-│   └── project_demo -【◇】
-├── encrypt -【◇】定義混淆化的規則
-│   ├── force.json -【◇】強制混淆詞根，性能低
-│   └── rule.json -【◇】混淆library文件規則
-├── library -【*】核心
-├── support -【*】
+├── assetsNew -（*|·）與assets結構一致，處理新資源時使用
+├── projects -（~|·）用來放置你的地圖項目目錄，如 project_demo
+│   └── project_demo -（·）
+├── encrypt -（·）定義混淆化的規則
+│   ├── force.json -（·）強制混淆詞根，性能低
+│   └── rule.json -（·）混淆library文件規則
+├── library -（*）核心
+├── support -（*）
 │   ├── lni - 重要地圖數據
 │   ├── models - model命令地圖模版
 │   ├── w3x2lni - w3x2lni工具(v:2.7.2)
 │   └── WE - 新馬仔
-├── temp -【~】緩存
-├── conf -【~|◇】配置
-└── lik.exe -【*】命令工具
+├── temp -（~）緩存
+├── conf -（~|·）配置
+└── lik.exe -（*）命令工具
 ```
 
 ### 項目結構
