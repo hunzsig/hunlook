@@ -55,6 +55,7 @@ import {
   PictureOutlined,
   MessageOutlined,
   ZoomInOutlined,
+  AppstoreAddOutlined,
 } from "@ant-design/icons";
 
 // only one layout
@@ -67,6 +68,7 @@ export default [
   {icon: <AppstoreOutlined/>, key: 'base', label: "根基库"},
   {icon: <AppstoreOutlined/>, key: 'object', label: "物件門面"},
   {icon: <AppstoreOutlined/>, key: 'ability', label: "技能庫"},
+  {icon: <AppstoreAddOutlined/>, key: 'sublib', label: "拓展庫"},
   {icon: <PullRequestOutlined/>, key: 'event', label: "事件"},
   {
     icon: <FunctionOutlined/>, key: 'library', label: "重要功能", children: [
