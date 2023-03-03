@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import hljs from 'highlight.js';
-import 'highlight.js/styles/agate.css';
+// import 'highlight.js/styles/agate.css';
+import './Hlst.css';
 import './Book.less';
 
 class Book extends Component {
