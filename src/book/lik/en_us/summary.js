@@ -143,7 +143,7 @@ export default [
       {icon: <AntCloudOutlined/>, key: 'ai', label: "AI"},
       {icon: <ThunderboltOutlined/>, key: 'effect', label: "Effect"},
       {icon: <CompassOutlined/>, key: 'aura', label: "Aura"},
-      {icon: <TrademarkCircleOutlined/>, key: 'rect', label: "Rect"},
+      {icon: <TrademarkCircleOutlined/>, key: 'region', label: "Region"},
     ]
   },
   {

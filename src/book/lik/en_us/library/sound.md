@@ -55,7 +55,7 @@ local v3d = V3d("lv")
 
 v3d:xyz(0,0,0) -- Binding point
 v3d:unit(bindUnit) -- Binding unit
-v3d:rect(bindRect) -- Binding rect
+v3d:Region(bindRect) -- Binding Region
 
 v3d:play() -- All players heard
 -- Specify player usage

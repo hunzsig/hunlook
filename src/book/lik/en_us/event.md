@@ -329,14 +329,14 @@ EVENT.Store = {
     Sell = "storeSell",
 }
 
----@alias noteOnRectBase {triggerRect:Rect}
-EVENT.Rect = {
-    --- Entry the rect
-    ---@alias noteOnRectEnterData noteOnRectBase
-    Enter = "rectEnter",
-    --- Leave the rect
-    ---@alias noteOnRectLeaveData noteOnRectBase
-    Leave = "rectLeave",
+---@alias noteOnRegionBase {triggerRegion:Region}
+EVENT.Region = {
+    --- Entry the region
+    ---@alias noteOnRegionEnterData noteOnRegionBase
+    Enter = "regionEnter",
+    --- Leave the region
+    ---@alias noteOnRegionLeaveData noteOnRegionBase
+    Leave = "regionLeave",
 }
 
 ---@alias noteOnAuraBase {triggerAura:Aura}

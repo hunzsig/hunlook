@@ -58,7 +58,7 @@ Player
 Pool
 Procoss
 Quest
-Rect
+Region
 Screen
 Server
 Store

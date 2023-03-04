@@ -329,8 +329,8 @@ EVENT.Store = {
     Sell = "storeSell",
 }
 
----@alias noteOnRectBase {triggerRect:Rect}
-EVENT.Rect = {
+---@alias noteOnRectBase {triggerRect:Region}
+EVENT.Region = {
     --- ゾーンに入る
     ---@alias noteOnRectEnterData noteOnRectBase
     Enter = "rectEnter",

@@ -58,7 +58,7 @@ Player プレイヤー
 Pool いけにえ
 Procoss プロセス
 Quest クエスト
-Rect 領域
+Region 領域
 Screen スクリーン
 Server サーバ
 Store 倉庫

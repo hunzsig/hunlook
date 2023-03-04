@@ -55,7 +55,7 @@ local v3d = V3d("lv")
 
 v3d:xyz(0,0,0) -- バインドポイント
 v3d:unit(bindUnit) -- バインド単位
-v3d:rect(bindRect) -- バインド領域
+v3d:Region(bindRect) -- バインド領域
 
 v3d:play() -- 全プレイヤーが聞く
 -- プレイヤー使用法の指定

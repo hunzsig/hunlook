@@ -58,7 +58,7 @@ Player 玩家
 Pool 池
 Procoss 流程
 Quest 任务
-Rect 区域
+Region 区域
 Screen 荧屏
 Server 服务器
 Store 仓贮
