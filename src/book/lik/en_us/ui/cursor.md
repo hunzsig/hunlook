@@ -1,4 +1,4 @@
-### Cursor
+## Cursor
 
 #### SizeRate range change value
 

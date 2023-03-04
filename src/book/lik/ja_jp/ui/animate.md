@@ -1,4 +1,4 @@
-### フレームアニメーション
+## フレームアニメーション
 
 ```lua
 FrameAnimate(kit .. "->an1", FrameGameUI)

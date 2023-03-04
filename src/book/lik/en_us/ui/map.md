@@ -1,4 +1,4 @@
-### Map
+## Map
 
 ```lua
 FrameMap(kit, FrameGameUI)

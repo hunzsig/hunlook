@@ -1,4 +1,4 @@
-### 帧动画
+## 帧动画
 
 ```lua
 FrameAnimate(kit .. "->an1", FrameGameUI)

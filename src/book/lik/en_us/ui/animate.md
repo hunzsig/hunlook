@@ -1,4 +1,4 @@
-### UI - Animate
+## UI - Animate
 
 ```lua
 FrameAnimate(kit .. "->an1", FrameGameUI)
