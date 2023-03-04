@@ -39,7 +39,6 @@ player
 signal
 slk
 sync
-synthesis
 terrain
 time
 ttg

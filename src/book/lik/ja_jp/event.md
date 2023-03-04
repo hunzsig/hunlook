@@ -317,12 +317,6 @@ EVENT.Item = {
     --- 抵当アイテム（所有者による販売）
     ---@alias noteOnItemPawnData noteOnItemBase
     Pawn = "itemPawn",
-    --- 合成アイテム
-    ---@alias noteOnItemSynthesisData noteOnItemBase
-    Synthesis = "itemSynthesis",
-    --- アイテムの分割
-    ---@alias noteOnItemSeparateData noteOnItemBase
-    Separate = "itemSeparate",
     --- レベル変更
     ---@alias noteOnItemLevelChangeData noteOnItemBase|{value:"へんかさ"}
     LevelChange = "itemLevelChange",

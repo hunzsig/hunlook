@@ -317,12 +317,6 @@ EVENT.Item = {
     --- Pawn(Sold by the holder)
     ---@alias noteOnItemPawnData noteOnItemBase
     Pawn = "itemPawn",
-    --- Synthesis items
-    ---@alias noteOnItemSynthesisData noteOnItemBase
-    Synthesis = "itemSynthesis",
-    --- Separate items
-    ---@alias noteOnItemSeparateData noteOnItemBase
-    Separate = "itemSeparate",
     --- Level change
     ---@alias noteOnItemLevelChangeData noteOnItemBase|{value:"Variation difference"}
     LevelChange = "itemLevelChange",

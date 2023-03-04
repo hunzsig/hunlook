@@ -1,6 +1,8 @@
 import React from "react";
 
 import {
+  CollectMoneyOutline,
+  FileOutline,
   KoubeiOutline,
   PictureOutline,
   SetOutline,
@@ -14,6 +16,7 @@ import {
   AppstoreAddOutlined,
   AppstoreOutlined,
   BellOutlined,
+  BorderOuterOutlined,
   BoxPlotOutlined,
   BugOutlined,
   BuildOutlined,
@@ -22,9 +25,11 @@ import {
   ClockCircleOutlined,
   CloudUploadOutlined,
   CodeOutlined,
+  CompassOutlined,
   CopyOutlined,
   DingtalkOutlined,
   DollarCircleOutlined,
+  DragOutlined,
   ExpandOutlined,
   FireOutlined,
   FolderViewOutlined,
@@ -33,10 +38,12 @@ import {
   FormatPainterOutlined,
   ForwardOutlined,
   FrownOutlined,
+  FullscreenExitOutlined,
   FunctionOutlined,
   FundViewOutlined,
   HighlightOutlined,
   LoadingOutlined,
+  MacCommandOutlined,
   MenuUnfoldOutlined,
   MessageOutlined,
   NodeExpandOutlined,
@@ -53,6 +60,7 @@ import {
   SwapOutlined,
   SyncOutlined,
   ThunderboltOutlined,
+  TrademarkCircleOutlined,
   TranslationOutlined,
   UnorderedListOutlined,
   ZoomInOutlined,
@@ -86,6 +94,7 @@ export default [
   },
   {
     icon: <DingtalkOutlined/>, key: 'setup', label: "预设设计", children: [
+      {icon: <MacCommandOutlined/>, key: 'game', label: "构成"},
       {icon: <UnorderedListOutlined/>, key: 'slot', label: "常规栏"},
       {icon: <ProfileOutlined/>, key: 'description', label: "描述体"},
       {icon: <NodeExpandOutlined/>, key: 'damaging', label: "伤害流"},
@@ -103,15 +112,23 @@ export default [
   {
     icon: <FundViewOutlined/>, key: 'ui', label: "UI界面基础", children: [
       {icon: <FolderViewOutlined/>, key: 'kit', label: "套件"},
+      {icon: <FontSizeOutlined/>, key: 'text', label: "文本"},
       {icon: <PictureOutlined/>, key: 'backdrop', label: "背景"},
+      {icon: <BorderOuterOutlined/>, key: 'label', label: "图文"},
       {icon: <CaretDownOutlined/>, key: 'cursor', label: "指针"},
       {icon: <LoadingOutlined/>, key: 'animate', label: "帧动画"},
       {icon: <ExpandOutlined/>, key: 'map', label: "地图"},
+      {icon: <DragOutlined/>, key: 'drag', label: "拖拽"},
+      {icon: <BoxPlotOutlined/>, key: 'bar', label: "条"},
+      {icon: <BoxPlotOutlined/>, key: 'barState', label: "状态条"},
+      {icon: <FileOutline/>, key: 'balloon', label: "气泡"},
+      {icon: <CollectMoneyOutline/>, key: 'toast', label: "土司"},
     ]
   },
   {
     icon: <FundViewOutlined/>, key: 'uiUp', label: "UI界面进阶", children: [
       {icon: <FrownOutlined/>, key: 'problem', label: "疑难杂症"},
+      {icon: <FullscreenExitOutlined/>, key: 'adapter', label: "自适应"},
       {icon: <MessageOutlined/>, key: 'echo', label: "消息体"},
       {icon: <ZoomInOutlined/>, key: 'detail', label: "详情展示"},
       {icon: <BoxPlotOutlined/>, key: 'targetGage', label: "状态条"},
@@ -121,7 +138,10 @@ export default [
     icon: <BuildOutlined/>, key: 'example', label: "更多例子", children: [
       {icon: <StockOutlined/>, key: 'orderRoute', label: "路线蓝图"},
       {icon: <SwapOutlined/>, key: 'pos2pas', label: "主动改被动"},
-      {icon: <MenuUnfoldOutlined/>, key: 'dialog', label: "难度选择对话框"},
+      {icon: <MenuUnfoldOutlined/>, key: 'dialog', label: "难度选择框"},
+      {icon: <ThunderboltOutlined/>, key: 'effect', label: "特效"},
+      {icon: <CompassOutlined/>, key: 'aura', label: "领域"},
+      {icon: <TrademarkCircleOutlined/>, key: 'rect', label: "区域"},
     ]
   },
   {

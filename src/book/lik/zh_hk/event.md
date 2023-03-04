@@ -317,12 +317,6 @@ EVENT.Item = {
     --- 抵押物品（持有人售出）
     ---@alias noteOnItemPawnData noteOnItemBase
     Pawn = "itemPawn",
-    --- 合成物品
-    ---@alias noteOnItemSynthesisData noteOnItemBase
-    Synthesis = "itemSynthesis",
-    --- 拆分物品
-    ---@alias noteOnItemSeparateData noteOnItemBase
-    Separate = "itemSeparate",
     --- 等級改變
     ---@alias noteOnItemLevelChangeData noteOnItemBase|{value:"變值差額"}
     LevelChange = "itemLevelChange",
