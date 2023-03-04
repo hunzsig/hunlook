@@ -1,4 +1,4 @@
-## 文本
+## 文字
 
 ```lua
 FrameText(kit, FrameGameUI)
