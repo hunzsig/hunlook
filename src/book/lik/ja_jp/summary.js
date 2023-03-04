@@ -11,6 +11,7 @@ import {
 } from "antd-mobile-icons";
 
 import {
+  AntCloudOutlined,
   AntDesignOutlined,
   ApartmentOutlined,
   AppstoreAddOutlined,
@@ -139,6 +140,7 @@ export default [
       {icon: <StockOutlined/>, key: 'orderRoute', label: "ロードマップ"},
       {icon: <SwapOutlined/>, key: 'pos2pas', label: "アクティブスキルをパッシブスキルに変更"},
       {icon: <MenuUnfoldOutlined/>, key: 'dialog', label: "難易度選択ダイアログ"},
+      {icon: <AntCloudOutlined/>, key: 'ai', label: "AI"},
       {icon: <ThunderboltOutlined/>, key: 'effect', label: "効果"},
       {icon: <CompassOutlined/>, key: 'aura', label: "領域"},
       {icon: <TrademarkCircleOutlined/>, key: 'rect', label: "長方形"},

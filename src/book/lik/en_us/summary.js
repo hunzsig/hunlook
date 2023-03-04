@@ -11,6 +11,7 @@ import {
 } from "antd-mobile-icons";
 
 import {
+  AntCloudOutlined,
   AntDesignOutlined,
   ApartmentOutlined,
   AppstoreAddOutlined,
@@ -139,6 +140,7 @@ export default [
       {icon: <StockOutlined/>, key: 'orderRoute', label: "BluePrint"},
       {icon: <SwapOutlined/>, key: 'pos2pas', label: "PosToPas"},
       {icon: <MenuUnfoldOutlined/>, key: 'dialog', label: "Dialog"},
+      {icon: <AntCloudOutlined/>, key: 'ai', label: "AI"},
       {icon: <ThunderboltOutlined/>, key: 'effect', label: "Effect"},
       {icon: <CompassOutlined/>, key: 'aura', label: "Aura"},
       {icon: <TrademarkCircleOutlined/>, key: 'rect', label: "Rect"},
