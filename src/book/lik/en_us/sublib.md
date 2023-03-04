@@ -6,6 +6,7 @@
 
 #### There are many advantages of using the library. It is strongly not recommended to write extensions outside the library
 
+* Automatic loading, fitting tool link
 * Convenient management, greatly reducing maintenance costs
 * Path mandatory, easy to copy between different projects
 * Rule adaptation and automatic handling of confusion
