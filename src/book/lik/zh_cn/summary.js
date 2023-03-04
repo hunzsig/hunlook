@@ -123,7 +123,7 @@ export default [
       {icon: <BoxPlotOutlined/>, key: 'bar', label: "条"},
       {icon: <BoxPlotOutlined/>, key: 'barState', label: "状态条"},
       {icon: <FileOutline/>, key: 'balloon', label: "气泡"},
-      {icon: <CollectMoneyOutline/>, key: 'toast', label: "土司"},
+      {icon: <CollectMoneyOutline/>, key: 'toast', label: "吐司"},
     ]
   },
   {

@@ -45,3 +45,11 @@ UnitTpl('')
         },
     })
 ```
+
+#### In addition to Unit, Item, Effect and Coordinate also support
+
+```lua
+(ItemTpl):balloon ...
+(Effect):balloon ...
+(Coordinate):balloon ...
+```

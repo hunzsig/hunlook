@@ -7,7 +7,7 @@ Game():enableScreen(FrameBarStateClass, true)
 -- 可选配置启用气泡
 Game():enableScreen(FrameBalloonClass, true)
 
--- 可选配置启用土司
+-- 可选配置启用吐司
 Game():enableScreen(FrameToastClass, true)
 
 -- 可选配置气泡的执行快捷键
