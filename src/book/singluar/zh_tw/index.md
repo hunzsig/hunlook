@@ -2,7 +2,7 @@
 
 * 版本穩定、安全安心
 * 摒棄觀念、獨創概念
-* 功能強大、冰山一角
+* 功能強大、強力支撐
 
 ### 安裝fork
 
@@ -12,11 +12,13 @@
 > git-fork.com)</a>
 >
 
-### 使用 git clone 克隆專案
+### 使用 git clone 克隆專案公開版本
 
-```
+```text
 > git clone https://github.com/singluar/singluar-restricted.git
 ```
+
+> 公開版本可隨意商用，但不能獲得原始碼，且得不到什麼技術協助，請見諒
 
 ### 安裝IDE - Ideac
 
@@ -28,11 +30,11 @@
 
 ##### 安裝外掛 Highlighter
 
-![Emmylua](https://gitlab.com/h-document/singluar/-/raw/main/images/emmylua.png)
+![Emmylua](https://gitlab.com/h-document/singluar/-/raw/main/assets/emmylua.png)
 
-![ImageIconViewer](https://gitlab.com/h-document/singluar/-/raw/main/images/imageIconViewer.png)
+![ImageIconViewer](https://gitlab.com/h-document/singluar/-/raw/main/assets/imageIconViewer.png)
 
-![Highlighter](https://gitlab.com/h-document/singluar/-/raw/main/images/colorHighlighter.png)
+![Highlighter](https://gitlab.com/h-document/singluar/-/raw/main/assets/colorHighlighter.png)
 
 ### 開啟終端並進入框架根
 
@@ -52,7 +54,7 @@
 > sl.exe run demo -h
 ```
 
-###### 溫馨提示：此文件僅展示冰山一角，更多功能可自由探索。<a target="_blank" href="https://afdian.net/a/hunzsig">請作者喝杯茶</a>
+###### 溫馨提示：文件展現部分僅冰山一角，可自行探索 <a target="_blank" href="https://afdian.net/a/hunzsig">請作者喝杯茶</a>
 
 ###### 使用win11時，特別是較新版本時，有時會遇到彈窗錯誤（但其實可以繼續玩）
 

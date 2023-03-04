@@ -2,21 +2,23 @@
 
 * 安定したバージョン、安全で安心なバージョン
 * 観念や独創的な概念を捨てる
-* 強力で氷山の一角
+* 強力で強力なサポート
 
-### インストール fork
+### インストールfork
 
-###### gitを使いこなすことでこのステップをスキップすることができます
+###### gitを使いこなすと、このステップをスキップできます
 
 > <a target="_blank" href="https://www.git-fork.com">Fork - a fast and friendly git client for Mac and Windows (
 > git-fork.com)</a>
 >
 
-### git clone を使用したプロジェクトのクローン作成
+### git cloneクローンを使用した特別公開バージョン
 
-```
+```text
 > git clone https://github.com/singluar/singluar-restricted.git
 ```
+
+> 公開版は自由に商用化できますが、ソースコードは入手できず、技術協力は得られませんのでご了承ください
 
 ### インストール IDE - Ideac
 
@@ -28,11 +30,11 @@
 
 ##### インストール プラグイン - Highlighter
 
-![Emmylua](https://gitlab.com/h-document/singluar/-/raw/main/images/emmylua.png)
+![Emmylua](https://gitlab.com/h-document/singluar/-/raw/main/assets/emmylua.png)
 
-![ImageIconViewer](https://gitlab.com/h-document/singluar/-/raw/main/images/imageIconViewer.png)
+![ImageIconViewer](https://gitlab.com/h-document/singluar/-/raw/main/assets/imageIconViewer.png)
 
-![Highlighter](https://gitlab.com/h-document/singluar/-/raw/main/images/colorHighlighter.png)
+![Highlighter](https://gitlab.com/h-document/singluar/-/raw/main/assets/colorHighlighter.png)
 
 ### 端末を開いてルートを入力
 
@@ -52,7 +54,7 @@
 > sl.exe run demo -h
 ```
 
-###### ご注意：この書類の設計内容は氷山の一角にすぎないので。 <a target="_blank" href="https://afdian.net/a/hunzsig">後援する</a>
+###### 暖かいヒント：ドキュメントの表示部分は氷山の一角だけで、自分で探索することができます <a target="_blank" href="https://afdian.net/a/hunzsig">作者にお茶をおごる</a>
 
 ###### win 11を使用している場合、特に新しいバージョンの場合、ポップアップエラーが発生することがあります（ただし、実際にはプレイを続けることができます）
 

@@ -2,7 +2,7 @@
 
 * The version is stable and safe
 * Abandon concepts and create original concepts
-* Powerful, tip of the iceberg
+* Powerful and powerful support
 
 ### Install fork
 
@@ -12,11 +12,14 @@
 > git-fork.com)</a>
 >
 
-### Cloning projects with git clone
+### Use git clone to clone the public version of the project
 
-```
+```text
 > git clone https://github.com/singluar/singluar-restricted.git
 ```
+
+> The public version can be used for commercial use at will, but the source code cannot be obtained and no technical
+> assistance can be obtained. Please forgive me
 
 ### Install IDE - Ideac
 
@@ -28,11 +31,11 @@
 
 ##### Install plugins - Highlighter
 
-![Emmylua](https://gitlab.com/h-document/singluar/-/raw/main/images/emmylua.png)
+![Emmylua](https://gitlab.com/h-document/singluar/-/raw/main/assets/emmylua.png)
 
-![ImageIconViewer](https://gitlab.com/h-document/singluar/-/raw/main/images/imageIconViewer.png)
+![ImageIconViewer](https://gitlab.com/h-document/singluar/-/raw/main/assets/imageIconViewer.png)
 
-![ColorHighlighter](https://gitlab.com/h-document/singluar/-/raw/main/images/colorHighlighter.png)
+![ColorHighlighter](https://gitlab.com/h-document/singluar/-/raw/main/assets/colorHighlighter.png)
 
 ### Open the terminal and enter the root
 
@@ -52,7 +55,7 @@
 > sl.exe run demo -h
 ```
 
-###### Warm prompt: the design content of this document is only the tip of the iceberg. <a target="_blank" href="https://afdian.net/a/hunzsig">SPONSOR</a>
+###### Warm tip: The document display part is only the tip of the iceberg. You can explore it yourself <a target="_blank" href="https://afdian.net/a/hunzsig">Invite the author to have a cup of tea</a>
 
 ###### When using win11, especially the newer version, you sometimes encounter pop-up errors (but you can continue to play)
 

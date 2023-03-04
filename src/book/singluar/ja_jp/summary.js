@@ -43,6 +43,8 @@ import {
   UnorderedListOutlined,
   FontSizeOutlined,
   StockOutlined,
+  TeamOutlined,
+  QuestionCircleOutlined,
 } from "@ant-design/icons";
 
 // only one layout
@@ -90,6 +92,7 @@ export default [
       {icon: <StockOutlined/>, key: 'orderRoute', label: "計画"},
     ]
   },
+  {icon: <QuestionCircleOutlined/>, key: 'problemUI', label: "UI難病"},
   {
     icon: <QuestionOutlined/>, key: 'other', label: "他のもの", children: [
       {icon: <SetOutline/>, key: 'jetbrain', label: "Jetbrain設定"},
@@ -101,4 +104,5 @@ export default [
       {icon: <TransportQRcodeOutline/>, key: 'lua_engine', label: "YDluaエンジン"},
     ]
   },
+  {icon: <TeamOutlined/>, key: 'fans', label: "ファン版"},
 ]
