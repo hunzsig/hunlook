@@ -1,4 +1,4 @@
-## UI Detail
+## Detail
 
 ```lua
 local kit = 'my_detail'

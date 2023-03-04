@@ -1,7 +1,6 @@
-## UI TargetGage
+## TargetGage
 
 ```lua
-
 --[[
     目標血條：<Gage>
     include: 血條、buff等

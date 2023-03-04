@@ -1,7 +1,6 @@
-## UI TargetGage
+## TargetGage
 
 ```lua
-
 --[[
     標的血液ストリップ：<Gage>
     include：血液ストリップ、buffなど

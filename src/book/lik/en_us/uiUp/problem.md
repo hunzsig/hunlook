@@ -1,4 +1,4 @@
-## UI problems
+## Problems
 
 ###### Here is a summary of the process and solutions of various strange problems encountered in the process of UI production
 

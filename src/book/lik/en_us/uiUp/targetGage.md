@@ -1,7 +1,6 @@
-## UI TargetGage
+## TargetGage
 
 ```lua
-
 --[[
     target HP bar：<Gage>
     include: HP bar、buff etc.
