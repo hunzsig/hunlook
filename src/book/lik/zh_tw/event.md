@@ -26,9 +26,9 @@ EVENT.Prop = {
 ---@alias noteOnUnitDestroyData {triggerObject:Unit} 單位
 EVENT.Object = {
     --- 物件建立
-    Create = "CorpseCreate",
+    Create = "ObjectCreate",
     --- 物件毀滅
-    Destroy = "CorpseDestroy",
+    Destroy = "ObjectDestroy",
 }
 
 EVENT.Game = {
@@ -329,13 +329,13 @@ EVENT.Store = {
     Sell = "storeSell",
 }
 
----@alias noteOnRectBase {triggerRect:Region}
+---@alias noteOnRegionBase {triggerRegion:Region}
 EVENT.Region = {
     --- 進入區域
-    ---@alias noteOnRectEnterData noteOnRectBase
+    ---@alias noteOnRegionEnterData noteOnRegionBase
     Enter = "rectEnter",
     --- 離開區域
-    ---@alias noteOnRectLeaveData noteOnRectBase
+    ---@alias noteOnRegionLeaveData noteOnRegionBase
     Leave = "rectLeave",
 }
 

@@ -16,13 +16,13 @@ Region("円形域", "circle", 0, 0, 500, 500)
 
 ```lua
 local r = Region("方形域", "square", 0, 0, 500, 500)
----@param enterData noteOnRectEnterData
+---@param enterData noteOnRegionEnterData
 r:onEvent(EVENT.Region.Enter, function(enterData)
-    print("Enter", enterData.triggerRect:name(), enterData.triggerUnit:name())
+    print("Enter", enterData.triggerRegion:name(), enterData.triggerUnit:name())
 end)
----@param enterData noteOnRectLeaveData
+---@param enterData noteOnRegionLeaveData
 r:onEvent(EVENT.Region.Leave, function(enterData)
-    print("Leave", enterData.triggerRect:name(), enterData.triggerUnit:name())
+    print("Leave", enterData.triggerRegion:name(), enterData.triggerUnit:name())
 end)
 ```
 

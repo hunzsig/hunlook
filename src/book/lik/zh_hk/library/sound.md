@@ -55,7 +55,7 @@ local v3d = V3d("lv")
 
 v3d:xyz(0,0,0) -- 綁定點
 v3d:unit(bindUnit) -- 綁定單位
-v3d:Region(bindRect) -- 綁定區域
+v3d:Region(bindRegion) -- 綁定區域
 
 v3d:play() -- 全部玩家聽到
 -- 指定玩家用法

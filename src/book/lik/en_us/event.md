@@ -26,9 +26,9 @@ EVENT.Prop = {
 ---@alias noteOnUnitDestroyData {triggerObject:Unit}
 EVENT.Object = {
     --- objects creating
-    Create = "CorpseCreate",
+    Create = "ObjectCreate",
     --- Object destruction
-    Destroy = "CorpseDestroy",
+    Destroy = "ObjectDestroy",
 }
 
 EVENT.Game = {
