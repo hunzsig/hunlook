@@ -45,6 +45,7 @@ import {
   StockOutlined,
   TeamOutlined,
   QuestionCircleOutlined,
+  HeartOutlined,
 } from "@ant-design/icons";
 
 // only one layout
@@ -104,5 +105,6 @@ export default [
       {icon: <TransportQRcodeOutline/>, key: 'lua_engine', label: "YDLua引擎"},
     ]
   },
-  {icon: <TeamOutlined/>, key: 'fans', label: "成为粉丝"},
+  {icon: <HeartOutlined/>, key: 'sponsor', label: "熱心發電榜", net: "https://afdian.net/a/hunzsig?tab=sponsor"},
+  {icon: <TeamOutlined/>, key: 'fans', label: "成為粉絲"},
 ]

@@ -3,19 +3,20 @@ import React from "react";
 import {
   BankcardOutline,
   FingerdownOutline,
-  UserContactOutline,
-  SmileOutline,
   KoubeiOutline,
   PictureOutline,
+  SmileOutline,
+  UserContactOutline,
 } from "antd-mobile-icons";
 
 import {
   ApartmentOutlined,
-  ReadOutlined,
-  FilterOutlined,
   ClockCircleOutlined,
-  WarningOutlined,
   EllipsisOutlined,
+  FilterOutlined,
+  HeartOutlined,
+  ReadOutlined,
+  WarningOutlined,
 } from "@ant-design/icons";
 
 // only one layout
@@ -33,4 +34,5 @@ export default [
   {icon: <UserContactOutline/>, key: 'enemy', label: "设定敌人玩家"},
   {icon: <EllipsisOutlined/>, key: 'sk_js_leap', label: "一刹"},
   {icon: <EllipsisOutlined/>, key: 'sk_js_slash', label: "无影斩"},
+  {icon: <HeartOutlined/>, key: 'sponsor', label: "热心发电榜", net: "https://afdian.net/a/hunzsig?tab=sponsor"},
 ]
