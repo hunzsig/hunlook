@@ -5,6 +5,7 @@ import {SoundOutline, SoundMuteOutline} from "antd-mobile-icons";
 import {TranslationOutlined, LikeOutlined} from "@ant-design/icons";
 import {History, LocalStorage, Parse} from 'h-react-antd-mobile';
 import Book from './Book';
+import Net from './Net';
 
 class Homepage extends Component {
   constructor(props) {
@@ -33,7 +34,13 @@ class Homepage extends Component {
   push = () => {
     let u = '/' + Parse.urlEncode({p: this.state.p, n: this.state.n})
     window.history.replaceState(null, null, History.prefix + u);
-    document.getElementById("page").scrollTop = 0;
+    const ids = ["page", "net"]
+    ids.forEach((value) => {
+      const e = document.getElementById(value)
+      if (e) {
+        e.scrollTop = 0;
+      }
+    })
   }
 
   summary = () => {
@@ -65,6 +72,25 @@ class Homepage extends Component {
       })
     }
     return this.books[k]
+  }
+
+  net = () => {
+    let summary = this.summary()
+    let net = undefined
+    let children = undefined;
+    for (let i in summary) {
+      const v = summary[i]
+      if (v.key === this.state.p) {
+        children = v.children;
+        net = v.net;
+        break;
+      }
+    }
+    if (children !== undefined) {
+      net = children[0].net;
+    }
+    console.log(net)
+    return net
   }
 
   renderSideBar = () => {
@@ -191,67 +217,71 @@ class Homepage extends Component {
             {this.renderSideBar()}
           </SideBar>
         </div>
-        <div className="books">
-          <div className="actions">
-            {
-              History.state.support &&
-              <Button
-                color='warning'
-                onClick={() => {
-                  window.open(History.state.support)
-                }}
-              >
-                <LikeOutlined/>
-              </Button>
-            }
-            {
-              History.state.lang.length > 1 &&
-              <Button
-                color='primary'
-                onClick={() => {
-                  const actions = [];
-                  History.state.lang.forEach((l) => {
-                    actions.push({
-                      key: l.key,
-                      text: l.label,
-                      disabled: l.key === this.state.l,
-                      primary: true,
-                      onClick: () => {
-                        this.state.l = l.key;
-                        this.setState({l: this.state.l});
-                        LocalStorage.set("lang", this.state.l);
-                      }
+        {
+          this.net() !== undefined ?
+            <Net href={this.net()}/> :
+            <div className="books">
+              <div className="tabs">
+                <Tabs
+                  stretch={false}
+                  activeLineMode="auto"
+                  activeKey={this.state.n}
+                  onChange={(key) => {
+                    this.state.n = key;
+                    this.setState({
+                      n: key,
                     })
-                  })
-                  Modal.show({
-                    closeOnAction: true,
-                    closeOnMaskClick: true,
-                    actions: actions,
-                  })
-                }}
-              >
-                <TranslationOutlined/>
-              </Button>
-            }
-          </div>
-          <div className="tabs">
-            <Tabs
-              stretch={false}
-              activeLineMode="auto"
-              activeKey={this.state.n}
-              onChange={(key) => {
-                this.state.n = key;
-                this.setState({
-                  n: key,
-                })
-                this.push()
+                    this.push()
+                  }}
+                >
+                  {this.renderTabs()}
+                </Tabs>
+              </div>
+              <Book path={this.book()}>{this.stat()}</Book>
+            </div>
+        }
+        {stat && <iframe style={{display: "none", opacity: 0}} src={stat}/>}
+        <div className="actions">
+          {
+            History.state.support &&
+            <Button
+              color='warning'
+              onClick={() => {
+                window.open(History.state.support)
               }}
             >
-              {this.renderTabs()}
-            </Tabs>
-          </div>
-          <Book path={this.book()}>{this.stat()}</Book>
-          {stat && <iframe style={{display: "none", opacity: 0}} src={stat}/>}
+              <LikeOutlined/>
+            </Button>
+          }
+          {
+            History.state.lang.length > 1 &&
+            <Button
+              color='primary'
+              onClick={() => {
+                const actions = [];
+                History.state.lang.forEach((l) => {
+                  actions.push({
+                    key: l.key,
+                    text: l.label,
+                    disabled: l.key === this.state.l,
+                    primary: true,
+                    onClick: () => {
+                      this.state.l = l.key;
+                      this.setState({l: this.state.l});
+                      LocalStorage.set("lang", this.state.l);
+                    }
+                  })
+                })
+                Modal.show({
+                  closeOnAction: true,
+                  closeOnMaskClick: true,
+                  actions: actions,
+                })
+              }}
+            >
+              <TranslationOutlined/>
+            </Button>
+          }
         </div>
         {
           Cover &&

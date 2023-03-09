@@ -42,6 +42,8 @@ import {
   FullscreenExitOutlined,
   FunctionOutlined,
   FundViewOutlined,
+  HeartOutlined,
+  HeatMapOutlined,
   HighlightOutlined,
   LoadingOutlined,
   MacCommandOutlined,
@@ -74,7 +76,7 @@ export default [
   {icon: <AntDesignOutlined/>, key: 'cmd', label: "コマンドツール"},
   {icon: <SubnodeOutlined/>, key: 'japi', label: "JAPI"},
   {icon: <FontColorsOutlined/>, key: 'assets', label: "Assets"},
-  {icon: <AppstoreOutlined/>, key: 'base', label: "ベースライブラリ"},
+  {icon: <HeatMapOutlined/>, key: 'base', label: "ベースライブラリ"},
   {icon: <AppstoreOutlined/>, key: 'object', label: "対象"},
   {icon: <AppstoreOutlined/>, key: 'ability', label: "コンピテンシー"},
   {icon: <AppstoreAddOutlined/>, key: 'sublib', label: "拡張ライブラリ"},
@@ -158,4 +160,5 @@ export default [
       {icon: <TransportQRcodeOutline/>, key: 'lua_engine', label: "YDLuaエンジン"},
     ]
   },
+  {icon: <HeartOutlined/>, key: 'sponsor', label: "スポンサー", net: "https://afdian.net/a/hunzsig?tab=sponsor"},
 ]
