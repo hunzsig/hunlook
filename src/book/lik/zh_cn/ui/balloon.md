@@ -15,7 +15,10 @@ Game():balloonKeyboard('F')
 Game():balloonVoicePop(nil, 70)
 Game():balloonVoiceFlip("chatClick", 15)
 
---- 在单位TPL配置中，需要为其配置balloon数据
+--- 作为触发消息的单位TPL配置中，需要为其配置为lighter
+UnitTpl(''):balloonLighter(true)
+
+--- 需要发布消息的单位TPL配置中，需要为其配置balloon数据
 --- message 数据为对话多段数据，里面有多组就可以切换对话
 --- tips 必须返回 string[]
 UnitTpl('')

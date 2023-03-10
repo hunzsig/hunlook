@@ -15,7 +15,10 @@ Game():balloonKeyboard('F')
 Game():balloonVoicePop(nil, 70)
 Game():balloonVoiceFlip("chatClick", 15)
 
---- 単位TPL構成では、balloon データを構成する必要があります
+--- トリガメッセージとしての単位TPL構成では、lighterとして構成する必要がある
+UnitTpl(''):balloonLighter(true)
+
+--- メッセージを解放する必要がある単位TPL構成では、balloon資料を配置する必要がある
 --- messageデータは会話多段データであり、中に複数組あれば会話を切り替えることができる
 --- tips は string[] を返さなければなりません
 UnitTpl('')

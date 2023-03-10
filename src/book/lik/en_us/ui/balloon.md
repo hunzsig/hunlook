@@ -15,7 +15,10 @@ Game():balloonKeyboard('F')
 Game():balloonVoicePop(nil, 70)
 Game():balloonVoiceFlip("chatClick", 15)
 
---- In the unit TPL configuration, balloon data needs to be configured
+--- In the TPL configuration of the unit that triggers the message, it needs to be configured as a lighter
+UnitTpl(''):balloonLighter(true)
+
+--- In the TPL configuration of the unit that needs to release the message, the balloon data needs to be configured
 --- The message data is the conversation multi-segment data, and the conversation can be switched if there are multiple groups in it
 --- Tips must return string[]
 UnitTpl('')
