@@ -24,6 +24,7 @@ EVENT.Prop = {
 ---@alias noteOnEffectDestroyData {triggerObject:Effect} 効果
 ---@alias noteOnItemDestroyData {triggerObject:Item} アイテム
 ---@alias noteOnUnitDestroyData {triggerObject:Unit} 単位
+---@alias noteOnTimerDestroyData {triggerObject:Timer} タイマ
 EVENT.Object = {
     --- オブジェクト作成
     Create = "ObjectCreate",
@@ -91,10 +92,13 @@ EVENT.Unit = {
     --- ぼうぎょを破る
     ---@alias noteOnUnitBreakArmorData noteOnUnitBase|{targetUnit:Unit,breakType:"無視タイプ"}
     BreakArmor = "unitBreakArmor",
+    --- シールド減少
+    ---@alias noteOnUnitShieldData noteOnUnitBase|{targetUnit:Unit,value:"ブレークシールド値"}
+    Shield = "unitShield",
     --- ターゲットを飛ばす
     ---@alias noteOnUnitCrackFlyData noteOnUnitBase|{targetUnit:Unit,distance:"撃退距離",height:"しょうげきこうど",duration:"凌空時間長"}
     CrackFly = "unitCrackFly",
-    --- 致命的ヒットターゲット（バルク属性方式）
+    --- 致命的ヒットターゲット（自本属性方式）
     ---@alias noteOnUnitCritData noteOnUnitBase|{targetUnit:Unit}
     Crit = "unitCrit",
     --- 致命的ヒットターゲット（スキル呼び出し）
@@ -128,7 +132,7 @@ EVENT.Unit = {
     ---@alias noteOnUnitOrderAttackData noteOnUnitBase|{targetX:number,targetY:number}
     OrderAttack = "unitOrderAttack",
     --- 魔付き反応
-    ---@alias noteOnUnitEnchantData noteOnUnitBase|{sourceUnit:Unit,enchantType:"魔付きタイプ",addition:"加算率"}
+    ---@alias noteOnUnitEnchantData noteOnUnitBase|{sourceUnit:Unit,enchantType:"魔付きタイプ",percent:"加算率"}
     Enchant = "unitEnchant",
     --- 攻撃吸血
     ---@alias noteOnUnitHPSuckAttackData noteOnUnitBase|{targetUnit:Unit,value:"吸血値",percent:"吸血率"}
@@ -151,6 +155,9 @@ EVENT.Unit = {
     --- 全抵抗[減傷]
     ---@alias noteOnUnitImmuneReductionData noteOnUnitBase|{sourceUnit:Unit}
     ImmuneReduction = "unitImmuneReduction",
+    --- 免疫[魔付]
+    ---@alias noteOnUnitImmuneEnchantData noteOnUnitBase|{sourceUnit:Unit,enchantType:"魔付きタイプ"}
+    ImmuneEnchant = "unitImmuneEnchant",
     --- 単位敵を殺す
     ---@alias noteOnUnitKillData noteOnUnitBase|{targetUnit:Unit}
     Kill = "unitKill",
@@ -202,13 +209,17 @@ EVENT.Unit = {
     --- アイテム欄に変化があった
     ---@alias noteOnUnitItemSlotChangeData noteOnUnitBase|{triggerSlot:ItemSlot}
     ItemSlotChange = "unitItemSlotChange",
+    --- Be
     Be = {
-        --- 攻撃準備されている
+        --- 攻撃準備
         ---@alias noteOnUnitBeBeforeAttackData noteOnUnitBase|{sourceUnit:Unit}
         BeforeAttack = "be:unitBeforeAttack",
         --- 攻撃される
         ---@alias noteOnUnitBeAttackData noteOnUnitHurtData
         Attack = "be:unitAttack",
+        --- 単位が殺された
+        ---@alias noteOnUnitBeKillData noteOnUnitBase|{sourceUnit:Unit}
+        Kill = "be:unitKill",
         --- 回避される
         ---@alias noteOnUnitBeAvoidData noteOnUnitBase|{targetUnit:Unit}
         Avoid = "be:unitAvoid",
@@ -278,7 +289,7 @@ EVENT.Ability = {
     ---@alias noteOnAbilitySpellData noteOnAbilityBase|{triggerItem:Item,targetUnit:Unit,targetX:number,targetY:number,targetZ:number}
     Spell = "abilitySpell",
     --- スキルの有効化
-    ---@alias noteOnAbilityEffectiveData noteOnAbilityBase|{triggerItem:Item,targetUnit:Unit,targetX:number,targetY:number,targetZ:number}
+    ---@alias noteOnAbilityEffectiveData noteOnAbilitySpellData
     Effective = "abilityEffective",
     --- 技能継続施法周期ごと（動作時）
     ---@alias noteOnAbilityCastingData noteOnAbilitySpellData
@@ -309,7 +320,7 @@ EVENT.Item = {
     ---@alias noteOnItemUsedData noteOnItemBase|noteOnAbilityEffectiveData
     Used = "itemUsed",
     --- アイテムを破棄
-    ---@alias noteOnItemDropData noteOnItemBase
+    ---@alias noteOnItemDropData noteOnItemBase|{targetX:number,targetY:number}
     Drop = "itemDrop",
     --- 伝達物
     ---@alias noteOnItemDeliverData noteOnItemBase|{targetUnit:Unit}
@@ -332,10 +343,10 @@ EVENT.Store = {
 ---@alias noteOnRegionBase {triggerRegion:Region}
 EVENT.Region = {
     --- ゾーンに入る
-    ---@alias noteOnRegionEnterData noteOnRegionBase
+    ---@alias noteOnRegionEnterData noteOnRegionBase|{triggerUnit:Unit}
     Enter = "rectEnter",
     --- ゾーンを出る
-    ---@alias noteOnRegionLeaveData noteOnRegionBase
+    ---@alias noteOnRegionLeaveData noteOnRegionBase|{triggerUnit:Unit}
     Leave = "rectLeave",
 }
 

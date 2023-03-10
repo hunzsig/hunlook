@@ -24,6 +24,7 @@ EVENT.Prop = {
 ---@alias noteOnEffectDestroyData {triggerObject:Effect} 特效
 ---@alias noteOnItemDestroyData {triggerObject:Item} 物品
 ---@alias noteOnUnitDestroyData {triggerObject:Unit} 单位
+---@alias noteOnTimerDestroyData {triggerObject:Timer} 计时器
 EVENT.Object = {
     --- 对象创建
     Create = "ObjectCreate",
@@ -91,10 +92,13 @@ EVENT.Unit = {
     --- 破防
     ---@alias noteOnUnitBreakArmorData noteOnUnitBase|{targetUnit:Unit,breakType:"无视类型"}
     BreakArmor = "unitBreakArmor",
+    --- 护盾减少
+    ---@alias noteOnUnitShieldData noteOnUnitBase|{targetUnit:Unit,value:"破盾值"}
+    Shield = "unitShield",
     --- 击飞目标
     ---@alias noteOnUnitCrackFlyData noteOnUnitBase|{targetUnit:Unit,distance:"击退距离",height:"击飞高度",duration:"凌空时长"}
     CrackFly = "unitCrackFly",
-    --- 暴击目标（本体属性方式）
+    --- 暴击目标（自身属性方式）
     ---@alias noteOnUnitCritData noteOnUnitBase|{targetUnit:Unit}
     Crit = "unitCrit",
     --- 暴击目标（调用技能方式）
@@ -128,7 +132,7 @@ EVENT.Unit = {
     ---@alias noteOnUnitOrderAttackData noteOnUnitBase|{targetX:number,targetY:number}
     OrderAttack = "unitOrderAttack",
     --- 附魔反应
-    ---@alias noteOnUnitEnchantData noteOnUnitBase|{sourceUnit:Unit,enchantType:"附魔类型",addition:"加成百分比"}
+    ---@alias noteOnUnitEnchantData noteOnUnitBase|{sourceUnit:Unit,enchantType:"附魔类型",percent:"加成百分比"}
     Enchant = "unitEnchant",
     --- 攻击吸血
     ---@alias noteOnUnitHPSuckAttackData noteOnUnitBase|{targetUnit:Unit,value:"吸血值",percent:"吸血百分比"}
@@ -151,6 +155,9 @@ EVENT.Unit = {
     --- 全抵抗[减伤]
     ---@alias noteOnUnitImmuneReductionData noteOnUnitBase|{sourceUnit:Unit}
     ImmuneReduction = "unitImmuneReduction",
+    --- 免疫[附魔]
+    ---@alias noteOnUnitImmuneEnchantData noteOnUnitBase|{sourceUnit:Unit,enchantType:"附魔类型"}
+    ImmuneEnchant = "unitImmuneEnchant",
     --- 单位杀敌
     ---@alias noteOnUnitKillData noteOnUnitBase|{targetUnit:Unit}
     Kill = "unitKill",
@@ -202,13 +209,17 @@ EVENT.Unit = {
     --- 物品栏有所变化
     ---@alias noteOnUnitItemSlotChangeData noteOnUnitBase|{triggerSlot:ItemSlot}
     ItemSlotChange = "unitItemSlotChange",
+    --- 被
     Be = {
-        --- 准备被攻击
+        --- 被准备攻击
         ---@alias noteOnUnitBeBeforeAttackData noteOnUnitBase|{sourceUnit:Unit}
         BeforeAttack = "be:unitBeforeAttack",
         --- 被攻击
         ---@alias noteOnUnitBeAttackData noteOnUnitHurtData
         Attack = "be:unitAttack",
+        --- 单位被杀
+        ---@alias noteOnUnitBeKillData noteOnUnitBase|{sourceUnit:Unit}
+        Kill = "be:unitKill",
         --- 被回避
         ---@alias noteOnUnitBeAvoidData noteOnUnitBase|{targetUnit:Unit}
         Avoid = "be:unitAvoid",
@@ -278,7 +289,7 @@ EVENT.Ability = {
     ---@alias noteOnAbilitySpellData noteOnAbilityBase|{triggerItem:Item,targetUnit:Unit,targetX:number,targetY:number,targetZ:number}
     Spell = "abilitySpell",
     --- 技能生效
-    ---@alias noteOnAbilityEffectiveData noteOnAbilityBase|{triggerItem:Item,targetUnit:Unit,targetX:number,targetY:number,targetZ:number}
+    ---@alias noteOnAbilityEffectiveData noteOnAbilitySpellData
     Effective = "abilityEffective",
     --- 技能持续施法每周期时（动作时）
     ---@alias noteOnAbilityCastingData noteOnAbilitySpellData
@@ -309,7 +320,7 @@ EVENT.Item = {
     ---@alias noteOnItemUsedData noteOnItemBase|noteOnAbilityEffectiveData
     Used = "itemUsed",
     --- 丢弃物品
-    ---@alias noteOnItemDropData noteOnItemBase
+    ---@alias noteOnItemDropData noteOnItemBase|{targetX:number,targetY:number}
     Drop = "itemDrop",
     --- 传递物品
     ---@alias noteOnItemDeliverData noteOnItemBase|{targetUnit:Unit}
@@ -332,10 +343,10 @@ EVENT.Store = {
 ---@alias noteOnRegionBase {triggerRegion:Region}
 EVENT.Region = {
     --- 进入区域
-    ---@alias noteOnRegionEnterData noteOnRegionBase
+    ---@alias noteOnRegionEnterData noteOnRegionBase|{triggerUnit:Unit}
     Enter = "rectEnter",
     --- 离开区域
-    ---@alias noteOnRegionLeaveData noteOnRegionBase
+    ---@alias noteOnRegionLeaveData noteOnRegionBase|{triggerUnit:Unit}
     Leave = "rectLeave",
 }
 

@@ -24,6 +24,7 @@ EVENT.Prop = {
 ---@alias noteOnEffectDestroyData {triggerObject:Effect}
 ---@alias noteOnItemDestroyData {triggerObject:Item}
 ---@alias noteOnUnitDestroyData {triggerObject:Unit}
+---@alias noteOnTimerDestroyData {triggerObject:Timer}
 EVENT.Object = {
     --- objects creating
     Create = "ObjectCreate",
@@ -91,10 +92,13 @@ EVENT.Unit = {
     --- Armor piercing
     ---@alias noteOnUnitBreakArmorData noteOnUnitBase|{targetUnit:Unit,breakType:"type"}
     BreakArmor = "unitBreakArmor",
+    --- Shield reduction
+    ---@alias noteOnUnitShieldData noteOnUnitBase|{targetUnit:Unit,value:"Shield breaking value"}
+    Shield = "unitShield",
     --- Hit the target
     ---@alias noteOnUnitCrackFlyData noteOnUnitBase|{targetUnit:Unit,distance:"value",height:"value",duration:"time"}
     CrackFly = "unitCrackFly",
-    --- Critical hit target(Ontology attribute method)
+    --- Critical hit target(Self-attribute mode)
     ---@alias noteOnUnitCritData noteOnUnitBase|{targetUnit:Unit}
     Crit = "unitCrit",
     --- Critical hit target(Call ability method)
@@ -128,7 +132,7 @@ EVENT.Unit = {
     ---@alias noteOnUnitOrderAttackData noteOnUnitBase|{targetX:number,targetY:number}
     OrderAttack = "unitOrderAttack",
     --- Enchant
-    ---@alias noteOnUnitEnchantData noteOnUnitBase|{sourceUnit:Unit,enchantType:"type",addition:"%"}
+    ---@alias noteOnUnitEnchantData noteOnUnitBase|{sourceUnit:Unit,enchantType:"type",percent:"%"}
     Enchant = "unitEnchant",
     --- Attack blood sucking
     ---@alias noteOnUnitHPSuckAttackData noteOnUnitBase|{targetUnit:Unit,value:"value",percent:"%"}
@@ -151,6 +155,9 @@ EVENT.Unit = {
     --- Total resistance[reduction]
     ---@alias noteOnUnitImmuneReductionData noteOnUnitBase|{sourceUnit:Unit}
     ImmuneReduction = "unitImmuneReduction",
+    --- Enchant Immune
+    ---@alias noteOnUnitImmuneEnchantData noteOnUnitBase|{sourceUnit:Unit,enchantType:"type"}
+    ImmuneEnchant = "unitImmuneEnchant",
     --- Unit kills enemies
     ---@alias noteOnUnitKillData noteOnUnitBase|{targetUnit:Unit}
     Kill = "unitKill",
@@ -202,13 +209,17 @@ EVENT.Unit = {
     --- The item column has changed
     ---@alias noteOnUnitItemSlotChangeData noteOnUnitBase|{triggerSlot:ItemSlot}
     ItemSlotChange = "unitItemSlotChange",
+    --- Be
     Be = {
-        --- Prepare to be attacked
+        --- Before attacked
         ---@alias noteOnUnitBeBeforeAttackData noteOnUnitBase|{sourceUnit:Unit}
         BeforeAttack = "be:unitBeforeAttack",
         --- Be attacked
         ---@alias noteOnUnitBeAttackData noteOnUnitHurtData
         Attack = "be:unitAttack",
+        --- Before killed
+        ---@alias noteOnUnitBeKillData noteOnUnitBase|{sourceUnit:Unit}
+        Kill = "be:unitKill",
         --- Be evaded
         ---@alias noteOnUnitBeAvoidData noteOnUnitBase|{targetUnit:Unit}
         Avoid = "be:unitAvoid",
@@ -278,7 +289,7 @@ EVENT.Ability = {
     ---@alias noteOnAbilitySpellData noteOnAbilityBase|{triggerItem:Item,targetUnit:Unit,targetX:number,targetY:number,targetZ:number}
     Spell = "abilitySpell",
     --- Skills come into effect
-    ---@alias noteOnAbilityEffectiveData noteOnAbilityBase|{triggerItem:Item,targetUnit:Unit,targetX:number,targetY:number,targetZ:number}
+    ---@alias noteOnAbilityEffectiveData noteOnAbilitySpellData
     Effective = "abilityEffective",
     --- Skill continuous casting weekly period (action time)
     ---@alias noteOnAbilityCastingData noteOnAbilitySpellData
@@ -309,7 +320,7 @@ EVENT.Item = {
     ---@alias noteOnItemUsedData noteOnItemBase|noteOnAbilityEffectiveData
     Used = "itemUsed",
     --- Drop items
-    ---@alias noteOnItemDropData noteOnItemBase
+    ---@alias noteOnItemDropData noteOnItemBase|{targetX:number,targetY:number}
     Drop = "itemDrop",
     --- Deliver items
     ---@alias noteOnItemDeliverData noteOnItemBase|{targetUnit:Unit}
@@ -332,10 +343,10 @@ EVENT.Store = {
 ---@alias noteOnRegionBase {triggerRegion:Region}
 EVENT.Region = {
     --- Entry the region
-    ---@alias noteOnRegionEnterData noteOnRegionBase
+    ---@alias noteOnRegionEnterData noteOnRegionBase|{triggerUnit:Unit}
     Enter = "regionEnter",
     --- Leave the region
-    ---@alias noteOnRegionLeaveData noteOnRegionBase
+    ---@alias noteOnRegionLeaveData noteOnRegionBase|{triggerUnit:Unit}
     Leave = "regionLeave",
 }
 
