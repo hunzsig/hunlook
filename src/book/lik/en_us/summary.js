@@ -31,6 +31,7 @@ import {
   DingtalkOutlined,
   DollarCircleOutlined,
   DragOutlined,
+  DribbbleOutlined,
   ExpandOutlined,
   FireOutlined,
   FolderViewOutlined,
@@ -54,6 +55,7 @@ import {
   ProfileOutlined,
   PullRequestOutlined,
   QuestionOutlined,
+  RadarChartOutlined,
   RetweetOutlined,
   ScheduleOutlined,
   SoundOutlined,
@@ -74,13 +76,18 @@ export default [
   {icon: <BulbOutlined/>, key: 'index', label: "Start"},
   {icon: <ApartmentOutlined/>, key: 'struct', label: "Struct"},
   {icon: <AntDesignOutlined/>, key: 'cmd', label: "CMD"},
+  {icon: <FireOutlined/>, key: 'hot', label: "Hot"},
   {icon: <SubnodeOutlined/>, key: 'japi', label: "JAPI"},
   {icon: <FontColorsOutlined/>, key: 'assets', label: "Assets"},
-  {icon: <HeatMapOutlined/>, key: 'base', label: "Base"},
-  {icon: <AppstoreOutlined/>, key: 'object', label: "Object"},
-  {icon: <AppstoreOutlined/>, key: 'ability', label: "Ability"},
-  {icon: <AppstoreAddOutlined/>, key: 'sublib', label: "SubLib"},
   {icon: <PullRequestOutlined/>, key: 'event', label: "Event"},
+  {
+    icon: <RadarChartOutlined/>, key: 'core', label: "Core", children: [
+      {icon: <HeatMapOutlined/>, key: 'base', label: "Base"},
+      {icon: <AppstoreOutlined/>, key: 'object', label: "Object"},
+      {icon: <DribbbleOutlined/>, key: 'ability', label: "Ability"},
+      {icon: <AppstoreAddOutlined/>, key: 'sublib', label: "SubLib"},
+    ]
+  },
   {
     icon: <FunctionOutlined/>, key: 'library', label: "Library", children: [
       {icon: <BugOutlined/>, key: 'debug', label: "Debug"},

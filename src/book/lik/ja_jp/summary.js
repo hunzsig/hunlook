@@ -31,6 +31,7 @@ import {
   DingtalkOutlined,
   DollarCircleOutlined,
   DragOutlined,
+  DribbbleOutlined,
   ExpandOutlined,
   FireOutlined,
   FolderViewOutlined,
@@ -54,6 +55,7 @@ import {
   ProfileOutlined,
   PullRequestOutlined,
   QuestionOutlined,
+  RadarChartOutlined,
   RetweetOutlined,
   ScheduleOutlined,
   SoundOutlined,
@@ -74,13 +76,18 @@ export default [
   {icon: <BulbOutlined/>, key: 'index', label: "始める"},
   {icon: <ApartmentOutlined/>, key: 'struct', label: "プロジェクト構造"},
   {icon: <AntDesignOutlined/>, key: 'cmd', label: "コマンドツール"},
+  {icon: <FireOutlined/>, key: 'hot', label: "ねつこうしん"},
   {icon: <SubnodeOutlined/>, key: 'japi', label: "JAPI"},
   {icon: <FontColorsOutlined/>, key: 'assets', label: "Assets"},
-  {icon: <HeatMapOutlined/>, key: 'base', label: "ベースライブラリ"},
-  {icon: <AppstoreOutlined/>, key: 'object', label: "対象"},
-  {icon: <AppstoreOutlined/>, key: 'ability', label: "コンピテンシー"},
-  {icon: <AppstoreAddOutlined/>, key: 'sublib', label: "拡張ライブラリ"},
   {icon: <PullRequestOutlined/>, key: 'event', label: "事件"},
+  {
+    icon: <RadarChartOutlined/>, key: 'core', label: "機能コア", children: [
+      {icon: <HeatMapOutlined/>, key: 'base', label: "ベースライブラリ"},
+      {icon: <AppstoreOutlined/>, key: 'object', label: "対象"},
+      {icon: <DribbbleOutlined/>, key: 'ability', label: "コンピテンシー"},
+      {icon: <AppstoreAddOutlined/>, key: 'sublib', label: "拡張ライブラリ"},
+    ]
+  },
   {
     icon: <FunctionOutlined/>, key: 'library', label: "ライブラリ", children: [
       {icon: <BugOutlined/>, key: 'debug', label: "デバッグ"},

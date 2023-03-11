@@ -31,6 +31,7 @@ import {
   DingtalkOutlined,
   DollarCircleOutlined,
   DragOutlined,
+  DribbbleOutlined,
   ExpandOutlined,
   FireOutlined,
   FolderViewOutlined,
@@ -54,6 +55,7 @@ import {
   ProfileOutlined,
   PullRequestOutlined,
   QuestionOutlined,
+  RadarChartOutlined,
   RetweetOutlined,
   ScheduleOutlined,
   SoundOutlined,
@@ -74,13 +76,18 @@ export default [
   {icon: <BulbOutlined/>, key: 'index', label: "快速开始"},
   {icon: <ApartmentOutlined/>, key: 'struct', label: "项目结构"},
   {icon: <AntDesignOutlined/>, key: 'cmd', label: "命令工具"},
+  {icon: <FireOutlined/>, key: 'hot', label: "热更新"},
   {icon: <SubnodeOutlined/>, key: 'japi', label: "JAPI"},
   {icon: <FontColorsOutlined/>, key: 'assets', label: "Assets"},
-  {icon: <HeatMapOutlined/>, key: 'base', label: "根基库"},
-  {icon: <AppstoreOutlined/>, key: 'object', label: "对象门面"},
-  {icon: <AppstoreOutlined/>, key: 'ability', label: "技能库"},
-  {icon: <AppstoreAddOutlined/>, key: 'sublib', label: "拓展库"},
   {icon: <PullRequestOutlined/>, key: 'event', label: "事件"},
+  {
+    icon: <RadarChartOutlined />, key: 'core', label: "功能核心", children: [
+      {icon: <HeatMapOutlined/>, key: 'base', label: "根基库"},
+      {icon: <AppstoreOutlined/>, key: 'object', label: "对象门面"},
+      {icon: <DribbbleOutlined />, key: 'ability', label: "技能库"},
+      {icon: <AppstoreAddOutlined/>, key: 'sublib', label: "拓展库"},
+    ]
+  },
   {
     icon: <FunctionOutlined/>, key: 'library', label: "重要功能", children: [
       {icon: <BugOutlined/>, key: 'debug', label: "调试打印"},

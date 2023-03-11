@@ -1,4 +1,4 @@
-### Debug Print
+## Debug Print
 
 > **All** debugging, after -r is packaged, it will be invalid automatically, you can use it with peace of mind
 >

@@ -54,6 +54,7 @@ export default [
   {icon: <ApartmentOutlined/>, key: 'struct', label: "プロジェクト構造"},
   {icon: <ToolOutlined/>, key: 'cmd', label: "コマンドツール"},
   {icon: <BugOutlined/>, key: 'debug', label: "デバッグ"},
+  {icon: <FireOutlined/>, key: 'hot', label: "ねつこうしん"},
   {icon: <VideoCameraOutlined/>, key: 'video', label: "ビデオ録画"},
   {
     icon: <FunctionOutlined/>, key: 'library', label: "ライブラリ", children: [

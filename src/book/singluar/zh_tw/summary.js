@@ -54,6 +54,7 @@ export default [
   {icon: <ApartmentOutlined/>, key: 'struct', label: "專案結構"},
   {icon: <ToolOutlined/>, key: 'cmd', label: "命令工具"},
   {icon: <BugOutlined/>, key: 'debug', label: "除錯列印"},
+  {icon: <FireOutlined/>, key: 'hot', label: "熱更新"},
   {icon: <VideoCameraOutlined/>, key: 'video', label: "影片演示"},
   {
     icon: <FunctionOutlined/>, key: 'library', label: "功能庫", children: [

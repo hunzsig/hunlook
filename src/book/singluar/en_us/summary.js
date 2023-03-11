@@ -54,6 +54,7 @@ export default [
   {icon: <ApartmentOutlined/>, key: 'struct', label: "Struct"},
   {icon: <ToolOutlined/>, key: 'cmd', label: "CMD Tool"},
   {icon: <BugOutlined/>, key: 'debug', label: "Debug"},
+  {icon: <FireOutlined/>, key: 'hot', label: "Hot"},
   {icon: <VideoCameraOutlined/>, key: 'video', label: "Video"},
   {
     icon: <FunctionOutlined/>, key: 'library', label: "Library", children: [
