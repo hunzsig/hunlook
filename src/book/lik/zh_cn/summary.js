@@ -56,6 +56,7 @@ import {
   PullRequestOutlined,
   QuestionOutlined,
   RadarChartOutlined,
+  RadiusSettingOutlined,
   RetweetOutlined,
   ScheduleOutlined,
   SoundOutlined,
@@ -139,6 +140,7 @@ export default [
     icon: <FundViewOutlined/>, key: 'uiUp', label: "UI界面进阶", children: [
       {icon: <FrownOutlined/>, key: 'problem', label: "疑难杂症"},
       {icon: <FullscreenExitOutlined/>, key: 'adapter', label: "自适应"},
+      {icon: <RadiusSettingOutlined />, key: 'gradient', label: "渐变"},
       {icon: <MessageOutlined/>, key: 'echo', label: "消息体"},
       {icon: <ZoomInOutlined/>, key: 'detail', label: "详情展示"},
       {icon: <BoxPlotOutlined/>, key: 'targetGage', label: "状态条"},
