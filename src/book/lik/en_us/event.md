@@ -271,12 +271,6 @@ EVENT.Unit = {
     }
 }
 
-EVENT.Slot = {
-    --- The skill column has changed
-    ---@alias noteOnSlotAbilityData {triggerSlot: AbilitySlot,triggerUnit:Unit}
-    Ability = "slotAbility",
-}
-
 ---@alias noteOnAbilityBase {triggerAbility:Ability,triggerUnit:Unit}
 EVENT.Ability = {
     -- When the unit gains skills

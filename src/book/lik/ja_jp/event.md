@@ -271,12 +271,6 @@ EVENT.Unit = {
     }
 }
 
-EVENT.Slot = {
-    --- スキルバーが変更されました
-    ---@alias noteOnSlotAbilityData {triggerSlot: AbilitySlot,triggerUnit:Unit}
-    Ability = "slotAbility",
-}
-
 ---@alias noteOnAbilityBase {triggerAbility:Ability,triggerUnit:Unit}
 EVENT.Ability = {
     -- 単位でスキルを獲得した場合

@@ -271,12 +271,6 @@ EVENT.Unit = {
     }
 }
 
-EVENT.Slot = {
-    --- 技能欄有所變化
-    ---@alias noteOnSlotAbilityData {triggerSlot: AbilitySlot,triggerUnit:Unit}
-    Ability = "slotAbility",
-}
-
 ---@alias noteOnAbilityBase {triggerAbility:Ability,triggerUnit:Unit}
 EVENT.Ability = {
     -- 當單位獲得技能
