@@ -10,8 +10,6 @@
 >
 > normal指常规态、positive一般指友军态、negative一般指敌军态
 >
-> arrow 平时中心指针，以贴图左上角为瞄准点
->
 > aim 技能为点、单位目标时的指针，以贴图中心为瞄准点
 >
 > drag 拖拽生效时的指针，以贴图中心为瞄准点
@@ -26,7 +24,6 @@ Cursor()
     :sizeRate(20)
     :texture(
     {
-        arrow = { width = 0.024, height = 0.024 * 68 / 46, alpha = 255, normal = "arrow\\normal", positive = "arrow\\focus", negative = "arrow\\attack" },
         aim = { width = 0.04, height = 0.04, alpha = 255, normal = "aim\\white", positive = "aim\\green", negative = "aim\\red", neutral = "aim\\gold" },
         drag = { width = 0.04, height = 0.04, alpha = 255, normal = "drag\\normal" },
         circle = { alpha = 255, positive = "circle\\white", negative = "circle\\red" },
