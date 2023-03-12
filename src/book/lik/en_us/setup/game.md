@@ -1,6 +1,9 @@
 ### Game composition
 
 ```lua
+-- Optional hide initialization native UI
+Game():hideInterface(true)
+
 -- Optional configuration enable status bar
 Game():enableScreen(FrameBarStateClass, true)
 
