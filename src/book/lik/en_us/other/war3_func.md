@@ -17,9 +17,9 @@ players
 
 ```lua
 -- Asynchronous execution functions that allow asynchronous data
-japi.DzFrameSetTexture() -- YES
+japi.FrameSetTexture() -- YES
 async.call(Player(1),function()
-    japi.DzFrameSetTexture() -- YES
+    japi.FrameSetTexture() -- YES
 end)
 ```
 

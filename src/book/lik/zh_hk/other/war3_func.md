@@ -14,9 +14,9 @@
 
 ```lua
 -- 允許異步數據的異步執行函數
-japi.DzFrameSetTexture() -- 可以
+japi.FrameSetTexture() -- 可以
 async.call(Player(1),function()
-    japi.DzFrameSetTexture() -- 也可以
+    japi.FrameSetTexture() -- 也可以
 end)
 ```
 

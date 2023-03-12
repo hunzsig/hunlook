@@ -14,9 +14,9 @@
 
 ```lua
 -- 允許非同步資料的非同步執行函式
-japi.DzFrameSetTexture() -- 可以
+japi.FrameSetTexture() -- 可以
 async.call(Player(1),function()
-    japi.DzFrameSetTexture() -- 也可以
+    japi.FrameSetTexture() -- 也可以
 end)
 ```
 

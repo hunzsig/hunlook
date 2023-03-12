@@ -14,9 +14,9 @@ JapiのUI、サウンド、マスクマップなど、少数は非同期実行�
 
 ```lua
 -- 非同期データを許可する非同期実行関数
-japi.DzFrameSetTexture() -- できます
+japi.FrameSetTexture() -- できます
 async.call(Player(1),function()
-    japi.DzFrameSetTexture() -- してもよい
+    japi.FrameSetTexture() -- してもよい
 end)
 ```
 
