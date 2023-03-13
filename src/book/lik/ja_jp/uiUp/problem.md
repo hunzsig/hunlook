@@ -37,7 +37,7 @@ local path = AUIKit("kit", "bg", "tga")
 
 ```lua
 -- スイートディレクトリ名：hunzsig_pic
--- ピクチャパスは singluar/assets/war3mapUI/assets/pic.tga
+-- ピクチャパスは lik/assets/war3mapUI/assets/pic.tga
 local kit = "hunzsig_pic" -- ここでkitはディレクトリと同じ名前でなければなりません
 
 stage.pic = FrameBackdrop( "chaosStrings->pic", FrameGameUI)

@@ -148,11 +148,11 @@ _assets_sound("bgm/dnf/Dungeon and Fighter - GBL女神殿 - goddess temple", "gb
 > The project team has provided many powerful UI Suites for free. Please refer to their formats and write your UI (not for commercial use at will)
 
 ```lua
-_assets_ui("singluar_debug")
-_assets_ui("singluar_echo")
-_assets_ui("singluar_chat")
-_assets_ui("singluar_set")
-_assets_ui("singluar_cursor") --Pointer on top
+_assets_ui("lik_menu")
+_assets_ui("lik_plate")
+_assets_ui("lik_buff")
+_assets_ui("lik_debug")
+_assets_ui("lik_cursor") --Pointer on top
 ```
 
 #### Speech Voice template
@@ -161,11 +161,17 @@ _assets_ui("singluar_cursor") --Pointer on top
 >
 > Referenced when defining the unit TPL or used by subsequent modification of the Unit object
 >
-> The most exquisite voice origin data has been selected by default, so you don't need to process it yourself
+> Speech voice data has been selected by default and can be expanded by itself
 
 ```lua
--- HeroPaladin
+-- Paladin
 _assets_speech(":HeroPaladin", "HeroPaladin")
+
+-- Paladin (enable model avatar)
+_assets_speech(":HeroPaladin", "HeroPaladin", { "HeroPaladin" })
+
+-- Paladin (enable 72 collision)
+_assets_speech(":HeroPaladin", "HeroPaladin", nil, { 72 })
 
 -- in Tpl
 UnitTpl("HeroPaladin")

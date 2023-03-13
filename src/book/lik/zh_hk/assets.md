@@ -148,10 +148,10 @@ _assets_sound("bgm/dnf/Dungeon and Fighter - GBL女神殿 - goddess temple", "gb
 > 專案組已免費提供了很多強有力的 UI 套件，請參考它們的格式，編寫你的UI（不可隨意用於商用）
 
 ```lua
+_assets_ui("lik_menu")
+_assets_ui("lik_plate")
+_assets_ui("lik_buff")
 _assets_ui("lik_debug")
-_assets_ui("lik_echo")
-_assets_ui("lik_chat")
-_assets_ui("lik_set")
 _assets_ui("lik_cursor") --指標置頂
 ```
 
@@ -161,11 +161,17 @@ _assets_ui("lik_cursor") --指標置頂
 >
 > 在單位TPL定義時引用或Unit物件後續修改使用
 >
-> 已預設挑選最精妙的語音origin資料，無需自行處理
+> 已默認精選speech語音數據，可自行拓展
 
 ```lua
 -- 聖騎士
 _assets_speech(":HeroPaladin", "HeroPaladin")
+
+-- 聖騎士(啓用模型頭像)
+_assets_speech(":HeroPaladin", "HeroPaladin", { "HeroPaladin" })
+
+-- 聖騎士(啓用72碰撞)
+_assets_speech(":HeroPaladin", "HeroPaladin", nil, { 72 })
 
 -- 在tpl中使用
 UnitTpl("HeroPaladin")

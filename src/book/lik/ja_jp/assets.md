@@ -148,10 +148,10 @@ _assets_sound("bgm/dnf/Dungeon and Fighter - GBL女神殿 - goddess temple", "gb
 > プロジェクトグループは強力なUIスイートを無料で提供しています。そのフォーマットを参考にして、UIを作成してください（ビジネスでは自由に使用できません）
 
 ```lua
+_assets_ui("lik_menu")
+_assets_ui("lik_plate")
+_assets_ui("lik_buff")
 _assets_ui("lik_debug")
-_assets_ui("lik_echo")
-_assets_ui("lik_chat")
-_assets_ui("lik_set")
 _assets_ui("lik_cursor") --ポインタセット
 ```
 
@@ -161,11 +161,17 @@ _assets_ui("lik_cursor") --ポインタセット
 >
 > 単位TPL定義時に参照またはUnitオブジェクトを後で変更して使用する
 >
-> 最適な音声originデータをデフォルトで選択し、自分で処理する必要はありません
+> speech音声データはデフォルトで選択されており、独自に拡張可能
 
 ```lua
 -- 聖騎士
 _assets_speech(":HeroPaladin", "HeroPaladin")
+
+-- 聖騎士（モデルアバターを有効にする）
+_assets_speech(":HeroPaladin", "HeroPaladin", { "HeroPaladin" })
+
+-- 聖騎士（72衝突を有効にする）
+_assets_speech(":HeroPaladin", "HeroPaladin", nil, { 72 })
 
 -- tplで使用
 UnitTpl("HeroPaladin")
