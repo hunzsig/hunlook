@@ -22,6 +22,7 @@
 * Unit：新的方法tpl
 * ability：missile优化，leap优化【☆】
 * async：新的is
+* attributes：绑定单位数据回归优化【☆】
 * sync：新的is
 
 #### 如果想成为粉丝请 <a target="_blank" href="https://afdian.net/a/hunzsig">点击这里</a>

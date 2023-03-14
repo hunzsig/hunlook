@@ -22,6 +22,7 @@
 * Unit：新しい tpl
 * ability：missile最適化、leap最適化【☆】
 * async：新しいis
+* attributes：バインド単位データ回帰最適化【☆】
 * sync：新しいis
 
 #### ファンになりたいなら <a target="_blank" href="https://afdian.net/a/hunzsig">ここをクリック</a>

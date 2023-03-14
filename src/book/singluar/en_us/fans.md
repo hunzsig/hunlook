@@ -22,6 +22,7 @@
 * Unit: new method tpl
 * ability: mission optimization, leap optimization【☆】
 * async: new method is
+* attributes: bound unit data regression optimization【☆】
 * sync: new method is
 
 #### If you want to become a fan, please <a target="_blank" href="https://afdian.net/a/hunzsig">Click here</a>

@@ -22,6 +22,7 @@
 * Unit：新的方法tpl
 * ability：missile最佳化，leap最佳化【☆】
 * async：新的is
+* attributes：繫結單位資料迴歸最佳化【☆】
 * sync：新的is
 
 #### 如果想成为粉丝请 <a target="_blank" href="https://afdian.net/a/hunzsig">点击这里</a>
