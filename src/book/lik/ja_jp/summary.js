@@ -128,12 +128,8 @@ export default [
       {icon: <BorderOuterOutlined/>, key: 'label', label: "図文"},
       {icon: <CaretDownOutlined/>, key: 'cursor', label: "ポインタ"},
       {icon: <LoadingOutlined/>, key: 'animate', label: "むかつく"},
-      {icon: <ExpandOutlined/>, key: 'map', label: "地図"},
       {icon: <DragOutlined/>, key: 'drag', label: "ドラッグ"},
       {icon: <BoxPlotOutlined/>, key: 'bar', label: "バー"},
-      {icon: <BoxPlotOutlined/>, key: 'barState', label: "状態バー"},
-      {icon: <FileOutline/>, key: 'balloon', label: "風船"},
-      {icon: <CollectMoneyOutline/>, key: 'toast', label: "パン"},
     ]
   },
   {
@@ -141,6 +137,10 @@ export default [
       {icon: <FrownOutlined/>, key: 'problem', label: "難病"},
       {icon: <FullscreenExitOutlined/>, key: 'adapter', label: "てきおう"},
       {icon: <RadiusSettingOutlined />, key: 'gradient', label: "グラデーション"},
+      {icon: <ExpandOutlined/>, key: 'map', label: "地図"},
+      {icon: <BoxPlotOutlined/>, key: 'barState', label: "状態バー"},
+      {icon: <FileOutline/>, key: 'balloon', label: "風船"},
+      {icon: <CollectMoneyOutline/>, key: 'toast', label: "パン"},
       {icon: <MessageOutlined/>, key: 'echo', label: "メッセージ体"},
       {icon: <ZoomInOutlined/>, key: 'detail', label: "詳細"},
       {icon: <BoxPlotOutlined/>, key: 'targetGage', label: "ステータスバー"},

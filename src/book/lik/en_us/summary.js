@@ -128,12 +128,8 @@ export default [
       {icon: <BorderOuterOutlined/>, key: 'label', label: "Label"},
       {icon: <CaretDownOutlined/>, key: 'cursor', label: "Cursor"},
       {icon: <LoadingOutlined/>, key: 'animate', label: "Animate"},
-      {icon: <ExpandOutlined/>, key: 'map', label: "Map"},
       {icon: <DragOutlined/>, key: 'drag', label: "Drag"},
       {icon: <BoxPlotOutlined/>, key: 'bar', label: "Bar"},
-      {icon: <BoxPlotOutlined/>, key: 'barState', label: "BarState"},
-      {icon: <FileOutline/>, key: 'balloon', label: "Balloon"},
-      {icon: <CollectMoneyOutline/>, key: 'toast', label: "Toast"},
     ]
   },
   {
@@ -141,6 +137,10 @@ export default [
       {icon: <FrownOutlined/>, key: 'problem', label: "Difficult"},
       {icon: <FullscreenExitOutlined/>, key: 'adapter', label: "Adapter"},
       {icon: <RadiusSettingOutlined/>, key: 'gradient', label: "Gradient"},
+      {icon: <ExpandOutlined/>, key: 'map', label: "Map"},
+      {icon: <BoxPlotOutlined/>, key: 'barState', label: "BarState"},
+      {icon: <FileOutline/>, key: 'balloon', label: "Balloon"},
+      {icon: <CollectMoneyOutline/>, key: 'toast', label: "Toast"},
       {icon: <MessageOutlined/>, key: 'echo', label: "Echo"},
       {icon: <ZoomInOutlined/>, key: 'detail', label: "Detail"},
       {icon: <BoxPlotOutlined/>, key: 'targetGage', label: "TargetGage"},

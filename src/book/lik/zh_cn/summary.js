@@ -128,12 +128,8 @@ export default [
       {icon: <BorderOuterOutlined/>, key: 'label', label: "图文"},
       {icon: <CaretDownOutlined/>, key: 'cursor', label: "指针"},
       {icon: <LoadingOutlined/>, key: 'animate', label: "帧动画"},
-      {icon: <ExpandOutlined/>, key: 'map', label: "地图"},
       {icon: <DragOutlined/>, key: 'drag', label: "拖拽"},
       {icon: <BoxPlotOutlined/>, key: 'bar', label: "条"},
-      {icon: <BoxPlotOutlined/>, key: 'barState', label: "状态条"},
-      {icon: <FileOutline/>, key: 'balloon', label: "气泡"},
-      {icon: <CollectMoneyOutline/>, key: 'toast', label: "吐司"},
     ]
   },
   {
@@ -141,6 +137,10 @@ export default [
       {icon: <FrownOutlined/>, key: 'problem', label: "疑难杂症"},
       {icon: <FullscreenExitOutlined/>, key: 'adapter', label: "自适应"},
       {icon: <RadiusSettingOutlined />, key: 'gradient', label: "渐变"},
+      {icon: <ExpandOutlined/>, key: 'map', label: "地图"},
+      {icon: <BoxPlotOutlined/>, key: 'barState', label: "状态条"},
+      {icon: <FileOutline/>, key: 'balloon', label: "气泡"},
+      {icon: <CollectMoneyOutline/>, key: 'toast', label: "吐司"},
       {icon: <MessageOutlined/>, key: 'echo', label: "消息体"},
       {icon: <ZoomInOutlined/>, key: 'detail', label: "详情展示"},
       {icon: <BoxPlotOutlined/>, key: 'targetGage', label: "状态条"},
