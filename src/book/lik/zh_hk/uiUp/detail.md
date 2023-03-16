@@ -1,20 +1,25 @@
 ## Detail
 
 ```lua
-local kit = 'my_detail'
+local kit = "my_detail"
 
----@type UIKitClass
-local this = UIKit(kit)
+---@class UI_MyDetail:UIKit
+local ui = UIKit(kit)
 
-this:prop("detailType", "data")
-
-this:onSetup(function()
-    ---@class myDetailStage
+---@type UI_MyDetail
+ui:onSetup(function(this)
+    ---@class UI_MyDetailStage
     local stage = this:stage()
+
+    ---@type Unit|nil
+    stage.whichUnit = nil
+
+    ---@type string
+    stage.detailType = "data"
 
     stage.main = FrameBackdrop(kit .. "->main", FrameGameUI)
         :adaptive(true)
-        :texture("bg/display")
+        :prop("texture", "bg\\display")
         :block(true)
         :esc(true)
         :close(true)
@@ -40,7 +45,7 @@ this:onSetup(function()
 
     stage.shiftBtn = FrameButton(kit .. "->shiftBtn", stage.main)
         :relation(FRAME_ALIGN_TOP, stage.main, FRAME_ALIGN_TOP, 0.24, -0.03)
-        :texture("btn/green")
+        :texture("btn\\e_green")
         :size(0.06, 0.06 * 60 / 128)
         :text("查看説明")
         :onEvent(EVENT.Frame.Enter, function(evtData) evtData.triggerFrame:childHighlight():show(true) end)
@@ -50,18 +55,16 @@ this:onSetup(function()
             evtData.triggerFrame:childHighlight():show(false)
             FrameTooltips():show(false)
             audio(Vcm("war3_MouseClick1"))
-            local detailType = this:prop("detailType")
-            if (detailType == "data") then
-                detailType = "intro"
+            if (stage.detailType == "data") then
+                stage.detailType = "intro"
                 evtData.triggerFrame:text("查看數值")
-                evtData.triggerFrame:texture("btn/red")
+                evtData.triggerFrame:texture("btn\\e_red")
             else
-                detailType = "data"
+                stage.detailType = "data"
                 evtData.triggerFrame:text("查看説明")
-                evtData.triggerFrame:texture("btn/green")
+                evtData.triggerFrame:texture("btn\\e_green")
             end
-            this:prop("detailType", detailType)
-            this:refresh()
+            this:updated()
         end)
     stage.shiftBtn:childText():relation(FRAME_ALIGN_CENTER, stage.shiftBtn, FRAME_ALIGN_CENTER, 0, 0.002)
 
@@ -76,11 +79,11 @@ this:onSetup(function()
             :text('···')
     end
 
-    ---@type FrameBackdrop
-    local bg = UIKit("my_ctl"):stage().bg
-    stage.detailBtn = FrameButton(kit .. "->detailBtn", bg)
-        :relation(FRAME_ALIGN_LEFT_BOTTOM, bg, FRAME_ALIGN_LEFT_TOP, 0.064, -0.03)
-        :prop("texture", "btn/what")
+    ---@type UI_MyCtlStage
+    local ctlStage = UIKit("my_ctl"):stage()
+    stage.detailBtn = FrameButton(kit .. "->detailBtn")
+        :relation(FRAME_ALIGN_CENTER, FrameGameUI, FRAME_ALIGN_CENTER, 0, 0)
+        :prop("texture", "btn/open")
         :alpha(160)
         :size(0.02, 0.02)
         :onEvent(EVENT.Frame.Leave, function(evtData) evtData.triggerFrame:alpha(160) end)
@@ -111,7 +114,7 @@ end)
 
 ---@param whichUnit UnitClass
 ---@return string
-function this:attackMode(whichUnit)
+function ui:attackMode(whichUnit)
     if (isClass(whichUnit, UnitClass) == false) then
         return "未知"
     end
@@ -172,7 +175,7 @@ end
 
 ---@param key string
 ---@return string
-function this:intro(key)
+function ui:intro(key)
     local data = {
         ["hp"] = "存活和某些技能需要生命值",
         ["hpRegen"] = "每秒恢復生命的量",
@@ -229,15 +232,14 @@ function this:intro(key)
 end
 
 ---@param whichUnit Unit
-function this:refresh(whichUnit)
-    whichUnit = whichUnit or this:prop("whichUnit")
+function ui:updated(whichUnit)
+    ---@type UI_MyDetailStage
+    local stage = self:stage()
+    whichUnit = whichUnit or stage.whichUnit
     if (isClass(whichUnit, UnitClass)) then
-        this:prop("whichUnit", whichUnit)
-        ---@type myDetailStage
-        local stage = this:stage()
-        stage.mainTxt:text(whichUnit:name())
-        stage.avatar:texture(whichUnit:icon())
-        local detailType = this:prop("detailType")
+        stage.whichUnit = whichUnit
+        stage.mainTxt:text(stage.whichUnit:name())
+        stage.avatar:texture(stage.whichUnit:icon())
         local as = {
             {
                 "hp",
@@ -310,15 +312,15 @@ function this:refresh(whichUnit)
         as[4][#as[4] + 1] = "castChantPercent"
         as[4][#as[4] + 1] = "castDistancePercent"
         as[4][#as[4] + 1] = "castRangePercent"
-        if (detailType == "data") then
-            stage.attackMode:text(this:attackMode(whichUnit))
+        if (stage.detailType == "data") then
+            stage.attackMode:text(ui:attackMode(stage.whichUnit))
             for i = 1, 4 do
                 local d = {}
                 for _, a in ipairs(as[i]) do
                     if (a == '') then
                         d[#d + 1] = ''
                     else
-                        local v = whichUnit:prop(a) or 0
+                        local v = stage.whichUnit:prop(a) or 0
                         if (a == "sp") then
                             if (v == 0) then
                                 d[#d + 1] = colour.hex(colour.gold, attribute.label(a)) .. ": 無"
@@ -344,7 +346,7 @@ function this:refresh(whichUnit)
                 end
                 stage.attrTxt[i]:text(string.implode('|n', d))
             end
-        elseif (detailType == "intro") then
+        elseif (stage.detailType == "intro") then
             stage.attackMode:text("説明單位攻擊模式|n包含戰鬥模式、箭矢屬性、附魔等信息")
             for i = 1, 4 do
                 local d = {}
@@ -352,7 +354,7 @@ function this:refresh(whichUnit)
                     if (a == '') then
                         d[#d + 1] = ''
                     else
-                        local label = this:intro(a)
+                        local label = ui:intro(a)
                         d[#d + 1] = colour.hex(colour.gold, attribute.label(a)) .. ": " .. label
                     end
                 end
@@ -362,20 +364,20 @@ function this:refresh(whichUnit)
     end
 end
 
-function this:display()
-    ---@type myDetailStage
-    local stage = this:stage()
+function ui:display()
+    ---@type UI_MyDetailStage
+    local stage = ui:stage()
     local showing = stage.main:show()
     if (showing) then
         audio(Vcm("war3_MouseClick2"))
         stage.main:show(false)
-        this:prop("detailType", "data")
+        stage.detailType = "data"
         stage.shiftBtn:text("查看説明")
-        stage.shiftBtn:texture("btn/green")
+        stage.shiftBtn:texture("btn\\e_green")
         return
     end
     audio(Vcm("war3_MouseClick1"))
     stage.main:show(true)
-    self:refresh(PlayerLocal():selection())
+    self:updated(PlayerLocal():selection())
 end
 ```
