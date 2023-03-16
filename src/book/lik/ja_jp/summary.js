@@ -136,7 +136,7 @@ export default [
     icon: <FundViewOutlined/>, key: 'uiUp', label: "UIステップアップ", children: [
       {icon: <FrownOutlined/>, key: 'problem', label: "難病"},
       {icon: <FullscreenExitOutlined/>, key: 'adapter', label: "てきおう"},
-      {icon: <RadiusSettingOutlined />, key: 'gradient', label: "グラデーション"},
+      {icon: <RadiusSettingOutlined/>, key: 'gradient', label: "グラデーション"},
       {icon: <ExpandOutlined/>, key: 'map', label: "地図"},
       {icon: <BoxPlotOutlined/>, key: 'barState', label: "状態バー"},
       {icon: <FileOutline/>, key: 'balloon', label: "風船"},
@@ -144,6 +144,7 @@ export default [
       {icon: <MessageOutlined/>, key: 'echo', label: "メッセージ体"},
       {icon: <ZoomInOutlined/>, key: 'detail', label: "詳細"},
       {icon: <BoxPlotOutlined/>, key: 'targetGage', label: "ステータスバー"},
+      {icon: <ProfileOutlined/>, key: 'tooltips', label: "ツールチップ"},
     ]
   },
   {

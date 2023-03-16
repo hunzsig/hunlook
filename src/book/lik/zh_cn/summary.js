@@ -82,10 +82,10 @@ export default [
   {icon: <FontColorsOutlined/>, key: 'assets', label: "Assets"},
   {icon: <PullRequestOutlined/>, key: 'event', label: "事件"},
   {
-    icon: <RadarChartOutlined />, key: 'core', label: "功能核心", children: [
+    icon: <RadarChartOutlined/>, key: 'core', label: "功能核心", children: [
       {icon: <HeatMapOutlined/>, key: 'base', label: "根基库"},
       {icon: <AppstoreOutlined/>, key: 'object', label: "对象门面"},
-      {icon: <DribbbleOutlined />, key: 'ability', label: "技能库"},
+      {icon: <DribbbleOutlined/>, key: 'ability', label: "技能库"},
       {icon: <AppstoreAddOutlined/>, key: 'sublib', label: "拓展库"},
     ]
   },
@@ -130,13 +130,14 @@ export default [
       {icon: <LoadingOutlined/>, key: 'animate', label: "帧动画"},
       {icon: <DragOutlined/>, key: 'drag', label: "拖拽"},
       {icon: <BoxPlotOutlined/>, key: 'bar', label: "条"},
+      {icon: <ProfileOutlined/>, key: 'tooltips', label: "工具提示"},
     ]
   },
   {
     icon: <FundViewOutlined/>, key: 'uiUp', label: "UI界面进阶", children: [
       {icon: <FrownOutlined/>, key: 'problem', label: "疑难杂症"},
       {icon: <FullscreenExitOutlined/>, key: 'adapter', label: "自适应"},
-      {icon: <RadiusSettingOutlined />, key: 'gradient', label: "渐变"},
+      {icon: <RadiusSettingOutlined/>, key: 'gradient', label: "渐变"},
       {icon: <ExpandOutlined/>, key: 'map', label: "地图"},
       {icon: <BoxPlotOutlined/>, key: 'barState', label: "状态条"},
       {icon: <FileOutline/>, key: 'balloon', label: "气泡"},

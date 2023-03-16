@@ -130,6 +130,7 @@ export default [
       {icon: <LoadingOutlined/>, key: 'animate', label: "Animate"},
       {icon: <DragOutlined/>, key: 'drag', label: "Drag"},
       {icon: <BoxPlotOutlined/>, key: 'bar', label: "Bar"},
+      {icon: <ProfileOutlined/>, key: 'tooltips', label: "Tooltips"},
     ]
   },
   {

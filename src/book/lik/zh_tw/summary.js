@@ -130,6 +130,7 @@ export default [
       {icon: <LoadingOutlined/>, key: 'animate', label: "幀動畫"},
       {icon: <DragOutlined/>, key: 'drag', label: "拖拽"},
       {icon: <BoxPlotOutlined/>, key: 'bar', label: "條"},
+      {icon: <ProfileOutlined/>, key: 'tooltips', label: "工具提示"},
     ]
   },
   {
