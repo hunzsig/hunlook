@@ -1,19 +1,16 @@
 ## TargetGage
 
 ```lua
---[[
-    目標血條：<Gage>
-    include: 血條、buff等
-]]
-
+-- 目標血條：<Gage>
+-- include: 血條、buff等
 local kit = 'my_targetGage'
 
----@type UIKitClass
+---@class UI_LooplorerTargetGage:UIKit
 local this = UIKit(kit)
 
 this:onSetup(function()
 
-    ---@class myTargetGageStage
+    ---@class UI_LooplorerTargetGageStage
     local stage = this:stage()
 
     stage.length = 0.18
@@ -125,8 +122,8 @@ this:onSetup(function()
 
 end)
 
-function this:maskClose()
-    ---@type myTargetGageStage
+function ui:maskClose()
+    ---@type UI_LooplorerTargetGageStage
     local stage = self:stage()
     local rk = kit .. "mask"
     japi.Refresh(rk, nil)
@@ -134,7 +131,7 @@ function this:maskClose()
 end
 
 ---@param relation FrameBackdrop
-function this:maskRemain(uniqueKey, ratio, relation)
+function ui:maskRemain(uniqueKey, ratio, relation)
     async.must()
     if (ratio <= 0) then
         self:maskClose()
@@ -147,7 +144,7 @@ function this:maskRemain(uniqueKey, ratio, relation)
         self:clear("maskRemain")
     end
     self:prop("prevId", curId)
-    ---@type myTargetGageStage
+    ---@type UI_LooplorerTargetGageStage
     local stage = self:stage()
     local rk = kit .. "mask"
     local prevRatio = self:prop("prevRatio") or 1
@@ -179,9 +176,9 @@ end
 
 --- 重新整理操作
 --- 例如EVENT.Unit.Damage，當你的單位造成傷害時，就可以呼叫重新整理
-function this:updated(target)
+function ui:updated(target)
     async.must()
-    ---@type myTargetGageStage
+    ---@type UI_LooplorerTargetGageStage
     local stage = self:stage()
     local gd = Game():GD()
     local me = gd.me

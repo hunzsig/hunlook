@@ -1,18 +1,14 @@
 ## Echo
 
 ```lua
---[[
-    自定义 Echo
-]]
-
 local kit = 'my_echo'
 
----@type UIKitClass
-local this = UIKit(kit)
+---@class UI_LikEcho:UIKit
+local ui = UIKit(kit)
 
-this:onSetup(function()
+ui:onSetup(function(this)
 
-    ---@class noteLikEchoStage
+    ---@class UI_LikEchoStage
     local stage = this:stage()
 
     --- 容器
@@ -57,8 +53,8 @@ end)
 
 ---@param content string|string[]
 ---@param duration number|nil
-function this:echo(content, duration)
-    ---@type noteLikEchoStage
+function ui:echo(content, duration)
+    ---@type UI_LikEchoStage
     local stage = self:stage()
     local p = PlayerLocal()
     async.call(p, function()
