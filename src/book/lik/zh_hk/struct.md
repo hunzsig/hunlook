@@ -24,7 +24,7 @@
 │   ├── force.json -（·）強制混淆詞根，性能低
 │   └── rule.json -（·）混淆library文件規則
 ├── library -（*）核心
-├── support -（*）
+├── vendor -（*）
 │   ├── lni - 重要地圖數據
 │   ├── models - model命令地圖模版
 │   ├── w3x2lni - w3x2lni工具(v:2.7.2)

@@ -1,13 +1,13 @@
 ## Directory Structure
 
-> 【*】Required Necessity, Lost Crash
+> （*）Required Necessity, Lost Crash
 >
-> 【~】Automatic Temporary, lack of automatic builds
+> （~）Automatic Temporary, lack of automatic builds
 >
-> 【◇】Customize Custom, build on demand
+> （·）Customize Custom, build on demand
 
 ```text
-├── assets -【*|◇】Resource Library
+├── assets -（*|·）Resource Library
 │   ├── war3mapFont - Put fonts, only support ttf
 │   ├── war3mapIcon - Put icon, only support tga
 │   ├── war3MapLoading - Load image, only supports single image tga or rule combination tga
@@ -17,21 +17,21 @@
 │   ├── war3mapSound - Play sound effect music, only support mp3
 │   ├── war3mapTextures - Put model texture, only support blp
 │   └── war3mapUI - Put UI kit, existing format reference
-├── assetsNew -【*|◇】Consistent with the assets structure, used when dealing with new resources
-├── projects -【~|◇】Used to place your map project directory, such as project_demo
-│   └── project_demo -【◇】
-├── encrypt -【◇】Define obfuscated rules
-│   ├── force.json -【◇】Forced confusion of root words, low efficiency
-│   └── rule.json -【◇】Confuse library file rules
-├── library -【*】Core
-├── support -【*】
+├── assetsNew -（*|·）Consistent with the assets structure, used when dealing with new resources
+├── projects -（~|·）Used to place your map project directory, such as project_demo
+│   └── project_demo -（·）
+├── encrypt -（·）Define obfuscated rules
+│   ├── force.json -（·）Forced confusion of root words, low efficiency
+│   └── rule.json -（·）Confuse library file rules
+├── library -（*）Core
+├── vendor -（*）
 │   ├── lni - ImportantMap Data
 │   ├── models - ModelCommandMap Template
 │   ├── w3x2lni - w3x2lni Tool(v:2.7.2)
 │   └── WE - MaZai WE Tool
-├── temp -【~】Cache
-├── conf -【~|◇】Configure
-└── lik.exe -【*】Command Tool
+├── temp -（~）Cache
+├── conf -（~|·）Configure
+└── lik.exe -（*）Command Tool
 ```
 
 ### Project Structure

@@ -24,7 +24,7 @@
 │   ├── force.json -（·）語根を強制的に混同し、効能が低い
 │   └── rule.json -（·）libraryアーカイブ規則の混同
 ├── library -（*）コア
-├── support -（*）
+├── vendor -（*）
 │   ├── lni - 重要な地図データ
 │   ├── models - modelコマンドマップテンプレート
 │   ├── w3x2lni - w3x2lniツール(v:2.7.2)
