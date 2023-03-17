@@ -393,6 +393,12 @@ EVENT.Frame = {
     --- スクロール
     ---@alias noteOnFrameWheelData noteOnFrameBase|{triggerPlayer:Player,delta:"スクロール値"}
     Wheel = "frameWheel",
+    --- ドラッグ開始
+    ---@alias noteOnFrameDragStartData noteOnFrameBase|{triggerPlayer:Player}
+    DragStart = "frameDragStart",
+    --- ドラッグ終了
+    ---@alias noteOnFrameDragStopData noteOnFrameBase|{triggerPlayer:Player}
+    DragStop = "frameDragStop",
 }
 
 ---@alias noteOnAIBase {triggerAI:AI}

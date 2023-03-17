@@ -393,6 +393,12 @@ EVENT.Frame = {
     --- Mouse roll
     ---@alias noteOnFrameWheelData noteOnFrameBase|{triggerPlayer:Player,delta:"Scroll Values"}
     Wheel = "frameWheel",
+    --- Drag Start
+    ---@alias noteOnFrameDragStartData noteOnFrameBase|{triggerPlayer:Player}
+    DragStart = "frameDragStart",
+    --- Drag Stop
+    ---@alias noteOnFrameDragStopData noteOnFrameBase|{triggerPlayer:Player}
+    DragStop = "frameDragStop",
 }
 
 ---@alias noteOnAIBase {triggerAI:AI}

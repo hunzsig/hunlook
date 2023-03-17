@@ -393,6 +393,12 @@ EVENT.Frame = {
     --- 滾動
     ---@alias noteOnFrameWheelData noteOnFrameBase|{triggerPlayer:Player,delta:"滾動數值"}
     Wheel = "frameWheel",
+    --- 拖拽開始
+    ---@alias noteOnFrameDragStartData noteOnFrameBase|{triggerPlayer:Player}
+    DragStart = "frameDragStart",
+    --- 拖拽結束
+    ---@alias noteOnFrameDragStopData noteOnFrameBase|{triggerPlayer:Player}
+    DragStop = "frameDragStop",
 }
 
 ---@alias noteOnAIBase {triggerAI:AI}
