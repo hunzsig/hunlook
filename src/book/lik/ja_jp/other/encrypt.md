@@ -24,5 +24,5 @@ function wUdiGvyccm(start, stop, t) return start + (stop - start) * t end functi
 > 下位自動暗号化にはJ、oopなどが含まれており、自分で参加する必要はありません
 
 * ルール定義は encryptで、デフォルトではほとんどのルールが記述されており、修正しなくても十分に強力です
-* force.jsonは語根を強制的に混同することができ、優先順位を設定すると、単語全体がカバーされ、バグが発生しやすい
-* rule.jsonは、library内の各混同規則を定義することができる
+* force.json は語根を強制的に混同することができ、優先順位を設定すると、単語全体がカバーされ、バグが発生しやすい
+* rule.json は、library(!builtIn)内の各混同規則を定義することができる

@@ -11,7 +11,7 @@
 #### 熱更新覆蓋的範圍包括有：
 
 ```text
-/library/
+/library/(!builtIn)
 /assets/war3mapUI/
 /projects/*/
 ```

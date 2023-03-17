@@ -11,7 +11,7 @@
 #### 熱更新カバレッジの範囲は、次のとおりです。
 
 ```text
-/library/
+/library/(!builtIn)
 /assets/war3mapUI/
 /projects/*/
 ```

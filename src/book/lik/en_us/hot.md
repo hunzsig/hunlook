@@ -11,7 +11,7 @@
 #### The coverage of hot update includes:
 
 ```text
-/library/
+/library/(!builtIn)
 /assets/war3mapUI/
 /projects/*/
 ```

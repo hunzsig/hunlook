@@ -24,5 +24,5 @@ function wUdiGvyccm(start, stop, t) return start + (stop - start) * t end functi
 > The underlying automatic confusion includes J, oop, etc., and does not need to participate
 
 * Rules are defined in  encrypt. By default, most rules have been written, which is strong enough even if not modified
-* Force.json can forcibly confuse the root word. After the priority is set, the whole word covers the type and is prone to bugs
-* Rule.json can define the confusion rules of each library
+* force.json can forcibly confuse the root word. After the priority is set, the whole word covers the type and is prone to bugs
+* rule.json can define the confusion rules of each library(!builtIn)

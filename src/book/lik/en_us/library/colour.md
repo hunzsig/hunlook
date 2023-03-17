@@ -69,7 +69,7 @@ echo(txt)
 * <div class="colour" style="background-color:#ADD8E6"> colour.lightblue = "ADD8E6"</div>
 * <div class="colour" style="background-color:#E0FFFF"> colour.lightcyan = "E0FFFF"</div>
 * <div class="colour" style="background-color:#F0F8FF"> colour.aliceblue = "F0F8FF"</div>
-* <div class="colour" style="background-color:#CC1AFF"> colour.purple = "cc1aff"</div>
+* <div class="colour" style="background-color:#CC1AFF"> colour.purple = "CC1AFF"</div>
 * <div class="colour" style="background-color:#9932CC"> colour.darkorchid = "9932CC"</div>
 * <div class="colour" style="background-color:#9370DB"> colour.mediumpurple = "9370DB"</div>
 * <div class="colour" style="background-color:#BA55D3"> colour.mediumorchid = "BA55D3"</div>

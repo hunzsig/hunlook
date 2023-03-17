@@ -69,7 +69,7 @@ echo(txt)
 * <div class="colour" style="background-color:#ADD8E6"> colour.lightblue = "ADD8E6" --明るい青</div>
 * <div class="colour" style="background-color:#E0FFFF"> colour.lightcyan = "E0FFFF" --明るいシアン</div>
 * <div class="colour" style="background-color:#F0F8FF"> colour.aliceblue = "F0F8FF" --アイリスランド</div>
-* <div class="colour" style="background-color:#CC1AFF"> colour.purple = "cc1aff" --紫</div>
+* <div class="colour" style="background-color:#CC1AFF"> colour.purple = "CC1AFF" --紫</div>
 * <div class="colour" style="background-color:#9932CC"> colour.darkorchid = "9932CC" --ダークパープル</div>
 * <div class="colour" style="background-color:#9370DB"> colour.mediumpurple = "9370DB" --間紫色</div>
 * <div class="colour" style="background-color:#BA55D3"> colour.mediumorchid = "BA55D3" --間紫色</div>

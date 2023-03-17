@@ -162,7 +162,7 @@ export default [
     icon: <QuestionOutlined/>, key: 'other', label: "其他學習", children: [
       {icon: <SetOutline/>, key: 'jetbrain', label: "Jetbrain設置"},
       {icon: <StrikethroughOutlined/>, key: 'encrypt', label: "混淆加密"},
-      {icon: <SmileOutline/>, key: 'q_a', label: "詢問的技巧"},
+      {icon: <SmileOutline/>, key: 'learn', label: "如何學習"},
       {icon: <CloudUploadOutlined/>, key: 'pt', label: "平台上線須知"},
       {icon: <KoubeiOutline/>, key: 'war3_tec', label: "魔獸作圖小技巧"},
       {icon: <PictureOutline/>, key: 'war3_terrainArt', label: "魔獸地形貼圖路徑"},

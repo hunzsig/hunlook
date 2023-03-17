@@ -162,7 +162,7 @@ export default [
     icon: <QuestionOutlined/>, key: 'other', label: "Other", children: [
       {icon: <SetOutline/>, key: 'jetbrain', label: "JetbrainSetting"},
       {icon: <StrikethroughOutlined/>, key: 'encrypt', label: "Encrypt"},
-      {icon: <SmileOutline/>, key: 'q_a', label: "Q&A"},
+      {icon: <SmileOutline/>, key: 'learn', label: "Learn"},
       {icon: <CloudUploadOutlined/>, key: 'pt', label: "Publish"},
       {icon: <KoubeiOutline/>, key: 'war3_tec', label: "War3Technic"},
       {icon: <PictureOutline/>, key: 'war3_terrainArt', label: "War3Terrain"},

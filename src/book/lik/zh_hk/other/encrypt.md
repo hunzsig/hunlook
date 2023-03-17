@@ -25,4 +25,4 @@ function wUdiGvyccm(start, stop, t) return start + (stop - start) * t end functi
 
 * 規則定義在 \encrypt 中，默認已有編寫大部分規則，即使不修改也足夠強力
 * force.json 可強制混淆詞根，優先級置後，整詞覆蓋型，易出bug
-* rule.json 可定義library內每一個的混淆規則
+* rule.json 可定義library(!builtIn)內每一個的混淆規則
