@@ -2,6 +2,10 @@
 
 ###### During research and development, this document does not represent the final result
 
+### Get Framework
+
+> <a target="_blank" href="https://afdian.net/a/hunzsig">Experience the Lik Alpha version first</a>
+
 ### Install IDE - Ideac
 
 > <a target="_blank" href="https://www.jetbrains.com/idea/download/#section=windows">Ideac (Jetbrain)</a>

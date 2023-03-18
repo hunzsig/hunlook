@@ -2,6 +2,10 @@
 
 ###### 研發中，此文檔不代表最終成果
 
+### 獲得框架
+
+> <a target="_blank" href="https://afdian.net/a/hunzsig">搶先體驗 Lik Alpha版本</a>
+
 ### 安裝IDE - Ideac
 
 > <a target="_blank" href="https://www.jetbrains.com/idea/download/#section=windows">Ideac (Jetbrain)</a>

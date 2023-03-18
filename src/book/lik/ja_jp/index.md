@@ -2,6 +2,10 @@
 
 ###### このドキュメントは最終的な成果を表すものではありません。
 
+### フレームワークの取得
+
+> <a target="_blank" href="https://afdian.net/a/hunzsig">Lik Alphaバージョンを先取り体験</a>
+
 ### インストール IDE - Ideac
 
 > <a target="_blank" href="https://www.jetbrains.com/idea/download/#section=windows">Ideac (Jetbrain)</a>
