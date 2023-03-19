@@ -26,6 +26,12 @@ Game():itemHotkey({ KEYBOARD.Numpad7, KEYBOARD.Numpad8, KEYBOARD.Numpad4, KEYBOA
 Game():itemExp(99, 100, 1.00, 10000)
 ```
 
+### Item Pickup Mode
+
+```lua
+Game():itemPickMode(ITEM_PICK_MODE.itemOnly)
+```
+
 ### Upper limit of player warehouse
 
 ```lua

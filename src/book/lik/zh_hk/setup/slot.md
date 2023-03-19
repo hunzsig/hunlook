@@ -26,6 +26,12 @@ Game():itemHotkey({ KEYBOARD.Numpad7, KEYBOARD.Numpad8, KEYBOARD.Numpad4, KEYBOA
 Game():itemExp(99, 100, 1.00, 10000)
 ```
 
+### 物品拾取模式
+
+```lua
+Game():itemPickMode(ITEM_PICK_MODE.itemOnly)
+```
+
 ### 玩家倉庫上限
 
 ```lua
