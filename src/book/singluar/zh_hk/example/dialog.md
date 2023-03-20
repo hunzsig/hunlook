@@ -31,26 +31,26 @@ Dialog(
 Dialog(
     "選擇難度",
     {
-        { hotkey = "Q", label = "一般睏難", value = 1 },
-        { hotkey = "W", label = "非常睏難", value = 2 },
-        { hotkey = "E", label = "極其睏難", value = 3 },
-        { hotkey = "R", label = "破天荒難", value = 4 },
+        { label = "一般困難", value = 1, hotkey = "Q" },
+        { label = "非常困難", value = 2, hotkey = "W" },
+        { label = "極其困難", value = 3, hotkey = "E" },
+        { label = "破天荒難", value = 5 },
     },
     function(evtData)
     
         -- 對話框不再使用則清理
         evtData.triggerDialog.destroy()
         
-        if (evtData.hotkey == "Q") then
+        if (evtData.value == 1) then
             --搞點事情
-        elseif (evtData.hotkey == "W") then
+        elseif (evtData.value == 2) then
             --搞點事情
-        elseif (evtData.hotkey == "E") then
+        elseif (evtData.value == 3) then
             --搞點事情
-        else
+        elseif (evtData.value == 5) then
             --搞點事情
         end
-        echo("選擇了：" .. evtData.label .. "等級：" .. evtData.value)
+        echo("選擇了：" .. evtData.label .. "，" .. evtData.value)
     end
 ).show(Player(1))
 ```

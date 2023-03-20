@@ -31,26 +31,26 @@ Create a "difficulty selection" dialog box with hotkeys, text and values, and gi
 Dialog(
     "Selection mode",
     {
-        { hotkey = "Q", label = "A", value = 1 },
-        { hotkey = "W", label = "B", value = 2 },
-        { hotkey = "E", label = "C", value = 3 },
-        { hotkey = "R", label = "D", value = 4 },
+        { label = "a", value = 1, hotkey = "Q" },
+        { label = "b", value = 2, hotkey = "W" },
+        { label = "c", value = 3, hotkey = "E" },
+        { label = "d", value = 5 },
     },
     function(evtData)
     
         -- Clean up when the dialog box is no longer used
         evtData.triggerDialog.destroy()
         
-        if (evtData.hotkey == "Q") then
+        if (evtData.value == 1) then
             --something
-        elseif (evtData.hotkey == "W") then
+        elseif (evtData.value == 2) then
             --something
-        elseif (evtData.hotkey == "E") then
+        elseif (evtData.value == 3) then
             --something
-        else
+        elseif (evtData.value == 5) then
             --something
         end
-        echo("choose: " .. evtData.label .. "lv：" .. evtData.value)
+        echo("choose: " .. evtData.label .. ", " .. evtData.value)
     end
 ).show(Player(1))
 ```
