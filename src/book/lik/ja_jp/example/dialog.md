@@ -31,26 +31,26 @@ Dialog(
 Dialog(
     "選択の難しさ",
     {
-        { hotkey = "Q", label = "一般的な困難", value = 1 },
-        { hotkey = "W", label = "非常に困難", value = 2 },
-        { hotkey = "E", label = "困難をきわめる", value = 3 },
-        { hotkey = "R", label = "破天荒で難しい", value = 4 },
+        { label = "一般的な困難", value = 1, hotkey = "Q"},
+        { label = "非常に困難", value = 2, hotkey = "W"  },
+        { label = "困難をきわめる", value = 3, hotkey = "E" },
+        { label = "破天荒で難しい", value = 4 },
     },
     function(evtData)
     
         -- ダイアログボックスが使用されなくなったらクリーンアップ
         destroy(evtData.triggerDialog)
         
-        if (evtData.hotkey == "Q") then
+        if (evtData.value == 1) then
             --仕事をする
-        elseif (evtData.hotkey == "W") then
+        elseif (evtData.value == 2) then
             --仕事をする
-        elseif (evtData.hotkey == "E") then
+        elseif (evtData.value == 3) then
             --仕事をする
-        else
+        elseif (evtData.value == 5) then
             --仕事をする
         end
-        echo("選択した：" .. evtData.label .. "等級：" .. evtData.value)
+        echo("選択した：" .. evtData.label .. "，" .. evtData.value)
     end
 ):show(Player(1))
 ```

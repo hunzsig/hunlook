@@ -32,26 +32,26 @@ Create a "difficulty selection" dialog box with hotkeys, text and numerical valu
 Dialog(
     "Selection mode",
     {
-        { hotkey = "Q", label = "a", value = 1 },
-        { hotkey = "W", label = "b", value = 2 },
-        { hotkey = "E", label = "c", value = 3 },
-        { hotkey = "R", label = "d", value = 4 },
+        { label = "a", value = 1, hotkey = "Q" },
+        { label = "b", value = 2, hotkey = "W" },
+        { label = "c", value = 3, hotkey = "E" },
+        { label = "d", value = 5 },
     },
     function(evtData)
     
         -- Clean up when the dialog box is no longer used
         destroy(evtData.triggerDialog)
         
-        if (evtData.hotkey == "Q") then
+        if (evtData.value == 1) then
             --something
-        elseif (evtData.hotkey == "W") then
+        elseif (evtData.value == 2) then
             --something
-        elseif (evtData.hotkey == "E") then
+        elseif (evtData.value == 3) then
             --something
-        else
+        elseif (evtData.value == 5) then
             --something
         end
-        echo("choose: " .. evtData.label .. "lv:" .. evtData.value)
+        echo("choose: " .. evtData.label .. ", " .. evtData.value)
     end
 ):show(Player(1))
 ```
