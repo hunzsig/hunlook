@@ -1,8 +1,6 @@
 import React from "react";
 
 import {
-  CollectMoneyOutline,
-  FileOutline,
   KoubeiOutline,
   PictureOutline,
   SetOutline,
@@ -32,7 +30,6 @@ import {
   DollarCircleOutlined,
   DragOutlined,
   DribbbleOutlined,
-  ExpandOutlined,
   FireOutlined,
   FolderViewOutlined,
   FontColorsOutlined,
@@ -49,7 +46,6 @@ import {
   LoadingOutlined,
   MacCommandOutlined,
   MenuUnfoldOutlined,
-  MessageOutlined,
   NodeExpandOutlined,
   PictureOutlined,
   ProfileOutlined,
@@ -69,7 +65,6 @@ import {
   TrademarkCircleOutlined,
   TranslationOutlined,
   UnorderedListOutlined,
-  ZoomInOutlined,
 } from "@ant-design/icons";
 
 // only one layout
@@ -123,6 +118,7 @@ export default [
   {
     icon: <FundViewOutlined/>, key: 'ui', label: "UI", children: [
       {icon: <FolderViewOutlined/>, key: 'kit', label: "Kit"},
+      {icon: <FrownOutlined/>, key: 'problem', label: "Difficult"},
       {icon: <FontSizeOutlined/>, key: 'text', label: "Text"},
       {icon: <PictureOutlined/>, key: 'backdrop', label: "Backdrop"},
       {icon: <BorderOuterOutlined/>, key: 'label', label: "Label"},
@@ -131,20 +127,8 @@ export default [
       {icon: <DragOutlined/>, key: 'drag', label: "Drag"},
       {icon: <BoxPlotOutlined/>, key: 'bar', label: "Bar"},
       {icon: <ProfileOutlined/>, key: 'tooltips', label: "Tooltips"},
-    ]
-  },
-  {
-    icon: <FundViewOutlined/>, key: 'uiUp', label: "UI UP", children: [
-      {icon: <FrownOutlined/>, key: 'problem', label: "Difficult"},
       {icon: <FullscreenExitOutlined/>, key: 'adapter', label: "Adapter"},
       {icon: <RadiusSettingOutlined/>, key: 'gradient', label: "Gradient"},
-      {icon: <ExpandOutlined/>, key: 'map', label: "Map"},
-      {icon: <BoxPlotOutlined/>, key: 'barState', label: "BarState"},
-      {icon: <FileOutline/>, key: 'balloon', label: "Balloon"},
-      {icon: <CollectMoneyOutline/>, key: 'toast', label: "Toast"},
-      {icon: <MessageOutlined/>, key: 'echo', label: "Echo"},
-      {icon: <ZoomInOutlined/>, key: 'detail', label: "Detail"},
-      {icon: <BoxPlotOutlined/>, key: 'targetGage', label: "TargetGage"},
     ]
   },
   {

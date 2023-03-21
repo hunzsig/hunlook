@@ -1,8 +1,6 @@
 import React from "react";
 
 import {
-  CollectMoneyOutline,
-  FileOutline,
   KoubeiOutline,
   PictureOutline,
   SetOutline,
@@ -32,7 +30,6 @@ import {
   DollarCircleOutlined,
   DragOutlined,
   DribbbleOutlined,
-  ExpandOutlined,
   FireOutlined,
   FolderViewOutlined,
   FontColorsOutlined,
@@ -49,7 +46,6 @@ import {
   LoadingOutlined,
   MacCommandOutlined,
   MenuUnfoldOutlined,
-  MessageOutlined,
   NodeExpandOutlined,
   PictureOutlined,
   ProfileOutlined,
@@ -69,7 +65,6 @@ import {
   TrademarkCircleOutlined,
   TranslationOutlined,
   UnorderedListOutlined,
-  ZoomInOutlined,
 } from "@ant-design/icons";
 
 // only one layout
@@ -121,8 +116,9 @@ export default [
     ]
   },
   {
-    icon: <FundViewOutlined/>, key: 'ui', label: "UI界面基础", children: [
+    icon: <FundViewOutlined/>, key: 'ui', label: "UI界面", children: [
       {icon: <FolderViewOutlined/>, key: 'kit', label: "套件"},
+      {icon: <FrownOutlined/>, key: 'problem', label: "疑难杂症"},
       {icon: <FontSizeOutlined/>, key: 'text', label: "文本"},
       {icon: <PictureOutlined/>, key: 'backdrop', label: "背景"},
       {icon: <BorderOuterOutlined/>, key: 'label', label: "图文"},
@@ -131,20 +127,8 @@ export default [
       {icon: <DragOutlined/>, key: 'drag', label: "拖拽"},
       {icon: <BoxPlotOutlined/>, key: 'bar', label: "条"},
       {icon: <ProfileOutlined/>, key: 'tooltips', label: "工具提示"},
-    ]
-  },
-  {
-    icon: <FundViewOutlined/>, key: 'uiUp', label: "UI界面进阶", children: [
-      {icon: <FrownOutlined/>, key: 'problem', label: "疑难杂症"},
       {icon: <FullscreenExitOutlined/>, key: 'adapter', label: "自适应"},
       {icon: <RadiusSettingOutlined/>, key: 'gradient', label: "渐变"},
-      {icon: <ExpandOutlined/>, key: 'map', label: "地图"},
-      {icon: <BoxPlotOutlined/>, key: 'barState', label: "状态条"},
-      {icon: <FileOutline/>, key: 'balloon', label: "气泡"},
-      {icon: <CollectMoneyOutline/>, key: 'toast', label: "吐司"},
-      {icon: <MessageOutlined/>, key: 'echo', label: "消息体"},
-      {icon: <ZoomInOutlined/>, key: 'detail', label: "详情展示"},
-      {icon: <BoxPlotOutlined/>, key: 'targetGage', label: "状态条"},
     ]
   },
   {

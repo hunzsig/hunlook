@@ -1,8 +1,6 @@
 import React from "react";
 
 import {
-  CollectMoneyOutline,
-  FileOutline,
   KoubeiOutline,
   PictureOutline,
   SetOutline,
@@ -32,7 +30,6 @@ import {
   DollarCircleOutlined,
   DragOutlined,
   DribbbleOutlined,
-  ExpandOutlined,
   FireOutlined,
   FolderViewOutlined,
   FontColorsOutlined,
@@ -49,7 +46,6 @@ import {
   LoadingOutlined,
   MacCommandOutlined,
   MenuUnfoldOutlined,
-  MessageOutlined,
   NodeExpandOutlined,
   PictureOutlined,
   ProfileOutlined,
@@ -69,7 +65,6 @@ import {
   TrademarkCircleOutlined,
   TranslationOutlined,
   UnorderedListOutlined,
-  ZoomInOutlined,
 } from "@ant-design/icons";
 
 // only one layout
@@ -121,8 +116,9 @@ export default [
     ]
   },
   {
-    icon: <FundViewOutlined/>, key: 'ui', label: "UIインタフェース", children: [
+    icon: <FundViewOutlined/>, key: 'ui', label: "UI", children: [
       {icon: <FolderViewOutlined/>, key: 'kit', label: "スイート"},
+      {icon: <FrownOutlined/>, key: 'problem', label: "難病"},
       {icon: <FontSizeOutlined/>, key: 'text', label: "テキスト"},
       {icon: <PictureOutlined/>, key: 'backdrop', label: "図"},
       {icon: <BorderOuterOutlined/>, key: 'label', label: "図文"},
@@ -130,21 +126,8 @@ export default [
       {icon: <LoadingOutlined/>, key: 'animate', label: "むかつく"},
       {icon: <DragOutlined/>, key: 'drag', label: "ドラッグ"},
       {icon: <BoxPlotOutlined/>, key: 'bar', label: "バー"},
-    ]
-  },
-  {
-    icon: <FundViewOutlined/>, key: 'uiUp', label: "UIステップアップ", children: [
-      {icon: <FrownOutlined/>, key: 'problem', label: "難病"},
       {icon: <FullscreenExitOutlined/>, key: 'adapter', label: "てきおう"},
       {icon: <RadiusSettingOutlined/>, key: 'gradient', label: "グラデーション"},
-      {icon: <ExpandOutlined/>, key: 'map', label: "地図"},
-      {icon: <BoxPlotOutlined/>, key: 'barState', label: "状態バー"},
-      {icon: <FileOutline/>, key: 'balloon', label: "風船"},
-      {icon: <CollectMoneyOutline/>, key: 'toast', label: "パン"},
-      {icon: <MessageOutlined/>, key: 'echo', label: "メッセージ体"},
-      {icon: <ZoomInOutlined/>, key: 'detail', label: "詳細"},
-      {icon: <BoxPlotOutlined/>, key: 'targetGage', label: "ステータスバー"},
-      {icon: <ProfileOutlined/>, key: 'tooltips', label: "ツールチップ"},
     ]
   },
   {
