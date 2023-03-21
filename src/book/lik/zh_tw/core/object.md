@@ -30,9 +30,7 @@ Frame 介面
 FrameAnimate 介面動畫
 FrameBackdrop 介面背景
 FrameBackdropTile 介面背景分型
-FrameBalloon 介面氣泡對話
 FrameBar 介面條
-FrameBarState 介面狀態條
 FrameBlock 介面空佔
 FrameButton 介面按鈕
 FrameCustom 介面自定義
@@ -40,11 +38,10 @@ frameDrag 介面拖拽
 FrameHighLight 介面高亮
 FrameLabel 介面詞條
 FrameList 介面列表
-FrameMap 介面地圖
 FrameModel 介面模型
+FrameTextBlock 介面占位文字
 FrameText 介面文字
 FrameTextarea 介面文字域
-FrameToast 介面吐司資訊
 FrameToolTips 介面彈層
 Game 遊戲
 Group 組

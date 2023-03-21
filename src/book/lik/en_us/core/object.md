@@ -30,9 +30,7 @@ Frame
 FrameAnimate
 FrameBackdrop
 FrameBackdropTile
-FrameBalloon
 FrameBar
-FrameBarState
 FrameBlock
 FrameButton
 FrameCustom
@@ -40,11 +38,10 @@ frameDrag
 FrameHighLight
 FrameLabel
 FrameList
-FrameMap
 FrameModel
+FrameTextBlock
 FrameText
 FrameTextarea
-FrameToast
 FrameToolTips
 Game
 Group

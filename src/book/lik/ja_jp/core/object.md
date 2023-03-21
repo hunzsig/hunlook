@@ -30,9 +30,7 @@ Frame インタフェース
 FrameAnimate インタフェースアニメーション
 FrameBackdrop インタフェースの背景
 FrameBackdropTile 界面背景分類
-FrameBalloon インタフェース気泡
 FrameBar インタフェースバー
-FrameBarState インタフェースステータスバー
 FrameBlock インタフェース空占
 FrameButton インタフェースボタン
 FrameCustom インタフェースのカスタマイズ
@@ -40,11 +38,10 @@ frameDrag インタフェースドラッグ
 FrameHighLight インタフェースがハイライトされている
 FrameLabel インタフェースの見出し
 FrameList インタフェースのリスト
-FrameMap インタフェースマップ
 FrameModel インタフェースモデル
+FrameTextBlock インタフェース占有テキスト
 FrameText インタフェーステキスト
 FrameTextarea インタフェーステキストフィールド
-FrameToast 界面トースト情報
 FrameToolTips かいめんだんそう
 Game ゲーム
 Group グループ
