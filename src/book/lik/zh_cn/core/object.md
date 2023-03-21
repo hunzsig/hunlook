@@ -56,7 +56,6 @@ Pool 池
 Procoss 流程
 Quest 任务
 Region 区域
-Screen 荧屏
 Server 服务器
 Store 仓贮
 Team 队伍

@@ -57,7 +57,6 @@ Pool いけにえ
 Procoss プロセス
 Quest クエスト
 Region 領域
-Screen スクリーン
 Server サーバ
 Store 倉庫
 Team チーム
