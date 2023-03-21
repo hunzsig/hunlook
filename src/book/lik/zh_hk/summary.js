@@ -64,7 +64,6 @@ import {
   ThunderboltOutlined,
   TrademarkCircleOutlined,
   TranslationOutlined,
-  UnorderedListOutlined,
 } from "@ant-design/icons";
 
 // only one layout
@@ -100,8 +99,7 @@ export default [
   },
   {
     icon: <DingtalkOutlined/>, key: 'setup', label: "預設設計", children: [
-      {icon: <MacCommandOutlined/>, key: 'game', label: "構成"},
-      {icon: <UnorderedListOutlined/>, key: 'slot', label: "常規欄"},
+      {icon: <MacCommandOutlined/>, key: 'common', label: "常規"},
       {icon: <ProfileOutlined/>, key: 'description', label: "描述體"},
       {icon: <NodeExpandOutlined/>, key: 'damaging', label: "傷害流"},
       {icon: <FireOutlined/>, key: 'enchant', label: "附魔"},

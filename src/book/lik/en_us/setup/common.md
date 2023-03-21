@@ -1,3 +1,10 @@
+### Native UI composition
+
+```lua
+-- Optional hide initialization native UI
+Game():hideInterface(true)
+```
+
 ### Unit level limit, skill experience calculation
 
 ```lua

@@ -100,8 +100,7 @@ export default [
   },
   {
     icon: <DingtalkOutlined/>, key: 'setup', label: "Setup", children: [
-      {icon: <MacCommandOutlined/>, key: 'game', label: "Game"},
-      {icon: <UnorderedListOutlined/>, key: 'slot', label: "Slots"},
+      {icon: <MacCommandOutlined/>, key: 'common', label: "Common"},
       {icon: <ProfileOutlined/>, key: 'description', label: "Description"},
       {icon: <NodeExpandOutlined/>, key: 'damaging', label: "DmgFlow"},
       {icon: <FireOutlined/>, key: 'enchant', label: "Enchant"},

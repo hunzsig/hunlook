@@ -1,3 +1,10 @@
+### 原生UI构成
+
+```lua
+-- 可选隐藏初始化原生UI
+Game():hideInterface(true)
+```
+
 ### 单位等级极限、技能经验计算
 
 ```lua
