@@ -25,6 +25,7 @@ Effect エフェクト
 EffectAttach エフェクトアタッチタイプ
 Enchant 付魔
 Flow 流体
+FogModifier かしどしゅうせいき
 Frame インタフェース
 FrameAnimate インタフェースアニメーション
 FrameBackdrop インタフェースの背景

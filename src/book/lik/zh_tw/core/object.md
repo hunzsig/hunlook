@@ -25,6 +25,7 @@ Effect 特效
 EffectAttach 特效附著型
 Enchant 附魔
 Flow 流體
+FogModifier 可見度修正器
 Frame 介面
 FrameAnimate 介面動畫
 FrameBackdrop 介面背景

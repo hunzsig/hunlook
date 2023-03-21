@@ -25,6 +25,7 @@ Effect
 EffectAttach
 Enchant
 Flow
+FogModifier
 Frame
 FrameAnimate
 FrameBackdrop
