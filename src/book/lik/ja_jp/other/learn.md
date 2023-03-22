@@ -46,8 +46,8 @@ kv型tableをpairsでトラバースする
 
 以下の質問方法はあなたを助けることができると信じています~
 
-![question](https://gitlab.com/h-document/lik/-/raw/main/assets/question1.png)
+![Question](https://gitlab.com/h-document/lik/-/raw/main/assets/question1.png)
 
-![question](https://gitlab.com/h-document/lik/-/raw/main/assets/question2.png)
+![Question](https://gitlab.com/h-document/lik/-/raw/main/assets/question2.png)
 
 ##### 学習は学問であり、後退するとかえって進歩することがある。何事も弁証法的なものであり、難題に直面して効果が得られない場合は、一歩後退して、考えてから前進することを考えてみてはいかがでしょうか。最後に君を祝して、コードは風雨を驚かして、技は鬼神を泣きます。

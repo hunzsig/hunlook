@@ -46,8 +46,8 @@ After modifying the project, skip other tests and directly run the -r test
 
 The following methods of asking questions are believed to help you~
 
-![question](https://gitlab.com/h-document/lik/-/raw/main/assets/question1.png)
+![Question](https://gitlab.com/h-document/lik/-/raw/main/assets/question1.png)
 
-![question](https://gitlab.com/h-document/lik/-/raw/main/assets/question2.png)
+![Question](https://gitlab.com/h-document/lik/-/raw/main/assets/question2.png)
 
 ##### Learning is a science, and sometimes regressing makes progress even more. Everything is dialectical. When faced with a difficult problem that doesn't work, we might as well consider taking a step back and thinking before moving forward. Finally, Zhu Jun, the code fell and the wind and rain startled, and his skill became a sobbing spirit.

@@ -46,8 +46,8 @@
 
 下列問問題方法相信可以幫助你~
 
-![question](https://gitlab.com/h-document/lik/-/raw/main/assets/question1.png)
+![Question](https://gitlab.com/h-document/lik/-/raw/main/assets/question1.png)
 
-![question](https://gitlab.com/h-document/lik/-/raw/main/assets/question2.png)
+![Question](https://gitlab.com/h-document/lik/-/raw/main/assets/question2.png)
 
 ##### 學習是門學問，有時退步反而更能進步。任何事物都是辯證的，當我們面對難題不奏效時，不妨考慮退一步，思考思考再前行。最後祝君，碼落驚風雨，技成泣鬼神。
