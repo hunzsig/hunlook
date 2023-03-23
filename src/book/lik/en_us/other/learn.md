@@ -50,4 +50,40 @@ The following methods of asking questions are believed to help you~
 
 ![Question](https://gitlab.com/h-document/lik/-/raw/main/assets/question2.png)
 
+### Make good use of tools
+
+After the release of chatGPT, more possibilities emerged. It is not advisable to regard them as floods and beasts, but to use them as tools.
+
+> More tools like: Wenyanxin, NewBing, Copilot, Cursor, etc. I won't recommend them here, you can learn about them yourself.
+
+For example, I use AI to help translate and modify documents.
+
+![AiTrans1](https://gitlab.com/h-document/lik/-/raw/main/assets/aiTrans1.png)
+
+![AiTrans2](https://gitlab.com/h-document/lik/-/raw/main/assets/aiTrans2.png)
+
+You can also try to use AI to help you understand and optimize code.
+
+![AiSee1](https://gitlab.com/h-document/lik/-/raw/main/assets/aiSee1.png)
+
+![AiSee2](https://gitlab.com/h-document/lik/-/raw/main/assets/aiSee2.png)
+
+![AiSee3](https://gitlab.com/h-document/lik/-/raw/main/assets/aiSee3.png)
+
+You can also try to use AI to help you find bugs in your code.
+
+![AiSee4](https://gitlab.com/h-document/lik/-/raw/main/assets/aiSee4.png)
+
+Or just let AI do it for you.
+
+> Instruction: Change the cooldown to 666 seconds, change the name to "Human Extinction", and change the passive trigger condition to when the unit attacks.
+
+![AiDo1](https://gitlab.com/h-document/lik/-/raw/main/assets/aiDo1.png)
+
+> Instruction: Refer to the existing Sword of Courage skill and help me write a similar effect skill called "Human Defense Final Chapter". The original increase in attack power per layer is changed to an increase in defense power of 15 points and movement power of 30 points per layer.
+
+![AiDo2](https://gitlab.com/h-document/lik/-/raw/main/assets/aiDo2.png)
+
+Although AI may not always be accurate and is sure to make mistakes, as long as you learn to distinguish, remove the dross and retain the essence, it will definitely help you a lot.
+
 ##### Learning is a science, and sometimes regressing makes progress even more. Everything is dialectical. When faced with a difficult problem that doesn't work, we might as well consider taking a step back and thinking before moving forward. Finally, Zhu Jun, the code fell and the wind and rain startled, and his skill became a sobbing spirit.

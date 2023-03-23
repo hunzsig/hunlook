@@ -50,4 +50,40 @@
 
 ![Question](https://gitlab.com/h-document/lik/-/raw/main/assets/question2.png)
 
+### 善用工具
+
+在chatGPT发布后，涌现出了更多的可能性，视之为洪水猛兽不可取，更是作为工具运用好它们
+
+> 更多如：文言一心、NewBing、Copilot、Cursor等等，这里我就不推荐了，可自行了解。
+
+比如我就运用AI帮忙翻译并修改文档
+
+![AiTrans1](https://gitlab.com/h-document/lik/-/raw/main/assets/aiTrans1.png)
+
+![AiTrans2](https://gitlab.com/h-document/lik/-/raw/main/assets/aiTrans2.png)
+
+你也可以试着使用AI帮助你理解代码、优化代码
+
+![AiSee1](https://gitlab.com/h-document/lik/-/raw/main/assets/aiSee1.png)
+
+![AiSee2](https://gitlab.com/h-document/lik/-/raw/main/assets/aiSee2.png)
+
+![AiSee3](https://gitlab.com/h-document/lik/-/raw/main/assets/aiSee3.png)
+
+你也可以试着使用AI帮助你寻找代码里面的bug
+
+![AiSee4](https://gitlab.com/h-document/lik/-/raw/main/assets/aiSee4.png)
+
+又或者直接让AI帮你干起来
+
+> 指示：冷却改为666秒，名字改为人类灭亡，技能被动触发条件改为单位攻击的时候
+
+![AiDo1](https://gitlab.com/h-document/lik/-/raw/main/assets/aiDo1.png)
+
+> 指示：参考已有的剑之勇气技能，帮我写一个类似效果的技能，名字叫人类防御终章，原来每层增加攻击改为每层增加防御力15点和移动力30点
+
+![AiDo2](https://gitlab.com/h-document/lik/-/raw/main/assets/aiDo2.png)
+
+虽然AI说的不一定准确，也肯定会犯错，但只要学会分辨，去除糟粕、留存精华，定能助你一臂之力。
+
 ##### 学习是门学问，有时退步反而更能进步。任何事物都是辩证的，当我们面对难题不奏效时，不妨考虑退一步，思考思考再前行。最后祝君，码落惊风雨，技成泣鬼神。
