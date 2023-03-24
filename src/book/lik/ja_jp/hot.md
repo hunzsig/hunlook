@@ -13,6 +13,7 @@
 ```text
 /library/(!builtIn)
 /assets/war3mapUI/
+/assets/war3mapPlugins/
 /projects/*/
 ```
 

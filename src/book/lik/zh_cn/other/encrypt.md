@@ -23,8 +23,9 @@ function wUdiGvyccm(start, stop, t) return start + (stop - start) * t end functi
 >
 > 底层自动混淆不需要自行参与，包括：
 > * library/builtIn
-> * library/oop/facades、library/oop/class
-> * sublibrary/oop/facades、sublibrary/oop/class
+> * library/oop
+> * sublibrary/oop
+> * plulibrary/oop
 
 ##### 规则定义在 \encrypt 中，指符合规则的内容将按类型加密
 
@@ -36,8 +37,16 @@ function wUdiGvyccm(start, stop, t) return start + (stop - start) * t end functi
 
 ### sublibrary
 
-> 子库就是用来拓展library的，所以当你正确放置对应位置的文件后
+> 项目子库就是用来拓展library的，所以当你正确放置对应位置的文件后
 >
 > 相关的子拓展也会自动运用rule里面的规则混淆
 
 ##### 如 /sublibrary/variable/prop.lua 也会运用编写给 /library/variable/prop.lua 的规则
+
+### plulibrary
+
+> 插件库与项目子库一样
+>
+> 相关的子拓展也会自动运用rule里面的规则混淆
+
+##### 如 /plulibrary/variable/prop.lua 也会运用编写给 /library/variable/prop.lua 的规则

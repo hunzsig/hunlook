@@ -12,6 +12,7 @@ import {
   AntCloudOutlined,
   AntDesignOutlined,
   ApartmentOutlined,
+  ApiOutlined,
   AppstoreAddOutlined,
   AppstoreOutlined,
   BellOutlined,
@@ -82,6 +83,7 @@ export default [
       {icon: <AppstoreOutlined/>, key: 'object', label: "物件門面"},
       {icon: <DribbbleOutlined/>, key: 'ability', label: "技能庫"},
       {icon: <AppstoreAddOutlined/>, key: 'sublib', label: "拓展庫"},
+      {icon: <ApiOutlined/>, key: 'plulib', label: "插件庫"},
     ]
   },
   {
@@ -127,7 +129,7 @@ export default [
       {icon: <BoxPlotOutlined/>, key: 'bar', label: "條"},
       {icon: <ProfileOutlined/>, key: 'tooltips', label: "工具提示"},
       {icon: <FullscreenExitOutlined/>, key: 'adapter', label: "自適應"},
-      {icon: <RadiusSettingOutlined />, key: 'gradient', label: "漸變"},
+      {icon: <RadiusSettingOutlined/>, key: 'gradient', label: "漸變"},
     ]
   },
   {

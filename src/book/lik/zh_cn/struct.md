@@ -12,6 +12,7 @@
 │   ├── war3mapIcon - 放图标，只支持 tga
 │   ├── war3MapLoading - 载入图，只支持单图 tga 或 规则组合 tga
 │   ├── war3mapModel - 放模型，只支持 mdx，贴图不要扔进来
+│   ├── war3mapPlugins - 放插件，已有格式参考
 │   ├── war3mapPreview - 预览图，只支持 tga
 │   ├── war3mapSelection - 放选择圈，参考已提供格式
 │   ├── war3mapSound - 放音效音乐，只支持 mp3
@@ -55,6 +56,14 @@
         ├── map - 地图lni（不要轻易改，除非你懂）
         ├── table - ini式的物编（不要改，不搭理物编）
         └── war3mapMap.blp - 略缩图（不用改）
+```
+
+### 插件(Plugins)结构
+
+```
+└── Printer - 插件目录名称
+    ├── encrypt -（·）混淆规则
+    └── plulibrary -（*|·）插件库脚本代码
 ```
 
 ### UI套件(Kit)结构

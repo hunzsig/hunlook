@@ -18,6 +18,8 @@
   > Preview - Only：tga
 * Model
   > Model - Only：mdx
+* Plugins
+  > Plugins - Only：Limited form Kit
 * Selection
   > Selection - Only：Limited form Kit
 * Sound
@@ -85,7 +87,8 @@ _assets_preview("default") --Suffix can be omitted
 >
 > When maps exist in war3mapTextures, the required maps will be automatically introduced when the model is loaded
 >
-> If there is a portlet in Warcraft, the file name format is added to the name of the corresponding ontology model + _Portrait，
+> If there is a portlet in Warcraft, the file name format is added to the name of the corresponding ontology model + _
+> Portrait，
 > For example, you have a model of hero.mdx, and the author of the model provides portrait.mdx,
 > You should name it hero_Portrait.mdx
 >
@@ -103,6 +106,16 @@ _assets_model("buff/Echo","echo")
 AModel("buff/ApaceGrowth")
 AModel("slash/Red_swing")
 AModel("echo")
+```
+
+#### Reference Plugins
+
+> Resource files are placed in war3mapPlugins
+>
+> Plugins are self-contained and easy to port
+
+```lua
+_assets_plugins("Printer")
 ```
 
 #### Reference Selection
@@ -143,9 +156,11 @@ _assets_sound("bgm/dnf/Dungeon and Fighter - GBL女神殿 - goddess temple", "gb
 
 > Resource files are placed in war3mapUI
 >
-> The resources used by the UI kit are independent of other directories. The UI kit is self-contained and easy to migrate
+> The resources used by the UI kit are independent of other directories. The UI kit is self-contained and easy to
+> migrate
 >
-> The project team has provided many powerful UI Suites for free. Please refer to their formats and write your UI (not for commercial use at will)
+> The project team has provided many powerful UI Suites for free. Please refer to their formats and write your UI (not
+> for commercial use at will)
 
 ```lua
 _assets_ui("lik_menu")

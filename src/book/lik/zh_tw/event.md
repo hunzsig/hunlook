@@ -16,20 +16,20 @@ EVENT.Prop = {
     Change = "propChange",
 }
 
----@alias noteOnObjectCreateData {triggerObject:Object}
----@alias noteOnObjectDestroyData {triggerObject:Object}
----@alias noteOnAIDestroyData {triggerObject:AI} AI
----@alias noteOnAbilityDestroyData {triggerObject:Ability} 技能
----@alias noteOnCorpseDestroyData {triggerObject:Corpse} 屍體
----@alias noteOnEffectDestroyData {triggerObject:Effect} 特效
----@alias noteOnItemDestroyData {triggerObject:Item} 物品
----@alias noteOnUnitDestroyData {triggerObject:Unit} 單位
----@alias noteOnTimerDestroyData {triggerObject:Timer} 計時器
+---@alias noteOnObjectConstructData {triggerObject:Object}
+---@alias noteOnObjectDestructData {triggerObject:Object}
+---@alias noteOnAIDestructData {triggerObject:AI} AI
+---@alias noteOnAbilityDestructData {triggerObject:Ability} 技能
+---@alias noteOnCorpseDestructData {triggerObject:Corpse} 屍體
+---@alias noteOnEffectDestructData {triggerObject:Effect} 特效
+---@alias noteOnItemDestructData {triggerObject:Item} 物品
+---@alias noteOnUnitDestructData {triggerObject:Unit} 單位
+---@alias noteOnTimerDestructData {triggerObject:Timer} 計時器
 EVENT.Object = {
     --- 物件建立
-    Create = "ObjectCreate",
+    Construct = "ObjectConstruct",
     --- 物件毀滅
-    Destroy = "ObjectDestroy",
+    Destruct = "ObjectDestruct",
 }
 
 EVENT.Game = {

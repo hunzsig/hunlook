@@ -16,20 +16,20 @@ EVENT.Prop = {
     Change = "propChange",
 }
 
----@alias noteOnObjectCreateData {triggerObject:Object}
----@alias noteOnObjectDestroyData {triggerObject:Object}
----@alias noteOnAIDestroyData {triggerObject:AI} AI
----@alias noteOnAbilityDestroyData {triggerObject:Ability}
----@alias noteOnCorpseDestroyData {triggerObject:Corpse}
----@alias noteOnEffectDestroyData {triggerObject:Effect}
----@alias noteOnItemDestroyData {triggerObject:Item}
----@alias noteOnUnitDestroyData {triggerObject:Unit}
----@alias noteOnTimerDestroyData {triggerObject:Timer}
+---@alias noteOnObjectConstructData {triggerObject:Object}
+---@alias noteOnObjectDestructData {triggerObject:Object}
+---@alias noteOnAIDestructData {triggerObject:AI} AI
+---@alias noteOnAbilityDestructData {triggerObject:Ability}
+---@alias noteOnCorpseDestructData {triggerObject:Corpse}
+---@alias noteOnEffectDestructData {triggerObject:Effect}
+---@alias noteOnItemDestructData {triggerObject:Item}
+---@alias noteOnUnitDestructData {triggerObject:Unit}
+---@alias noteOnTimerDestructData {triggerObject:Timer}
 EVENT.Object = {
     --- objects creating
-    Create = "ObjectCreate",
+    Construct = "ObjectConstruct",
     --- Object destruction
-    Destroy = "ObjectDestroy",
+    Destruct = "ObjectDestruct",
 }
 
 EVENT.Game = {

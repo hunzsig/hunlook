@@ -2,11 +2,14 @@
 
 > This framework has a semi-automatic confusion encryption algorithm
 >
-> To achieve different levels of directory, structure, content, and loading order confusion. And it's easy and powerful..
+> To achieve different levels of directory, structure, content, and loading order confusion. And it's easy and
+> powerful..
 
 ### Obfuscate the encryption process
 
-* Compilation Analysis -> Mathematical Arithmetic Dissimilation -> Chinese Character Equivalent Replacement -> String Equivalent Replacement -> String Confusion Encryption -> Overwrite Roots -> Destroy Roots -> Replace Roots -> Facade Roots -> Function Roots -> Custom Mandatory Roots
+* Compilation Analysis -> Mathematical Arithmetic Dissimilation -> Chinese Character Equivalent Replacement -> String
+  Equivalent Replacement -> String Confusion Encryption -> Overwrite Roots -> Destroy Roots -> Replace Roots -> Facade
+  Roots -> Function Roots -> Custom Mandatory Roots
 
 ### Obfuscate encryption results
 
@@ -23,8 +26,9 @@ function wUdiGvyccm(start, stop, t) return start + (stop - start) * t end functi
 >
 > The underlying automatic obfuscation does not require self participation, including:
 > * library/builtIn
-> * library/oop/facades、library/oop/class
-> * sublibrary/oop/facades、sublibrary/oop/class
+> * library/oop
+> * sublibrary/oop
+> * plulibrary/oop
 
 ##### The rule definition in  encrypt means that content that meets the rule will be encrypted by type
 
@@ -40,4 +44,12 @@ function wUdiGvyccm(start, stop, t) return start + (stop - start) * t end functi
 >
 > Related sub extensions will also automatically apply rule confusion within the rule
 
-##### For example,/sublibrary/variable/prop.lua also applies the rules written to/library/variable/prop.lua
+##### For example,/sublibrary/variable/prop.lua also applies the rules written to /library/variable/prop.lua
+
+### plulibrary
+
+> The plulibrary is the same as the project sub library
+>
+> Related sub extensions will also automatically apply rule confusion within the rule
+
+##### For example,/plulibrary/variable/prop.lua also applies the rules written to /library/variable/prop.lua

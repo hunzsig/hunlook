@@ -18,6 +18,8 @@
   > 预览图 格式支持：tga
 * Model
   > 模型 格式支持：mdx
+* Plugins
+  > 插件 格式支持：限定形式套件
 * Selection
   > 选择圈 格式支持：限定形式套件
 * Sound
@@ -103,6 +105,16 @@ _assets_model("buff/Echo","echo")
 AModel("buff/ApaceGrowth")
 AModel("slash/Red_swing")
 AModel("echo")
+```
+
+#### Pluginsプラグインを引用する
+
+> リソースファイルはwar3mapPluginsに置かれます
+>
+> プラグインは一つのセットで自己完結しており、移植が容易です
+
+```lua
+_assets_plugins("Printer")
 ```
 
 #### 引用 Selection(选择圈)

@@ -54,7 +54,7 @@ The following methods of asking questions are believed to help you~
 
 After the release of chatGPT, more possibilities emerged. It is not advisable to regard them as floods and beasts, but to use them as tools.
 
-> More tools like: Wenyanxin, NewBing, Copilot, Cursor, etc. I won't recommend them here, you can learn about them yourself.
+> More tools like: ERNIE Bot, NewBing, Copilot, Cursor, etc. I won't recommend them here, you can learn about them yourself.
 
 For example, I use AI to help translate and modify documents.
 

@@ -16,20 +16,20 @@ EVENT.Prop = {
     Change = "propChange",
 }
 
----@alias noteOnObjectCreateData {triggerObject:Object}
----@alias noteOnObjectDestroyData {triggerObject:Object}
----@alias noteOnAIDestroyData {triggerObject:AI} AI
----@alias noteOnAbilityDestroyData {triggerObject:Ability} スキル
----@alias noteOnCorpseDestroyData {triggerObject:Corpse} 死体
----@alias noteOnEffectDestroyData {triggerObject:Effect} 効果
----@alias noteOnItemDestroyData {triggerObject:Item} アイテム
----@alias noteOnUnitDestroyData {triggerObject:Unit} 単位
----@alias noteOnTimerDestroyData {triggerObject:Timer} タイマ
+---@alias noteOnObjectConstructData {triggerObject:Object}
+---@alias noteOnObjectDestructData {triggerObject:Object}
+---@alias noteOnAIDestructData {triggerObject:AI} AI
+---@alias noteOnAbilityDestructData {triggerObject:Ability} スキル
+---@alias noteOnCorpseDestructData {triggerObject:Corpse} 死体
+---@alias noteOnEffectDestructData {triggerObject:Effect} 効果
+---@alias noteOnItemDestructData {triggerObject:Item} アイテム
+---@alias noteOnUnitDestructData {triggerObject:Unit} 単位
+---@alias noteOnTimerDestructData {triggerObject:Timer} タイマ
 EVENT.Object = {
     --- オブジェクト作成
-    Create = "ObjectCreate",
+    Construct = "ObjectConstruct",
     --- オブジェクト破壊
-    Destroy = "ObjectDestroy",
+    Destruct = "ObjectDestruct",
 }
 
 EVENT.Game = {

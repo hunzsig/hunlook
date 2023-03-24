@@ -23,8 +23,9 @@ function wUdiGvyccm(start, stop, t) return start + (stop - start) * t end functi
 >
 > 基本的な自動混同には、次のような自己参加は必要ありません。
 > * library/builtIn
-> * library/oop/facades、library/oop/class
-> * sublibrary/oop/facades、sublibrary/oop/class
+> * library/oop
+> * sublibrary/oop
+> * plulibrary/oop
 
 ##### ルール定義 \encrypt では、ルールに一致するコンテンツがタイプ別に暗号化されることを意味します
 
@@ -41,3 +42,11 @@ function wUdiGvyccm(start, stop, t) return start + (stop - start) * t end functi
 > 関連するサブ拡張は、rule内のルールを混同するためにも自動的に使用されます
 
 ##### 例えば /sublibrary/variable/prop.lua も /library/variable/prop.lua に記述された規則を使用します
+
+### plulibrary
+
+> プラグインライブラリはプロジェクトサブライブラリと同じです
+>
+> 関連するサブディレクトリも、rule内のルールを混同するために自動的に使用されます
+
+##### たとえば/plulibrary/variable/prop.luaも/library/variable/prop.luaに記述された規則を使用します

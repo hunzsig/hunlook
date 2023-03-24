@@ -18,6 +18,8 @@
   > 預覽圖 格式支援：tga
 * Model
   > 模型 格式支援：mdx
+* Plugins
+  > 外掛 格式支援：限定形式套件
 * Selection
   > 選擇圈 格式支援：限定形式套件
 * Sound
@@ -103,6 +105,16 @@ _assets_model("buff/Echo","echo")
 AModel("buff/ApaceGrowth")
 AModel("slash/Red_swing")
 AModel("echo")
+```
+
+#### 引用 Plugins 外掛
+
+> 資原始檔放在 war3mapPlugins 裡
+>
+> 外掛是為一套件是自成一體的，便於移植
+
+```lua
+_assets_plugins("Printer")
 ```
 
 #### 引用 Selection(選擇圈)

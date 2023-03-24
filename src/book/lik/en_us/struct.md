@@ -1,85 +1,91 @@
 ## Directory Structure
 
-> （*）Required Necessity, Lost Crash
+> (*) Required, missing will cause a crash
 >
-> （~）Automatic Temporary, lack of automatic builds
+> (~) Automatic, missing automatic build
 >
-> （·）Customize Custom, build on demand
+> (·) Customize, build as needed
 
 ```text
-├── assets -（*|·）Resource Library
-│   ├── war3mapFont - Put fonts, only support ttf
-│   ├── war3mapIcon - Put icon, only support tga
-│   ├── war3MapLoading - Load image, only supports single image tga or rule combination tga
-│   ├── war3mapModel - Put the model, only support mdx, do not throw in the texture
-│   ├── war3mapPreview - Preview image, only supports tga
-│   ├── war3mapSelection - Put the selection circle, refer to the provided format
-│   ├── war3mapSound - Play sound effect music, only support mp3
-│   ├── war3mapTextures - Put model texture, only support blp
-│   └── war3mapUI - Put UI kit, existing format reference
-├── assetsNew -（*|·）Consistent with the assets structure, used when dealing with new resources
-├── projects -（~|·）Used to place your map project directory, such as project_demo
-│   └── project_demo -（·）
-├── encrypt -（·）Define obfuscated rules
-│   ├── force.json -（·）Forced confusion of root words, low efficiency
-│   └── rule.json -（·）Confuse library file rules
-├── library -（*）Core
-├── vendor -（*）
-│   ├── lni - ImportantMap Data
-│   ├── models - ModelCommandMap Template
-│   ├── w3x2lni - w3x2lni Tool(v:2.7.2)
-│   └── WE - MaZai WE Tool
-├── temp -（~）Cache
-├── conf -（~|·）Configure
-└── lik.exe -（*）Command Tool
+├── assets - (*|·) resource library
+│   ├── war3mapFont - put fonts, only support ttf
+│   ├── war3mapIcon - put icons, only support tga
+│   ├── war3MapLoading - loading map, only support single tga or rule combination tga
+│   ├── war3mapModel - put models, only support mdx, don't throw textures in
+│   ├── war3mapPlugins - put plugins, reference existing formats
+│   ├── war3mapPreview - preview map, only support tga
+│   ├── war3mapSelection - put selection circles, reference provided formats
+│   ├── war3mapSound - put sound effects and music, only support mp3
+│   ├── war3mapTextures - put model textures, only support blp
+│   └── war3mapUI - put UI suites, reference existing formats
+├── assetsNew - (*|·) consistent with assets structure, used for processing new resources
+├── projects - (~|·) used to place your map project directory, such as project_demo
+│   └── project_demo - (·)
+├── encrypt - (·) define the rules of obfuscation
+│   ├── force.json - (·) forced obfuscation root words, low performance
+│   └── rule.json - (·) obfuscation library file rules
+├── library - (*) core
+├── vendor - (*) 
+│   ├── lni - important map data
+│   ├── models - model command map template
+│   ├── w3x2lni - w3x2lni tool(v:2.7.2)
+│   └── WE - new horse
+├── temp - (~) cache
+├── conf - (~|·) configuration
+└── lik.exe - (*) command tool
 ```
 
 ### Project Structure
 
-> Most of the functions of sinluar are **configuration declarative**, and the sequence requirements are low.
+> Most of the functions of lik are **configuration declarative**, with low requirements for order
 >
-> It is **not required** and should **not be used** to load files with require at all within the project
+> **Do not** and **should not** use require to load files in the project
 >
-> The files will be automatically loaded **from top to bottom** according to the file name.
-> If you write a self-running script, please pay attention to the loading order (such as adding an underscore before the
-> name or something)
+> Files will be automatically loaded from top to bottom according to the file name. If you write a self-running script, please pay attention to the loading order yourself (for example, add an underscore in front of the name)
 
 ```
-└── project_demo - Project Directory
-    ├── assets - Project resource reference, must be written in this name directory, do not write process code in it
-    ├── scripts - Project script code, must be written in this name directory
-    │   ├── globals - Global Definition(For ReferenceOnly)
-    │   │    ├── setup - Used to define game settings(For ReferenceOnly)
-    │   │    ├── tpl - Used to create object templates(For ReferenceOnly)
-    │   └── process - Project process code, the process starts with start
-    ├── sublibrary -（·）Local sub core library (only the user-defined extension of the core library is written, and the corresponding structure of the file must be consistent with the global library)
-    └── w3x - Map file (don't change anything, use the we command to modify the parameters, and automatically generate a backup after saving)
-        ├── map - Map lni (don't change it easily, unless you understand it)
-        ├── table - ini-style object editing (don't change it, don't follow the physical editing)
-        └── war3mapMap.blp - Thumbnail (do not change)
+└── project_demo - project directory
+    ├── assets - project resource reference, must be written under this name directory, do not write process code inside
+    ├── scripts - project script code, must be written under this name directory
+    │   ├── globals - global definition (for reference only)
+    │   │    ├── setup - used to define game settings (for reference only)
+    │   │    ├── tpl - used to establish object templates (for reference only)
+    │   └── process - project process code, process starts with start
+    ├── sublibrary - (·) local sub-core library (only write custom extensions to the core library, the file structure corresponding to the global library must be consistent)
+    └── w3x - map file (don't mess with it, use the we command to modify parameters, and save to automatically generate backups)
+        ├── map - map lni (don't change it easily, unless you understand it)
+        ├── table - ini-style object editor (don't change it, don't care about object editor)
+        └── war3mapMap.blp - thumbnail (don't change it)
 ```
 
-### UI Kit Structure
+### Plugin(Plugins) Structure
 
 ```
-└── my_kit - name
-    ├── assets -（*|·）
-    │   ├── my.tga - A picture
-    │   ├── btn - Support Directory
-    │   │   └── bag.tga - A picture of bag
-    │   └── brun.mdx - Support Model or other assets
-    ├── main.fdf -（·）Support additional FDF, but not recommended (must be called main name)
-    └── main.lua -（*）Codes (must be called main name)
+└── Printer - plugin directory name
+    ├── encrypt - (·) obfuscation rules
+    └── plulibrary - (*|·) plugin library script code
 ```
 
-### Loading Structure
-
-> In case of the same name, the directory preference is preferred over the single graph
+### UI Suite(Kit) Structure
 
 ```
-├── default.tga - Support single graph loading graph mode
-└── default - It also supports directory set loading diagram mode
-    ├── bc.tga - Progress bar color
-    ├── bg.tga - Progress bar background color
-    └── pic.tga - Main background with hollow out drawing
+└── my_kit - suite name
+    ├── assets - (*|·) put resources
+    │   ├── my.tga - one of my pictures
+    │   ├── btn - supports multi-level directories
+    │   │   └── bag.tga - a backpack icon
+    │   └── brun.mdx - supports models, etc.
+    ├── main.fdf - (·) supports additional fdf, but not recommended (must be named main)
+    └── main.lua - (*) suite script code (must be named main)
 ```
+
+### Loading Map Structure
+
+> When the names are the same, the directory is preferred rather than the single image
+
+```
+├── default.tga - supports single image loading mode
+└── default - also supports directory loading mode
+    ├── bc.tga - progress bar color
+    ├── bg.tga - progress bar background color
+    └── pic.tga - background hollowed out picture

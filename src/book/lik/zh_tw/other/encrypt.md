@@ -23,8 +23,9 @@ function wUdiGvyccm(start, stop, t) return start + (stop - start) * t end functi
 >
 > 底層自動混淆不需要自行參與，包括：
 > * library/builtIn
-> * library/oop/facades、library/oop/class
-> * sublibrary/oop/facades、sublibrary/oop/class
+> * library/oop
+> * sublibrary/oop
+> * plulibrary/oop
 
 ##### 規則定義在 \encrypt 中，指符合規則的內容將按型別加密
 
@@ -36,8 +37,16 @@ function wUdiGvyccm(start, stop, t) return start + (stop - start) * t end functi
 
 ### sublibrary
 
-> 子庫就是用來拓展library的，所以當你正確放置對應位置的檔案後
+> 專案子庫就是用來拓展library的，所以當你正確放置對應位置的檔案後
 >
 > 相關的子拓展也會自動運用rule裡面的規則混淆
 
 ##### 如 /sublibrary/variable/prop.lua 也會運用編寫給 /library/variable/prop.lua 的規則
+
+### plulibrary
+
+> 外掛庫與專案子庫一樣
+>
+> 相關的子拓展也會自動運用rule裡面的規則混淆
+
+##### 如 /plulibrary/variable/prop.lua 也會運用編寫給 /library/variable/prop.lua 的規則

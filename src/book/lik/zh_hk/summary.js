@@ -12,6 +12,7 @@ import {
   AntCloudOutlined,
   AntDesignOutlined,
   ApartmentOutlined,
+  ApiOutlined,
   AppstoreAddOutlined,
   AppstoreOutlined,
   BellOutlined,
@@ -82,6 +83,7 @@ export default [
       {icon: <AppstoreOutlined/>, key: 'object', label: "對象門面"},
       {icon: <DribbbleOutlined/>, key: 'ability', label: "技能庫"},
       {icon: <AppstoreAddOutlined/>, key: 'sublib', label: "拓展庫"},
+      {icon: <ApiOutlined/>, key: 'plulib', label: "插件庫"},
     ]
   },
   {
