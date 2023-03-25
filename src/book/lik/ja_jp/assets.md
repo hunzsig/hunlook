@@ -107,6 +107,16 @@ AModel("slash/Red_swing")
 AModel("echo")
 ```
 
+#### Pluginsプラグインを引用する
+
+> リソースファイルはwar3mapPluginsに置かれます
+>
+> プラグインは一つのセットで自己完結しており、移植が容易です
+
+```lua
+_assets_plugins("Printer")
+```
+
 #### 使う Selection(せんたく圏)
 
 > リソースファイルは war3mapSelection 格納されています

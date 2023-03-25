@@ -107,11 +107,11 @@ AModel("slash/Red_swing")
 AModel("echo")
 ```
 
-#### Pluginsプラグインを引用する
+#### 引用 Plugins 插件
 
-> リソースファイルはwar3mapPluginsに置かれます
+> 资源文件放在 war3mapPlugins 里
 >
-> プラグインは一つのセットで自己完結しており、移植が容易です
+> 插件是为一套件是自成一体的，便于移植
 
 ```lua
 _assets_plugins("Printer")
