@@ -51,7 +51,7 @@ There are 2 parameters after the command
 >
 > For the specific location, please refer to the configuration in WE
 >
-> encrypt [see](https://lik.hunzsig.org/?p=other&n=encrypt)
+> encrypt [see](/?p=other&n=encrypt)
 
 ```
 > lik.exe run demo -t //Generate temporary files to view

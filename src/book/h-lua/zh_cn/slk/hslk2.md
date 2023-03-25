@@ -88,7 +88,7 @@ hslk.misc("Misc","FadeBuffMinDuration") --"10"
 
 misc数据就是平衡常数界面等等的一些游戏框架式数据
 ```
-> 如果你不清楚有什么值，可以 [参考](https://h-lua.hunzsig.org/?p=slk&n=misc)
+> 如果你不清楚有什么值，可以 [参考](/?p=slk&n=misc)
 
 ### hslk的 自定义数据
 

@@ -51,7 +51,7 @@
 >
 > 具體位置可參考WE裏面的配置
 >
-> 加密亂構可參考 [參考](https://lik.hunzsig.org/?p=other&n=encrypt)
+> 加密亂構可參考 [參考](/?p=other&n=encrypt)
 
 ```
 > lik.exe run demo -t //生成臨時文件查看

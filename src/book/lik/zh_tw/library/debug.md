@@ -27,7 +27,7 @@ dump({
 })
 ```
 
-![Print](https://gitlab.com/h-document/lik/-/raw/main/assets/print.png)
+![Print](/assets/print.png)
 
 ### 跟蹤除錯
 
@@ -54,4 +54,4 @@ logger("message")
 
 ### 上線須知
 
-> 使用測試版本上線依然會啟用除錯，請打包上線版本再上傳平臺 [參考](https://lik.hunzsig.org/?p=other&n=pt)
+> 使用測試版本上線依然會啟用除錯，請打包上線版本再上傳平臺 [參考](/?p=other&n=pt)

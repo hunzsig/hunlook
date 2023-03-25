@@ -27,7 +27,7 @@ dump({
 })
 ```
 
-![Print](https://gitlab.com/h-document/lik/-/raw/main/assets/print.png)
+![Print](/assets/print.png)
 
 ### 跟蹤調試
 
@@ -54,4 +54,4 @@ logger("message")
 
 ### 上線須知
 
-> 使用測試版本上線依然會啓用調試，請打包上線版本再上傳平台 [參考](https://lik.hunzsig.org/?p=other&n=pt)
+> 使用測試版本上線依然會啓用調試，請打包上線版本再上傳平台 [參考](/?p=other&n=pt)

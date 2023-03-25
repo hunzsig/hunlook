@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import {SideBar, Tabs, Toast, Button, Modal} from 'antd-mobile';
 import {SoundOutline, SoundMuteOutline} from "antd-mobile-icons";
 import {TranslationOutlined, LikeOutlined} from "@ant-design/icons";
-import {History, LocalStorage, Parse} from 'h-react-antd-mobile';
+import {History, LocalStorage, Parse, Api} from 'h-react-antd-mobile';
 import Book from './Book';
 import Net from './Net';
 
@@ -29,6 +29,7 @@ class Homepage extends Component {
       l: lang || History.state.lang[0].key,
       bgmPlaying: true,
     }
+    this.stat();
   }
 
   push = () => {
@@ -41,6 +42,7 @@ class Homepage extends Component {
         e.scrollTop = 0;
       }
     })
+    this.stat();
   }
 
   summary = () => {
@@ -56,7 +58,10 @@ class Homepage extends Component {
   }
 
   stat = () => {
-    return require(`./../../book/${History.state.book}/stat.js`).default;
+    const s = require(`./../../book/${History.state.book}/stat.js`).default;
+    if (s) {
+      s();
+    }
   }
 
   book = () => {
@@ -175,7 +180,6 @@ class Homepage extends Component {
     let summary = this.summary()
     let bgm = this.bgm()
     let exhibit = this.exhibit()
-    let stat = this.stat()
     let Cover = History.state.cover
     return (
       <div className="page-homepage">
@@ -237,10 +241,9 @@ class Homepage extends Component {
                   {this.renderTabs()}
                 </Tabs>
               </div>
-              <Book path={this.book()}>{this.stat()}</Book>
+              <Book path={this.book()}/>
             </div>
         }
-        {stat && <iframe style={{display: "none", opacity: 0}} src={stat}/>}
         <div className="actions">
           {
             History.state.support &&

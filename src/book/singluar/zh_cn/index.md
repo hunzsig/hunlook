@@ -32,11 +32,11 @@
 
 ##### 安装插件 Highlighter
 
-![Emmylua](https://gitlab.com/h-document/singluar/-/raw/main/assets/emmylua.png)
+![Emmylua](/assets/emmylua.png)
 
-![ImageIconViewer](https://gitlab.com/h-document/singluar/-/raw/main/assets/imageIconViewer.png)
+![ImageIconViewer](/assets/imageIconViewer.png)
 
-![Highlighter](https://gitlab.com/h-document/singluar/-/raw/main/assets/colorHighlighter.png)
+![Highlighter](/assets/colorHighlighter.png)
 
 ### 打开终端并进入框架根
 

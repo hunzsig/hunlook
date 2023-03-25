@@ -46,9 +46,9 @@ kv型tableをpairsでトラバースする
 
 以下の質問方法はあなたを助けることができると信じています~
 
-![Question](https://gitlab.com/h-document/lik/-/raw/main/assets/question1.png)
+![Question](/assets/question1.png)
 
-![Question](https://gitlab.com/h-document/lik/-/raw/main/assets/question2.png)
+![Question](/assets/question2.png)
 
 ### ツールを上手に使う
 
@@ -58,31 +58,31 @@ chatGPTがリリースされた後、より多くの可能性が現れました�
 
 たとえば、AIを使ってドキュメントを翻訳して修正することができます。
 
-![AiTrans1](https://gitlab.com/h-document/lik/-/raw/main/assets/aiTrans1.png)
+![AiTrans1](/assets/aiTrans1.png)
 
-![AiTrans2](https://gitlab.com/h-document/lik/-/raw/main/assets/aiTrans2.png)
+![AiTrans2](/assets/aiTrans2.png)
 
 AIを使ってコードを理解したり、最適化したりすることもできます。
 
-![AiSee1](https://gitlab.com/h-document/lik/-/raw/main/assets/aiSee1.png)
+![AiSee1](/assets/aiSee1.png)
 
-![AiSee2](https://gitlab.com/h-document/lik/-/raw/main/assets/aiSee2.png)
+![AiSee2](/assets/aiSee2.png)
 
-![AiSee3](https://gitlab.com/h-document/lik/-/raw/main/assets/aiSee3.png)
+![AiSee3](/assets/aiSee3.png)
 
 コード内のバグを見つけるのにAIを使うこともできます。
 
-![AiSee4](https://gitlab.com/h-document/lik/-/raw/main/assets/aiSee4.png)
+![AiSee4](/assets/aiSee4.png)
 
 また、AIに直接手伝ってもらうこともできます。
 
 > 指示：クールダウンを666秒に変更し、名前を人類滅亡に変更し、スキルのパッシブトリガー条件をユニット攻撃時に変更する
 
-![AiDo1](https://gitlab.com/h-document/lik/-/raw/main/assets/aiDo1.png)
+![AiDo1](/assets/aiDo1.png)
 
 > 指示：既存の剣の勇気スキルを参照して、人類防御の最終章という名前のスキルを書いてください。元の攻撃力を1層ごとに増加させる代わりに、1層ごとに防御力を15ポイント、移動力を30ポイント増加させます。
 
-![AiDo2](https://gitlab.com/h-document/lik/-/raw/main/assets/aiDo2.png)
+![AiDo2](/assets/aiDo2.png)
 
 AIが言うことが必ずしも正確であるとは限りませんが、間違いを見分けることを学び、粗悪なものを取り除き、精華を残すことができれば、あなたを助けることができます。
 

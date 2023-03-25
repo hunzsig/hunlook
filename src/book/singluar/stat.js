@@ -1,1 +1,5 @@
-export default "https://transfer.hunzsig.com/stat/singluar";
+import {Api} from "h-react-antd-mobile";
+
+export default () => {
+  Api.query().post({SINGLUAR_ADD: {}});
+}

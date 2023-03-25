@@ -27,7 +27,7 @@ dump({
 })
 ```
 
-![Print](https://gitlab.com/h-document/singluar/-/raw/main/assets/print.png)
+![Print](/assets/print.png)
 
 ### 跟踪调试
 
@@ -54,4 +54,4 @@ logger("message")
 
 ### 上线须知
 
-> 使用测试版本上线依然会启用调试，请打包上线版本再上传平台 [参考](https://singluar.hunzsig.org/?p=other&n=pt)
+> 使用测试版本上线依然会启用调试，请打包上线版本再上传平台 [参考](/?p=other&n=pt)

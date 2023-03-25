@@ -51,7 +51,7 @@
 >
 > 具体的な位置はWE内の配置を参考にすることができる
 >
-> 暗号化されたスクランブルが参照可能 [参照](https://lik.hunzsig.org/?p=other&n=encrypt)
+> 暗号化されたスクランブルが参照可能 [参照](/?p=other&n=encrypt)
 
 ```
 > lik.exe run demo -t //一時ファイル表示の生成

@@ -6,7 +6,7 @@
 
 属性每1点属性映射 可以模拟三围加成等
 
-> [参考](https://h-lua.hunzsig.org/?p=study&n=attrThree)
+> [参考](/?p=study&n=attrThree)
 
 ### gold_ratio / lumber_ratio / exp_ratio / sell_ratio
 
@@ -116,4 +116,4 @@
 > * [技能方式]技能设定（触发技能buff、技能debuff、技能特效）
 > * [物品方式]物品伤害，一种概念
 >
-> 伤害优先级由伤害流决定，而伤害流由你决定，[参考](https://h-lua.hunzsig.org/?p=study&n=damaging)
+> 伤害优先级由伤害流决定，而伤害流由你决定，[参考](/?p=study&n=damaging)

@@ -10,7 +10,7 @@
 
 > まず、Printer のディレクトリ構造を見てみましょう。
 
-![Plugins1](https://gitlab.com/h-document/lik/-/raw/main/assets/plugins1.png)
+![Plugins1](/assets/plugins1.png)
 
 #### プラグインには encrypt と plulibrary の2つのパートが含まれています。これらのディレクトリは固定されています。
 
@@ -23,7 +23,7 @@
 
 > 参考になるカタログ構造を見てみましょう
 
-![Plugins2](https://gitlab.com/h-document/lik/-/raw/main/assets/plugins2.png)
+![Plugins2](/assets/plugins2.png)
 
 #### プラグインのすべてのものを作成しても、自動的に有効になるわけではありません
 

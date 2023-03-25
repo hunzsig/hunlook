@@ -46,9 +46,9 @@
 
 下列問問題方法相信可以幫助你~
 
-![Question](https://gitlab.com/h-document/lik/-/raw/main/assets/question1.png)
+![Question](/assets/question1.png)
 
-![Question](https://gitlab.com/h-document/lik/-/raw/main/assets/question2.png)
+![Question](/assets/question2.png)
 
 ### 善用工具
 
@@ -58,31 +58,31 @@
 
 比如我就運用AI幫忙翻譯並修改文檔
 
-![AiTrans1](https://gitlab.com/h-document/lik/-/raw/main/assets/aiTrans1.png)
+![AiTrans1](/assets/aiTrans1.png)
 
-![AiTrans2](https://gitlab.com/h-document/lik/-/raw/main/assets/aiTrans2.png)
+![AiTrans2](/assets/aiTrans2.png)
 
 你也可以試着使用AI幫助你理解代碼、優化代碼
 
-![AiSee1](https://gitlab.com/h-document/lik/-/raw/main/assets/aiSee1.png)
+![AiSee1](/assets/aiSee1.png)
 
-![AiSee2](https://gitlab.com/h-document/lik/-/raw/main/assets/aiSee2.png)
+![AiSee2](/assets/aiSee2.png)
 
-![AiSee3](https://gitlab.com/h-document/lik/-/raw/main/assets/aiSee3.png)
+![AiSee3](/assets/aiSee3.png)
 
 你也可以試着使用AI幫助你尋找代碼裏面的bug
 
-![AiSee4](https://gitlab.com/h-document/lik/-/raw/main/assets/aiSee4.png)
+![AiSee4](/assets/aiSee4.png)
 
 又或者直接讓AI幫你幹起來
 
 > 指示：冷卻改為666秒，名字改為人類滅亡，技能被動觸發條件改為單位攻擊的時候
 
-![AiDo1](https://gitlab.com/h-document/lik/-/raw/main/assets/aiDo1.png)
+![AiDo1](/assets/aiDo1.png)
 
 > 指示：參考已有的劍之勇氣技能，幫我寫一個類似效果的技能，名字叫人類防禦終章，原來每層增加攻擊改為每層增加防禦力15點和移動力30點
 
-![AiDo2](https://gitlab.com/h-document/lik/-/raw/main/assets/aiDo2.png)
+![AiDo2](/assets/aiDo2.png)
 
 雖然AI説的不一定準確，也肯定會犯錯，但只要學會分辨，去除糟粕、留存精華，定能助你一臂之力。
 

@@ -10,7 +10,7 @@
 
 > First, let's take a look at the directory structure of Printer.
 
-![Plugins1](https://gitlab.com/h-document/lik/-/raw/main/assets/plugins1.png)
+![Plugins1](/assets/plugins1.png)
 
 #### A plugin consists of two parts: encrypt and plulibrary. These two directories are fixed.
 
@@ -23,7 +23,7 @@
 
 > Here's a directory structure worth referencing.
 
-![Plugins2](https://gitlab.com/h-document/lik/-/raw/main/assets/plugins2.png)
+![Plugins2](/assets/plugins2.png)
 
 #### After everything in the plugin is written, it won't take effect automatically.
 

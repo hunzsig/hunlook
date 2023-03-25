@@ -15,11 +15,11 @@ end)
 
 #### 這裏 -h 測試結果是可以運行的
 
-![PackageH](https://gitlab.com/h-document/lik/-/raw/main/assets/packageH.png)
+![PackageH](/assets/packageH.png)
 
 #### 但使用 -b 時卻報錯了
 
-![PackageB](https://gitlab.com/h-document/lik/-/raw/main/assets/packageB.png)
+![PackageB](/assets/packageB.png)
 
 #### 很多人這時候就已經不知所措了，這時不能慌，我們知道打包的臨時文件其實都在 temp 目錄裏
 
@@ -27,15 +27,15 @@ end)
 
 > 這個 _build 就是 -b 指令對應的臨時目錄了
 
-![PackageBuild](https://gitlab.com/h-document/lik/-/raw/main/assets/packageBuild.png)
+![PackageBuild](/assets/packageBuild.png)
 
 #### 打開代碼文件可以看到裏面報錯了
 
-![PackageError](https://gitlab.com/h-document/lik/-/raw/main/assets/packageError.png)
+![PackageError](/assets/packageError.png)
 
 #### 這樣當然難以查看，我們將其結果代碼格式化
 
-![PackageFormat](https://gitlab.com/h-document/lik/-/raw/main/assets/packageFormat.png)
+![PackageFormat](/assets/packageFormat.png)
 
 #### 可以看到 print("--這是個毀天滅地的打印") 後面的 “這是個毀天滅地的打印")” 都不見了
 
@@ -56,6 +56,6 @@ end)
 
 #### 例如資源不存在的警告，資源沒有被使用的警告
 
-![PackageAssetsError](https://gitlab.com/h-document/lik/-/raw/main/assets/packageAssetsError.png)
+![PackageAssetsError](/assets/packageAssetsError.png)
 
-![PackageAssetsWarn](https://gitlab.com/h-document/lik/-/raw/main/assets/packageAssetsWarn.png)
+![PackageAssetsWarn](/assets/packageAssetsWarn.png)

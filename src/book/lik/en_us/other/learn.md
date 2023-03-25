@@ -46,9 +46,9 @@ After modifying the project, skip other tests and directly run the -r test
 
 The following methods of asking questions are believed to help you~
 
-![Question](https://gitlab.com/h-document/lik/-/raw/main/assets/question1.png)
+![Question](/assets/question1.png)
 
-![Question](https://gitlab.com/h-document/lik/-/raw/main/assets/question2.png)
+![Question](/assets/question2.png)
 
 ### Make good use of tools
 
@@ -58,31 +58,31 @@ After the release of chatGPT, more possibilities emerged. It is not advisable to
 
 For example, I use AI to help translate and modify documents.
 
-![AiTrans1](https://gitlab.com/h-document/lik/-/raw/main/assets/aiTrans1.png)
+![AiTrans1](/assets/aiTrans1.png)
 
-![AiTrans2](https://gitlab.com/h-document/lik/-/raw/main/assets/aiTrans2.png)
+![AiTrans2](/assets/aiTrans2.png)
 
 You can also try to use AI to help you understand and optimize code.
 
-![AiSee1](https://gitlab.com/h-document/lik/-/raw/main/assets/aiSee1.png)
+![AiSee1](/assets/aiSee1.png)
 
-![AiSee2](https://gitlab.com/h-document/lik/-/raw/main/assets/aiSee2.png)
+![AiSee2](/assets/aiSee2.png)
 
-![AiSee3](https://gitlab.com/h-document/lik/-/raw/main/assets/aiSee3.png)
+![AiSee3](/assets/aiSee3.png)
 
 You can also try to use AI to help you find bugs in your code.
 
-![AiSee4](https://gitlab.com/h-document/lik/-/raw/main/assets/aiSee4.png)
+![AiSee4](/assets/aiSee4.png)
 
 Or just let AI do it for you.
 
 > Instruction: Change the cooldown to 666 seconds, change the name to "Human Extinction", and change the passive trigger condition to when the unit attacks.
 
-![AiDo1](https://gitlab.com/h-document/lik/-/raw/main/assets/aiDo1.png)
+![AiDo1](/assets/aiDo1.png)
 
 > Instruction: Refer to the existing Sword of Courage skill and help me write a similar effect skill called "Human Defense Final Chapter". The original increase in attack power per layer is changed to an increase in defense power of 15 points and movement power of 30 points per layer.
 
-![AiDo2](https://gitlab.com/h-document/lik/-/raw/main/assets/aiDo2.png)
+![AiDo2](/assets/aiDo2.png)
 
 Although AI may not always be accurate and is sure to make mistakes, as long as you learn to distinguish, remove the dross and retain the essence, it will definitely help you a lot.
 

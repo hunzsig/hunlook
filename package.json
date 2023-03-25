@@ -62,6 +62,9 @@
   },
   "homepage": "https://www.hunzsig.org",
   "name": "Hunlook",
+  "proxyConfig": {
+    "/api": "http://127.0.0.1:3005"
+  },
   "scripts": {
     "app": "cliv16 app",
     "build": "cliv16 build",

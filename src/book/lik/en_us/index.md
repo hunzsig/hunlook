@@ -16,11 +16,11 @@
 
 ##### Install Plugins Color Highlighter
 
-![Emmylua](https://gitlab.com/h-document/lik/-/raw/main/assets/emmylua.png)
+![Emmylua](/assets/emmylua.png)
 
-![ImageIconViewer](https://gitlab.com/h-document/lik/-/raw/main/assets/imageIconViewer.png)
+![ImageIconViewer](/assets/imageIconViewer.png)
 
-![ColorHighlighter](https://gitlab.com/h-document/lik/-/raw/main/assets/colorHighlighter.png)
+![ColorHighlighter](/assets/colorHighlighter.png)
 
 ### Open the terminal and enter the frame root
 

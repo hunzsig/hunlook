@@ -1,1 +1,5 @@
-export default "https://transfer.hunzsig.com/stat/lik";
+import {Api} from "h-react-antd-mobile";
+
+export default () => {
+  Api.query().post({LIK_ADD: {}});
+}

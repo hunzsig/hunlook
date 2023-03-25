@@ -22,8 +22,8 @@ dump({
 })
 ```
 
-![Print](https://gitlab.com/h-document/h-lua/-/raw/main/images/print.png)
+![Print](/assets/print.png)
 
 ### 上线须知
 
-> 使用测试版本上线依然会启用调试，请打包上线版本再上传平台 [参考](https://h-lua.hunzsig.org/?p=pt)
+> 使用测试版本上线依然会启用调试，请打包上线版本再上传平台 [参考](/?p=pt)

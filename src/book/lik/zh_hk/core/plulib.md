@@ -10,7 +10,7 @@
 
 > 這裏先觀察一下 Printer 的目錄結構
 
-![Plugins1](https://gitlab.com/h-document/lik/-/raw/main/assets/plugins1.png)
+![Plugins1](/assets/plugins1.png)
 
 #### 一個插件包含兩部分 encrypt 和 plulibrary，這兩個目錄是固定的
 
@@ -23,7 +23,7 @@
 
 > 這裏看一個值得參考的目錄結構
 
-![Plugins2](https://gitlab.com/h-document/lik/-/raw/main/assets/plugins2.png)
+![Plugins2](/assets/plugins2.png)
 
 #### 插件所有的東西編寫完成後，並不會自動生效
 

@@ -15,11 +15,11 @@ end)
 
 #### ここでは -h テストの結果は実行可能です
 
-![PackageH](https://gitlab.com/h-document/lik/-/raw/main/assets/packageH.png)
+![PackageH](/assets/packageH.png)
 
 #### しかし、-b を使用するときにエラーが発生しました
 
-![PackageB](https://gitlab.com/h-document/lik/-/raw/main/assets/packageB.png)
+![PackageB](/assets/packageB.png)
 
 #### 多くの人はこの時すでに困惑していて、この時慌ててはいけなくて、私達はパッケージの臨時書類が実はすべて temp ディレクトリの中にあることを知っています
 
@@ -27,15 +27,15 @@ end)
 
 > これ _build は -b 命令に対応する一時ディレクトリです
 
-![PackageBuild](https://gitlab.com/h-document/lik/-/raw/main/assets/packageBuild.png)
+![PackageBuild](/assets/packageBuild.png)
 
 #### コードファイルを開くとエラーが表示されます
 
-![PackageError](https://gitlab.com/h-document/lik/-/raw/main/assets/packageError.png)
+![PackageError](/assets/packageError.png)
 
 #### これではもちろん、結果コードをフォーマットします。
 
-![PackageFormat](https://gitlab.com/h-document/lik/-/raw/main/assets/packageFormat.png)
+![PackageFormat](/assets/packageFormat.png)
 
 #### print("--これは破壊天滅地の印刷です") の後ろにある「これは破壊天滅地の印刷です」）が消えているのが見えます
 
@@ -56,6 +56,6 @@ end)
 
 #### 例えばリソースが発生しない警告、リソースが使用されていない警告
 
-![PackageAssetsError](https://gitlab.com/h-document/lik/-/raw/main/assets/packageAssetsError.png)
+![PackageAssetsError](/assets/packageAssetsError.png)
 
-![PackageAssetsWarn](https://gitlab.com/h-document/lik/-/raw/main/assets/packageAssetsWarn.png)
+![PackageAssetsWarn](/assets/packageAssetsWarn.png)

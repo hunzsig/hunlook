@@ -27,7 +27,7 @@ dump({
 })
 ```
 
-![Print](https://gitlab.com/h-document/singluar/-/raw/main/assets/print.png)
+![Print](/assets/print.png)
 
 ### トレースデバッグ
 
@@ -54,4 +54,4 @@ logger("message")
 
 ### オンラインの注意事項
 
-> テストバージョンを使用してオンラインにするとデバッグが有効になります。オンラインバージョンをパッケージ化してプラットフォームをアップロードしてください [参照](https://singluar.hunzsig.org/?p=other&n=pt)
+> テストバージョンを使用してオンラインにするとデバッグが有効になります。オンラインバージョンをパッケージ化してプラットフォームをアップロードしてください [参照](/?p=other&n=pt)

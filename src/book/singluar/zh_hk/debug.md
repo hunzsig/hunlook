@@ -27,7 +27,7 @@ dump({
 })
 ```
 
-![Print](https://gitlab.com/h-document/singluar/-/raw/main/assets/print.png)
+![Print](/assets/print.png)
 
 ### 跟蹤調試
 
@@ -54,4 +54,4 @@ logger("message")
 
 ### 上線須知
 
-> 使用測試版本上線依然會啓用調試，請打包上線版本再上傳平臺 [參考](https://singluar.hunzsig.org/?p=other&n=pt)
+> 使用測試版本上線依然會啓用調試，請打包上線版本再上傳平臺 [參考](/?p=other&n=pt)
