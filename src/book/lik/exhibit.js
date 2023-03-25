@@ -1,1 +1,1 @@
-export default "/exhibit.jpg";
+export default "/assets/exhibit.jpg";

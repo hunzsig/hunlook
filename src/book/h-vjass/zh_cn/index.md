@@ -87,8 +87,8 @@ war3mapskin.txt -> war3mapskin.txt
 
 ###### 温馨提示：此框架已完全停止维护，可自行维护 <a target="_blank" href="https://afdian.net/a/hunzsig">请作者喝杯茶</a>
 
-###### Lik框架： <a target="_blank" href="http://lik.hunzsig.org">Lik</a>
+###### Lik框架： <a target="_blank" href="https://lik.hunzsig.com">Lik</a>
 
-###### Singluar框架： <a target="_blank" href="http://singluar.hunzsig.org">Singluar</a>
+###### Singluar框架： <a target="_blank" href="https://singluar.hunzsig.com">Singluar</a>
 
-###### H-lua框架： <a target="_blank" href="http://h-lua.hunzsig.org">H-Lua</a>
+###### H-lua框架： <a target="_blank" href="https://h-lua.hunzsig.com">H-Lua</a>
