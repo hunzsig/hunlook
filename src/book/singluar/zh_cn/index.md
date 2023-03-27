@@ -22,6 +22,14 @@
 
 > 公开版本可随意商用，但不能获得源码，且得不到什么技术协助，请见谅
 
+### 使用 git pull 更新项目
+
+> 不熟悉时请使用fork等git管理工具方便操作
+
+```text
+> git pull
+```
+
 ### 安装IDE - Ideac
 
 > <a target="_blank" href="https://www.jetbrains.com/idea/download/#section=windows">Ideac (Jetbrain)</a>

@@ -18,6 +18,14 @@
 > git clone https://github.com/singluar/singluar-restricted.git
 ```
 
+### git pullを使用したプロジェクトの更新
+
+> 不慣れな場合は、操作しやすいようにforkなどのgit管理ツールを使用してください
+
+```text
+> git pull
+```
+
 > 公開版は自由に商用化できますが、ソースコードは入手できず、技術協力は得られませんのでご了承ください
 
 ### インストール IDE - Ideac
