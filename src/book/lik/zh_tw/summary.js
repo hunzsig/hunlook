@@ -71,7 +71,7 @@ import {
 // only one layout
 export default [
   {icon: <BulbOutlined/>, key: 'index', label: "快速開始"},
-  {icon: <ApartmentOutlined/>, key: 'struct', label: "專案結構"},
+  {icon: <ApartmentOutlined/>, key: 'struct', label: "框架結構"},
   {icon: <AntDesignOutlined/>, key: 'cmd', label: "命令工具"},
   {icon: <FireOutlined/>, key: 'hot', label: "熱更新"},
   {icon: <SubnodeOutlined/>, key: 'japi', label: "JAPI"},

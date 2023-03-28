@@ -40,6 +40,14 @@
 > lik.exe run demo -h
 ```
 
+### Subsequent management project
+
+```text
+You should use version code history management tools (Git, Svn, etc.) to manage your development projects.
+You can use third-party hosting platforms (such as GitHub, GitLab, Gtiee, Bitbucket), or self built management tools (such as Gogs). At the very least, you can use the tools to build local versions locally.
+No one is perfect, and no one knows when they will make mistakes. Code history allows you to view every modification, rollback versions, and backup results.
+```
+
 ###### Reminder: This project is in the internal test of R&D, and will be open for trial in the future <a target="_blank" href="https://afdian.net/a/hunzsig">Join the fan group to know more</a>
 
 ###### When using Win11, especially the newer version, you will sometimes encounter pop-up errors (but you can continue to play)
