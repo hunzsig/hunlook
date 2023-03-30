@@ -286,20 +286,7 @@ class Homepage extends Component {
             </Button>
           }
         </div>
-        {
-          Cover &&
-          <div
-            className={`cover ${this.state.coverClassName ? this.state.coverClassName : ''}`}
-            onClick={
-              () => {
-                this.setState({coverClassName: 'un'});
-                setTimeout(() => {
-                  this.setState({coverClassName: 'dis'});
-                }, 500)
-              }
-            }
-          ><Cover/></div>
-        }
+        {Cover && <Cover/>}
         {
           bgm &&
           <div className="audio">
