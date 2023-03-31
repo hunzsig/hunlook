@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import {HistoryInitial} from 'h-react-antd-mobile';
 
 import preprocessing from "./preprocessing";
+import crypto from './crypto.js';
 
 ReactDOM.render(
   <HistoryInitial
@@ -14,7 +15,7 @@ ReactDOM.render(
     api={{
       key: 'def',
       host: '/api',
-      crypto: null /*{ mode: 'des-cbc', secret: 'iod13kxx' }*/,
+      crypto: crypto,
       append: {}
     }}
   />, document.getElementById('h-container'));
