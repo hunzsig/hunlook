@@ -4,7 +4,7 @@
 
 ### Get Framework
 
-> <a target="_blank" href="https://afdian.net/a/hunzsig">Experience the Lik Alpha version first</a>
+> <a target="_blank" href="https://afdian.net/a/hunzsig">Internal personnel are testing the RC release, and you can be enthusiastic about generating power for the author</a>
 
 ### Install IDE - Ideac
 

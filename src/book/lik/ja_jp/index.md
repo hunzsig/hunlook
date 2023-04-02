@@ -4,7 +4,7 @@
 
 ### フレームワークの取得
 
-> <a target="_blank" href="https://afdian.net/a/hunzsig">Lik Alphaバージョンを先取り体験</a>
+> <a target="_blank" href="https://afdian.net/a/hunzsig">内部者がRCのためにバージョンテスト中なので、熱心に著者のために発電することができます</a>
 
 ### インストール IDE - Ideac
 

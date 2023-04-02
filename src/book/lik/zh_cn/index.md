@@ -4,7 +4,7 @@
 
 ### 获得框架
 
-> <a target="_blank" href="https://afdian.net/a/hunzsig">抢先体验 Lik Alpha版本</a>
+> <a target="_blank" href="https://afdian.net/a/hunzsig">内部人员正在为RC发版测试中，你可热心为作者发电</a>
 
 ### 安装IDE - Ideac
 
