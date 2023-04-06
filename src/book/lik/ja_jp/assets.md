@@ -1,4 +1,4 @@
-## assets資産
+## Assets 資産
 
 ##### 計10種の資産
 
@@ -179,12 +179,23 @@ _assets_ui("lik_cursor") --ポインタセット
 -- 聖騎士
 _assets_speech(":HeroPaladin", "HeroPaladin")
 
--- 聖騎士（モデルアバターを有効にする）
-_assets_speech(":HeroPaladin", "HeroPaladin", { "HeroPaladin" })
-
--- 聖騎士（72衝突を有効にする）
-_assets_speech(":HeroPaladin", "HeroPaladin", nil, { 72 })
-
 -- tplで使用
 UnitTpl("HeroPaladin")
+```
+
+#### SpeechExtra 追加モジュール
+
+> 音声テンプレートにカスタムモジュールを追加し続けることができます
+
+```lua
+-- 聖騎士
+_assets_speech(":HeroPaladin", "HeroPaladin", {
+    avatar = _assets_speech_extra({ modelAlias = "HeroPaladin" }), -- モデルアバターを有効にする
+})
+
+-- tplで使用
+UnitTpl("HeroPaladin"):speechExtra("avatar")
+
+-- Unitで使用
+(Unit):speechExtra("avatar")
 ```

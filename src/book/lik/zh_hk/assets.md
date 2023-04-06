@@ -171,7 +171,7 @@ _assets_ui("lik_cursor") --指標置頂
 
 > 語音模版為魔獸自帶資源
 >
-> 在單位TPL定義時引用或Unit物件後續修改使用
+> 在單位TPL定義時引用或Unit對象後續修改使用
 >
 > 已默認精選speech語音數據，可自行拓展
 
@@ -179,12 +179,23 @@ _assets_ui("lik_cursor") --指標置頂
 -- 聖騎士
 _assets_speech(":HeroPaladin", "HeroPaladin")
 
--- 聖騎士(啓用模型頭像)
-_assets_speech(":HeroPaladin", "HeroPaladin", { "HeroPaladin" })
-
--- 聖騎士(啓用72碰撞)
-_assets_speech(":HeroPaladin", "HeroPaladin", nil, { 72 })
-
 -- 在tpl中使用
 UnitTpl("HeroPaladin")
+```
+
+#### SpeechExtra 語音模版額外模組
+
+> 你可以繼續為語音模版添加自定義模組
+
+```lua
+-- 聖騎士
+_assets_speech(":HeroPaladin", "HeroPaladin", {
+    avatar = _assets_speech_extra({ modelAlias = "HeroPaladin" }), -- 模型頭像模組
+})
+
+-- 在tpl中使用
+UnitTpl("HeroPaladin"):speechExtra("avatar")
+
+-- 在Unit中使用
+(Unit):speechExtra("avatar")
 ```

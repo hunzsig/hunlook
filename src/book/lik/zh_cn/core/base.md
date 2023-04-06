@@ -27,6 +27,7 @@ async
 attribute
 audio
 buff
+corpse
 destructable
 dialog
 echo
@@ -42,6 +43,7 @@ sync
 terrain
 time
 ttg
+uf6
 view
 window
 ```

@@ -20,7 +20,6 @@ EVENT.Prop = {
 ---@alias noteOnObjectDestructData {triggerObject:Object}
 ---@alias noteOnAIDestructData {triggerObject:AI} AI
 ---@alias noteOnAbilityDestructData {triggerObject:Ability} 技能
----@alias noteOnCorpseDestructData {triggerObject:Corpse} 屍體
 ---@alias noteOnEffectDestructData {triggerObject:Effect} 特效
 ---@alias noteOnItemDestructData {triggerObject:Item} 物品
 ---@alias noteOnUnitDestructData {triggerObject:Unit} 單位

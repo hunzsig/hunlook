@@ -1,7 +1,5 @@
 ## Process 流程管理
 
-> 在全局热更新 hotLoader 的扶持下，Process的效能变得突破天际的强
->
 > 你可以使用 Process 编写某一段的游戏流程，随时回滚测试，跳跃测试
 
 ### 先在项目里面新建一个流程目录，专门用来写流程，如 process
@@ -56,15 +54,28 @@ process:onStart(function(this)
 end)
 ```
 
-### 流程内的资源管理
+### 结束回调
 
-> 一般局部变量可以无视，不管理即可
->
-> 但例如有个流程叫bossComing，它创建了一个boss攻击玩家
->
-> 你可以把它绑定到stage里，然后在结束回调时，令它删除
->
-> 这样这个boss就会在流程跳跃或重置时，自动消灭
+#### 你可以在流程结束时做点什么
+
+```lua
+local process = Process("test")
+process:onOver(function(this)
+    --- something
+end)
+```
+
+### 流程内的泡影数据
+
+#### 有一部分数据仅在当前的流程内生效，在流程结束时需要手动管理，不太快捷
+
+#### 流程内提供了一个bubble泡影数据，是一个简单的table，能在流程over时自动简单清理一维数据
+
+#### 例如有个流程叫bossComing，它创建了一个boss攻击玩家
+
+#### 你可以把它绑定到bubble里，这样这个boss就会在流程跳跃或结束时，自动消灭
+
+> 框架提供的bubble数据处理非常简单，若你有需要可自行拓展想要的效果，如处理多维数据
 
 ```lua
 local process = Process("bossComing")
@@ -72,20 +83,15 @@ process
     :onStart(function(this)
         -- 创建一个BOSS
         local boss = Unit(TPL_UNIT.BOSS, Player(12), 0, 0, 0)
-        -- 注册进stage
-        this:stage("boss", boss)
-    end)
-    :onOver(function(this)
-        -- 干掉boss
-        destroy(this:stage("boss"))
+        -- 绑定进bubble
+        local bubble = this:bubble()
+        bubble.boss = boss
     end)
 ```
 
 ### 你也可以注册一些命令，来手动控制流程的跳跃
 
-> 下面是个例子，如敲入 -proc test，将会重置执行 test
-> 
-> 下面是个例子，如敲入 -proc this，将会重置当前流程
+#### 下面是个例子，如敲入 -proc test，将会重置执行 test，而敲入 -proc this，将会重置当前流程
 
 ```lua
 if (DEBUGGING) then
@@ -99,8 +105,9 @@ if (DEBUGGING) then
         else
             proc = Processes:get(p)
         end
-        if (instanceof(proc, ProcessClass)) then
+        if (isClass(proc, ProcessClass)) then
             print(p .. "流程已重置")
+            ProcessCurrent:over()
             proc:start()
         end
     end)

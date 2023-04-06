@@ -1,7 +1,5 @@
 ## Process management
 
-> With the support of global hot update hotloader, the efficiency of process has become stronger than the sky
->
 > You can use process to write a certain game flow, roll back the test and jump the test at any time
 
 ### First, create a new process directory in the project, which is specially used to write processes, such as process
@@ -56,15 +54,28 @@ process:onStart(function(this)
 end)
 ```
 
-### Resource management within the process
+### Over callback
 
-> General local variables can be ignored without management
->
-> But for example, there is a process called bossComing, which creates a boss attack player
->
-> You can bind it to the stage, and then delete it at the end of the callback
->
-> In this way, the boss will be automatically eliminated when the process jumps or resets
+#### What can you do at the end of the process
+
+```lua
+local process = Process("test")
+process:onOver(function(this)
+    --- something
+end)
+```
+
+### Bubble data within the process
+
+#### Some data is only valid within the current process and needs to be manually managed at the end of the process, which is not very fast
+
+#### A bubble bubble data is provided within the process, which is a simple table that can automatically clean up one-dimensional data when the process is over
+
+#### For example, there is a process called bossComing, which creates a boss attack player
+
+#### You can bind it to a bubble, so that this boss will automatically eliminate when the process jumps or ends
+
+> The bubble data processing provided by the framework is very simple, and if you need it, you can expand the desired effect on your own, such as processing multidimensional data
 
 ```lua
 local process = Process("bossComing")
@@ -72,20 +83,15 @@ process
     :onStart(function(this)
         -- A boss
         local boss = Unit(TPL_UNIT.BOSS, Player(12), 0, 0, 0)
-        -- save in stage
-        this:stage("boss", boss)
-    end)
-    :onOver(function(this)
-        -- Destroy boss
-        destroy(this:stage("boss"))
+        -- save in bubble
+        local bubble = this:bubble()
+        bubble.boss = boss
     end)
 ```
 
 ### You can also register some commands to manually control the jump of the process
 
-> The following is an example. If you type -proc test, the execution of test will be reset
->
-> The following is an example. If you type -proc this, the current process will be reset
+#### Here is an example, such as typing - proc test, which will reset the execution test, while typing - proc this will reset the current process
 
 ```lua
 if (DEBUGGING) then
@@ -101,6 +107,7 @@ if (DEBUGGING) then
         end
         if (instanceof(proc, ProcessClass)) then
             print(p .. "Process reset")
+            ProcessCurrent:over()
             proc:start()
         end
     end)

@@ -1,7 +1,5 @@
 ## Processプロセス管理
 
-> グローバル熱更新hotLoaderに支えられて、Processの効能は天際を突破するほど強くなった
->
 > Processを使ってゲームの流れを記述し、いつでもロールバックテスト、ジャンプテストを行うことができます
 
 ### まずプロジェクトにプロセスを書くためのプロセスディレクトリを新規作成します。たとえば、process
@@ -56,15 +54,28 @@ process:onStart(function(this)
 end)
 ```
 
-### プロセス内のリソース管理
+### オーバーコール
 
-> 一般的な局所変数は無視でき、管理しなければよい
->
-> しかし、例えばボス攻撃プレイヤーを作成するbossComingというプロセスがあります。
->
-> stageにバインドしてコールバックを終了すると削除することができます
->
-> これにより、このボスはプロセスがジャンプしたりリセットされたりすると、自動的に消滅します
+#### このプロセスが終了したときに何ができるか
+
+```lua
+local process = Process("test")
+process:onOver(function(this)
+    --- something
+end)
+```
+
+### フロー内の気泡データ
+
+#### 現在のプロセスでのみ有効なデータがあり、プロセスの終了時に手動で管理する必要があります。これは迅速ではありません
+
+#### プロセスにはバブルデータが用意されています。これは簡単なテーブルで、プロセスの終了時に1次元データを自動的にクリーンアップすることができます
+
+#### たとえば、ボス攻撃プレイヤーを作成するbossCondingというプロシージャがあります。
+
+#### 流れがジャンプしたり終了したりすると、このボスは自動的に解消されるように、気泡にバインドすることができます
+
+> このフレームワークでは、多次元データの処理など、必要に応じて必要な効果を独自に拡張することができるバブルデータの処理が非常に簡単です。
 
 ```lua
 local process = Process("bossComing")
@@ -72,20 +83,15 @@ process
     :onStart(function(this)
         -- 作成boss
         local boss = Unit(TPL_UNIT.BOSS, Player(12), 0, 0, 0)
-        -- 登録stage
-        this:stage("boss", boss)
-    end)
-    :onOver(function(this)
-        -- やっつけるboss
-        destroy(this:stage("boss"))
+        -- 登録bubble
+        local bubble = this:bubble()
+        bubble.boss = boss
     end)
 ```
 
 ### プロセスのジャンプを手動で制御するコマンドを登録することもできます
 
-> 次に例を示します：-proc testを入力すると、実行testがリセットされます
->
-> 次の例では：-proc thisを入力すると、現在のプロセスがリセットされます
+> 下面是个例子，如敲入 -procテスト将会重置执行 テスト而敲入 -これを処理する将会重置当前流程
 
 ```lua
 if (DEBUGGING) then
@@ -101,6 +107,7 @@ if (DEBUGGING) then
         end
         if (instanceof(proc, ProcessClass)) then
             print(p .. "プロセスがリセットされました")
+            ProcessCurrent:over()
             proc:start()
         end
     end)

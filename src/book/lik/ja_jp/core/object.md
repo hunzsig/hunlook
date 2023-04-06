@@ -17,7 +17,6 @@ Bgm バックミュージック
 Buff 操作可能状態
 Camera カメラレンズ
 Coordinate 座標
-Corpse 死体
 Cursor ポインタ
 Destructable 破壊可能物
 Dialog ダイアログ
@@ -37,7 +36,6 @@ FrameCustom インタフェースのカスタマイズ
 frameDrag インタフェースドラッグ
 FrameHighLight インタフェースがハイライトされている
 FrameLabel インタフェースの見出し
-FrameList インタフェースのリスト
 FrameModel インタフェースモデル
 FrameTextBlock インタフェース占有テキスト
 FrameText インタフェーステキスト

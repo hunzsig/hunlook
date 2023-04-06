@@ -17,7 +17,6 @@ Bgm 背景音乐
 Buff 可操状态
 Camera 镜头
 Coordinate 座标
-Corpse 消逝物
 Cursor 指针
 Destructable 可破坏物
 Dialog 对话框
@@ -36,7 +35,6 @@ FrameCustom 界面自定义
 frameDrag 界面拖拽
 FrameHighLight 界面高亮
 FrameLabel 界面词条
-FrameList 界面列表
 FrameModel 界面模型
 FrameTextBlock 界面占位文本
 FrameText 界面文本

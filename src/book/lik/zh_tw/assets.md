@@ -179,12 +179,23 @@ _assets_ui("lik_cursor") --指標置頂
 -- 聖騎士
 _assets_speech(":HeroPaladin", "HeroPaladin")
 
--- 聖騎士(啟用模型頭像)
-_assets_speech(":HeroPaladin", "HeroPaladin", { "HeroPaladin" })
-
--- 聖騎士(啟用72碰撞)
-_assets_speech(":HeroPaladin", "HeroPaladin", nil, { 72 })
-
 -- 在tpl中使用
 UnitTpl("HeroPaladin")
+```
+
+#### SpeechExtra 語音模版額外模組
+
+> 你可以繼續為語音模版新增自定義模組
+
+```lua
+-- 聖騎士
+_assets_speech(":HeroPaladin", "HeroPaladin", {
+    avatar = _assets_speech_extra({ modelAlias = "HeroPaladin" }), -- 模型頭像模組
+})
+
+-- 在tpl中使用
+UnitTpl("HeroPaladin"):speechExtra("avatar")
+
+-- 在Unit中使用
+(Unit):speechExtra("avatar")
 ```

@@ -182,12 +182,23 @@ _assets_ui("lik_cursor") --Pointer on top
 -- Paladin
 _assets_speech(":HeroPaladin", "HeroPaladin")
 
--- Paladin (enable model avatar)
-_assets_speech(":HeroPaladin", "HeroPaladin", { "HeroPaladin" })
-
--- Paladin (enable 72 collision)
-_assets_speech(":HeroPaladin", "HeroPaladin", nil, { 72 })
-
 -- in Tpl
 UnitTpl("HeroPaladin")
+```
+
+#### Speech Extra Module
+
+> You can continue to add custom modules for the voice template
+
+```lua
+-- Paladin
+_assets_speech(":HeroPaladin", "HeroPaladin", {
+    avatar = _assets_speech_extra({ modelAlias = "HeroPaladin" }), -- Avatar Module
+})
+
+-- in Tpl
+UnitTpl("HeroPaladin"):speechExtra("avatar")
+
+-- in Unit
+(Unit):speechExtra("avatar")
 ```

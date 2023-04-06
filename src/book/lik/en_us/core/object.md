@@ -17,7 +17,6 @@ Bgm
 Buff
 Camera
 Coordinate
-Corpse
 Cursor
 Destructable
 Dialog
@@ -37,7 +36,6 @@ FrameCustom
 frameDrag
 FrameHighLight
 FrameLabel
-FrameList
 FrameModel
 FrameTextBlock
 FrameText

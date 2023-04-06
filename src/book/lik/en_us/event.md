@@ -20,7 +20,6 @@ EVENT.Prop = {
 ---@alias noteOnObjectDestructData {triggerObject:Object}
 ---@alias noteOnAIDestructData {triggerObject:AI} AI
 ---@alias noteOnAbilityDestructData {triggerObject:Ability}
----@alias noteOnCorpseDestructData {triggerObject:Corpse}
 ---@alias noteOnEffectDestructData {triggerObject:Effect}
 ---@alias noteOnItemDestructData {triggerObject:Item}
 ---@alias noteOnUnitDestructData {triggerObject:Unit}

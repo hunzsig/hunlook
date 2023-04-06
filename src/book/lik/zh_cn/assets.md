@@ -179,12 +179,23 @@ _assets_ui("lik_cursor") --指针置顶
 -- 圣骑士
 _assets_speech(":HeroPaladin", "HeroPaladin")
 
--- 圣骑士(启用模型头像)
-_assets_speech(":HeroPaladin", "HeroPaladin", { "HeroPaladin" })
-
--- 圣骑士(启用72碰撞)
-_assets_speech(":HeroPaladin", "HeroPaladin", nil, { 72 })
-
 -- 在tpl中使用
 UnitTpl("HeroPaladin")
+```
+
+#### SpeechExtra 语音模版额外模组
+
+> 你可以继续为语音模版添加自定义模组
+
+```lua
+-- 圣骑士
+_assets_speech(":HeroPaladin", "HeroPaladin", {
+    avatar = _assets_speech_extra({ modelAlias = "HeroPaladin" }), -- 模型头像模组
+})
+
+-- 在tpl中使用
+UnitTpl("HeroPaladin"):speechExtra("avatar")
+
+-- 在Unit中使用
+(Unit):speechExtra("avatar")
 ```
