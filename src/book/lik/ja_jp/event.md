@@ -208,6 +208,12 @@ EVENT.Unit = {
     --- アイテム欄に変化があった
     ---@alias noteOnUnitItemSlotChangeData noteOnUnitBase|{triggerSlot:ItemSlot}
     ItemSlotChange = "unitItemSlotChange",
+    --- 中止に陥る
+    ---@alias noteOnUnitInterruptInData noteOnUnitBase
+    InterruptIn = "unitInterruptIn",
+    --- 離脱中止
+    ---@alias noteOnUnitInterruptOutData noteOnUnitBase
+    InterruptOut = "unitInterruptOut",
     --- Be
     Be = {
         --- 攻撃準備
@@ -287,10 +293,10 @@ EVENT.Ability = {
     --- 技能継続施法周期ごと（動作時）
     ---@alias noteOnAbilityCastingData noteOnAbilitySpellData
     Casting = "abilityCasting",
-    --- 施術スキル終了（継続施術のみ終了状態）
+    --- 停止スキル（吟唱、持続的な施法は停止状態）
     ---@alias noteOnAbilityStopData noteOnAbilityBase
     Stop = "abilityStop",
-    --- 停止スキル（吟唱、持続的な施法は停止状態）
+    --- 施術スキル終了（継続施術のみ終了状態）
     ---@alias noteOnAbilityOverData noteOnAbilityBase
     Over = "abilityOver",
     --- レベル変更

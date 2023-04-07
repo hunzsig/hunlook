@@ -208,6 +208,12 @@ EVENT.Unit = {
     --- 物品栏有所变化
     ---@alias noteOnUnitItemSlotChangeData noteOnUnitBase|{triggerSlot:ItemSlot}
     ItemSlotChange = "unitItemSlotChange",
+    --- 陷入中止
+    ---@alias noteOnUnitInterruptInData noteOnUnitBase
+    InterruptIn = "unitInterruptIn",
+    --- 脱离中止
+    ---@alias noteOnUnitInterruptOutData noteOnUnitBase
+    InterruptOut = "unitInterruptOut",
     --- 被
     Be = {
         --- 被准备攻击
@@ -287,10 +293,10 @@ EVENT.Ability = {
     --- 技能持续施法每周期时（动作时）
     ---@alias noteOnAbilityCastingData noteOnAbilitySpellData
     Casting = "abilityCasting",
-    --- 施放技能结束（只有持续施法有结束状态）
+    --- 停止施放技能（吟唱、持续施法有停止状态）
     ---@alias noteOnAbilityStopData noteOnAbilityBase
     Stop = "abilityStop",
-    --- 停止施放技能（吟唱、持续施法有停止状态）
+    --- 施放技能结束（只有持续施法有结束状态）
     ---@alias noteOnAbilityOverData noteOnAbilityBase
     Over = "abilityOver",
     --- 等级改变

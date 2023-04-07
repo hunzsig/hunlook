@@ -208,6 +208,12 @@ EVENT.Unit = {
     --- The item column has changed
     ---@alias noteOnUnitItemSlotChangeData noteOnUnitBase|{triggerSlot:ItemSlot}
     ItemSlotChange = "unitItemSlotChange",
+    --- Trap In Interrupt
+    ---@alias noteOnUnitInterruptInData noteOnUnitBase
+    InterruptIn = "unitInterruptIn",
+    --- Disengagement suspension
+    ---@alias noteOnUnitInterruptOutData noteOnUnitBase
+    InterruptOut = "unitInterruptOut",
     --- Be
     Be = {
         --- Before attacked
@@ -287,10 +293,10 @@ EVENT.Ability = {
     --- Skill continuous casting weekly period (action time)
     ---@alias noteOnAbilityCastingData noteOnAbilitySpellData
     Casting = "abilityCasting",
-    --- End of casting skill (only continuous casting can end)
+    --- Stop casting skills (chanting and continuous casting have a stop state)
     ---@alias noteOnAbilityStopData noteOnAbilityBase
     Stop = "abilityStop",
-    --- Stop casting skills (chanting and continuous casting have a stop state)
+    --- End of casting skill (only continuous casting can end)
     ---@alias noteOnAbilityOverData noteOnAbilityBase
     Over = "abilityOver",
     --- Level change
