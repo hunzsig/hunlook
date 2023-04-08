@@ -1,10 +1,20 @@
 ## 始める
 
-###### このドキュメントは最終的な成果を表すものではありません。
+### git cloneを使用したプロジェクトのクローニング
 
-### フレームワークの取得
+```text
+> git clone https://github.com/w3lik/likRC.git
+```
 
-> <a target="_blank" href="https://afdian.net/a/hunzsig">内部者がRCのためにバージョンテスト中なので、熱心に著者のために発電することができます</a>
+### git pullを使用したアイテムの更新
+
+> 不慣れな場合はforkなどのgit管理ツールを使って操作してください
+>
+> インストール <a target="_blank" href="https://www.git-fork.com">Fork - a fast and friendly git client for Mac and Windows (git-fork.com)</a>
+
+```text
+> git pull
+```
 
 ### インストール IDE - Ideac
 
@@ -48,7 +58,7 @@ GitHub、GitLab、Gtiee、Bitbucketなどのサードパーティの管理プラ
 完璧な人はいない。自分がいつ過ちを犯すか誰も知らない。コード履歴を使用すると、バージョンをロールバックしたり、バックアップの成果を確認したりすることができます。
 ```
 
-###### 親切なヒント：このプロジェクトは研究開発中であり、今後試用資格が開放される <a target="_blank" href="https://afdian.net/a/hunzsig">詳細については、ファングループに参加してください</a>
+###### 暖かいヒント：ドキュメントの表示部分は氷山の一角だけで、自分で探索することができます <a target="_blank" href="https://afdian.net/a/hunzsig">作者にお茶をおごる</a>
 
 ###### win 11を使用する場合、特に新しいバージョンの場合、ポップアップエラーに遭遇することがあります（ただし、実際にはプレイを続けることができます）
 

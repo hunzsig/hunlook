@@ -71,7 +71,7 @@ You can use third-party hosting platforms (such as GitHub, GitLab, Gtiee, Bitbuc
 No one is perfect, and no one knows when they will make mistakes. Code history allows you to view every modification, rollback versions, and backup results.
 ```
 
-###### Warm tip: The document display part is only the tip of the iceberg. You can explore it yourself <a target="_blank" href="https://afdian.net/a/hunzsig">Invite the author to have a cup of tea</a>
+###### Warm tip: The document display part is only the tip of the iceberg. You can explore it yourself <a target="_blank" href="https://afdian.net/a/hunzsig">The cost of giving the author a cup of tea as a gift</a>
 
 ###### When using win11, especially the newer version, you sometimes encounter pop-up errors (but you can continue to play)
 

@@ -1,10 +1,20 @@
 ## 快速開始
 
-###### 研發中，此文檔不代表最終成果
+### 使用 git clone 克隆項目
 
-### 獲得框架
+```text
+> git clone https://github.com/w3lik/likRC.git
+```
 
-> <a target="_blank" href="https://afdian.net/a/hunzsig">內部人員正在為RC發版測試中，你可熱心為作者發電</a>
+### 使用 git pull 更新項目
+
+> 不熟悉時請使用fork等git管理工具方便操作
+>
+> 安裝 <a target="_blank" href="https://www.git-fork.com">Fork - a fast and friendly git client for Mac and Windows (git-fork.com)</a>
+
+```text
+> git pull
+```
 
 ### 安裝IDE - Ideac
 
@@ -48,7 +58,7 @@
 人無完人，沒有人會知道自己什麼時候會犯錯。代碼歷史可讓你查看每一次的修改，回滾版本、備份成果。
 ```
 
-###### 温馨提示：此項目處於研發中內測中，後續將開放試用資格 <a target="_blank" href="https://afdian.net/a/hunzsig">加入粉絲羣瞭解更多詳情</a>
+###### 温馨提示：文檔展現部分僅冰山一角，可自行探索 <a target="_blank" href="https://afdian.net/a/hunzsig">請作者喝杯茶</a>
 
 ###### 使用win11時，特別是較新版本時，有時會遇到彈窗錯誤（但其實可以繼續玩）
 

@@ -1,10 +1,20 @@
 ## Start
 
-###### During research and development, this document does not represent the final result
+### Use git clone download framework
 
-### Get Framework
+```text
+> git clone https://github.com/w3lik/likRC.git
+```
 
-> <a target="_blank" href="https://afdian.net/a/hunzsig">Internal personnel are testing the RC release, and you can be enthusiastic about generating power for the author</a>
+### Use git pull update framework
+
+> When unfamiliar, please use GIT management tools such as fork for easy operation
+>
+> Install <a target="_blank" href="https://www.git-fork.com">Fork - a fast and friendly git client for Mac and Windows (git-fork.com)</a>
+
+```text
+> git pull
+```
 
 ### Install IDE - Ideac
 
@@ -48,7 +58,7 @@ You can use third-party hosting platforms (such as GitHub, GitLab, Gtiee, Bitbuc
 No one is perfect, and no one knows when they will make mistakes. Code history allows you to view every modification, rollback versions, and backup results.
 ```
 
-###### Reminder: This project is in the internal test of R&D, and will be open for trial in the future <a target="_blank" href="https://afdian.net/a/hunzsig">Join the fan group to know more</a>
+###### Warm tip: The document display part is only the tip of the iceberg. You can explore it yourself <a target="_blank" href="https://afdian.net/a/hunzsig">The cost of giving the author a cup of tea as a gift</a>
 
 ###### When using Win11, especially the newer version, you will sometimes encounter pop-up errors (but you can continue to play)
 
