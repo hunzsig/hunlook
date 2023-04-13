@@ -44,8 +44,8 @@ local z = 100
 async.call(Player(1),function()
     z = 996
 end)
-japi.EXSetEffectXY(e, z) -- はい、できますが、プレイヤー1自身は996の高さです
+japi.EXSetEffectZ(e, z) -- はい、できますが、プレイヤー1自身は996の高さです
 async.call(Player(1),function()
-    japi.EXSetEffectXY(e, z) -- ほとんど涼しい
+    japi.EXSetEffectZ(e, z) -- ほとんど涼しい
 end
 ```

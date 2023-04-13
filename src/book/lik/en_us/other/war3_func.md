@@ -49,8 +49,8 @@ local z = 100
 async.call(Player(1),function()
     z = 996
 end)
-japi.EXSetEffectXY(e, z) -- YES,But player 1 is 996 high
+japi.EXSetEffectZ(e, z) -- YES,But player 1 is 996 high
 async.call(Player(1),function()
-    japi.EXSetEffectXY(e, z) -- NO
+    japi.EXSetEffectZ(e, z) -- NO
 end
 ```
