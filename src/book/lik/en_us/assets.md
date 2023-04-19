@@ -186,7 +186,7 @@ _assets_speech(":HeroPaladin", "HeroPaladin")
 UnitTpl("HeroPaladin")
 ```
 
-#### Speech Extra Module
+#### SpeechExtra Module
 
 > You can continue to add custom modules for the voice template
 
@@ -201,4 +201,17 @@ UnitTpl("HeroPaladin"):speechExtra("avatar")
 
 -- in Unit
 (Unit):speechExtra("avatar")
+```
+
+#### Destructable decoration
+
+> You can customize destructible items
+
+```lua
+_assets_destructable(":Doodads\\Terrain\\LordaeronTree\\LordaeronTree", "LordaeronTree", {
+    numVar = 10,
+    texID = 31,
+    texFile = "ReplaceableTextures\\LordaeronTree\\LordaeronFallTree"
+})
+_assets_destructable(":Doodads\\LordaeronSummer\\Props\\Cage\\Cage", "Cage")
 ```

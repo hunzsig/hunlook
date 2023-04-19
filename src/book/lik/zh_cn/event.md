@@ -359,10 +359,10 @@ EVENT.Aura = {
     Leave = "auraLeave",
 }
 
----@alias noteOnDestructableBase {triggerDestructable:Destructable|number}
+---@alias noteOnDestructableBase {triggerDestructable:number}
 EVENT.Destructable = {
     --- 可破坏物死亡
-    ---@alias noteOnDestructableDeadData noteOnDestructableBase|{name:"名称",x:"坐标X",y:"坐标Y"}
+    ---@alias noteOnDestructableDeadData noteOnDestructableBase|{name:"不可靠名称",x:"坐标X",y:"坐标Y"}
     Dead = "destructableDead",
 }
 

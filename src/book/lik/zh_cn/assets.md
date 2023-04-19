@@ -199,3 +199,16 @@ UnitTpl("HeroPaladin"):speechExtra("avatar")
 -- 在Unit中使用
 (Unit):speechExtra("avatar")
 ```
+
+#### Destructable 可破坏物
+
+> 你可以自定义可破坏物
+
+```lua
+_assets_destructable(":Doodads\\Terrain\\LordaeronTree\\LordaeronTree", "LordaeronTree", {
+    numVar = 10,
+    texID = 31,
+    texFile = "ReplaceableTextures\\LordaeronTree\\LordaeronFallTree"
+})
+_assets_destructable(":Doodads\\LordaeronSummer\\Props\\Cage\\Cage", "Cage")
+```
