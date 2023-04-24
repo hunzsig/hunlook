@@ -1,5 +1,15 @@
 ## Object 对象
 
+#### 模块职能
+
+```text
+limiter 写限制
+modifier 差异执行
+normalizer 读规格化
+preposition 预处理
+superposition 叠加态执行
+```
+
 #### 所有门面一览
 
 ```text

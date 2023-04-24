@@ -1,5 +1,15 @@
 ## Object
 
+#### Module Functions
+
+```text
+limiter Write limit
+modifier Differential execution
+normalizer Read Normalization
+preposition Preprocessing
+superposition Superposition execution
+```
+
 #### List of all facades
 
 ```text

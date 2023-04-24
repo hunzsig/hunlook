@@ -1,5 +1,15 @@
 ## Object オブジェクト
 
+#### モジュール機能
+
+```text
+limiter 書き込み制限
+modifier 差分実行
+normalizer 読み取り正規化
+preposition 前処理
+superposition オーバーレイ状態実行
+```
+
 #### すべてのファサードの一覧
 
 ```text

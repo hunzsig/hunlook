@@ -1,5 +1,15 @@
 ## Object 物件
 
+#### 模組職能
+
+```text
+limiter 寫限制
+modifier 差異執行
+normalizer 讀規格化
+preposition 預處理
+superposition 疊加態執行
+```
+
 #### 所有門面一覽
 
 ```text

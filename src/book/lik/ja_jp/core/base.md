@@ -27,7 +27,6 @@ async
 attribute
 audio
 buff
-corpse
 destructable
 dialog
 echo
@@ -37,13 +36,11 @@ japi
 keyboard
 mouse
 player
-signal
 slk
 sync
 terrain
 time
 ttg
-uf6
 view
 window
 ```
