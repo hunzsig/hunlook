@@ -107,10 +107,6 @@ it1:position(0, 0) -- 我将其移动到0,0后，触发了大地图所以自动�
 TPL_UNIT = {
     Footman = UnitTpl("Footman") -- 此处的Footman指引用语音，默认无
         :name("步兵")
-        :barStateMode(2) -- 血条样式设定
-        :barStateAlways(true)
-        :barStateMarker(500)
-        :iconMap(AUIKit("my_minimap", "dot/me", "tga"), 0.03, 0.03) -- 小地图图标样式
         :modelAlias("TheCaptain") -- 使用的模型
         :icon("unit/TheCaptain")
         :scale(1.2)

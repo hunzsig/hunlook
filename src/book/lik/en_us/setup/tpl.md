@@ -108,10 +108,6 @@ it1:position(0, 0) -- After I move it to 0,0, the big map is triggered, so it is
 TPL_UNIT = {
     Footman = UnitTpl("Footman") -- Footman here refers to the quoted voice, and the default is none
         :name("Footman")
-        :barStateMode(2) -- Blood Bar Style Settings
-        :barStateAlways(true)
-        :barStateMarker(500)
-        :iconMap(AUIKit("my_minimap", "dot/me", "tga"), 0.03, 0.03) -- Small map icon style
         :modelAlias("TheCaptain") -- Models used
         :icon("unit/TheCaptain")
         :scale(1.2)

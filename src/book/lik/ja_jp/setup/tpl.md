@@ -107,10 +107,6 @@ it1:position(0, 0) -- 私はそれを0、0に移動した後、大きな地図�
 TPL_UNIT = {
     Footman = UnitTpl("Footman") -- ここでFootmanは参照音声を指し、デフォルトではなし
         :name("歩兵")
-        :barStateMode(2) -- 血液ストリップパターン設定
-        :barStateAlways(true)
-        :barStateMarker(500)
-        :iconMap(AUIKit("my_minimap", "dot/me", "tga"), 0.03, 0.03) -- 小さな地図アイコンスタイル
         :modelAlias("TheCaptain") -- 使用するモデル
         :icon("unit/TheCaptain")
         :scale(1.2)
