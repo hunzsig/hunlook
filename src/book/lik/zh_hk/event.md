@@ -330,6 +330,15 @@ EVENT.Item = {
     --- 等級改變
     ---@alias noteOnItemLevelChangeData noteOnItemBase|{value:"變值差額"}
     LevelChange = "itemLevelChange",
+    --- 物品死亡
+    ---@alias noteOnItemDeadData noteOnItemBase|{sourceUnit:Unit}
+    Dead = "itemDead",
+    --- 被
+    Be = {
+        --- 被攻擊
+        ---@alias noteOnItemBeAttackData noteOnItemBase|{sourceUnit:Unit,damage:"傷害值"}
+        Attack = "be:itemAttack",
+    }
 }
 
 ---@alias noteOnStoreBase {triggerStore:Store}

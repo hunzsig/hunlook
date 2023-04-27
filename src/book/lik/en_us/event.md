@@ -330,6 +330,15 @@ EVENT.Item = {
     --- Level change
     ---@alias noteOnItemLevelChangeData noteOnItemBase|{value:"Variation difference"}
     LevelChange = "itemLevelChange",
+    --- Item dead
+    ---@alias noteOnItemDeadData noteOnItemBase|{sourceUnit:Unit}
+    Dead = "itemDead",
+    --- Be
+    Be = {
+        --- Be attacked
+        ---@alias noteOnItemBeAttackData noteOnItemBase|{sourceUnit:Unit,damage:"data"}
+        Attack = "be:itemAttack",
+    }
 }
 
 ---@alias noteOnStoreBase {triggerStore:Store}
