@@ -43,13 +43,13 @@ import {
   UnorderedListOutlined,
   FontSizeOutlined,
   StockOutlined,
-  TeamOutlined,
   QuestionCircleOutlined,
   HeartOutlined,
 } from "@ant-design/icons";
 
 // only one layout
 export default [
+  {icon: <HeartOutlined/>, key: 'sponsor', label: "Sponsor", net: "https://afdian.net/a/hunzsig?tab=sponsor"},
   {icon: <ReadOutlined/>, key: 'index', label: "Start"},
   {icon: <ApartmentOutlined/>, key: 'struct', label: "Struct"},
   {icon: <ToolOutlined/>, key: 'cmd', label: "CMD Tool"},
@@ -106,6 +106,4 @@ export default [
       {icon: <TransportQRcodeOutline/>, key: 'lua_engine', label: "YDLuaEngine"},
     ]
   },
-  {icon: <HeartOutlined/>, key: 'sponsor', label: "Sponsor", net: "https://afdian.net/a/hunzsig?tab=sponsor"},
-  {icon: <TeamOutlined/>, key: 'fans', label: "Fans"},
 ]

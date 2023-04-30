@@ -8,9 +8,7 @@
 
 ###### gitを使いこなすと、このステップをスキップできます
 
-> <a target="_blank" href="https://www.git-fork.com">Fork - a fast and friendly git client for Mac and Windows (
-> git-fork.com)</a>
->
+> <a target="_blank" href="https://www.git-fork.com">Fork - a fast and friendly git client for Mac and Windows (git-fork.com)</a>
 
 ### git cloneクローンを使用した特別公開バージョン
 
@@ -25,8 +23,6 @@
 ```text
 > git pull
 ```
-
-> 公開版は自由に商用化できますが、ソースコードは入手できず、技術協力は得られませんのでご了承ください
 
 ### インストール IDE - Ideac
 
@@ -70,8 +66,10 @@ GitHub、GitLab、Gtiee、Bitbucketなどのサードパーティの管理プラ
 完璧な人はいない。自分がいつ過ちを犯すか誰も知らない。コード履歴を使用すると、バージョンをロールバックしたり、バックアップの成果を確認したりすることができます。
 ```
 
-###### 暖かいヒント：ドキュメントの表示部分は氷山の一角だけで、自分で探索することができます <a target="_blank" href="https://afdian.net/a/hunzsig">作者にお茶をおごる</a>
+###### 暖かいヒント：このフレームワークはメンテナンスを完全に停止しており、セルフメンテナンスが可能 <a target="_blank" href="https://afdian.net/a/hunzsig">作者にお茶をおごる</a>
 
 ###### win 11を使用している場合、特に新しいバージョンの場合、ポップアップエラーが発生することがあります（ただし、実際にはプレイを続けることができます）
 
 ###### ここでは、ポップアップを無視して遊び続けるか、管理者が起動する端末やIDE（IDE端末を使用する場合）を選択して問題を解決することができます
+
+###### Likフレームワーク： <a target="_blank" href="https://lik.hunzsig.com">Lik</a>

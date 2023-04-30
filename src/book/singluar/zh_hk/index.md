@@ -18,8 +18,6 @@
 > git clone https://github.com/singluar/singluar-restricted.git
 ```
 
-> 公開版本可隨意商用，但不能獲得源碼，且得不到什麼技術協助，請見諒
-
 ### 使用 git pull 更新項目
 
 > 不熟悉時請使用fork等git管理工具方便操作
@@ -70,8 +68,10 @@
 人無完人，沒有人會知道自己什麼時候會犯錯。代碼歷史可讓你查看每一次的修改，回滾版本、備份成果。
 ```
 
-###### 温馨提示：文檔展現部分僅冰山一角，可自行探索 <a target="_blank" href="https://afdian.net/a/hunzsig">請作者喝杯茶</a>
+###### 温馨提示：此框架已完全停止維護，可自行維護 <a target="_blank" href="https://afdian.net/a/hunzsig">請作者喝杯茶</a>
 
 ###### 使用win11時，特別是較新版本時，有時會遇到彈窗錯誤（但其實可以繼續玩）
 
 ###### 此時你可以選擇不理彈窗繼續玩，或者將終端或IDE（使用IDE終端時）以管理員啓動即可解決問題
+
+###### Lik框架： <a target="_blank" href="https://lik.hunzsig.com">Lik</a>
