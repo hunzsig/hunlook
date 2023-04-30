@@ -71,6 +71,7 @@ import {
 
 // only one layout
 export default [
+  {icon: <HeartOutlined/>, key: 'sponsor', label: "热心发电榜", net: "https://afdian.net/a/hunzsig?tab=sponsor"},
   {icon: <BulbOutlined/>, key: 'index', label: "快速开始"},
   {icon: <ApartmentOutlined/>, key: 'struct', label: "框架结构"},
   {icon: <AntDesignOutlined/>, key: 'cmd', label: "命令工具"},
@@ -158,5 +159,4 @@ export default [
       {icon: <TransportQRcodeOutline/>, key: 'lua_engine', label: "YDLua引擎"},
     ]
   },
-  {icon: <HeartOutlined/>, key: 'sponsor', label: "热心发电榜", net: "https://afdian.net/a/hunzsig?tab=sponsor"},
 ]

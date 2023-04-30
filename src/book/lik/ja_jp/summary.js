@@ -71,6 +71,7 @@ import {
 
 // only one layout
 export default [
+  {icon: <HeartOutlined/>, key: 'sponsor', label: "スポンサー", net: "https://afdian.net/a/hunzsig?tab=sponsor"},
   {icon: <BulbOutlined/>, key: 'index', label: "始める"},
   {icon: <ApartmentOutlined/>, key: 'struct', label: "フレームワーク構造"},
   {icon: <AntDesignOutlined/>, key: 'cmd', label: "コマンドツール"},
@@ -157,5 +158,4 @@ export default [
       {icon: <TransportQRcodeOutline/>, key: 'lua_engine', label: "YDLuaエンジン"},
     ]
   },
-  {icon: <HeartOutlined/>, key: 'sponsor', label: "スポンサー", net: "https://afdian.net/a/hunzsig?tab=sponsor"},
 ]

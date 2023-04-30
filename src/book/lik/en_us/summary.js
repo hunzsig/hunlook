@@ -67,11 +67,11 @@ import {
   ThunderboltOutlined,
   TrademarkCircleOutlined,
   TranslationOutlined,
-  UnorderedListOutlined,
 } from "@ant-design/icons";
 
 // only one layout
 export default [
+  {icon: <HeartOutlined/>, key: 'sponsor', label: "Sponsor", net: "https://afdian.net/a/hunzsig?tab=sponsor"},
   {icon: <BulbOutlined/>, key: 'index', label: "Start"},
   {icon: <ApartmentOutlined/>, key: 'struct', label: "Struct"},
   {icon: <AntDesignOutlined/>, key: 'cmd', label: "CMD"},
@@ -159,5 +159,4 @@ export default [
       {icon: <TransportQRcodeOutline/>, key: 'lua_engine', label: "YDLuaEngine"},
     ]
   },
-  {icon: <HeartOutlined/>, key: 'sponsor', label: "Sponsor", net: "https://afdian.net/a/hunzsig?tab=sponsor"},
 ]
