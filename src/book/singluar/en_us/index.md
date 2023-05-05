@@ -12,18 +12,10 @@
 > git-fork.com)</a>
 >
 
-### Use git clone to clone the public version of the project
+### Get Framework
 
 ```text
 > git clone https://github.com/singluar/singluar-restricted.git
-```
-
-### Updating a project using git pull
-
-> When unfamiliar, please use git management tools such as fork to facilitate operation
-
-```text
-> git pull
 ```
 
 ### Install IDE - Ideac

@@ -12,18 +12,10 @@
 > git-fork.com)</a>
 >
 
-### 使用 git clone 克隆專案公開版本
+### 獲得框架
 
 ```text
 > git clone https://github.com/singluar/singluar-restricted.git
-```
-
-### 使用 git pull 更新專案
-
-> 不熟悉時請使用fork等git管理工具方便操作
-
-```text
-> git pull
 ```
 
 ### 安裝IDE - Ideac

@@ -10,18 +10,10 @@
 
 > <a target="_blank" href="https://www.git-fork.com">Fork - a fast and friendly git client for Mac and Windows (git-fork.com)</a>
 
-### git cloneクローンを使用した特別公開バージョン
+### フレームワークの取得
 
 ```text
 > git clone https://github.com/singluar/singluar-restricted.git
-```
-
-### git pullを使用したプロジェクトの更新
-
-> 不慣れな場合は、操作しやすいようにforkなどのgit管理ツールを使用してください
-
-```text
-> git pull
 ```
 
 ### インストール IDE - Ideac
