@@ -15,7 +15,7 @@
 ### Get Framework
 
 ```text
-> git clone https://github.com/singluar/singluar-restricted.git
+> https://github.com/singluar/singluar-restricted.git
 ```
 
 ### Install IDE - Ideac

@@ -15,7 +15,7 @@
 ### 獲得框架
 
 ```text
-> git clone https://github.com/singluar/singluar-restricted.git
+> https://github.com/singluar/singluar-restricted.git
 ```
 
 ### 安裝IDE - Ideac

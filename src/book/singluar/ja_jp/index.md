@@ -13,7 +13,7 @@
 ### フレームワークの取得
 
 ```text
-> git clone https://github.com/singluar/singluar-restricted.git
+> https://github.com/singluar/singluar-restricted.git
 ```
 
 ### インストール IDE - Ideac
