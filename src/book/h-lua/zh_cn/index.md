@@ -4,11 +4,9 @@
 * 菜鸟入门、自由拓展
 * 功能基础、门槛极低
 
-### 克隆（下载）项目
+### 获得框架
 
-```
-git clone https://github.com/h-lua/h-lua
-```
+> https://github.com/h-lua/h-lua
 
 ### 打开终端，进入项目并确保进入工作区
 

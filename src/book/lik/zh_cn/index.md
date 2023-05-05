@@ -1,22 +1,8 @@
 ## 快速开始
 
-### 使用 git clone 克隆项目
+### 获得框架
 
-```text
-> git clone https://github.com/w3lik/likRC.git
-```
-
-> [如果访问github非常缓慢可尝试下载Ghips](https://gitcode.net/aardio/Ghips/-/raw/master/dist/Ghips.7z)
-
-### 使用 git pull 更新项目
-
-> 不熟悉时请使用fork等git管理工具方便操作
-> 
-> 安装 <a target="_blank" href="https://www.git-fork.com">Fork - a fast and friendly git client for Mac and Windows (git-fork.com)</a>
-
-```text
-> git pull
-```
+> https://github.com/w3lik/likRC.git
 
 ### 安装IDE - Ideac
 

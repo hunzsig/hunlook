@@ -1,20 +1,8 @@
 ## 始める
 
-### git cloneを使用したプロジェクトのクローニング
+### フレームワークの取得
 
-```text
-> git clone https://github.com/w3lik/likRC.git
-```
-
-### git pullを使用したアイテムの更新
-
-> 不慣れな場合はforkなどのgit管理ツールを使って操作してください
->
-> インストール <a target="_blank" href="https://www.git-fork.com">Fork - a fast and friendly git client for Mac and Windows (git-fork.com)</a>
-
-```text
-> git pull
-```
+> https://github.com/w3lik/likRC.git
 
 ### インストール IDE - Ideac
 

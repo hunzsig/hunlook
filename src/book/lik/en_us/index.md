@@ -1,20 +1,8 @@
 ## Start
 
-### Use git clone download framework
+### Get Framework
 
-```text
-> git clone https://github.com/w3lik/likRC.git
-```
-
-### Use git pull update framework
-
-> When unfamiliar, please use GIT management tools such as fork for easy operation
->
-> Install <a target="_blank" href="https://www.git-fork.com">Fork - a fast and friendly git client for Mac and Windows (git-fork.com)</a>
-
-```text
-> git pull
-```
+> https://github.com/w3lik/likRC.git
 
 ### Install IDE - Ideac
 

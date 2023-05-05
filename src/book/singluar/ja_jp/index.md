@@ -4,17 +4,9 @@
 * 観念や独創的な概念を捨てる
 * 強力で強力なサポート
 
-### インストールfork
-
-###### gitを使いこなすと、このステップをスキップできます
-
-> <a target="_blank" href="https://www.git-fork.com">Fork - a fast and friendly git client for Mac and Windows (git-fork.com)</a>
-
 ### フレームワークの取得
 
-```text
 > https://github.com/singluar/singluar-restricted.git
-```
 
 ### インストール IDE - Ideac
 

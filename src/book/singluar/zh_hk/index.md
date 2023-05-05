@@ -4,19 +4,9 @@
 * 摒棄觀念、獨創概念
 * 功能強大、強力支撐
 
-### 安裝fork
-
-###### 熟練使用 git 可跳過此步
-
-> <a target="_blank" href="https://www.git-fork.com">Fork - a fast and friendly git client for Mac and Windows (
-> git-fork.com)</a>
->
-
 ### 獲得框架
 
-```text
 > https://github.com/singluar/singluar-restricted.git
-```
 
 ### 安裝IDE - Ideac
 

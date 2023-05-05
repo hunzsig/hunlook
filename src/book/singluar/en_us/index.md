@@ -4,19 +4,9 @@
 * Abandon concepts and create original concepts
 * Powerful and powerful support
 
-### Install fork
-
-###### Skilled use of git can skip this step
-
-> <a target="_blank" href="https://www.git-fork.com">Fork - a fast and friendly git client for Mac and Windows (
-> git-fork.com)</a>
->
-
 ### Get Framework
 
-```text
 > https://github.com/singluar/singluar-restricted.git
-```
 
 ### Install IDE - Ideac
 

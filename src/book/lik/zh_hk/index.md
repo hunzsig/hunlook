@@ -1,20 +1,8 @@
 ## 快速開始
 
-### 使用 git clone 克隆項目
+### 獲得框架
 
-```text
-> git clone https://github.com/w3lik/likRC.git
-```
-
-### 使用 git pull 更新項目
-
-> 不熟悉時請使用fork等git管理工具方便操作
->
-> 安裝 <a target="_blank" href="https://www.git-fork.com">Fork - a fast and friendly git client for Mac and Windows (git-fork.com)</a>
-
-```text
-> git pull
-```
+> https://github.com/w3lik/likRC.git
 
 ### 安裝IDE - Ideac
 

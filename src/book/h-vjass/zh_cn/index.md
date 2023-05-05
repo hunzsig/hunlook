@@ -16,11 +16,9 @@
 
 > <a target="_blank" href="https://code.visualstudio.com/">VS Code</a>
 
-### 克隆（下载）项目
+### 获得框架
 
-```
-git clone https://github.com/h-vjass/h-vjass
-```
+> https://github.com/h-vjass/h-vjass
 
 ### 使用WE新建一个你的地图
 
